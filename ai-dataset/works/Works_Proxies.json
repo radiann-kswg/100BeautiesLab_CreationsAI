@@ -1,0 +1,34 @@
+{
+  "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
+  "_generated_at": "2026-05-18T05:02:42.066Z",
+  "work_key": "#Works_Proxies",
+  "dir_name": "Works_Proxies",
+  "title_ja": "ラジアン代理",
+  "title_en": "RadianN's Proxy",
+  "summary": "弊創作を執筆している「ラジアン」の代理キャラクター",
+  "layout": {
+    "headerPills": [
+      "Progress"
+    ],
+    "basicFields": [
+      "FormalName",
+      "FormalName_EN",
+      "ModelName",
+      "ModelNumber",
+      "CodeName",
+      "Class",
+      "Age",
+      "RaceType",
+      "GenderType",
+      "Height_cm",
+      "Weight_kg"
+    ]
+  },
+  "db_files": [],
+  "character_ids": [],
+  "image_paths": [
+    "data/Works_Proxies/Images/DB_Proxy/design/dsgn_imgRN2.png",
+    "data/Works_Proxies/Images/DB_Proxy/design/dsgn_imgRN3.png",
+    "data/Works_Proxies/Images/DB_Proxy/designAlt/dsgn_imgRN3-onCostume.png"
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
+  "_generated_at": "2026-05-18T05:02:42.052Z",
+  "work_key": "#Works_ShouArRiders",
+  "dir_name": "Works_ShouArRiders",
+  "title_ja": "獣爾騎兵",
+  "title_en": "Shou'ar Riders\nBeasted Cavalry",
+  "summary": "龍天国にある山月病(変化病)対策組織「獣爾騎兵」に所属する獣人型改造人間。\n主に十二支などの動物に基づいた獣人キャラクターが存在する。",
+  "layout": {
+    "headerPills": [
+      "Progress"
+    ],
+    "basicFields": [
+      "FormalName",
+      "ModelName",
+      "ModelNumber",
+      "CodeName",
+      "Belonging",
+      "Class",
+      "Age",
+      "RaceType",
+      "GenderType",
+      "Height_cm",
+      "Weight_kg",
+      "BeastspecName"
+    ],
+    "subFields": [
+      "BeastspecStats"
+    ]
+  },
+  "db_files": [
+    "data/Works_ShouArRiders/DataBases/db_Primary.json"
+  ],
+  "character_ids": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6"
+  ],
+  "image_paths": [
+    "data/Works_ShouArRiders/Images/DB_Primary/arts/art_imgEZ13-meowsday2023.png",
+    "data/Works_ShouArRiders/Images/DB_Primary/arts/newYear/art_imgEZ4-newyear2023.png",
+    "data/Works_ShouArRiders/Images/DB_Primary/arts/newYear/art_imgEZ5-2024.png",
+    "data/Works_ShouArRiders/Images/DB_Primary/arts/newYear/art_imgEZ6-newyear2025A.png",
+    "data/Works_ShouArRiders/Images/DB_Primary/arts/newYear/art_imgEZ6-newyear2025B.png",
+    "data/Works_ShouArRiders/Images/DB_Primary/arts/newYear/art_imgEZ7-newyear2026.png",
+    "data/Works_ShouArRiders/Images/DB_Primary/arts/sphericateDay/art_imgEZ13-sphericateDay202309A.png",
+    "data/Works_ShouArRiders/Images/DB_Primary/arts/sphericateDay/art_imgEZ13-sphericateDay202309B.png",
+    "data/Works_ShouArRiders/Images/DB_Primary/arts/sphericateDay/art_imgEZ13-sphericateDay202309C.png",
+    "data/Works_ShouArRiders/Images/DB_Primary/concept/cnsp_imgEZ1.png",
+    "data/Works_ShouArRiders/Images/DB_Primary/concept/cnsp_imgEZ13.png",
+    "data/Works_ShouArRiders/Images/DB_Primary/designAlt/chattingArt/chart_imgEZ4-private.PNG"
+  ]
+}

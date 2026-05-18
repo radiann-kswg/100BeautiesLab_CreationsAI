@@ -1,0 +1,57 @@
+{
+  "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
+  "_generated_at": "2026-05-18T05:02:42.062Z",
+  "work_key": "#Works_PastDivers",
+  "dir_name": "Works_PastDivers",
+  "title_ja": "パストダイヴァー",
+  "title_en": "PastDivers",
+  "summary": "九蓮国の国家技術と国防を担う「夜月機関」に所属する特殊技術者。\n主に和暦などに基づいたキャラクターが存在する。",
+  "layout": {
+    "headerPills": [
+      "Progress"
+    ],
+    "basicFields": [
+      "FormalName",
+      "FormalName_EN",
+      "ModelName",
+      "ModelNumber",
+      "CodeName",
+      "Belonging",
+      "Class",
+      "Age",
+      "RaceType",
+      "GenderType",
+      "Height_cm",
+      "Weight_kg",
+      "ChronoholderName",
+      "ChronospecName"
+    ],
+    "subFields": [
+      "AbilityStats",
+      "ChronospecAbout",
+      "ChronospecStats"
+    ]
+  },
+  "db_files": [
+    "data/Works_PastDivers/DataBases/db_Primary.json"
+  ],
+  "character_ids": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "9",
+    "10",
+    "11",
+    "12"
+  ],
+  "image_paths": [
+    "data/Works_PastDivers/Images/DB_Primary/concept/cnsp_imgCL3G3.png",
+    "data/Works_PastDivers/Images/DB_Primary/concept/cnsp_imgCL6G3.png"
+  ]
+}

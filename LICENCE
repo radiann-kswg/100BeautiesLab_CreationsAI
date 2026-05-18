@@ -1,0 +1,23 @@
+Creative Commons Attribution-NonCommercial 4.0 International License
+
+100BeautiesLab.(百花繚乱研究所) Primary Works/Creations
+Copyright (C) 2021-2022 RadianN_kswg (ラジアン/柏木主税)
+
+This work is licensed under the Creative Commons Attribution-NonCommercial 4.0
+International License.
+
+To view a copy of this license, visit:
+http://creativecommons.org/licenses/by-nc/4.0/
+
+---
+
+This repository (100BeautiesLab_CreationsAI) is a non-official, non-commercial
+AI training dataset repository that references the source database
+"100BeautiesLab_CreationsDB" as a Git submodule.
+
+The licence terms of the source database apply to all creative works data
+included via the submodule. This repository inherits and complies with the
+CC BY-NC 4.0 licence.
+
+The auto-generated index/manifest files in ai-dataset/ are derivative works
+produced solely by reading the submodule data. They carry the same licence.

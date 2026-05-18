@@ -1,0 +1,55 @@
+{
+  "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
+  "_generated_at": "2026-05-18T05:02:42.065Z",
+  "work_key": "#Works_DestinyFoxRecords",
+  "dir_name": "Works_DestinyFoxRecords",
+  "title_ja": "運命線狐の記録\nフィジカル9",
+  "title_en": "Destiny Fox's Records\nPhysical 9",
+  "summary": "弊創作を執筆している「ラジアン」の仲間たち。\n主に科学単位や数学用語に基づいた獣人のキャラクターからなる。\nちなみに、当タイトルのいう「ラジアン」とは作者の２代目代理のことである。",
+  "layout": {
+    "headerPills": [
+      "Progress"
+    ],
+    "basicFields": [
+      "FormalName",
+      "FormalName_EN",
+      "ModelName",
+      "ModelNumber",
+      "CodeName",
+      "Belonging",
+      "Class",
+      "Age",
+      "RaceType",
+      "GenderType",
+      "Height_cm",
+      "Weight_kg"
+    ]
+  },
+  "db_files": [
+    "data/Works_DestinyFoxRecords/DataBases/db_Primary.json"
+  ],
+  "character_ids": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8"
+  ],
+  "image_paths": [
+    "data/Works_DestinyFoxRecords/Images/DB_Primary/concept/cnsp_imgPhysU-m.png",
+    "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgPhysU-A.png",
+    "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgPhysU-cd.png",
+    "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgPhysU-K.png",
+    "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgPhysU-kg.png",
+    "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgPhysU-m.png",
+    "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgPhysU-mol.png",
+    "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgPhysU-rad.png",
+    "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgPhysU-sec.png",
+    "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgPhysU-sr.png",
+    "data/Works_DestinyFoxRecords/Images/General/design_imgPh9.png"
+  ]
+}

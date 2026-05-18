@@ -1,0 +1,19 @@
+# OS 生成ファイル
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# エディタ
+.vscode/settings.json
+*.swp
+*.swo
+*~
+
+# ai-dataset/ は自動生成ファイルなので .gitignore では除外しない
+# （自動コミット対象として Git で追跡する）

@@ -1,0 +1,53 @@
+{
+  "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
+  "_generated_at": "2026-05-18T05:02:42.055Z",
+  "work_key": "#Works_SinisterChangingGirls",
+  "dir_name": "Works_SinisterChangingGirls",
+  "title_ja": "豹変系女子",
+  "title_en": "Sinister Changing Girls",
+  "summary": "創作世界の各国を放浪している謎多き少女。\n主に七つの大罪や八方位などに基づいた二面性と特徴を持つガーリッシュな８人のキャラクターからなる。",
+  "layout": {
+    "headerPills": [
+      "Progress"
+    ],
+    "basicFields": [
+      "FormalName",
+      "ModelName",
+      "ModelNumber",
+      "CodeName",
+      "Belonging",
+      "Class",
+      "Age",
+      "RaceType",
+      "GenderType",
+      "Height_cm",
+      "Weight_kg",
+      "BustSize"
+    ]
+  },
+  "db_files": [
+    "data/Works_SinisterChangingGirls/DataBases/db_Primary.json"
+  ],
+  "character_ids": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7"
+  ],
+  "image_paths": [
+    "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/art_imgDrcNE-InfrationAerialSwimming.png",
+    "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/chattingArt/chart_imgDrcNE-ramen.png",
+    "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/chattingArt/chart_imgDrcNW.png",
+    "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/chattingArt/chart_imgDrcSE-checkIntoAlive.png",
+    "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/chattingArt/chart_imgDrcSW-whereBabiesFrom.png",
+    "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgDrcN.png",
+    "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgDrcNE.png",
+    "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgDrcNW.png",
+    "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgDrcS.png",
+    "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgDrcSE.png"
+  ]
+}

@@ -1,0 +1,40 @@
+{
+  "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
+  "_generated_at": "2026-05-18T05:02:42.056Z",
+  "work_key": "#Works_UnauthedLogica",
+  "dir_name": "Works_UnauthedLogica",
+  "title_ja": "アンオースドロジカ",
+  "title_en": "UnauthedLogica",
+  "summary": "汎用オートマトンとその後継改良存在たち。\n主に汎用ロジックを基にしたモブ種族、および「ナンバーテールズ」のパラレル存在にある妖獣型カスタムオートマトンの「人形兵ゼロイド」が存在する。",
+  "layout": {
+    "headerPills": [
+      "Progress"
+    ],
+    "basicFields": [
+      "FormalName",
+      "FormalName_EN",
+      "ModelName",
+      "ModelNumber",
+      "Belonging",
+      "Class",
+      "Age",
+      "RaceType",
+      "GenderType",
+      "Height_cm",
+      "Weight_kg"
+    ]
+  },
+  "db_files": [
+    "data/Works_UnauthedLogica/DataBases/db_Primary.json"
+  ],
+  "character_ids": [
+    "0",
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6"
+  ],
+  "image_paths": []
+}

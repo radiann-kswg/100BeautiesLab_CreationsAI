@@ -1,0 +1,73 @@
+{
+  "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
+  "_generated_at": "2026-05-18T05:02:41.849Z",
+  "_submodule_commit": "ref: refs/heads/develop",
+  "works": [
+    {
+      "work_key": "#Works_NumberTales",
+      "dir_name": "Works_NumberTales",
+      "title_ja": "ナンバーテールズ",
+      "title_en": "NumberTales",
+      "character_count": 1094,
+      "image_count": 436
+    },
+    {
+      "work_key": "#Works_FLInvestigator78",
+      "dir_name": "Works_FLInvestigator78",
+      "title_ja": "運命線探偵78",
+      "title_en": "the Fate-Line Investigator 78",
+      "character_count": 10,
+      "image_count": 9
+    },
+    {
+      "work_key": "#Works_ShouArRiders",
+      "dir_name": "Works_ShouArRiders",
+      "title_ja": "獣爾騎兵",
+      "title_en": "Shou'ar Riders\nBeasted Cavalry",
+      "character_count": 7,
+      "image_count": 12
+    },
+    {
+      "work_key": "#Works_SinisterChangingGirls",
+      "dir_name": "Works_SinisterChangingGirls",
+      "title_ja": "豹変系女子",
+      "title_en": "Sinister Changing Girls",
+      "character_count": 8,
+      "image_count": 10
+    },
+    {
+      "work_key": "#Works_UnauthedLogica",
+      "dir_name": "Works_UnauthedLogica",
+      "title_ja": "アンオースドロジカ",
+      "title_en": "UnauthedLogica",
+      "character_count": 7,
+      "image_count": 0
+    },
+    {
+      "work_key": "#Works_PastDivers",
+      "dir_name": "Works_PastDivers",
+      "title_ja": "パストダイヴァー",
+      "title_en": "PastDivers",
+      "character_count": 13,
+      "image_count": 2
+    },
+    {
+      "work_key": "#Works_DestinyFoxRecords",
+      "dir_name": "Works_DestinyFoxRecords",
+      "title_ja": "運命線狐の記録\nフィジカル9",
+      "title_en": "Destiny Fox's Records\nPhysical 9",
+      "character_count": 9,
+      "image_count": 11
+    },
+    {
+      "work_key": "#Works_Proxies",
+      "dir_name": "Works_Proxies",
+      "title_ja": "ラジアン代理",
+      "title_en": "RadianN's Proxy",
+      "character_count": 0,
+      "image_count": 3
+    }
+  ],
+  "total_characters": 1148,
+  "total_works": 8
+}

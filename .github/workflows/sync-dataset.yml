@@ -1,0 +1,90 @@
+# ===================================================================
+# sync-dataset.yml
+# サブモジュール (creations-db) の参照コミットが更新されるたびに
+# ビルドスクリプトを実行し、ai-dataset/ を自動更新してコミットします。
+# ===================================================================
+
+name: Sync & Format AI Dataset
+
+on:
+  # サブモジュールの参照コミット更新をトリガー（push 時に自動検出）
+  push:
+    branches:
+      - main
+    paths:
+      - 'creations-db'        # Git サブモジュールの参照ファイル変更
+      - 'scripts/**'          # ビルドスクリプト変更時も再生成
+
+  # 手動実行（サブモジュールを最新に更新してからビルドしたい場合）
+  workflow_dispatch:
+    inputs:
+      update_submodule:
+        description: 'サブモジュールを develop ブランチの最新に更新する'
+        type: boolean
+        default: true
+
+permissions:
+  contents: write   # コミット・プッシュに必要
+
+jobs:
+  build-dataset:
+    runs-on: ubuntu-latest
+
+    steps:
+      # ------------------------------------------------------------------
+      # 1. リポジトリをサブモジュール込みでチェックアウト
+      # ------------------------------------------------------------------
+      - name: Checkout repository (with submodules)
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      # ------------------------------------------------------------------
+      # 2. (手動実行時) サブモジュールを develop ブランチの最新に更新
+      # ------------------------------------------------------------------
+      - name: Update submodule to latest develop
+        if: ${{ github.event_name == 'workflow_dispatch' && inputs.update_submodule == true }}
+        run: |
+          git submodule update --remote --merge creations-db
+          echo "Submodule updated to: $(git -C creations-db rev-parse HEAD)"
+
+      # ------------------------------------------------------------------
+      # 3. Node.js セットアップ
+      # ------------------------------------------------------------------
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      # ------------------------------------------------------------------
+      # 4. ビルドスクリプト実行
+      # ------------------------------------------------------------------
+      - name: Run build-dataset.js
+        run: node scripts/build-dataset.js --verbose
+
+      # ------------------------------------------------------------------
+      # 5. 生成ファイルをステージング
+      # ------------------------------------------------------------------
+      - name: Stage generated files
+        run: |
+          git add ai-dataset/
+          # サブモジュールの参照コミットも更新している場合はそれもステージ
+          git add creations-db || true
+
+      # ------------------------------------------------------------------
+      # 6. 変更があれば自動コミット・プッシュ
+      # ------------------------------------------------------------------
+      - name: Commit and push if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          if git diff --cached --quiet; then
+            echo "変更なし。コミットをスキップします。"
+          else
+            SUBMODULE_COMMIT=$(git -C creations-db rev-parse --short HEAD)
+            git commit -m "chore: sync ai-dataset (creations-db@${SUBMODULE_COMMIT}) [skip ci]"
+            git push
+          fi

@@ -1,0 +1,4 @@
+[submodule "creations-db"]
+	path = creations-db
+	url = https://github.com/radiann-kswg/100BeautiesLab_CreationsDB.git
+	branch = develop
