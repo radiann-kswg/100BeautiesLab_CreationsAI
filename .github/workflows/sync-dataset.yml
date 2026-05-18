@@ -10,7 +10,7 @@ on:
   # サブモジュールの参照コミット更新をトリガー（push 時に自動検出）
   push:
     branches:
-      - main
+      - develop
     paths:
       - 'creations-db'        # Git サブモジュールの参照ファイル変更
       - 'scripts/**'          # ビルドスクリプト変更時も再生成
