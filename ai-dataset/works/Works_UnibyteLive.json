@@ -1,0 +1,38 @@
+{
+  "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
+  "_generated_at": "2026-06-01T07:32:12.268Z",
+  "work_key": "#Works_UnibyteLive",
+  "dir_name": "Works_UnibyteLive",
+  "title_ja": "ハンカクライブ",
+  "title_en": "UnibyteLive",
+  "summary": "メタバースプラットフォーム「ユニバイト・ユニバース」で活動する個人ヴァーチャル配信アイドルグループ「アルベッツ」所属の少女。\n主にアルファベットに基づいたモチーフのヴァーチャルアバターを有するキャラクターからなる。",
+  "layout": {
+    "headerPills": [
+      "Progress"
+    ],
+    "basicFields": [
+      "FormalName",
+      "CodeName",
+      "Belonging",
+      "Class",
+      "Age",
+      "RaceType",
+      "GenderType",
+      "Height_cm",
+      "BustSize",
+      "AccessoryUnit"
+    ],
+    "subFields": [
+      "AbilityStats",
+      "StreamingActivity"
+    ]
+  },
+  "db_files": [
+    "data/Works_UnibyteLive/DataBases/db_Primary.json"
+  ],
+  "character_ids": [
+    "0",
+    "1"
+  ],
+  "image_paths": []
+}

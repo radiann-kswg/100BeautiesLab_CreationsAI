@@ -1,7 +1,7 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-05-18T07:10:03.598Z",
-  "_submodule_commit": "9ae516ff30fe4a30ce30eff3f2370cc25b89e89e",
+  "_generated_at": "2026-06-01T07:32:12.061Z",
+  "_submodule_commit": "ref: refs/heads/addon-ai-tag",
   "works": [
     {
       "work_key": "#Works_NumberTales",
@@ -26,6 +26,14 @@
       "title_en": "Shou'ar Riders\nBeasted Cavalry",
       "character_count": 7,
       "image_count": 12
+    },
+    {
+      "work_key": "#Works_UnibyteLive",
+      "dir_name": "Works_UnibyteLive",
+      "title_ja": "ハンカクライブ",
+      "title_en": "UnibyteLive",
+      "character_count": 2,
+      "image_count": 0
     },
     {
       "work_key": "#Works_SinisterChangingGirls",
@@ -68,6 +76,6 @@
       "image_count": 3
     }
   ],
-  "total_characters": 1148,
-  "total_works": 8
+  "total_characters": 1150,
+  "total_works": 9
 }
