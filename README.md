@@ -67,15 +67,18 @@
 
 ## AI サービス向けクイックスタート
 
-### ⚠️ AI 学習利用ポリシー（暫定）
+### AI 学習利用ポリシー
 
-本リポジトリでは、創作 DB 側で正規の AI フラグ実装が完了するまでの **暫定対応** として、
-以下の作品×DB のみ AI 学習・生成への利用を許可しています。
+AI 学習・生成への利用可否は、`creations-db` サブモジュール内の各作品 `DataBases/db_meta.json` の
+**`AI_Optout`** フラグに基づいて DB 単位で自動判定されます。
 
-| 作品                 | DB                | AI 学習・生成     | 備考                                                                 |
-| -------------------- | ----------------- | ----------------- | -------------------------------------------------------------------- |
-| `#Works_NumberTales` | `db_Primary.json` | ✅ 許可           | AIHints 二層構造 (`common` + `forms.{corefolder,humanoid}`) 実装済み |
-| 上記以外の作品・DB   | 全て              | ⛔ 抑止（整備中） | 上流リポジトリで正規フラグ実装後に解除予定                           |
+| 判定条件                                              | `allowed` | 備考                                          |
+| ----------------------------------------------------- | --------- | --------------------------------------------- |
+| `Databases["#DB_<name>"].AI_Optout: true` が設定済み  | ⛔ false   | 整備中・オプトアウト宣言済み                  |
+| `db_meta.json` にエントリなし（未登録 DB）            | ⛔ false   | 保守的フォールバック                          |
+| `AI_Optout` 未設定 または `false`                     | ✅ true    | オプトイン済み（AIHints 整備済みの DB のみ）  |
+
+現時点では `#Works_NumberTales / db_Primary` のみが `allowed=true` です。
 
 - 機械可読なポリシー: [`ai-dataset/policy.json`](./ai-dataset/policy.json)
 - フィルタリング済みサブセット (推奨): [`ai-dataset/manifest-training.jsonl`](./ai-dataset/manifest-training.jsonl)

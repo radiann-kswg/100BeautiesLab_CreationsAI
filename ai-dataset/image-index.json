@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-06-02T01:23:42.068Z",
+  "_generated_at": "2026-06-02T01:44:49.703Z",
   "_path_base": "creations-db/",
   "works": {
     "#Works_NumberTales": {
@@ -11,7 +11,7 @@
         "allowed_db_files": [
           "db_Primary.json"
         ],
-        "note": "画像パスのうち DB_Primary 配下 (Images/DB_Primary/...) のみが AI 学習許可対象です。"
+        "note": "画像パスのうち許可された DB に対応するサブディレクトリ (Images/DB_<name>/...) のみが AI 学習許可対象です。"
       },
       "images": [
         "data/Works_NumberTales/Images/DB_Primary/arts/art_img0-developper.png",
@@ -459,7 +459,7 @@
       "ai_training": {
         "allowed": false,
         "allowed_db_files": [],
-        "note": "work-in-progress: this work/DB is still being curated for AI use. Pending an official flag in the upstream CreationsDB, the dataset opts this record out of AI training."
+        "note": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       },
       "images": [
         "data/Works_FLInvestigator78/Images/DB_Primary/arts/arts_imgFLDealer.png",
@@ -480,7 +480,7 @@
       "ai_training": {
         "allowed": false,
         "allowed_db_files": [],
-        "note": "work-in-progress: this work/DB is still being curated for AI use. Pending an official flag in the upstream CreationsDB, the dataset opts this record out of AI training."
+        "note": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       },
       "images": [
         "data/Works_ShouArRiders/Images/DB_Primary/arts/art_imgEZ13-meowsday2023.png",
@@ -504,7 +504,7 @@
       "ai_training": {
         "allowed": false,
         "allowed_db_files": [],
-        "note": "work-in-progress: this work/DB is still being curated for AI use. Pending an official flag in the upstream CreationsDB, the dataset opts this record out of AI training."
+        "note": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       },
       "images": [],
       "count": 0
@@ -515,7 +515,7 @@
       "ai_training": {
         "allowed": false,
         "allowed_db_files": [],
-        "note": "work-in-progress: this work/DB is still being curated for AI use. Pending an official flag in the upstream CreationsDB, the dataset opts this record out of AI training."
+        "note": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       },
       "images": [
         "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/art_imgDrcNE-InfrationAerialSwimming.png",
@@ -537,7 +537,7 @@
       "ai_training": {
         "allowed": false,
         "allowed_db_files": [],
-        "note": "work-in-progress: this work/DB is still being curated for AI use. Pending an official flag in the upstream CreationsDB, the dataset opts this record out of AI training."
+        "note": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       },
       "images": [],
       "count": 0
@@ -548,7 +548,7 @@
       "ai_training": {
         "allowed": false,
         "allowed_db_files": [],
-        "note": "work-in-progress: this work/DB is still being curated for AI use. Pending an official flag in the upstream CreationsDB, the dataset opts this record out of AI training."
+        "note": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       },
       "images": [
         "data/Works_PastDivers/Images/DB_Primary/concept/cnsp_imgCL3G3.png",
@@ -562,7 +562,7 @@
       "ai_training": {
         "allowed": false,
         "allowed_db_files": [],
-        "note": "work-in-progress: this work/DB is still being curated for AI use. Pending an official flag in the upstream CreationsDB, the dataset opts this record out of AI training."
+        "note": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       },
       "images": [
         "data/Works_DestinyFoxRecords/Images/DB_Primary/concept/cnsp_imgPhysU-m.png",
@@ -585,7 +585,7 @@
       "ai_training": {
         "allowed": false,
         "allowed_db_files": [],
-        "note": "work-in-progress: this work/DB is still being curated for AI use. Pending an official flag in the upstream CreationsDB, the dataset opts this record out of AI training."
+        "note": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       },
       "images": [
         "data/Works_Proxies/Images/DB_Proxy/design/dsgn_imgRN2.png",

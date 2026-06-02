@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-06-02T01:23:42.066Z",
+  "_generated_at": "2026-06-02T01:44:49.702Z",
   "_submodule_commit": "ref: refs/heads/addon-ai-tag",
   "works": [
     {
@@ -15,7 +15,7 @@
         "allowed_db_files": [
           "db_Primary.json"
         ],
-        "reason": "curated: this work/DB has been reviewed and includes AIHints (two-layer: common + forms) for image-generation use."
+        "reason": "AI_Optout / DB_Hidden / Works_Hidden are not set for this DB. This DB is opted in for AI training/generation use."
       }
     },
     {
@@ -28,7 +28,7 @@
       "ai_training": {
         "allowed": false,
         "allowed_db_files": [],
-        "reason": "work-in-progress: this work/DB is still being curated for AI use. Pending an official flag in the upstream CreationsDB, the dataset opts this record out of AI training."
+        "reason": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       }
     },
     {
@@ -41,7 +41,7 @@
       "ai_training": {
         "allowed": false,
         "allowed_db_files": [],
-        "reason": "work-in-progress: this work/DB is still being curated for AI use. Pending an official flag in the upstream CreationsDB, the dataset opts this record out of AI training."
+        "reason": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       }
     },
     {
@@ -54,7 +54,7 @@
       "ai_training": {
         "allowed": false,
         "allowed_db_files": [],
-        "reason": "work-in-progress: this work/DB is still being curated for AI use. Pending an official flag in the upstream CreationsDB, the dataset opts this record out of AI training."
+        "reason": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       }
     },
     {
@@ -67,7 +67,7 @@
       "ai_training": {
         "allowed": false,
         "allowed_db_files": [],
-        "reason": "work-in-progress: this work/DB is still being curated for AI use. Pending an official flag in the upstream CreationsDB, the dataset opts this record out of AI training."
+        "reason": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       }
     },
     {
@@ -80,7 +80,7 @@
       "ai_training": {
         "allowed": false,
         "allowed_db_files": [],
-        "reason": "work-in-progress: this work/DB is still being curated for AI use. Pending an official flag in the upstream CreationsDB, the dataset opts this record out of AI training."
+        "reason": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       }
     },
     {
@@ -93,7 +93,7 @@
       "ai_training": {
         "allowed": false,
         "allowed_db_files": [],
-        "reason": "work-in-progress: this work/DB is still being curated for AI use. Pending an official flag in the upstream CreationsDB, the dataset opts this record out of AI training."
+        "reason": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       }
     },
     {
@@ -106,7 +106,7 @@
       "ai_training": {
         "allowed": false,
         "allowed_db_files": [],
-        "reason": "work-in-progress: this work/DB is still being curated for AI use. Pending an official flag in the upstream CreationsDB, the dataset opts this record out of AI training."
+        "reason": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       }
     },
     {
@@ -119,7 +119,7 @@
       "ai_training": {
         "allowed": false,
         "allowed_db_files": [],
-        "reason": "work-in-progress: this work/DB is still being curated for AI use. Pending an official flag in the upstream CreationsDB, the dataset opts this record out of AI training."
+        "reason": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       }
     }
   ],

@@ -19,9 +19,9 @@
 
 ### 0.2 AI 学習利用ポリシー（重要）
 
-**現時点では `Works_NumberTales` の `DB_Primary` のみ AI 学習・生成への利用を許可しています。**
-それ以外の作品・DB はすべて **整備中** であり、各レコードに `ai_training.allowed = false` フラグが付与されます。
-将来的に上流の `100BeautiesLab_CreationsDB` 側で公式フラグが実装されるまでの **暫定対応** です。
+**AI 学習・生成への利用可否は `creations-db` サブモジュールの `db_meta.json` に設定された `AI_Optout` フラグに基づき DB 単位で自動判定されます。**
+`AI_Optout: true` の DB は `ai_training.allowed = false`、未設定は `allowed = true` です。
+現時点では `Works_NumberTales / DB_Primary` のみが `allowed=true` です。
 
 許可状況の機械可読版は [`ai-dataset/policy.json`](../ai-dataset/policy.json) を参照してください。
 
@@ -29,10 +29,9 @@
 // ai-dataset/policy.json (抜粋)
 {
   "ai_training_policy": {
-    "allowed": [
-      { "work_key": "#Works_NumberTales", "db_files": ["db_Primary.json"] },
-    ],
-    "disallowed_default": true,
+    "note": "db_meta.json の AI_Optout フラグに基づき DB 単位で利用可否を判定します。",
+    "policy_source": "data/Works_<work>/DataBases/db_meta.json — Databases[\"#DB_<Name>\"].AI_Optout",
+    "disallowed_default": false,
   },
 }
 ```
@@ -78,7 +77,7 @@ ai-dataset/
   "work_title_en": "NumberTales",
   "db_source": "data/Works_NumberTales/DataBases/db_Primary.json",
 
-  // 👇 利用可否（暫定）
+  // 👇 利用可否（db_meta.json の AI_Optout フラグ由来）
   "ai_training": {
     "allowed": true,
     "reason": "curated: ... AIHints (two-layer: common + forms) ..."
@@ -290,18 +289,19 @@ with open("ai-dataset/manifest.jsonl", encoding="utf-8") as f:
 with open("ai-dataset/policy.json", encoding="utf-8") as f:
     policy = json.load(f)
 
-allow = {e["work_key"]: set(e["db_files"]) for e in policy["ai_training_policy"]["allowed"]}
-# allow == {"#Works_NumberTales": {"db_Primary.json"}}
+print(policy["ai_training_policy"]["policy_source"])
+# → 'creations-db サブモジュール: data/Works_<work>/DataBases/db_meta.json — Databases["#DB_<Name>"].AI_Optout'
 ```
 
 ---
 
-## 6. 整備中作品の取り扱い（暫定）
+## 6. 整備中作品の取り扱い
 
-以下の作品/DB は **本リポジトリ生成時点で AI 学習・生成への利用を抑止**しています。
-レコードには `ai_training.allowed = false` が付き、`manifest-training.jsonl` には含まれません。
+以下の作品/DB は `db_meta.json` に `AI_Optout: true` が設定されているため、
+`ai_training.allowed = false` が付き、`manifest-training.jsonl` には含まれません。
 
-- `#Works_NumberTales` × `db_SemiPrimary.json` / `db_SelfSecondary.json` / `db_Secondary.json` / `db_UnprocessedSecondary.json`
+- `#Works_NumberTales` × `db_SemiPrimary.json` / `db_SelfSecondary.json` / `db_Secondary.json`
+- `#Works_NumberTales` × `db_UnprocessedSecondary.json`（`db_meta.json` にエントリなし → 保守的フォールバック）
 - `#Works_DestinyFoxRecords` (全 DB)
 - `#Works_FLInvestigator78` (全 DB)
 - `#Works_ShouArRiders` (全 DB)
@@ -311,8 +311,8 @@ allow = {e["work_key"]: set(e["db_files"]) for e in policy["ai_training_policy"]
 - `#Works_Proxies` (全 DB)
 - `#Works_UnibyteLive` (全 DB)
 
-将来、上流の `100BeautiesLab_CreationsDB` 側で公式 AI フラグが実装されたら、本リポジトリの
-`scripts/build-dataset.js` の `AI_TRAINING_ALLOWLIST` を撤廃し、上流フラグを尊重する形に切り替えます。
+各作品の整備が完了し `AI_Optout` フラグが解除された時点で、次回ビルド時に自動的に `allowed=true` に移行します。
+`scripts/build-dataset.js` 側の変更は不要です（`AI_TRAINING_ALLOWLIST` は削除済み）。
 
 ---
 
