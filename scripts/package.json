@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Build script for 100BeautiesLab_CreationsAI dataset generation",
   "main": "build-dataset.js",
+  "type": "module",
   "scripts": {
     "build": "node build-dataset.js",
     "build:verbose": "node build-dataset.js --verbose"

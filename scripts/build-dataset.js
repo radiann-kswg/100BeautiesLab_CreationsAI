@@ -1,12 +1,14 @@
 #!/usr/bin/env node
 /**
- * build-dataset.js
- * ================
+ * build-dataset.js (ESM)
+ * ======================
  * 100BeautiesLab_CreationsDB サブモジュールのデータを読み取り専用で参照し、
  * AI 学習向けのインデックス・マニフェストファイルを ai-dataset/ に生成します。
  *
  * 重要: このスクリプトは creations-db/ 以下のファイルを一切変更しません。
  *       生成先は ai-dataset/ のみです。
+ *
+ * データ読み取りには creations-db/pkg/nodejs/index.mjs の CreationsDBClient を使用します。
  *
  * 出力ファイル:
  *   ai-dataset/index.json          - 全作品・全キャラクターのマスターインデックス
@@ -18,10 +20,13 @@
  * 利用条件: NOTICE.md 参照
  */
 
-'use strict';
+import fs   from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { CreationsDBClient } from '../creations-db/pkg/nodejs/index.mjs';
 
-const fs   = require('fs');
-const path = require('path');
+const __filename = fileURLToPath(import.meta.url);
+const __dirname  = path.dirname(__filename);
 
 // ---------------------------------------------------------------------------
 // 定数
@@ -37,15 +42,6 @@ const VERBOSE = process.argv.includes('--verbose');
 
 const SOURCE_REPO_URL = 'https://github.com/radiann-kswg/100BeautiesLab_CreationsDB';
 const LICENCE_URL     = 'http://creativecommons.org/licenses/by-nc/4.0/';
-
-// DB ファイル名の優先順（一次 → 準一次 → 自二次 → 二次）
-const DB_FILE_ORDER = [
-  'db_Primary.json',
-  'db_SemiPrimary.json',
-  'db_SelfSecondary.json',
-  'db_Secondary.json',
-  'db_UnprocessedSecondary.json',
-];
 
 // 画像として扱う拡張子
 const IMAGE_EXTS = new Set(['.png', '.jpg', '.jpeg', '.gif', '.webp', '.svg']);
@@ -85,33 +81,28 @@ const AI_TRAINING_ALLOWED_REASON =
 /**
  * DB 層のポリシーを返す。Works_Hidden → DB_Hidden → AI_Optout → エントリなし の順に判定。
  *
- * @param {boolean}     worksHidden   トップレベル db_meta.json の Works_Hidden 値
- * @param {object|null} workDbMeta    DataBases/db_meta.json の parsed オブジェクト
- * @param {string}      dbFileName    例: "db_Primary.json"
+ * @param {boolean}     worksHidden  トップレベル db_meta.json の Works_Hidden 値
+ * @param {object|null} dbEntry      DataBases/db_meta.json の Databases["#DB_X"] エントリ
  * @returns {{ allowed: boolean, reason: string }}
  */
-function getAITrainingPolicy(worksHidden, workDbMeta, dbFileName) {
+function getAITrainingPolicy(worksHidden, dbEntry) {
   // 1. 作品全体が非公開
   if (worksHidden) {
     return { allowed: false, reason: AI_TRAINING_DISALLOWED_WORKS_HIDDEN };
   }
 
-  // ファイル名 → db_meta キー: db_Primary.json → #DB_Primary
-  const dbKey = '#DB_' + dbFileName.replace(/^db_/, '').replace(/\.json$/, '');
-  const dbMetaEntry = workDbMeta && workDbMeta.Databases && workDbMeta.Databases[dbKey];
-
   // 2. db_meta にエントリがない場合は保守的に disallowed 扱い
-  if (!dbMetaEntry) {
+  if (!dbEntry || typeof dbEntry !== 'object') {
     return { allowed: false, reason: AI_TRAINING_DISALLOWED_NO_META_REASON };
   }
 
   // 3. DB 単位の非公開フラグ
-  if (dbMetaEntry.DB_Hidden === true) {
+  if (dbEntry.DB_Hidden === true) {
     return { allowed: false, reason: AI_TRAINING_DISALLOWED_DB_HIDDEN };
   }
 
   // 4. AI 学習オプトアウトフラグ
-  if (dbMetaEntry.AI_Optout === true) {
+  if (dbEntry.AI_Optout === true) {
     return { allowed: false, reason: AI_TRAINING_DISALLOWED_REASON };
   }
 
@@ -199,7 +190,7 @@ function getSubmoduleCommit() {
 // メイン処理
 // ---------------------------------------------------------------------------
 
-function main() {
+async function main() {
   info('=== 100BeautiesLab_CreationsAI dataset build start ===');
 
   // サブモジュールが存在するか確認
@@ -212,12 +203,15 @@ function main() {
   ensureDir(OUT_DIR);
   ensureDir(WORKS_OUT);
 
-  // -----------------------------------------------------------------------
-  // 1. トップレベル db_meta.json を読む（作品一覧）
-  // -----------------------------------------------------------------------
+  // CreationsDBClient を初期化
+  // includePrivate: true でプライベートレコードも取得（ai_training ポリシーを付与するため）
+  const client = new CreationsDBClient(SUBMODULE, { includePrivate: true });
 
-  const topMeta = readJSON(path.join(DATA_DIR, 'db_meta.json')) || {};
-  const creationWorks = topMeta.CreationWorks || {};
+  // -----------------------------------------------------------------------
+  // 1. グローバルメタを読む（全作品一覧、Works_Hidden 含む）
+  // -----------------------------------------------------------------------
+  const globalMeta = await client.getMeta();
+  const creationWorks = globalMeta.CreationWorks || {};
   const workKeys = Object.keys(creationWorks); // "#Works_NumberTales" 等
 
   info(`作品数: ${workKeys.length}`);
@@ -256,7 +250,7 @@ function main() {
       works_hidden:  'data/db_meta.json — CreationWorks["#Works_<Name>"].Works_Hidden（作品単位の非公開）',
       db_hidden:     'data/Works_<work>/DataBases/db_meta.json — Databases["#DB_<Name>"].DB_Hidden（DB単位の非公開）',
       ai_optout:     'data/Works_<work>/DataBases/db_meta.json — Databases["#DB_<Name>"].AI_Optout（AI学習オプトアウト）',
-      is_private:    'data/Works_<work>/DataBases/db_*.json — <charId>.isPrivate（レコード単位の非公開）',
+      is_private:    'data/Works_<work>/DataBases/db_*.json — <record>.isPrivate（レコード単位の非公開）',
     },
     disallowed_priority: 'Works_Hidden → DB_Hidden → AI_Optout → db_meta エントリなし → isPrivate（いずれか true で allowed=false）',
     disallowed_default: false,
@@ -296,7 +290,7 @@ function main() {
   let totalAllowedCharacters = 0;
 
   for (const workKey of workKeys) {
-    const workMeta = creationWorks[workKey];
+    const workTopMeta = creationWorks[workKey];
     // workKey 例: "#Works_NumberTales" → dirName: "Works_NumberTales"
     const dirName = workKey.replace(/^#/, '');
     const workDir = path.join(DATA_DIR, dirName);
@@ -306,95 +300,125 @@ function main() {
       continue;
     }
 
-    info(`処理中: ${dirName} (${workMeta.Title || ''} / ${workMeta.Title_EN || ''})`);
+    info(`処理中: ${dirName} (${workTopMeta.Title || ''} / ${workTopMeta.Title_EN || ''})`);
 
     // Works_Hidden フラグを取得——作品全体が非公開の場合 AI 学習抑止
-    const worksHidden = !!(workMeta.Works_Hidden === true);
+    const worksHidden = !!(workTopMeta.Works_Hidden === true);
+
+    // 作品別メタを取得（Databases エントリ・_Commons を含む）
+    let fullWorkMeta = {};
+    try {
+      fullWorkMeta = await client.getWorkMeta(workKey);
+    } catch (e) {
+      log(`WARN: getWorkMeta 失敗 (${workKey}): ${e.message}`);
+    }
+    const databases = fullWorkMeta.Databases || {};
+
+    // db_type.json は直接読む（型定義レコード生成用。ライブラリ API 外）
+    const dbDir = path.join(workDir, 'DataBases');
+    const workDbType = readJSON(path.join(dbDir, 'db_type.json'));
+
     const workEntry = {
       work_key: workKey,
       dir_name: dirName,
-      title_ja: workMeta.Title || '',
-      title_en: workMeta.Title_EN || '',
-      summary: workMeta.Works_Summary || '',
-      layout: workMeta.$DetailLayout || null,
+      title_ja: workTopMeta.Title || '',
+      title_en: workTopMeta.Title_EN || '',
+      summary: workTopMeta.Works_Summary || '',
+      layout: workTopMeta.$DetailLayout || null,
       characters: [],
       db_files: [],
     };
 
-    // --- キャラクター DB ファイルを順番に読む ---
-    const dbDir = path.join(workDir, 'DataBases');
-    const allowedDbFiles = [];   // この作品内で AI 学習が許可された DB ファイル名一覧
-    if (fs.existsSync(dbDir)) {
-      // 作品固有の db_type / db_meta も読んでおく
-      const workDbType = readJSON(path.join(dbDir, 'db_type.json'));
-      const workDbMeta = readJSON(path.join(dbDir, 'db_meta.json'));
+    const allowedDbKeys = [];   // この作品内で AI 学習が許可された DB キー一覧
 
-      for (const dbFileName of DB_FILE_ORDER) {
-        const dbFilePath = path.join(dbDir, dbFileName);
-        if (!fs.existsSync(dbFilePath)) continue;
+    // databases の各エントリを処理（#DB_* / #Ref_* キーのみ対象）
+    for (const [dbMetaKey, dbEntry] of Object.entries(databases)) {
+      if (!dbMetaKey.startsWith('#DB_') && !dbMetaKey.startsWith('#Ref_')) continue;
+      if (!dbEntry || typeof dbEntry !== 'object' || Array.isArray(dbEntry)) continue;
 
-        const dbData = readJSON(dbFilePath);
-        if (!dbData) continue;
+      const dbPolicy = getAITrainingPolicy(worksHidden, dbEntry);
 
-        const dbRelPath = path.relative(SUBMODULE, dbFilePath).replace(/\\/g, '/');
-        const dbPolicy  = getAITrainingPolicy(worksHidden, workDbMeta, dbFileName);
-        if (dbPolicy.allowed) allowedDbFiles.push(dbFileName);
-        workEntry.db_files.push({ path: dbRelPath, ai_training: dbPolicy });
+      // DB ファイルパスを db_meta エントリから解決
+      const layer = (typeof dbEntry.DB_Layer === 'string' && dbEntry.DB_Layer.trim()) || 'DataBases';
+      const dbBaseName = dbMetaKey.replace(/^#(DB|Ref)_/, '');
+      const prefix = dbMetaKey.startsWith('#Ref_') ? 'ref_' : 'db_';
+      const fileName = (typeof dbEntry.DB_File === 'string' && /^[A-Za-z0-9_.-]+\.json$/.test(dbEntry.DB_File.trim()))
+        ? dbEntry.DB_File.trim()
+        : `${prefix}${dbBaseName}.json`;
+      const dbRelPath = `data/${dirName}/${layer}/${fileName}`;
 
-        // DB ファイルのルートキーを走査（キャラクターエントリ）
-        for (const [charId, charData] of Object.entries(dbData)) {
-          if (typeof charData !== 'object' || charData === null) continue;
-          // メタキー（$ や _ で始まるもの）はスキップ
-          if (charId.startsWith('$') || charId.startsWith('_')) continue;
+      // ファイルが存在しない DB はスキップ
+      const dbAbsPath = path.join(SUBMODULE, dbRelPath.replace(/\//g, path.sep));
+      if (!fs.existsSync(dbAbsPath)) {
+        log(`スキップ (DBファイルなし): ${dbRelPath}`);
+        continue;
+      }
 
-          // 画像パスを解決
-          const images = resolveCharacterImages(workDir, charId, charData);
+      if (dbPolicy.allowed) allowedDbKeys.push(dbMetaKey);
+      workEntry.db_files.push({ path: dbRelPath, ai_training: dbPolicy });
 
-          // AIHints を data から取り出してトップレベルにも露出する
-          // （AI 消費側が data.AIHints まで辿らずアクセスできるようにする）
-          const aiHints = (charData && typeof charData === 'object' && charData.AIHints)
-            ? charData.AIHints
-            : null;
+      // レコードを取得（_Commons 補完済み・isPrivate 含む）
+      let records = [];
+      try {
+        records = await client.getRecords(workKey, dbMetaKey, { applyCommons: true });
+      } catch (e) {
+        log(`WARN: getRecords 失敗 (${workKey} / ${dbMetaKey}): ${e.message}`);
+        continue;
+      }
 
-          // isPrivate: true のレコードは DB ポリシーに関わらずキャラクター単位で抑止
-          const charPolicy = getCharacterAIPolicy(dbPolicy, charData);
+      for (const [idx, charData] of records.entries()) {
+        if (typeof charData !== 'object' || charData === null) continue;
 
-          const charEntry = {
-            id: charId,
-            work_key: workKey,
-            work_title_ja: workMeta.Title || '',
-            work_title_en: workMeta.Title_EN || '',
-            db_source: dbRelPath,
-            ai_training: charPolicy,
-            ai_hints: aiHints,
-            has_ai_hints: !!aiHints,
-            // 原データを変更せずそのまま参照
-            data: charData,
-            images,
-          };
+        // 安定した識別子を導出（Num → ID → id → Name → 配列インデックス の優先順）
+        const charId = String(
+          charData.Num ?? charData.ID ?? charData.Id ?? charData.id ??
+          charData.Key ?? charData.Code ?? charData.Name ?? idx
+        );
 
-          workEntry.characters.push({ id: charId, images, has_ai_hints: !!aiHints, ai_training_allowed: charPolicy.allowed });
-          totalCharacters++;
-          if (charPolicy.allowed) totalAllowedCharacters++;
+        // 画像パスを解決
+        const images = resolveCharacterImages(workDir, charId, charData);
 
-          // JSONL レコード（1キャラクター = 1行）
-          const record = { _type: 'character', ...charEntry };
-          appendJSONL(manifestStream, record);
-          if (charPolicy.allowed) appendJSONL(trainingStream, record);
-        }
+        // AIHints を data から取り出してトップレベルにも露出する
+        const aiHints = charData.AIHints ?? null;
 
-        // Dictionaries なども JSONL に追加
-        if (workDbType) {
-          const typeRecord = {
-            _type: 'work_type_definitions',
-            work_key: workKey,
-            source: path.relative(SUBMODULE, path.join(dbDir, 'db_type.json')).replace(/\\/g, '/'),
-            ai_training: dbPolicy,
-            data: workDbType,
-          };
-          appendJSONL(manifestStream, typeRecord);
-          if (dbPolicy.allowed) appendJSONL(trainingStream, typeRecord);
-        }
+        // isPrivate: true のレコードは DB ポリシーに関わらずキャラクター単位で抑止
+        const charPolicy = getCharacterAIPolicy(dbPolicy, charData);
+
+        const charEntry = {
+          id: charId,
+          work_key: workKey,
+          work_title_ja: workTopMeta.Title || '',
+          work_title_en: workTopMeta.Title_EN || '',
+          db_source: dbRelPath,
+          ai_training: charPolicy,
+          ai_hints: aiHints,
+          has_ai_hints: !!aiHints,
+          // 原データを変更せずそのまま参照
+          data: charData,
+          images,
+        };
+
+        workEntry.characters.push({ id: charId, images, has_ai_hints: !!aiHints, ai_training_allowed: charPolicy.allowed });
+        totalCharacters++;
+        if (charPolicy.allowed) totalAllowedCharacters++;
+
+        // JSONL レコード（1キャラクター = 1行）
+        const record = { _type: 'character', ...charEntry };
+        appendJSONL(manifestStream, record);
+        if (charPolicy.allowed) appendJSONL(trainingStream, record);
+      }
+
+      // 型定義レコード（db_type.json）を DB ごとのポリシーで JSONL に追加
+      if (workDbType) {
+        const typeRecord = {
+          _type: 'work_type_definitions',
+          work_key: workKey,
+          source: `data/${dirName}/DataBases/db_type.json`,
+          ai_training: dbPolicy,
+          data: workDbType,
+        };
+        appendJSONL(manifestStream, typeRecord);
+        if (dbPolicy.allowed) appendJSONL(trainingStream, typeRecord);
       }
     }
 
@@ -404,13 +428,13 @@ function main() {
     // 概要のみ提示する。詳細なフィルタリングは manifest-training.jsonl を参照。
     const imagesDir = path.join(workDir, 'Images');
     const workImages = collectImages(imagesDir, SUBMODULE);
-    const workHasAllowedDb = allowedDbFiles.length > 0;
+    const workHasAllowedDb = allowedDbKeys.length > 0;
     imageIndex.works[workKey] = {
-      title_ja: workMeta.Title || '',
-      title_en: workMeta.Title_EN || '',
+      title_ja: workTopMeta.Title || '',
+      title_en: workTopMeta.Title_EN || '',
       ai_training: {
         allowed: workHasAllowedDb,
-        allowed_db_files: allowedDbFiles,
+        allowed_db_keys: allowedDbKeys,
         note: workHasAllowedDb
           ? '画像パスのうち許可された DB に対応するサブディレクトリ (Images/DB_<name>/...) のみが AI 学習許可対象です。'
           : AI_TRAINING_DISALLOWED_REASON,
@@ -423,20 +447,19 @@ function main() {
     const refsDir = path.join(workDir, 'References');
     const refImages = collectImages(refsDir, SUBMODULE);
     if (refImages.length > 0) {
-      if (!imageIndex.works[workKey].references) imageIndex.works[workKey].references = [];
       imageIndex.works[workKey].references = refImages;
     }
 
     masterIndex.works.push({
       work_key: workKey,
       dir_name: dirName,
-      title_ja: workMeta.Title || '',
-      title_en: workMeta.Title_EN || '',
+      title_ja: workTopMeta.Title || '',
+      title_en: workTopMeta.Title_EN || '',
       character_count: workEntry.characters.length,
       image_count: workImages.length,
       ai_training: {
         allowed: workHasAllowedDb,
-        allowed_db_files: allowedDbFiles,
+        allowed_db_keys: allowedDbKeys,
         reason: workHasAllowedDb ? AI_TRAINING_ALLOWED_REASON : AI_TRAINING_DISALLOWED_REASON,
       },
     });
@@ -449,13 +472,13 @@ function main() {
       _generated_at: new Date().toISOString(),
       work_key: workKey,
       dir_name: dirName,
-      title_ja: workMeta.Title || '',
-      title_en: workMeta.Title_EN || '',
-      summary: workMeta.Works_Summary || '',
-      layout: workMeta.$DetailLayout || null,
+      title_ja: workTopMeta.Title || '',
+      title_en: workTopMeta.Title_EN || '',
+      summary: workTopMeta.Works_Summary || '',
+      layout: workTopMeta.$DetailLayout || null,
       ai_training: {
         allowed: workHasAllowedDb,
-        allowed_db_files: allowedDbFiles,
+        allowed_db_keys: allowedDbKeys,
         reason: workHasAllowedDb ? AI_TRAINING_ALLOWED_REASON : AI_TRAINING_DISALLOWED_REASON,
       },
       db_files: workEntry.db_files,
@@ -620,4 +643,4 @@ function collectImagesRaw(dir) {
   return results;
 }
 
-main();
+main().catch(e => { console.error('[build] FATAL:', e); process.exit(1); });

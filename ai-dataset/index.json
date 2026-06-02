@@ -1,19 +1,19 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-06-02T01:44:49.702Z",
-  "_submodule_commit": "ref: refs/heads/addon-ai-tag",
+  "_generated_at": "2026-06-02T03:31:58.275Z",
+  "_submodule_commit": "848ba99b7c1cef8fdd35bbdcd4cb1cbc9708813a",
   "works": [
     {
       "work_key": "#Works_NumberTales",
       "dir_name": "Works_NumberTales",
       "title_ja": "ナンバーテールズ",
       "title_en": "NumberTales",
-      "character_count": 1094,
+      "character_count": 298,
       "image_count": 436,
       "ai_training": {
         "allowed": true,
-        "allowed_db_files": [
-          "db_Primary.json"
+        "allowed_db_keys": [
+          "#DB_Primary"
         ],
         "reason": "AI_Optout / DB_Hidden / Works_Hidden are not set for this DB. This DB is opted in for AI training/generation use."
       }
@@ -23,11 +23,11 @@
       "dir_name": "Works_FLInvestigator78",
       "title_ja": "運命線探偵78",
       "title_en": "the Fate-Line Investigator 78",
-      "character_count": 10,
+      "character_count": 20,
       "image_count": 9,
       "ai_training": {
         "allowed": false,
-        "allowed_db_files": [],
+        "allowed_db_keys": [],
         "reason": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       }
     },
@@ -40,7 +40,7 @@
       "image_count": 12,
       "ai_training": {
         "allowed": false,
-        "allowed_db_files": [],
+        "allowed_db_keys": [],
         "reason": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       }
     },
@@ -53,7 +53,7 @@
       "image_count": 0,
       "ai_training": {
         "allowed": false,
-        "allowed_db_files": [],
+        "allowed_db_keys": [],
         "reason": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       }
     },
@@ -66,7 +66,7 @@
       "image_count": 10,
       "ai_training": {
         "allowed": false,
-        "allowed_db_files": [],
+        "allowed_db_keys": [],
         "reason": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       }
     },
@@ -75,11 +75,11 @@
       "dir_name": "Works_UnauthedLogica",
       "title_ja": "アンオースドロジカ",
       "title_en": "UnauthedLogica",
-      "character_count": 7,
+      "character_count": 11,
       "image_count": 0,
       "ai_training": {
         "allowed": false,
-        "allowed_db_files": [],
+        "allowed_db_keys": [],
         "reason": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       }
     },
@@ -92,7 +92,7 @@
       "image_count": 2,
       "ai_training": {
         "allowed": false,
-        "allowed_db_files": [],
+        "allowed_db_keys": [],
         "reason": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       }
     },
@@ -105,7 +105,7 @@
       "image_count": 11,
       "ai_training": {
         "allowed": false,
-        "allowed_db_files": [],
+        "allowed_db_keys": [],
         "reason": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       }
     },
@@ -114,15 +114,15 @@
       "dir_name": "Works_Proxies",
       "title_ja": "ラジアン代理",
       "title_en": "RadianN's Proxy",
-      "character_count": 0,
+      "character_count": 2,
       "image_count": 3,
       "ai_training": {
         "allowed": false,
-        "allowed_db_files": [],
+        "allowed_db_keys": [],
         "reason": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       }
     }
   ],
-  "total_characters": 1150,
+  "total_characters": 370,
   "total_works": 9
 }

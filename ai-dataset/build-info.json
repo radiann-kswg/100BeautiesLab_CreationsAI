@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-06-02T01:44:49.924Z",
-  "submodule_commit": "ref: refs/heads/addon-ai-tag",
+  "generated_at": "2026-06-02T03:31:58.435Z",
+  "submodule_commit": "848ba99b7c1cef8fdd35bbdcd4cb1cbc9708813a",
   "source_repo": "https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
   "licence": "http://creativecommons.org/licenses/by-nc/4.0/",
   "total_works": 9,
-  "total_characters": 1150,
+  "total_characters": 370,
   "total_general_images": 1,
   "ai_training_stats": {
     "allowed_works": 1,
     "disallowed_works": 8,
     "allowed_characters": 105,
-    "disallowed_characters": 1045
+    "disallowed_characters": 265
   }
 }

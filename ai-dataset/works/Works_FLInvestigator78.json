@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-06-02T01:44:49.908Z",
+  "_generated_at": "2026-06-02T03:31:58.399Z",
   "work_key": "#Works_FLInvestigator78",
   "dir_name": "Works_FLInvestigator78",
   "title_ja": "運命線探偵78",
@@ -28,7 +28,7 @@
   },
   "ai_training": {
     "allowed": false,
-    "allowed_db_files": [],
+    "allowed_db_keys": [],
     "reason": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
   },
   "db_files": [
@@ -38,9 +38,26 @@
         "allowed": false,
         "reason": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       }
+    },
+    {
+      "path": "data/Works_FLInvestigator78/DataBases/db_PrimaryDealer.json",
+      "ai_training": {
+        "allowed": false,
+        "reason": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
+      }
     }
   ],
   "character_ids": [
+    "フェニクス",
+    "オリジン",
+    "ヨハネ",
+    "ウェヌス",
+    "リオン",
+    "ヴェール",
+    "バベル",
+    "ゲイザー",
+    "8",
+    "9",
     "0",
     "1",
     "2",
