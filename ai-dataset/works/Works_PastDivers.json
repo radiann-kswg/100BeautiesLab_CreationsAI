@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-06-01T07:32:12.277Z",
+  "_generated_at": "2026-06-02T01:21:15.960Z",
   "work_key": "#Works_PastDivers",
   "dir_name": "Works_PastDivers",
   "title_ja": "パストダイヴァー",
@@ -32,8 +32,19 @@
       "ChronospecStats"
     ]
   },
+  "ai_training": {
+    "allowed": false,
+    "allowed_db_files": [],
+    "reason": "work-in-progress: this work/DB is still being curated for AI use. Pending an official flag in the upstream CreationsDB, the dataset opts this record out of AI training."
+  },
   "db_files": [
-    "data/Works_PastDivers/DataBases/db_Primary.json"
+    {
+      "path": "data/Works_PastDivers/DataBases/db_Primary.json",
+      "ai_training": {
+        "allowed": false,
+        "reason": "work-in-progress: this work/DB is still being curated for AI use. Pending an official flag in the upstream CreationsDB, the dataset opts this record out of AI training."
+      }
+    }
   ],
   "character_ids": [
     "0",
@@ -50,6 +61,7 @@
     "11",
     "12"
   ],
+  "character_ids_with_ai_hints": [],
   "image_paths": [
     "data/Works_PastDivers/Images/DB_Primary/concept/cnsp_imgCL3G3.png",
     "data/Works_PastDivers/Images/DB_Primary/concept/cnsp_imgCL6G3.png"

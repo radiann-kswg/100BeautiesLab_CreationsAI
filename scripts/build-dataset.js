@@ -51,6 +51,37 @@ const DB_FILE_ORDER = [
 const IMAGE_EXTS = new Set(['.png', '.jpg', '.jpeg', '.gif', '.webp', '.svg']);
 
 // ---------------------------------------------------------------------------
+// AI 学習利用ポリシー
+// ---------------------------------------------------------------------------
+// 創作 DB 側で正規のフラグ実装が完了するまでの暫定対応として、本リポジトリでは
+// 「整備済み」と確認された (workKey, dbFileName) の組み合わせのみ AI 学習利用を
+// 許可する。それ以外は `ai_training.allowed = false` を付与してオプトアウト扱い
+// とし、生成 AI・学習ジョブ側で自動的に除外できるようにする。
+//
+// 2026-06 時点での整備済み:
+//   - #Works_NumberTales × db_Primary.json (AIHints 二層構造を完備)
+//
+// 上記以外はすべて「整備中」として AI 学習利用を抑止する。
+const AI_TRAINING_ALLOWLIST = {
+  '#Works_NumberTales': new Set(['db_Primary.json']),
+};
+
+const AI_TRAINING_DISALLOWED_REASON =
+  'work-in-progress: this work/DB is still being curated for AI use. ' +
+  'Pending an official flag in the upstream CreationsDB, the dataset opts this record out of AI training.';
+const AI_TRAINING_ALLOWED_REASON =
+  'curated: this work/DB has been reviewed and includes AIHints (two-layer: common + forms) for image-generation use.';
+
+/** (workKey, dbFileName) -> { allowed: boolean, reason: string } */
+function getAITrainingPolicy(workKey, dbFileName) {
+  const allowed = !!(AI_TRAINING_ALLOWLIST[workKey] && AI_TRAINING_ALLOWLIST[workKey].has(dbFileName));
+  return {
+    allowed,
+    reason: allowed ? AI_TRAINING_ALLOWED_REASON : AI_TRAINING_DISALLOWED_REASON,
+  };
+}
+
+// ---------------------------------------------------------------------------
 // ユーティリティ
 // ---------------------------------------------------------------------------
 
@@ -160,11 +191,30 @@ function main() {
   };
 
   // JSONL マニフェスト (ストリーム書き込み)
-  const manifestPath = path.join(OUT_DIR, 'manifest.jsonl');
-  const manifestStream = fs.createWriteStream(manifestPath, { encoding: 'utf8' });
+  // manifest.jsonl       : 全レコード（policy フラグ付き）
+  // manifest-training.jsonl: AI 学習利用が許可されたレコードのみを抽出したサブセット
+  const manifestPath        = path.join(OUT_DIR, 'manifest.jsonl');
+  const trainingPath        = path.join(OUT_DIR, 'manifest-training.jsonl');
+  const manifestStream      = fs.createWriteStream(manifestPath, { encoding: 'utf8' });
+  const trainingStream      = fs.createWriteStream(trainingPath, { encoding: 'utf8' });
+
+  // ポリシーサマリ (header / policy.json に共有)
+  const aiTrainingPolicySummary = {
+    note: '創作DB側の正規フラグ実装までの暫定対応。allowed=true のレコードのみ AI 学習・生成に使用してください。',
+    allowed: [
+      { work_key: '#Works_NumberTales', db_files: ['db_Primary.json'] },
+    ],
+    disallowed_default: true,
+    disallowed_reason: AI_TRAINING_DISALLOWED_REASON,
+    consumer_guidance: [
+      'manifest.jsonl をそのまま使う場合: record.ai_training.allowed === true のレコードのみを採用してください。',
+      'あるいは manifest-training.jsonl を使えば、許可済みレコードのみが含まれます。',
+      'image-index.json / works/<Work>.json にも ai_training フラグが付与されています。',
+    ],
+  };
 
   // ヘッダーレコード（LLM への文脈提供用）
-  appendJSONL(manifestStream, {
+  const headerRecord = {
     _type: 'dataset_header',
     dataset_name: '100BeautiesLab_CreationsAI',
     description: 'サークル「百花繚乱研究所」の一次創作作品データセット（非公式・非営利）',
@@ -178,9 +228,18 @@ function main() {
       '出典（' + SOURCE_REPO_URL + '）を明記',
       '改変した場合はその旨を明記',
     ],
-  });
+    ai_training_policy: aiTrainingPolicySummary,
+    target_environments: {
+      novelai_sd: '各キャラクターレコード data.AIHints.forms.<form>.prompt_export / negative_prompt_export を貼付',
+      chatgpt:    'common.natural_language_description + forms.<form>.natural_language_description + identity_tags / form_tags を貼付',
+      gemini:     '上記に加え forms.<form>.reference_images.main を参照画像として添付',
+    },
+  };
+  appendJSONL(manifestStream, headerRecord);
+  appendJSONL(trainingStream, headerRecord);
 
   let totalCharacters = 0;
+  let totalAllowedCharacters = 0;
 
   for (const workKey of workKeys) {
     const workMeta = creationWorks[workKey];
@@ -222,7 +281,8 @@ function main() {
         if (!dbData) continue;
 
         const dbRelPath = path.relative(SUBMODULE, dbFilePath).replace(/\\/g, '/');
-        workEntry.db_files.push(dbRelPath);
+        const dbPolicy  = getAITrainingPolicy(workKey, dbFileName);
+        workEntry.db_files.push({ path: dbRelPath, ai_training: dbPolicy });
 
         // DB ファイルのルートキーを走査（キャラクターエントリ）
         for (const [charId, charData] of Object.entries(dbData)) {
@@ -233,45 +293,68 @@ function main() {
           // 画像パスを解決
           const images = resolveCharacterImages(workDir, charId, charData);
 
+          // AIHints を data から取り出してトップレベルにも露出する
+          // （AI 消費側が data.AIHints まで辿らずアクセスできるようにする）
+          const aiHints = (charData && typeof charData === 'object' && charData.AIHints)
+            ? charData.AIHints
+            : null;
+
           const charEntry = {
             id: charId,
             work_key: workKey,
             work_title_ja: workMeta.Title || '',
             work_title_en: workMeta.Title_EN || '',
             db_source: dbRelPath,
+            ai_training: dbPolicy,
+            ai_hints: aiHints,
+            has_ai_hints: !!aiHints,
             // 原データを変更せずそのまま参照
             data: charData,
             images,
           };
 
-          workEntry.characters.push({ id: charId, images });
+          workEntry.characters.push({ id: charId, images, has_ai_hints: !!aiHints, ai_training_allowed: dbPolicy.allowed });
           totalCharacters++;
+          if (dbPolicy.allowed) totalAllowedCharacters++;
 
           // JSONL レコード（1キャラクター = 1行）
-          appendJSONL(manifestStream, {
-            _type: 'character',
-            ...charEntry,
-          });
+          const record = { _type: 'character', ...charEntry };
+          appendJSONL(manifestStream, record);
+          if (dbPolicy.allowed) appendJSONL(trainingStream, record);
         }
 
         // Dictionaries なども JSONL に追加
         if (workDbType) {
-          appendJSONL(manifestStream, {
+          const typeRecord = {
             _type: 'work_type_definitions',
             work_key: workKey,
             source: path.relative(SUBMODULE, path.join(dbDir, 'db_type.json')).replace(/\\/g, '/'),
+            ai_training: dbPolicy,
             data: workDbType,
-          });
+          };
+          appendJSONL(manifestStream, typeRecord);
+          if (dbPolicy.allowed) appendJSONL(trainingStream, typeRecord);
         }
       }
     }
 
     // --- 画像インデックス ---
+    // 画像は DB 別ディレクトリ (DB_Primary / DB_Secondary 等) に格納されているため、
+    // ai_training ポリシーは「いずれかの DB が allowed なら work 単位で参照可」として
+    // 概要のみ提示する。詳細なフィルタリングは manifest-training.jsonl を参照。
     const imagesDir = path.join(workDir, 'Images');
     const workImages = collectImages(imagesDir, SUBMODULE);
+    const workHasAllowedDb = !!AI_TRAINING_ALLOWLIST[workKey];
     imageIndex.works[workKey] = {
       title_ja: workMeta.Title || '',
       title_en: workMeta.Title_EN || '',
+      ai_training: {
+        allowed: workHasAllowedDb,
+        allowed_db_files: workHasAllowedDb ? [...AI_TRAINING_ALLOWLIST[workKey]] : [],
+        note: workHasAllowedDb
+          ? '画像パスのうち DB_Primary 配下 (Images/DB_Primary/...) のみが AI 学習許可対象です。'
+          : AI_TRAINING_DISALLOWED_REASON,
+      },
       images: workImages,
       count: workImages.length,
     };
@@ -291,6 +374,11 @@ function main() {
       title_en: workMeta.Title_EN || '',
       character_count: workEntry.characters.length,
       image_count: workImages.length,
+      ai_training: {
+        allowed: workHasAllowedDb,
+        allowed_db_files: workHasAllowedDb ? [...AI_TRAINING_ALLOWLIST[workKey]] : [],
+        reason: workHasAllowedDb ? AI_TRAINING_ALLOWED_REASON : AI_TRAINING_DISALLOWED_REASON,
+      },
     });
 
     // --- 作品別 JSON を出力 ---
@@ -305,8 +393,14 @@ function main() {
       title_en: workMeta.Title_EN || '',
       summary: workMeta.Works_Summary || '',
       layout: workMeta.$DetailLayout || null,
+      ai_training: {
+        allowed: workHasAllowedDb,
+        allowed_db_files: workHasAllowedDb ? [...AI_TRAINING_ALLOWLIST[workKey]] : [],
+        reason: workHasAllowedDb ? AI_TRAINING_ALLOWED_REASON : AI_TRAINING_DISALLOWED_REASON,
+      },
       db_files: workEntry.db_files,
       character_ids: workEntry.characters.map(c => c.id),
+      character_ids_with_ai_hints: workEntry.characters.filter(c => c.has_ai_hints).map(c => c.id),
       image_paths: workImages,
     }, null, 2), 'utf8');
   }
@@ -324,11 +418,16 @@ function main() {
       if (entry.isFile() && entry.name.endsWith('.json')) {
         const dictData = readJSON(path.join(dictDir, entry.name));
         if (dictData) {
-          appendJSONL(manifestStream, {
+          // 辞書はすべての作品から参照される共通情報なので、AI 学習許可済 (=manifest-training)
+          // にも含める。
+          const dictRecord = {
             _type: 'dictionary',
             source: path.relative(SUBMODULE, path.join(dictDir, entry.name)).replace(/\\/g, '/'),
+            ai_training: { allowed: true, reason: 'shared dictionary; safe to include for AI consumers.' },
             data: dictData,
-          });
+          };
+          appendJSONL(manifestStream, dictRecord);
+          appendJSONL(trainingStream, dictRecord);
         }
       }
     }
@@ -345,7 +444,27 @@ function main() {
   // -----------------------------------------------------------------------
 
   manifestStream.end();
-  info(`manifest.jsonl を書き込みました`);
+  trainingStream.end();
+  info(`manifest.jsonl / manifest-training.jsonl を書き込みました`);
+
+  // ポリシーサマリ JSON を独立して出力（消費側がフラグ確認に使う）
+  fs.writeFileSync(path.join(OUT_DIR, 'policy.json'), JSON.stringify({
+    _notice: '原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / ' + SOURCE_REPO_URL,
+    _generated_at: new Date().toISOString(),
+    ai_training_policy: aiTrainingPolicySummary,
+    target_environments: headerRecord.target_environments,
+    schema: {
+      ai_training_field: {
+        allowed: 'boolean — true なら AI 学習・生成に利用可',
+        reason:  'string — allowed の判定理由（整備中/整備済等）',
+      },
+      ai_hints_field: {
+        common: '形態を問わない素体特徴 (identity_tags / palette_priority / natural_language_description 等)',
+        forms:  '形態別 (corefolder / humanoid) の outfit_features / ai_tags / prompt_export / negative_prompt_export / reference_images',
+      },
+    },
+  }, null, 2), 'utf8');
+  info(`policy.json を書き込みました`);
 
   fs.writeFileSync(path.join(OUT_DIR, 'index.json'), JSON.stringify({
     ...masterIndex,
@@ -357,7 +476,15 @@ function main() {
   fs.writeFileSync(path.join(OUT_DIR, 'image-index.json'), JSON.stringify(imageIndex, null, 2), 'utf8');
   info(`image-index.json を書き込みました`);
 
-  // ビルドメタ情報
+  // 注: allowed_characters は DB 単位の判定なので、masterIndex の作品数 (character_count) ではなく
+  // ループ中に集計した totalAllowedCharacters を使用する。
+  const aiTrainingStats = {
+    allowed_works:        masterIndex.works.filter(w => w.ai_training && w.ai_training.allowed).length,
+    disallowed_works:     masterIndex.works.filter(w => !(w.ai_training && w.ai_training.allowed)).length,
+    allowed_characters:    totalAllowedCharacters,
+    disallowed_characters: totalCharacters - totalAllowedCharacters,
+  };
+
   fs.writeFileSync(path.join(OUT_DIR, 'build-info.json'), JSON.stringify({
     generated_at: new Date().toISOString(),
     submodule_commit: getSubmoduleCommit(),
@@ -366,6 +493,7 @@ function main() {
     total_works: masterIndex.works.length,
     total_characters: totalCharacters,
     total_general_images: imageIndex.general_images.length,
+    ai_training_stats: aiTrainingStats,
   }, null, 2), 'utf8');
   info(`build-info.json を書き込みました`);
 

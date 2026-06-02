@@ -1,11 +1,18 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-06-01T07:32:12.062Z",
+  "_generated_at": "2026-06-02T01:21:15.726Z",
   "_path_base": "creations-db/",
   "works": {
     "#Works_NumberTales": {
       "title_ja": "ナンバーテールズ",
       "title_en": "NumberTales",
+      "ai_training": {
+        "allowed": true,
+        "allowed_db_files": [
+          "db_Primary.json"
+        ],
+        "note": "画像パスのうち DB_Primary 配下 (Images/DB_Primary/...) のみが AI 学習許可対象です。"
+      },
       "images": [
         "data/Works_NumberTales/Images/DB_Primary/arts/art_img0-developper.png",
         "data/Works_NumberTales/Images/DB_Primary/arts/art_img00-developper.png",
@@ -449,6 +456,11 @@
     "#Works_FLInvestigator78": {
       "title_ja": "運命線探偵78",
       "title_en": "the Fate-Line Investigator 78",
+      "ai_training": {
+        "allowed": false,
+        "allowed_db_files": [],
+        "note": "work-in-progress: this work/DB is still being curated for AI use. Pending an official flag in the upstream CreationsDB, the dataset opts this record out of AI training."
+      },
       "images": [
         "data/Works_FLInvestigator78/Images/DB_Primary/arts/arts_imgFLDealer.png",
         "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLM0.png",
@@ -465,6 +477,11 @@
     "#Works_ShouArRiders": {
       "title_ja": "獣爾騎兵",
       "title_en": "Shou'ar Riders\nBeasted Cavalry",
+      "ai_training": {
+        "allowed": false,
+        "allowed_db_files": [],
+        "note": "work-in-progress: this work/DB is still being curated for AI use. Pending an official flag in the upstream CreationsDB, the dataset opts this record out of AI training."
+      },
       "images": [
         "data/Works_ShouArRiders/Images/DB_Primary/arts/art_imgEZ13-meowsday2023.png",
         "data/Works_ShouArRiders/Images/DB_Primary/arts/newYear/art_imgEZ4-newyear2023.png",
@@ -484,12 +501,22 @@
     "#Works_UnibyteLive": {
       "title_ja": "ハンカクライブ",
       "title_en": "UnibyteLive",
+      "ai_training": {
+        "allowed": false,
+        "allowed_db_files": [],
+        "note": "work-in-progress: this work/DB is still being curated for AI use. Pending an official flag in the upstream CreationsDB, the dataset opts this record out of AI training."
+      },
       "images": [],
       "count": 0
     },
     "#Works_SinisterChangingGirls": {
       "title_ja": "豹変系女子",
       "title_en": "Sinister Changing Girls",
+      "ai_training": {
+        "allowed": false,
+        "allowed_db_files": [],
+        "note": "work-in-progress: this work/DB is still being curated for AI use. Pending an official flag in the upstream CreationsDB, the dataset opts this record out of AI training."
+      },
       "images": [
         "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/art_imgDrcNE-InfrationAerialSwimming.png",
         "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/chattingArt/chart_imgDrcNE-ramen.png",
@@ -507,12 +534,22 @@
     "#Works_UnauthedLogica": {
       "title_ja": "アンオースドロジカ",
       "title_en": "UnauthedLogica",
+      "ai_training": {
+        "allowed": false,
+        "allowed_db_files": [],
+        "note": "work-in-progress: this work/DB is still being curated for AI use. Pending an official flag in the upstream CreationsDB, the dataset opts this record out of AI training."
+      },
       "images": [],
       "count": 0
     },
     "#Works_PastDivers": {
       "title_ja": "パストダイヴァー",
       "title_en": "PastDivers",
+      "ai_training": {
+        "allowed": false,
+        "allowed_db_files": [],
+        "note": "work-in-progress: this work/DB is still being curated for AI use. Pending an official flag in the upstream CreationsDB, the dataset opts this record out of AI training."
+      },
       "images": [
         "data/Works_PastDivers/Images/DB_Primary/concept/cnsp_imgCL3G3.png",
         "data/Works_PastDivers/Images/DB_Primary/concept/cnsp_imgCL6G3.png"
@@ -522,6 +559,11 @@
     "#Works_DestinyFoxRecords": {
       "title_ja": "運命線狐の記録\nフィジカル9",
       "title_en": "Destiny Fox's Records\nPhysical 9",
+      "ai_training": {
+        "allowed": false,
+        "allowed_db_files": [],
+        "note": "work-in-progress: this work/DB is still being curated for AI use. Pending an official flag in the upstream CreationsDB, the dataset opts this record out of AI training."
+      },
       "images": [
         "data/Works_DestinyFoxRecords/Images/DB_Primary/concept/cnsp_imgPhysU-m.png",
         "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgPhysU-A.png",
@@ -540,6 +582,11 @@
     "#Works_Proxies": {
       "title_ja": "ラジアン代理",
       "title_en": "RadianN's Proxy",
+      "ai_training": {
+        "allowed": false,
+        "allowed_db_files": [],
+        "note": "work-in-progress: this work/DB is still being curated for AI use. Pending an official flag in the upstream CreationsDB, the dataset opts this record out of AI training."
+      },
       "images": [
         "data/Works_Proxies/Images/DB_Proxy/design/dsgn_imgRN2.png",
         "data/Works_Proxies/Images/DB_Proxy/design/dsgn_imgRN3.png",

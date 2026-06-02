@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-06-01T07:32:12.061Z",
+  "_generated_at": "2026-06-02T01:21:15.725Z",
   "_submodule_commit": "ref: refs/heads/addon-ai-tag",
   "works": [
     {
@@ -9,7 +9,14 @@
       "title_ja": "ナンバーテールズ",
       "title_en": "NumberTales",
       "character_count": 1094,
-      "image_count": 436
+      "image_count": 436,
+      "ai_training": {
+        "allowed": true,
+        "allowed_db_files": [
+          "db_Primary.json"
+        ],
+        "reason": "curated: this work/DB has been reviewed and includes AIHints (two-layer: common + forms) for image-generation use."
+      }
     },
     {
       "work_key": "#Works_FLInvestigator78",
@@ -17,7 +24,12 @@
       "title_ja": "運命線探偵78",
       "title_en": "the Fate-Line Investigator 78",
       "character_count": 10,
-      "image_count": 9
+      "image_count": 9,
+      "ai_training": {
+        "allowed": false,
+        "allowed_db_files": [],
+        "reason": "work-in-progress: this work/DB is still being curated for AI use. Pending an official flag in the upstream CreationsDB, the dataset opts this record out of AI training."
+      }
     },
     {
       "work_key": "#Works_ShouArRiders",
@@ -25,7 +37,12 @@
       "title_ja": "獣爾騎兵",
       "title_en": "Shou'ar Riders\nBeasted Cavalry",
       "character_count": 7,
-      "image_count": 12
+      "image_count": 12,
+      "ai_training": {
+        "allowed": false,
+        "allowed_db_files": [],
+        "reason": "work-in-progress: this work/DB is still being curated for AI use. Pending an official flag in the upstream CreationsDB, the dataset opts this record out of AI training."
+      }
     },
     {
       "work_key": "#Works_UnibyteLive",
@@ -33,7 +50,12 @@
       "title_ja": "ハンカクライブ",
       "title_en": "UnibyteLive",
       "character_count": 2,
-      "image_count": 0
+      "image_count": 0,
+      "ai_training": {
+        "allowed": false,
+        "allowed_db_files": [],
+        "reason": "work-in-progress: this work/DB is still being curated for AI use. Pending an official flag in the upstream CreationsDB, the dataset opts this record out of AI training."
+      }
     },
     {
       "work_key": "#Works_SinisterChangingGirls",
@@ -41,7 +63,12 @@
       "title_ja": "豹変系女子",
       "title_en": "Sinister Changing Girls",
       "character_count": 8,
-      "image_count": 10
+      "image_count": 10,
+      "ai_training": {
+        "allowed": false,
+        "allowed_db_files": [],
+        "reason": "work-in-progress: this work/DB is still being curated for AI use. Pending an official flag in the upstream CreationsDB, the dataset opts this record out of AI training."
+      }
     },
     {
       "work_key": "#Works_UnauthedLogica",
@@ -49,7 +76,12 @@
       "title_ja": "アンオースドロジカ",
       "title_en": "UnauthedLogica",
       "character_count": 7,
-      "image_count": 0
+      "image_count": 0,
+      "ai_training": {
+        "allowed": false,
+        "allowed_db_files": [],
+        "reason": "work-in-progress: this work/DB is still being curated for AI use. Pending an official flag in the upstream CreationsDB, the dataset opts this record out of AI training."
+      }
     },
     {
       "work_key": "#Works_PastDivers",
@@ -57,7 +89,12 @@
       "title_ja": "パストダイヴァー",
       "title_en": "PastDivers",
       "character_count": 13,
-      "image_count": 2
+      "image_count": 2,
+      "ai_training": {
+        "allowed": false,
+        "allowed_db_files": [],
+        "reason": "work-in-progress: this work/DB is still being curated for AI use. Pending an official flag in the upstream CreationsDB, the dataset opts this record out of AI training."
+      }
     },
     {
       "work_key": "#Works_DestinyFoxRecords",
@@ -65,7 +102,12 @@
       "title_ja": "運命線狐の記録\nフィジカル9",
       "title_en": "Destiny Fox's Records\nPhysical 9",
       "character_count": 9,
-      "image_count": 11
+      "image_count": 11,
+      "ai_training": {
+        "allowed": false,
+        "allowed_db_files": [],
+        "reason": "work-in-progress: this work/DB is still being curated for AI use. Pending an official flag in the upstream CreationsDB, the dataset opts this record out of AI training."
+      }
     },
     {
       "work_key": "#Works_Proxies",
@@ -73,7 +115,12 @@
       "title_ja": "ラジアン代理",
       "title_en": "RadianN's Proxy",
       "character_count": 0,
-      "image_count": 3
+      "image_count": 3,
+      "ai_training": {
+        "allowed": false,
+        "allowed_db_files": [],
+        "reason": "work-in-progress: this work/DB is still being curated for AI use. Pending an official flag in the upstream CreationsDB, the dataset opts this record out of AI training."
+      }
     }
   ],
   "total_characters": 1150,

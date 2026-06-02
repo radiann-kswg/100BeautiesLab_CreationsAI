@@ -1,0 +1,37 @@
+{
+  "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
+  "_generated_at": "2026-06-02T01:21:15.966Z",
+  "ai_training_policy": {
+    "note": "創作DB側の正規フラグ実装までの暫定対応。allowed=true のレコードのみ AI 学習・生成に使用してください。",
+    "allowed": [
+      {
+        "work_key": "#Works_NumberTales",
+        "db_files": [
+          "db_Primary.json"
+        ]
+      }
+    ],
+    "disallowed_default": true,
+    "disallowed_reason": "work-in-progress: this work/DB is still being curated for AI use. Pending an official flag in the upstream CreationsDB, the dataset opts this record out of AI training.",
+    "consumer_guidance": [
+      "manifest.jsonl をそのまま使う場合: record.ai_training.allowed === true のレコードのみを採用してください。",
+      "あるいは manifest-training.jsonl を使えば、許可済みレコードのみが含まれます。",
+      "image-index.json / works/<Work>.json にも ai_training フラグが付与されています。"
+    ]
+  },
+  "target_environments": {
+    "novelai_sd": "各キャラクターレコード data.AIHints.forms.<form>.prompt_export / negative_prompt_export を貼付",
+    "chatgpt": "common.natural_language_description + forms.<form>.natural_language_description + identity_tags / form_tags を貼付",
+    "gemini": "上記に加え forms.<form>.reference_images.main を参照画像として添付"
+  },
+  "schema": {
+    "ai_training_field": {
+      "allowed": "boolean — true なら AI 学習・生成に利用可",
+      "reason": "string — allowed の判定理由（整備中/整備済等）"
+    },
+    "ai_hints_field": {
+      "common": "形態を問わない素体特徴 (identity_tags / palette_priority / natural_language_description 等)",
+      "forms": "形態別 (corefolder / humanoid) の outfit_features / ai_tags / prompt_export / negative_prompt_export / reference_images"
+    }
+  }
+}

@@ -24,14 +24,18 @@
 
 ```
 100BeautiesLab_CreationsAI/
-├── creations-db/              # Git サブモジュール（100BeautiesLab_CreationsDB @ develop）
+├── creations-db/              # Git サブモジュール（100BeautiesLab_CreationsDB @ develop / addon-ai-tag）
 │   └── data/                  #   原著作物のデータ（JSON・画像）← 変更禁止
 ├── ai-dataset/                # 自動生成 AI 学習データセット ← 手動編集禁止
 │   ├── index.json             #   全作品・全キャラクターのマスターインデックス
 │   ├── image-index.json       #   全画像パス一覧（作品・キャラクター別）
-│   ├── manifest.jsonl         #   LLM 取り込み向け JSONL（1行1レコード）
-│   ├── build-info.json        #   ビルドメタ情報（生成日時・サブモジュールコミット）
+│   ├── manifest.jsonl         #   LLM 取り込み向け JSONL（1行1レコード / 全件・ポリシーフラグ付き）
+│   ├── manifest-training.jsonl#   上記のうち ai_training.allowed = true レコードのみ（推奨入口）
+│   ├── policy.json            #   AI 学習利用ポリシーの機械可読サマリ
+│   ├── build-info.json        #   ビルドメタ情報（生成日時・サブモジュールコミット + ai_training_stats）
 │   └── works/                 #   作品別フラットデータ JSON
+├── docs/
+│   └── usage-gemini-chatgpt-novelai.md  # Gemini / ChatGPT / NovelAI 向け運用ガイド
 ├── scripts/
 │   └── build-dataset.js       # データセット生成スクリプト（読み取り専用）
 ├── .github/workflows/
@@ -63,6 +67,30 @@
 
 ## AI サービス向けクイックスタート
 
+### ⚠️ AI 学習利用ポリシー（暫定）
+
+本リポジトリでは、創作 DB 側で正規の AI フラグ実装が完了するまでの **暫定対応** として、
+以下の作品×DB のみ AI 学習・生成への利用を許可しています。
+
+| 作品                 | DB                | AI 学習・生成     | 備考                                                                 |
+| -------------------- | ----------------- | ----------------- | -------------------------------------------------------------------- |
+| `#Works_NumberTales` | `db_Primary.json` | ✅ 許可           | AIHints 二層構造 (`common` + `forms.{corefolder,humanoid}`) 実装済み |
+| 上記以外の作品・DB   | 全て              | ⛔ 抑止（整備中） | 上流リポジトリで正規フラグ実装後に解除予定                           |
+
+- 機械可読なポリシー: [`ai-dataset/policy.json`](./ai-dataset/policy.json)
+- フィルタリング済みサブセット (推奨): [`ai-dataset/manifest-training.jsonl`](./ai-dataset/manifest-training.jsonl)
+- 全レコードには `ai_training.allowed` フラグが付与されます。`manifest.jsonl` を使う場合は
+  必ず `record.ai_training.allowed === true` でフィルタしてから利用してください。
+
+### Gemini / ChatGPT / NovelAI での運用手順
+
+各サービスごとのプロンプト組み立て方、`AIHints` 二層構造の使い方、Python サンプルを
+[`docs/usage-gemini-chatgpt-novelai.md`](./docs/usage-gemini-chatgpt-novelai.md) にまとめています。
+
+- **NovelAI / SD**: `ai_hints.forms.<form>.prompt_export` / `negative_prompt_export` をそのまま貼付
+- **ChatGPT**: `common.natural_language_description` + `forms.<form>.natural_language_description` + `identity_tags` / `form_tags`
+- **Gemini**: 上記 + `forms.<form>.reference_images.main` を参照画像として添付
+
 ### リポジトリ全体を取得（サブモジュール込み）
 
 ```bash
@@ -71,12 +99,14 @@ git clone --recurse-submodules https://github.com/<your-account>/100BeautiesLab_
 
 ### データセットの主要エントリポイント
 
-| ファイル                          | 用途                                                           |
-| --------------------------------- | -------------------------------------------------------------- |
-| `ai-dataset/manifest.jsonl`       | LLM の学習・RAG 用 JSONL（1行1レコード、ヘッダーレコード含む） |
-| `ai-dataset/index.json`           | 全作品・全キャラクターの一覧インデックス                       |
-| `ai-dataset/image-index.json`     | 全画像の相対パス一覧（`creations-db/` を基点とするパス）       |
-| `ai-dataset/works/<WorkDir>.json` | 作品別フラットデータ                                           |
+| ファイル                             | 用途                                                                         |
+| ------------------------------------ | ---------------------------------------------------------------------------- |
+| `ai-dataset/manifest-training.jsonl` | **AI 学習許可済み**レコードのみの JSONL（推奨入口）                          |
+| `ai-dataset/manifest.jsonl`          | LLM の学習・RAG 用 JSONL（1行1レコード、`ai_training` フラグ付き）           |
+| `ai-dataset/policy.json`             | AI 学習利用ポリシーの機械可読サマリ                                          |
+| `ai-dataset/index.json`              | 全作品・全キャラクターの一覧インデックス（`ai_training` 付き）               |
+| `ai-dataset/image-index.json`        | 全画像の相対パス一覧（`creations-db/` を基点とするパス、`ai_training` 付き） |
+| `ai-dataset/works/<WorkDir>.json`    | 作品別フラットデータ（`ai_training` 付き）                                   |
 
 ### 画像ファイルへのアクセス
 
@@ -99,13 +129,27 @@ for img_path in idx["works"]["#Works_NumberTales"]["images"]:
 ```python
 import json
 
-with open("ai-dataset/manifest.jsonl") as f:
+# 推奨: フィルタ済みの training サブセットを使う
+with open("ai-dataset/manifest-training.jsonl") as f:
     for line in f:
         record = json.loads(line)
         if record["_type"] == "character":
             print(record["work_title_ja"], record["id"])
-            # record["data"] に原著作物のキャラクターデータが格納されています
-            # record["images"] に画像パス（作品カテゴリ別）が格納されています
+            hints = record.get("ai_hints")    # = data.AIHints と同一
+            if hints:
+                corefolder = hints["forms"].get("corefolder", {})
+                print("prompt:", corefolder.get("prompt_export"))
+
+# manifest.jsonl を直接使う場合は ai_training.allowed でフィルタを忘れずに
+with open("ai-dataset/manifest.jsonl") as f:
+    for line in f:
+        record = json.loads(line)
+        if record["_type"] != "character":
+            continue
+        if not record["ai_training"]["allowed"]:
+            continue   # 整備中のレコードはスキップ
+        # record["data"] に原著作物のキャラクターデータが格納されています
+        # record["images"] に画像パス（作品カテゴリ別）が格納されています
 ```
 
 ---
@@ -150,7 +194,9 @@ node scripts/build-dataset.js --verbose
 
 ## 関連リンク
 
+- [運用ガイド (Gemini / ChatGPT / NovelAI)](./docs/usage-gemini-chatgpt-novelai.md)
 - [原リポジトリ (100BeautiesLab_CreationsDB)](https://github.com/radiann-kswg/100BeautiesLab_CreationsDB)
+- [AIHints 仕様 (上流 docs)](./creations-db/docs/ai-hints-usage.md)
 - [百花繚乱研究所 データベース UI](https://database.numbertales-radiann.net/)
 - [ナンバーテールズ公式サイト](http://www.numbertales-radiann.com/)
 - [第三者の運用規約（原リポジトリ）](https://github.com/radiann-kswg/100BeautiesLab_CreationsDB/blob/develop/docs/third-party-policy.md)
