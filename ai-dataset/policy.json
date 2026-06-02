@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-06-02T01:21:15.966Z",
+  "_generated_at": "2026-06-02T01:23:42.301Z",
   "ai_training_policy": {
     "note": "創作DB側の正規フラグ実装までの暫定対応。allowed=true のレコードのみ AI 学習・生成に使用してください。",
     "allowed": [
