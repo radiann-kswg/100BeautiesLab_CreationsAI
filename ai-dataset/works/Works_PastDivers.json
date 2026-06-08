@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-06-02T03:31:58.422Z",
+  "_generated_at": "2026-06-08T07:43:05.395Z",
   "work_key": "#Works_PastDivers",
   "dir_name": "Works_PastDivers",
   "title_ja": "パストダイヴァー",
@@ -62,6 +62,10 @@
     "潤音(うるうね) ミオ"
   ],
   "character_ids_with_ai_hints": [],
+  "character_ids_with_silhouette_notes": [],
+  "character_ids_with_immutable_constraints": [],
+  "character_ids_with_negative_keywords": [],
+  "character_ids_with_work_common": [],
   "image_paths": [
     "data/Works_PastDivers/Images/DB_Primary/concept/cnsp_imgCL3G3.png",
     "data/Works_PastDivers/Images/DB_Primary/concept/cnsp_imgCL6G3.png"

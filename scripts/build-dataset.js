@@ -278,9 +278,9 @@ async function main() {
     ],
     ai_training_policy: aiTrainingPolicySummary,
     target_environments: {
-      novelai_sd: '各キャラクターレコード data.AIHints.forms.<form>.prompt_export / negative_prompt_export を貼付',
-      chatgpt:    'common.natural_language_description + forms.<form>.natural_language_description + identity_tags / form_tags を貼付',
-      gemini:     '上記に加え forms.<form>.reference_images.main を参照画像として添付',
+      novelai_sd: '各キャラクターレコード data.AIHints.forms.<form>.prompt_export / negative_prompt_export + forms.<form>.negative_keywords (corefolder の腕・脚等 structural NG 含む) を貼付',
+      chatgpt:    'common.natural_language_description + forms.<form>.natural_language_description + identity_tags / form_tags + forms.<form>.silhouette_notes + forms.<form>.immutable_constraints を貼付',
+      gemini:     '上記に加え forms.<form>.reference_images.main および work_common.reference_images.{corefolder_reference, humanoid_reference} を参照画像として添付',
     },
   };
   appendJSONL(manifestStream, headerRecord);
@@ -288,6 +288,11 @@ async function main() {
 
   let totalCharacters = 0;
   let totalAllowedCharacters = 0;
+  let totalWithAiHints = 0;
+  let totalWithSilhouetteNotes = 0;
+  let totalWithImmutableConstraints = 0;
+  let totalWithNegativeKeywords = 0;
+  let totalWithWorkCommon = 0;
 
   for (const workKey of workKeys) {
     const workTopMeta = creationWorks[workKey];
@@ -384,6 +389,23 @@ async function main() {
         // isPrivate: true のレコードは DB ポリシーに関わらずキャラクター単位で抑止
         const charPolicy = getCharacterAIPolicy(dbPolicy, charData);
 
+        // AIHints 新フィールド (2026-06-08 addon-ai-tag) の存在確認
+        const aiFormsCorefolder = aiHints?.forms?.corefolder;
+        const aiFormsHumanoid   = aiHints?.forms?.humanoid;
+        const hasAnySilhouetteNotes = !!(
+          (Array.isArray(aiFormsCorefolder?.silhouette_notes)      && aiFormsCorefolder.silhouette_notes.length > 0) ||
+          (Array.isArray(aiFormsHumanoid?.silhouette_notes)        && aiFormsHumanoid.silhouette_notes.length > 0)
+        );
+        const hasAnyImmutableConstraints = !!(
+          (Array.isArray(aiFormsCorefolder?.immutable_constraints) && aiFormsCorefolder.immutable_constraints.length > 0) ||
+          (Array.isArray(aiFormsHumanoid?.immutable_constraints)   && aiFormsHumanoid.immutable_constraints.length > 0)
+        );
+        const hasAnyNegativeKeywords = !!(
+          (Array.isArray(aiFormsCorefolder?.negative_keywords)     && aiFormsCorefolder.negative_keywords.length > 0) ||
+          (Array.isArray(aiFormsHumanoid?.negative_keywords)       && aiFormsHumanoid.negative_keywords.length > 0)
+        );
+        const hasWorkCommonBlock = !!(aiHints?.work_common);
+
         const charEntry = {
           id: charId,
           work_key: workKey,
@@ -393,14 +415,23 @@ async function main() {
           ai_training: charPolicy,
           ai_hints: aiHints,
           has_ai_hints: !!aiHints,
+          has_silhouette_notes: hasAnySilhouetteNotes,
+          has_immutable_constraints: hasAnyImmutableConstraints,
+          has_negative_keywords: hasAnyNegativeKeywords,
+          has_work_common: hasWorkCommonBlock,
           // 原データを変更せずそのまま参照
           data: charData,
           images,
         };
 
-        workEntry.characters.push({ id: charId, images, has_ai_hints: !!aiHints, ai_training_allowed: charPolicy.allowed });
+        workEntry.characters.push({ id: charId, images, has_ai_hints: !!aiHints, has_silhouette_notes: hasAnySilhouetteNotes, has_immutable_constraints: hasAnyImmutableConstraints, has_negative_keywords: hasAnyNegativeKeywords, has_work_common: hasWorkCommonBlock, ai_training_allowed: charPolicy.allowed });
         totalCharacters++;
         if (charPolicy.allowed) totalAllowedCharacters++;
+        if (aiHints) totalWithAiHints++;
+        if (hasAnySilhouetteNotes)       totalWithSilhouetteNotes++;
+        if (hasAnyImmutableConstraints)  totalWithImmutableConstraints++;
+        if (hasAnyNegativeKeywords)      totalWithNegativeKeywords++;
+        if (hasWorkCommonBlock)          totalWithWorkCommon++;
 
         // JSONL レコード（1キャラクター = 1行）
         const record = { _type: 'character', ...charEntry };
@@ -484,6 +515,10 @@ async function main() {
       db_files: workEntry.db_files,
       character_ids: workEntry.characters.map(c => c.id),
       character_ids_with_ai_hints: workEntry.characters.filter(c => c.has_ai_hints).map(c => c.id),
+      character_ids_with_silhouette_notes: workEntry.characters.filter(c => c.has_silhouette_notes).map(c => c.id),
+      character_ids_with_immutable_constraints: workEntry.characters.filter(c => c.has_immutable_constraints).map(c => c.id),
+      character_ids_with_negative_keywords: workEntry.characters.filter(c => c.has_negative_keywords).map(c => c.id),
+      character_ids_with_work_common: workEntry.characters.filter(c => c.has_work_common).map(c => c.id),
       image_paths: workImages,
     }, null, 2), 'utf8');
   }
@@ -543,7 +578,9 @@ async function main() {
       },
       ai_hints_field: {
         common: '形態を問わない素体特徴 (identity_tags / palette_priority / natural_language_description 等)',
-        forms:  '形態別 (corefolder / humanoid) の outfit_features / ai_tags / prompt_export / negative_prompt_export / reference_images',
+        forms:  '形態別 (corefolder / humanoid) の outfit_features / silhouette_notes / immutable_constraints / negative_keywords / ai_tags / prompt_export / negative_prompt_export / reference_images',
+        work_common: '作品共通の参照画像まとめ (reference_images.corefolder_reference[] / humanoid_reference[]) — 2026-06-08 追加',
+        alt_modes:   '将来予約モード格納 (corefolder_dressed.allowed / outfit_source) — 2026-06-08 追加',
       },
     },
   }, null, 2), 'utf8');
@@ -577,6 +614,13 @@ async function main() {
     total_characters: totalCharacters,
     total_general_images: imageIndex.general_images.length,
     ai_training_stats: aiTrainingStats,
+    ai_hints_stats: {
+      with_ai_hints:              totalWithAiHints,
+      with_silhouette_notes:      totalWithSilhouetteNotes,
+      with_immutable_constraints: totalWithImmutableConstraints,
+      with_negative_keywords:     totalWithNegativeKeywords,
+      with_work_common:           totalWithWorkCommon,
+    },
   }, null, 2), 'utf8');
   info(`build-info.json を書き込みました`);
 
