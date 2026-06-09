@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-06-08T08:27:44.593Z",
+  "_generated_at": "2026-06-09T01:26:51.964Z",
   "ai_training_policy": {
     "note": "以下のフラグを参照し、粒度に応じた多層判定で AI 学習・生成への利用可否を決定します。",
     "policy_source": {
@@ -19,7 +19,7 @@
   },
   "target_environments": {
     "novelai_sd": "各キャラクターレコード data.AIHints.forms.<form>.prompt_export / negative_prompt_export + forms.<form>.negative_keywords (corefolder の腕・脚等 structural NG 含む) を貼付",
-    "chatgpt": "common.natural_language_description + forms.<form>.natural_language_description + identity_tags / form_tags + forms.<form>.silhouette_notes + forms.<form>.immutable_constraints を貼付",
+    "chatgpt": "common.natural_language_description + forms.<form>.natural_language_description + identity_tags / form_tags + forms.<form>.silhouette_notes.body_description / silhouette_notes.attached_items + forms.<form>.immutable_constraints を貼付",
     "gemini": "上記に加え forms.<form>.reference_images.main および work_common.reference_images.{corefolder_reference, humanoid_reference} を参照画像として添付"
   },
   "schema": {
@@ -28,8 +28,9 @@
       "reason": "string — allowed の判定理由（整備中/整備済等）"
     },
     "ai_hints_field": {
-      "common": "形態を問わない素体特徴 (identity_tags / palette_priority / natural_language_description 等)",
-      "forms": "形態別 (corefolder / humanoid) の outfit_features / silhouette_notes / immutable_constraints / negative_keywords / ai_tags / prompt_export / negative_prompt_export / reference_images",
+      "common": "形態を問わない素体特徴 (identity_tags / palette_priority / natural_language_description / immutable_traits 等)",
+      "forms": "形態別 (corefolder / humanoid) の outfit_features / silhouette_notes / immutable_constraints / negative_keywords / ai_tags / prompt_export / negative_prompt_export / reference_images / natural_language_description",
+      "forms_silhouette_notes": "silhouette_notes は 2026-06-09 以降 { body_description: string[], attached_items: string[] } 形式 (旧 #String[] 形式とも互換)。本体素体と装着付属品を分離して保持する。",
       "work_common": "作品共通の参照画像まとめ (reference_images.corefolder_reference[] / humanoid_reference[]) — 2026-06-08 追加",
       "alt_modes": "将来予約モード格納 (corefolder_dressed.allowed / outfit_source) — 2026-06-08 追加"
     }

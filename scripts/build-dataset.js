@@ -166,6 +166,24 @@ function appendJSONL(stream, obj) {
   stream.write(JSON.stringify(obj, null, 0) + '\n');
 }
 
+/**
+ * silhouette_notes が「非空」かを判定する。
+ * 2026-06-09 の AIHints 強化により以下 2 形式が併存しうる:
+ *   - 旧: #String[]                                          (length > 0)
+ *   - 新: { body_description: #String[], attached_items: #String[] }  (どちらかが length > 0)
+ * @param {unknown} v
+ * @returns {boolean}
+ */
+function hasSilhouetteNotes(v) {
+  if (Array.isArray(v)) return v.length > 0;
+  if (v && typeof v === 'object') {
+    const body = Array.isArray(v.body_description) ? v.body_description.length : 0;
+    const att  = Array.isArray(v.attached_items)   ? v.attached_items.length   : 0;
+    return (body + att) > 0;
+  }
+  return false;
+}
+
 // ---------------------------------------------------------------------------
 // サブモジュールのコミットハッシュを取得
 // ---------------------------------------------------------------------------
@@ -174,7 +192,27 @@ function getSubmoduleCommit() {
   try {
     const gitModulesPath = path.join(REPO_ROOT, '.git', 'modules', 'creations-db', 'HEAD');
     if (fs.existsSync(gitModulesPath)) {
-      return fs.readFileSync(gitModulesPath, 'utf8').trim();
+      const head = fs.readFileSync(gitModulesPath, 'utf8').trim();
+      // HEAD が `ref: refs/heads/<branch>` の場合は参照解決して実コミット SHA を返す
+      const refMatch = head.match(/^ref:\s*(.+)$/);
+      if (refMatch) {
+        const refRel = refMatch[1].trim();
+        const refPath = path.join(REPO_ROOT, '.git', 'modules', 'creations-db', refRel);
+        if (fs.existsSync(refPath)) {
+          return fs.readFileSync(refPath, 'utf8').trim();
+        }
+        // packed-refs から探索
+        const packed = path.join(REPO_ROOT, '.git', 'modules', 'creations-db', 'packed-refs');
+        if (fs.existsSync(packed)) {
+          for (const line of fs.readFileSync(packed, 'utf8').split('\n')) {
+            if (line.startsWith('#') || line.startsWith('^')) continue;
+            const [sha, ref] = line.split(/\s+/);
+            if (ref === refRel) return sha;
+          }
+        }
+        return head; // fallback: 解決失敗なら ref 文字列のまま返す
+      }
+      return head;
     }
     // fallback: packed-refs or FETCH_HEAD
     const fetchHead = path.join(SUBMODULE, '.git', 'FETCH_HEAD');
@@ -279,7 +317,7 @@ async function main() {
     ai_training_policy: aiTrainingPolicySummary,
     target_environments: {
       novelai_sd: '各キャラクターレコード data.AIHints.forms.<form>.prompt_export / negative_prompt_export + forms.<form>.negative_keywords (corefolder の腕・脚等 structural NG 含む) を貼付',
-      chatgpt:    'common.natural_language_description + forms.<form>.natural_language_description + identity_tags / form_tags + forms.<form>.silhouette_notes + forms.<form>.immutable_constraints を貼付',
+      chatgpt:    'common.natural_language_description + forms.<form>.natural_language_description + identity_tags / form_tags + forms.<form>.silhouette_notes.body_description / silhouette_notes.attached_items + forms.<form>.immutable_constraints を貼付',
       gemini:     '上記に加え forms.<form>.reference_images.main および work_common.reference_images.{corefolder_reference, humanoid_reference} を参照画像として添付',
     },
   };
@@ -392,9 +430,13 @@ async function main() {
         // AIHints 新フィールド (2026-06-08 addon-ai-tag) の存在確認
         const aiFormsCorefolder = aiHints?.forms?.corefolder;
         const aiFormsHumanoid   = aiHints?.forms?.humanoid;
+        // silhouette_notes は 2026-06-09 の AIHints 強化で
+        //   旧: #String[]
+        //   新: { body_description: #String[], attached_items: #String[] }
+        // の 2 形式が併存しうるため、どちらでも「非空」を検出する。
         const hasAnySilhouetteNotes = !!(
-          (Array.isArray(aiFormsCorefolder?.silhouette_notes)      && aiFormsCorefolder.silhouette_notes.length > 0) ||
-          (Array.isArray(aiFormsHumanoid?.silhouette_notes)        && aiFormsHumanoid.silhouette_notes.length > 0)
+          hasSilhouetteNotes(aiFormsCorefolder?.silhouette_notes) ||
+          hasSilhouetteNotes(aiFormsHumanoid?.silhouette_notes)
         );
         const hasAnyImmutableConstraints = !!(
           (Array.isArray(aiFormsCorefolder?.immutable_constraints) && aiFormsCorefolder.immutable_constraints.length > 0) ||
@@ -577,8 +619,9 @@ async function main() {
         reason:  'string — allowed の判定理由（整備中/整備済等）',
       },
       ai_hints_field: {
-        common: '形態を問わない素体特徴 (identity_tags / palette_priority / natural_language_description 等)',
-        forms:  '形態別 (corefolder / humanoid) の outfit_features / silhouette_notes / immutable_constraints / negative_keywords / ai_tags / prompt_export / negative_prompt_export / reference_images',
+        common: '形態を問わない素体特徴 (identity_tags / palette_priority / natural_language_description / immutable_traits 等)',
+        forms:  '形態別 (corefolder / humanoid) の outfit_features / silhouette_notes / immutable_constraints / negative_keywords / ai_tags / prompt_export / negative_prompt_export / reference_images / natural_language_description',
+        forms_silhouette_notes: 'silhouette_notes は 2026-06-09 以降 { body_description: string[], attached_items: string[] } 形式 (旧 #String[] 形式とも互換)。本体素体と装着付属品を分離して保持する。',
         work_common: '作品共通の参照画像まとめ (reference_images.corefolder_reference[] / humanoid_reference[]) — 2026-06-08 追加',
         alt_modes:   '将来予約モード格納 (corefolder_dressed.allowed / outfit_source) — 2026-06-08 追加',
       },
