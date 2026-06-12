@@ -1,7 +1,7 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-06-09T05:35:51.334Z",
-  "_submodule_commit": "417e91dfe648712b822fb5aa9765acf2ccce2a50",
+  "_generated_at": "2026-06-12T09:03:07.783Z",
+  "_submodule_commit": "95bca80d5748d5fbb1d20114387d16e702fc6a4e",
   "works": [
     {
       "work_key": "#Works_NumberTales",
@@ -49,8 +49,8 @@
       "dir_name": "Works_UnibyteLive",
       "title_ja": "ハンカクライブ",
       "title_en": "UnibyteLive",
-      "character_count": 2,
-      "image_count": 0,
+      "character_count": 3,
+      "image_count": 2,
       "ai_training": {
         "allowed": false,
         "allowed_db_keys": [],
@@ -114,7 +114,7 @@
       "dir_name": "Works_Proxies",
       "title_ja": "ラジアン代理",
       "title_en": "RadianN's Proxy",
-      "character_count": 2,
+      "character_count": 3,
       "image_count": 3,
       "ai_training": {
         "allowed": false,
@@ -123,6 +123,6 @@
       }
     }
   ],
-  "total_characters": 372,
+  "total_characters": 374,
   "total_works": 9
 }

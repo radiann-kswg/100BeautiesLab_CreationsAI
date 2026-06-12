@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-06-09T05:35:51.461Z",
+  "_generated_at": "2026-06-12T09:03:07.918Z",
   "work_key": "#Works_UnibyteLive",
   "dir_name": "Works_UnibyteLive",
   "title_ja": "ハンカクライブ",
@@ -50,12 +50,16 @@
   ],
   "character_ids": [
     "A:アロー",
-    "S:ナーミィ"
+    "S:ナーミィ",
+    "Z:ジグ"
   ],
   "character_ids_with_ai_hints": [],
   "character_ids_with_silhouette_notes": [],
   "character_ids_with_immutable_constraints": [],
   "character_ids_with_negative_keywords": [],
   "character_ids_with_work_common": [],
-  "image_paths": []
+  "image_paths": [
+    "data/Works_UnibyteLive/Images/DB_Primary/keycapper/S/emstk_keycapperS-1.png",
+    "data/Works_UnibyteLive/Images/DB_Primary/keycapper/Z/emstk_keycapperZ-1.png"
+  ]
 }

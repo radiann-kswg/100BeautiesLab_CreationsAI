@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-06-09T05:35:51.482Z",
+  "_generated_at": "2026-06-12T09:03:07.940Z",
   "work_key": "#Works_Proxies",
   "dir_name": "Works_Proxies",
   "title_ja": "ラジアン代理",
@@ -22,6 +22,9 @@
       "GenderType",
       "Height_cm",
       "Weight_kg"
+    ],
+    "subFields": [
+      "ConversationPattern"
     ]
   },
   "ai_training": {
@@ -40,7 +43,8 @@
   ],
   "character_ids": [
     "ラジアン(2代目)",
-    "ラジアン(3代目)"
+    "ラジアン(3代目)",
+    "ラジアン(初代)\n扇小春"
   ],
   "character_ids_with_ai_hints": [],
   "character_ids_with_silhouette_notes": [],

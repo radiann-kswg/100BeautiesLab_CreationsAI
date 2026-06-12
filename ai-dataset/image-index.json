@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-06-09T05:35:51.335Z",
+  "_generated_at": "2026-06-12T09:03:07.785Z",
   "_path_base": "creations-db/",
   "works": {
     "#Works_NumberTales": {
@@ -507,8 +507,11 @@
         "allowed_db_keys": [],
         "note": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       },
-      "images": [],
-      "count": 0
+      "images": [
+        "data/Works_UnibyteLive/Images/DB_Primary/keycapper/S/emstk_keycapperS-1.png",
+        "data/Works_UnibyteLive/Images/DB_Primary/keycapper/Z/emstk_keycapperZ-1.png"
+      ],
+      "count": 2
     },
     "#Works_SinisterChangingGirls": {
       "title_ja": "豹変系女子",
