@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-06-12T09:03:07.908Z",
+  "_generated_at": "2026-06-13T10:14:32.013Z",
   "work_key": "#Works_FLInvestigator78",
   "dir_name": "Works_FLInvestigator78",
   "title_ja": "運命線探偵78",
@@ -27,23 +27,26 @@
     ]
   },
   "ai_training": {
-    "allowed": false,
-    "allowed_db_keys": [],
-    "reason": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
+    "allowed": true,
+    "allowed_db_keys": [
+      "#DB_Primary",
+      "#DB_PrimaryDealer"
+    ],
+    "reason": "AI_Optout / DB_Hidden / Works_Hidden are not set for this DB. This DB is opted in for AI training/generation use."
   },
   "db_files": [
     {
       "path": "data/Works_FLInvestigator78/DataBases/db_Primary.json",
       "ai_training": {
-        "allowed": false,
-        "reason": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
+        "allowed": true,
+        "reason": "AI_Optout / DB_Hidden / Works_Hidden are not set for this DB. This DB is opted in for AI training/generation use."
       }
     },
     {
       "path": "data/Works_FLInvestigator78/DataBases/db_PrimaryDealer.json",
       "ai_training": {
-        "allowed": false,
-        "reason": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
+        "allowed": true,
+        "reason": "AI_Optout / DB_Hidden / Works_Hidden are not set for this DB. This DB is opted in for AI training/generation use."
       }
     }
   ],

@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-06-12T09:03:07.785Z",
+  "_generated_at": "2026-06-13T10:14:31.894Z",
   "_path_base": "creations-db/",
   "works": {
     "#Works_NumberTales": {
@@ -9,7 +9,9 @@
       "ai_training": {
         "allowed": true,
         "allowed_db_keys": [
-          "#DB_Primary"
+          "#DB_Secondary",
+          "#Ref_Reference",
+          "#Ref_Vocabulary"
         ],
         "note": "画像パスのうち許可された DB に対応するサブディレクトリ (Images/DB_<name>/...) のみが AI 学習許可対象です。"
       },
@@ -447,9 +449,9 @@
         "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/3x11/emstk_corefolder3x11-2.png",
         "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/666/emstk_corefolder666-1.png",
         "data/Works_NumberTales/Images/General/catalog/chr-dsgn_NTsCatalog-Summary.png",
-        "data/Works_NumberTales/Images/Ref_Glossary/concept-figure/cnsp-fg_NTsCoreFolder.png",
-        "data/Works_NumberTales/Images/Ref_Glossary/concept-figure/cnsp-fg_NTsHumanoid.png",
-        "data/Works_NumberTales/Images/Ref_Reference/concept-figure/cnsp-fg_NTsClass.png"
+        "data/Works_NumberTales/Images/Ref_Reference/concept-figure/cnsp-fg_NTsClass.png",
+        "data/Works_NumberTales/Images/Ref_Vocabulary/concept-figure/cnsp-fg_NTsCoreFolder.png",
+        "data/Works_NumberTales/Images/Ref_Vocabulary/concept-figure/cnsp-fg_NTsHumanoid.png"
       ],
       "count": 436
     },
@@ -457,9 +459,12 @@
       "title_ja": "運命線探偵78",
       "title_en": "the Fate-Line Investigator 78",
       "ai_training": {
-        "allowed": false,
-        "allowed_db_keys": [],
-        "note": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
+        "allowed": true,
+        "allowed_db_keys": [
+          "#DB_Primary",
+          "#DB_PrimaryDealer"
+        ],
+        "note": "画像パスのうち許可された DB に対応するサブディレクトリ (Images/DB_<name>/...) のみが AI 学習許可対象です。"
       },
       "images": [
         "data/Works_FLInvestigator78/Images/DB_Primary/arts/arts_imgFLDealer.png",
@@ -479,9 +484,11 @@
       "title_ja": "獣爾騎兵",
       "title_en": "Shou'ar Riders\nBeasted Cavalry",
       "ai_training": {
-        "allowed": false,
-        "allowed_db_keys": [],
-        "note": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
+        "allowed": true,
+        "allowed_db_keys": [
+          "#DB_Primary"
+        ],
+        "note": "画像パスのうち許可された DB に対応するサブディレクトリ (Images/DB_<name>/...) のみが AI 学習許可対象です。"
       },
       "images": [
         "data/Works_ShouArRiders/Images/DB_Primary/arts/art_imgEZ13-meowsday2023.png",
@@ -517,9 +524,11 @@
       "title_ja": "豹変系女子",
       "title_en": "Sinister Changing Girls",
       "ai_training": {
-        "allowed": false,
-        "allowed_db_keys": [],
-        "note": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
+        "allowed": true,
+        "allowed_db_keys": [
+          "#DB_Primary"
+        ],
+        "note": "画像パスのうち許可された DB に対応するサブディレクトリ (Images/DB_<name>/...) のみが AI 学習許可対象です。"
       },
       "images": [
         "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/art_imgDrcNE-InfrationAerialSwimming.png",
@@ -550,9 +559,11 @@
       "title_ja": "パストダイヴァー",
       "title_en": "PastDivers",
       "ai_training": {
-        "allowed": false,
-        "allowed_db_keys": [],
-        "note": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
+        "allowed": true,
+        "allowed_db_keys": [
+          "#DB_Primary"
+        ],
+        "note": "画像パスのうち許可された DB に対応するサブディレクトリ (Images/DB_<name>/...) のみが AI 学習許可対象です。"
       },
       "images": [
         "data/Works_PastDivers/Images/DB_Primary/concept/cnsp_imgCL3G3.png",
@@ -564,9 +575,11 @@
       "title_ja": "運命線狐の記録\nフィジカル9",
       "title_en": "Destiny Fox's Records\nPhysical 9",
       "ai_training": {
-        "allowed": false,
-        "allowed_db_keys": [],
-        "note": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
+        "allowed": true,
+        "allowed_db_keys": [
+          "#DB_Primary"
+        ],
+        "note": "画像パスのうち許可された DB に対応するサブディレクトリ (Images/DB_<name>/...) のみが AI 学習許可対象です。"
       },
       "images": [
         "data/Works_DestinyFoxRecords/Images/DB_Primary/concept/cnsp_imgPhysU-m.png",
@@ -587,9 +600,11 @@
       "title_ja": "ラジアン代理",
       "title_en": "RadianN's Proxy",
       "ai_training": {
-        "allowed": false,
-        "allowed_db_keys": [],
-        "note": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
+        "allowed": true,
+        "allowed_db_keys": [
+          "#DB_Proxy"
+        ],
+        "note": "画像パスのうち許可された DB に対応するサブディレクトリ (Images/DB_<name>/...) のみが AI 学習許可対象です。"
       },
       "images": [
         "data/Works_Proxies/Images/DB_Proxy/design/dsgn_imgRN2.png",

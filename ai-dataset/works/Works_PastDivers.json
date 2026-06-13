@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-06-12T09:03:07.932Z",
+  "_generated_at": "2026-06-13T10:14:32.034Z",
   "work_key": "#Works_PastDivers",
   "dir_name": "Works_PastDivers",
   "title_ja": "パストダイヴァー",
@@ -33,16 +33,18 @@
     ]
   },
   "ai_training": {
-    "allowed": false,
-    "allowed_db_keys": [],
-    "reason": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
+    "allowed": true,
+    "allowed_db_keys": [
+      "#DB_Primary"
+    ],
+    "reason": "AI_Optout / DB_Hidden / Works_Hidden are not set for this DB. This DB is opted in for AI training/generation use."
   },
   "db_files": [
     {
       "path": "data/Works_PastDivers/DataBases/db_Primary.json",
       "ai_training": {
-        "allowed": false,
-        "reason": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
+        "allowed": true,
+        "reason": "AI_Optout / DB_Hidden / Works_Hidden are not set for this DB. This DB is opted in for AI training/generation use."
       }
     }
   ],

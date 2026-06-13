@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-06-12T09:03:07.896Z",
+  "_generated_at": "2026-06-13T10:14:31.997Z",
   "work_key": "#Works_NumberTales",
   "dir_name": "Works_NumberTales",
   "title_ja": "ナンバーテールズ",
@@ -39,7 +39,9 @@
   "ai_training": {
     "allowed": true,
     "allowed_db_keys": [
-      "#DB_Primary"
+      "#DB_Secondary",
+      "#Ref_Reference",
+      "#Ref_Vocabulary"
     ],
     "reason": "AI_Optout / DB_Hidden / Works_Hidden are not set for this DB. This DB is opted in for AI training/generation use."
   },
@@ -47,8 +49,8 @@
     {
       "path": "data/Works_NumberTales/DataBases/db_Primary.json",
       "ai_training": {
-        "allowed": true,
-        "reason": "AI_Optout / DB_Hidden / Works_Hidden are not set for this DB. This DB is opted in for AI training/generation use."
+        "allowed": false,
+        "reason": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       }
     },
     {
@@ -68,22 +70,22 @@
     {
       "path": "data/Works_NumberTales/DataBases/db_Secondary.json",
       "ai_training": {
-        "allowed": false,
-        "reason": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
-      }
-    },
-    {
-      "path": "data/Works_NumberTales/References/ref_Glossary.json",
-      "ai_training": {
-        "allowed": false,
-        "reason": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
+        "allowed": true,
+        "reason": "AI_Optout / DB_Hidden / Works_Hidden are not set for this DB. This DB is opted in for AI training/generation use."
       }
     },
     {
       "path": "data/Works_NumberTales/References/ref_Reference.json",
       "ai_training": {
-        "allowed": false,
-        "reason": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
+        "allowed": true,
+        "reason": "AI_Optout / DB_Hidden / Works_Hidden are not set for this DB. This DB is opted in for AI training/generation use."
+      }
+    },
+    {
+      "path": "data/Works_NumberTales/References/ref_Vocabulary.json",
+      "ai_training": {
+        "allowed": true,
+        "reason": "AI_Optout / DB_Hidden / Works_Hidden are not set for this DB. This DB is opted in for AI training/generation use."
       }
     }
   ],
@@ -1282,8 +1284,8 @@
     "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/3x11/emstk_corefolder3x11-2.png",
     "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/666/emstk_corefolder666-1.png",
     "data/Works_NumberTales/Images/General/catalog/chr-dsgn_NTsCatalog-Summary.png",
-    "data/Works_NumberTales/Images/Ref_Glossary/concept-figure/cnsp-fg_NTsCoreFolder.png",
-    "data/Works_NumberTales/Images/Ref_Glossary/concept-figure/cnsp-fg_NTsHumanoid.png",
-    "data/Works_NumberTales/Images/Ref_Reference/concept-figure/cnsp-fg_NTsClass.png"
+    "data/Works_NumberTales/Images/Ref_Reference/concept-figure/cnsp-fg_NTsClass.png",
+    "data/Works_NumberTales/Images/Ref_Vocabulary/concept-figure/cnsp-fg_NTsCoreFolder.png",
+    "data/Works_NumberTales/Images/Ref_Vocabulary/concept-figure/cnsp-fg_NTsHumanoid.png"
   ]
 }
