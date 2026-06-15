@@ -15,6 +15,10 @@ on:
       - "creations-db" # Git サブモジュールの参照ファイル変更
       - "scripts/**" # ビルドスクリプト変更時も再生成
 
+  # 毎朝 6:00 JST にサブモジュールを自動チェック・更新
+  schedule:
+    - cron: "0 21 * * *"
+
   # 手動実行（サブモジュールを最新に更新してからビルドしたい場合）
   workflow_dispatch:
     inputs:
@@ -45,7 +49,7 @@ jobs:
       # 2. (手動実行時) サブモジュールを addon-ai-tag ブランチの最新に更新
       # ------------------------------------------------------------------
       - name: Update submodule to latest addon-ai-tag
-        if: ${{ github.event_name == 'workflow_dispatch' && inputs.update_submodule == true }}
+        if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.update_submodule == true) }}
         run: |
           git submodule update --remote --merge creations-db
           echo "Submodule updated to: $(git -C creations-db rev-parse HEAD)"
