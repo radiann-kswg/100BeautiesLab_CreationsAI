@@ -1,7 +1,7 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-06-15T21:56:05.719Z",
-  "_submodule_commit": "382ff13e83e5e4ff7e4e9c287706b42652f44411",
+  "_generated_at": "2026-06-16T04:38:54.022Z",
+  "_submodule_commit": "eaa6485b0261157dcf0144bdadbddf3982cc69a8",
   "works": [
     {
       "work_key": "#Works_NumberTales",
@@ -13,6 +13,7 @@
       "ai_training": {
         "allowed": true,
         "allowed_db_keys": [
+          "#DB_Primary",
           "#DB_Secondary",
           "#Ref_Reference",
           "#Ref_Vocabulary"
@@ -28,12 +29,9 @@
       "character_count": 22,
       "image_count": 10,
       "ai_training": {
-        "allowed": true,
-        "allowed_db_keys": [
-          "#DB_Primary",
-          "#DB_PrimaryDealer"
-        ],
-        "reason": "AI_Optout / DB_Hidden / Works_Hidden are not set for this DB. This DB is opted in for AI training/generation use."
+        "allowed": false,
+        "allowed_db_keys": [],
+        "reason": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       }
     },
     {
@@ -44,11 +42,9 @@
       "character_count": 7,
       "image_count": 12,
       "ai_training": {
-        "allowed": true,
-        "allowed_db_keys": [
-          "#DB_Primary"
-        ],
-        "reason": "AI_Optout / DB_Hidden / Works_Hidden are not set for this DB. This DB is opted in for AI training/generation use."
+        "allowed": false,
+        "allowed_db_keys": [],
+        "reason": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       }
     },
     {
@@ -72,11 +68,9 @@
       "character_count": 8,
       "image_count": 10,
       "ai_training": {
-        "allowed": true,
-        "allowed_db_keys": [
-          "#DB_Primary"
-        ],
-        "reason": "AI_Optout / DB_Hidden / Works_Hidden are not set for this DB. This DB is opted in for AI training/generation use."
+        "allowed": false,
+        "allowed_db_keys": [],
+        "reason": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       }
     },
     {
@@ -100,11 +94,9 @@
       "character_count": 13,
       "image_count": 2,
       "ai_training": {
-        "allowed": true,
-        "allowed_db_keys": [
-          "#DB_Primary"
-        ],
-        "reason": "AI_Optout / DB_Hidden / Works_Hidden are not set for this DB. This DB is opted in for AI training/generation use."
+        "allowed": false,
+        "allowed_db_keys": [],
+        "reason": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       }
     },
     {
@@ -115,11 +107,9 @@
       "character_count": 9,
       "image_count": 11,
       "ai_training": {
-        "allowed": true,
-        "allowed_db_keys": [
-          "#DB_Primary"
-        ],
-        "reason": "AI_Optout / DB_Hidden / Works_Hidden are not set for this DB. This DB is opted in for AI training/generation use."
+        "allowed": false,
+        "allowed_db_keys": [],
+        "reason": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       }
     },
     {
@@ -130,11 +120,9 @@
       "character_count": 3,
       "image_count": 3,
       "ai_training": {
-        "allowed": true,
-        "allowed_db_keys": [
-          "#DB_Proxy"
-        ],
-        "reason": "AI_Optout / DB_Hidden / Works_Hidden are not set for this DB. This DB is opted in for AI training/generation use."
+        "allowed": false,
+        "allowed_db_keys": [],
+        "reason": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       }
     }
   ],
