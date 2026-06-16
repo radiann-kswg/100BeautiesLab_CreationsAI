@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-06-16T05:14:40.386Z",
+  "_generated_at": "2026-06-16T05:15:52.315Z",
   "_path_base": "creations-db/",
   "works": {
     "#Works_NumberTales": {
@@ -56,6 +56,8 @@
         "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/2025-2026/art_img78-corefolder.png",
         "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/autumnMoon/art_autumnMoon2023.png",
         "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/autumnMoon/art_autumnMoon2024.png",
+        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/_lang_EN/art[EN]_sphericateDay202202.png",
+        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/_lang_EN/art[EN]_sphericateDay202305-img57.png",
         "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202111.png",
         "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202112.png",
         "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202201.png",
@@ -64,10 +66,8 @@
         "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202305-img75.png",
         "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202306.png",
         "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202307.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202309-img9.png",
         "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202309-Overall.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/_lang_EN/art[EN]_sphericateDay202202.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/_lang_EN/art[EN]_sphericateDay202305-img57.png",
+        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202309-img9.png",
         "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_img1-humanoid.png",
         "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_img12-humanoid.png",
         "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_img15-humanoid.png",
@@ -574,8 +574,8 @@
       "images": [
         "data/Works_DestinyFoxRecords/Images/DB_Primary/concept/cnsp_imgPhysU-m.png",
         "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgPhysU-A.png",
-        "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgPhysU-cd.png",
         "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgPhysU-K.png",
+        "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgPhysU-cd.png",
         "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgPhysU-kg.png",
         "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgPhysU-m.png",
         "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgPhysU-mol.png",
