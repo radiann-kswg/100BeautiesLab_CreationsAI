@@ -158,6 +158,7 @@ node scripts/build-dataset.js --verbose
 | 作品レイヤー | `Works_Hidden: true` | ⛔ false |
 | DB レイヤー | `DB_Hidden: true` または `AI_Optout: true` | ⛔ false |
 | DB レイヤー | `Databases` にエントリなし（保守的 fallback） | ⛔ false |
+| 二次創作カテゴリ | `_Secondaries[*].AI_Optout: true`（レコードの `sec_SeriesTitle` がマップに一致） | ⛔ false |
 | キャラクターレイヤー | `isPrivate: true` | ⛔ false |
 | 上記以外 | `AI_Optout` 未設定 or `false` | ✅ true |
 
@@ -230,15 +231,15 @@ Copilot はこの手順書に従い、以下の流れで作業を補助する:
 
 | キー | 日本語タイトル | 英語タイトル | AI学習 |
 |---|---|---|---|
-| `#Works_NumberTales` | ナンバーテールズ | NumberTales | ✅ |
-| `#Works_FLInvestigator78` | 運命線探偵78 | the Fate-Line Investigator 78 | ✅ |
-| `#Works_ShouArRiders` | 獣爾騎兵 | Shou'ar Riders (Beasted Cavalry) | ✅ |
+| `#Works_NumberTales` | ナンバーテールズ | NumberTales | ✅（一次創作のみ） |
+| `#Works_FLInvestigator78` | 運命線探偵78 | the Fate-Line Investigator 78 | ⛔ |
+| `#Works_ShouArRiders` | 獣爾騎兵 | Shou'ar Riders (Beasted Cavalry) | ⛔ |
 | `#Works_UnibyteLive` | ハンカクライブ | UnibyteLive | ⛔ |
-| `#Works_SinisterChangingGirls` | 豹変系女子 | Sinister Changing Girls | ✅ |
+| `#Works_SinisterChangingGirls` | 豹変系女子 | Sinister Changing Girls | ⛔ |
 | `#Works_UnauthedLogica` | アンオースドロジカ | UnauthedLogica | ⛔ |
-| `#Works_PastDivers` | パストダイヴァー | PastDivers | ✅ |
-| `#Works_DestinyFoxRecords` | 運命線狐の記録（フィジカル9） | Destiny Fox's Records (Physical 9) | ✅ |
-| `#Works_Proxies` | ラジアン代理 | RadianN's Proxy | ✅ |
+| `#Works_PastDivers` | パストダイヴァー | PastDivers | ⛔ |
+| `#Works_DestinyFoxRecords` | 運命線狐の記録（フィジカル9） | Destiny Fox's Records (Physical 9) | ⛔ |
+| `#Works_Proxies` | ラジアン代理 | RadianN's Proxy | ⛔ |
 
-現在のデータセットは全 9 作品・374 キャラクターを収録し、うち 7 作品が `ai_training.allowed = true`、2 作品（`#Works_UnibyteLive` / `#Works_UnauthedLogica`、いずれも `Works_Hidden: true`）が `false` です。キャラクター単位では全 374 キャラ中 99 キャラが学習許可です。
+現在のデータセットは全 9 作品・374 キャラクターを収録し、うち 1 作品（`#Works_NumberTales` の一次創作 DB のみ）が `ai_training.allowed = true`、8 作品が `false` です。キャラクター単位では全 374 キャラ中 105 キャラが学習許可（全てナンバーテールズ一次創作）です。
 最新状況は `ai-dataset/index.json` を参照してください。

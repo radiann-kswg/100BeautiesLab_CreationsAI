@@ -75,8 +75,31 @@ const AI_TRAINING_DISALLOWED_NO_META_REASON =
   'No Databases entry found in db_meta.json for this DB key. Treating as opted out (conservative fallback).';
 const AI_TRAINING_DISALLOWED_IS_PRIVATE =
   'isPrivate: true is set on this character record. This record is non-public and opted out of AI training/generation use.';
+const AI_TRAINING_DISALLOWED_SECONDARY_CATEGORY =
+  'AI_Optout: true is set in _Secondaries category for this record\'s sec_SeriesTitle. This record is opted out of AI training/generation use.';
 const AI_TRAINING_ALLOWED_REASON =
   'AI_Optout / DB_Hidden / Works_Hidden are not set for this DB. This DB is opted in for AI training/generation use.';
+
+/**
+ * _Secondaries の各カテゴリが持つ AI_Optout を集約して返す。
+ * sec_SeriesTitle → true のマップと、null タイトルのデフォルトフラグを返す。
+ *
+ * @param {object|null} dbEntry  DataBases/db_meta.json の Databases["#DB_X"] エントリ
+ * @returns {{ map: Map<string,boolean>, defaultOptout: boolean }}
+ */
+function buildSecondaryOptoutMap(dbEntry) {
+  const map = new Map();
+  let defaultOptout = false;
+  for (const sec of (dbEntry?._Secondaries ?? [])) {
+    if (sec.AI_Optout !== true) continue;
+    if (sec.sec_SeriesTitle != null) {
+      map.set(sec.sec_SeriesTitle, true);
+    } else {
+      defaultOptout = true;
+    }
+  }
+  return { map, defaultOptout };
+}
 
 /**
  * DB 層のポリシーを返す。Works_Hidden → DB_Hidden → AI_Optout → エントリなし の順に判定。
@@ -110,15 +133,29 @@ function getAITrainingPolicy(worksHidden, dbEntry) {
 }
 
 /**
- * キャラクターレコード層のポリシーを返す。DB 層ポリシーよりもキャラクターレコードの isPrivate が優先。
+ * キャラクターレコード層のポリシーを返す。
+ * isPrivate チェック後、_Secondaries カテゴリ別 AI_Optout を適用する。
  *
  * @param {{ allowed: boolean, reason: string }} dbPolicy  DB 層ポリシー
  * @param {object}  charData  キャラクターレコードオブジェクト
+ * @param {{ map: Map<string,boolean>, defaultOptout: boolean }|null} secondaryOptout  _Secondaries のオプトアウトマップ
  * @returns {{ allowed: boolean, reason: string }}
  */
-function getCharacterAIPolicy(dbPolicy, charData) {
+function getCharacterAIPolicy(dbPolicy, charData, secondaryOptout = null) {
   if (charData && charData.isPrivate === true) {
     return { allowed: false, reason: AI_TRAINING_DISALLOWED_IS_PRIVATE };
+  }
+  if (dbPolicy.allowed && secondaryOptout) {
+    const { map, defaultOptout } = secondaryOptout;
+    if (map.size > 0 || defaultOptout) {
+      const seriesTitle = charData?.sec_SeriesTitle ?? null;
+      const isOptout = seriesTitle != null
+        ? map.get(seriesTitle) === true
+        : defaultOptout;
+      if (isOptout) {
+        return { allowed: false, reason: AI_TRAINING_DISALLOWED_SECONDARY_CATEGORY };
+      }
+    }
   }
   return dbPolicy;
 }
@@ -285,12 +322,13 @@ async function main() {
   const aiTrainingPolicySummary = {
     note: '以下のフラグを参照し、粒度に応じた多層判定で AI 学習・生成への利用可否を決定します。',
     policy_source: {
-      works_hidden:  'data/db_meta.json — CreationWorks["#Works_<Name>"].Works_Hidden（作品単位の非公開）',
-      db_hidden:     'data/Works_<work>/DataBases/db_meta.json — Databases["#DB_<Name>"].DB_Hidden（DB単位の非公開）',
-      ai_optout:     'data/Works_<work>/DataBases/db_meta.json — Databases["#DB_<Name>"].AI_Optout（AI学習オプトアウト）',
-      is_private:    'data/Works_<work>/DataBases/db_*.json — <record>.isPrivate（レコード単位の非公開）',
+      works_hidden:           'data/db_meta.json — CreationWorks["#Works_<Name>"].Works_Hidden（作品単位の非公開）',
+      db_hidden:              'data/Works_<work>/DataBases/db_meta.json — Databases["#DB_<Name>"].DB_Hidden（DB単位の非公開）',
+      ai_optout:              'data/Works_<work>/DataBases/db_meta.json — Databases["#DB_<Name>"].AI_Optout（DB単位の AI 学習オプトアウト）',
+      secondary_category_optout: 'data/Works_<work>/DataBases/db_meta.json — Databases["#DB_<Name>"]._Secondaries[*].AI_Optout（二次創作カテゴリ別 AI 学習オプトアウト）',
+      is_private:             'data/Works_<work>/DataBases/db_*.json — <record>.isPrivate（レコード単位の非公開）',
     },
-    disallowed_priority: 'Works_Hidden → DB_Hidden → AI_Optout → db_meta エントリなし → isPrivate（いずれか true で allowed=false）',
+    disallowed_priority: 'Works_Hidden → DB_Hidden → AI_Optout → db_meta エントリなし → _Secondaries カテゴリ別 AI_Optout → isPrivate（いずれか true で allowed=false）',
     disallowed_default: false,
     consumer_guidance: [
       'manifest.jsonl をそのまま使う場合: record.ai_training.allowed === true のレコードのみを採用してください。',
@@ -380,6 +418,7 @@ async function main() {
       if (!dbEntry || typeof dbEntry !== 'object' || Array.isArray(dbEntry)) continue;
 
       const dbPolicy = getAITrainingPolicy(worksHidden, dbEntry);
+      const secondaryOptout = buildSecondaryOptoutMap(dbEntry);
 
       // DB ファイルパスを db_meta エントリから解決
       const layer = (typeof dbEntry.DB_Layer === 'string' && dbEntry.DB_Layer.trim()) || 'DataBases';
@@ -397,7 +436,10 @@ async function main() {
         continue;
       }
 
-      if (dbPolicy.allowed) allowedDbKeys.push(dbMetaKey);
+      // _Secondaries の null-title カテゴリのみが全て AI_Optout: true の場合（=全レコードがデフォルトでブロック）は
+      // DB レベルでも allowed_db_keys に含めない
+      const isFullyDefaultOptedOut = secondaryOptout.defaultOptout && secondaryOptout.map.size === 0;
+      if (dbPolicy.allowed && !isFullyDefaultOptedOut) allowedDbKeys.push(dbMetaKey);
       workEntry.db_files.push({ path: dbRelPath, ai_training: dbPolicy });
 
       // レコードを取得（_Commons 補完済み・isPrivate 含む）
@@ -424,8 +466,8 @@ async function main() {
         // AIHints を data から取り出してトップレベルにも露出する
         const aiHints = charData.AIHints ?? null;
 
-        // isPrivate: true のレコードは DB ポリシーに関わらずキャラクター単位で抑止
-        const charPolicy = getCharacterAIPolicy(dbPolicy, charData);
+        // isPrivate および _Secondaries カテゴリ別 AI_Optout を考慮してポリシーを決定
+        const charPolicy = getCharacterAIPolicy(dbPolicy, charData, secondaryOptout);
 
         // AIHints 新フィールド (2026-06-08 addon-ai-tag) の存在確認
         const aiFormsCorefolder = aiHints?.forms?.corefolder;

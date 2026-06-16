@@ -1,15 +1,20 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
+<<<<<<< Updated upstream
   "_generated_at": "2026-06-16T04:39:47.651Z",
+=======
+  "_generated_at": "2026-06-16T05:10:39.703Z",
+>>>>>>> Stashed changes
   "ai_training_policy": {
     "note": "以下のフラグを参照し、粒度に応じた多層判定で AI 学習・生成への利用可否を決定します。",
     "policy_source": {
       "works_hidden": "data/db_meta.json — CreationWorks[\"#Works_<Name>\"].Works_Hidden（作品単位の非公開）",
       "db_hidden": "data/Works_<work>/DataBases/db_meta.json — Databases[\"#DB_<Name>\"].DB_Hidden（DB単位の非公開）",
-      "ai_optout": "data/Works_<work>/DataBases/db_meta.json — Databases[\"#DB_<Name>\"].AI_Optout（AI学習オプトアウト）",
+      "ai_optout": "data/Works_<work>/DataBases/db_meta.json — Databases[\"#DB_<Name>\"].AI_Optout（DB単位の AI 学習オプトアウト）",
+      "secondary_category_optout": "data/Works_<work>/DataBases/db_meta.json — Databases[\"#DB_<Name>\"]._Secondaries[*].AI_Optout（二次創作カテゴリ別 AI 学習オプトアウト）",
       "is_private": "data/Works_<work>/DataBases/db_*.json — <record>.isPrivate（レコード単位の非公開）"
     },
-    "disallowed_priority": "Works_Hidden → DB_Hidden → AI_Optout → db_meta エントリなし → isPrivate（いずれか true で allowed=false）",
+    "disallowed_priority": "Works_Hidden → DB_Hidden → AI_Optout → db_meta エントリなし → _Secondaries カテゴリ別 AI_Optout → isPrivate（いずれか true で allowed=false）",
     "disallowed_default": false,
     "consumer_guidance": [
       "manifest.jsonl をそのまま使う場合: record.ai_training.allowed === true のレコードのみを採用してください。",

@@ -138,13 +138,14 @@ node scripts/build-dataset.js --verbose
 
 ### AI 学習ポリシー判定（`build-dataset.js` の核心ロジック）
 
-`ai_training.allowed` は以下の優先順で判定される（`Works_Hidden → DB_Hidden → AI_Optout → db_meta エントリなし → isPrivate` のいずれかが true なら false）。
+`ai_training.allowed` は以下の優先順で判定される（いずれかの条件が true なら false）。
 
 | レイヤー | 判定条件 | `allowed` |
 |---|---|---|
 | 作品 | `Works_Hidden: true` | ⛔ false |
 | DB | `DB_Hidden: true` または `AI_Optout: true` | ⛔ false |
 | DB | `Databases` にエントリなし（保守的 fallback） | ⛔ false |
+| 二次創作カテゴリ | `_Secondaries[*].AI_Optout: true`（レコードの `sec_SeriesTitle` がマップに一致） | ⛔ false |
 | キャラクター | `isPrivate: true` | ⛔ false |
 | 上記以外 | `AI_Optout` 未設定 or `false` | ✅ true |
 
@@ -205,15 +206,15 @@ node scripts/build-dataset.js --verbose
 
 | キー | 日本語タイトル | 英語タイトル | AI学習 |
 |---|---|---|---|
-| `#Works_NumberTales` | ナンバーテールズ | NumberTales | ✅ |
-| `#Works_FLInvestigator78` | 運命線探偵78 | the Fate-Line Investigator 78 | ✅ |
-| `#Works_ShouArRiders` | 獣爾騎兵 | Shou'ar Riders (Beasted Cavalry) | ✅ |
+| `#Works_NumberTales` | ナンバーテールズ | NumberTales | ✅（一次創作のみ） |
+| `#Works_FLInvestigator78` | 運命線探偵78 | the Fate-Line Investigator 78 | ⛔ |
+| `#Works_ShouArRiders` | 獣爾騎兵 | Shou'ar Riders (Beasted Cavalry) | ⛔ |
 | `#Works_UnibyteLive` | ハンカクライブ | UnibyteLive | ⛔ |
-| `#Works_SinisterChangingGirls` | 豹変系女子 | Sinister Changing Girls | ✅ |
+| `#Works_SinisterChangingGirls` | 豹変系女子 | Sinister Changing Girls | ⛔ |
 | `#Works_UnauthedLogica` | アンオースドロジカ | UnauthedLogica | ⛔ |
-| `#Works_PastDivers` | パストダイヴァー | PastDivers | ✅ |
-| `#Works_DestinyFoxRecords` | 運命線狐の記録（フィジカル9） | Destiny Fox's Records (Physical 9) | ✅ |
-| `#Works_Proxies` | ラジアン代理 | RadianN's Proxy | ✅ |
+| `#Works_PastDivers` | パストダイヴァー | PastDivers | ⛔ |
+| `#Works_DestinyFoxRecords` | 運命線狐の記録（フィジカル9） | Destiny Fox's Records (Physical 9) | ⛔ |
+| `#Works_Proxies` | ラジアン代理 | RadianN's Proxy | ⛔ |
 
-現在のデータセットは全 9 作品・374 キャラクターを収録し、うち 7 作品が `ai_training.allowed = true`、2 作品（`#Works_UnibyteLive` / `#Works_UnauthedLogica`、いずれも `Works_Hidden: true`）が `false` です。キャラクター単位では全 374 キャラ中 99 キャラが学習許可です。
+現在のデータセットは全 9 作品・374 キャラクターを収録し、うち 1 作品（`#Works_NumberTales` の一次創作 DB のみ）が `ai_training.allowed = true`、8 作品が `false` です。キャラクター単位では全 374 キャラ中 105 キャラが学習許可（全てナンバーテールズ一次創作）です。
 最新状況は `ai-dataset/index.json` を参照してください。
