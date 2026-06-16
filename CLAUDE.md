@@ -158,7 +158,7 @@ node scripts/build-dataset.js --verbose
 
 サブモジュール参照の更新時にデータセットを自動再生成・コミットする。トリガーは以下の 3 つ。
 
-- **push**: `addon-ai-tag` ブランチへの push（`creations-db` 参照変更または `scripts/**` 変更時）。
+- **push**: `master` ブランチへの push（`creations-db` 参照変更または `scripts/**` 変更時）。
 - **schedule**: 毎朝 6:00 JST（cron `0 21 * * *` UTC）にサブモジュールを最新へ更新してビルド。
 - **workflow_dispatch**: 手動実行。`update_submodule` オプションでサブモジュールを最新化してからビルド可能。
 
@@ -203,16 +203,17 @@ node scripts/build-dataset.js --verbose
 
 ## 収録作品一覧
 
-| キー | 日本語タイトル | 英語タイトル |
-|---|---|---|
-| `#Works_NumberTales` | ナンバーテールズ | NumberTales |
-| `#Works_DestinyFoxRecords` | 運命線狐の記録 | Destiny Fox's Records |
-| `#Works_FLInvestigator78` | 運命線探偵 78 | Fate-Line Investigators 78 |
-| `#Works_ShouArRiders` | 獣爾騎兵 | Shau'er Riders |
-| `#Works_SinisterChangingGirls` | 豹変系女子 | Sinister Changing Girls |
-| `#Works_PastDivers` | パストダイヴァー | PastDivers |
-| `#Works_UnauthedLogica` | アンオースドロジカ | UnauthedLogica |
-| `#Works_Proxies` | ラジアン代理 | Proxies |
+| キー | 日本語タイトル | 英語タイトル | AI学習 |
+|---|---|---|---|
+| `#Works_NumberTales` | ナンバーテールズ | NumberTales | ✅ |
+| `#Works_FLInvestigator78` | 運命線探偵78 | the Fate-Line Investigator 78 | ✅ |
+| `#Works_ShouArRiders` | 獣爾騎兵 | Shou'ar Riders (Beasted Cavalry) | ✅ |
+| `#Works_UnibyteLive` | ハンカクライブ | UnibyteLive | ⛔ |
+| `#Works_SinisterChangingGirls` | 豹変系女子 | Sinister Changing Girls | ✅ |
+| `#Works_UnauthedLogica` | アンオースドロジカ | UnauthedLogica | ⛔ |
+| `#Works_PastDivers` | パストダイヴァー | PastDivers | ✅ |
+| `#Works_DestinyFoxRecords` | 運命線狐の記録（フィジカル9） | Destiny Fox's Records (Physical 9) | ✅ |
+| `#Works_Proxies` | ラジアン代理 | RadianN's Proxy | ✅ |
 
-現時点では `#Works_NumberTales / db_Primary` のみが `ai_training.allowed = true` です。
+現在のデータセットは全 9 作品・374 キャラクターを収録し、うち 7 作品が `ai_training.allowed = true`、2 作品（`#Works_UnibyteLive` / `#Works_UnauthedLogica`、いずれも `Works_Hidden: true`）が `false` です。キャラクター単位では全 374 キャラ中 99 キャラが学習許可です。
 最新状況は `ai-dataset/index.json` を参照してください。
