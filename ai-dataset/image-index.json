@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-06-16T05:44:05.233Z",
+  "_generated_at": "2026-06-16T05:46:17.528Z",
   "_path_base": "creations-db/",
   "works": {
     "#Works_NumberTales": {
@@ -602,5 +602,7 @@
       "count": 3
     }
   },
-  "general_images": ["data/GeneralImages/WorldMap/cnsp-map_region8.png"]
+  "general_images": [
+    "data/GeneralImages/WorldMap/cnsp-map_region8.png"
+  ]
 }
