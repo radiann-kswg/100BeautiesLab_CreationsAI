@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-06-17T21:43:35.307Z",
+  "_generated_at": "2026-06-18T21:46:18.102Z",
   "work_key": "#Works_FLInvestigator78",
   "dir_name": "Works_FLInvestigator78",
   "title_ja": "運命線探偵78",
@@ -22,8 +22,12 @@
       "Weight_kg"
     ],
     "subFields": [
+      "IdentityMotif",
       "AbilityStats",
-      "ArcanumspecStats"
+      "ArcanumspecStats",
+      "ThisArcanaHolder_DBLink",
+      "ConversationPattern",
+      "AnotherRegions_DBLink"
     ]
   },
   "ai_training": {
@@ -52,14 +56,15 @@
     "オリジン",
     "ヨハネ",
     "ウェヌス",
+    "アクセラ",
     "リオン",
     "ヴェール",
     "ドゥームズ",
     "バベル",
     "ゲイザー",
     "ルネ",
-    "10",
     "11",
+    "12",
     "0",
     "1",
     "2",
@@ -80,6 +85,7 @@
     "data/Works_FLInvestigator78/Images/DB_Primary/arts/arts_imgFLDealer.png",
     "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLM0.png",
     "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLM1.png",
+    "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLM13.png",
     "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLM18.png",
     "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLM3.png",
     "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLM8.png",

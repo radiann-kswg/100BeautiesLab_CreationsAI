@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-06-17T21:43:35.325Z",
+  "_generated_at": "2026-06-18T21:46:18.122Z",
   "work_key": "#Works_PastDivers",
   "dir_name": "Works_PastDivers",
   "title_ja": "パストダイヴァー",
@@ -29,7 +29,8 @@
     "subFields": [
       "AbilityStats",
       "ChronospecAbout",
-      "ChronospecStats"
+      "ChronospecStats",
+      "ConversationPattern"
     ]
   },
   "ai_training": {
@@ -55,7 +56,7 @@
     "水無瀬 雫",
     "綾沢 改奈",
     "八坂 兵汰\nヘクター.キロバスター",
-    "名前：中月 ルイス-ノア.ナイターエイド\n通称：ルイノ",
+    "名前：中月 ルイス-ノア\n通称：ルイノ",
     "名前：神夜崎 十夜(かずや)\n通称：ジュウヤ",
     "霧島 博(とおる)",
     "キャサリン=アインツヴァイス",

@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-06-17T21:43:35.197Z",
+  "_generated_at": "2026-06-18T21:46:17.990Z",
   "_path_base": "creations-db/",
   "works": {
     "#Works_NumberTales": {
@@ -260,6 +260,7 @@
         "data/Works_NumberTales/Images/DB_Primary/corefolder/27/emstk_corefolder27-1.png",
         "data/Works_NumberTales/Images/DB_Primary/corefolder/29/emstk_corefolder29-1.png",
         "data/Works_NumberTales/Images/DB_Primary/corefolder/3/emstk_corefolder3-1.png",
+        "data/Works_NumberTales/Images/DB_Primary/corefolder/3/emstk_corefolder3-2.png",
         "data/Works_NumberTales/Images/DB_Primary/corefolder/30/emstk_corefolder30-1.png",
         "data/Works_NumberTales/Images/DB_Primary/corefolder/30/emstk_corefolder30-2.png",
         "data/Works_NumberTales/Images/DB_Primary/corefolder/31/emstk_corefolder31-1.png",
@@ -305,6 +306,7 @@
         "data/Works_NumberTales/Images/DB_Primary/corefolder/50/emstk_corefolder50-1.png",
         "data/Works_NumberTales/Images/DB_Primary/corefolder/50/emstk_corefolder50-2.png",
         "data/Works_NumberTales/Images/DB_Primary/corefolder/52/emstk_corefolder52-1.png",
+        "data/Works_NumberTales/Images/DB_Primary/corefolder/52/emstk_corefolder52-2.png",
         "data/Works_NumberTales/Images/DB_Primary/corefolder/53/emstk_corefolder53-1.png",
         "data/Works_NumberTales/Images/DB_Primary/corefolder/55/emstk_corefolder55-1.png",
         "data/Works_NumberTales/Images/DB_Primary/corefolder/56/emstk_corefolder56-1.png",
@@ -454,7 +456,7 @@
         "data/Works_NumberTales/Images/Ref_Vocabulary/concept-figure/cnsp-fg_NTsCoreFolder.png",
         "data/Works_NumberTales/Images/Ref_Vocabulary/concept-figure/cnsp-fg_NTsHumanoid.png"
       ],
-      "count": 436
+      "count": 438
     },
     "#Works_FLInvestigator78": {
       "title_ja": "運命線探偵78",
@@ -468,6 +470,7 @@
         "data/Works_FLInvestigator78/Images/DB_Primary/arts/arts_imgFLDealer.png",
         "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLM0.png",
         "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLM1.png",
+        "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLM13.png",
         "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLM18.png",
         "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLM3.png",
         "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLM8.png",
@@ -476,7 +479,7 @@
         "data/Works_FLInvestigator78/Images/General/pr_officialCard_202504.png",
         "data/Works_FLInvestigator78/Images/General/pr_officialCard_202510.png"
       ],
-      "count": 10
+      "count": 11
     },
     "#Works_ShouArRiders": {
       "title_ja": "獣爾騎兵",

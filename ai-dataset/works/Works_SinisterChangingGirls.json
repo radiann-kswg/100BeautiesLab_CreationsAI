@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-06-17T21:43:35.316Z",
+  "_generated_at": "2026-06-18T21:46:18.113Z",
   "work_key": "#Works_SinisterChangingGirls",
   "dir_name": "Works_SinisterChangingGirls",
   "title_ja": "豹変系女子",
@@ -23,6 +23,10 @@
       "Height_cm",
       "Weight_kg",
       "BustSize"
+    ],
+    "subFields": [
+      "ConversationPattern",
+      "AnotherRegions_DBLink"
     ]
   },
   "ai_training": {
@@ -45,7 +49,7 @@
     "六花(ろくばな) ルノ",
     "九 叶(いちじく-かな)",
     "六花 雙葉(ろくばな-ふたは)\nクィーン.トゥエルヴ",
-    "ミル.NuXV(ニュクスフ)",
+    "ミル.ニュクスフ",
     "神夜崎 ユノ",
     "財前 小里\n終藤(すどう) こさと"
   ],

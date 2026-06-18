@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-06-17T21:43:35.294Z",
+  "_generated_at": "2026-06-18T21:46:18.092Z",
   "work_key": "#Works_NumberTales",
   "dir_name": "Works_NumberTales",
   "title_ja": "ナンバーテールズ",
@@ -33,7 +33,12 @@
       "NumerospecAbout",
       "NumerospecStats",
       "Relation",
-      "ConversationPattern"
+      "ThisMasters",
+      "ConversationPattern",
+      "SameModels_DBLink",
+      "SameMPSeries_DBLink",
+      "AnotherVersions_DBLink",
+      "AnotherRegions_DBLink"
     ]
   },
   "ai_training": {
@@ -224,6 +229,7 @@
     "200-dev",
     "216-cub",
     "222",
+    "222-alt",
     "225-sq",
     "256-sq",
     "289-sq",
@@ -1095,6 +1101,7 @@
     "data/Works_NumberTales/Images/DB_Primary/corefolder/27/emstk_corefolder27-1.png",
     "data/Works_NumberTales/Images/DB_Primary/corefolder/29/emstk_corefolder29-1.png",
     "data/Works_NumberTales/Images/DB_Primary/corefolder/3/emstk_corefolder3-1.png",
+    "data/Works_NumberTales/Images/DB_Primary/corefolder/3/emstk_corefolder3-2.png",
     "data/Works_NumberTales/Images/DB_Primary/corefolder/30/emstk_corefolder30-1.png",
     "data/Works_NumberTales/Images/DB_Primary/corefolder/30/emstk_corefolder30-2.png",
     "data/Works_NumberTales/Images/DB_Primary/corefolder/31/emstk_corefolder31-1.png",
@@ -1140,6 +1147,7 @@
     "data/Works_NumberTales/Images/DB_Primary/corefolder/50/emstk_corefolder50-1.png",
     "data/Works_NumberTales/Images/DB_Primary/corefolder/50/emstk_corefolder50-2.png",
     "data/Works_NumberTales/Images/DB_Primary/corefolder/52/emstk_corefolder52-1.png",
+    "data/Works_NumberTales/Images/DB_Primary/corefolder/52/emstk_corefolder52-2.png",
     "data/Works_NumberTales/Images/DB_Primary/corefolder/53/emstk_corefolder53-1.png",
     "data/Works_NumberTales/Images/DB_Primary/corefolder/55/emstk_corefolder55-1.png",
     "data/Works_NumberTales/Images/DB_Primary/corefolder/56/emstk_corefolder56-1.png",
