@@ -15,6 +15,13 @@ on:
       - "creations-db" # Git サブモジュールの参照ファイル変更
       - "scripts/**" # ビルドスクリプト変更時も再生成
 
+  # 上流リポジトリ（creations-db）から送信される push 通知
+  # 上流の .github/workflows/notify-ai-dataset.yml が addon-ai-tag への push を検知し
+  # GitHub API 経由で "creations-db-updated" イベントをディスパッチする
+  repository_dispatch:
+    types:
+      - creations-db-updated
+
   # 毎朝 6:00 JST にサブモジュールを自動チェック・更新
   schedule:
     - cron: "0 21 * * *"
@@ -49,7 +56,7 @@ jobs:
       # 2. (手動実行時) サブモジュールを addon-ai-tag ブランチの最新に更新
       # ------------------------------------------------------------------
       - name: Update submodule to latest addon-ai-tag
-        if: ${{ github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.update_submodule == true) }}
+        if: ${{ github.event_name == 'schedule' || github.event_name == 'repository_dispatch' || (github.event_name == 'workflow_dispatch' && inputs.update_submodule == true) }}
         run: |
           git submodule update --remote --merge creations-db
           echo "Submodule updated to: $(git -C creations-db rev-parse HEAD)"

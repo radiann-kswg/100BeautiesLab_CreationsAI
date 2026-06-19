@@ -179,9 +179,10 @@ node scripts/build-dataset.js --verbose
 
 ### GitHub Actions: `sync-dataset.yml`
 
-サブモジュール参照の更新時にデータセットを自動再生成・コミットする。トリガーは以下の 3 つ。
+サブモジュール参照の更新時にデータセットを自動再生成・コミットする。トリガーは以下の 4 つ。
 
 - **push**: `master` ブランチへの push（`creations-db` 参照変更または `scripts/**` 変更時）。
+- **repository_dispatch**: 上流リポジトリ（`creations-db`）の `addon-ai-tag` ブランチへ push された際に上流ワークフローから送信される `creations-db-updated` イベント。受信するとサブモジュールを最新に更新してビルドする。
 - **schedule**: 毎朝 6:00 JST（cron `0 21 * * *` UTC）にサブモジュールを最新へ更新してビルド。
 - **workflow_dispatch**: 手動実行。`update_submodule` オプションでサブモジュールを最新化してからビルド可能。
 
