@@ -369,6 +369,7 @@ async function main() {
   let totalWithImmutableConstraints = 0;
   let totalWithNegativeKeywords = 0;
   let totalWithWorkCommon = 0;
+  let totalWithConceptFormsMeta = 0;
 
   for (const workKey of workKeys) {
     const workTopMeta = creationWorks[workKey];
@@ -489,6 +490,10 @@ async function main() {
           (Array.isArray(aiFormsHumanoid?.negative_keywords)       && aiFormsHumanoid.negative_keywords.length > 0)
         );
         const hasWorkCommonBlock = !!(aiHints?.work_common);
+        // concept_contains_forms: AIHints に形態リストが明示されているかどうか (2026-06-19 案B)
+        const hasConceptFormsMeta = !!(
+          Array.isArray(aiHints?.concept_contains_forms) && aiHints.concept_contains_forms.length > 0
+        );
 
         const charEntry = {
           id: charId,
@@ -503,12 +508,13 @@ async function main() {
           has_immutable_constraints: hasAnyImmutableConstraints,
           has_negative_keywords: hasAnyNegativeKeywords,
           has_work_common: hasWorkCommonBlock,
+          has_concept_forms_metadata: hasConceptFormsMeta,
           // 原データを変更せずそのまま参照
           data: charData,
           images,
         };
 
-        workEntry.characters.push({ id: charId, images, has_ai_hints: !!aiHints, has_silhouette_notes: hasAnySilhouetteNotes, has_immutable_constraints: hasAnyImmutableConstraints, has_negative_keywords: hasAnyNegativeKeywords, has_work_common: hasWorkCommonBlock, ai_training_allowed: charPolicy.allowed });
+        workEntry.characters.push({ id: charId, images, has_ai_hints: !!aiHints, has_silhouette_notes: hasAnySilhouetteNotes, has_immutable_constraints: hasAnyImmutableConstraints, has_negative_keywords: hasAnyNegativeKeywords, has_work_common: hasWorkCommonBlock, has_concept_forms_metadata: hasConceptFormsMeta, ai_training_allowed: charPolicy.allowed });
         totalCharacters++;
         if (charPolicy.allowed) totalAllowedCharacters++;
         if (aiHints) totalWithAiHints++;
@@ -516,6 +522,7 @@ async function main() {
         if (hasAnyImmutableConstraints)  totalWithImmutableConstraints++;
         if (hasAnyNegativeKeywords)      totalWithNegativeKeywords++;
         if (hasWorkCommonBlock)          totalWithWorkCommon++;
+        if (hasConceptFormsMeta)         totalWithConceptFormsMeta++;
 
         // JSONL レコード（1キャラクター = 1行）
         const record = { _type: 'character', ...charEntry };
@@ -667,6 +674,14 @@ async function main() {
         work_common: '作品共通の参照画像まとめ (reference_images.corefolder_reference[] / humanoid_reference[]) — 2026-06-08 追加',
         alt_modes:   '将来予約モード格納 (corefolder_dressed.allowed / outfit_source) — 2026-06-08 追加',
       },
+      images_field: {
+        'DB_Primary (等)': 'charId ディレクトリ配下の画像 (corefolder / humanoid 等、形態別フォルダスキャン結果)',
+        concept:      '両形態を含む概念イラスト 1 枚 (DB_Primary/concept/cnsp_img{N}.png 等) — 2026-06-19 追加',
+        concept_alt:  '概念イラストのバリアント群 (conceptAlt_PNGName[] 由来、複数形態・複数キャラ構図を含む場合あり) — 2026-06-19 追加',
+        arts:         'キャラクター個別アートワーク (arts_PNGPath[] 由来) — 2026-06-19 追加',
+        design_alt:   '衣装差分・デザインバリアント (designAlt_PNGPath[] 由来、形態注記なし) — 2026-06-19 追加',
+        note:         'パスは creations-db サブモジュールルートからの相対パス。ファイルが実在しない場合はキー自体が省略される。',
+      },
     },
   }, null, 2), 'utf8');
   info(`policy.json を書き込みました`);
@@ -705,6 +720,7 @@ async function main() {
       with_immutable_constraints: totalWithImmutableConstraints,
       with_negative_keywords:     totalWithNegativeKeywords,
       with_work_common:           totalWithWorkCommon,
+      with_concept_forms_metadata: totalWithConceptFormsMeta,
     },
   }, null, 2), 'utf8');
   info(`build-info.json を書き込みました`);
@@ -717,14 +733,37 @@ async function main() {
 // ---------------------------------------------------------------------------
 
 /**
+ * 拡張子なしのベースパスに対して IMAGE_EXTS を順に試し、
+ * 最初に実在したファイルのサブモジュール相対パスを返す。見つからない場合は null。
+ *
+ * @param {string} baseNoExt  拡張子を除いた絶対パス
+ * @returns {string|null}
+ */
+function resolveImagePath(baseNoExt) {
+  for (const ext of ['.png', '.jpg', '.jpeg', '.gif', '.webp', '.svg']) {
+    const absPath = `${baseNoExt}${ext}`;
+    if (fs.existsSync(absPath)) {
+      return path.relative(SUBMODULE, absPath).replace(/\\/g, '/');
+    }
+  }
+  return null;
+}
+
+/**
  * キャラクター JSON データ内の画像参照フィールドを読み取り、
  * サブモジュール相対パスのリストを返す。
- * 画像ファイルの実在確認は行わない（パス生成のみ）。
+ *
+ * 返却オブジェクトのキー:
+ *   DB_Primary / DB_SemiPrimary 等  charId ディレクトリスキャン結果 (corefolder 等)
+ *   concept                         concept_PNGName (両形態を含む概念イラスト)
+ *   concept_alt                     conceptAlt_PNGName[] (概念イラストバリアント)
+ *   arts                            arts_PNGPath[] (キャラ個別アートワーク)
+ *   design_alt                      designAlt_PNGPath[] (衣装差分・デザインバリアント)
  */
 function resolveCharacterImages(workDir, charId, charData) {
   const images = {};
 
-  // DB の Images 以下を走査して charId に一致するフォルダを探す
+  // --- 既存: charId ディレクトリスキャン (corefolder / humanoid 等の形態別画像) ---
   const imagesBase = path.join(workDir, 'Images');
   if (!fs.existsSync(imagesBase)) return images;
 
@@ -734,16 +773,6 @@ function resolveCharacterImages(workDir, charId, charData) {
     if (!dbImgDir.isDirectory()) continue;
     const charImgDir = path.join(imagesBase, dbImgDir.name, charId);
     if (fs.existsSync(charImgDir)) {
-      const imgs = collectImages(charImgDir, null);
-      // collectImages は SUBMODULE 相対パスを返すが、ここでは imagesBase 相対で呼ぶ
-      const imgPaths = imgs.length > 0
-        ? imgs
-        : collectImages(charImgDir, SUBMODULE).map(p => p); // fallback
-      // 再取得: SUBMODULE 基準
-      const relPaths = collectImages(charImgDir, null).map(
-        p => path.relative(SUBMODULE, path.join(charImgDir, p)).replace(/\\/g, '/')
-      );
-      // 正しい相対パス取得
       const correctPaths = [];
       collectImagesRaw(charImgDir).forEach(abs => {
         correctPaths.push(path.relative(SUBMODULE, abs).replace(/\\/g, '/'));
@@ -751,6 +780,77 @@ function resolveCharacterImages(workDir, charId, charData) {
       if (correctPaths.length > 0) {
         images[dbImgDir.name] = correctPaths;
       }
+    }
+  }
+
+  // --- Phase 1: charData.Images の構造化フィールドから画像パスを解決 ---
+  // concept / conceptAlt / arts / designAlt は DB_Primary 配下に格納される。
+  const charImages = charData.Images;
+  if (!charImages || typeof charImages !== 'object') return images;
+
+  const dbPrimaryBase = path.join(imagesBase, 'DB_Primary');
+
+  // concept (単一): 両形態を描いた概念イラスト。
+  // concept_PNGName → Images/DB_Primary/concept/{name}.<ext>
+  if (typeof charImages.concept_PNGName === 'string') {
+    const rel = resolveImagePath(path.join(dbPrimaryBase, 'concept', charImages.concept_PNGName));
+    if (rel) images.concept = [rel];
+  }
+
+  // concept_alt (複数): 概念イラストのバリアント（複数形態・複数キャラ構図など）。
+  // conceptAlt_PNGName[] → Images/DB_Primary/concept/{name}.<ext>
+  if (Array.isArray(charImages.conceptAlt_PNGName) && charImages.conceptAlt_PNGName.length > 0) {
+    const paths = charImages.conceptAlt_PNGName
+      .map(name => resolveImagePath(path.join(dbPrimaryBase, 'concept', name)))
+      .filter(Boolean);
+    if (paths.length > 0) images.concept_alt = paths;
+  }
+
+  // arts (複数): キャラクター個別に紐付けられたアートワーク。
+  // arts_metadata が存在する場合はそちらを優先し { path, form, characters } 形式で出力。
+  // なければ arts_PNGPath[] からパスのみで補完。
+  // パスは DB_Primary/arts/ 相対。../../DB_SemiPrimary/... など親ディレクトリ参照も path.join で正規化される。
+  {
+    const artsMeta = Array.isArray(charImages.arts_metadata) && charImages.arts_metadata.length > 0
+      ? charImages.arts_metadata
+      : null;
+    if (artsMeta) {
+      const entries = artsMeta.flatMap(({ path: rel, form, characters }) => {
+        const resolved = resolveImagePath(path.join(dbPrimaryBase, 'arts', rel));
+        if (!resolved) return [];
+        return [{ path: resolved, form: form ?? null, characters: Array.isArray(characters) ? characters : null }];
+      });
+      if (entries.length > 0) images.arts = entries;
+    } else if (Array.isArray(charImages.arts_PNGPath) && charImages.arts_PNGPath.length > 0) {
+      const entries = charImages.arts_PNGPath.flatMap(rel => {
+        const resolved = resolveImagePath(path.join(dbPrimaryBase, 'arts', rel));
+        return resolved ? [{ path: resolved, form: null, characters: null }] : [];
+      });
+      if (entries.length > 0) images.arts = entries;
+    }
+  }
+
+  // design_alt (複数): 衣装差分・デザインバリアント。
+  // designAlt_metadata が存在する場合はそちらを優先し { path, form, characters } 形式で出力。
+  // なければ designAlt_PNGPath[] からパスのみで補完。
+  // パスは DB_Primary/designAlt/ 相対（arts/ ではない点に注意）。
+  {
+    const daltMeta = Array.isArray(charImages.designAlt_metadata) && charImages.designAlt_metadata.length > 0
+      ? charImages.designAlt_metadata
+      : null;
+    if (daltMeta) {
+      const entries = daltMeta.flatMap(({ path: rel, form, characters }) => {
+        const resolved = resolveImagePath(path.join(dbPrimaryBase, 'designAlt', rel));
+        if (!resolved) return [];
+        return [{ path: resolved, form: form ?? null, characters: Array.isArray(characters) ? characters : null }];
+      });
+      if (entries.length > 0) images.design_alt = entries;
+    } else if (Array.isArray(charImages.designAlt_PNGPath) && charImages.designAlt_PNGPath.length > 0) {
+      const entries = charImages.designAlt_PNGPath.flatMap(rel => {
+        const resolved = resolveImagePath(path.join(dbPrimaryBase, 'designAlt', rel));
+        return resolved ? [{ path: resolved, form: null, characters: null }] : [];
+      });
+      if (entries.length > 0) images.design_alt = entries;
     }
   }
 
