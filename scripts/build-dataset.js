@@ -382,7 +382,7 @@ async function main() {
       continue;
     }
 
-    info(`処理中: ${dirName} (${workTopMeta.Title || ''} / ${workTopMeta.Title_EN || ''})`);
+    info(`処理中: ${dirName} (${workTopMeta.Title_JP || ''} / ${workTopMeta.Title_EN || ''})`);
 
     // Works_Hidden フラグを取得——作品全体が非公開の場合 AI 学習抑止
     const worksHidden = !!(workTopMeta.Works_Hidden === true);
@@ -403,9 +403,9 @@ async function main() {
     const workEntry = {
       work_key: workKey,
       dir_name: dirName,
-      title_ja: workTopMeta.Title || '',
+      title_ja: workTopMeta.Title_JP || '',
       title_en: workTopMeta.Title_EN || '',
-      summary: workTopMeta.Works_Summary || '',
+      summary: workTopMeta.Works_Summary_JP || '',
       layout: workTopMeta.$DetailLayout || null,
       characters: [],
       db_files: [],
@@ -458,7 +458,7 @@ async function main() {
         // 安定した識別子を導出（Num → ID → id → Name → 配列インデックス の優先順）
         const charId = String(
           charData.Num ?? charData.ID ?? charData.Id ?? charData.id ??
-          charData.Key ?? charData.Code ?? charData.Name ?? idx
+          charData.Key ?? charData.Code ?? charData.Name_JP ?? charData.Name ?? idx
         );
 
         // 画像パスを解決
@@ -498,7 +498,7 @@ async function main() {
         const charEntry = {
           id: charId,
           work_key: workKey,
-          work_title_ja: workTopMeta.Title || '',
+          work_title_ja: workTopMeta.Title_JP || '',
           work_title_en: workTopMeta.Title_EN || '',
           db_source: dbRelPath,
           ai_training: charPolicy,
@@ -552,7 +552,7 @@ async function main() {
     const workImages = collectImages(imagesDir, SUBMODULE);
     const workHasAllowedDb = allowedDbKeys.length > 0;
     imageIndex.works[workKey] = {
-      title_ja: workTopMeta.Title || '',
+      title_ja: workTopMeta.Title_JP || '',
       title_en: workTopMeta.Title_EN || '',
       ai_training: {
         allowed: workHasAllowedDb,
@@ -575,7 +575,7 @@ async function main() {
     masterIndex.works.push({
       work_key: workKey,
       dir_name: dirName,
-      title_ja: workTopMeta.Title || '',
+      title_ja: workTopMeta.Title_JP || '',
       title_en: workTopMeta.Title_EN || '',
       character_count: workEntry.characters.length,
       image_count: workImages.length,
@@ -594,9 +594,9 @@ async function main() {
       _generated_at: new Date().toISOString(),
       work_key: workKey,
       dir_name: dirName,
-      title_ja: workTopMeta.Title || '',
+      title_ja: workTopMeta.Title_JP || '',
       title_en: workTopMeta.Title_EN || '',
-      summary: workTopMeta.Works_Summary || '',
+      summary: workTopMeta.Works_Summary_JP || '',
       layout: workTopMeta.$DetailLayout || null,
       ai_training: {
         allowed: workHasAllowedDb,

@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-06-22T02:50:39.324Z",
+  "_generated_at": "2026-06-22T08:36:41.045Z",
   "work_key": "#Works_PastDivers",
   "dir_name": "Works_PastDivers",
   "title_ja": "パストダイヴァー",
@@ -12,7 +12,6 @@
     ],
     "basicFields": [
       "FormalName",
-      "FormalName_EN",
       "ModelName",
       "ModelNumber",
       "CodeName",
@@ -48,19 +47,19 @@
     }
   ],
   "character_ids": [
-    "旭屋 雄(あさひや-ゆう)",
+    "旭屋 雄",
     "雪乙女しいな",
-    "桜花 信(とき)",
-    "花舞 流(るぅ)",
+    "桜花 信",
+    "花舞 流",
     "ゼン.エデンズグリーン",
     "水無瀬 雫",
     "綾沢 改奈",
     "八坂 兵汰\nヘクター.キロバスター",
     "名前：中月 ルイス-ノア\n通称：ルイノ",
-    "名前：神夜崎 十夜(かずや)\n通称：ジュウヤ",
-    "霧島 博(とおる)",
+    "名前：神夜崎 十夜\n通称：ジュウヤ",
+    "霧島 博",
     "キャサリン=アインツヴァイス",
-    "潤音(うるうね) ミオ"
+    "潤音 ミオ"
   ],
   "character_ids_with_ai_hints": [],
   "character_ids_with_silhouette_notes": [],

@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-06-22T02:50:39.319Z",
+  "_generated_at": "2026-06-22T08:36:41.039Z",
   "work_key": "#Works_UnauthedLogica",
   "dir_name": "Works_UnauthedLogica",
   "title_ja": "アンオースドロジカ",
@@ -12,7 +12,6 @@
     ],
     "basicFields": [
       "FormalName",
-      "FormalName_EN",
       "ModelName",
       "ModelNumber",
       "Belonging",
@@ -59,9 +58,9 @@
     "1",
     "2",
     "3",
-    "零(かずない) 零(れい)",
-    "零 百(かずない-はげむ)",
-    "六花 雙葉(ろくばな-ふたは)\nクィーン.トゥエルヴ"
+    "零 零",
+    "零 百",
+    "六花 雙葉\nクィーン.トゥエルヴ"
   ],
   "character_ids_with_ai_hints": [],
   "character_ids_with_silhouette_notes": [],
