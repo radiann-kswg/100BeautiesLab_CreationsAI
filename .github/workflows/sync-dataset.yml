@@ -37,6 +37,11 @@ on:
 permissions:
   contents: write # コミット・プッシュに必要
 
+# 同一ブランチの run を直列化し push race を防ぐ（cancel-in-progress: false = 後続はキュー待ち）
+concurrency:
+  group: sync-dataset-${{ github.ref }}
+  cancel-in-progress: false
+
 jobs:
   build-dataset:
     runs-on: ubuntu-latest
@@ -85,7 +90,7 @@ jobs:
           git add creations-db || true
 
       # ------------------------------------------------------------------
-      # 6. 変更があれば自動コミット・プッシュ
+      # 6. 変更があれば自動コミット・プッシュ（push race 対策: rebase リトライ付き）
       # ------------------------------------------------------------------
       - name: Commit and push if changed
         run: |
@@ -94,8 +99,19 @@ jobs:
 
           if git diff --cached --quiet; then
             echo "変更なし。コミットをスキップします。"
-          else
-            SUBMODULE_COMMIT=$(git -C creations-db rev-parse --short HEAD)
-            git commit -m "chore: sync ai-dataset (creations-db@${SUBMODULE_COMMIT}) [skip ci]"
-            git push
+            exit 0
           fi
+
+          SUBMODULE_COMMIT=$(git -C creations-db rev-parse --short HEAD)
+          git commit -m "chore: sync ai-dataset (creations-db@${SUBMODULE_COMMIT}) [skip ci]"
+
+          for i in 1 2 3; do
+            if git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && git push; then
+              exit 0
+            fi
+            echo "push リトライ ${i}/3"
+            sleep $((i * 5))
+          done
+
+          echo "push に 3 回失敗しました。" >&2
+          exit 1
