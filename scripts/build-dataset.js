@@ -20,8 +20,9 @@
  * 利用条件: NOTICE.md 参照
  */
 
-import fs   from 'node:fs';
-import path from 'node:path';
+import fs             from 'node:fs';
+import path           from 'node:path';
+import { execSync }   from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { CreationsDBClient } from '../creations-db/pkg/nodejs/index.mjs';
 
@@ -261,6 +262,25 @@ function getSubmoduleCommit() {
   return 'unknown';
 }
 
+/**
+ * サブモジュール HEAD のコミット日時を ISO 8601 で返す。
+ * ビルド出力の _generated_at をソース由来の決定論的値にすることで、
+ * ソース無変更時のビルドが同一出力を生み、不要な git diff を発生させない。
+ * git が利用不可の場合は現在時刻にフォールバックする。
+ */
+function getSubmoduleCommitDate() {
+  try {
+    const iso = execSync('git log -1 --format=%cI HEAD', {
+      cwd: SUBMODULE,
+      encoding: 'utf8',
+      stdio: ['pipe', 'pipe', 'pipe'],
+    }).trim();
+    return iso || new Date().toISOString();
+  } catch (_) {
+    return new Date().toISOString();
+  }
+}
+
 // ---------------------------------------------------------------------------
 // メイン処理
 // ---------------------------------------------------------------------------
@@ -274,6 +294,9 @@ async function main() {
     console.error('  git submodule update --init --recursive を実行してください。');
     process.exit(1);
   }
+
+  // ソース由来の決定論的タイムスタンプ（同一ソースで2回ビルドしても同じ値になる）
+  const buildTimestamp = getSubmoduleCommitDate();
 
   ensureDir(OUT_DIR);
   ensureDir(WORKS_OUT);
@@ -297,14 +320,14 @@ async function main() {
 
   const masterIndex = {
     _notice: '原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / ' + SOURCE_REPO_URL,
-    _generated_at: new Date().toISOString(),
+    _generated_at: buildTimestamp,
     _submodule_commit: getSubmoduleCommit(),
     works: [],
   };
 
   const imageIndex = {
     _notice: '原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / ' + SOURCE_REPO_URL,
-    _generated_at: new Date().toISOString(),
+    _generated_at: buildTimestamp,
     _path_base: 'creations-db/',
     works: {},
     general_images: [],
@@ -345,7 +368,7 @@ async function main() {
     source: SOURCE_REPO_URL,
     licence: LICENCE_URL,
     author: 'RadianN_kswg（ラジアン/柏木主税）',
-    generated_at: new Date().toISOString(),
+    generated_at: buildTimestamp,
     submodule_commit: getSubmoduleCommit(),
     usage_conditions: [
       '非営利目的に限定',
@@ -591,7 +614,7 @@ async function main() {
     const workOutPath = path.join(WORKS_OUT, `${dirName}.json`);
     fs.writeFileSync(workOutPath, JSON.stringify({
       _notice: '原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / ' + SOURCE_REPO_URL,
-      _generated_at: new Date().toISOString(),
+      _generated_at: buildTimestamp,
       work_key: workKey,
       dir_name: dirName,
       title_ja: workTopMeta.Title_JP || '',
@@ -659,7 +682,7 @@ async function main() {
   // ポリシーサマリ JSON を独立して出力（消費側がフラグ確認に使う）
   fs.writeFileSync(path.join(OUT_DIR, 'policy.json'), JSON.stringify({
     _notice: '原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / ' + SOURCE_REPO_URL,
-    _generated_at: new Date().toISOString(),
+    _generated_at: buildTimestamp,
     ai_training_policy: aiTrainingPolicySummary,
     target_environments: headerRecord.target_environments,
     schema: {
@@ -706,7 +729,7 @@ async function main() {
   };
 
   fs.writeFileSync(path.join(OUT_DIR, 'build-info.json'), JSON.stringify({
-    generated_at: new Date().toISOString(),
+    generated_at: buildTimestamp,
     submodule_commit: getSubmoduleCommit(),
     source_repo: SOURCE_REPO_URL,
     licence: LICENCE_URL,
