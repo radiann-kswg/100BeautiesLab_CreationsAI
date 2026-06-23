@@ -701,6 +701,8 @@ async function main() {
         'DB_Primary (等)': 'charId ディレクトリ配下の画像 (corefolder / humanoid 等、形態別フォルダスキャン結果)',
         concept:      '両形態を含む概念イラスト 1 枚 (DB_Primary/concept/cnsp_img{N}.png 等) — 2026-06-19 追加',
         concept_alt:  '概念イラストのバリアント群 (conceptAlt_PNGName[] 由来、複数形態・複数キャラ構図を含む場合あり) — 2026-06-19 追加',
+        corefolder:   'コアフォルダ形態の正規イラスト (corefolder_PNGPath[] 由来、DB_Primary/corefolder/{path}) — 2026-06-23 追加',
+        humanoid:     '人型形態の正規イラスト (humanoid_PNGPath[] 由来、DB_Primary/humanoid/{path}) — 2026-06-23 追加',
         arts:         'キャラクター個別アートワーク (arts_PNGPath[] 由来) — 2026-06-19 追加',
         design_alt:   '衣装差分・デザインバリアント (designAlt_PNGPath[] 由来、形態注記なし) — 2026-06-19 追加',
         note:         'パスは creations-db サブモジュールルートからの相対パス。ファイルが実在しない場合はキー自体が省略される。',
@@ -780,6 +782,8 @@ function resolveImagePath(baseNoExt) {
  *   DB_Primary / DB_SemiPrimary 等  charId ディレクトリスキャン結果 (corefolder 等)
  *   concept                         concept_PNGName (両形態を含む概念イラスト)
  *   concept_alt                     conceptAlt_PNGName[] (概念イラストバリアント)
+ *   corefolder                      corefolder_PNGPath[] (コアフォルダ形態の正規イラスト)
+ *   humanoid                        humanoid_PNGPath[] (人型形態の正規イラスト)
  *   arts                            arts_PNGPath[] (キャラ個別アートワーク)
  *   design_alt                      designAlt_PNGPath[] (衣装差分・デザインバリアント)
  */
@@ -827,6 +831,28 @@ function resolveCharacterImages(workDir, charId, charData) {
       .map(name => resolveImagePath(path.join(dbPrimaryBase, 'concept', name)))
       .filter(Boolean);
     if (paths.length > 0) images.concept_alt = paths;
+  }
+
+  // corefolder (複数): コアフォルダ形態の正規イラスト。
+  // corefolder_PNGPath[] → Images/DB_Primary/corefolder/{path}.<ext>
+  // 形態フォルダ (corefolder/) が charId の 1 階層上に挟まるため、charId ディレクトリ
+  // スキャン (上の DB_* ループ) では拾えない。構造化フィールドとして明示解決する。
+  if (Array.isArray(charImages.corefolder_PNGPath) && charImages.corefolder_PNGPath.length > 0) {
+    const paths = charImages.corefolder_PNGPath
+      .map(rel => resolveImagePath(path.join(dbPrimaryBase, 'corefolder', rel)))
+      .filter(Boolean);
+    if (paths.length > 0) images.corefolder = paths;
+  }
+
+  // humanoid (複数): 人型形態の正規イラスト。
+  // humanoid_PNGPath[] → Images/DB_Primary/humanoid/{path}.<ext>
+  // corefolder と同じく形態フォルダ (humanoid/) が 1 階層挟まる。現状ファイル未配置でも
+  // resolveImagePath が null を返すだけなので将来の追加に備えて先行対応する。
+  if (Array.isArray(charImages.humanoid_PNGPath) && charImages.humanoid_PNGPath.length > 0) {
+    const paths = charImages.humanoid_PNGPath
+      .map(rel => resolveImagePath(path.join(dbPrimaryBase, 'humanoid', rel)))
+      .filter(Boolean);
+    if (paths.length > 0) images.humanoid = paths;
   }
 
   // arts (複数): キャラクター個別に紐付けられたアートワーク。
