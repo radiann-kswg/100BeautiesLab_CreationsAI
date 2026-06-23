@@ -854,6 +854,24 @@ function resolveCharacterImages(workDir, charId, charData) {
     }
   }
 
+  // corefolder (複数): コアフォルダ形態の画像。
+  // corefolder_PNGPath[] → Images/DB_Primary/corefolder/{path}.<ext>
+  if (Array.isArray(charImages.corefolder_PNGPath) && charImages.corefolder_PNGPath.length > 0) {
+    const paths = charImages.corefolder_PNGPath
+      .map(p => resolveImagePath(path.join(dbPrimaryBase, 'corefolder', p)))
+      .filter(Boolean);
+    if (paths.length > 0) images.corefolder = paths;
+  }
+
+  // humanoid (複数): ヒューマノイド形態の画像。
+  // humanoid_PNGPath[] → Images/DB_Primary/humanoid/{path}.<ext>
+  if (Array.isArray(charImages.humanoid_PNGPath) && charImages.humanoid_PNGPath.length > 0) {
+    const paths = charImages.humanoid_PNGPath
+      .map(p => resolveImagePath(path.join(dbPrimaryBase, 'humanoid', p)))
+      .filter(Boolean);
+    if (paths.length > 0) images.humanoid = paths;
+  }
+
   return images;
 }
 
