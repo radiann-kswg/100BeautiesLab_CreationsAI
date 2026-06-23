@@ -20,8 +20,9 @@
  * 利用条件: NOTICE.md 参照
  */
 
-import fs   from 'node:fs';
-import path from 'node:path';
+import fs             from 'node:fs';
+import path           from 'node:path';
+import { execSync }   from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { CreationsDBClient } from '../creations-db/pkg/nodejs/index.mjs';
 
@@ -261,6 +262,25 @@ function getSubmoduleCommit() {
   return 'unknown';
 }
 
+/**
+ * サブモジュール HEAD のコミット日時を ISO 8601 で返す。
+ * ビルド出力の _generated_at をソース由来の決定論的値にすることで、
+ * ソース無変更時のビルドが同一出力を生み、不要な git diff を発生させない。
+ * git が利用不可の場合は現在時刻にフォールバックする。
+ */
+function getSubmoduleCommitDate() {
+  try {
+    const iso = execSync('git log -1 --format=%cI HEAD', {
+      cwd: SUBMODULE,
+      encoding: 'utf8',
+      stdio: ['pipe', 'pipe', 'pipe'],
+    }).trim();
+    return iso || new Date().toISOString();
+  } catch (_) {
+    return new Date().toISOString();
+  }
+}
+
 // ---------------------------------------------------------------------------
 // メイン処理
 // ---------------------------------------------------------------------------
@@ -274,6 +294,9 @@ async function main() {
     console.error('  git submodule update --init --recursive を実行してください。');
     process.exit(1);
   }
+
+  // ソース由来の決定論的タイムスタンプ（同一ソースで2回ビルドしても同じ値になる）
+  const buildTimestamp = getSubmoduleCommitDate();
 
   ensureDir(OUT_DIR);
   ensureDir(WORKS_OUT);
@@ -297,14 +320,14 @@ async function main() {
 
   const masterIndex = {
     _notice: '原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / ' + SOURCE_REPO_URL,
-    _generated_at: new Date().toISOString(),
+    _generated_at: buildTimestamp,
     _submodule_commit: getSubmoduleCommit(),
     works: [],
   };
 
   const imageIndex = {
     _notice: '原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / ' + SOURCE_REPO_URL,
-    _generated_at: new Date().toISOString(),
+    _generated_at: buildTimestamp,
     _path_base: 'creations-db/',
     works: {},
     general_images: [],
@@ -345,7 +368,7 @@ async function main() {
     source: SOURCE_REPO_URL,
     licence: LICENCE_URL,
     author: 'RadianN_kswg（ラジアン/柏木主税）',
-    generated_at: new Date().toISOString(),
+    generated_at: buildTimestamp,
     submodule_commit: getSubmoduleCommit(),
     usage_conditions: [
       '非営利目的に限定',
@@ -382,7 +405,7 @@ async function main() {
       continue;
     }
 
-    info(`処理中: ${dirName} (${workTopMeta.Title || ''} / ${workTopMeta.Title_EN || ''})`);
+    info(`処理中: ${dirName} (${workTopMeta.Title_JP || ''} / ${workTopMeta.Title_EN || ''})`);
 
     // Works_Hidden フラグを取得——作品全体が非公開の場合 AI 学習抑止
     const worksHidden = !!(workTopMeta.Works_Hidden === true);
@@ -403,9 +426,9 @@ async function main() {
     const workEntry = {
       work_key: workKey,
       dir_name: dirName,
-      title_ja: workTopMeta.Title || '',
+      title_ja: workTopMeta.Title_JP || '',
       title_en: workTopMeta.Title_EN || '',
-      summary: workTopMeta.Works_Summary || '',
+      summary: workTopMeta.Works_Summary_JP || '',
       layout: workTopMeta.$DetailLayout || null,
       characters: [],
       db_files: [],
@@ -458,7 +481,7 @@ async function main() {
         // 安定した識別子を導出（Num → ID → id → Name → 配列インデックス の優先順）
         const charId = String(
           charData.Num ?? charData.ID ?? charData.Id ?? charData.id ??
-          charData.Key ?? charData.Code ?? charData.Name ?? idx
+          charData.Key ?? charData.Code ?? charData.Name_JP ?? charData.Name ?? idx
         );
 
         // 画像パスを解決
@@ -498,7 +521,7 @@ async function main() {
         const charEntry = {
           id: charId,
           work_key: workKey,
-          work_title_ja: workTopMeta.Title || '',
+          work_title_ja: workTopMeta.Title_JP || '',
           work_title_en: workTopMeta.Title_EN || '',
           db_source: dbRelPath,
           ai_training: charPolicy,
@@ -552,7 +575,7 @@ async function main() {
     const workImages = collectImages(imagesDir, SUBMODULE);
     const workHasAllowedDb = allowedDbKeys.length > 0;
     imageIndex.works[workKey] = {
-      title_ja: workTopMeta.Title || '',
+      title_ja: workTopMeta.Title_JP || '',
       title_en: workTopMeta.Title_EN || '',
       ai_training: {
         allowed: workHasAllowedDb,
@@ -575,7 +598,7 @@ async function main() {
     masterIndex.works.push({
       work_key: workKey,
       dir_name: dirName,
-      title_ja: workTopMeta.Title || '',
+      title_ja: workTopMeta.Title_JP || '',
       title_en: workTopMeta.Title_EN || '',
       character_count: workEntry.characters.length,
       image_count: workImages.length,
@@ -591,12 +614,12 @@ async function main() {
     const workOutPath = path.join(WORKS_OUT, `${dirName}.json`);
     fs.writeFileSync(workOutPath, JSON.stringify({
       _notice: '原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / ' + SOURCE_REPO_URL,
-      _generated_at: new Date().toISOString(),
+      _generated_at: buildTimestamp,
       work_key: workKey,
       dir_name: dirName,
-      title_ja: workTopMeta.Title || '',
+      title_ja: workTopMeta.Title_JP || '',
       title_en: workTopMeta.Title_EN || '',
-      summary: workTopMeta.Works_Summary || '',
+      summary: workTopMeta.Works_Summary_JP || '',
       layout: workTopMeta.$DetailLayout || null,
       ai_training: {
         allowed: workHasAllowedDb,
@@ -659,7 +682,7 @@ async function main() {
   // ポリシーサマリ JSON を独立して出力（消費側がフラグ確認に使う）
   fs.writeFileSync(path.join(OUT_DIR, 'policy.json'), JSON.stringify({
     _notice: '原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / ' + SOURCE_REPO_URL,
-    _generated_at: new Date().toISOString(),
+    _generated_at: buildTimestamp,
     ai_training_policy: aiTrainingPolicySummary,
     target_environments: headerRecord.target_environments,
     schema: {
@@ -678,6 +701,8 @@ async function main() {
         'DB_Primary (等)': 'charId ディレクトリ配下の画像 (corefolder / humanoid 等、形態別フォルダスキャン結果)',
         concept:      '両形態を含む概念イラスト 1 枚 (DB_Primary/concept/cnsp_img{N}.png 等) — 2026-06-19 追加',
         concept_alt:  '概念イラストのバリアント群 (conceptAlt_PNGName[] 由来、複数形態・複数キャラ構図を含む場合あり) — 2026-06-19 追加',
+        corefolder:   'コアフォルダ形態の正規イラスト (corefolder_PNGPath[] 由来、DB_Primary/corefolder/{path}) — 2026-06-23 追加',
+        humanoid:     '人型形態の正規イラスト (humanoid_PNGPath[] 由来、DB_Primary/humanoid/{path}) — 2026-06-23 追加',
         arts:         'キャラクター個別アートワーク (arts_PNGPath[] 由来) — 2026-06-19 追加',
         design_alt:   '衣装差分・デザインバリアント (designAlt_PNGPath[] 由来、形態注記なし) — 2026-06-19 追加',
         note:         'パスは creations-db サブモジュールルートからの相対パス。ファイルが実在しない場合はキー自体が省略される。',
@@ -706,7 +731,7 @@ async function main() {
   };
 
   fs.writeFileSync(path.join(OUT_DIR, 'build-info.json'), JSON.stringify({
-    generated_at: new Date().toISOString(),
+    generated_at: buildTimestamp,
     submodule_commit: getSubmoduleCommit(),
     source_repo: SOURCE_REPO_URL,
     licence: LICENCE_URL,
@@ -757,6 +782,8 @@ function resolveImagePath(baseNoExt) {
  *   DB_Primary / DB_SemiPrimary 等  charId ディレクトリスキャン結果 (corefolder 等)
  *   concept                         concept_PNGName (両形態を含む概念イラスト)
  *   concept_alt                     conceptAlt_PNGName[] (概念イラストバリアント)
+ *   corefolder                      corefolder_PNGPath[] (コアフォルダ形態の正規イラスト)
+ *   humanoid                        humanoid_PNGPath[] (人型形態の正規イラスト)
  *   arts                            arts_PNGPath[] (キャラ個別アートワーク)
  *   design_alt                      designAlt_PNGPath[] (衣装差分・デザインバリアント)
  */
@@ -804,6 +831,28 @@ function resolveCharacterImages(workDir, charId, charData) {
       .map(name => resolveImagePath(path.join(dbPrimaryBase, 'concept', name)))
       .filter(Boolean);
     if (paths.length > 0) images.concept_alt = paths;
+  }
+
+  // corefolder (複数): コアフォルダ形態の正規イラスト。
+  // corefolder_PNGPath[] → Images/DB_Primary/corefolder/{path}.<ext>
+  // 形態フォルダ (corefolder/) が charId の 1 階層上に挟まるため、charId ディレクトリ
+  // スキャン (上の DB_* ループ) では拾えない。構造化フィールドとして明示解決する。
+  if (Array.isArray(charImages.corefolder_PNGPath) && charImages.corefolder_PNGPath.length > 0) {
+    const paths = charImages.corefolder_PNGPath
+      .map(rel => resolveImagePath(path.join(dbPrimaryBase, 'corefolder', rel)))
+      .filter(Boolean);
+    if (paths.length > 0) images.corefolder = paths;
+  }
+
+  // humanoid (複数): 人型形態の正規イラスト。
+  // humanoid_PNGPath[] → Images/DB_Primary/humanoid/{path}.<ext>
+  // corefolder と同じく形態フォルダ (humanoid/) が 1 階層挟まる。現状ファイル未配置でも
+  // resolveImagePath が null を返すだけなので将来の追加に備えて先行対応する。
+  if (Array.isArray(charImages.humanoid_PNGPath) && charImages.humanoid_PNGPath.length > 0) {
+    const paths = charImages.humanoid_PNGPath
+      .map(rel => resolveImagePath(path.join(dbPrimaryBase, 'humanoid', rel)))
+      .filter(Boolean);
+    if (paths.length > 0) images.humanoid = paths;
   }
 
   // arts (複数): キャラクター個別に紐付けられたアートワーク。
