@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-06-22T17:17:40+09:00",
+  "_generated_at": "2026-06-23T15:13:42+09:00",
   "work_key": "#Works_UnibyteLive",
   "dir_name": "Works_UnibyteLive",
   "title_ja": "ハンカクライブ",
@@ -41,14 +41,14 @@
       "path": "data/Works_UnibyteLive/DataBases/db_Primary.json",
       "ai_training": {
         "allowed": false,
-        "reason": "Works_Hidden: true is set in db_meta.json for this work. The entire work is non-public and opted out of AI training/generation use."
+        "reason": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       }
     },
     {
       "path": "data/Works_UnibyteLive/DataBases/db_PrimaryPerformer.json",
       "ai_training": {
         "allowed": false,
-        "reason": "Works_Hidden: true is set in db_meta.json for this work. The entire work is non-public and opted out of AI training/generation use."
+        "reason": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       }
     }
   ],
