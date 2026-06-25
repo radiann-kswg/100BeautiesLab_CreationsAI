@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-06-24T13:40:09+09:00",
+  "_generated_at": "2026-06-25T17:12:26+09:00",
   "_path_base": "creations-db/",
   "works": {
     "#Works_NumberTales": {
@@ -608,12 +608,13 @@
       "images": [
         "data/Works_Proxies/Images/DB_Proxy/design/dsgn_imgRN2.png",
         "data/Works_Proxies/Images/DB_Proxy/design/dsgn_imgRN3.png",
-        "data/Works_Proxies/Images/DB_Proxy/designAlt/dsgn_imgRN3-onCostume.png"
+        "data/Works_Proxies/Images/DB_Proxy/designAlt/dsgn_imgRN3-onCostume.png",
+        "data/Works_Proxies/Images/General/ArchFaith.png"
       ],
-      "count": 3
+      "count": 4
     }
   },
   "general_images": [
-    "data/GeneralImages/WorldMap/cnsp-map_region8.png"
+    "data/GeneralImages/Ref_Region8/cnsp-map_region8.png"
   ]
 }

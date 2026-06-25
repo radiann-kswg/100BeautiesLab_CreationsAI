@@ -1,7 +1,7 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-06-24T13:40:09+09:00",
-  "_submodule_commit": "94ab5296077a2f35e0646781a095fcdea8f99b61",
+  "_generated_at": "2026-06-25T17:12:26+09:00",
+  "_submodule_commit": "6df9d2728434c23507e6c9c08539514e15baacf6",
   "works": [
     {
       "work_key": "#Works_NumberTales",
@@ -118,7 +118,7 @@
       "title_ja": "ラジアン代理",
       "title_en": "RadianN's Proxy",
       "character_count": 3,
-      "image_count": 3,
+      "image_count": 4,
       "ai_training": {
         "allowed": false,
         "allowed_db_keys": [],
