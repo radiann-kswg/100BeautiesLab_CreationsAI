@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-06-29T08:37:33+09:00",
+  "_generated_at": "2026-06-29T11:08:24+09:00",
   "ai_training_policy": {
     "note": "以下のフラグを参照し、粒度に応じた多層判定で AI 学習・生成への利用可否を決定します。",
     "policy_source": {
@@ -20,8 +20,9 @@
   },
   "target_environments": {
     "novelai_sd": "各キャラクターレコード data.AIHints.forms.<form>.prompt_export / negative_prompt_export + forms.<form>.negative_keywords (corefolder の腕・脚等 structural NG 含む) を貼付",
-    "chatgpt": "common.natural_language_description + forms.<form>.natural_language_description + identity_tags / form_tags + forms.<form>.silhouette_notes.body_description / silhouette_notes.attached_items + forms.<form>.immutable_constraints を貼付",
-    "gemini": "上記に加え forms.<form>.reference_images.main および work_common.reference_images.{corefolder_reference, humanoid_reference} を参照画像として添付"
+    "chatgpt": "common.natural_language_description + forms.<form>.natural_language_description + identity_tags / form_tags + forms.<form>.silhouette_notes.body_description / silhouette_notes.attached_items + forms.<form>.immutable_constraints を貼付。外見の構造化情報は data.AppearanceDetail (has_appearance_detail: true のレコード) も参照可能",
+    "gemini": "上記に加え forms.<form>.reference_images.main および work_common.reference_images.{corefolder_reference, humanoid_reference} を参照画像として添付",
+    "structured_appearance": "data.AppearanceDetail[] (has_appearance_detail: true のレコード) から BodyPart / DesignElement / Attrs を参照することで外見パーツの構造化データを取得可能。将来的に AIHints.forms.*.silhouette_notes の源泉データとして統合予定"
   },
   "schema": {
     "ai_training_field": {
@@ -34,6 +35,10 @@
       "forms_silhouette_notes": "silhouette_notes は 2026-06-09 以降 { body_description: string[], attached_items: string[] } 形式 (旧 #String[] 形式とも互換)。本体素体と装着付属品を分離して保持する。",
       "work_common": "作品共通の参照画像まとめ (reference_images.corefolder_reference[] / humanoid_reference[]) — 2026-06-08 追加",
       "alt_modes": "将来予約モード格納 (corefolder_dressed.allowed / outfit_source) — 2026-06-08 追加"
+    },
+    "appearance_detail_field": {
+      "description": "AppearanceDetail: 外見デザイン詳細の構造化データ ($Def_AppearanceDetail[]|#Null)。Formation / BodyPart / Laterality / DesignElement / Attrs / img_PNGName / Note_JP / Note_EN の各フィールドを持つオブジェクト配列。将来的に AIHints.forms.*.silhouette_notes の自然言語記述の源泉データとして統合予定。",
+      "consumer_guidance": "有無は has_appearance_detail フラグで確認。各エントリの DesignElement / Attrs に外見パーツ・属性の構造化情報が格納される。AIHints の silhouette_notes と併用することで構造化 + 自然言語の両面から外見を参照できる。"
     },
     "images_field": {
       "DB_Primary (等)": "charId ディレクトリ配下の画像 (corefolder / humanoid 等、形態別フォルダスキャン結果)",

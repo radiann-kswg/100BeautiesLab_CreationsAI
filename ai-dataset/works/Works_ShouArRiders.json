@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-06-29T08:37:33+09:00",
+  "_generated_at": "2026-06-29T11:08:24+09:00",
   "work_key": "#Works_ShouArRiders",
   "dir_name": "Works_ShouArRiders",
   "title_ja": "獣爾騎兵",
@@ -59,6 +59,7 @@
   "character_ids_with_immutable_constraints": [],
   "character_ids_with_negative_keywords": [],
   "character_ids_with_work_common": [],
+  "character_ids_with_appearance_detail": [],
   "image_paths": [
     "data/Works_ShouArRiders/Images/DB_Primary/arts/art_imgEZ13-meowsday2023.png",
     "data/Works_ShouArRiders/Images/DB_Primary/arts/newYear/art_imgEZ4-newyear2023.png",

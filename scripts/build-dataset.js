@@ -378,8 +378,9 @@ async function main() {
     ai_training_policy: aiTrainingPolicySummary,
     target_environments: {
       novelai_sd: '各キャラクターレコード data.AIHints.forms.<form>.prompt_export / negative_prompt_export + forms.<form>.negative_keywords (corefolder の腕・脚等 structural NG 含む) を貼付',
-      chatgpt:    'common.natural_language_description + forms.<form>.natural_language_description + identity_tags / form_tags + forms.<form>.silhouette_notes.body_description / silhouette_notes.attached_items + forms.<form>.immutable_constraints を貼付',
+      chatgpt:    'common.natural_language_description + forms.<form>.natural_language_description + identity_tags / form_tags + forms.<form>.silhouette_notes.body_description / silhouette_notes.attached_items + forms.<form>.immutable_constraints を貼付。外見の構造化情報は data.AppearanceDetail (has_appearance_detail: true のレコード) も参照可能',
       gemini:     '上記に加え forms.<form>.reference_images.main および work_common.reference_images.{corefolder_reference, humanoid_reference} を参照画像として添付',
+      structured_appearance: 'data.AppearanceDetail[] (has_appearance_detail: true のレコード) から BodyPart / DesignElement / Attrs を参照することで外見パーツの構造化データを取得可能。将来的に AIHints.forms.*.silhouette_notes の源泉データとして統合予定',
     },
   };
   appendJSONL(manifestStream, headerRecord);
@@ -393,6 +394,7 @@ async function main() {
   let totalWithNegativeKeywords = 0;
   let totalWithWorkCommon = 0;
   let totalWithConceptFormsMeta = 0;
+  let totalWithAppearanceDetail = 0;
 
   for (const workKey of workKeys) {
     const workTopMeta = creationWorks[workKey];
@@ -517,6 +519,10 @@ async function main() {
         const hasConceptFormsMeta = !!(
           Array.isArray(aiHints?.concept_contains_forms) && aiHints.concept_contains_forms.length > 0
         );
+        // AppearanceDetail: 外見デザイン詳細の構造化データが存在するかどうか
+        const hasAppearanceDetail = !!(
+          Array.isArray(charData.AppearanceDetail) && charData.AppearanceDetail.length > 0
+        );
 
         const charEntry = {
           id: charId,
@@ -532,12 +538,13 @@ async function main() {
           has_negative_keywords: hasAnyNegativeKeywords,
           has_work_common: hasWorkCommonBlock,
           has_concept_forms_metadata: hasConceptFormsMeta,
+          has_appearance_detail: hasAppearanceDetail,
           // 原データを変更せずそのまま参照
           data: charData,
           images,
         };
 
-        workEntry.characters.push({ id: charId, images, has_ai_hints: !!aiHints, has_silhouette_notes: hasAnySilhouetteNotes, has_immutable_constraints: hasAnyImmutableConstraints, has_negative_keywords: hasAnyNegativeKeywords, has_work_common: hasWorkCommonBlock, has_concept_forms_metadata: hasConceptFormsMeta, ai_training_allowed: charPolicy.allowed });
+        workEntry.characters.push({ id: charId, images, has_ai_hints: !!aiHints, has_silhouette_notes: hasAnySilhouetteNotes, has_immutable_constraints: hasAnyImmutableConstraints, has_negative_keywords: hasAnyNegativeKeywords, has_work_common: hasWorkCommonBlock, has_concept_forms_metadata: hasConceptFormsMeta, has_appearance_detail: hasAppearanceDetail, ai_training_allowed: charPolicy.allowed });
         totalCharacters++;
         if (charPolicy.allowed) totalAllowedCharacters++;
         if (aiHints) totalWithAiHints++;
@@ -546,6 +553,7 @@ async function main() {
         if (hasAnyNegativeKeywords)      totalWithNegativeKeywords++;
         if (hasWorkCommonBlock)          totalWithWorkCommon++;
         if (hasConceptFormsMeta)         totalWithConceptFormsMeta++;
+        if (hasAppearanceDetail)         totalWithAppearanceDetail++;
 
         // JSONL レコード（1キャラクター = 1行）
         const record = { _type: 'character', ...charEntry };
@@ -633,6 +641,7 @@ async function main() {
       character_ids_with_immutable_constraints: workEntry.characters.filter(c => c.has_immutable_constraints).map(c => c.id),
       character_ids_with_negative_keywords: workEntry.characters.filter(c => c.has_negative_keywords).map(c => c.id),
       character_ids_with_work_common: workEntry.characters.filter(c => c.has_work_common).map(c => c.id),
+      character_ids_with_appearance_detail: workEntry.characters.filter(c => c.has_appearance_detail).map(c => c.id),
       image_paths: workImages,
     }, null, 2), 'utf8');
   }
@@ -697,6 +706,10 @@ async function main() {
         work_common: '作品共通の参照画像まとめ (reference_images.corefolder_reference[] / humanoid_reference[]) — 2026-06-08 追加',
         alt_modes:   '将来予約モード格納 (corefolder_dressed.allowed / outfit_source) — 2026-06-08 追加',
       },
+      appearance_detail_field: {
+        description: 'AppearanceDetail: 外見デザイン詳細の構造化データ ($Def_AppearanceDetail[]|#Null)。Formation / BodyPart / Laterality / DesignElement / Attrs / img_PNGName / Note_JP / Note_EN の各フィールドを持つオブジェクト配列。将来的に AIHints.forms.*.silhouette_notes の自然言語記述の源泉データとして統合予定。',
+        consumer_guidance: '有無は has_appearance_detail フラグで確認。各エントリの DesignElement / Attrs に外見パーツ・属性の構造化情報が格納される。AIHints の silhouette_notes と併用することで構造化 + 自然言語の両面から外見を参照できる。',
+      },
       images_field: {
         'DB_Primary (等)': 'charId ディレクトリ配下の画像 (corefolder / humanoid 等、形態別フォルダスキャン結果)',
         concept:      '両形態を含む概念イラスト 1 枚 (DB_Primary/concept/cnsp_img{N}.png 等) — 2026-06-19 追加',
@@ -746,6 +759,9 @@ async function main() {
       with_negative_keywords:     totalWithNegativeKeywords,
       with_work_common:           totalWithWorkCommon,
       with_concept_forms_metadata: totalWithConceptFormsMeta,
+    },
+    appearance_detail_stats: {
+      with_appearance_detail: totalWithAppearanceDetail,
     },
   }, null, 2), 'utf8');
   info(`build-info.json を書き込みました`);

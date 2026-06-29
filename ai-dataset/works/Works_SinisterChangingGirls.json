@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-06-29T08:37:33+09:00",
+  "_generated_at": "2026-06-29T11:08:24+09:00",
   "work_key": "#Works_SinisterChangingGirls",
   "dir_name": "Works_SinisterChangingGirls",
   "title_ja": "豹変系女子",
@@ -59,6 +59,7 @@
   "character_ids_with_immutable_constraints": [],
   "character_ids_with_negative_keywords": [],
   "character_ids_with_work_common": [],
+  "character_ids_with_appearance_detail": [],
   "image_paths": [
     "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/art_imgDrcNE-InfrationAerialSwimming.png",
     "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/chattingArt/chart_imgDrcNE-ramen.png",
