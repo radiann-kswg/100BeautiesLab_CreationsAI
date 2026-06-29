@@ -1,14 +1,14 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-06-29T08:37:33+09:00",
-  "_submodule_commit": "888991bf7814116e9aa64a7d8947234cf7ed5c0f",
+  "_generated_at": "2026-06-29T09:59:30+09:00",
+  "_submodule_commit": "e237e734243067fe73f3e7584a94d44f2520455d",
   "works": [
     {
       "work_key": "#Works_NumberTales",
       "dir_name": "Works_NumberTales",
       "title_ja": "ナンバーテールズ",
       "title_en": "NumberTales",
-      "character_count": 299,
+      "character_count": 154,
       "image_count": 446,
       "ai_training": {
         "allowed": true,
@@ -26,7 +26,7 @@
       "dir_name": "Works_FLInvestigator78",
       "title_ja": "運命線探偵78",
       "title_en": "the Fate-Line Investigator 78",
-      "character_count": 78,
+      "character_count": 0,
       "image_count": 11,
       "ai_training": {
         "allowed": false,
@@ -126,6 +126,6 @@
       }
     }
   ],
-  "total_characters": 431,
+  "total_characters": 208,
   "total_works": 9
 }
