@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-06-30T19:41:28+09:00",
+  "_generated_at": "2026-06-30T19:49:17+09:00",
   "work_key": "#Works_UnibyteLive",
   "dir_name": "Works_UnibyteLive",
   "title_ja": "ハンカクライブ",
@@ -28,7 +28,8 @@
       "AppearanceDetail",
       "AbilityStats",
       "StreamingActivity",
-      "ConversationPattern"
+      "ConversationPattern",
+      "ThisPerformer_DBLink"
     ]
   },
   "ai_training": {
@@ -54,8 +55,15 @@
   ],
   "character_ids": [
     "A:アロー",
+    "N:ギザン",
+    "S:ツェット",
     "S:ナーミィ",
-    "Z:ジグ"
+    "Z:ジグ",
+    "0",
+    "1",
+    "2",
+    "3",
+    "4"
   ],
   "character_ids_with_ai_hints": [],
   "character_ids_with_silhouette_notes": [],
