@@ -1,14 +1,14 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-07-01T09:54:11+09:00",
-  "_submodule_commit": "9a0f8d007762b9e008d42ee3c29804d3a860c64a",
+  "_generated_at": "2026-07-02T09:21:08+09:00",
+  "_submodule_commit": "16dc226b3bfd541727b16c77306f3184bac4932d",
   "works": [
     {
       "work_key": "#Works_NumberTales",
       "dir_name": "Works_NumberTales",
       "title_ja": "ナンバーテールズ",
       "title_en": "NumberTales",
-      "character_count": 299,
+      "character_count": 314,
       "image_count": 446,
       "ai_training": {
         "allowed": true,
@@ -52,7 +52,7 @@
       "dir_name": "Works_UnibyteLive",
       "title_ja": "ハンカクライブ",
       "title_en": "UnibyteLive",
-      "character_count": 10,
+      "character_count": 21,
       "image_count": 2,
       "ai_training": {
         "allowed": false,
@@ -126,6 +126,6 @@
       }
     }
   ],
-  "total_characters": 438,
+  "total_characters": 464,
   "total_works": 9
 }

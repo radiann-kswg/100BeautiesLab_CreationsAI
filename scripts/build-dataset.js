@@ -473,8 +473,19 @@ async function main() {
       try {
         records = await client.getRecords(workKey, dbMetaKey, { applyCommons: true });
       } catch (e) {
-        log(`WARN: getRecords 失敗 (${workKey} / ${dbMetaKey}): ${e.message}`);
-        continue;
+        // 既知の CreationsDBClient 側の制約: readDBRecords() の prefix 剥がし正規表現が
+        // `Ref_` を考慮しないため、#Ref_* かつ DB_Layer が非既定 (例: References) の DB では
+        // ファイルが実在しても "DB file not found" になることがある。
+        // dbAbsPath は本スクリプト側で独自に解決済み（かつ存在確認済み）なので、直接読み込みで救済する。
+        // 参考文書・辞書系 DB は _Commons を持たないため非適用でも実害はない。
+        const fallback = readJSON(dbAbsPath);
+        if (Array.isArray(fallback)) {
+          log(`WARN: client.getRecords 失敗のため直接読み込みにフォールバック (${workKey} / ${dbMetaKey}): ${e.message}`);
+          records = fallback;
+        } else {
+          log(`WARN: getRecords 失敗 (${workKey} / ${dbMetaKey}): ${e.message}`);
+          continue;
+        }
       }
 
       for (const [idx, charData] of records.entries()) {
