@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-07-03T12:16:29+09:00",
+  "_generated_at": "2026-07-03T13:47:23+09:00",
   "work_key": "#Works_UnibyteLive",
   "dir_name": "Works_UnibyteLive",
   "title_ja": "ハンカクライブ",
@@ -14,6 +14,7 @@
       "FormalName",
       "CodeName",
       "Belonging",
+      "Generation",
       "Class",
       "Age",
       "AnivDay",
