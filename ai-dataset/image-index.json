@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-07-05T11:15:17+09:00",
+  "_generated_at": "2026-07-05T13:20:51+09:00",
   "_path_base": "creations-db/",
   "works": {
     "#Works_NumberTales": {
@@ -442,7 +442,8 @@
         "data/Works_NumberTales/Images/DB_SelfSecondary/conceptAlt/cnsp_img777-mpB.png",
         "data/Works_NumberTales/Images/DB_SelfSecondary/conceptAlt/cnsp_img777-mpC.png",
         "data/Works_NumberTales/Images/DB_SelfSecondary/conceptAlt/numberize/cnsp_img115-numberize-image.png",
-        "data/Works_NumberTales/Images/DB_SelfSecondary/corefolder/666-mp/emstk_corefolder666-mp1.png",
+        "data/Works_NumberTales/Images/DB_SelfSecondary/corefolder/444/emstk_corefolder444-mp1.png",
+        "data/Works_NumberTales/Images/DB_SelfSecondary/corefolder/666/emstk_corefolder666-mp1.png",
         "data/Works_NumberTales/Images/DB_SemiPrimary/arts/corefolders/autumnMoon/art_autumnMoon2025.png",
         "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_img111.png",
         "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_img222.png",
@@ -460,13 +461,16 @@
         "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/222/emstk_corefolder222-2b.png",
         "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/3x11/emstk_corefolder3x11-1.png",
         "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/3x11/emstk_corefolder3x11-2.png",
+        "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/444/emstk_corefolder444-1.png",
+        "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/444/emstk_corefolder444-2.png",
+        "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/444/emstk_corefolder444-3.png",
         "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/666/emstk_corefolder666-1.png",
         "data/Works_NumberTales/Images/General/catalog/chr-dsgn_NTsCatalog-Summary.png",
         "data/Works_NumberTales/Images/Ref_Reference/concept-figure/cnsp-fg_NTsClass.png",
         "data/Works_NumberTales/Images/Ref_Vocabulary/concept-figure/cnsp-fg_NTsCoreFolder.png",
         "data/Works_NumberTales/Images/Ref_Vocabulary/concept-figure/cnsp-fg_NTsHumanoid.png"
       ],
-      "count": 448
+      "count": 452
     },
     "#Works_FLInvestigator78": {
       "title_ja": "運命線探偵78",
