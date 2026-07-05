@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-07-05T07:59:28+09:00",
+  "_generated_at": "2026-07-05T11:15:17+09:00",
   "_path_base": "creations-db/",
   "works": {
     "#Works_NumberTales": {
@@ -434,6 +434,7 @@
         "data/Works_NumberTales/Images/DB_Secondary/corefolder/0xF/emstk_corefolder0xF-2a.png",
         "data/Works_NumberTales/Images/DB_SelfSecondary/concept/cnsp_img111-mp.png",
         "data/Works_NumberTales/Images/DB_SelfSecondary/concept/cnsp_img223.png",
+        "data/Works_NumberTales/Images/DB_SelfSecondary/concept/cnsp_img444-mp.png",
         "data/Works_NumberTales/Images/DB_SelfSecondary/concept/cnsp_img666-mp.png",
         "data/Works_NumberTales/Images/DB_SelfSecondary/concept/cnsp_img753.png",
         "data/Works_NumberTales/Images/DB_SelfSecondary/concept/cnsp_img777-mp.png",
@@ -446,6 +447,7 @@
         "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_img111.png",
         "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_img222.png",
         "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_img3x11.png",
+        "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_img444.png",
         "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_img666.png",
         "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_img777.png",
         "data/Works_NumberTales/Images/DB_SemiPrimary/conceptAlt/cnsp_img222-origA.png",
@@ -464,7 +466,7 @@
         "data/Works_NumberTales/Images/Ref_Vocabulary/concept-figure/cnsp-fg_NTsCoreFolder.png",
         "data/Works_NumberTales/Images/Ref_Vocabulary/concept-figure/cnsp-fg_NTsHumanoid.png"
       ],
-      "count": 446
+      "count": 448
     },
     "#Works_FLInvestigator78": {
       "title_ja": "運命線探偵78",
@@ -609,9 +611,12 @@
         "data/Works_Proxies/Images/DB_Proxy/design/dsgn_imgRN2.png",
         "data/Works_Proxies/Images/DB_Proxy/design/dsgn_imgRN3.png",
         "data/Works_Proxies/Images/DB_Proxy/designAlt/dsgn_imgRN3-onCostume.png",
+        "data/Works_Proxies/Images/DB_Proxy/weakening/emstk_weakeningRN2-1.png",
+        "data/Works_Proxies/Images/DB_Proxy/weakening/emstk_weakeningRN3-1.png",
+        "data/Works_Proxies/Images/DB_Proxy/weakening/emstk_weakeningRN3-2.png",
         "data/Works_Proxies/Images/General/ArchFaith.png"
       ],
-      "count": 4
+      "count": 7
     }
   },
   "general_images": [
