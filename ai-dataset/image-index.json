@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-07-06T11:36:15+09:00",
+  "_generated_at": "2026-07-06T17:31:42+09:00",
   "_path_base": "creations-db/",
   "works": {
     "#Works_NumberTales": {
@@ -423,17 +423,19 @@
         "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_img736-numberize.png",
         "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_img773-numberize.png",
         "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_img979-numberize.png",
-        "data/Works_NumberTales/Images/DB_Secondary/corefolder/0xA/emstk_corefolder0xA-1.png",
-        "data/Works_NumberTales/Images/DB_Secondary/corefolder/0xB/emstk_corefolder0xB-1.png",
-        "data/Works_NumberTales/Images/DB_Secondary/corefolder/0xC/emstk_corefolder0xC-1.png",
-        "data/Works_NumberTales/Images/DB_Secondary/corefolder/0xC/emstk_corefolder0xC-2.png",
-        "data/Works_NumberTales/Images/DB_Secondary/corefolder/0xD/emstk_corefolder0xD-1.png",
-        "data/Works_NumberTales/Images/DB_Secondary/corefolder/0xD/emstk_corefolder0xD-2.png",
-        "data/Works_NumberTales/Images/DB_Secondary/corefolder/0xE/emstk_corefolder0xE-1.png",
-        "data/Works_NumberTales/Images/DB_Secondary/corefolder/0xF/emstk_corefolder0xF-1.png",
-        "data/Works_NumberTales/Images/DB_Secondary/corefolder/0xF/emstk_corefolder0xF-1a.png",
-        "data/Works_NumberTales/Images/DB_Secondary/corefolder/0xF/emstk_corefolder0xF-2.png",
-        "data/Works_NumberTales/Images/DB_Secondary/corefolder/0xF/emstk_corefolder0xF-2a.png",
+        "data/Works_NumberTales/Images/DB_Secondary/corefolder/hexademical/0xA/emstk_corefolder0xA-1.png",
+        "data/Works_NumberTales/Images/DB_Secondary/corefolder/hexademical/0xB/emstk_corefolder0xB-1.png",
+        "data/Works_NumberTales/Images/DB_Secondary/corefolder/hexademical/0xC/emstk_corefolder0xC-1.png",
+        "data/Works_NumberTales/Images/DB_Secondary/corefolder/hexademical/0xC/emstk_corefolder0xC-2.png",
+        "data/Works_NumberTales/Images/DB_Secondary/corefolder/hexademical/0xD/emstk_corefolder0xD-1.png",
+        "data/Works_NumberTales/Images/DB_Secondary/corefolder/hexademical/0xD/emstk_corefolder0xD-2.png",
+        "data/Works_NumberTales/Images/DB_Secondary/corefolder/hexademical/0xE/emstk_corefolder0xE-1.png",
+        "data/Works_NumberTales/Images/DB_Secondary/corefolder/hexademical/0xF/emstk_corefolder0xF-1.png",
+        "data/Works_NumberTales/Images/DB_Secondary/corefolder/hexademical/0xF/emstk_corefolder0xF-1a.png",
+        "data/Works_NumberTales/Images/DB_Secondary/corefolder/hexademical/0xF/emstk_corefolder0xF-2.png",
+        "data/Works_NumberTales/Images/DB_Secondary/corefolder/hexademical/0xF/emstk_corefolder0xF-2a.png",
+        "data/Works_NumberTales/Images/DB_Secondary/corefolder/numberize/emstk_corefolder241-numberize1.png",
+        "data/Works_NumberTales/Images/DB_Secondary/corefolder/numberize/emstk_corefolder605-numberize1.png",
         "data/Works_NumberTales/Images/DB_SelfSecondary/concept/cnsp_img111-mp.png",
         "data/Works_NumberTales/Images/DB_SelfSecondary/concept/cnsp_img223.png",
         "data/Works_NumberTales/Images/DB_SelfSecondary/concept/cnsp_img444-mp.png",
@@ -446,6 +448,7 @@
         "data/Works_NumberTales/Images/DB_SelfSecondary/conceptAlt/numberize/cnsp_img115-numberize-image.png",
         "data/Works_NumberTales/Images/DB_SelfSecondary/corefolder/444/emstk_corefolder444-mp1.png",
         "data/Works_NumberTales/Images/DB_SelfSecondary/corefolder/666/emstk_corefolder666-mp1.png",
+        "data/Works_NumberTales/Images/DB_SelfSecondary/corefolder/753/emstk_corefolder753-1.png",
         "data/Works_NumberTales/Images/DB_SemiPrimary/arts/corefolders/autumnMoon/art_autumnMoon2025.png",
         "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_img111.png",
         "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_img222.png",
@@ -472,7 +475,7 @@
         "data/Works_NumberTales/Images/Ref_Vocabulary/concept-figure/cnsp-fg_NTsCoreFolder.png",
         "data/Works_NumberTales/Images/Ref_Vocabulary/concept-figure/cnsp-fg_NTsHumanoid.png"
       ],
-      "count": 453
+      "count": 456
     },
     "#Works_FLInvestigator78": {
       "title_ja": "運命線探偵78",
@@ -556,6 +559,19 @@
         "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgDrcSE.png"
       ],
       "count": 10
+    },
+    "#Works_VirtuesUs": {
+      "title_ja": "我ら美徳の桜花兄弟",
+      "title_en": "Virtues Us - the Cherrybloom Siblings",
+      "ai_training": {
+        "allowed": true,
+        "allowed_db_keys": [
+          "#DB_SemiPrimary"
+        ],
+        "note": "画像パスのうち許可された DB に対応するサブディレクトリ (Images/DB_<name>/...) のみが AI 学習許可対象です。"
+      },
+      "images": [],
+      "count": 0
     },
     "#Works_UnauthedLogica": {
       "title_ja": "アンオースドロジカ",

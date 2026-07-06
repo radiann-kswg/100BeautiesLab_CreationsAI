@@ -1,0 +1,66 @@
+{
+  "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
+  "_generated_at": "2026-07-06T17:31:42+09:00",
+  "work_key": "#Works_VirtuesUs",
+  "dir_name": "Works_VirtuesUs",
+  "title_ja": "我ら美徳の桜花兄弟",
+  "title_en": "Virtues Us - the Cherrybloom Siblings",
+  "summary": "創作世界の各国に所在する誇り高き８人の義兄弟姉妹。\n「豹変系女子」のアンソロジーにあたり、主に八徳に基づいた８人のキャラクターからなる。",
+  "layout": {
+    "headerPills": [
+      "Progress"
+    ],
+    "basicFields": [
+      "FormalName",
+      "ModelName",
+      "ModelNumber",
+      "CodeName",
+      "Belonging",
+      "Class",
+      "Age",
+      "AnivDay",
+      "RaceType",
+      "GenderType",
+      "Height_cm",
+      "Weight_kg",
+      "BustSize"
+    ],
+    "subFields": [
+      "ConversationPattern",
+      "AnotherRegions_DBLink"
+    ]
+  },
+  "ai_training": {
+    "allowed": true,
+    "allowed_db_keys": [
+      "#DB_SemiPrimary"
+    ],
+    "reason": "AI_Optout / DB_Hidden / Works_Hidden are not set for this DB. This DB is opted in for AI training/generation use."
+  },
+  "db_files": [
+    {
+      "path": "data/Works_VirtuesUs/DataBases/db_SemiPrimary.json",
+      "ai_training": {
+        "allowed": true,
+        "reason": "AI_Optout / DB_Hidden / Works_Hidden are not set for this DB. This DB is opted in for AI training/generation use."
+      }
+    }
+  ],
+  "character_ids": [
+    "桜花 仁",
+    "桜花 義",
+    "2",
+    "桜花 智",
+    "桜花 信",
+    "5",
+    "桜花 孝",
+    "桜花 悌"
+  ],
+  "character_ids_with_ai_hints": [],
+  "character_ids_with_silhouette_notes": [],
+  "character_ids_with_immutable_constraints": [],
+  "character_ids_with_negative_keywords": [],
+  "character_ids_with_work_common": [],
+  "character_ids_with_appearance_detail": [],
+  "image_paths": []
+}
