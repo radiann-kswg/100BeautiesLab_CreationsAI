@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-07-06T17:36:13+09:00",
+  "_generated_at": "2026-07-07T16:29:39+09:00",
   "_path_base": "creations-db/",
   "works": {
     "#Works_NumberTales": {
@@ -386,6 +386,13 @@
         "data/Works_NumberTales/Images/DB_Primary/designAlt/chattingArt/chart_img66-corefolderHalloween.png",
         "data/Works_NumberTales/Images/DB_Primary/designAlt/eventArt/art_sphericateDay-halloween2023A.png",
         "data/Works_NumberTales/Images/DB_Primary/designAlt/eventArt/art_sphericateDay-halloween2023B.png",
+        "data/Works_NumberTales/Images/DB_Secondary/arts/hexademical-corefolders/art_sphericateDay202406-1.png",
+        "data/Works_NumberTales/Images/DB_Secondary/arts/hexademical-corefolders/art_sphericateDay202406-2.png",
+        "data/Works_NumberTales/Images/DB_Secondary/arts/hexademical-corefolders/art_sphericateDay202406-3.png",
+        "data/Works_NumberTales/Images/DB_Secondary/arts/numberize-corefolders/art_img294numberize,295numberize-corefolder.png",
+        "data/Works_NumberTales/Images/DB_Secondary/arts/numberize-corefolders/art_img337numberize-corefolder.png",
+        "data/Works_NumberTales/Images/DB_Secondary/arts/numberize-corefolders/art_img401numberize-corefolder.png",
+        "data/Works_NumberTales/Images/DB_Secondary/arts/numberize-corefolders/art_img96,241numberize-corefolder.png",
         "data/Works_NumberTales/Images/DB_Secondary/concept/hexademical/cnsp_img0xA.png",
         "data/Works_NumberTales/Images/DB_Secondary/concept/hexademical/cnsp_img0xB.png",
         "data/Works_NumberTales/Images/DB_Secondary/concept/hexademical/cnsp_img0xC.png",
@@ -437,7 +444,7 @@
         "data/Works_NumberTales/Images/DB_Secondary/corefolder/numberize/emstk_corefolder241-numberize1.png",
         "data/Works_NumberTales/Images/DB_Secondary/corefolder/numberize/emstk_corefolder605-numberize1.png",
         "data/Works_NumberTales/Images/DB_SelfSecondary/concept/cnsp_img111-mp.png",
-        "data/Works_NumberTales/Images/DB_SelfSecondary/concept/cnsp_img223.png",
+        "data/Works_NumberTales/Images/DB_SelfSecondary/concept/cnsp_img223-jw.png",
         "data/Works_NumberTales/Images/DB_SelfSecondary/concept/cnsp_img444-mp.png",
         "data/Works_NumberTales/Images/DB_SelfSecondary/concept/cnsp_img666-mp.png",
         "data/Works_NumberTales/Images/DB_SelfSecondary/concept/cnsp_img753.png",
@@ -475,7 +482,7 @@
         "data/Works_NumberTales/Images/Ref_Vocabulary/concept-figure/cnsp-fg_NTsCoreFolder.png",
         "data/Works_NumberTales/Images/Ref_Vocabulary/concept-figure/cnsp-fg_NTsHumanoid.png"
       ],
-      "count": 456
+      "count": 463
     },
     "#Works_FLInvestigator78": {
       "title_ja": "運命線探偵78",
