@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-07T16:29:39+09:00",
-  "submodule_commit": "593207e6ae56c87ac143ffa4bb56263e9e076ef4",
+  "generated_at": "2026-07-08T12:25:48+09:00",
+  "submodule_commit": "7ce519dcfebdc9700fa739379a608ebdad97ab23",
   "source_repo": "https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
   "licence": "http://creativecommons.org/licenses/by-nc/4.0/",
   "total_works": 10,
@@ -21,6 +21,6 @@
     "with_concept_forms_metadata": 91
   },
   "appearance_detail_stats": {
-    "with_appearance_detail": 99
+    "with_appearance_detail": 97
   }
 }
