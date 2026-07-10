@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-07-10T16:45:25+09:00",
+  "_generated_at": "2026-07-10T17:04:55+09:00",
   "_path_base": "creations-db/",
   "works": {
     "#Works_NumberTales": {
@@ -109,6 +109,17 @@
         "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/parody/art_img34,43-parody.png",
         "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/parody/art_img42-homage.png",
         "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/parody/art_img73-parody.png",
+        "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnit16.png",
+        "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnit23.png",
+        "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnit39.png",
+        "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnit4.png",
+        "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnit49.png",
+        "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnit57.png",
+        "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnit6.png",
+        "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnit61.png",
+        "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnit73.png",
+        "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnit85.png",
+        "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnit93.png",
         "data/Works_NumberTales/Images/DB_Primary/catalog/chr-dsgn_catalog16.png",
         "data/Works_NumberTales/Images/DB_Primary/catalog/chr-dsgn_catalog23.png",
         "data/Works_NumberTales/Images/DB_Primary/catalog/chr-dsgn_catalog39.png",
@@ -483,7 +494,7 @@
         "data/Works_NumberTales/Images/Ref_Vocabulary/concept-figure/cnsp-fg_NTsCoreFolder.png",
         "data/Works_NumberTales/Images/Ref_Vocabulary/concept-figure/cnsp-fg_NTsHumanoid.png"
       ],
-      "count": 464
+      "count": 475
     },
     "#Works_FLInvestigator78": {
       "title_ja": "運命線探偵78",
