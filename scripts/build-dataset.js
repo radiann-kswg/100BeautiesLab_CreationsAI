@@ -395,6 +395,7 @@ async function main() {
   let totalWithWorkCommon = 0;
   let totalWithConceptFormsMeta = 0;
   let totalWithAppearanceDetail = 0;
+  let totalWithTailsUnit = 0;
 
   for (const workKey of workKeys) {
     const workTopMeta = creationWorks[workKey];
@@ -534,6 +535,11 @@ async function main() {
         const hasAppearanceDetail = !!(
           Array.isArray(charData.AppearanceDetail) && charData.AppearanceDetail.length > 0
         );
+        // TailsUnit: 尻尾ユニットの構造化データ (形状/本数/節数/分岐配置 + 参考画像) が存在するかどうか
+        // (2026-07-10 addon-ai-tag: $Def_TailsUnit[] 専用型 + TailsUnit_PNGName 参考画像フィールド追加)
+        const hasTailsUnit = !!(
+          Array.isArray(charData.TailsUnit) && charData.TailsUnit.length > 0
+        );
 
         const charEntry = {
           id: charId,
@@ -550,12 +556,13 @@ async function main() {
           has_work_common: hasWorkCommonBlock,
           has_concept_forms_metadata: hasConceptFormsMeta,
           has_appearance_detail: hasAppearanceDetail,
+          has_tails_unit: hasTailsUnit,
           // 原データを変更せずそのまま参照
           data: charData,
           images,
         };
 
-        workEntry.characters.push({ id: charId, images, has_ai_hints: !!aiHints, has_silhouette_notes: hasAnySilhouetteNotes, has_immutable_constraints: hasAnyImmutableConstraints, has_negative_keywords: hasAnyNegativeKeywords, has_work_common: hasWorkCommonBlock, has_concept_forms_metadata: hasConceptFormsMeta, has_appearance_detail: hasAppearanceDetail, ai_training_allowed: charPolicy.allowed });
+        workEntry.characters.push({ id: charId, images, has_ai_hints: !!aiHints, has_silhouette_notes: hasAnySilhouetteNotes, has_immutable_constraints: hasAnyImmutableConstraints, has_negative_keywords: hasAnyNegativeKeywords, has_work_common: hasWorkCommonBlock, has_concept_forms_metadata: hasConceptFormsMeta, has_appearance_detail: hasAppearanceDetail, has_tails_unit: hasTailsUnit, ai_training_allowed: charPolicy.allowed });
         totalCharacters++;
         if (charPolicy.allowed) totalAllowedCharacters++;
         if (aiHints) totalWithAiHints++;
@@ -565,6 +572,7 @@ async function main() {
         if (hasWorkCommonBlock)          totalWithWorkCommon++;
         if (hasConceptFormsMeta)         totalWithConceptFormsMeta++;
         if (hasAppearanceDetail)         totalWithAppearanceDetail++;
+        if (hasTailsUnit)                totalWithTailsUnit++;
 
         // JSONL レコード（1キャラクター = 1行）
         const record = { _type: 'character', ...charEntry };
@@ -653,6 +661,7 @@ async function main() {
       character_ids_with_negative_keywords: workEntry.characters.filter(c => c.has_negative_keywords).map(c => c.id),
       character_ids_with_work_common: workEntry.characters.filter(c => c.has_work_common).map(c => c.id),
       character_ids_with_appearance_detail: workEntry.characters.filter(c => c.has_appearance_detail).map(c => c.id),
+      character_ids_with_tails_unit: workEntry.characters.filter(c => c.has_tails_unit).map(c => c.id),
       image_paths: workImages,
     }, null, 2), 'utf8');
   }
@@ -721,6 +730,10 @@ async function main() {
         description: 'AppearanceDetail: 外見デザイン詳細の構造化データ ($Def_AppearanceDetail[]|#Null)。Formation / BodyPart / Laterality / DesignElement / Attrs / img_PNGName / Note_JP / Note_EN の各フィールドを持つオブジェクト配列。将来的に AIHints.forms.*.silhouette_notes の自然言語記述の源泉データとして統合予定。',
         consumer_guidance: '有無は has_appearance_detail フラグで確認。各エントリの DesignElement / Attrs に外見パーツ・属性の構造化情報が格納される。AIHints の silhouette_notes と併用することで構造化 + 自然言語の両面から外見を参照できる。',
       },
+      tails_unit_field: {
+        description: 'TailsUnit: 尻尾ユニットの構造化データ ($Def_TailsUnit[]|#Null、2026-07-10 addon-ai-tag 専用型化)。TailShapeType / Count / Segment / Branches (分岐配置) / LayoutDirection (LayoutFrom/LayoutTo) / TailsUnit_PNGName (参考画像・$subfolder: attr/tailsUnit) / Note_JP / Note_EN の各フィールドを持つオブジェクト配列。',
+        consumer_guidance: '有無は has_tails_unit フラグで確認。参考画像は images.tails_unit (存在する場合のみ) を参照。AppearanceDetail と同様、将来的に AIHints.forms.*.silhouette_notes の源泉データ候補。',
+      },
       images_field: {
         'DB_Primary (等)': 'charId ディレクトリ配下の画像 (corefolder / humanoid 等、形態別フォルダスキャン結果)',
         concept:      '両形態を含む概念イラスト 1 枚 (DB_Primary/concept/cnsp_img{N}.png 等) — 2026-06-19 追加',
@@ -729,6 +742,7 @@ async function main() {
         humanoid:     '人型形態の正規イラスト (humanoid_PNGPath[] 由来、DB_Primary/humanoid/{path}) — 2026-06-23 追加',
         arts:         'キャラクター個別アートワーク (arts_PNGPath[] 由来) — 2026-06-19 追加',
         design_alt:   '衣装差分・デザインバリアント (designAlt_PNGPath[] 由来、形態注記なし) — 2026-06-19 追加',
+        tails_unit:   '尻尾ユニット参考画像 (TailsUnit[*].TailsUnit_PNGName 由来、DB_Primary/attr/tailsUnit/{name}) — 2026-07-10 追加',
         note:         'パスは creations-db サブモジュールルートからの相対パス。ファイルが実在しない場合はキー自体が省略される。',
       },
     },
@@ -774,6 +788,9 @@ async function main() {
     appearance_detail_stats: {
       with_appearance_detail: totalWithAppearanceDetail,
     },
+    tails_unit_stats: {
+      with_tails_unit: totalWithTailsUnit,
+    },
   }, null, 2), 'utf8');
   info(`build-info.json を書き込みました`);
 
@@ -813,6 +830,7 @@ function resolveImagePath(baseNoExt) {
  *   humanoid                        humanoid_PNGPath[] (人型形態の正規イラスト)
  *   arts                            arts_PNGPath[] (キャラ個別アートワーク)
  *   design_alt                      designAlt_PNGPath[] (衣装差分・デザインバリアント)
+ *   tails_unit                      TailsUnit[*].TailsUnit_PNGName (尻尾ユニット参考画像) — 2026-07-10 追加
  */
 function resolveCharacterImages(workDir, charId, charData) {
   const images = {};
@@ -837,12 +855,26 @@ function resolveCharacterImages(workDir, charId, charData) {
     }
   }
 
+  const dbPrimaryBase = path.join(imagesBase, 'DB_Primary');
+
+  // --- TailsUnit (複数): 尻尾ユニット参考画像 ---
+  // TailsUnit[*].TailsUnit_PNGName → Images/DB_Primary/attr/tailsUnit/{name}.<ext>
+  // charData.Images とは独立したトップレベルフィールドのため、下記の charImages 早期 return より前に解決する。
+  // TailsUnit_PNGName は他の *_PNGName/*_PNGPath と異なり拡張子込みで格納されている (db_meta.json の
+  // $type: "#PNGFileName|#Null" 準拠) ため、resolveImagePath に渡す前に既知の拡張子を取り除く。
+  if (Array.isArray(charData.TailsUnit) && charData.TailsUnit.length > 0) {
+    const tailsUnitPaths = charData.TailsUnit
+      .map(entry => (entry && typeof entry.TailsUnit_PNGName === 'string') ? entry.TailsUnit_PNGName : null)
+      .filter(Boolean)
+      .map(name => resolveImagePath(path.join(dbPrimaryBase, 'attr/tailsUnit', name.replace(/\.(png|jpe?g|gif|webp|svg)$/i, ''))))
+      .filter(Boolean);
+    if (tailsUnitPaths.length > 0) images.tails_unit = tailsUnitPaths;
+  }
+
   // --- Phase 1: charData.Images の構造化フィールドから画像パスを解決 ---
   // concept / conceptAlt / arts / designAlt は DB_Primary 配下に格納される。
   const charImages = charData.Images;
   if (!charImages || typeof charImages !== 'object') return images;
-
-  const dbPrimaryBase = path.join(imagesBase, 'DB_Primary');
 
   // concept (単一): 両形態を描いた概念イラスト。
   // concept_PNGName → Images/DB_Primary/concept/{name}.<ext>

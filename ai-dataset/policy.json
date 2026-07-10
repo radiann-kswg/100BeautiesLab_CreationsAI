@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-07-10T16:45:25+09:00",
+  "_generated_at": "2026-07-10T17:19:45+09:00",
   "ai_training_policy": {
     "note": "以下のフラグを参照し、粒度に応じた多層判定で AI 学習・生成への利用可否を決定します。",
     "policy_source": {
@@ -40,6 +40,10 @@
       "description": "AppearanceDetail: 外見デザイン詳細の構造化データ ($Def_AppearanceDetail[]|#Null)。Formation / BodyPart / Laterality / DesignElement / Attrs / img_PNGName / Note_JP / Note_EN の各フィールドを持つオブジェクト配列。将来的に AIHints.forms.*.silhouette_notes の自然言語記述の源泉データとして統合予定。",
       "consumer_guidance": "有無は has_appearance_detail フラグで確認。各エントリの DesignElement / Attrs に外見パーツ・属性の構造化情報が格納される。AIHints の silhouette_notes と併用することで構造化 + 自然言語の両面から外見を参照できる。"
     },
+    "tails_unit_field": {
+      "description": "TailsUnit: 尻尾ユニットの構造化データ ($Def_TailsUnit[]|#Null、2026-07-10 addon-ai-tag 専用型化)。TailShapeType / Count / Segment / Branches (分岐配置) / LayoutDirection (LayoutFrom/LayoutTo) / TailsUnit_PNGName (参考画像・$subfolder: attr/tailsUnit) / Note_JP / Note_EN の各フィールドを持つオブジェクト配列。",
+      "consumer_guidance": "有無は has_tails_unit フラグで確認。参考画像は images.tails_unit (存在する場合のみ) を参照。AppearanceDetail と同様、将来的に AIHints.forms.*.silhouette_notes の源泉データ候補。"
+    },
     "images_field": {
       "DB_Primary (等)": "charId ディレクトリ配下の画像 (corefolder / humanoid 等、形態別フォルダスキャン結果)",
       "concept": "両形態を含む概念イラスト 1 枚 (DB_Primary/concept/cnsp_img{N}.png 等) — 2026-06-19 追加",
@@ -48,6 +52,7 @@
       "humanoid": "人型形態の正規イラスト (humanoid_PNGPath[] 由来、DB_Primary/humanoid/{path}) — 2026-06-23 追加",
       "arts": "キャラクター個別アートワーク (arts_PNGPath[] 由来) — 2026-06-19 追加",
       "design_alt": "衣装差分・デザインバリアント (designAlt_PNGPath[] 由来、形態注記なし) — 2026-06-19 追加",
+      "tails_unit": "尻尾ユニット参考画像 (TailsUnit[*].TailsUnit_PNGName 由来、DB_Primary/attr/tailsUnit/{name}) — 2026-07-10 追加",
       "note": "パスは creations-db サブモジュールルートからの相対パス。ファイルが実在しない場合はキー自体が省略される。"
     }
   }

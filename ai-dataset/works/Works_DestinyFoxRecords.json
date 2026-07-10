@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-07-10T16:45:25+09:00",
+  "_generated_at": "2026-07-10T17:19:45+09:00",
   "work_key": "#Works_DestinyFoxRecords",
   "dir_name": "Works_DestinyFoxRecords",
   "title_ja": "運命線狐の記録\nフィジカル9",
@@ -60,11 +60,12 @@
   "character_ids_with_negative_keywords": [],
   "character_ids_with_work_common": [],
   "character_ids_with_appearance_detail": [],
+  "character_ids_with_tails_unit": [],
   "image_paths": [
     "data/Works_DestinyFoxRecords/Images/DB_Primary/concept/cnsp_imgPhysU-m.png",
     "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgPhysU-A.png",
-    "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgPhysU-K.png",
     "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgPhysU-cd.png",
+    "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgPhysU-K.png",
     "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgPhysU-kg.png",
     "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgPhysU-m.png",
     "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgPhysU-mol.png",
