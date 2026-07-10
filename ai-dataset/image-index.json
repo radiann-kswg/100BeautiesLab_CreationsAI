@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-07-10T17:04:55+09:00",
+  "_generated_at": "2026-07-10T17:19:45+09:00",
   "_path_base": "creations-db/",
   "works": {
     "#Works_NumberTales": {
@@ -583,11 +583,9 @@
       "title_ja": "我ら美徳の桜花兄弟",
       "title_en": "Virtues Us - the Cherrybloom Siblings",
       "ai_training": {
-        "allowed": true,
-        "allowed_db_keys": [
-          "#DB_SemiPrimary"
-        ],
-        "note": "画像パスのうち許可された DB に対応するサブディレクトリ (Images/DB_<name>/...) のみが AI 学習許可対象です。"
+        "allowed": false,
+        "allowed_db_keys": [],
+        "note": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       },
       "images": [],
       "count": 0
