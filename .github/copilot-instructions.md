@@ -162,6 +162,14 @@ node scripts/build-dataset.js --verbose
 
 このポリシーロジックは `build-dataset.js` に実装されており、変更時は `ai-dataset/policy.json` の出力との整合を必ず確認すること。
 
+### 疑似作品（`Works_Dir` / `Works_ImagesDir` オーバーライド）への対応（2026-07-11 addon-ai-tag 追加）
+
+`data/db_meta.json` の `CreationWorks.<key>` に `Works_Dir` / `Works_ImagesDir` / `Works_Shared: true` が宣言されている作品（例: `#Works_CommonReferences` = 共通資料）は、`Works_<Name>/DataBases/...` という通常レイアウトに従わない疑似作品。`creations-db/pkg/nodejs/index.mjs` の `CreationsDBClient` はこのオーバーライドに未対応（`lib/sw-common.js` 側にのみ実装済み）なため、`build-dataset.js` は該当作品を検知すると client を経由せず `db_meta.json` / `db_type.json` / DB ファイルを直接読み込む（`DB_Layer` が解決済みディレクトリ名と一致する場合はパスのレイヤーセグメントを畳み込む）。
+
+### `_DBCrossLinkPath` wrapper（他 Work/DB の画像を直接参照）への対応（2026-07-11 addon-ai-tag 追加）
+
+`Images.*` の配列・単一要素は、通常の文字列パスに加えて `{ "_DBCrossLinkPath": { "_DB", "_Work"?, "_Field"?, "_IsoPath" } }` 形式のラッパーを取りうる（例: `#Works_NumberTales` のキャラが `#Works_DestinyFoxRecords` の `#DB_Proxy` 内画像を直接参照）。`build-dataset.js` の `resolveDbCrossLinkPath()` / `resolveImageArrayEntry()` がこれを解決する（`IMAGE_FIELD_FOLDER_HINTS` の固定表でフォルダを推定する簡易実装のため、フィールド追加時は表の更新が必要）。
+
 ## 自動化（GitHub Actions / Stop フック）
 
 ### GitHub Actions: `sync-dataset.yml`
@@ -237,8 +245,9 @@ Copilot はこの手順書に従い、以下の流れで作業を補助する:
 | `#Works_SinisterChangingGirls` | 豹変系女子 | Sinister Changing Girls | ⛔ |
 | `#Works_UnauthedLogica` | アンオースドロジカ | UnauthedLogica | ⛔ |
 | `#Works_PastDivers` | パストダイヴァー | PastDivers | ⛔ |
-| `#Works_DestinyFoxRecords` | 運命線狐の記録（フィジカル9） | Destiny Fox's Records (Physical 9) | ⛔ |
-| `#Works_Proxies` | ラジアン代理 | RadianN's Proxy | ⛔ |
+| `#Works_VirtuesUs` | 我ら美徳の桜花兄弟 | Virtues Us - the Cherrybloom Siblings | ⛔ |
+| `#Works_DestinyFoxRecords` | 運命線狐の記録（フィジカル9） | Destiny Fox's Records (Physical 9) | ⛔（2026-07-11 旧「ラジアン代理」を `#DB_Proxy` として統合済み） |
+| `#Works_CommonReferences` | 共通資料（疑似作品） | Common References | ✅（全 5 Ref DB。`Works_Dir: References` / `Works_ImagesDir: GeneralImages` オーバーライド） |
 
-現在のデータセットは全 9 作品・431 キャラクターを収録し、うち 1 作品（`#Works_NumberTales` の一次創作 DB のみ）が `ai_training.allowed = true`、8 作品が `false` です。
+現在のデータセットは全 10 件（創作作品 9 + 共通資料の疑似作品 1）・530 キャラクターを収録し、うち 2 件（`#Works_NumberTales` の一次創作 DB / `#Works_CommonReferences` の全 Ref DB）が `ai_training.allowed = true` を含み、残り 8 作品はすべて `false` です。旧 `#Works_Proxies`（ラジアン代理）は 2026-07-11 に `#Works_DestinyFoxRecords` へ物理統合され、単独の作品キーとしては存在しません。
 最新状況は `ai-dataset/index.json` を参照してください。

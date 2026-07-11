@@ -1,0 +1,114 @@
+{
+  "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
+  "_generated_at": "2026-07-11T19:03:28+09:00",
+  "work_key": "#Works_CommonReferences",
+  "dir_name": "Works_CommonReferences",
+  "title_ja": "共通資料",
+  "title_en": "Common References",
+  "summary": "特定の作品に属さない、創作世界全体で共有する種族・組織・社会情勢・地域文化・語彙などの参照資料集。",
+  "layout": null,
+  "ai_training": {
+    "allowed": true,
+    "allowed_db_keys": [
+      "#Ref_Vocabulary",
+      "#Ref_Race",
+      "#Ref_Faction",
+      "#Ref_Society",
+      "#Ref_Region8"
+    ],
+    "reason": "AI_Optout / DB_Hidden / Works_Hidden are not set for this DB. This DB is opted in for AI training/generation use."
+  },
+  "db_files": [
+    {
+      "path": "data/References/ref_Vocabulary.json",
+      "ai_training": {
+        "allowed": true,
+        "reason": "AI_Optout / DB_Hidden / Works_Hidden are not set for this DB. This DB is opted in for AI training/generation use."
+      }
+    },
+    {
+      "path": "data/References/ref_Race.json",
+      "ai_training": {
+        "allowed": true,
+        "reason": "AI_Optout / DB_Hidden / Works_Hidden are not set for this DB. This DB is opted in for AI training/generation use."
+      }
+    },
+    {
+      "path": "data/References/ref_Faction.json",
+      "ai_training": {
+        "allowed": true,
+        "reason": "AI_Optout / DB_Hidden / Works_Hidden are not set for this DB. This DB is opted in for AI training/generation use."
+      }
+    },
+    {
+      "path": "data/References/ref_Society.json",
+      "ai_training": {
+        "allowed": true,
+        "reason": "AI_Optout / DB_Hidden / Works_Hidden are not set for this DB. This DB is opted in for AI training/generation use."
+      }
+    },
+    {
+      "path": "data/References/ref_Region8.json",
+      "ai_training": {
+        "allowed": true,
+        "reason": "AI_Optout / DB_Hidden / Works_Hidden are not set for this DB. This DB is opted in for AI training/generation use."
+      }
+    }
+  ],
+  "character_ids": [
+    "管理主",
+    "創造主",
+    "破壊主",
+    "管制主",
+    "技巧属性",
+    "特殊パターン",
+    "安全レベル",
+    "超過人間",
+    "妖狐",
+    "狐惹き",
+    "猫又",
+    "猫惹き",
+    "月狼",
+    "蛇人",
+    "化狸",
+    "狛犬",
+    "概念",
+    "百花繚乱研究所",
+    "百戦錬磨開発所",
+    "ジャンクガレージ『六花陛下』",
+    "夜月機関",
+    "龍天国",
+    "シンフォニー.XVI",
+    "国際情報広報機関『ミハイル』",
+    "創世期",
+    "『第7の世界創造』",
+    "『第7の世界破壊』",
+    "『第8の世界創造』",
+    "『第8の世界破壊』",
+    "九蓮国",
+    "龍天国",
+    "英皇国",
+    "雄志結国",
+    "紅雪連邦",
+    "四蓮島",
+    "海陸国(シーバイランド)諸島",
+    "英州諸国",
+    "運命線運河",
+    "黒薔薇国",
+    "神皇国",
+    "算象諸国",
+    "金源諸国",
+    "南雌大陸",
+    "然天大陸"
+  ],
+  "character_ids_with_ai_hints": [],
+  "character_ids_with_silhouette_notes": [],
+  "character_ids_with_immutable_constraints": [],
+  "character_ids_with_negative_keywords": [],
+  "character_ids_with_work_common": [],
+  "character_ids_with_appearance_detail": [],
+  "character_ids_with_tails_unit": [],
+  "image_paths": [
+    "data/GeneralImages/Ref_Region8/cnsp-map_region8.png"
+  ]
+}

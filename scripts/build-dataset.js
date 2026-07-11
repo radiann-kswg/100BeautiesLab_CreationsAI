@@ -300,6 +300,11 @@ async function main() {
 
   ensureDir(OUT_DIR);
   ensureDir(WORKS_OUT);
+  // ソース側で作品が削除・統合された場合（例: 2026-07-11 Works_Proxies → Works_DestinyFoxRecords 統合）に
+  // 古い works/<WorkKey>.json が残留しないよう、既存の *.json 一覧を控えておき今回書き込まなかった分を後で削除する
+  // （.gitkeep 等 *.json 以外のファイルはそのまま残す）
+  const preexistingWorksFiles = new Set(fs.readdirSync(WORKS_OUT).filter(f => f.endsWith('.json')));
+  const writtenWorksFiles = new Set();
 
   // CreationsDBClient を初期化
   // includePrivate: true でプライベートレコードも取得（ai_training ポリシーを付与するため）
@@ -401,29 +406,44 @@ async function main() {
     const workTopMeta = creationWorks[workKey];
     // workKey 例: "#Works_NumberTales" → dirName: "Works_NumberTales"
     const dirName = workKey.replace(/^#/, '');
-    const workDir = path.join(DATA_DIR, dirName);
+
+    // 2026-07-11 addon-ai-tag: Works_Dir/Works_ImagesDir/Works_Shared による物理レイアウトオーバーライド
+    // （例: 共通資料 #Works_CommonReferences は Works_<Name>/DataBases/ 規約に従わず、
+    //   data/References 直下にフラットに配置される「疑似作品」）。
+    // creations-db/pkg/nodejs/index.mjs の CreationsDBClient はこのオーバーライドに未対応
+    // （lib/sw-common.js 側にのみ実装済み）のため、該当作品は client を経由せず直接ファイルを読む。
+    const worksDirOverride = (typeof workTopMeta.Works_Dir === 'string' && workTopMeta.Works_Dir.trim()) || null;
+    const worksImagesDirOverride = (typeof workTopMeta.Works_ImagesDir === 'string' && workTopMeta.Works_ImagesDir.trim()) || null;
+    const effectiveDirName = worksDirOverride || dirName;
+    const workDir = path.join(DATA_DIR, effectiveDirName);
 
     if (!fs.existsSync(workDir)) {
-      log(`スキップ (ディレクトリなし): ${dirName}`);
+      log(`スキップ (ディレクトリなし): ${effectiveDirName}`);
       continue;
     }
 
-    info(`処理中: ${dirName} (${workTopMeta.Title_JP || ''} / ${workTopMeta.Title_EN || ''})`);
+    info(`処理中: ${effectiveDirName} (${workTopMeta.Title_JP || ''} / ${workTopMeta.Title_EN || ''})`);
 
     // Works_Hidden フラグを取得——作品全体が非公開の場合 AI 学習抑止
     const worksHidden = !!(workTopMeta.Works_Hidden === true);
 
     // 作品別メタを取得（Databases エントリ・_Commons を含む）
     let fullWorkMeta = {};
-    try {
-      fullWorkMeta = await client.getWorkMeta(workKey);
-    } catch (e) {
-      log(`WARN: getWorkMeta 失敗 (${workKey}): ${e.message}`);
+    if (worksDirOverride) {
+      // DataBases/ サブフォルダを持たないフラットレイアウトのため直接読み込む
+      fullWorkMeta = readJSON(path.join(workDir, 'db_meta.json')) || {};
+    } else {
+      try {
+        fullWorkMeta = await client.getWorkMeta(workKey);
+      } catch (e) {
+        log(`WARN: getWorkMeta 失敗 (${workKey}): ${e.message}`);
+      }
     }
     const databases = fullWorkMeta.Databases || {};
 
     // db_type.json は直接読む（型定義レコード生成用。ライブラリ API 外）
-    const dbDir = path.join(workDir, 'DataBases');
+    // Works_Dir オーバーライド作品は DataBases/ サブフォルダを持たず直下に配置される
+    const dbDir = worksDirOverride ? workDir : path.join(workDir, 'DataBases');
     const workDbType = readJSON(path.join(dbDir, 'db_type.json'));
 
     const workEntry = {
@@ -454,7 +474,13 @@ async function main() {
       const fileName = (typeof dbEntry.DB_File === 'string' && /^[A-Za-z0-9_.-]+\.json$/.test(dbEntry.DB_File.trim()))
         ? dbEntry.DB_File.trim()
         : `${prefix}${dbBaseName}.json`;
-      const dbRelPath = `data/${dirName}/${layer}/${fileName}`;
+      // DB_Layer が作品の物理ディレクトリ名（Works_Dir 解決後）自身と一致する場合は
+      // DataBases/ のような追加サブフォルダを持たないフラットレイアウトのため、レイヤーセグメントを畳み込む
+      // （例: 共通資料 Works_Dir="References" + DB_Layer="References" → data/References/ref_*.json、
+      //   data/References/References/... の二重化を避ける）
+      const dbRelPath = (layer === effectiveDirName)
+        ? `data/${effectiveDirName}/${fileName}`
+        : `data/${effectiveDirName}/${layer}/${fileName}`;
 
       // ファイルが存在しない DB はスキップ
       const dbAbsPath = path.join(SUBMODULE, dbRelPath.replace(/\//g, path.sep));
@@ -493,9 +519,10 @@ async function main() {
         if (typeof charData !== 'object' || charData === null) continue;
 
         // 安定した識別子を導出（Num → ID → id → Name → 配列インデックス の優先順）
+        // Term_JP: 共通資料 (#Works_CommonReferences) の Ref_* レコードが使う主インデックス
         const charId = String(
           charData.Num ?? charData.ID ?? charData.Id ?? charData.id ??
-          charData.Key ?? charData.Code ?? charData.Name_JP ?? charData.Name ?? idx
+          charData.Key ?? charData.Code ?? charData.Name_JP ?? charData.Term_JP ?? charData.Name ?? idx
         );
 
         // 画像パスを解決
@@ -598,7 +625,8 @@ async function main() {
     // 画像は DB 別ディレクトリ (DB_Primary / DB_Secondary 等) に格納されているため、
     // ai_training ポリシーは「いずれかの DB が allowed なら work 単位で参照可」として
     // 概要のみ提示する。詳細なフィルタリングは manifest-training.jsonl を参照。
-    const imagesDir = path.join(workDir, 'Images');
+    // Works_ImagesDir オーバーライド作品（例: 共通資料 → data/GeneralImages）は画像ルートが workDir/Images でない
+    const imagesDir = worksImagesDirOverride ? path.join(DATA_DIR, worksImagesDirOverride) : path.join(workDir, 'Images');
     const workImages = collectImages(imagesDir, SUBMODULE);
     const workHasAllowedDb = allowedDbKeys.length > 0;
     imageIndex.works[workKey] = {
@@ -638,7 +666,9 @@ async function main() {
 
     // --- 作品別 JSON を出力 ---
     // （タイトル等メタ + キャラクター一覧。画像パス含む）
-    const workOutPath = path.join(WORKS_OUT, `${dirName}.json`);
+    const workOutFileName = `${dirName}.json`;
+    writtenWorksFiles.add(workOutFileName);
+    const workOutPath = path.join(WORKS_OUT, workOutFileName);
     fs.writeFileSync(workOutPath, JSON.stringify({
       _notice: '原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / ' + SOURCE_REPO_URL,
       _generated_at: buildTimestamp,
@@ -664,6 +694,14 @@ async function main() {
       character_ids_with_tails_unit: workEntry.characters.filter(c => c.has_tails_unit).map(c => c.id),
       image_paths: workImages,
     }, null, 2), 'utf8');
+  }
+
+  // ソース側で削除・統合された作品（例: 2026-07-11 Works_Proxies → Works_DestinyFoxRecords 統合）の
+  // 古い works/<WorkKey>.json を掃除する
+  for (const staleFile of preexistingWorksFiles) {
+    if (writtenWorksFiles.has(staleFile)) continue;
+    fs.unlinkSync(path.join(WORKS_OUT, staleFile));
+    info(`削除 (作品消滅): works/${staleFile}`);
   }
 
   // -----------------------------------------------------------------------
@@ -818,6 +856,58 @@ function resolveImagePath(baseNoExt) {
   return null;
 }
 
+// フィールド名 → Images/DB_Primary 配下のフォルダヒント。
+// _DBCrossLinkPath 解決時、参照先レコードにスキーマ (imagePathHints) を問い合わせられないため、
+// 自作品で使う固定の対応表で代用する（2026-07-11 addon-ai-tag 追加分の既知フィールドのみ）。
+const IMAGE_FIELD_FOLDER_HINTS = {
+  concept_PNGName: 'concept',
+  conceptAlt_PNGName: 'concept',
+  corefolder_PNGPath: 'corefolder',
+  humanoid_PNGPath: 'humanoid',
+  arts_PNGPath: 'arts',
+  designAlt_PNGPath: 'designAlt',
+};
+
+/**
+ * `_DBCrossLinkPath` wrapper（2026-07-11 addon-ai-tag 追加。他Work/他DBの画像を isoPath 経由で
+ * 直接参照する仕組み）を解決する。creations-db/lib/data-common.js の
+ * EnrichmentProcessor.resolveDbCrossLinkPathEntry() 相当の簡易版で、schema 側の imagePathHints
+ * が引けないため IMAGE_FIELD_FOLDER_HINTS の固定表で folderHint を代用する。
+ * @param {object} wrapper - `{ _DB, _Work?, _Field?, _IsoPath }`
+ * @param {string} defaultFieldName - wrapper が出現したフィールド名（`_Field` 省略時の既定値）
+ * @param {string} currentDirName - 参照元キャラクターの作品ディレクトリ名（`_Work` 省略時の既定値）
+ * @returns {string|null} サブモジュール相対パス
+ */
+function resolveDbCrossLinkPath(wrapper, defaultFieldName, currentDirName) {
+  if (!wrapper || typeof wrapper !== 'object') return null;
+  const targetDB = typeof wrapper._DB === 'string' ? wrapper._DB.trim() : '';
+  const isoPath = typeof wrapper._IsoPath === 'string' ? wrapper._IsoPath.trim() : '';
+  if (!targetDB || !isoPath) return null;
+  const targetWorkRaw = typeof wrapper._Work === 'string' ? wrapper._Work.trim() : '';
+  const targetDirName = targetWorkRaw ? `Works_${targetWorkRaw}` : currentDirName;
+  const targetField = (typeof wrapper._Field === 'string' && wrapper._Field.trim()) || defaultFieldName;
+  const folderHint = IMAGE_FIELD_FOLDER_HINTS[targetField];
+  if (!folderHint) return null; // 未知のフィールドは安全側で未解決のまま
+  const targetDbImgBase = path.join(DATA_DIR, targetDirName, 'Images', `DB_${targetDB}`);
+  return resolveImagePath(path.join(targetDbImgBase, folderHint, isoPath));
+}
+
+/**
+ * Images.* 配列/単一要素（通常の文字列パス、または `_DBCrossLinkPath` wrapper）を解決する共通ヘルパー。
+ * @param {unknown} entry - 配列要素または単一値
+ * @param {string} baseDir - 文字列パス時に使う基準ディレクトリ（dbPrimaryBase/<folderHint>）
+ * @param {string} fieldName - `_DBCrossLinkPath` の `_Field` 省略時の既定値
+ * @param {string} currentDirName - `_DBCrossLinkPath` の `_Work` 省略時の既定値
+ * @returns {string|null}
+ */
+function resolveImageArrayEntry(entry, baseDir, fieldName, currentDirName) {
+  if (typeof entry === 'string') return resolveImagePath(path.join(baseDir, entry));
+  if (entry && typeof entry === 'object' && entry._DBCrossLinkPath) {
+    return resolveDbCrossLinkPath(entry._DBCrossLinkPath, fieldName, currentDirName);
+  }
+  return null;
+}
+
 /**
  * キャラクター JSON データ内の画像参照フィールドを読み取り、
  * サブモジュール相対パスのリストを返す。
@@ -834,6 +924,8 @@ function resolveImagePath(baseNoExt) {
  */
 function resolveCharacterImages(workDir, charId, charData) {
   const images = {};
+  // _DBCrossLinkPath の _Work 省略時に「自作品」として使う作品ディレクトリ名
+  const dirName = path.basename(workDir);
 
   // --- 既存: charId ディレクトリスキャン (corefolder / humanoid 等の形態別画像) ---
   const imagesBase = path.join(workDir, 'Images');
@@ -877,46 +969,46 @@ function resolveCharacterImages(workDir, charId, charData) {
   if (!charImages || typeof charImages !== 'object') return images;
 
   // concept (単一): 両形態を描いた概念イラスト。
-  // concept_PNGName → Images/DB_Primary/concept/{name}.<ext>
-  if (typeof charImages.concept_PNGName === 'string') {
-    const rel = resolveImagePath(path.join(dbPrimaryBase, 'concept', charImages.concept_PNGName));
+  // concept_PNGName → Images/DB_Primary/concept/{name}.<ext>（文字列 or _DBCrossLinkPath wrapper）
+  if (charImages.concept_PNGName) {
+    const rel = resolveImageArrayEntry(charImages.concept_PNGName, path.join(dbPrimaryBase, 'concept'), 'concept_PNGName', dirName);
     if (rel) images.concept = [rel];
   }
 
   // concept_alt (複数): 概念イラストのバリアント（複数形態・複数キャラ構図など）。
-  // conceptAlt_PNGName[] → Images/DB_Primary/concept/{name}.<ext>
+  // conceptAlt_PNGName[] → Images/DB_Primary/concept/{name}.<ext>（要素は文字列 or _DBCrossLinkPath wrapper）
   if (Array.isArray(charImages.conceptAlt_PNGName) && charImages.conceptAlt_PNGName.length > 0) {
     const paths = charImages.conceptAlt_PNGName
-      .map(name => resolveImagePath(path.join(dbPrimaryBase, 'concept', name)))
+      .map(name => resolveImageArrayEntry(name, path.join(dbPrimaryBase, 'concept'), 'conceptAlt_PNGName', dirName))
       .filter(Boolean);
     if (paths.length > 0) images.concept_alt = paths;
   }
 
   // corefolder (複数): コアフォルダ形態の正規イラスト。
-  // corefolder_PNGPath[] → Images/DB_Primary/corefolder/{path}.<ext>
+  // corefolder_PNGPath[] → Images/DB_Primary/corefolder/{path}.<ext>（要素は文字列 or _DBCrossLinkPath wrapper）
   // 形態フォルダ (corefolder/) が charId の 1 階層上に挟まるため、charId ディレクトリ
   // スキャン (上の DB_* ループ) では拾えない。構造化フィールドとして明示解決する。
   if (Array.isArray(charImages.corefolder_PNGPath) && charImages.corefolder_PNGPath.length > 0) {
     const paths = charImages.corefolder_PNGPath
-      .map(rel => resolveImagePath(path.join(dbPrimaryBase, 'corefolder', rel)))
+      .map(rel => resolveImageArrayEntry(rel, path.join(dbPrimaryBase, 'corefolder'), 'corefolder_PNGPath', dirName))
       .filter(Boolean);
     if (paths.length > 0) images.corefolder = paths;
   }
 
   // humanoid (複数): 人型形態の正規イラスト。
-  // humanoid_PNGPath[] → Images/DB_Primary/humanoid/{path}.<ext>
+  // humanoid_PNGPath[] → Images/DB_Primary/humanoid/{path}.<ext>（要素は文字列 or _DBCrossLinkPath wrapper）
   // corefolder と同じく形態フォルダ (humanoid/) が 1 階層挟まる。現状ファイル未配置でも
   // resolveImagePath が null を返すだけなので将来の追加に備えて先行対応する。
   if (Array.isArray(charImages.humanoid_PNGPath) && charImages.humanoid_PNGPath.length > 0) {
     const paths = charImages.humanoid_PNGPath
-      .map(rel => resolveImagePath(path.join(dbPrimaryBase, 'humanoid', rel)))
+      .map(rel => resolveImageArrayEntry(rel, path.join(dbPrimaryBase, 'humanoid'), 'humanoid_PNGPath', dirName))
       .filter(Boolean);
     if (paths.length > 0) images.humanoid = paths;
   }
 
   // arts (複数): キャラクター個別に紐付けられたアートワーク。
   // arts_metadata が存在する場合はそちらを優先し { path, form, characters } 形式で出力。
-  // なければ arts_PNGPath[] からパスのみで補完。
+  // なければ arts_PNGPath[] からパスのみで補完（要素は文字列 or _DBCrossLinkPath wrapper）。
   // パスは DB_Primary/arts/ 相対。../../DB_SemiPrimary/... など親ディレクトリ参照も path.join で正規化される。
   {
     const artsMeta = Array.isArray(charImages.arts_metadata) && charImages.arts_metadata.length > 0
@@ -924,14 +1016,14 @@ function resolveCharacterImages(workDir, charId, charData) {
       : null;
     if (artsMeta) {
       const entries = artsMeta.flatMap(({ path: rel, form, characters }) => {
-        const resolved = resolveImagePath(path.join(dbPrimaryBase, 'arts', rel));
+        const resolved = resolveImageArrayEntry(rel, path.join(dbPrimaryBase, 'arts'), 'arts_PNGPath', dirName);
         if (!resolved) return [];
         return [{ path: resolved, form: form ?? null, characters: Array.isArray(characters) ? characters : null }];
       });
       if (entries.length > 0) images.arts = entries;
     } else if (Array.isArray(charImages.arts_PNGPath) && charImages.arts_PNGPath.length > 0) {
       const entries = charImages.arts_PNGPath.flatMap(rel => {
-        const resolved = resolveImagePath(path.join(dbPrimaryBase, 'arts', rel));
+        const resolved = resolveImageArrayEntry(rel, path.join(dbPrimaryBase, 'arts'), 'arts_PNGPath', dirName);
         return resolved ? [{ path: resolved, form: null, characters: null }] : [];
       });
       if (entries.length > 0) images.arts = entries;
@@ -940,7 +1032,7 @@ function resolveCharacterImages(workDir, charId, charData) {
 
   // design_alt (複数): 衣装差分・デザインバリアント。
   // designAlt_metadata が存在する場合はそちらを優先し { path, form, characters } 形式で出力。
-  // なければ designAlt_PNGPath[] からパスのみで補完。
+  // なければ designAlt_PNGPath[] からパスのみで補完（要素は文字列 or _DBCrossLinkPath wrapper）。
   // パスは DB_Primary/designAlt/ 相対（arts/ ではない点に注意）。
   {
     const daltMeta = Array.isArray(charImages.designAlt_metadata) && charImages.designAlt_metadata.length > 0
@@ -948,36 +1040,18 @@ function resolveCharacterImages(workDir, charId, charData) {
       : null;
     if (daltMeta) {
       const entries = daltMeta.flatMap(({ path: rel, form, characters }) => {
-        const resolved = resolveImagePath(path.join(dbPrimaryBase, 'designAlt', rel));
+        const resolved = resolveImageArrayEntry(rel, path.join(dbPrimaryBase, 'designAlt'), 'designAlt_PNGPath', dirName);
         if (!resolved) return [];
         return [{ path: resolved, form: form ?? null, characters: Array.isArray(characters) ? characters : null }];
       });
       if (entries.length > 0) images.design_alt = entries;
     } else if (Array.isArray(charImages.designAlt_PNGPath) && charImages.designAlt_PNGPath.length > 0) {
       const entries = charImages.designAlt_PNGPath.flatMap(rel => {
-        const resolved = resolveImagePath(path.join(dbPrimaryBase, 'designAlt', rel));
+        const resolved = resolveImageArrayEntry(rel, path.join(dbPrimaryBase, 'designAlt'), 'designAlt_PNGPath', dirName);
         return resolved ? [{ path: resolved, form: null, characters: null }] : [];
       });
       if (entries.length > 0) images.design_alt = entries;
     }
-  }
-
-  // corefolder (複数): コアフォルダ形態の画像。
-  // corefolder_PNGPath[] → Images/DB_Primary/corefolder/{path}.<ext>
-  if (Array.isArray(charImages.corefolder_PNGPath) && charImages.corefolder_PNGPath.length > 0) {
-    const paths = charImages.corefolder_PNGPath
-      .map(p => resolveImagePath(path.join(dbPrimaryBase, 'corefolder', p)))
-      .filter(Boolean);
-    if (paths.length > 0) images.corefolder = paths;
-  }
-
-  // humanoid (複数): ヒューマノイド形態の画像。
-  // humanoid_PNGPath[] → Images/DB_Primary/humanoid/{path}.<ext>
-  if (Array.isArray(charImages.humanoid_PNGPath) && charImages.humanoid_PNGPath.length > 0) {
-    const paths = charImages.humanoid_PNGPath
-      .map(p => resolveImagePath(path.join(dbPrimaryBase, 'humanoid', p)))
-      .filter(Boolean);
-    if (paths.length > 0) images.humanoid = paths;
   }
 
   return images;
