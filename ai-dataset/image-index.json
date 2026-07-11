@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-07-11T09:29:05+09:00",
+  "_generated_at": "2026-07-11T10:52:46+09:00",
   "_path_base": "creations-db/",
   "works": {
     "#Works_NumberTales": {
@@ -11,9 +11,7 @@
         "allowed_db_keys": [
           "#DB_Primary",
           "#DB_SelfSecondary",
-          "#DB_Secondary",
-          "#Ref_Reference",
-          "#Ref_Vocabulary"
+          "#DB_Secondary"
         ],
         "note": "画像パスのうち許可された DB に対応するサブディレクトリ (Images/DB_<name>/...) のみが AI 学習許可対象です。"
       },
@@ -634,9 +632,13 @@
         "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgPhysU-rad.png",
         "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgPhysU-sec.png",
         "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgPhysU-sr.png",
+        "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgRVN.png",
+        "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/design_imgRVN-1.png",
+        "data/Works_DestinyFoxRecords/Images/DB_Primary/weakening/emstk_weakeningRVN-1.png",
+        "data/Works_DestinyFoxRecords/Images/DB_Primary/weakening/emstk_weakeningRVN-2.png",
         "data/Works_DestinyFoxRecords/Images/General/design_imgPh9.png"
       ],
-      "count": 11
+      "count": 15
     },
     "#Works_Proxies": {
       "title_ja": "ラジアン代理",

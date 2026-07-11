@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-07-11T09:29:05+09:00",
+  "_generated_at": "2026-07-11T10:52:46+09:00",
   "work_key": "#Works_DestinyFoxRecords",
   "dir_name": "Works_DestinyFoxRecords",
   "title_ja": "運命線狐の記録\nフィジカル9",
@@ -52,7 +52,8 @@
     "アンプ",
     "モル",
     "ラジアン",
-    "ステラ"
+    "ステラ",
+    "ノーマル\nのるまん"
   ],
   "character_ids_with_ai_hints": [],
   "character_ids_with_silhouette_notes": [],
@@ -72,6 +73,10 @@
     "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgPhysU-rad.png",
     "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgPhysU-sec.png",
     "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgPhysU-sr.png",
+    "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgRVN.png",
+    "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/design_imgRVN-1.png",
+    "data/Works_DestinyFoxRecords/Images/DB_Primary/weakening/emstk_weakeningRVN-1.png",
+    "data/Works_DestinyFoxRecords/Images/DB_Primary/weakening/emstk_weakeningRVN-2.png",
     "data/Works_DestinyFoxRecords/Images/General/design_imgPh9.png"
   ]
 }

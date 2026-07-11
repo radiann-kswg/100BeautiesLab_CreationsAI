@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-07-11T09:29:05+09:00",
+  "_generated_at": "2026-07-11T10:52:46+09:00",
   "work_key": "#Works_NumberTales",
   "dir_name": "Works_NumberTales",
   "title_ja": "ナンバーテールズ",
@@ -47,9 +47,7 @@
     "allowed_db_keys": [
       "#DB_Primary",
       "#DB_SelfSecondary",
-      "#DB_Secondary",
-      "#Ref_Reference",
-      "#Ref_Vocabulary"
+      "#DB_Secondary"
     ],
     "reason": "AI_Optout / DB_Hidden / Works_Hidden are not set for this DB. This DB is opted in for AI training/generation use."
   },
@@ -77,20 +75,6 @@
     },
     {
       "path": "data/Works_NumberTales/DataBases/db_Secondary.json",
-      "ai_training": {
-        "allowed": true,
-        "reason": "AI_Optout / DB_Hidden / Works_Hidden are not set for this DB. This DB is opted in for AI training/generation use."
-      }
-    },
-    {
-      "path": "data/Works_NumberTales/References/ref_Reference.json",
-      "ai_training": {
-        "allowed": true,
-        "reason": "AI_Optout / DB_Hidden / Works_Hidden are not set for this DB. This DB is opted in for AI training/generation use."
-      }
-    },
-    {
-      "path": "data/Works_NumberTales/References/ref_Vocabulary.json",
       "ai_training": {
         "allowed": true,
         "reason": "AI_Optout / DB_Hidden / Works_Hidden are not set for this DB. This DB is opted in for AI training/generation use."
@@ -398,22 +382,7 @@
     "736-numberize",
     "773-numberize",
     "979-numberize",
-    "1122-numberize",
-    "0",
-    "1",
-    "2",
-    "0",
-    "1",
-    "2",
-    "3",
-    "4",
-    "5",
-    "6",
-    "7",
-    "8",
-    "9",
-    "10",
-    "11"
+    "1122-numberize"
   ],
   "character_ids_with_ai_hints": [
     "1",

@@ -1,23 +1,21 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-07-11T09:29:05+09:00",
-  "_submodule_commit": "fcb68b69a838559c808466c55d1102b15bb6d02b",
+  "_generated_at": "2026-07-11T10:52:46+09:00",
+  "_submodule_commit": "5b642d4a9d235fc44e12f002c74219a26dd4109c",
   "works": [
     {
       "work_key": "#Works_NumberTales",
       "dir_name": "Works_NumberTales",
       "title_ja": "ナンバーテールズ",
       "title_en": "NumberTales",
-      "character_count": 316,
+      "character_count": 301,
       "image_count": 475,
       "ai_training": {
         "allowed": true,
         "allowed_db_keys": [
           "#DB_Primary",
           "#DB_SelfSecondary",
-          "#DB_Secondary",
-          "#Ref_Reference",
-          "#Ref_Vocabulary"
+          "#DB_Secondary"
         ],
         "reason": "AI_Optout / DB_Hidden / Works_Hidden are not set for this DB. This DB is opted in for AI training/generation use."
       }
@@ -118,8 +116,8 @@
       "dir_name": "Works_DestinyFoxRecords",
       "title_ja": "運命線狐の記録\nフィジカル9",
       "title_en": "Destiny Fox's Records\nPhysical 9",
-      "character_count": 9,
-      "image_count": 11,
+      "character_count": 10,
+      "image_count": 15,
       "ai_training": {
         "allowed": false,
         "allowed_db_keys": [],
@@ -140,6 +138,6 @@
       }
     }
   ],
-  "total_characters": 500,
+  "total_characters": 486,
   "total_works": 10
 }
