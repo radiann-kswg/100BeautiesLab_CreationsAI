@@ -1,7 +1,7 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-07-11T19:03:28+09:00",
-  "_submodule_commit": "a5683c56db0e596ea8c477b2a5853b3f6ed22658",
+  "_generated_at": "2026-07-12T09:01:22+09:00",
+  "_submodule_commit": "4dd7eb3d919ada87aa9b28cccf7af2d89d5a2b6d",
   "works": [
     {
       "work_key": "#Works_NumberTales",
@@ -14,7 +14,7 @@
         "allowed": true,
         "allowed_db_keys": [
           "#DB_Primary",
-          "#DB_SelfSecondary",
+          "#DB_SemiPrimary",
           "#DB_Secondary"
         ],
         "reason": "AI_Optout / DB_Hidden / Works_Hidden are not set for this DB. This DB is opted in for AI training/generation use."
