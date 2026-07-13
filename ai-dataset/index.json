@@ -1,7 +1,7 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-07-12T12:56:17+09:00",
-  "_submodule_commit": "2a9315bd8d46dc0cf3120d5a0cc0fc46bec71c6d",
+  "_generated_at": "2026-07-13T13:42:39+09:00",
+  "_submodule_commit": "adeb7ff100423951e3a490790a0d925aa5d94603",
   "works": [
     {
       "work_key": "#Works_NumberTales",
@@ -117,7 +117,7 @@
       "title_ja": "運命線狐の記録\nフィジカル9",
       "title_en": "Destiny Fox's Records\nPhysical 9",
       "character_count": 13,
-      "image_count": 35,
+      "image_count": 36,
       "ai_training": {
         "allowed": false,
         "allowed_db_keys": [],
