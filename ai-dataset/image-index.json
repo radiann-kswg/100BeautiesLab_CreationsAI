@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-07-14T09:09:10+09:00",
+  "_generated_at": "2026-07-14T16:44:15+09:00",
   "_path_base": "creations-db/",
   "works": {
     "#Works_NumberTales": {
@@ -739,6 +739,7 @@
         "note": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       },
       "images": [
+        "data/Works_DestinyFoxRecords/Images/DB_Primary/arts/regular/arts_snsicnRQN.png",
         "data/Works_DestinyFoxRecords/Images/DB_Primary/concept/cnsp_imgPhysU-m.png",
         "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgPhysU-A.png",
         "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgPhysU-K.png",
@@ -749,6 +750,8 @@
         "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgPhysU-rad.png",
         "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgPhysU-sec.png",
         "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgPhysU-sr.png",
+        "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgRQN.png",
+        "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgRTN.png",
         "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgRVN.png",
         "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/arts/fullpower/arts_destinyFoxRec-2022-recruit.png",
         "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/arts/regular/art_imgSTRN-meowsday2022.png",
@@ -776,7 +779,7 @@
         "data/Works_DestinyFoxRecords/Images/General/ArchFaith.png",
         "data/Works_DestinyFoxRecords/Images/General/design_imgPh9.png"
       ],
-      "count": 36
+      "count": 39
     },
     "#Works_CommonReferences": {
       "title_ja": "共通資料",
