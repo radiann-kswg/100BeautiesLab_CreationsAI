@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-07-14T16:44:15+09:00",
+  "_generated_at": "2026-07-16T13:29:25+09:00",
   "_path_base": "creations-db/",
   "works": {
     "#Works_NumberTales": {
@@ -202,6 +202,7 @@
         "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMark98.png",
         "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMark99.png",
         "data/Works_NumberTales/Images/DB_Primary/attr/tag/attr_tag10alt-調整中.png",
+        "data/Works_NumberTales/Images/DB_Primary/attr/tag/attr_tag27-numberMark.png",
         "data/Works_NumberTales/Images/DB_Primary/attr/tag/attr_tag2alt-試用.png",
         "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnit16.png",
         "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnit23.png",
@@ -371,6 +372,7 @@
         "data/Works_NumberTales/Images/DB_Primary/corefolder/25/emstk_corefolder25-2.png",
         "data/Works_NumberTales/Images/DB_Primary/corefolder/26/emstk_corefolder26-1.png",
         "data/Works_NumberTales/Images/DB_Primary/corefolder/27/emstk_corefolder27-1.png",
+        "data/Works_NumberTales/Images/DB_Primary/corefolder/27/emstk_corefolder27-2.png",
         "data/Works_NumberTales/Images/DB_Primary/corefolder/28/emstk_corefolder28-1.png",
         "data/Works_NumberTales/Images/DB_Primary/corefolder/29/emstk_corefolder29-1.png",
         "data/Works_NumberTales/Images/DB_Primary/corefolder/3/emstk_corefolder3-1.png",
@@ -609,7 +611,7 @@
         "data/Works_NumberTales/Images/Ref_Vocabulary/concept-figure/cnsp-fg_NTsCoreFolder.png",
         "data/Works_NumberTales/Images/Ref_Vocabulary/concept-figure/cnsp-fg_NTsHumanoid.png"
       ],
-      "count": 592
+      "count": 594
     },
     "#Works_FLInvestigator78": {
       "title_ja": "運命線探偵78",
