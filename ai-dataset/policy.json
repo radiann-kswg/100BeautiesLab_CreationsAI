@@ -6,16 +6,22 @@
     "policy_source": {
       "works_hidden": "data/db_meta.json — CreationWorks[\"#Works_<Name>\"].Works_Hidden（作品単位の非公開）",
       "db_hidden": "data/Works_<work>/DataBases/db_meta.json — Databases[\"#DB_<Name>\"].DB_Hidden（DB単位の非公開）",
-      "ai_optout": "data/Works_<work>/DataBases/db_meta.json — Databases[\"#DB_<Name>\"].AI_Optout（DB単位の AI 学習オプトアウト）",
-      "secondary_category_optout": "data/Works_<work>/DataBases/db_meta.json — Databases[\"#DB_<Name>\"]._Secondaries[*].AI_Optout（二次創作カテゴリ別 AI 学習オプトアウト）",
-      "is_private": "data/Works_<work>/DataBases/db_*.json — <record>.isPrivate（レコード単位の非公開）"
+      "ai_optout": "data/Works_<work>/DataBases/db_meta.json — Databases[\"#DB_<Name>\"].AI_Optout（DB単位の AI 学習オプトアウト。権利軸）",
+      "secondary_category_optout": "data/Works_<work>/DataBases/db_meta.json — Databases[\"#DB_<Name>\"]._Secondaries[*].AI_Optout（二次創作カテゴリ別 AI 学習オプトアウト。権利軸）",
+      "is_private": "data/Works_<work>/DataBases/db_*.json — <record>.isPrivate（レコード単位の非公開）",
+      "progress_unready": "data/db_meta.json — General.$VarsDef.$EnumDef_Progress[*].AI_Unready（進捗段階ごとの「AI 学習へ供する内容が無い」宣言。充填軸。未宣言のエントリは isForSecondary === true をフォールバックとして使う）"
     },
-    "disallowed_priority": "Works_Hidden → DB_Hidden → AI_Optout → db_meta エントリなし → _Secondaries カテゴリ別 AI_Optout → isPrivate（いずれか true で allowed=false）",
+    "axis_semantics": {
+      "ai_optout": "AI_Optout: true は「権利上 AI 学習・生成へ供してはならない」という原著作者の表明です。",
+      "ai_unready": "AI_Unready: true は「制作が進んでおらず AI 学習へ供する内容が無い」という状態を表すだけで、権利上の可否とは無関係です。 AI_Unready: false は AI 学習の許諾を意味しません。権利上の可否を表明するのは AI_Optout のみです。"
+    },
+    "disallowed_priority": "Works_Hidden → DB_Hidden → AI_Optout → db_meta エントリなし → _Secondaries カテゴリ別 AI_Optout → isPrivate → Progress の AI_Unready（いずれか該当で allowed=false）",
     "disallowed_default": false,
     "consumer_guidance": [
       "manifest.jsonl をそのまま使う場合: record.ai_training.allowed === true のレコードのみを採用してください。",
       "あるいは manifest-training.jsonl を使えば、許可済みレコードのみが含まれます。",
-      "image-index.json / works/<Work>.json にも ai_training フラグが付与されています。"
+      "image-index.json / works/<Work>.json にも ai_training フラグが付与されています。",
+      "image-index.json の allowed_db_keys は「許可レコードを 1 件以上含む DB」を示す粗いフィルタです。同じ DB でも許可・不許可はレコード単位で分かれるため、画像の利用可否は manifest.jsonl の各レコードの images と ai_training で判断してください。"
     ]
   },
   "target_environments": {

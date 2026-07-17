@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "build": "node build-dataset.js",
-    "build:verbose": "node build-dataset.js --verbose"
+    "build:verbose": "node build-dataset.js --verbose",
+    "test": "node --test"
   },
   "engines": {
     "node": ">=18.0.0"

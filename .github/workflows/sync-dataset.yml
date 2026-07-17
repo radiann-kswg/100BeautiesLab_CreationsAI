@@ -81,31 +81,20 @@ jobs:
         run: node scripts/build-dataset.js --verbose
 
       # ------------------------------------------------------------------
-      # 5. 生成データのバリデーション（データ劣化をハード失敗として早期検出）
+      # 5. ポリシー判定のテスト（同意に関わる判定の退行をここで止める）
       # ------------------------------------------------------------------
-      - name: Validate generated dataset
-        run: |
-          node --input-type=module <<'SCRIPT'
-          import { readFileSync } from 'node:fs';
-          const index = JSON.parse(readFileSync('ai-dataset/index.json', 'utf8'));
-          const failures = [];
-          for (const work of index.works) {
-            if (!work.title_ja) failures.push(`${work.work_key}: title_ja が空`);
-            if (!work.title_en) failures.push(`${work.work_key}: title_en が空`);
-          }
-          if (!index.total_characters || index.total_characters < 1) {
-            failures.push('total_characters が 0 またはなし');
-          }
-          if (failures.length > 0) {
-            console.error('[validate] ERROR: データ劣化を検出:');
-            failures.forEach(f => console.error('  ' + f));
-            process.exit(1);
-          }
-          console.log(`[validate] OK: ${index.total_works} 作品, ${index.total_characters} キャラクター`);
-          SCRIPT
+      - name: Run policy tests
+        working-directory: scripts
+        run: npm test
 
       # ------------------------------------------------------------------
-      # 6. 生成ファイルをステージング
+      # 6. 生成データのバリデーション（データ劣化・ポリシー退行をハード失敗として検出）
+      # ------------------------------------------------------------------
+      - name: Validate generated dataset
+        run: node scripts/validate-dataset.js
+
+      # ------------------------------------------------------------------
+      # 7. 生成ファイルをステージング
       # ------------------------------------------------------------------
       - name: Stage generated files
         run: |
@@ -114,7 +103,7 @@ jobs:
           git add creations-db || true
 
       # ------------------------------------------------------------------
-      # 7. 変更があれば自動コミット・プッシュ（push race 対策: rebase リトライ付き）
+      # 8. 変更があれば自動コミット・プッシュ（push race 対策: rebase リトライ付き）
       # ------------------------------------------------------------------
       - name: Commit and push if changed
         run: |
@@ -127,7 +116,24 @@ jobs:
           fi
 
           SUBMODULE_COMMIT=$(git -C creations-db rev-parse --short HEAD)
-          git commit -m "chore: sync ai-dataset (creations-db@${SUBMODULE_COMMIT}) [skip ci]"
+
+          # AI 学習許可件数の増減をコミットメッセージに残す。
+          # 2026-07-17 に許可が 211 → 307 へ増えたことが誰にも気づかれなかったのは、
+          # コミットメッセージがサブモジュールのハッシュしか語らなかったため。
+          # 件数の急変で CI を止めることはしない（正当な上流変更をブロックするため）。
+          # 「黙って起きる」ことだけを止め、履歴を見れば気づけるようにする。
+          ALLOWED_NEW=$(node -p "require('./ai-dataset/build-info.json').ai_training_stats.allowed_characters")
+          ALLOWED_OLD=$(git show HEAD:ai-dataset/build-info.json 2>/dev/null \
+            | node -e "let s='';process.stdin.on('data',c=>s+=c).on('end',()=>{try{console.log(JSON.parse(s).ai_training_stats.allowed_characters)}catch{console.log('')}})" || echo "")
+
+          if [ -n "$ALLOWED_OLD" ] && [ "$ALLOWED_OLD" != "$ALLOWED_NEW" ]; then
+            SUMMARY="ai_training allowed: ${ALLOWED_OLD} -> ${ALLOWED_NEW}"
+            echo "::notice::AI 学習許可レコード数が変化しました: ${SUMMARY}"
+          else
+            SUMMARY="ai_training allowed: ${ALLOWED_NEW}"
+          fi
+
+          git commit -m "chore: sync ai-dataset (creations-db@${SUBMODULE_COMMIT}) — ${SUMMARY} [skip ci]"
 
           for i in 1 2 3; do
             if git pull --rebase --autostash origin "${GITHUB_REF_NAME}" && git push; then

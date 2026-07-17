@@ -25,6 +25,15 @@ import path           from 'node:path';
 import { execSync }   from 'node:child_process';
 import { fileURLToPath } from 'node:url';
 import { CreationsDBClient } from '../creations-db/pkg/nodejs/index.mjs';
+import {
+  AI_TRAINING_DISALLOWED_REASON,
+  AI_TRAINING_ALLOWED_REASON,
+  assertDirectReadSafe,
+  buildProgressUnreadySet,
+  buildSecondaryOptoutMap,
+  getAITrainingPolicy,
+  getCharacterAIPolicy,
+} from './lib/policy.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname  = path.dirname(__filename);
@@ -47,119 +56,7 @@ const LICENCE_URL     = 'http://creativecommons.org/licenses/by-nc/4.0/';
 // 画像として扱う拡張子
 const IMAGE_EXTS = new Set(['.png', '.jpg', '.jpeg', '.gif', '.webp', '.svg']);
 
-// ---------------------------------------------------------------------------
-// AI 学習利用ポリシー
-// ---------------------------------------------------------------------------
-// 以下フラグを参照し、粗度に応じた別々のレイヤーで AI 学習・生成への利用可否を判定する。
-//
-//  「作品」レイヤー——トップレベル data/db_meta.json 内の CreationWorks["#Works_X"]
-//    Works_Hidden: true  → 作品全体が非公開（API 退出禁止）→ allowed: false
-//
-//  「DB」レイヤー——作品の DataBases/db_meta.json 内の Databases["#DB_X"]
-//    DB_Hidden:  true  → DB 全体が非公開 → allowed: false
-//    AI_Optout:  true  → AI 学習・生成を抑止 → allowed: false
-//    エントリなし  → 保守的フォールバック → allowed: false
-//    上記以外　→ allowed: true
-//
-//  「キャラクター」レイヤー——個別キャラクターレコード直下
-//    isPrivate:  true  → レコード単位で非公開 → allowed: false
-//
-// 詳細は上流リポジトリ docs/api-sw-spec.md §5.3“5.5 を参照。
-
-const AI_TRAINING_DISALLOWED_WORKS_HIDDEN =
-  'Works_Hidden: true is set in db_meta.json for this work. The entire work is non-public and opted out of AI training/generation use.';
-const AI_TRAINING_DISALLOWED_DB_HIDDEN =
-  'DB_Hidden: true is set in db_meta.json for this DB. This DB is non-public and opted out of AI training/generation use.';
-const AI_TRAINING_DISALLOWED_REASON =
-  'AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use.';
-const AI_TRAINING_DISALLOWED_NO_META_REASON =
-  'No Databases entry found in db_meta.json for this DB key. Treating as opted out (conservative fallback).';
-const AI_TRAINING_DISALLOWED_IS_PRIVATE =
-  'isPrivate: true is set on this character record. This record is non-public and opted out of AI training/generation use.';
-const AI_TRAINING_DISALLOWED_SECONDARY_CATEGORY =
-  'AI_Optout: true is set in _Secondaries category for this record\'s sec_SeriesTitle. This record is opted out of AI training/generation use.';
-const AI_TRAINING_ALLOWED_REASON =
-  'AI_Optout / DB_Hidden / Works_Hidden are not set for this DB. This DB is opted in for AI training/generation use.';
-
-/**
- * _Secondaries の各カテゴリが持つ AI_Optout を集約して返す。
- * sec_SeriesTitle → true のマップと、null タイトルのデフォルトフラグを返す。
- *
- * @param {object|null} dbEntry  DataBases/db_meta.json の Databases["#DB_X"] エントリ
- * @returns {{ map: Map<string,boolean>, defaultOptout: boolean }}
- */
-function buildSecondaryOptoutMap(dbEntry) {
-  const map = new Map();
-  let defaultOptout = false;
-  for (const sec of (dbEntry?._Secondaries ?? [])) {
-    if (sec.AI_Optout !== true) continue;
-    if (sec.sec_SeriesTitle != null) {
-      map.set(sec.sec_SeriesTitle, true);
-    } else {
-      defaultOptout = true;
-    }
-  }
-  return { map, defaultOptout };
-}
-
-/**
- * DB 層のポリシーを返す。Works_Hidden → DB_Hidden → AI_Optout → エントリなし の順に判定。
- *
- * @param {boolean}     worksHidden  トップレベル db_meta.json の Works_Hidden 値
- * @param {object|null} dbEntry      DataBases/db_meta.json の Databases["#DB_X"] エントリ
- * @returns {{ allowed: boolean, reason: string }}
- */
-function getAITrainingPolicy(worksHidden, dbEntry) {
-  // 1. 作品全体が非公開
-  if (worksHidden) {
-    return { allowed: false, reason: AI_TRAINING_DISALLOWED_WORKS_HIDDEN };
-  }
-
-  // 2. db_meta にエントリがない場合は保守的に disallowed 扱い
-  if (!dbEntry || typeof dbEntry !== 'object') {
-    return { allowed: false, reason: AI_TRAINING_DISALLOWED_NO_META_REASON };
-  }
-
-  // 3. DB 単位の非公開フラグ
-  if (dbEntry.DB_Hidden === true) {
-    return { allowed: false, reason: AI_TRAINING_DISALLOWED_DB_HIDDEN };
-  }
-
-  // 4. AI 学習オプトアウトフラグ
-  if (dbEntry.AI_Optout === true) {
-    return { allowed: false, reason: AI_TRAINING_DISALLOWED_REASON };
-  }
-
-  return { allowed: true, reason: AI_TRAINING_ALLOWED_REASON };
-}
-
-/**
- * キャラクターレコード層のポリシーを返す。
- * isPrivate チェック後、_Secondaries カテゴリ別 AI_Optout を適用する。
- *
- * @param {{ allowed: boolean, reason: string }} dbPolicy  DB 層ポリシー
- * @param {object}  charData  キャラクターレコードオブジェクト
- * @param {{ map: Map<string,boolean>, defaultOptout: boolean }|null} secondaryOptout  _Secondaries のオプトアウトマップ
- * @returns {{ allowed: boolean, reason: string }}
- */
-function getCharacterAIPolicy(dbPolicy, charData, secondaryOptout = null) {
-  if (charData && charData.isPrivate === true) {
-    return { allowed: false, reason: AI_TRAINING_DISALLOWED_IS_PRIVATE };
-  }
-  if (dbPolicy.allowed && secondaryOptout) {
-    const { map, defaultOptout } = secondaryOptout;
-    if (map.size > 0 || defaultOptout) {
-      const seriesTitle = charData?.sec_SeriesTitle ?? null;
-      const isOptout = seriesTitle != null
-        ? map.get(seriesTitle) === true
-        : defaultOptout;
-      if (isOptout) {
-        return { allowed: false, reason: AI_TRAINING_DISALLOWED_SECONDARY_CATEGORY };
-      }
-    }
-  }
-  return dbPolicy;
-}
+// AI 学習利用ポリシーの判定は scripts/lib/policy.js に切り出してある（テストから import するため）。
 
 // ---------------------------------------------------------------------------
 // ユーティリティ
@@ -332,6 +229,12 @@ async function main() {
 
   info(`作品数: ${workKeys.length}`);
 
+  // AI 学習へ供する内容が無い Progress 値を $EnumDef_Progress から導出する。
+  // 語彙はここに持たず上流の宣言だけを読む（判定の正典を creations-db に一本化するため）。
+  const progressUnready = buildProgressUnreadySet(globalMeta);
+  log(`Progress ゲート: AI_Unready 明示 ${progressUnready.explicit} 件 / isForSecondary フォールバック ${progressUnready.fallback} 件`);
+  log(`Progress ゲート: 除外する値 (${progressUnready.values.size}) = ${[...progressUnready.values].map(v => JSON.stringify(v)).join(', ')}`);
+
   // -----------------------------------------------------------------------
   // 2. 各作品ディレクトリを処理
   // -----------------------------------------------------------------------
@@ -365,16 +268,25 @@ async function main() {
     policy_source: {
       works_hidden:           'data/db_meta.json — CreationWorks["#Works_<Name>"].Works_Hidden（作品単位の非公開）',
       db_hidden:              'data/Works_<work>/DataBases/db_meta.json — Databases["#DB_<Name>"].DB_Hidden（DB単位の非公開）',
-      ai_optout:              'data/Works_<work>/DataBases/db_meta.json — Databases["#DB_<Name>"].AI_Optout（DB単位の AI 学習オプトアウト）',
-      secondary_category_optout: 'data/Works_<work>/DataBases/db_meta.json — Databases["#DB_<Name>"]._Secondaries[*].AI_Optout（二次創作カテゴリ別 AI 学習オプトアウト）',
+      ai_optout:              'data/Works_<work>/DataBases/db_meta.json — Databases["#DB_<Name>"].AI_Optout（DB単位の AI 学習オプトアウト。権利軸）',
+      secondary_category_optout: 'data/Works_<work>/DataBases/db_meta.json — Databases["#DB_<Name>"]._Secondaries[*].AI_Optout（二次創作カテゴリ別 AI 学習オプトアウト。権利軸）',
       is_private:             'data/Works_<work>/DataBases/db_*.json — <record>.isPrivate（レコード単位の非公開）',
+      progress_unready:       'data/db_meta.json — General.$VarsDef.$EnumDef_Progress[*].AI_Unready（進捗段階ごとの「AI 学習へ供する内容が無い」宣言。充填軸。未宣言のエントリは isForSecondary === true をフォールバックとして使う）',
     },
-    disallowed_priority: 'Works_Hidden → DB_Hidden → AI_Optout → db_meta エントリなし → _Secondaries カテゴリ別 AI_Optout → isPrivate（いずれか true で allowed=false）',
+    // AI_Optout（権利軸）と AI_Unready（充填軸）は意味が異なる。両者を混同しないこと。
+    axis_semantics: {
+      ai_optout: 'AI_Optout: true は「権利上 AI 学習・生成へ供してはならない」という原著作者の表明です。',
+      ai_unready: 'AI_Unready: true は「制作が進んでおらず AI 学習へ供する内容が無い」という状態を表すだけで、権利上の可否とは無関係です。'
+        + ' AI_Unready: false は AI 学習の許諾を意味しません。権利上の可否を表明するのは AI_Optout のみです。',
+    },
+    disallowed_priority: 'Works_Hidden → DB_Hidden → AI_Optout → db_meta エントリなし → _Secondaries カテゴリ別 AI_Optout → isPrivate → Progress の AI_Unready（いずれか該当で allowed=false）',
     disallowed_default: false,
     consumer_guidance: [
       'manifest.jsonl をそのまま使う場合: record.ai_training.allowed === true のレコードのみを採用してください。',
       'あるいは manifest-training.jsonl を使えば、許可済みレコードのみが含まれます。',
       'image-index.json / works/<Work>.json にも ai_training フラグが付与されています。',
+      'image-index.json の allowed_db_keys は「許可レコードを 1 件以上含む DB」を示す粗いフィルタです。'
+        + '同じ DB でも許可・不許可はレコード単位で分かれるため、画像の利用可否は manifest.jsonl の各レコードの images と ai_training で判断してください。',
     ],
   };
 
@@ -470,7 +382,8 @@ async function main() {
       db_files: [],
     };
 
-    const allowedDbKeys = [];   // この作品内で AI 学習が許可された DB キー一覧
+    const allowedDbKeys = [];   // この作品内で AI 学習が許可された DB キー一覧（レコードの実判定から導出）
+    const dbRecordStats = [];   // DB ごとの allowed / total 件数（利用者が allow/deny の混在を判別できるように出す）
 
     // databases の各エントリを処理（#DB_* / #Ref_* キーのみ対象）
     for (const [dbMetaKey, dbEntry] of Object.entries(databases)) {
@@ -502,10 +415,6 @@ async function main() {
         continue;
       }
 
-      // _Secondaries の null-title カテゴリのみが全て AI_Optout: true の場合（=全レコードがデフォルトでブロック）は
-      // DB レベルでも allowed_db_keys に含めない
-      const isFullyDefaultOptedOut = secondaryOptout.defaultOptout && secondaryOptout.map.size === 0;
-      if (dbPolicy.allowed && !isFullyDefaultOptedOut) allowedDbKeys.push(dbMetaKey);
       workEntry.db_files.push({ path: dbRelPath, ai_training: dbPolicy });
 
       // レコードを取得（_Commons 補完済み・isPrivate 含む）
@@ -517,9 +426,11 @@ async function main() {
         // `Ref_` を考慮しないため、#Ref_* かつ DB_Layer が非既定 (例: References) の DB では
         // ファイルが実在しても "DB file not found" になることがある。
         // dbAbsPath は本スクリプト側で独自に解決済み（かつ存在確認済み）なので、直接読み込みで救済する。
-        // 参考文書・辞書系 DB は _Commons を持たないため非適用でも実害はない。
+        // ただしこの経路では _Commons 継承が適用されないため、継承前の値でポリシーを判定して
+        // 誤って許可しないよう、_Commons がポリシー値を供給していないことを確かめてから使う。
         const fallback = readJSON(dbAbsPath);
         if (Array.isArray(fallback)) {
+          assertDirectReadSafe(dbEntry, `${workKey} / ${dbMetaKey}`);
           log(`WARN: client.getRecords 失敗のため直接読み込みにフォールバック (${workKey} / ${dbMetaKey}): ${e.message}`);
           records = fallback;
         } else {
@@ -527,6 +438,10 @@ async function main() {
           continue;
         }
       }
+
+      // この DB で実際に許可されたレコード数。allowed_db_keys の導出に使う（下記参照）
+      let dbAllowedRecords = 0;
+      let dbTotalRecords = 0;
 
       for (const [idx, charData] of records.entries()) {
         if (typeof charData !== 'object' || charData === null) continue;
@@ -539,13 +454,15 @@ async function main() {
         );
 
         // 画像パスを解決
-        const images = resolveCharacterImages(workDir, charId, charData);
+        const images = resolveCharacterImages(workDir, charId, charData, dbMetaKey);
 
         // AIHints を data から取り出してトップレベルにも露出する
         const aiHints = charData.AIHints ?? null;
 
-        // isPrivate および _Secondaries カテゴリ別 AI_Optout を考慮してポリシーを決定
-        const charPolicy = getCharacterAIPolicy(dbPolicy, charData, secondaryOptout);
+        // isPrivate / _Secondaries カテゴリ別 AI_Optout / Progress の AI_Unready を考慮して決定
+        const charPolicy = getCharacterAIPolicy(dbPolicy, charData, secondaryOptout, progressUnready.values);
+        dbTotalRecords++;
+        if (charPolicy.allowed) dbAllowedRecords++;
 
         // AIHints 新フィールド (2026-06-08 addon-ai-tag) の存在確認
         const aiFormsCorefolder = aiHints?.forms?.corefolder;
@@ -632,6 +549,13 @@ async function main() {
         appendJSONL(manifestStream, typeRecord);
         if (dbPolicy.allowed) appendJSONL(trainingStream, typeRecord);
       }
+
+      // allowed_db_keys は「実際に許可されたレコードを 1 件以上含む DB」だけを載せる。
+      // DB 層が allowed でも、カテゴリ別 AI_Optout や isPrivate、Progress の AI_Unready によって
+      // 全レコードが弾かれることがある（例: #DB_Secondary は 38 件すべて disallowed）。
+      // DB 層のフラグだけを見て載せると、オプトアウト済みの画像を「学習可」と伝えてしまう。
+      dbRecordStats.push({ key: dbMetaKey, allowed: dbAllowedRecords, total: dbTotalRecords });
+      if (dbPolicy.allowed && dbAllowedRecords > 0) allowedDbKeys.push(dbMetaKey);
     }
 
     // --- 画像インデックス ---
@@ -648,10 +572,17 @@ async function main() {
       ai_training: {
         allowed: workHasAllowedDb,
         allowed_db_keys: allowedDbKeys,
+        // allowed_db_keys は「許可レコードを含む DB」を示す粗いフィルタに過ぎない。
+        // 1 つの DB の中で許可・不許可が混在するため（例: 未着手キャラは Progress で除外される）、
+        // 画像単位で厳密に判定するにはレコード側の ai_training を参照する必要がある。
         note: workHasAllowedDb
-          ? '画像パスのうち許可された DB に対応するサブディレクトリ (Images/DB_<name>/...) のみが AI 学習許可対象です。'
+          ? 'allowed_db_keys は「AI 学習許可レコードを 1 件以上含む DB」の一覧です。'
+            + '同じ DB の中でも許可・不許可はレコード単位で分かれるため、この一覧だけで画像の利用可否を判断しないでください。'
+            + '正典は manifest.jsonl / manifest-training.jsonl の各レコードの ai_training と images です。'
+            + 'db_records に DB ごとの許可件数を載せています。'
           : AI_TRAINING_DISALLOWED_REASON,
       },
+      db_records: dbRecordStats,
       images: workImages,
       count: workImages.length,
     };
@@ -920,7 +851,7 @@ function resolveDbCrossLinkPath(wrapper, defaultFieldName, currentDirName) {
 /**
  * Images.* 配列/単一要素（通常の文字列パス、または `_DBCrossLinkPath` wrapper）を解決する共通ヘルパー。
  * @param {unknown} entry - 配列要素または単一値
- * @param {string} baseDir - 文字列パス時に使う基準ディレクトリ（dbPrimaryBase/<folderHint>）
+ * @param {string} baseDir - 文字列パス時に使う基準ディレクトリ（dbImagesBase/<folderHint>）
  * @param {string} fieldName - `_DBCrossLinkPath` の `_Field` 省略時の既定値
  * @param {string} currentDirName - `_DBCrossLinkPath` の `_Work` 省略時の既定値
  * @returns {string|null}
@@ -947,7 +878,7 @@ function resolveImageArrayEntry(entry, baseDir, fieldName, currentDirName) {
  *   design_alt                      designAlt_PNGPath[] (衣装差分・デザインバリアント)
  *   tails_unit                      TailsUnit[*].TailsUnit_PNGName (尻尾ユニット参考画像) — 2026-07-10 追加
  */
-function resolveCharacterImages(workDir, charId, charData) {
+function resolveCharacterImages(workDir, charId, charData, dbMetaKey) {
   const images = {};
   // _DBCrossLinkPath の _Work 省略時に「自作品」として使う作品ディレクトリ名
   const dirName = path.basename(workDir);
@@ -972,10 +903,15 @@ function resolveCharacterImages(workDir, charId, charData) {
     }
   }
 
-  const dbPrimaryBase = path.join(imagesBase, 'DB_Primary');
+  // 各 DB は自前の画像ディレクトリを持つ（Images/DB_SelfSecondary/concept/ 等）ため、
+  // *_PNGName / *_PNGPath はレコードが属する DB の配下で解決する。DB_Primary 決め打ちだと
+  // 非 Primary DB のレコードが宣言した画像を取りこぼす（#DB_SelfSecondary / #DB_SemiPrimary の 16 件）。
+  // 見つからないときに DB_Primary へフォールバックしてはいけない。他 DB の同名画像を誤って
+  // 結び付ける危険があり、他 DB を参照する正規の手段は _DBCrossLinkPath wrapper の方である。
+  const dbImagesBase = path.join(imagesBase, String(dbMetaKey).replace(/^#/, ''));
 
   // --- TailsUnit (複数): 尻尾ユニット参考画像 ---
-  // TailsUnit[*].TailsUnit_PNGName → Images/DB_Primary/attr/tailsUnit/{name}.<ext>
+  // TailsUnit[*].TailsUnit_PNGName → Images/<DB>/attr/tailsUnit/{name}.<ext>
   // charData.Images とは独立したトップレベルフィールドのため、下記の charImages 早期 return より前に解決する。
   // TailsUnit_PNGName は他の *_PNGName/*_PNGPath と異なり拡張子込みで格納されている (db_meta.json の
   // $type: "#PNGFileName|#Null" 準拠) ため、resolveImagePath に渡す前に既知の拡張子を取り除く。
@@ -983,7 +919,7 @@ function resolveCharacterImages(workDir, charId, charData) {
     const tailsUnitPaths = charData.TailsUnit
       .map(entry => (entry && typeof entry.TailsUnit_PNGName === 'string') ? entry.TailsUnit_PNGName : null)
       .filter(Boolean)
-      .map(name => resolveImagePath(path.join(dbPrimaryBase, 'attr/tailsUnit', name.replace(/\.(png|jpe?g|gif|webp|svg)$/i, ''))))
+      .map(name => resolveImagePath(path.join(dbImagesBase, 'attr/tailsUnit', name.replace(/\.(png|jpe?g|gif|webp|svg)$/i, ''))))
       .filter(Boolean);
     if (tailsUnitPaths.length > 0) images.tails_unit = tailsUnitPaths;
   }
@@ -996,7 +932,7 @@ function resolveCharacterImages(workDir, charId, charData) {
   // concept (単一): 両形態を描いた概念イラスト。
   // concept_PNGName → Images/DB_Primary/concept/{name}.<ext>（文字列 or _DBCrossLinkPath wrapper）
   if (charImages.concept_PNGName) {
-    const rel = resolveImageArrayEntry(charImages.concept_PNGName, path.join(dbPrimaryBase, 'concept'), 'concept_PNGName', dirName);
+    const rel = resolveImageArrayEntry(charImages.concept_PNGName, path.join(dbImagesBase, 'concept'), 'concept_PNGName', dirName);
     if (rel) images.concept = [rel];
   }
 
@@ -1004,7 +940,7 @@ function resolveCharacterImages(workDir, charId, charData) {
   // conceptAlt_PNGName[] → Images/DB_Primary/concept/{name}.<ext>（要素は文字列 or _DBCrossLinkPath wrapper）
   if (Array.isArray(charImages.conceptAlt_PNGName) && charImages.conceptAlt_PNGName.length > 0) {
     const paths = charImages.conceptAlt_PNGName
-      .map(name => resolveImageArrayEntry(name, path.join(dbPrimaryBase, 'concept'), 'conceptAlt_PNGName', dirName))
+      .map(name => resolveImageArrayEntry(name, path.join(dbImagesBase, 'concept'), 'conceptAlt_PNGName', dirName))
       .filter(Boolean);
     if (paths.length > 0) images.concept_alt = paths;
   }
@@ -1015,7 +951,7 @@ function resolveCharacterImages(workDir, charId, charData) {
   // スキャン (上の DB_* ループ) では拾えない。構造化フィールドとして明示解決する。
   if (Array.isArray(charImages.corefolder_PNGPath) && charImages.corefolder_PNGPath.length > 0) {
     const paths = charImages.corefolder_PNGPath
-      .map(rel => resolveImageArrayEntry(rel, path.join(dbPrimaryBase, 'corefolder'), 'corefolder_PNGPath', dirName))
+      .map(rel => resolveImageArrayEntry(rel, path.join(dbImagesBase, 'corefolder'), 'corefolder_PNGPath', dirName))
       .filter(Boolean);
     if (paths.length > 0) images.corefolder = paths;
   }
@@ -1026,7 +962,7 @@ function resolveCharacterImages(workDir, charId, charData) {
   // resolveImagePath が null を返すだけなので将来の追加に備えて先行対応する。
   if (Array.isArray(charImages.humanoid_PNGPath) && charImages.humanoid_PNGPath.length > 0) {
     const paths = charImages.humanoid_PNGPath
-      .map(rel => resolveImageArrayEntry(rel, path.join(dbPrimaryBase, 'humanoid'), 'humanoid_PNGPath', dirName))
+      .map(rel => resolveImageArrayEntry(rel, path.join(dbImagesBase, 'humanoid'), 'humanoid_PNGPath', dirName))
       .filter(Boolean);
     if (paths.length > 0) images.humanoid = paths;
   }
@@ -1041,14 +977,14 @@ function resolveCharacterImages(workDir, charId, charData) {
       : null;
     if (artsMeta) {
       const entries = artsMeta.flatMap(({ path: rel, form, characters }) => {
-        const resolved = resolveImageArrayEntry(rel, path.join(dbPrimaryBase, 'arts'), 'arts_PNGPath', dirName);
+        const resolved = resolveImageArrayEntry(rel, path.join(dbImagesBase, 'arts'), 'arts_PNGPath', dirName);
         if (!resolved) return [];
         return [{ path: resolved, form: form ?? null, characters: Array.isArray(characters) ? characters : null }];
       });
       if (entries.length > 0) images.arts = entries;
     } else if (Array.isArray(charImages.arts_PNGPath) && charImages.arts_PNGPath.length > 0) {
       const entries = charImages.arts_PNGPath.flatMap(rel => {
-        const resolved = resolveImageArrayEntry(rel, path.join(dbPrimaryBase, 'arts'), 'arts_PNGPath', dirName);
+        const resolved = resolveImageArrayEntry(rel, path.join(dbImagesBase, 'arts'), 'arts_PNGPath', dirName);
         return resolved ? [{ path: resolved, form: null, characters: null }] : [];
       });
       if (entries.length > 0) images.arts = entries;
@@ -1065,14 +1001,14 @@ function resolveCharacterImages(workDir, charId, charData) {
       : null;
     if (daltMeta) {
       const entries = daltMeta.flatMap(({ path: rel, form, characters }) => {
-        const resolved = resolveImageArrayEntry(rel, path.join(dbPrimaryBase, 'designAlt'), 'designAlt_PNGPath', dirName);
+        const resolved = resolveImageArrayEntry(rel, path.join(dbImagesBase, 'designAlt'), 'designAlt_PNGPath', dirName);
         if (!resolved) return [];
         return [{ path: resolved, form: form ?? null, characters: Array.isArray(characters) ? characters : null }];
       });
       if (entries.length > 0) images.design_alt = entries;
     } else if (Array.isArray(charImages.designAlt_PNGPath) && charImages.designAlt_PNGPath.length > 0) {
       const entries = charImages.designAlt_PNGPath.flatMap(rel => {
-        const resolved = resolveImageArrayEntry(rel, path.join(dbPrimaryBase, 'designAlt'), 'designAlt_PNGPath', dirName);
+        const resolved = resolveImageArrayEntry(rel, path.join(dbImagesBase, 'designAlt'), 'designAlt_PNGPath', dirName);
         return resolved ? [{ path: resolved, form: null, characters: null }] : [];
       });
       if (entries.length > 0) images.design_alt = entries;

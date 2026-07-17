@@ -11,11 +11,32 @@
         "allowed_db_keys": [
           "#DB_Primary",
           "#DB_SemiPrimary",
-          "#DB_SelfSecondary",
-          "#DB_Secondary"
+          "#DB_SelfSecondary"
         ],
-        "note": "画像パスのうち許可された DB に対応するサブディレクトリ (Images/DB_<name>/...) のみが AI 学習許可対象です。"
+        "note": "allowed_db_keys は「AI 学習許可レコードを 1 件以上含む DB」の一覧です。同じ DB の中でも許可・不許可はレコード単位で分かれるため、この一覧だけで画像の利用可否を判断しないでください。正典は manifest.jsonl / manifest-training.jsonl の各レコードの ai_training と images です。db_records に DB ごとの許可件数を載せています。"
       },
+      "db_records": [
+        {
+          "key": "#DB_Primary",
+          "allowed": 94,
+          "total": 105
+        },
+        {
+          "key": "#DB_SemiPrimary",
+          "allowed": 8,
+          "total": 52
+        },
+        {
+          "key": "#DB_SelfSecondary",
+          "allowed": 7,
+          "total": 106
+        },
+        {
+          "key": "#DB_Secondary",
+          "allowed": 0,
+          "total": 38
+        }
+      ],
       "images": [
         "data/Works_NumberTales/Images/DB_Primary/arts/art_img0-developper.png",
         "data/Works_NumberTales/Images/DB_Primary/arts/art_img00-developper.png",
@@ -622,6 +643,23 @@
         "allowed_db_keys": [],
         "note": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       },
+      "db_records": [
+        {
+          "key": "#DB_Primary",
+          "allowed": 0,
+          "total": 13
+        },
+        {
+          "key": "#DB_PrimaryDealer",
+          "allowed": 0,
+          "total": 10
+        },
+        {
+          "key": "#DB_UnprocessedDealer",
+          "allowed": 0,
+          "total": 55
+        }
+      ],
       "images": [
         "data/Works_FLInvestigator78/Images/DB_Primary/arts/arts_imgFLDealer.png",
         "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLM0.png",
@@ -645,6 +683,13 @@
         "allowed_db_keys": [],
         "note": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       },
+      "db_records": [
+        {
+          "key": "#DB_Primary",
+          "allowed": 0,
+          "total": 7
+        }
+      ],
       "images": [
         "data/Works_ShouArRiders/Images/DB_Primary/arts/art_imgEZ13-meowsday2023.png",
         "data/Works_ShouArRiders/Images/DB_Primary/arts/newYear/art_imgEZ4-newyear2023.png",
@@ -669,6 +714,18 @@
         "allowed_db_keys": [],
         "note": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       },
+      "db_records": [
+        {
+          "key": "#DB_Primary",
+          "allowed": 0,
+          "total": 35
+        },
+        {
+          "key": "#DB_PrimaryPerformer",
+          "allowed": 0,
+          "total": 11
+        }
+      ],
       "images": [
         "data/Works_UnibyteLive/Images/DB_Primary/keycapper/S/emstk_keycapperS-1.png",
         "data/Works_UnibyteLive/Images/DB_Primary/keycapper/Z/emstk_keycapperZ-1.png"
@@ -683,6 +740,13 @@
         "allowed_db_keys": [],
         "note": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       },
+      "db_records": [
+        {
+          "key": "#DB_Primary",
+          "allowed": 0,
+          "total": 8
+        }
+      ],
       "images": [
         "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/art_imgDrcNE-InfrationAerialSwimming.png",
         "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/chattingArt/chart_imgDrcNE-ramen.png",
@@ -705,6 +769,13 @@
         "allowed_db_keys": [],
         "note": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       },
+      "db_records": [
+        {
+          "key": "#DB_SemiPrimary",
+          "allowed": 0,
+          "total": 8
+        }
+      ],
       "images": [],
       "count": 0
     },
@@ -716,6 +787,18 @@
         "allowed_db_keys": [],
         "note": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       },
+      "db_records": [
+        {
+          "key": "#DB_PrimaryMobs",
+          "allowed": 0,
+          "total": 4
+        },
+        {
+          "key": "#DB_Primary",
+          "allowed": 0,
+          "total": 7
+        }
+      ],
       "images": [],
       "count": 0
     },
@@ -727,6 +810,18 @@
         "allowed_db_keys": [],
         "note": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       },
+      "db_records": [
+        {
+          "key": "#DB_Primary",
+          "allowed": 0,
+          "total": 13
+        },
+        {
+          "key": "#DB_SemiPrimary",
+          "allowed": 0,
+          "total": 1
+        }
+      ],
       "images": [
         "data/Works_PastDivers/Images/DB_Primary/concept/cnsp_imgCL3G3.png",
         "data/Works_PastDivers/Images/DB_Primary/concept/cnsp_imgCL6G3.png"
@@ -741,6 +836,18 @@
         "allowed_db_keys": [],
         "note": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
       },
+      "db_records": [
+        {
+          "key": "#DB_Primary",
+          "allowed": 0,
+          "total": 12
+        },
+        {
+          "key": "#DB_Proxy",
+          "allowed": 0,
+          "total": 3
+        }
+      ],
       "images": [
         "data/Works_DestinyFoxRecords/Images/DB_Primary/arts/regular/arts_snsicnRQN.png",
         "data/Works_DestinyFoxRecords/Images/DB_Primary/concept/cnsp_imgPhysU-m.png",
@@ -796,8 +903,35 @@
           "#Ref_Society",
           "#Ref_Region8"
         ],
-        "note": "画像パスのうち許可された DB に対応するサブディレクトリ (Images/DB_<name>/...) のみが AI 学習許可対象です。"
+        "note": "allowed_db_keys は「AI 学習許可レコードを 1 件以上含む DB」の一覧です。同じ DB の中でも許可・不許可はレコード単位で分かれるため、この一覧だけで画像の利用可否を判断しないでください。正典は manifest.jsonl / manifest-training.jsonl の各レコードの ai_training と images です。db_records に DB ごとの許可件数を載せています。"
       },
+      "db_records": [
+        {
+          "key": "#Ref_Vocabulary",
+          "allowed": 7,
+          "total": 7
+        },
+        {
+          "key": "#Ref_Race",
+          "allowed": 10,
+          "total": 10
+        },
+        {
+          "key": "#Ref_Faction",
+          "allowed": 7,
+          "total": 7
+        },
+        {
+          "key": "#Ref_Society",
+          "allowed": 5,
+          "total": 5
+        },
+        {
+          "key": "#Ref_Region8",
+          "allowed": 15,
+          "total": 15
+        }
+      ],
       "images": [
         "data/GeneralImages/Ref_Region8/cnsp-map_region8.png"
       ],

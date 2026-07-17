@@ -136,20 +136,27 @@ node scripts/build-dataset.js --verbose
 
 正常終了: `[build] === build complete ===`
 
-### AI 学習ポリシー判定（`build-dataset.js` の核心ロジック）
+### AI 学習ポリシー判定（`scripts/lib/policy.js` の核心ロジック）
 
-`ai_training.allowed` は以下の優先順で判定される（いずれかの条件が true なら false）。
+判定層は `scripts/lib/policy.js` に切り出されており、`scripts/lib/policy.test.js` がテストする（`cd scripts && npm test`）。`ai_training.allowed` は以下の優先順で判定される（いずれかの条件が該当なら false）。
 
 | レイヤー | 判定条件 | `allowed` |
 |---|---|---|
 | 作品 | `Works_Hidden: true` | ⛔ false |
-| DB | `DB_Hidden: true` または `AI_Optout: true` | ⛔ false |
 | DB | `Databases` にエントリなし（保守的 fallback） | ⛔ false |
-| 二次創作カテゴリ | `_Secondaries[*].AI_Optout: true`（レコードの `sec_SeriesTitle` がマップに一致） | ⛔ false |
+| DB | `DB_Hidden: true` または `AI_Optout: true` | ⛔ false |
 | キャラクター | `isPrivate: true` | ⛔ false |
-| 上記以外 | `AI_Optout` 未設定 or `false` | ✅ true |
+| 二次創作カテゴリ | `_Secondaries[*].AI_Optout: true`（レコードの `sec_SeriesTitle` がマップに一致） | ⛔ false |
+| キャラクター | `Progress` が `$EnumDef_Progress` で `AI_Unready` と宣言された値 | ⛔ false |
+| 上記以外 | ✅ true |
 
-このロジックを変更する場合は `ai-dataset/policy.json` の出力とも整合させること。
+**`AI_Optout`（権利軸）と `AI_Unready`（充填軸）は別物。** 前者は「権利上 AI 学習へ供してはならない」という原著作者の表明、後者は「制作が進んでおらず供する内容が無い」という状態にすぎない。**`AI_Unready: false` は AI 学習の許諾を意味しない。** 権利上の可否を表明するのは `AI_Optout` のみ。
+
+**Progress ゲートはスキーマ駆動**（2026-07-17 追加）。除外する値の一覧をこのリポジトリに持たず、`data/db_meta.json` の `General.$VarsDef.$EnumDef_Progress` を読んで導出する（① `AI_Unready` が boolean なら優先、② 未宣言なら `isForSecondary === true` をフォールバック）。判定の正典を上流に一本化するための設計で、同じ判定を両側で実装すると必ず食い違う（実際 `_Secondaries` の判定は上流が 3 軸マッチャへ移行した後もこちらが旧方式のまま取り残されている）。どちらの網にもかからない enum エントリがあればビルドを失敗させる（黙って許可側へ落とさないため）。
+
+**`allowed_db_keys` はレコードの実判定から導出する。** DB 層が allowed でも、カテゴリ別 `AI_Optout` や `isPrivate`、Progress で全レコードが弾かれることがある。DB 層のフラグだけを見て載せると、オプトアウト済みの画像を「学習可」と伝えてしまう。
+
+ロジックを変更する場合は `ai-dataset/policy.json` の出力（生成元は `build-dataset.js` の `aiTrainingPolicySummary`）とも整合させ、`scripts/lib/policy.test.js` と `scripts/validate-dataset.js` を更新すること。
 
 ### 疑似作品（`Works_Dir` / `Works_ImagesDir` オーバーライド）への対応（2026-07-11 addon-ai-tag 追加）
 

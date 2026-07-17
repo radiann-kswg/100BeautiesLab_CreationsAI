@@ -9,8 +9,8 @@
   "ai_training_stats": {
     "allowed_works": 2,
     "disallowed_works": 8,
-    "allowed_characters": 307,
-    "disallowed_characters": 225
+    "allowed_characters": 153,
+    "disallowed_characters": 379
   },
   "ai_hints_stats": {
     "with_ai_hints": 92,
