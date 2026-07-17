@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-07-17T11:07:25+09:00",
+  "_generated_at": "2026-07-17T11:19:48+09:00",
   "work_key": "#Works_NumberTales",
   "dir_name": "Works_NumberTales",
   "title_ja": "ナンバーテールズ",
@@ -12,20 +12,20 @@
     ],
     "basicFields": [
       "FormalName",
-      "ModelName",
-      "ModelNumber",
       "CodeName",
       "SPCodeName",
-      "Belonging",
-      "Class",
-      "Age",
-      "AnivDay",
+      "ModelNumber",
+      "ModelName",
       "RaceType",
       "GenderType",
+      "Belonging",
+      "Class",
       "Height_cm",
       "Weight_kg",
       "BustSize",
-      "TailsUnit"
+      "TailsUnit",
+      "Age",
+      "AnivDay"
     ],
     "subFields": [
       "AppearanceDetail",
