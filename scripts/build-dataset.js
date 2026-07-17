@@ -178,11 +178,24 @@ function readJSON(filePath) {
   }
 }
 
+/**
+ * ディレクトリエントリを名前のバイト順（UTF-8）に整列して返す。
+ *
+ * fs.readdirSync の戻り順はファイルシステム依存（Linux/ext4 は概ねバイト順、
+ * Windows/NTFS は大文字化した照合順）のため、明示的に整列しないと同一ソースでも
+ * プラットフォーム間で出力順が変わり、CI とローカルで往復し続ける差分になる。
+ * git のパス順と同じバイト順に固定することで、既存の CI 生成物とも一致する。
+ */
+function readdirSorted(dir) {
+  return fs.readdirSync(dir, { withFileTypes: true })
+    .sort((a, b) => Buffer.compare(Buffer.from(a.name, 'utf8'), Buffer.from(b.name, 'utf8')));
+}
+
 /** ディレクトリを再帰的に走査して画像パスを収集 */
 function collectImages(dir, base) {
   const results = [];
   if (!fs.existsSync(dir)) return results;
-  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+  for (const entry of readdirSorted(dir)) {
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) {
       results.push(...collectImages(full, base));
@@ -713,7 +726,7 @@ async function main() {
 
   const dictDir = path.join(DATA_DIR, 'Dictionaries');
   if (fs.existsSync(dictDir)) {
-    for (const entry of fs.readdirSync(dictDir, { withFileTypes: true })) {
+    for (const entry of readdirSorted(dictDir)) {
       if (entry.isFile() && entry.name.endsWith('.json')) {
         const dictData = readJSON(path.join(dictDir, entry.name));
         if (dictData) {
@@ -843,14 +856,26 @@ async function main() {
  * 拡張子なしのベースパスに対して IMAGE_EXTS を順に試し、
  * 最初に実在したファイルのサブモジュール相対パスを返す。見つからない場合は null。
  *
+ * 実在判定は「推測した拡張子を付けて existsSync」ではなく、実ディレクトリのエントリ名との
+ * 突き合わせで行い、拡張子の大文字小文字は無視して照合したうえで **実ファイル名をそのまま**
+ * 返す。前者の方式では、case-sensitive な FS（CI の Linux）が実体 `.PNG` を取りこぼす一方、
+ * case-insensitive な FS（Windows）は実体と綴りの異なるパスを記録してしまい、
+ * 同一ソースでもプラットフォームで出力が食い違うため。
+ *
  * @param {string} baseNoExt  拡張子を除いた絶対パス
  * @returns {string|null}
  */
 function resolveImagePath(baseNoExt) {
-  for (const ext of ['.png', '.jpg', '.jpeg', '.gif', '.webp', '.svg']) {
-    const absPath = `${baseNoExt}${ext}`;
-    if (fs.existsSync(absPath)) {
-      return path.relative(SUBMODULE, absPath).replace(/\\/g, '/');
+  const dir = path.dirname(baseNoExt);
+  if (!fs.existsSync(dir)) return null;
+  const wanted = path.basename(baseNoExt);
+  const files = readdirSorted(dir).filter(e => e.isFile());
+  for (const ext of IMAGE_EXTS) {
+    const hit = files.find(e =>
+      e.name.slice(0, wanted.length) === wanted &&
+      e.name.slice(wanted.length).toLowerCase() === ext);
+    if (hit) {
+      return path.relative(SUBMODULE, path.join(dir, hit.name)).replace(/\\/g, '/');
     }
   }
   return null;
@@ -933,7 +958,7 @@ function resolveCharacterImages(workDir, charId, charData) {
 
   // DB_Primary / DB_SemiPrimary / DB_Secondary / DB_SelfSecondary のそれぞれに
   // charId ディレクトリが存在することがある
-  for (const dbImgDir of fs.readdirSync(imagesBase, { withFileTypes: true })) {
+  for (const dbImgDir of readdirSorted(imagesBase)) {
     if (!dbImgDir.isDirectory()) continue;
     const charImgDir = path.join(imagesBase, dbImgDir.name, charId);
     if (fs.existsSync(charImgDir)) {
@@ -1061,7 +1086,7 @@ function resolveCharacterImages(workDir, charId, charData) {
 function collectImagesRaw(dir) {
   const results = [];
   if (!fs.existsSync(dir)) return results;
-  for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
+  for (const entry of readdirSorted(dir)) {
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) {
       results.push(...collectImagesRaw(full));

@@ -47,9 +47,13 @@ if [ -z "$RECORDED" ]; then
 fi
 
 # サブモジュール作業ツリーの現 HEAD
-WORKING="$(git -C "$SUBMODULE" rev-parse HEAD 2>/dev/null)"
-if [ -z "$WORKING" ]; then
-  echo "ERROR: サブモジュール作業ツリーの HEAD を取得できませんでした" >&2
+# `git rev-parse HEAD` は HEAD を解決できない場合でも標準出力へリテラル "HEAD" を返すため、
+# 空チェックだけでは通り抜けて RECORDED との比較が誤って UPDATE_AVAILABLE になる
+# （2026-06-25 の誤検知事例: サブモジュール git が壊れ HEAD が unborn 扱いになった環境）。
+# SHA として解決できたことを明示的に検証し、できなければ ERROR とする。
+WORKING="$(git -C "$SUBMODULE" rev-parse --verify --quiet HEAD^{commit} 2>/dev/null)"
+if ! printf '%s' "$WORKING" | grep -Eq '^[0-9a-f]{40}$'; then
+  echo "ERROR: サブモジュール作業ツリーの HEAD を SHA として解決できませんでした" >&2
   exit 1
 fi
 

@@ -17,3 +17,8 @@ yarn-error.log*
 
 # ai-dataset/ は自動生成ファイルなので .gitignore では除外しない
 # （自動コミット対象として Git で追跡する）
+
+# 毎朝の自動トリアージログ（scheduled task `morning-github-issue-triage` が生成）。
+# 再生成可能な定型ログで、未解決項目があった場合のみ内容に意味があるため追跡しない。
+# 過去分は tasks/archive/ に退避してある。
+tasks/**/github-triage-*.md
