@@ -8,14 +8,20 @@
 # 役割（分業型）:
 #   fetch / `git submodule update --remote` はネットワークが通る側
 #   （ローカル Windows の git、または GitHub Actions）が担当する前提。
-#   このスクリプトは「サブモジュールの作業ツリー HEAD が、スーパープロジェクトの
-#   記録している gitlink より進んでいる（= 追従待ち）」状態だけを判定する。
+#   このスクリプトは、スーパープロジェクトが記録している gitlink と
+#   サブモジュール作業ツリーの HEAD の「ずれ方」を判定するだけ。
 #   ネットワークアクセスは一切行わない。
 #
 # 終了コード:
 #   10 : UP_TO_DATE       追従済み。やることなし。
-#    0 : UPDATE_AVAILABLE 追従すべき更新あり。標準出力に
-#                         "UPDATE_AVAILABLE <recorded> <working>" を出力。
+#    0 : UPDATE_AVAILABLE 作業ツリーが記録より進んでいる（= 本来の追従待ち）。
+#                         "UPDATE_AVAILABLE <recorded> <working> (forward)" を出力。
+#                         再ビルドして gitlink をコミットする必要がある。
+#   11 : BEHIND           作業ツリーが記録より遅れている（= ローカルのチェックアウト漏れ）。
+#                         "BEHIND <recorded> <working>" を出力。
+#                         `git submodule update` で追いつくだけでよく、コミットは不要。
+#   12 : DIVERGED         記録と作業ツリーが分岐している。"DIVERGED <recorded> <working>"
+#                         を出力。機械的な正解がないため人間の判断が必要。
 #    1 : ERROR            実行環境やリポジトリの異常。
 #
 # 使い方:
@@ -62,13 +68,26 @@ if [ "$RECORDED" = "$WORKING" ]; then
   exit 10
 fi
 
-# 追従待ち。念のため WORKING が RECORDED の子孫（＝前進）かを確認しておく。
-# 祖先関係が確認できなくても更新ありとして扱うが、情報として注記する。
-if git -C "$SUBMODULE" merge-base --is-ancestor "$RECORDED" "$WORKING" 2>/dev/null; then
-  RELATION="forward"
-else
-  RELATION="diverged-or-unknown"
-fi
+# ancestry 判定の前に、双方のコミットがサブモジュール内に実在することを確かめる。
+# merge-base --is-ancestor は「祖先ではない」で 1、「コミットが存在しない」で 128 を返す。
+# 両者を区別せず握り潰すと、fetch 漏れで手元に無いだけの状態が「分岐」に化けてしまう。
+for commit in "$RECORDED" "$WORKING"; do
+  if ! git -C "$SUBMODULE" cat-file -e "${commit}^{commit}" 2>/dev/null; then
+    echo "ERROR: コミット ${commit} がサブモジュール内に見つかりません（fetch が必要かもしれません）" >&2
+    exit 1
+  fi
+done
 
-echo "UPDATE_AVAILABLE ${RECORDED} ${WORKING} (${RELATION})"
-exit 0
+if git -C "$SUBMODULE" merge-base --is-ancestor "$RECORDED" "$WORKING"; then
+  # 作業ツリーが記録より進んでいる = 追従待ち。再ビルドして gitlink をコミットする。
+  echo "UPDATE_AVAILABLE ${RECORDED} ${WORKING} (forward)"
+  exit 0
+elif git -C "$SUBMODULE" merge-base --is-ancestor "$WORKING" "$RECORDED"; then
+  # 作業ツリーが記録より遅れている = ローカルのチェックアウト漏れ。
+  # 記録側が正しいので追いつくだけでよく、コミットすべき変更は無い。
+  echo "BEHIND ${RECORDED} ${WORKING}"
+  exit 11
+else
+  echo "DIVERGED ${RECORDED} ${WORKING}"
+  exit 12
+fi

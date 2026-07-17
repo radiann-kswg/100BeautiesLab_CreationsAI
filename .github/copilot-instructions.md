@@ -187,10 +187,10 @@ node scripts/build-dataset.js --verbose
 
 セッション終了（Stop）時に `bash tools/hook-check-submodule.sh` が実行される。Copilot 環境ではこのフックは発火しないが、リポジトリ運用上の前提として把握しておくこと。
 
-- `hook-check-submodule.sh` は `origin/addon-ai-tag` を fetch（ネットワークエラーは無視）した後、`check-creations-db-update.sh` で「サブモジュール作業ツリーの HEAD が親リポジトリの記録 gitlink より進んでいる（＝追従待ち）」状態を判定する。
-- 追従待ちがある場合のみターミナルに通知を出力し、反映コマンド（`git submodule update --remote --merge creations-db` ＋ `node scripts/build-dataset.js --verbose`）を案内する。
+- `hook-check-submodule.sh` は `origin/addon-ai-tag` を fetch（ネットワークエラーは無視）した後、`check-creations-db-update.sh` で「親リポジトリの記録 gitlink とサブモジュール作業ツリーの HEAD がどうずれているか」を判定する。
+- ずれがある場合のみターミナルに通知を出力し、**種別に応じた対処コマンド**を案内する。追従待ち（前進）なら再ビルドしてコミット、遅れなら `git submodule update` で追いつくだけ（コミット不要）、分岐なら差分確認コマンドのみ。
 - フックは常に終了コード 0 を返し、セッション終了をブロックしない。
-- `tools/check-creations-db-update.sh` は**ネットワークアクセスを一切行わない**ゲートスクリプト。fetch や `git submodule update --remote` はネットワークが通る側（ローカル Windows の git、または GitHub Actions）が担当する分業設計。終了コードは `10`=追従済み / `0`=更新あり / `1`=エラー。
+- `tools/check-creations-db-update.sh` は**ネットワークアクセスを一切行わない**ゲートスクリプト。fetch や `git submodule update --remote` はネットワークが通る側（ローカル Windows の git、または GitHub Actions）が担当する分業設計。終了コードは `10`=追従済み / `0`=追従待ち（作業ツリーが記録より前進。再ビルドしてコミットが必要） / `11`=ローカルが遅れ（`git submodule update` で追いつくだけでよく、コミット不要） / `12`=分岐（機械的な正解がなく要判断） / `1`=エラー。
 
 ## 定期更新作業
 
