@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-17T10:56:07+09:00",
-  "submodule_commit": "ba83155f072f65a674686b15e021aa2182bb7b3d",
+  "generated_at": "2026-07-17T11:07:25+09:00",
+  "submodule_commit": "98e5b14de214024786592ee433bac58885dd18a1",
   "source_repo": "https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
   "licence": "http://creativecommons.org/licenses/by-nc/4.0/",
   "total_works": 10,
@@ -9,8 +9,8 @@
   "ai_training_stats": {
     "allowed_works": 2,
     "disallowed_works": 8,
-    "allowed_characters": 211,
-    "disallowed_characters": 321
+    "allowed_characters": 307,
+    "disallowed_characters": 225
   },
   "ai_hints_stats": {
     "with_ai_hints": 92,

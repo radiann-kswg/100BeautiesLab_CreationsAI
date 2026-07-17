@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-07-17T10:56:07+09:00",
+  "_generated_at": "2026-07-17T11:07:25+09:00",
   "_path_base": "creations-db/",
   "works": {
     "#Works_NumberTales": {
@@ -11,6 +11,7 @@
         "allowed_db_keys": [
           "#DB_Primary",
           "#DB_SemiPrimary",
+          "#DB_SelfSecondary",
           "#DB_Secondary"
         ],
         "note": "画像パスのうち許可された DB に対応するサブディレクトリ (Images/DB_<name>/...) のみが AI 学習許可対象です。"
