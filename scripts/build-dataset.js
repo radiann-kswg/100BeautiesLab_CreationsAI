@@ -56,6 +56,10 @@ const LICENCE_URL     = 'http://creativecommons.org/licenses/by-nc/4.0/';
 // 画像として扱う拡張子
 const IMAGE_EXTS = new Set(['.png', '.jpg', '.jpeg', '.gif', '.webp', '.svg']);
 
+// ロールプレイプロンプト（2026-07-18 addon-ai-tag: 上流 tools/build-roleplay-prompts.mjs の生成物）の
+// 格納フォルダ名。作品直下（DataBases と兄弟）に置かれ、DB_<Db>/roleplay-prompt-<値>.md の形で出力される。
+const ROLEPLAY_PROMPTS_DIR = 'RoleplayPrompts';
+
 // AI 学習利用ポリシーの判定は scripts/lib/policy.js に切り出してある（テストから import するため）。
 
 // ---------------------------------------------------------------------------
@@ -311,6 +315,7 @@ async function main() {
       chatgpt:    'common.natural_language_description + forms.<form>.natural_language_description + identity_tags / form_tags + forms.<form>.silhouette_notes.body_description / silhouette_notes.attached_items + forms.<form>.immutable_constraints を貼付。外見の構造化情報は data.AppearanceDetail (has_appearance_detail: true のレコード) も参照可能',
       gemini:     '上記に加え forms.<form>.reference_images.main および work_common.reference_images.{corefolder_reference, humanoid_reference} を参照画像として添付',
       structured_appearance: 'data.AppearanceDetail[] (has_appearance_detail: true のレコード) から BodyPart / DesignElement / Attrs を参照することで外見パーツの構造化データを取得可能。将来的に AIHints.forms.*.silhouette_notes の源泉データとして統合予定',
+      character_roleplay: 'roleplay_prompt.path (has_roleplay_prompt: true のレコード) を creations-db サブモジュールルート基点で読み込み、キャラなりきり用のシステムプロンプトとして貼付。上流 tools/build-roleplay-prompts.mjs が ConversationPattern 等の充填済みフィールドから生成した Markdown で、本文はデータセットに埋め込まずパス参照のみ。ai_training.allowed のレコードのみ manifest-training.jsonl に載る',
     },
   };
   appendJSONL(manifestStream, headerRecord);
@@ -326,6 +331,12 @@ async function main() {
   let totalWithConceptFormsMeta = 0;
   let totalWithAppearanceDetail = 0;
   let totalWithTailsUnit = 0;
+  let totalWithRoleplayPrompt = 0;
+  // ロールプレイプロンプトの添付被覆を可視化するための集合。
+  // matched: レコードへ実際に紐付いた生成物 / all: ディスク上に存在する全生成物。
+  // 差分（不許可作品や charId 不一致で安全側に未添付となったファイル）を「黙って落とさず」ログに出す。
+  const matchedRoleplayPaths = new Set();
+  const allRoleplayFiles = new Set();
 
   for (const workKey of workKeys) {
     const workTopMeta = creationWorks[workKey];
@@ -348,6 +359,11 @@ async function main() {
     }
 
     info(`処理中: ${effectiveDirName} (${workTopMeta.Title_JP || ''} / ${workTopMeta.Title_EN || ''})`);
+
+    // この作品のロールプレイプロンプト生成物をディスクから列挙して控える（被覆診断用）。
+    for (const f of collectRoleplayPromptFiles(path.join(workDir, ROLEPLAY_PROMPTS_DIR))) {
+      allRoleplayFiles.add(path.relative(SUBMODULE, f).replace(/\\/g, '/'));
+    }
 
     // Works_Hidden フラグを取得——作品全体が非公開の場合 AI 学習抑止
     const worksHidden = !!(workTopMeta.Works_Hidden === true);
@@ -498,6 +514,12 @@ async function main() {
           Array.isArray(charData.TailsUnit) && charData.TailsUnit.length > 0
         );
 
+        // ロールプレイプロンプト（2026-07-18 addon-ai-tag）: キャラ単位の生成 Markdown をパス参照で添付する。
+        // 本文は埋め込まず path のみ。学習への採否はレコードの ai_training ゲートに従う
+        //（allowed のみ manifest-training に載る。例: NumberTales SemiPrimary Num 100 は生成物があるが不許可）。
+        const roleplayPrompt = resolveRoleplayPrompt(workDir, dbMetaKey, charId);
+        if (roleplayPrompt) matchedRoleplayPaths.add(roleplayPrompt.path);
+
         const charEntry = {
           id: charId,
           work_key: workKey,
@@ -514,12 +536,14 @@ async function main() {
           has_concept_forms_metadata: hasConceptFormsMeta,
           has_appearance_detail: hasAppearanceDetail,
           has_tails_unit: hasTailsUnit,
+          has_roleplay_prompt: !!roleplayPrompt,
+          roleplay_prompt: roleplayPrompt,
           // 原データを変更せずそのまま参照
           data: charData,
           images,
         };
 
-        workEntry.characters.push({ id: charId, images, has_ai_hints: !!aiHints, has_silhouette_notes: hasAnySilhouetteNotes, has_immutable_constraints: hasAnyImmutableConstraints, has_negative_keywords: hasAnyNegativeKeywords, has_work_common: hasWorkCommonBlock, has_concept_forms_metadata: hasConceptFormsMeta, has_appearance_detail: hasAppearanceDetail, has_tails_unit: hasTailsUnit, ai_training_allowed: charPolicy.allowed });
+        workEntry.characters.push({ id: charId, images, has_ai_hints: !!aiHints, has_silhouette_notes: hasAnySilhouetteNotes, has_immutable_constraints: hasAnyImmutableConstraints, has_negative_keywords: hasAnyNegativeKeywords, has_work_common: hasWorkCommonBlock, has_concept_forms_metadata: hasConceptFormsMeta, has_appearance_detail: hasAppearanceDetail, has_tails_unit: hasTailsUnit, has_roleplay_prompt: !!roleplayPrompt, ai_training_allowed: charPolicy.allowed });
         totalCharacters++;
         if (charPolicy.allowed) totalAllowedCharacters++;
         if (aiHints) totalWithAiHints++;
@@ -530,6 +554,7 @@ async function main() {
         if (hasConceptFormsMeta)         totalWithConceptFormsMeta++;
         if (hasAppearanceDetail)         totalWithAppearanceDetail++;
         if (hasTailsUnit)                totalWithTailsUnit++;
+        if (roleplayPrompt)              totalWithRoleplayPrompt++;
 
         // JSONL レコード（1キャラクター = 1行）
         const record = { _type: 'character', ...charEntry };
@@ -636,8 +661,20 @@ async function main() {
       character_ids_with_work_common: workEntry.characters.filter(c => c.has_work_common).map(c => c.id),
       character_ids_with_appearance_detail: workEntry.characters.filter(c => c.has_appearance_detail).map(c => c.id),
       character_ids_with_tails_unit: workEntry.characters.filter(c => c.has_tails_unit).map(c => c.id),
+      character_ids_with_roleplay_prompt: workEntry.characters.filter(c => c.has_roleplay_prompt).map(c => c.id),
       image_paths: workImages,
     }, null, 2), 'utf8');
+  }
+
+  // ロールプレイプロンプトの添付被覆を可視化する（「黙って落とさない」）。
+  // どのレコードにも紐付かなかった生成物は、不許可作品や charId≠link値（例: FLInvestigator78）で
+  // 安全側に未添付となったもの。ビルドは失敗させず（正常な安全動作のため）、内訳をログに残す。
+  const unmatchedRoleplay = [...allRoleplayFiles].filter(p => !matchedRoleplayPaths.has(p));
+  if (unmatchedRoleplay.length > 0) {
+    info(`ロールプレイプロンプト: ${matchedRoleplayPaths.size} 件をレコードへ添付 / ${unmatchedRoleplay.length} 件は未添付（不許可作品・charId 不一致による安全側の未添付。--verbose で内訳）`);
+    for (const p of unmatchedRoleplay) log(`  未添付: ${p}`);
+  } else if (allRoleplayFiles.size > 0) {
+    info(`ロールプレイプロンプト: ${matchedRoleplayPaths.size} 件すべてレコードへ添付`);
   }
 
   // ソース側で削除・統合された作品（例: 2026-07-11 Works_Proxies → Works_DestinyFoxRecords 統合）の
@@ -716,6 +753,10 @@ async function main() {
         description: 'TailsUnit: 尻尾ユニットの構造化データ ($Def_TailsUnit[]|#Null、2026-07-10 addon-ai-tag 専用型化)。TailShapeType / Count / Segment / Branches (分岐配置) / LayoutDirection (LayoutFrom/LayoutTo) / TailsUnit_PNGName (参考画像・$subfolder: attr/tailsUnit) / Note_JP / Note_EN の各フィールドを持つオブジェクト配列。',
         consumer_guidance: '有無は has_tails_unit フラグで確認。参考画像は images.tails_unit (存在する場合のみ) を参照。AppearanceDetail と同様、将来的に AIHints.forms.*.silhouette_notes の源泉データ候補。',
       },
+      roleplay_prompt_field: {
+        description: 'roleplay_prompt: キャラなりきり用ロールプレイプロンプト (2026-07-18 addon-ai-tag)。上流 tools/build-roleplay-prompts.mjs が ConversationPattern 等の充填済みフィールドから機械生成した Markdown を、{ path } のパス参照のみで保持する (本文は非埋め込み)。path は creations-db サブモジュールルートからの相対パス。生成物のないレコードでは null。',
+        consumer_guidance: '有無は has_roleplay_prompt フラグで確認。本文が要るときは roleplay_prompt.path のファイルを読む。本文の採否はレコードの ai_training ゲートに従い、manifest-training.jsonl には allowed=true のレコードのみが載る (同じ RoleplayPrompts フォルダ内でも不許可レコードの生成物は training に含めない)。',
+      },
       images_field: {
         'DB_Primary (等)': 'charId ディレクトリ配下の画像 (corefolder / humanoid 等、形態別フォルダスキャン結果)',
         concept:      '両形態を含む概念イラスト 1 枚 (DB_Primary/concept/cnsp_img{N}.png 等) — 2026-06-19 追加',
@@ -772,6 +813,9 @@ async function main() {
     },
     tails_unit_stats: {
       with_tails_unit: totalWithTailsUnit,
+    },
+    roleplay_prompt_stats: {
+      with_roleplay_prompt: totalWithRoleplayPrompt,
     },
   }, null, 2), 'utf8');
   info(`build-info.json を書き込みました`);
@@ -1016,6 +1060,70 @@ function resolveCharacterImages(workDir, charId, charData, dbMetaKey) {
   }
 
   return images;
+}
+
+// ---------------------------------------------------------------------------
+// ロールプレイプロンプトのパス解決ヘルパー
+// ---------------------------------------------------------------------------
+
+/** dir 以下を再帰スキャンして `roleplay-prompt-*.md` に一致するファイルの絶対パスを収集する（被覆診断用） */
+function collectRoleplayPromptFiles(dir) {
+  const out = [];
+  if (!fs.existsSync(dir)) return out;
+  for (const entry of readdirSorted(dir)) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      out.push(...collectRoleplayPromptFiles(full));
+    } else if (/^roleplay-prompt-.*\.md$/.test(entry.name)) {
+      out.push(full);
+    }
+  }
+  return out;
+}
+
+/** dir 以下を再帰スキャンして name と完全一致する最初のファイル絶対パスを返す（見つからなければ null） */
+function findFileByName(dir, name) {
+  if (!fs.existsSync(dir)) return null;
+  for (const entry of readdirSorted(dir)) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      const found = findFileByName(full, name);
+      if (found) return found;
+    } else if (entry.name === name) {
+      return full;
+    }
+  }
+  return null;
+}
+
+/**
+ * キャラクターのロールプレイプロンプト Markdown（上流 tools/build-roleplay-prompts.mjs 生成物）を
+ * 解決し、サブモジュール相対パスを返す。本文は埋め込まず**パス参照のみ**とする（画像と同じ流儀。
+ * 生成物は再生成可能なので二重保持を避ける）。本文を学習へ供するか否かは、呼び出し側が
+ * レコードの ai_training ゲートで最終判断する（allowed のみ manifest-training に載せる）。
+ *
+ * 上流の出力パスは resolveIndexPathRoles(work, db) の宣言的判定に従い、
+ *   通常:            RoleplayPrompts/DB_<Db>/roleplay-prompt-<link値>.md
+ *   先頭≠link要素:   RoleplayPrompts/DB_<Db>/<先頭値>/roleplay-prompt-<link値>.md（例: FLInvestigator78）
+ * となる。この規約をここで再実装すると上流と二重管理になり必ず食い違う（policy.js と同じ設計思想）。
+ * そのため DB_<Db>/ 以下を**再帰スキャン**し `roleplay-prompt-<charId>.md` を名前一致で拾う。
+ *
+ * NumberTales は charId == Num == ファイル名の link 値なので完全一致する。charId が link 値と
+ * 異なる作品（FLInvestigator78 は top-level Num/ID を持たず charId が配列 index に落ちる）では
+ * 単に「未マッチ＝未添付」となり安全側（載せない）に倒れる。該当作品はいずれも AI 学習不許可のため
+ * 実害はない（manifest.jsonl から抜けるだけ）。
+ *
+ * @param {string} workDir    作品ディレクトリ（Works_Dir 解決後の絶対パス）
+ * @param {string} dbMetaKey  "#DB_Primary" 等
+ * @param {string} charId     レコードから導出した安定 ID
+ * @returns {{ path: string }|null}
+ */
+function resolveRoleplayPrompt(workDir, dbMetaKey, charId) {
+  const dbDirName = String(dbMetaKey).replace(/^#/, ''); // "#DB_Primary" → "DB_Primary"
+  const baseDir = path.join(workDir, ROLEPLAY_PROMPTS_DIR, dbDirName);
+  const hit = findFileByName(baseDir, `roleplay-prompt-${charId}.md`);
+  if (!hit) return null;
+  return { path: path.relative(SUBMODULE, hit).replace(/\\/g, '/') };
 }
 
 /** ファイルの絶対パスを再帰収集 */

@@ -28,7 +28,8 @@
     "novelai_sd": "各キャラクターレコード data.AIHints.forms.<form>.prompt_export / negative_prompt_export + forms.<form>.negative_keywords (corefolder の腕・脚等 structural NG 含む) を貼付",
     "chatgpt": "common.natural_language_description + forms.<form>.natural_language_description + identity_tags / form_tags + forms.<form>.silhouette_notes.body_description / silhouette_notes.attached_items + forms.<form>.immutable_constraints を貼付。外見の構造化情報は data.AppearanceDetail (has_appearance_detail: true のレコード) も参照可能",
     "gemini": "上記に加え forms.<form>.reference_images.main および work_common.reference_images.{corefolder_reference, humanoid_reference} を参照画像として添付",
-    "structured_appearance": "data.AppearanceDetail[] (has_appearance_detail: true のレコード) から BodyPart / DesignElement / Attrs を参照することで外見パーツの構造化データを取得可能。将来的に AIHints.forms.*.silhouette_notes の源泉データとして統合予定"
+    "structured_appearance": "data.AppearanceDetail[] (has_appearance_detail: true のレコード) から BodyPart / DesignElement / Attrs を参照することで外見パーツの構造化データを取得可能。将来的に AIHints.forms.*.silhouette_notes の源泉データとして統合予定",
+    "character_roleplay": "roleplay_prompt.path (has_roleplay_prompt: true のレコード) を creations-db サブモジュールルート基点で読み込み、キャラなりきり用のシステムプロンプトとして貼付。上流 tools/build-roleplay-prompts.mjs が ConversationPattern 等の充填済みフィールドから生成した Markdown で、本文はデータセットに埋め込まずパス参照のみ。ai_training.allowed のレコードのみ manifest-training.jsonl に載る"
   },
   "schema": {
     "ai_training_field": {
@@ -49,6 +50,10 @@
     "tails_unit_field": {
       "description": "TailsUnit: 尻尾ユニットの構造化データ ($Def_TailsUnit[]|#Null、2026-07-10 addon-ai-tag 専用型化)。TailShapeType / Count / Segment / Branches (分岐配置) / LayoutDirection (LayoutFrom/LayoutTo) / TailsUnit_PNGName (参考画像・$subfolder: attr/tailsUnit) / Note_JP / Note_EN の各フィールドを持つオブジェクト配列。",
       "consumer_guidance": "有無は has_tails_unit フラグで確認。参考画像は images.tails_unit (存在する場合のみ) を参照。AppearanceDetail と同様、将来的に AIHints.forms.*.silhouette_notes の源泉データ候補。"
+    },
+    "roleplay_prompt_field": {
+      "description": "roleplay_prompt: キャラなりきり用ロールプレイプロンプト (2026-07-18 addon-ai-tag)。上流 tools/build-roleplay-prompts.mjs が ConversationPattern 等の充填済みフィールドから機械生成した Markdown を、{ path } のパス参照のみで保持する (本文は非埋め込み)。path は creations-db サブモジュールルートからの相対パス。生成物のないレコードでは null。",
+      "consumer_guidance": "有無は has_roleplay_prompt フラグで確認。本文が要るときは roleplay_prompt.path のファイルを読む。本文の採否はレコードの ai_training ゲートに従い、manifest-training.jsonl には allowed=true のレコードのみが載る (同じ RoleplayPrompts フォルダ内でも不許可レコードの生成物は training に含めない)。"
     },
     "images_field": {
       "DB_Primary (等)": "charId ディレクトリ配下の画像 (corefolder / humanoid 等、形態別フォルダスキャン結果)",

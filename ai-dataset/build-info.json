@@ -25,5 +25,8 @@
   },
   "tails_unit_stats": {
     "with_tails_unit": 181
+  },
+  "roleplay_prompt_stats": {
+    "with_roleplay_prompt": 49
   }
 }

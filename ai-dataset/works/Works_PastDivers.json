@@ -80,6 +80,7 @@
   "character_ids_with_work_common": [],
   "character_ids_with_appearance_detail": [],
   "character_ids_with_tails_unit": [],
+  "character_ids_with_roleplay_prompt": [],
   "image_paths": [
     "data/Works_PastDivers/Images/DB_Primary/concept/cnsp_imgCL3G3.png",
     "data/Works_PastDivers/Images/DB_Primary/concept/cnsp_imgCL6G3.png"

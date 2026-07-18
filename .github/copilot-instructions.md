@@ -177,6 +177,16 @@ node scripts/build-dataset.js --verbose
 
 `Images.*` の配列・単一要素は、通常の文字列パスに加えて `{ "_DBCrossLinkPath": { "_DB", "_Work"?, "_Field"?, "_IsoPath" } }` 形式のラッパーを取りうる（例: `#Works_NumberTales` のキャラが `#Works_DestinyFoxRecords` の `#DB_Proxy` 内画像を直接参照）。`build-dataset.js` の `resolveDbCrossLinkPath()` / `resolveImageArrayEntry()` がこれを解決する（`IMAGE_FIELD_FOLDER_HINTS` の固定表でフォルダを推定する簡易実装のため、フィールド追加時は表の更新が必要）。
 
+### ロールプレイプロンプト（`RoleplayPrompts/`）の取り込み（2026-07-19 addon-ai-tag 追加）
+
+上流 `tools/build-roleplay-prompts.mjs` が、キャラの `ConversationPattern` 等の**充填済みフィールド**からキャラ単位のロールプレイプロンプト Markdown を機械生成し、`data/Works_<Name>/RoleplayPrompts/DB_<Db>/roleplay-prompt-<値>.md`（先頭≠link要素の作品は `DB_<Db>/<先頭値>/roleplay-prompt-<link値>.md`）に出力する。`build-dataset.js` は各レコードにこれを **`roleplay_prompt: { path }` のパス参照のみ**で添付する（本文は埋め込まない。画像と同じ流儀で、生成物は再生成可能なため二重保持しない）。
+
+- **本文の採否はレコードの `ai_training` ゲートに従う**。`manifest.jsonl` は全件（`allowed=false` でも path 付き）、`manifest-training.jsonl` は許可レコードのみ。同じ `RoleplayPrompts/` 内でも**不許可レコードの生成物は training に含めない**（例: `#DB_SemiPrimary` の Num 100 は生成物があるが不許可なので training から除外される）。「フォルダを丸ごと束ねる」実装は**厳禁**（オプトアウト済み創作本文の漏洩事故になる）。
+- **パス解決は `resolveRoleplayPrompt()` が `RoleplayPrompts/DB_<Db>/` 以下を再帰スキャンし `roleplay-prompt-<charId>.md` を名前一致で拾う**。上流の出力パス規約（`resolveIndexPathRoles`）をこちらで再実装すると二重管理で必ず食い違うため（policy と同じ設計思想）。NumberTales は `charId == Num == ファイル名の link 値` で完全一致。charId が link 値と異なる作品（`#Works_FLInvestigator78` は top-level `Num`/`ID` を持たず charId が配列 index に落ちる）は「未マッチ＝未添付」で安全側に倒れる（該当作品はいずれも不許可のため実害なし）。
+- **未添付は黙って落とさずログに出す**。ビルド末尾で「ディスク上の全生成物 vs 実添付」の差分を `info`/`log` で報告する（現状 FLInvestigator78 2 件・DestinyFoxRecords 2 件が安全側の未添付）。
+- 消費側の入口: `has_roleplay_prompt` フラグで有無を確認 → `roleplay_prompt.path`（サブモジュールルート基点の相対パス）を読む。`works/<Work>.json` に `character_ids_with_roleplay_prompt`、`build-info.json` に `roleplay_prompt_stats.with_roleplay_prompt`、`policy.json` の `schema.roleplay_prompt_field` / `target_environments.character_roleplay` に仕様を記載。
+- ロジック変更時は `scripts/validate-dataset.js`（path 実在・フラグ整合・統計一致の回帰）も更新すること。
+
 ## 自動化（GitHub Actions / Stop フック）
 
 ### GitHub Actions: `sync-dataset.yml`

@@ -108,6 +108,7 @@
   "character_ids_with_work_common": [],
   "character_ids_with_appearance_detail": [],
   "character_ids_with_tails_unit": [],
+  "character_ids_with_roleplay_prompt": [],
   "image_paths": [
     "data/GeneralImages/Ref_Region8/cnsp-map_region8.png"
   ]

@@ -93,6 +93,10 @@ ai-dataset/
   },
   "has_ai_hints": true,
 
+  // 👇 キャラなりきり用ロールプレイプロンプト（2026-07-19 追加。本文はパス参照のみ）
+  "has_roleplay_prompt": true,
+  "roleplay_prompt": { "path": "data/Works_NumberTales/RoleplayPrompts/DB_Primary/roleplay-prompt-14.md" },
+
   // 原データ（変更なし）
   "data": { /* Num, Name, Character, Summary, AIHints (=ai_hints と同じ), ... */ },
 
@@ -102,6 +106,12 @@ ai-dataset/
   }
 }
 ```
+
+> **2026-07-19 追加 (ロールプレイプロンプト)**: 各レコードに `has_roleplay_prompt` / `roleplay_prompt` が付きます。
+> `true` のレコードは `roleplay_prompt.path`（`creations-db/` 基点）にキャラ単位のロールプレイプロンプト Markdown があり、
+> ChatGPT 等のキャラなりきり用システムプロンプトとしてそのまま貼付できます（本文は非埋め込み・パス参照のみ）。
+> 上流 `tools/build-roleplay-prompts.mjs` が `ConversationPattern` 等の充填済みフィールドから機械生成したものです。
+> 採否はレコードの `ai_training` ゲートに従い、不許可レコードの生成物は `manifest-training.jsonl` には含まれません。
 
 ### 1.2 `AIHints` 二層構造の早見表
 
