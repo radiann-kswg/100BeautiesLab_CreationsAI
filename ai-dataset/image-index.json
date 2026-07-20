@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-07-20T12:26:28+09:00",
+  "_generated_at": "2026-07-20T15:50:19+09:00",
   "_path_base": "creations-db/",
   "works": {
     "#Works_NumberTales": {
@@ -575,6 +575,7 @@
         "data/Works_NumberTales/Images/DB_SelfSecondary/attr/costumeItem/attr_costumeItem666mp-brooch.png",
         "data/Works_NumberTales/Images/DB_SelfSecondary/attr/halo/attr_halo444mp.png",
         "data/Works_NumberTales/Images/DB_SelfSecondary/attr/halo/attr_halo666mp.png",
+        "data/Works_NumberTales/Images/DB_SelfSecondary/attr/numberMark/attr_numberMark223-lot.png",
         "data/Works_NumberTales/Images/DB_SelfSecondary/attr/numberMark/attr_numberMark444-lot.png",
         "data/Works_NumberTales/Images/DB_SelfSecondary/attr/numberMark/attr_numberMark444mp.png",
         "data/Works_NumberTales/Images/DB_SelfSecondary/attr/numberMark/attr_numberMark666-lot.png",
@@ -590,6 +591,7 @@
         "data/Works_NumberTales/Images/DB_SelfSecondary/conceptAlt/cnsp_img777-mp.png",
         "data/Works_NumberTales/Images/DB_SelfSecondary/conceptAlt/cnsp_img777-mpC.png",
         "data/Works_NumberTales/Images/DB_SelfSecondary/conceptAlt/numberize/cnsp_img115-numberize-image.png",
+        "data/Works_NumberTales/Images/DB_SelfSecondary/corefolder/223/emstk_corefolder223-1.png",
         "data/Works_NumberTales/Images/DB_SelfSecondary/corefolder/444/emstk_corefolder444-mp1.png",
         "data/Works_NumberTales/Images/DB_SelfSecondary/corefolder/666/emstk_corefolder666-mp1.png",
         "data/Works_NumberTales/Images/DB_SelfSecondary/corefolder/753/emstk_corefolder753-1.png",
@@ -633,7 +635,7 @@
         "data/Works_NumberTales/Images/Ref_Vocabulary/concept-figure/cnsp-fg_NTsCoreFolder.png",
         "data/Works_NumberTales/Images/Ref_Vocabulary/concept-figure/cnsp-fg_NTsHumanoid.png"
       ],
-      "count": 594
+      "count": 596
     },
     "#Works_FLInvestigator78": {
       "title_ja": "運命線探偵78",
