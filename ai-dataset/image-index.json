@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-07-21T09:48:46+09:00",
+  "_generated_at": "2026-07-21T17:07:52+09:00",
   "_path_base": "creations-db/",
   "works": {
     "#Works_NumberTales": {
@@ -654,7 +654,7 @@
         {
           "key": "#DB_PrimaryDealer",
           "allowed": 0,
-          "total": 10
+          "total": 11
         },
         {
           "key": "#DB_UnprocessedDealer",
@@ -667,6 +667,7 @@
         "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLM0.png",
         "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLM1.png",
         "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLM13.png",
+        "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLM16.png",
         "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLM18.png",
         "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLM3.png",
         "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLM8.png",
@@ -675,7 +676,7 @@
         "data/Works_FLInvestigator78/Images/General/pr_officialCard_202504.png",
         "data/Works_FLInvestigator78/Images/General/pr_officialCard_202510.png"
       ],
-      "count": 11
+      "count": 12
     },
     "#Works_ShouArRiders": {
       "title_ja": "獣爾騎兵",
@@ -915,8 +916,8 @@
         },
         {
           "key": "#Ref_Race",
-          "allowed": 10,
-          "total": 10
+          "allowed": 11,
+          "total": 11
         },
         {
           "key": "#Ref_Faction",
