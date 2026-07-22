@@ -1,7 +1,7 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-07-22T10:38:01+09:00",
-  "_submodule_commit": "7805c7c7bd3d731e5a585b8a645c63c390dbddbb",
+  "_generated_at": "2026-07-22T13:15:42+09:00",
+  "_submodule_commit": "12982c82e38da67c759810ea4a0f1d06ab238ed7",
   "works": [
     {
       "work_key": "#Works_NumberTales",
@@ -129,7 +129,7 @@
       "dir_name": "Works_CommonReferences",
       "title_ja": "共通資料",
       "title_en": "Common References",
-      "character_count": 45,
+      "character_count": 46,
       "image_count": 1,
       "ai_training": {
         "allowed": true,
@@ -144,6 +144,6 @@
       }
     }
   ],
-  "total_characters": 534,
+  "total_characters": 535,
   "total_works": 10
 }
