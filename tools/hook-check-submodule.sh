@@ -2,8 +2,12 @@
 # =============================================================================
 # hook-check-submodule.sh
 #
-# Claude Code Stop フック用ラッパー。
+# エージェント共用の Stop フック用ラッパー。
 # セッション終了時に creations-db と親リポジトリの gitlink のずれを検知して通知する。
+#
+# 登録先（同一スクリプトを両者が呼ぶ。判定ロジックを複製しないこと）:
+#   - Claude Code CLI: .claude/settings.json の hooks.Stop
+#   - GPT Codex:       .codex/hooks.json      の hooks.Stop
 #
 # 動作:
 #   1. origin/addon-ai-tag を fetch（ネットワークエラーは無視）。

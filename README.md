@@ -24,7 +24,7 @@
 
 ```
 100BeautiesLab_CreationsAI/
-├── creations-db/              # Git サブモジュール（100BeautiesLab_CreationsDB @ develop / addon-ai-tag）
+├── creations-db/              # Git サブモジュール（100BeautiesLab_CreationsDB @ addon-ai-tag）
 │   └── data/                  #   原著作物のデータ（JSON・画像）← 変更禁止
 ├── ai-dataset/                # 自動生成 AI 学習データセット ← 手動編集禁止
 │   ├── index.json             #   全作品・全キャラクターのマスターインデックス
@@ -35,11 +35,20 @@
 │   ├── build-info.json        #   ビルドメタ情報（生成日時・サブモジュールコミット + ai_training_stats）
 │   └── works/                 #   作品別フラットデータ JSON
 ├── docs/
+│   ├── agents/roleplay-prompt.md        # ロールプレイ仕様の正典（ツール中立）
 │   └── usage-gemini-chatgpt-novelai.md  # Gemini / ChatGPT / NovelAI 向け運用ガイド
 ├── scripts/
 │   └── build-dataset.js       # データセット生成スクリプト（読み取り専用）
-├── .github/workflows/
-│   └── sync-dataset.yml       # GitHub Actions: サブモジュール更新時に自動再生成
+├── tools/                     # 運用補助スクリプト（サブモジュール追従チェック）
+├── .github/
+│   ├── copilot-instructions.md# Copilot 向けアダプタ
+│   ├── instructions/          # Copilot 自動適用の指示ファイル
+│   └── workflows/
+│       └── sync-dataset.yml   # GitHub Actions: サブモジュール更新時に自動再生成
+├── .claude/settings.json      # Claude Code 設定（Stop フック登録）
+├── .codex/hooks.json          # GPT Codex 設定（Stop フック登録）
+├── AGENTS.md                  # AI エージェント設定の正典（SSOT）
+├── CLAUDE.md                  # Claude 向けアダプタ
 ├── LICENCE                    # CC BY-NC 4.0（サブモジュールから継承）
 └── NOTICE.md                  # 帰属表示・AI 学習利用条件
 ```
@@ -171,7 +180,8 @@ GitHub Actions ワークフロー ([sync-dataset.yml](./.github/workflows/sync-d
 ### 手動でサブモジュールを最新に更新する手順
 
 ```bash
-# 1. サブモジュールを develop ブランチの最新に更新
+# 1. サブモジュールを addon-ai-tag ブランチの最新に更新
+#    （--remote は .gitmodules の branch 設定に従うため、事前に addon-ai-tag であることを確認する）
 git submodule update --remote --merge creations-db
 
 # 2. 更新をコミット（これが GitHub Actions のトリガーになる）
@@ -181,7 +191,10 @@ git push
 ```
 
 または GitHub Actions の手動実行 (workflow_dispatch) から
-「サブモジュールを develop ブランチの最新に更新する」オプションを有効にして実行できます。
+「サブモジュールを addon-ai-tag ブランチの最新に更新する」オプションを有効にして実行できます。
+
+> AI エージェント（GitHub Copilot / Claude / GPT Codex）でこのリポジトリを扱う場合の設定は
+> [AGENTS.md](./AGENTS.md) に集約されています（共有内容の唯一の正典 / SSOT）。
 
 ### ローカルでビルドスクリプトを実行する
 
