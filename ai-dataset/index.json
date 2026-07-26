@@ -1,7 +1,7 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-07-26T08:21:16+09:00",
-  "_submodule_commit": "6cdccdf809f484eca9e580949ebbedf7690c49f3",
+  "_generated_at": "2026-07-26T14:29:18+09:00",
+  "_submodule_commit": "e17df305ea50acfae94525dbe8dbf13a5929195a",
   "works": [
     {
       "work_key": "#Works_NumberTales",
@@ -103,7 +103,7 @@
       "dir_name": "Works_PastDivers",
       "title_ja": "パストダイヴァー",
       "title_en": "PastDivers",
-      "character_count": 14,
+      "character_count": 17,
       "image_count": 2,
       "ai_training": {
         "allowed": false,
@@ -144,6 +144,6 @@
       }
     }
   ],
-  "total_characters": 535,
+  "total_characters": 538,
   "total_works": 10
 }
