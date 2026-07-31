@@ -1,7 +1,7 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-07-31T17:07:07+09:00",
-  "_submodule_commit": "5ccc08c49118f2ab01c2b8fbe4847d539f7ad426",
+  "_generated_at": "2026-08-01T08:54:12+09:00",
+  "_submodule_commit": "63ad4926f0e4684bd28e94af70e53b069a47a0fc",
   "works": [
     {
       "work_key": "#Works_NumberTales",
@@ -25,7 +25,7 @@
       "dir_name": "Works_FLInvestigator78",
       "title_ja": "運命線探偵78",
       "title_en": "the Fate-Line Investigator 78",
-      "character_count": 100,
+      "character_count": 102,
       "image_count": 14,
       "ai_training": {
         "allowed": false,
@@ -144,6 +144,6 @@
       }
     }
   ],
-  "total_characters": 559,
+  "total_characters": 561,
   "total_works": 10
 }
