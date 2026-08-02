@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-08-02T11:11:47+09:00",
+  "_generated_at": "2026-08-02T14:54:06+09:00",
   "work_key": "#Works_SinisterChangingGirls",
   "dir_name": "Works_SinisterChangingGirls",
   "title_ja": "豹変系女子",
@@ -64,15 +64,15 @@
   "character_ids_with_tails_unit": [],
   "character_ids_with_roleplay_prompt": [],
   "image_paths": [
-    "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/art_imgDrcNE-InfrationAerialSwimming.png",
-    "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/chattingArt/chart_imgDrcNE-ramen.png",
-    "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/chattingArt/chart_imgDrcNW.png",
-    "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/chattingArt/chart_imgDrcSE-checkIntoAlive.png",
-    "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/chattingArt/chart_imgDrcSW-whereBabiesFrom.png",
-    "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgDrcN.png",
-    "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgDrcNE.png",
-    "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgDrcNW.png",
-    "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgDrcS.png",
-    "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgDrcSE.png"
+    "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/art_imgSCG-NE,SCG-SW-InfrationAerialSwimming.png",
+    "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/chattingArt/chart_imgSCG-NE-ramen.png",
+    "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/chattingArt/chart_imgSCG-NW.png",
+    "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/chattingArt/chart_imgSCG-SE-checkIntoAlive.png",
+    "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/chattingArt/chart_imgSCG-SW-whereBabiesFrom.png",
+    "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-N.png",
+    "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-NE.png",
+    "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-NW.png",
+    "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-S.png",
+    "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-SE.png"
   ]
 }

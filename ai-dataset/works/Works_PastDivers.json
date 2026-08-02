@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-08-02T11:11:47+09:00",
+  "_generated_at": "2026-08-02T14:54:06+09:00",
   "work_key": "#Works_PastDivers",
   "dir_name": "Works_PastDivers",
   "title_ja": "パストダイヴァー",
@@ -86,7 +86,7 @@
   "character_ids_with_tails_unit": [],
   "character_ids_with_roleplay_prompt": [],
   "image_paths": [
-    "data/Works_PastDivers/Images/DB_Primary/concept/cnsp_imgCL3G3.png",
-    "data/Works_PastDivers/Images/DB_Primary/concept/cnsp_imgCL6G3.png"
+    "data/Works_PastDivers/Images/DB_Primary/concept/cnsp_imgPDV-3G3.png",
+    "data/Works_PastDivers/Images/DB_Primary/concept/cnsp_imgPDV-6G3.png"
   ]
 }
