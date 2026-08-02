@@ -217,7 +217,17 @@ node scripts/build-dataset.js --verbose
 
 ### `_DBCrossLinkPath` wrapper（他 Work/DB の画像を直接参照）への対応（2026-07-11 addon-ai-tag 追加）
 
-`Images.*` の配列・単一要素は、通常の文字列パスに加えて `{ "_DBCrossLinkPath": { "_DB", "_Work"?, "_Field"?, "_IsoPath" } }` 形式のラッパーを取りうる（例: `#Works_NumberTales` のキャラが `#Works_DestinyFoxRecords` の `#DB_Proxy` 内画像を直接参照）。`build-dataset.js` の `resolveDbCrossLinkPath()` / `resolveImageArrayEntry()` がこれを解決する（`IMAGE_FIELD_FOLDER_HINTS` の固定表でフォルダを推定する簡易実装のため、フィールド追加時は表の更新が必要）。
+`Images.*` の配列・単一要素は、通常の文字列パスに加えて `{ "_DBCrossLinkPath": { "_DB", "_Work"?, "_Field"?, "_IsoPath" } }` 形式のラッパーを取りうる（例: `#Works_NumberTales` のキャラが `#Works_DestinyFoxRecords` の `#DB_Proxy` 内画像を直接参照）。`build-dataset.js` の `resolveDbCrossLinkPath()` / `resolveImageArrayEntry()` がこれを解決する（参照先レコードのスキーマを引けないため、フォルダは下記 `IMAGE_FIELD_FOLDER_HINTS` で推定する簡易実装）。
+
+### 画像パスの解決（`IMAGE_FIELDS` が正典・2026-08-02 整理）
+
+キャラの画像は `Images.*` の**宣言値と実ファイル名の突き合わせ**で紐付ける（`resolveImagePath()` がディレクトリのエントリ名と照合し、拡張子の大文字小文字を無視したうえで実ファイル名をそのまま返す）。この方式は上流のリネームに自動追従できる反面、格納フォルダの取り違えや宣言漏れがあっても**エラーにならず静かに画像が欠ける**。
+
+- **フィールドと格納フォルダの対応は `build-dataset.js` の `IMAGE_FIELDS` が唯一の正典**。出力キー・`*_metadata` の有無・`_DBCrossLinkPath` 用の `IMAGE_FIELD_FOLDER_HINTS` はすべてこの表から導出する。フィールドの追加・変更はこの表だけを直せば済む。以前は対応表と `resolveCharacterImages()` 内の個別分岐へ同じ知識が二重に書かれており、`conceptAlt_PNGName` の格納先が `conceptAlt/` なのに両方が `concept/` を指したまま 22 件が落ち続けていた。
+- **単一値の `*_PNGName` にも配列が入りうる**（`#Works_FLInvestigator78` の `#DB_PrimaryDealer` は 2 キャラで共有する 1 枚を配列で宣言する）。db_type.json の型どおり単一値しか受けない実装にしないこと。
+- **拡張子込みの値が混在する**（`TailsUnit_PNGName` / `keycapper_PNGPath` 等、`$type` が `#PNGFileName` のフィールド）。`stripImageExt()` が渡す前に一律で剥がす。
+- **未解決は黙って落とさずログに出す**（ロールプレイプロンプトと同じ流儀）。ビルド末尾で「解決 N 件 / 未解決 M 件」をフィールド別内訳付きで報告し、`--verbose` で 1 件ずつ列挙する。件数は `build-info.json` の `image_ref_stats` にも載る。
+- `scripts/validate-dataset.js` は**載せたパスが実在すること**と統計の一致を検証する。「未解決 0 件」は検証しない（上流側のファイル未配置など、こちらで直せない要因が混ざるため）。最新の未解決件数は `build-info.json` の `image_ref_stats.unresolved` を参照すること。
 
 ### ロールプレイプロンプト（`RoleplayPrompts/`）の取り込み（2026-07-19 addon-ai-tag 追加）
 

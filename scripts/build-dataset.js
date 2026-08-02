@@ -337,6 +337,11 @@ async function main() {
   // 差分（不許可作品や charId 不一致で安全側に未添付となったファイル）を「黙って落とさず」ログに出す。
   const matchedRoleplayPaths = new Set();
   const allRoleplayFiles = new Set();
+  // 画像参照の解決状況。宣言はあるのに実ファイルへ辿り着けなかった参照を記録し、末尾で報告する。
+  // 取りこぼしを黙って捨てていたために、conceptAlt/ の格納先取り違えで 22 件、
+  // 解決対象に入っていない作品固有フィールドで 47 件が長期間欠けたままになっていた。
+  let totalResolvedImageRefs = 0;
+  const unresolvedImageRefs = [];
 
   for (const workKey of workKeys) {
     const workTopMeta = creationWorks[workKey];
@@ -469,8 +474,15 @@ async function main() {
           charData.Key ?? charData.Code ?? charData.Name_JP ?? charData.Term_JP ?? charData.Name ?? idx
         );
 
-        // 画像パスを解決
-        const images = resolveCharacterImages(workDir, charId, charData, dbMetaKey);
+        // 画像パスを解決（未解決の参照は捨てずに記録し、ビルド末尾でまとめて報告する）
+        const imageMisses = [];
+        const images = resolveCharacterImages(workDir, charId, charData, dbMetaKey, imageMisses);
+        for (const miss of imageMisses) {
+          unresolvedImageRefs.push({ work_key: workKey, db: dbRelPath, id: charId, ...miss });
+        }
+        for (const [imgKey, imgVal] of Object.entries(images)) {
+          if (DECLARED_IMAGE_OUT_KEYS.has(imgKey) && Array.isArray(imgVal)) totalResolvedImageRefs += imgVal.length;
+        }
 
         // AIHints を data から取り出してトップレベルにも露出する
         const aiHints = charData.AIHints ?? null;
@@ -677,6 +689,20 @@ async function main() {
     info(`ロールプレイプロンプト: ${matchedRoleplayPaths.size} 件すべてレコードへ添付`);
   }
 
+  // 画像参照の未解決を可視化する（ロールプレイプロンプトと同じ「黙って落とさない」流儀）。
+  // 宣言はあるのに実ファイルへ辿り着けない参照は、上流のリネーム漏れか、こちら側の
+  // IMAGE_FIELDS の取りこぼしのどちらか。放置すると画像が静かに欠けるため内訳を残す。
+  // ビルドは止めない（上流側の未配置など、こちらで直せない要因が混ざるため）。
+  if (unresolvedImageRefs.length > 0) {
+    const byField = {};
+    for (const u of unresolvedImageRefs) byField[u.field] = (byField[u.field] || 0) + 1;
+    const breakdown = Object.entries(byField).map(([f, n]) => `${f}:${n}`).join(', ');
+    info(`画像参照: ${totalResolvedImageRefs} 件を解決 / ${unresolvedImageRefs.length} 件が未解決（${breakdown}。--verbose で内訳）`);
+    for (const u of unresolvedImageRefs) log(`  未解決: ${u.work_key}/${u.id} ${u.field} = ${u.value}`);
+  } else {
+    info(`画像参照: ${totalResolvedImageRefs} 件すべて解決`);
+  }
+
   // ソース側で削除・統合された作品（例: 2026-07-11 Works_Proxies → Works_DestinyFoxRecords 統合）の
   // 古い works/<WorkKey>.json を掃除する
   for (const staleFile of preexistingWorksFiles) {
@@ -760,13 +786,20 @@ async function main() {
       images_field: {
         'DB_Primary (等)': 'charId ディレクトリ配下の画像 (corefolder / humanoid 等、形態別フォルダスキャン結果)',
         concept:      '両形態を含む概念イラスト 1 枚 (DB_Primary/concept/cnsp_img{N}.png 等) — 2026-06-19 追加',
-        concept_alt:  '概念イラストのバリアント群 (conceptAlt_PNGName[] 由来、複数形態・複数キャラ構図を含む場合あり) — 2026-06-19 追加',
+        concept_alt:  '概念イラストのバリアント群 (conceptAlt_PNGName[] 由来、<DB>/conceptAlt/{name}、複数形態・複数キャラ構図を含む場合あり) — 2026-06-19 追加',
         corefolder:   'コアフォルダ形態の正規イラスト (corefolder_PNGPath[] 由来、DB_Primary/corefolder/{path}) — 2026-06-23 追加',
         humanoid:     '人型形態の正規イラスト (humanoid_PNGPath[] 由来、DB_Primary/humanoid/{path}) — 2026-06-23 追加',
         arts:         'キャラクター個別アートワーク (arts_PNGPath[] 由来) — 2026-06-19 追加',
         design_alt:   '衣装差分・デザインバリアント (designAlt_PNGPath[] 由来、形態注記なし) — 2026-06-19 追加',
         tails_unit:   '尻尾ユニット参考画像 (TailsUnit[*].TailsUnit_PNGName 由来、DB_Primary/attr/tailsUnit/{name}) — 2026-07-10 追加',
-        note:         'パスは creations-db サブモジュールルートからの相対パス。ファイルが実在しない場合はキー自体が省略される。',
+        design:       'デザイン画 (design_PNGName 由来、<DB>/design/{name}) — 2026-08-02 追加',
+        catalog:      'カタログ用デザイン図 (catalog_PNGName 由来、<DB>/catalog/{name}) — 2026-08-02 追加',
+        card_design:  'カードデザイン (cardDesign_PNGName 由来、<DB>/cardDesign/{name}) — 2026-08-02 追加',
+        new_year:     '年賀イラスト (newYear_PNGPath[] 由来、<DB>/newYear/{path}) — 2026-08-02 追加',
+        weakening:    '弱体化・消耗状態のイラスト (weakening_PNGPath[] 由来、<DB>/weakening/{path}) — 2026-08-02 追加',
+        keycapper:    'キーキャップ形態のイラスト (keycapper_PNGPath[] 由来、<DB>/keycapper/{path}) — 2026-08-02 追加',
+        note:         'パスは creations-db サブモジュールルートからの相対パス。ファイルが実在しない場合はキー自体が省略される。'
+          + ' 解決できなかった宣言の件数は build-info.json の image_ref_stats.unresolved で確認できる。',
       },
     },
   }, null, 2), 'utf8');
@@ -817,6 +850,12 @@ async function main() {
     roleplay_prompt_stats: {
       with_roleplay_prompt: totalWithRoleplayPrompt,
     },
+    // 画像参照の解決状況。unresolved が増えたら、上流のリネーム漏れか IMAGE_FIELDS の
+    // 取りこぼしのどちらかを疑う（validate-dataset.js が manifest の実数と突き合わせる）。
+    image_ref_stats: {
+      resolved:   totalResolvedImageRefs,
+      unresolved: unresolvedImageRefs.length,
+    },
   }, null, 2), 'utf8');
   info(`build-info.json を書き込みました`);
 
@@ -856,17 +895,65 @@ function resolveImagePath(baseNoExt) {
   return null;
 }
 
-// フィールド名 → Images/DB_Primary 配下のフォルダヒント。
+/**
+ * 画像参照フィールドの定義表。**このスクリプトにおける画像フィールドの唯一の正典**。
+ *   field:  charData.Images 配下のフィールド名
+ *   folder: Images/<DB>/ 配下の格納フォルダ名（フィールド名のキャメル部分と一致する規約）
+ *   out:    出力 images オブジェクトのキー
+ *   meta:   { path, form, characters } 形式のメタ配列フィールド名（宣言があれば優先）
+ *
+ * 表と解決処理を一箇所へ集約している理由: 以前はフォルダ名の対応表（_DBCrossLinkPath 用）と
+ * resolveCharacterImages 内の個別分岐へ同じ知識が二重に書かれており、conceptAlt_PNGName の
+ * 実際の格納先が conceptAlt/ なのに両方が concept/ を指したまま、22 件が黙って落ち続けていた。
+ * フィールドの追加・変更はこの表だけを直せば済むようにする。
+ *
+ * 並び順は出力 images のキー順を決める。消費側の差分を無用に増やさないため、
+ * 従来からある 6 フィールドを先頭に据え、新規追加分は後ろへ足すこと。
+ */
+const IMAGE_FIELDS = [
+  { field: 'concept_PNGName',    folder: 'concept',    out: 'concept' },
+  { field: 'conceptAlt_PNGName', folder: 'conceptAlt', out: 'concept_alt' },
+  { field: 'corefolder_PNGPath', folder: 'corefolder', out: 'corefolder' },
+  { field: 'humanoid_PNGPath',   folder: 'humanoid',   out: 'humanoid' },
+  { field: 'arts_PNGPath',       folder: 'arts',       out: 'arts',       meta: 'arts_metadata' },
+  { field: 'designAlt_PNGPath',  folder: 'designAlt',  out: 'design_alt', meta: 'designAlt_metadata' },
+  // 2026-08-02 追加。いずれも従来から DB 側で宣言されていたが解決対象に入っておらず、
+  // 47 参照が画像インデックスへ載らないままだった作品固有のフィールド。
+  { field: 'design_PNGName',     folder: 'design',     out: 'design' },
+  { field: 'catalog_PNGName',    folder: 'catalog',    out: 'catalog' },
+  { field: 'cardDesign_PNGName', folder: 'cardDesign', out: 'card_design' },
+  { field: 'newYear_PNGPath',    folder: 'newYear',    out: 'new_year' },
+  { field: 'weakening_PNGPath',  folder: 'weakening',  out: 'weakening' },
+  { field: 'keycapper_PNGPath',  folder: 'keycapper',  out: 'keycapper' },
+];
+
+// フィールド名 → Images/<DB> 配下のフォルダヒント。
 // _DBCrossLinkPath 解決時、参照先レコードにスキーマ (imagePathHints) を問い合わせられないため、
-// 自作品で使う固定の対応表で代用する（2026-07-11 addon-ai-tag 追加分の既知フィールドのみ）。
-const IMAGE_FIELD_FOLDER_HINTS = {
-  concept_PNGName: 'concept',
-  conceptAlt_PNGName: 'concept',
-  corefolder_PNGPath: 'corefolder',
-  humanoid_PNGPath: 'humanoid',
-  arts_PNGPath: 'arts',
-  designAlt_PNGPath: 'designAlt',
-};
+// 上の定義表から導出した対応表で代用する。
+const IMAGE_FIELD_FOLDER_HINTS = Object.fromEntries(IMAGE_FIELDS.map(f => [f.field, f.folder]));
+
+// 宣言フィールド由来の出力キー（charId ディレクトリスキャン結果と区別して解決数を数えるため）
+const DECLARED_IMAGE_OUT_KEYS = new Set([...IMAGE_FIELDS.map(f => f.out), 'tails_unit']);
+
+/**
+ * 参照値から既知の画像拡張子を取り除く。
+ * 大半のフィールドは拡張子なしで宣言されるが、TailsUnit_PNGName や keycapper_PNGPath のように
+ * 拡張子込みで格納されるものが混在する（db_type.json の $type が #PNGFileName のフィールド）。
+ * resolveImagePath は「拡張子を除いたパス」を受ける契約なので、渡す前に一律で剥がす。
+ */
+function stripImageExt(name) {
+  return name.replace(/\.(png|jpe?g|gif|webp|svg)$/i, '');
+}
+
+/** 未解決ログ用に、参照値を人間が追える短い文字列へ整形する */
+function describeImageEntry(entry) {
+  if (typeof entry === 'string') return entry;
+  if (entry && typeof entry === 'object' && entry._DBCrossLinkPath) {
+    const c = entry._DBCrossLinkPath;
+    return `_DBCrossLinkPath(${c._Work ? c._Work + '/' : ''}${c._DB || '?'}:${c._IsoPath || '?'})`;
+  }
+  return JSON.stringify(entry);
+}
 
 /**
  * `_DBCrossLinkPath` wrapper（2026-07-11 addon-ai-tag 追加。他Work/他DBの画像を isoPath 経由で
@@ -889,7 +976,7 @@ function resolveDbCrossLinkPath(wrapper, defaultFieldName, currentDirName) {
   const folderHint = IMAGE_FIELD_FOLDER_HINTS[targetField];
   if (!folderHint) return null; // 未知のフィールドは安全側で未解決のまま
   const targetDbImgBase = path.join(DATA_DIR, targetDirName, 'Images', `DB_${targetDB}`);
-  return resolveImagePath(path.join(targetDbImgBase, folderHint, isoPath));
+  return resolveImagePath(path.join(targetDbImgBase, folderHint, stripImageExt(isoPath)));
 }
 
 /**
@@ -901,7 +988,7 @@ function resolveDbCrossLinkPath(wrapper, defaultFieldName, currentDirName) {
  * @returns {string|null}
  */
 function resolveImageArrayEntry(entry, baseDir, fieldName, currentDirName) {
-  if (typeof entry === 'string') return resolveImagePath(path.join(baseDir, entry));
+  if (typeof entry === 'string') return resolveImagePath(path.join(baseDir, stripImageExt(entry)));
   if (entry && typeof entry === 'object' && entry._DBCrossLinkPath) {
     return resolveDbCrossLinkPath(entry._DBCrossLinkPath, fieldName, currentDirName);
   }
@@ -914,15 +1001,19 @@ function resolveImageArrayEntry(entry, baseDir, fieldName, currentDirName) {
  *
  * 返却オブジェクトのキー:
  *   DB_Primary / DB_SemiPrimary 等  charId ディレクトリスキャン結果 (corefolder 等)
- *   concept                         concept_PNGName (両形態を含む概念イラスト)
- *   concept_alt                     conceptAlt_PNGName[] (概念イラストバリアント)
- *   corefolder                      corefolder_PNGPath[] (コアフォルダ形態の正規イラスト)
- *   humanoid                        humanoid_PNGPath[] (人型形態の正規イラスト)
- *   arts                            arts_PNGPath[] (キャラ個別アートワーク)
- *   design_alt                      designAlt_PNGPath[] (衣装差分・デザインバリアント)
  *   tails_unit                      TailsUnit[*].TailsUnit_PNGName (尻尾ユニット参考画像) — 2026-07-10 追加
+ *   その他                          IMAGE_FIELDS の out（concept / concept_alt / corefolder / humanoid /
+ *                                   arts / design_alt / design / catalog / card_design / new_year /
+ *                                   weakening / keycapper）
+ *
+ * @param {string}   workDir     作品ディレクトリ（Works_Dir 解決後の絶対パス）
+ * @param {string}   charId      レコードから導出した安定 ID
+ * @param {object}   charData    キャラクターの原レコード
+ * @param {string}   dbMetaKey   "#DB_Primary" 等
+ * @param {Array}    unresolved  宣言はあるのに実ファイルへ辿り着けなかった参照の記録先
+ *                               （{ field, value }。呼び出し側が作品・レコードの情報を付けて集約する）
  */
-function resolveCharacterImages(workDir, charId, charData, dbMetaKey) {
+function resolveCharacterImages(workDir, charId, charData, dbMetaKey, unresolved = []) {
   const images = {};
   // _DBCrossLinkPath の _Work 省略時に「自作品」として使う作品ディレクトリ名
   const dirName = path.basename(workDir);
@@ -958,105 +1049,68 @@ function resolveCharacterImages(workDir, charId, charData, dbMetaKey) {
   // TailsUnit[*].TailsUnit_PNGName → Images/<DB>/attr/tailsUnit/{name}.<ext>
   // charData.Images とは独立したトップレベルフィールドのため、下記の charImages 早期 return より前に解決する。
   // TailsUnit_PNGName は他の *_PNGName/*_PNGPath と異なり拡張子込みで格納されている (db_meta.json の
-  // $type: "#PNGFileName|#Null" 準拠) ため、resolveImagePath に渡す前に既知の拡張子を取り除く。
+  // $type: "#PNGFileName|#Null" 準拠) が、stripImageExt が一律で剥がすため個別対応は不要。
   if (Array.isArray(charData.TailsUnit) && charData.TailsUnit.length > 0) {
-    const tailsUnitPaths = charData.TailsUnit
-      .map(entry => (entry && typeof entry.TailsUnit_PNGName === 'string') ? entry.TailsUnit_PNGName : null)
-      .filter(Boolean)
-      .map(name => resolveImagePath(path.join(dbImagesBase, 'attr/tailsUnit', name.replace(/\.(png|jpe?g|gif|webp|svg)$/i, ''))))
-      .filter(Boolean);
+    const tailsUnitPaths = [];
+    for (const entry of charData.TailsUnit) {
+      const name = (entry && typeof entry.TailsUnit_PNGName === 'string') ? entry.TailsUnit_PNGName : null;
+      if (!name) continue;
+      const resolved = resolveImagePath(path.join(dbImagesBase, 'attr/tailsUnit', stripImageExt(name)));
+      if (resolved) tailsUnitPaths.push(resolved);
+      else unresolved.push({ field: 'TailsUnit_PNGName', value: name });
+    }
     if (tailsUnitPaths.length > 0) images.tails_unit = tailsUnitPaths;
   }
 
-  // --- Phase 1: charData.Images の構造化フィールドから画像パスを解決 ---
-  // concept / conceptAlt / arts / designAlt は DB_Primary 配下に格納される。
+  // --- charData.Images の構造化フィールドから画像パスを解決 ---
   const charImages = charData.Images;
   if (!charImages || typeof charImages !== 'object') return images;
 
-  // concept (単一): 両形態を描いた概念イラスト。
-  // concept_PNGName → Images/DB_Primary/concept/{name}.<ext>（文字列 or _DBCrossLinkPath wrapper）
-  if (charImages.concept_PNGName) {
-    const rel = resolveImageArrayEntry(charImages.concept_PNGName, path.join(dbImagesBase, 'concept'), 'concept_PNGName', dirName);
-    if (rel) images.concept = [rel];
-  }
+  // IMAGE_FIELDS の定義に沿って一律に解決する。
+  // 形態フォルダ (corefolder/ 等) が charId の 1 階層上に挟まるフィールドは、上の charId
+  // ディレクトリスキャンでは拾えないため、ここで構造化フィールドとして明示解決している。
+  // パスは各フォルダ相対。../../DB_SemiPrimary/... など親ディレクトリ参照も path.join で正規化される。
+  for (const { field, folder, out, meta } of IMAGE_FIELDS) {
+    const baseDir = path.join(dbImagesBase, folder);
 
-  // concept_alt (複数): 概念イラストのバリアント（複数形態・複数キャラ構図など）。
-  // conceptAlt_PNGName[] → Images/DB_Primary/concept/{name}.<ext>（要素は文字列 or _DBCrossLinkPath wrapper）
-  if (Array.isArray(charImages.conceptAlt_PNGName) && charImages.conceptAlt_PNGName.length > 0) {
-    const paths = charImages.conceptAlt_PNGName
-      .map(name => resolveImageArrayEntry(name, path.join(dbImagesBase, 'concept'), 'conceptAlt_PNGName', dirName))
-      .filter(Boolean);
-    if (paths.length > 0) images.concept_alt = paths;
-  }
-
-  // corefolder (複数): コアフォルダ形態の正規イラスト。
-  // corefolder_PNGPath[] → Images/DB_Primary/corefolder/{path}.<ext>（要素は文字列 or _DBCrossLinkPath wrapper）
-  // 形態フォルダ (corefolder/) が charId の 1 階層上に挟まるため、charId ディレクトリ
-  // スキャン (上の DB_* ループ) では拾えない。構造化フィールドとして明示解決する。
-  if (Array.isArray(charImages.corefolder_PNGPath) && charImages.corefolder_PNGPath.length > 0) {
-    const paths = charImages.corefolder_PNGPath
-      .map(rel => resolveImageArrayEntry(rel, path.join(dbImagesBase, 'corefolder'), 'corefolder_PNGPath', dirName))
-      .filter(Boolean);
-    if (paths.length > 0) images.corefolder = paths;
-  }
-
-  // humanoid (複数): 人型形態の正規イラスト。
-  // humanoid_PNGPath[] → Images/DB_Primary/humanoid/{path}.<ext>（要素は文字列 or _DBCrossLinkPath wrapper）
-  // corefolder と同じく形態フォルダ (humanoid/) が 1 階層挟まる。現状ファイル未配置でも
-  // resolveImagePath が null を返すだけなので将来の追加に備えて先行対応する。
-  if (Array.isArray(charImages.humanoid_PNGPath) && charImages.humanoid_PNGPath.length > 0) {
-    const paths = charImages.humanoid_PNGPath
-      .map(rel => resolveImageArrayEntry(rel, path.join(dbImagesBase, 'humanoid'), 'humanoid_PNGPath', dirName))
-      .filter(Boolean);
-    if (paths.length > 0) images.humanoid = paths;
-  }
-
-  // arts (複数): キャラクター個別に紐付けられたアートワーク。
-  // arts_metadata が存在する場合はそちらを優先し { path, form, characters } 形式で出力。
-  // なければ arts_PNGPath[] からパスのみで補完（要素は文字列 or _DBCrossLinkPath wrapper）。
-  // パスは DB_Primary/arts/ 相対。../../DB_SemiPrimary/... など親ディレクトリ参照も path.join で正規化される。
-  {
-    const artsMeta = Array.isArray(charImages.arts_metadata) && charImages.arts_metadata.length > 0
-      ? charImages.arts_metadata
+    // *_metadata が宣言されていればそちらを優先し、{ path, form, characters } 形式で出力する
+    const metaValues = meta && Array.isArray(charImages[meta]) && charImages[meta].length > 0
+      ? charImages[meta]
       : null;
-    if (artsMeta) {
-      const entries = artsMeta.flatMap(({ path: rel, form, characters }) => {
-        const resolved = resolveImageArrayEntry(rel, path.join(dbImagesBase, 'arts'), 'arts_PNGPath', dirName);
-        if (!resolved) return [];
-        return [{ path: resolved, form: form ?? null, characters: Array.isArray(characters) ? characters : null }];
-      });
-      if (entries.length > 0) images.arts = entries;
-    } else if (Array.isArray(charImages.arts_PNGPath) && charImages.arts_PNGPath.length > 0) {
-      const entries = charImages.arts_PNGPath.flatMap(rel => {
-        const resolved = resolveImageArrayEntry(rel, path.join(dbImagesBase, 'arts'), 'arts_PNGPath', dirName);
-        return resolved ? [{ path: resolved, form: null, characters: null }] : [];
-      });
-      if (entries.length > 0) images.arts = entries;
+    if (metaValues) {
+      const entries = [];
+      for (const m of metaValues) {
+        const resolved = resolveImageArrayEntry(m?.path, baseDir, field, dirName);
+        if (resolved) {
+          entries.push({
+            path: resolved,
+            form: m?.form ?? null,
+            characters: Array.isArray(m?.characters) ? m.characters : null,
+          });
+        } else {
+          unresolved.push({ field: meta, value: describeImageEntry(m?.path) });
+        }
+      }
+      if (entries.length > 0) images[out] = entries;
+      continue;
     }
-  }
 
-  // design_alt (複数): 衣装差分・デザインバリアント。
-  // designAlt_metadata が存在する場合はそちらを優先し { path, form, characters } 形式で出力。
-  // なければ designAlt_PNGPath[] からパスのみで補完（要素は文字列 or _DBCrossLinkPath wrapper）。
-  // パスは DB_Primary/designAlt/ 相対（arts/ ではない点に注意）。
-  {
-    const daltMeta = Array.isArray(charImages.designAlt_metadata) && charImages.designAlt_metadata.length > 0
-      ? charImages.designAlt_metadata
-      : null;
-    if (daltMeta) {
-      const entries = daltMeta.flatMap(({ path: rel, form, characters }) => {
-        const resolved = resolveImageArrayEntry(rel, path.join(dbImagesBase, 'designAlt'), 'designAlt_PNGPath', dirName);
-        if (!resolved) return [];
-        return [{ path: resolved, form: form ?? null, characters: Array.isArray(characters) ? characters : null }];
-      });
-      if (entries.length > 0) images.design_alt = entries;
-    } else if (Array.isArray(charImages.designAlt_PNGPath) && charImages.designAlt_PNGPath.length > 0) {
-      const entries = charImages.designAlt_PNGPath.flatMap(rel => {
-        const resolved = resolveImageArrayEntry(rel, path.join(dbImagesBase, 'designAlt'), 'designAlt_PNGPath', dirName);
-        return resolved ? [{ path: resolved, form: null, characters: null }] : [];
-      });
-      if (entries.length > 0) images.design_alt = entries;
+    const raw = charImages[field];
+    if (raw === undefined || raw === null) continue;
+    // db_type.json 上は単一値の *_PNGName でも、実データには配列が入る作品がある
+    // (#Works_FLInvestigator78 #DB_PrimaryDealer は 2 キャラで共有する 1 枚を配列で宣言する)。
+    // 型どおりの単一値しか受けないと、そうしたレコードの画像が黙って落ちる。
+    const entries = Array.isArray(raw) ? raw : [raw];
+
+    const paths = [];
+    for (const entry of entries) {
+      const resolved = resolveImageArrayEntry(entry, baseDir, field, dirName);
+      if (resolved) paths.push(resolved);
+      else unresolved.push({ field, value: describeImageEntry(entry) });
     }
+    if (paths.length === 0) continue;
+    // *_metadata を持つフィールドは、宣言が無い場合も同じ { path, form, characters } 形式へ揃える
+    images[out] = meta ? paths.map(p => ({ path: p, form: null, characters: null })) : paths;
   }
 
   return images;

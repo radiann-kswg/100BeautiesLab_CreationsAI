@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-08-02T09:58:10+09:00",
+  "_generated_at": "2026-08-02T15:08:24+09:00",
   "work_key": "#Works_ShouArRiders",
   "dir_name": "Works_ShouArRiders",
   "title_ja": "獣爾騎兵",
@@ -64,17 +64,17 @@
   "character_ids_with_tails_unit": [],
   "character_ids_with_roleplay_prompt": [],
   "image_paths": [
-    "data/Works_ShouArRiders/Images/DB_Primary/arts/sphericateDay/art_imgEZ13-sphericateDay202309A.png",
-    "data/Works_ShouArRiders/Images/DB_Primary/arts/sphericateDay/art_imgEZ13-sphericateDay202309B.png",
-    "data/Works_ShouArRiders/Images/DB_Primary/arts/sphericateDay/art_imgEZ13-sphericateDay202309C.png",
-    "data/Works_ShouArRiders/Images/DB_Primary/concept/cnsp_imgEZ1.png",
-    "data/Works_ShouArRiders/Images/DB_Primary/concept/cnsp_imgEZ13.png",
-    "data/Works_ShouArRiders/Images/DB_Primary/designAlt/chattingArt/chart_imgEZ4-private.PNG",
-    "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgEZ13-meowsday2023.png",
-    "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgEZ4-newyear2023.png",
-    "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgEZ5-2024.png",
-    "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgEZ6-newyear2025A.png",
-    "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgEZ6-newyear2025B.png",
-    "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgEZ7-newyear2026.png"
+    "data/Works_ShouArRiders/Images/DB_Primary/arts/sphericateDay/art_imgSAR-EZ13-sphericateDay202309A.png",
+    "data/Works_ShouArRiders/Images/DB_Primary/arts/sphericateDay/art_imgSAR-EZ13-sphericateDay202309B.png",
+    "data/Works_ShouArRiders/Images/DB_Primary/arts/sphericateDay/art_imgSAR-EZ13-sphericateDay202309C.png",
+    "data/Works_ShouArRiders/Images/DB_Primary/concept/cnsp_imgSAR-EZ1.png",
+    "data/Works_ShouArRiders/Images/DB_Primary/concept/cnsp_imgSAR-EZ13.png",
+    "data/Works_ShouArRiders/Images/DB_Primary/designAlt/chattingArt/chart_imgSAR-EZ4-private.PNG",
+    "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ13-meowsday2023.png",
+    "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ4-newyear2023.png",
+    "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ5-2024.png",
+    "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ6-newyear2025A.png",
+    "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ6-newyear2025B.png",
+    "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ7-newyear2026.png"
   ]
 }
