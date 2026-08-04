@@ -1,7 +1,7 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-08-03T18:06:54+09:00",
-  "_submodule_commit": "b3218ba81844e0584da655d0c78fce399a9f068e",
+  "_generated_at": "2026-08-04T14:27:56+09:00",
+  "_submodule_commit": "d87f25ec7599536d7a52a7784a75e8f6ecbc7260",
   "works": [
     {
       "work_key": "#Works_NumberTales",
@@ -52,7 +52,7 @@
       "title_ja": "ハンカクライブ",
       "title_en": "UnibyteLive",
       "character_count": 46,
-      "image_count": 2,
+      "image_count": 3,
       "ai_training": {
         "allowed": false,
         "allowed_db_keys": [],
