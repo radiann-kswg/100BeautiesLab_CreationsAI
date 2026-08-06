@@ -1,14 +1,14 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-08-04T14:27:56+09:00",
-  "_submodule_commit": "d87f25ec7599536d7a52a7784a75e8f6ecbc7260",
+  "_generated_at": "2026-08-06T17:45:22+09:00",
+  "_submodule_commit": "8623b622d8cfb514e69b8536ccc9fb5ef2cb185c",
   "works": [
     {
       "work_key": "#Works_NumberTales",
       "dir_name": "Works_NumberTales",
       "title_ja": "ナンバーテールズ",
       "title_en": "NumberTales",
-      "character_count": 301,
+      "character_count": 302,
       "image_count": 606,
       "ai_training": {
         "allowed": true,
@@ -144,6 +144,6 @@
       }
     }
   ],
-  "total_characters": 561,
+  "total_characters": 562,
   "total_works": 10
 }

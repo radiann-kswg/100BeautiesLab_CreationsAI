@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-08-04T14:27:56+09:00",
+  "_generated_at": "2026-08-06T17:45:22+09:00",
   "_path_base": "creations-db/",
   "works": {
     "#Works_NumberTales": {
@@ -23,8 +23,8 @@
         },
         {
           "key": "#DB_SemiPrimary",
-          "allowed": 8,
-          "total": 52
+          "allowed": 9,
+          "total": 53
         },
         {
           "key": "#DB_SelfSecondary",
@@ -619,6 +619,7 @@
         "data/Works_NumberTales/Images/DB_SemiPrimary/attr/numberMark/attr_numberMarkNTS-444.png",
         "data/Works_NumberTales/Images/DB_SemiPrimary/attr/wing/attr_wingNTS-666.png",
         "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_imgNTS-111.png",
+        "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_imgNTS-222.png",
         "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_imgNTS-222A.png",
         "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_imgNTS-222B.png",
         "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_imgNTS-3x11.png",
@@ -626,7 +627,6 @@
         "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_imgNTS-666.png",
         "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_imgNTS-777.png",
         "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_imgNTS-777JP.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/conceptAlt/cnsp_imgNTS-222A,NTS-222B-orig.png",
         "data/Works_NumberTales/Images/DB_SemiPrimary/conceptAlt/cnsp_imgNTS-777,NTS-777JP-orig.png",
         "data/Works_NumberTales/Images/DB_SemiPrimary/conceptAlt/cnsp_imgNTS-777,NTS-777JPC.png",
         "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/100/emstk_corefolderNTS-100-1.png",
