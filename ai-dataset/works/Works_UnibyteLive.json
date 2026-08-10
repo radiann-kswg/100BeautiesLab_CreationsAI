@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-08-10T12:56:06+09:00",
+  "_generated_at": "2026-08-10T15:29:16+09:00",
   "work_key": "#Works_UnibyteLive",
   "dir_name": "Works_UnibyteLive",
   "title_ja": "ハンカクライブ",
@@ -103,7 +103,8 @@
     "7",
     "8",
     "9",
-    "10"
+    "10",
+    "11"
   ],
   "character_ids_with_ai_hints": [],
   "character_ids_with_silhouette_notes": [],
@@ -112,13 +113,16 @@
   "character_ids_with_work_common": [],
   "character_ids_with_appearance_detail": [
     "I:カーソル",
+    "L:コナー",
     "S:ナーミィ",
     "Z:ジグ"
   ],
   "character_ids_with_tails_unit": [],
   "character_ids_with_roleplay_prompt": [],
   "image_paths": [
+    "data/Works_UnibyteLive/Images/DB_Primary/attr/accessoryUnit/attr_accessoryUnitUBL-Lg1-monocle.png",
     "data/Works_UnibyteLive/Images/DB_Primary/keycapper/I/emstk_keycapperUBL-Ig2-1.png",
+    "data/Works_UnibyteLive/Images/DB_Primary/keycapper/L/emstk_keycapperUBL-Lg1-1.png",
     "data/Works_UnibyteLive/Images/DB_Primary/keycapper/S/emstk_keycapperUBL-Sg2-1.png",
     "data/Works_UnibyteLive/Images/DB_Primary/keycapper/Z/emstk_keycapperUBL-Zg1-1.png"
   ]
