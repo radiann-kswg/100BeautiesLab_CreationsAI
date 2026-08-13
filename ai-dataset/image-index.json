@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-08-13T09:53:54+09:00",
+  "_generated_at": "2026-08-14T08:37:27+09:00",
   "_path_base": "creations-db/",
   "works": {
     "#Works_NumberTales": {
@@ -29,7 +29,7 @@
         {
           "key": "#DB_SelfSecondary",
           "allowed": 7,
-          "total": 122
+          "total": 123
         },
         {
           "key": "#DB_Secondary",
@@ -472,6 +472,7 @@
         "data/Works_NumberTales/Images/DB_Primary/corefolder/63/emstk_corefolderNTS-63-2.png",
         "data/Works_NumberTales/Images/DB_Primary/corefolder/63/emstk_corefolderNTS-63-3.png",
         "data/Works_NumberTales/Images/DB_Primary/corefolder/64/emstk_corefolderNTS-64-1.png",
+        "data/Works_NumberTales/Images/DB_Primary/corefolder/64/emstk_corefolderNTS-64-2.png",
         "data/Works_NumberTales/Images/DB_Primary/corefolder/65/emstk_corefolderNTS-65-1.png",
         "data/Works_NumberTales/Images/DB_Primary/corefolder/66/emstk_corefolderNTS-66-1.png",
         "data/Works_NumberTales/Images/DB_Primary/corefolder/68/emstk_corefolderNTS-68-1.png",
@@ -653,7 +654,7 @@
         "data/Works_NumberTales/Images/Ref_Vocabulary/concept-figure/cnsp-fg_NTsCoreFolder.png",
         "data/Works_NumberTales/Images/Ref_Vocabulary/concept-figure/cnsp-fg_NTsHumanoid.png"
       ],
-      "count": 614
+      "count": 615
     },
     "#Works_FLInvestigator78": {
       "title_ja": "運命線探偵78",
