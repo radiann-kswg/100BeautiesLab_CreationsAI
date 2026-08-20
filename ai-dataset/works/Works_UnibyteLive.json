@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-08-19T09:37:30+09:00",
+  "_generated_at": "2026-08-20T10:44:47+09:00",
   "work_key": "#Works_UnibyteLive",
   "dir_name": "Works_UnibyteLive",
   "title_ja": "ハンカクライブ",
@@ -11,7 +11,6 @@
       "Progress"
     ],
     "basicFields": [
-      "AnotherRegions_DBLink",
       "FormalName",
       "CodeName",
       "RaceType",
@@ -33,6 +32,7 @@
       "RelationTo_PrimaryPerformer",
       "ConversationPattern",
       "ThisPerformer_DBLink",
+      "AnotherVersions_DBLink",
       "AnotherRegions_DBLink"
     ]
   },
