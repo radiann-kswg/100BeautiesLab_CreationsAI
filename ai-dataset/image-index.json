@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-08-21T09:51:15+09:00",
+  "_generated_at": "2026-08-28T14:49:14+09:00",
   "_path_base": "creations-db/",
   "works": {
     "#Works_NumberTales": {
@@ -722,7 +722,7 @@
         {
           "key": "#DB_Primary",
           "allowed": 0,
-          "total": 7
+          "total": 10
         }
       ],
       "images": [
@@ -733,13 +733,20 @@
         "data/Works_ShouArRiders/Images/DB_Primary/concept/cnsp_imgSAR-EZ13.png",
         "data/Works_ShouArRiders/Images/DB_Primary/designAlt/chattingArt/chart_imgSAR-EZ4-private.png",
         "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ13-meowsday2023.png",
+        "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ13.png",
         "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ4-newyear2023.png",
+        "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ4.png",
         "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ5-2024.png",
+        "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ5.png",
+        "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ6-A.png",
+        "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ6-B.png",
         "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ6-newyear2025A.png",
         "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ6-newyear2025B.png",
-        "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ7-newyear2026.png"
+        "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ7-newyear2026.png",
+        "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ7.png",
+        "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ8.png"
       ],
-      "count": 12
+      "count": 19
     },
     "#Works_UnibyteLive": {
       "title_ja": "ハンカクライブ",
@@ -969,8 +976,8 @@
         },
         {
           "key": "#Ref_Region8",
-          "allowed": 15,
-          "total": 15
+          "allowed": 16,
+          "total": 16
         }
       ],
       "images": [

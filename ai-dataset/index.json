@@ -1,7 +1,7 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-08-21T09:51:15+09:00",
-  "_submodule_commit": "37c353d82dd8b2fae75169ce27dcbb0c31fb1175",
+  "_generated_at": "2026-08-28T14:49:14+09:00",
+  "_submodule_commit": "2ac050a55107f032287d4f175ac0bff260aaf8bf",
   "works": [
     {
       "work_key": "#Works_NumberTales",
@@ -38,8 +38,8 @@
       "dir_name": "Works_ShouArRiders",
       "title_ja": "獣爾騎兵",
       "title_en": "Shou'ar Riders\nBeasted Cavalry",
-      "character_count": 7,
-      "image_count": 12,
+      "character_count": 10,
+      "image_count": 19,
       "ai_training": {
         "allowed": false,
         "allowed_db_keys": [],
@@ -129,7 +129,7 @@
       "dir_name": "Works_CommonReferences",
       "title_ja": "共通資料",
       "title_en": "Common References",
-      "character_count": 46,
+      "character_count": 47,
       "image_count": 1,
       "ai_training": {
         "allowed": true,
@@ -144,6 +144,6 @@
       }
     }
   ],
-  "total_characters": 597,
+  "total_characters": 601,
   "total_works": 10
 }
