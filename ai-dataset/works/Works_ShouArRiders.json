@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-08-30T11:24:53+09:00",
+  "_generated_at": "2026-09-02T17:21:53+09:00",
   "work_key": "#Works_ShouArRiders",
   "dir_name": "Works_ShouArRiders",
   "title_ja": "獣爾騎兵",
@@ -67,6 +67,8 @@
   "character_ids_with_tails_unit": [],
   "character_ids_with_roleplay_prompt": [],
   "image_paths": [
+    "data/Works_ShouArRiders/Images/DB_Primary/arts/chattingArt/chart_imgSAR-EZ1.png",
+    "data/Works_ShouArRiders/Images/DB_Primary/arts/chattingArt/chart_imgSAR-EZ4.png",
     "data/Works_ShouArRiders/Images/DB_Primary/arts/sphericateDay/art_imgSAR-EZ13-sphericateDay202309A.png",
     "data/Works_ShouArRiders/Images/DB_Primary/arts/sphericateDay/art_imgSAR-EZ13-sphericateDay202309B.png",
     "data/Works_ShouArRiders/Images/DB_Primary/arts/sphericateDay/art_imgSAR-EZ13-sphericateDay202309C.png",

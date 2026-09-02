@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-08-30T11:24:53+09:00",
+  "_generated_at": "2026-09-02T17:21:53+09:00",
   "_path_base": "creations-db/",
   "works": {
     "#Works_NumberTales": {
@@ -40,15 +40,22 @@
       "images": [
         "data/Works_NumberTales/Images/DB_Primary/arts/art_imgNTS-0-developper.png",
         "data/Works_NumberTales/Images/DB_Primary/arts/art_imgNTS-00-developper.png",
+        "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-13-humanoid.png",
         "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-22-humanoid.png",
+        "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-26-humanoid.png",
         "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-30-corefolder.png",
+        "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-30-humanoid.png",
         "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-36-corefolderMyNewGear.png",
         "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-42-corefolder.png",
+        "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-47,NTS-74-humanoid.png",
         "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-49-humanoid.png",
         "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-50-humanoidBallingRole.png",
         "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-56-humanoid.png",
         "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-58-humanoidNoNipples.png",
+        "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-67A-humanoid.png",
+        "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-67B-humanoid.png",
         "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-73-humanoidWhereIsEho.png",
+        "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-75-humanoidSaveYourself.png",
         "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-87-humanoidTooOrdered.png",
         "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-89-corefolder.png",
         "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-97-humanoid.png",
@@ -525,6 +532,7 @@
         "data/Works_NumberTales/Images/DB_Primary/designAlt/chattingArt/chart_imgNTS-25,NTS-5-humanoidCoolerSeason.png",
         "data/Works_NumberTales/Images/DB_Primary/designAlt/chattingArt/chart_imgNTS-35-humanoidswimwear.png",
         "data/Works_NumberTales/Images/DB_Primary/designAlt/chattingArt/chart_imgNTS-66-corefolderHalloween.png",
+        "data/Works_NumberTales/Images/DB_Primary/designAlt/chattingArt/chart_imgNTS-69-humanoidLeotard.png",
         "data/Works_NumberTales/Images/DB_Primary/designAlt/eventArt/art_sphericateDay-halloween2023A.png",
         "data/Works_NumberTales/Images/DB_Primary/designAlt/eventArt/art_sphericateDay-halloween2023B.png",
         "data/Works_NumberTales/Images/DB_Secondary/arts/hexademical-corefolders/art_sphericateDay202406-1.png",
@@ -655,7 +663,7 @@
         "data/Works_NumberTales/Images/Ref_Vocabulary/concept-figure/cnsp-fg_NTsCoreFolder.png",
         "data/Works_NumberTales/Images/Ref_Vocabulary/concept-figure/cnsp-fg_NTsHumanoid.png"
       ],
-      "count": 616
+      "count": 624
     },
     "#Works_FLInvestigator78": {
       "title_ja": "運命線探偵78",
@@ -726,6 +734,8 @@
         }
       ],
       "images": [
+        "data/Works_ShouArRiders/Images/DB_Primary/arts/chattingArt/chart_imgSAR-EZ1.png",
+        "data/Works_ShouArRiders/Images/DB_Primary/arts/chattingArt/chart_imgSAR-EZ4.png",
         "data/Works_ShouArRiders/Images/DB_Primary/arts/sphericateDay/art_imgSAR-EZ13-sphericateDay202309A.png",
         "data/Works_ShouArRiders/Images/DB_Primary/arts/sphericateDay/art_imgSAR-EZ13-sphericateDay202309B.png",
         "data/Works_ShouArRiders/Images/DB_Primary/arts/sphericateDay/art_imgSAR-EZ13-sphericateDay202309C.png",
@@ -747,7 +757,7 @@
         "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ7.png",
         "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ8.png"
       ],
-      "count": 20
+      "count": 22
     },
     "#Works_UnibyteLive": {
       "title_ja": "ハンカクライブ",
@@ -799,13 +809,14 @@
         "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/chattingArt/chart_imgSCG-NW.png",
         "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/chattingArt/chart_imgSCG-SE-checkIntoAlive.png",
         "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/chattingArt/chart_imgSCG-SW-whereBabiesFrom.png",
+        "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-E.png",
         "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-N.png",
         "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-NE.png",
         "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-NW.png",
         "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-S.png",
         "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-SE.png"
       ],
-      "count": 10
+      "count": 11
     },
     "#Works_VirtuesUs": {
       "title_ja": "我ら美徳の桜花兄弟",
