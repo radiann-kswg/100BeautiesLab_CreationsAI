@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-09-04T11:39:49+09:00",
+  "_generated_at": "2026-09-04T16:21:24+09:00",
   "_path_base": "creations-db/",
   "works": {
     "#Works_NumberTales": {
@@ -208,6 +208,7 @@
         "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-61.png",
         "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-62.png",
         "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-63.png",
+        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-64.png",
         "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-65.png",
         "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-66.png",
         "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-68.png",
@@ -630,6 +631,8 @@
         "data/Works_NumberTales/Images/DB_SemiPrimary/attr/numberMark/attr_numberMarkNTS-222B.png",
         "data/Works_NumberTales/Images/DB_SemiPrimary/attr/numberMark/attr_numberMarkNTS-3x11.png",
         "data/Works_NumberTales/Images/DB_SemiPrimary/attr/numberMark/attr_numberMarkNTS-444.png",
+        "data/Works_NumberTales/Images/DB_SemiPrimary/attr/numberMark/attr_numberMarkNTS-64XP-sextpower.png",
+        "data/Works_NumberTales/Images/DB_SemiPrimary/attr/numberMark/attr_numberMarkNTS-64XP.png",
         "data/Works_NumberTales/Images/DB_SemiPrimary/attr/wing/attr_wingNTS-666.png",
         "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_imgNTS-111.png",
         "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_imgNTS-222.png",
@@ -664,7 +667,7 @@
         "data/Works_NumberTales/Images/Ref_Vocabulary/concept-figure/cnsp-fg_NTsCoreFolder.png",
         "data/Works_NumberTales/Images/Ref_Vocabulary/concept-figure/cnsp-fg_NTsHumanoid.png"
       ],
-      "count": 625
+      "count": 628
     },
     "#Works_FLInvestigator78": {
       "title_ja": "運命線探偵78",
