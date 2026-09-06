@@ -34,6 +34,11 @@ import {
   getAITrainingPolicy,
   getCharacterAIPolicy,
 } from './lib/policy.js';
+import {
+  buildDerivedAiHints,
+  buildImageIndexEntries,
+  buildPreferredReferenceImages,
+} from './lib/dataset-helpers.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname  = path.dirname(__filename);
@@ -324,6 +329,8 @@ async function main() {
   let totalCharacters = 0;
   let totalAllowedCharacters = 0;
   let totalWithAiHints = 0;
+  let totalWithCuratedAiHints = 0;
+  let totalWithDerivedAiHints = 0;
   let totalWithSilhouetteNotes = 0;
   let totalWithImmutableConstraints = 0;
   let totalWithNegativeKeywords = 0;
@@ -484,13 +491,22 @@ async function main() {
           if (DECLARED_IMAGE_OUT_KEYS.has(imgKey) && Array.isArray(imgVal)) totalResolvedImageRefs += imgVal.length;
         }
 
-        // AIHints を data から取り出してトップレベルにも露出する
-        const aiHints = charData.AIHints ?? null;
-
         // isPrivate / _Secondaries カテゴリ別 AI_Optout / Progress の AI_Unready を考慮して決定
         const charPolicy = getCharacterAIPolicy(dbPolicy, charData, secondaryOptout, progressUnready.values);
         dbTotalRecords++;
         if (charPolicy.allowed) dbAllowedRecords++;
+
+        // AIHints は source を優先し、無い場合は NumberTales の allowed レコードに限って
+        // 参照画像中心の最小 scaffold をトップレベルへ補う（data 側は変更しない）。
+        const sourceAiHints = charData.AIHints ?? null;
+        const derivedAiHints = sourceAiHints ? null : buildDerivedAiHints({
+          workKey,
+          charData,
+          images,
+          aiTrainingAllowed: charPolicy.allowed,
+        });
+        const aiHints = sourceAiHints ?? derivedAiHints;
+        const aiHintsSource = sourceAiHints ? 'source' : (derivedAiHints ? 'derived' : null);
 
         // AIHints 新フィールド (2026-06-08 addon-ai-tag) の存在確認
         const aiFormsCorefolder = aiHints?.forms?.corefolder;
@@ -531,6 +547,7 @@ async function main() {
         //（allowed のみ manifest-training に載る。例: NumberTales SemiPrimary Num 100 は生成物があるが不許可）。
         const roleplayPrompt = resolveRoleplayPrompt(workDir, dbMetaKey, charId);
         if (roleplayPrompt) matchedRoleplayPaths.add(roleplayPrompt.path);
+        const preferredReferenceImages = buildPreferredReferenceImages(images);
 
         const charEntry = {
           id: charId,
@@ -540,6 +557,7 @@ async function main() {
           db_source: dbRelPath,
           ai_training: charPolicy,
           ai_hints: aiHints,
+          ai_hints_source: aiHintsSource,
           has_ai_hints: !!aiHints,
           has_silhouette_notes: hasAnySilhouetteNotes,
           has_immutable_constraints: hasAnyImmutableConstraints,
@@ -548,6 +566,7 @@ async function main() {
           has_concept_forms_metadata: hasConceptFormsMeta,
           has_appearance_detail: hasAppearanceDetail,
           has_tails_unit: hasTailsUnit,
+          preferred_reference_images: preferredReferenceImages,
           has_roleplay_prompt: !!roleplayPrompt,
           roleplay_prompt: roleplayPrompt,
           // 原データを変更せずそのまま参照
@@ -555,10 +574,12 @@ async function main() {
           images,
         };
 
-        workEntry.characters.push({ id: charId, images, has_ai_hints: !!aiHints, has_silhouette_notes: hasAnySilhouetteNotes, has_immutable_constraints: hasAnyImmutableConstraints, has_negative_keywords: hasAnyNegativeKeywords, has_work_common: hasWorkCommonBlock, has_concept_forms_metadata: hasConceptFormsMeta, has_appearance_detail: hasAppearanceDetail, has_tails_unit: hasTailsUnit, has_roleplay_prompt: !!roleplayPrompt, ai_training_allowed: charPolicy.allowed });
+        workEntry.characters.push({ id: charId, images, has_ai_hints: !!aiHints, ai_hints_source: aiHintsSource, has_silhouette_notes: hasAnySilhouetteNotes, has_immutable_constraints: hasAnyImmutableConstraints, has_negative_keywords: hasAnyNegativeKeywords, has_work_common: hasWorkCommonBlock, has_concept_forms_metadata: hasConceptFormsMeta, has_appearance_detail: hasAppearanceDetail, has_tails_unit: hasTailsUnit, preferred_reference_images: preferredReferenceImages, has_roleplay_prompt: !!roleplayPrompt, ai_training_allowed: charPolicy.allowed });
         totalCharacters++;
         if (charPolicy.allowed) totalAllowedCharacters++;
         if (aiHints) totalWithAiHints++;
+        if (aiHintsSource === 'source') totalWithCuratedAiHints++;
+        if (aiHintsSource === 'derived') totalWithDerivedAiHints++;
         if (hasAnySilhouetteNotes)       totalWithSilhouetteNotes++;
         if (hasAnyImmutableConstraints)  totalWithImmutableConstraints++;
         if (hasAnyNegativeKeywords)      totalWithNegativeKeywords++;
@@ -602,6 +623,7 @@ async function main() {
     // Works_ImagesDir オーバーライド作品（例: 共通資料 → data/GeneralImages）は画像ルートが workDir/Images でない
     const imagesDir = worksImagesDirOverride ? path.join(DATA_DIR, worksImagesDirOverride) : path.join(workDir, 'Images');
     const workImages = collectImages(imagesDir, SUBMODULE);
+    const workImageEntries = buildImageIndexEntries(workImages, SUBMODULE);
     const workHasAllowedDb = allowedDbKeys.length > 0;
     imageIndex.works[workKey] = {
       title_ja: workTopMeta.Title_JP || '',
@@ -621,6 +643,7 @@ async function main() {
       },
       db_records: dbRecordStats,
       images: workImages,
+      image_entries: workImageEntries,
       count: workImages.length,
     };
 
@@ -629,6 +652,7 @@ async function main() {
     const refImages = collectImages(refsDir, SUBMODULE);
     if (refImages.length > 0) {
       imageIndex.works[workKey].references = refImages;
+      imageIndex.works[workKey].reference_entries = buildImageIndexEntries(refImages, SUBMODULE);
     }
 
     masterIndex.works.push({
@@ -717,6 +741,7 @@ async function main() {
 
   const generalImgDir = path.join(DATA_DIR, 'GeneralImages');
   imageIndex.general_images = collectImages(generalImgDir, SUBMODULE);
+  imageIndex.general_image_entries = buildImageIndexEntries(imageIndex.general_images, SUBMODULE);
 
   const dictDir = path.join(DATA_DIR, 'Dictionaries');
   if (fs.existsSync(dictDir)) {
@@ -743,6 +768,7 @@ async function main() {
   const topRefImages = collectImages(topRefsDir, SUBMODULE);
   if (topRefImages.length > 0) {
     imageIndex.general_images = imageIndex.general_images.concat(topRefImages);
+    imageIndex.general_image_entries = buildImageIndexEntries(imageIndex.general_images, SUBMODULE);
   }
 
   // -----------------------------------------------------------------------
@@ -765,11 +791,16 @@ async function main() {
         reason:  'string — allowed の判定理由（整備中/整備済等）',
       },
       ai_hints_field: {
+        source: 'トップレベル ai_hints は source の data.AIHints を優先し、source に無い NumberTales の allowed レコードでは参照画像中心の derived scaffold を補う。元レコード data は変更しない。ai_hints_source で "source" / "derived" / null を判別できる。',
         common: '形態を問わない素体特徴 (identity_tags / palette_priority / natural_language_description / immutable_traits 等)',
         forms:  '形態別 (corefolder / humanoid) の outfit_features / silhouette_notes / immutable_constraints / negative_keywords / ai_tags / prompt_export / negative_prompt_export / reference_images / natural_language_description',
         forms_silhouette_notes: 'silhouette_notes は 2026-06-09 以降 { body_description: string[], attached_items: string[] } 形式 (旧 #String[] 形式とも互換)。本体素体と装着付属品を分離して保持する。',
         work_common: '作品共通の参照画像まとめ (reference_images.corefolder_reference[] / humanoid_reference[]) — 2026-06-08 追加',
         alt_modes:   '将来予約モード格納 (corefolder_dressed.allowed / outfit_source) — 2026-06-08 追加',
+      },
+      preferred_reference_images_field: {
+        description: 'preferred_reference_images: ローカル利用向けの参照画像パスまとめ。category と解像度の優先順で main を選びつつ、corefolder / humanoid の直接参照も残す。パスは creations-db サブモジュールルート基点。',
+        consumer_guidance: 'source AIHints の reference_images は公開 URL が中心だが、こちらはローカル相対パスなのでオフライン処理・高解像度優先選択に使える。',
       },
       appearance_detail_field: {
         description: 'AppearanceDetail: 外見デザイン詳細の構造化データ ($Def_AppearanceDetail[]|#Null)。Formation / BodyPart / Laterality / DesignElement / Attrs / img_PNGName / Note_JP / Note_EN の各フィールドを持つオブジェクト配列。将来的に AIHints.forms.*.silhouette_notes の自然言語記述の源泉データとして統合予定。',
@@ -800,6 +831,10 @@ async function main() {
         keycapper:    'キーキャップ形態のイラスト (keycapper_PNGPath[] 由来、<DB>/keycapper/{path}) — 2026-08-02 追加',
         note:         'パスは creations-db サブモジュールルートからの相対パス。ファイルが実在しない場合はキー自体が省略される。'
           + ' 解決できなかった宣言の件数は build-info.json の image_ref_stats.unresolved で確認できる。',
+      },
+      image_index_entry_field: {
+        description: 'image-index.json の image_entries / reference_entries / general_image_entries は既存の images 配列と同順の詳細版。',
+        fields: 'path / category / width / height / long_edge_px / is_large_original_candidate / language_variant / is_language_variant',
       },
     },
   }, null, 2), 'utf8');
@@ -835,6 +870,8 @@ async function main() {
     ai_training_stats: aiTrainingStats,
     ai_hints_stats: {
       with_ai_hints:              totalWithAiHints,
+      with_curated_ai_hints:      totalWithCuratedAiHints,
+      with_derived_ai_hints:      totalWithDerivedAiHints,
       with_silhouette_notes:      totalWithSilhouetteNotes,
       with_immutable_constraints: totalWithImmutableConstraints,
       with_negative_keywords:     totalWithNegativeKeywords,

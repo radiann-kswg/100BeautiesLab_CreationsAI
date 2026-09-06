@@ -122,7 +122,7 @@ git clone --recurse-submodules https://github.com/<your-account>/100BeautiesLab_
 | `ai-dataset/manifest.jsonl`          | LLM の学習・RAG 用 JSONL（1行1レコード、`ai_training` フラグ付き）           |
 | `ai-dataset/policy.json`             | AI 学習利用ポリシーの機械可読サマリ                                          |
 | `ai-dataset/index.json`              | 全作品・全キャラクターの一覧インデックス（`ai_training` 付き）               |
-| `ai-dataset/image-index.json`        | 全画像の相対パス一覧（`creations-db/` を基点とするパス、`ai_training` 付き） |
+| `ai-dataset/image-index.json`        | 全画像の相対パス一覧（`creations-db/` を基点とするパス、`ai_training` 付き。`image_entries` に category / 解像度メタ付き） |
 | `ai-dataset/works/<WorkDir>.json`    | 作品別フラットデータ（`ai_training` 付き）                                   |
 
 ### 画像ファイルへのアクセス
@@ -139,6 +139,12 @@ with open("ai-dataset/image-index.json") as f:
 for img_path in idx["works"]["#Works_NumberTales"]["images"]:
     full_path = os.path.join("creations-db", img_path)
     # full_path を画像ローダーに渡す
+
+# 例: 高解像度の catalog / arts を優先して拾う
+for entry in idx["works"]["#Works_NumberTales"]["image_entries"]:
+    if entry["category"] in {"catalog", "arts", "concept"} and entry["is_large_original_candidate"]:
+        full_path = os.path.join("creations-db", entry["path"])
+        print(entry["category"], entry["long_edge_px"], full_path)
 ```
 
 ### JSONL の読み込み例
@@ -152,10 +158,12 @@ with open("ai-dataset/manifest-training.jsonl") as f:
         record = json.loads(line)
         if record["_type"] == "character":
             print(record["work_title_ja"], record["id"])
-            hints = record.get("ai_hints")    # = data.AIHints と同一
+            hints = record.get("ai_hints")    # source の data.AIHints を優先。source に無い一部 NumberTales レコードでは derived scaffold を補完
             if hints:
                 corefolder = hints["forms"].get("corefolder", {})
                 print("prompt:", corefolder.get("prompt_export"))
+            print("ai_hints_source:", record.get("ai_hints_source"))
+            print("preferred refs:", record.get("preferred_reference_images"))
 
 # manifest.jsonl を直接使う場合は ai_training.allowed でフィルタを忘れずに
 with open("ai-dataset/manifest.jsonl") as f:
