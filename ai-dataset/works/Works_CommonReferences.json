@@ -115,7 +115,13 @@
   "image_paths": [
     {
       "path": "data/GeneralImages/Ref_Region8/cnsp-map_region8.png",
-      "category": null
+      "category": null,
+      "width": 1180,
+      "height": 827,
+      "long_edge_px": 1180,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     }
   ]
 }

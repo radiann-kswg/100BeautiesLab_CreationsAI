@@ -79,171 +79,423 @@
   "image_paths": [
     {
       "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/arts/regular/arts_snsicnDFR-RQN.png",
-      "category": "arts"
+      "category": "arts",
+      "width": 512,
+      "height": 512,
+      "long_edge_px": 512,
+      "is_large_original_candidate": false,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/concept/cnsp_imgDFR-SIL.png",
-      "category": "concept"
+      "category": "concept",
+      "width": 1180,
+      "height": 820,
+      "long_edge_px": 1180,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-RN2.png",
-      "category": "design"
+      "category": "design",
+      "width": 960,
+      "height": 768,
+      "long_edge_px": 960,
+      "is_large_original_candidate": false,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-RQN.png",
-      "category": "design"
+      "category": "design",
+      "width": 1920,
+      "height": 1080,
+      "long_edge_px": 1920,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-RTN.png",
-      "category": "design"
+      "category": "design",
+      "width": 1920,
+      "height": 1080,
+      "long_edge_px": 1920,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-RVN.png",
-      "category": "design"
+      "category": "design",
+      "width": 1920,
+      "height": 1080,
+      "long_edge_px": 1920,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-SII.png",
-      "category": "design"
+      "category": "design",
+      "width": 960,
+      "height": 768,
+      "long_edge_px": 960,
+      "is_large_original_candidate": false,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-SIJ.png",
-      "category": "design"
+      "category": "design",
+      "width": 960,
+      "height": 768,
+      "long_edge_px": 960,
+      "is_large_original_candidate": false,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-SIL.png",
-      "category": "design"
+      "category": "design",
+      "width": 960,
+      "height": 768,
+      "long_edge_px": 960,
+      "is_large_original_candidate": false,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-SIM.png",
-      "category": "design"
+      "category": "design",
+      "width": 960,
+      "height": 768,
+      "long_edge_px": 960,
+      "is_large_original_candidate": false,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-SIN.png",
-      "category": "design"
+      "category": "design",
+      "width": 960,
+      "height": 768,
+      "long_edge_px": 960,
+      "is_large_original_candidate": false,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-SIT.png",
-      "category": "design"
+      "category": "design",
+      "width": 960,
+      "height": 768,
+      "long_edge_px": 960,
+      "is_large_original_candidate": false,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-SITH.png",
-      "category": "design"
+      "category": "design",
+      "width": 960,
+      "height": 768,
+      "long_edge_px": 960,
+      "is_large_original_candidate": false,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-SRN.png",
-      "category": "design"
+      "category": "design",
+      "width": 960,
+      "height": 768,
+      "long_edge_px": 960,
+      "is_large_original_candidate": false,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/arts/fullpower/arts_destinyFoxRec-2022-recruit.png",
-      "category": "design_alt"
+      "category": "design_alt",
+      "width": 1180,
+      "height": 663,
+      "long_edge_px": 1180,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/arts/regular/art_imgDFR-SRN-meowsday2022.png",
-      "category": "design_alt"
+      "category": "design_alt",
+      "width": 820,
+      "height": 1180,
+      "long_edge_px": 1180,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/arts/regular/arts_destinyFoxRec-2021-graduateA.png",
-      "category": "design_alt"
+      "category": "design_alt",
+      "width": 1180,
+      "height": 663,
+      "long_edge_px": 1180,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/arts/regular/arts_destinyFoxRec-2021-graduateB.png",
-      "category": "design_alt"
+      "category": "design_alt",
+      "width": 1180,
+      "height": 663,
+      "long_edge_px": 1180,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/arts/regular/arts_destinyFoxRec-2021-valentine.png",
-      "category": "design_alt"
+      "category": "design_alt",
+      "width": 1180,
+      "height": 663,
+      "long_edge_px": 1180,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/arts/regular/arts_destinyFoxRec-2023-graduate.png",
-      "category": "design_alt"
+      "category": "design_alt",
+      "width": 1180,
+      "height": 820,
+      "long_edge_px": 1180,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/arts/weakening/arts_destinyFoxRec-2021-0031.png",
-      "category": "design_alt"
+      "category": "design_alt",
+      "width": 1180,
+      "height": 663,
+      "long_edge_px": 1180,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/chattingArt/chart_imgDFR-SII-regularIllness.png",
-      "category": "design_alt"
+      "category": "design_alt",
+      "width": null,
+      "height": null,
+      "long_edge_px": null,
+      "is_large_original_candidate": false,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/design_imgDFR-RVN-1.png",
-      "category": "design_alt"
+      "category": "design_alt",
+      "width": 1920,
+      "height": 1080,
+      "long_edge_px": 1920,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/dsgn_imgDFR-SRN.png",
-      "category": "design_alt"
+      "category": "design_alt",
+      "width": 1180,
+      "height": 663,
+      "long_edge_px": 1180,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/weakening/emstk_weakeningDFR-RVN-1.png",
-      "category": "weakening"
+      "category": "weakening",
+      "width": 519,
+      "height": 402,
+      "long_edge_px": 519,
+      "is_large_original_candidate": false,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/weakening/emstk_weakeningDFR-RVN-2.png",
-      "category": "weakening"
+      "category": "weakening",
+      "width": 519,
+      "height": 402,
+      "long_edge_px": 519,
+      "is_large_original_candidate": false,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_DestinyFoxRecords/Images/DB_Proxy/arts/birthday/arts_birthday2023.png",
-      "category": "arts"
+      "category": "arts",
+      "width": 1180,
+      "height": 820,
+      "long_edge_px": 1180,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_DestinyFoxRecords/Images/DB_Proxy/arts/birthday/arts_birthday2024.png",
-      "category": "arts"
+      "category": "arts",
+      "width": 1180,
+      "height": 884,
+      "long_edge_px": 1180,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_DestinyFoxRecords/Images/DB_Proxy/arts/birthday/arts_birthday2025-1.png",
-      "category": "arts"
+      "category": "arts",
+      "width": 1180,
+      "height": 786,
+      "long_edge_px": 1180,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_DestinyFoxRecords/Images/DB_Proxy/arts/birthday/arts_birthday2025-2.png",
-      "category": "arts"
+      "category": "arts",
+      "width": 1180,
+      "height": 786,
+      "long_edge_px": 1180,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_DestinyFoxRecords/Images/DB_Proxy/arts/birthday/arts_birthday2026.png",
-      "category": "arts"
+      "category": "arts",
+      "width": 1180,
+      "height": 663,
+      "long_edge_px": 1180,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_DestinyFoxRecords/Images/DB_Proxy/arts/chattingArt/chart_imgDFR-G3-orbify.png",
-      "category": "arts"
+      "category": "arts",
+      "width": null,
+      "height": null,
+      "long_edge_px": null,
+      "is_large_original_candidate": false,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_DestinyFoxRecords/Images/DB_Proxy/arts/chattingArt/chart_imgDFR-G3-regularTooManyTasks.png",
-      "category": "arts"
+      "category": "arts",
+      "width": null,
+      "height": null,
+      "long_edge_px": null,
+      "is_large_original_candidate": false,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_DestinyFoxRecords/Images/DB_Proxy/arts/fullpower/arts_fullpowerDFR-G2-fullpowerEngage.png",
-      "category": "arts"
+      "category": "arts",
+      "width": 1180,
+      "height": 834,
+      "long_edge_px": 1180,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_DestinyFoxRecords/Images/DB_Proxy/design/dsgn_imgDFR-G2.png",
-      "category": "design"
+      "category": "design",
+      "width": 1920,
+      "height": 1080,
+      "long_edge_px": 1920,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_DestinyFoxRecords/Images/DB_Proxy/design/dsgn_imgDFR-G3.png",
-      "category": "design"
+      "category": "design",
+      "width": 1920,
+      "height": 1080,
+      "long_edge_px": 1920,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_DestinyFoxRecords/Images/DB_Proxy/designAlt/dsgn_imgDFR-G3-onCostume.png",
-      "category": "design_alt"
+      "category": "design_alt",
+      "width": 1920,
+      "height": 1080,
+      "long_edge_px": 1920,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_DestinyFoxRecords/Images/DB_Proxy/weakening/emstk_weakeningDFR-G2-1.png",
-      "category": "weakening"
+      "category": "weakening",
+      "width": 373,
+      "height": 464,
+      "long_edge_px": 464,
+      "is_large_original_candidate": false,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_DestinyFoxRecords/Images/DB_Proxy/weakening/emstk_weakeningDFR-G3-1.png",
-      "category": "weakening"
+      "category": "weakening",
+      "width": 460,
+      "height": 404,
+      "long_edge_px": 460,
+      "is_large_original_candidate": false,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_DestinyFoxRecords/Images/DB_Proxy/weakening/emstk_weakeningDFR-G3-2.png",
-      "category": "weakening"
+      "category": "weakening",
+      "width": 460,
+      "height": 404,
+      "long_edge_px": 460,
+      "is_large_original_candidate": false,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_DestinyFoxRecords/Images/General/ArchFaith.png",
-      "category": null
+      "category": null,
+      "width": 1280,
+      "height": 800,
+      "long_edge_px": 1280,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_DestinyFoxRecords/Images/General/design_imgPh9.png",
-      "category": null
+      "category": null,
+      "width": 1920,
+      "height": 1080,
+      "long_edge_px": 1920,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     }
   ]
 }

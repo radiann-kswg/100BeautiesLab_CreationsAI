@@ -122,7 +122,7 @@ git clone --recurse-submodules https://github.com/<your-account>/100BeautiesLab_
 | `ai-dataset/manifest.jsonl`          | LLM の学習・RAG 用 JSONL（1行1レコード、`ai_training` フラグ付き）           |
 | `ai-dataset/policy.json`             | AI 学習利用ポリシーの機械可読サマリ                                          |
 | `ai-dataset/index.json`              | 全作品・全キャラクターの一覧インデックス（`ai_training` 付き）               |
-| `ai-dataset/image-index.json`        | 全画像の相対パス一覧（`{ path, category }` 形式、`creations-db/` 基点、`ai_training` 付き） |
+| `ai-dataset/image-index.json`        | 全画像の一覧（`{ path, category, 解像度メタ }` 形式、`creations-db/` 基点、`ai_training` 付き） |
 | `ai-dataset/works/<WorkDir>.json`    | 作品別フラットデータ（`ai_training` 付き）                                   |
 
 ### 画像ファイルへのアクセス
@@ -135,13 +135,20 @@ import json, os
 with open("ai-dataset/image-index.json") as f:
     idx = json.load(f)
 
-# 例: ナンバーテールズの全画像パス
-# 各要素は { "path": ..., "category": ... }。category は格納フォルダ由来の画像種別
-# (concept / corefolder / humanoid / arts / catalog / tails_unit 等) で、判定できない場合は None。
+# 例: ナンバーテールズの全画像
+# 各要素は { "path", "category", "width", "height", "long_edge_px",
+#            "is_large_original_candidate", "language_variant", "is_language_variant" }。
+# category は格納フォルダ由来の画像種別 (concept / corefolder / arts / catalog / tails_unit 等)、
+# 判定できない場合は None。ファイル名やパス断片から種別・解像度を推定する必要はありません。
 for entry in idx["works"]["#Works_NumberTales"]["images"]:
     full_path = os.path.join("creations-db", entry["path"])
     if entry["category"] == "corefolder":
         pass  # full_path を画像ローダーに渡す
+
+# 例: 高解像度の参照画像だけを拾う（長辺 1024px 以上）
+for entry in idx["works"]["#Works_NumberTales"]["images"]:
+    if entry["is_large_original_candidate"] and entry["category"] in {"catalog", "arts", "concept"}:
+        print(entry["category"], entry["long_edge_px"], entry["path"])
 ```
 
 ### JSONL の読み込み例
@@ -155,10 +162,14 @@ with open("ai-dataset/manifest-training.jsonl") as f:
         record = json.loads(line)
         if record["_type"] == "character":
             print(record["work_title_ja"], record["id"])
-            hints = record.get("ai_hints")    # = data.AIHints と同一
+            hints = record.get("ai_hints")    # 原則 data.AIHints と同一（source）
             if hints:
                 corefolder = hints["forms"].get("corefolder", {})
                 print("prompt:", corefolder.get("prompt_export"))
+            # "source" = 上流が整備した AIHints / "derived" = 参照画像中心の最小 scaffold（本データセット生成物）
+            print("ai_hints_source:", record.get("ai_hints_source"))
+            # ローカル相対パスの参照画像まとめ（オフライン処理向け）
+            print("preferred refs:", record.get("preferred_reference_images"))
 
 # manifest.jsonl を直接使う場合は ai_training.allowed でフィルタを忘れずに
 with open("ai-dataset/manifest.jsonl") as f:

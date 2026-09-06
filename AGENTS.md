@@ -229,14 +229,25 @@ node scripts/build-dataset.js --verbose
 - **未解決は黙って落とさずログに出す**（ロールプレイプロンプトと同じ流儀）。ビルド末尾で「解決 N 件 / 未解決 M 件」をフィールド別内訳付きで報告し、`--verbose` で 1 件ずつ列挙する。件数は `build-info.json` の `image_ref_stats` にも載る。
 - `scripts/validate-dataset.js` は**載せたパスが実在すること**と統計の一致を検証する。「未解決 0 件」は検証しない（上流側のファイル未配置など、こちらで直せない要因が混ざるため）。最新の未解決件数は `build-info.json` の `image_ref_stats.unresolved` を参照すること。
 
-#### `image-index.json` の `category`（2026-09-06 追加）
+#### `image-index.json` のエントリ形式（2026-09-06 追加・Issue #1 依頼3）
 
-`image-index.json` の `works.<Key>.images` / `.references` / `general_images`、および `works/<Work>.json` の `image_paths` は `{ path, category }` のオブジェクト配列（旧形式は文字列配列）。
+`image-index.json` の `works.<Key>.images` / `.references` / `general_images`、および `works/<Work>.json` の `image_paths` は `{ path, category, width, height, long_edge_px, is_large_original_candidate, language_variant, is_language_variant }` のオブジェクト配列（旧形式は文字列配列）。生成は `scripts/lib/dataset-helpers.js` の `buildImageEntries()`。
 
-- **`category` は `IMAGE_FIELDS` の `out` 名と同じ語彙**を、`Images/DB_<Db>/<folder>/` の格納フォルダから逆引きして埋める（`categorizeImages()`）。消費側（GeneratorsAI）が `emstk_` 接頭辞や `/catalog/` といったパス名ヒューリスティックで種別を推定しなくて済むようにするのが目的。
+- **`category` は `IMAGE_FIELDS` の `out` 名と同じ語彙**を、`Images/DB_<Db>/<folder>/` の格納フォルダから逆引きして埋める。消費側（GeneratorsAI）が `emstk_` 接頭辞や `/catalog/`・`/_lang_` といったパス名ヒューリスティックで種別を推定しなくて済むようにするのが目的。対応表は `build-dataset.js` の `IMAGE_FOLDER_TO_CATEGORY`（`IMAGE_FIELDS` から導出）で、ヘルパーには引数で渡す。**判定知識を `dataset-helpers.js` 側へ複製しないこと**（`IMAGE_FIELDS` が正典という原則が崩れる）。
 - **既知フォルダに一致しないものは推測で埋めず `null`**（`attr/numberMark` 等の属性画像、`References/` `GeneralImages/` 配下）。ここを「それらしいカテゴリ」で埋めると、パス名ヒューリスティックをこちら側へ移設しただけになる。
 - 尻尾ユニットだけは `IMAGE_FIELDS` ではなく `attr/tailsUnit` 固定パスで解決されるため、`IMAGE_FOLDER_TO_CATEGORY` に個別エントリを持つ。これが無いとレコード側で `images.tails_unit` に載る同じ画像が image-index では `null` になる。
-- `category` は格納フォルダを表すだけで **AI 学習の可否とは無関係**。画像単位の可否は従来どおり `manifest.jsonl` の各レコードの `images` と `ai_training` で判断する。
+- **解像度は PNG の IHDR 24 バイトだけを読んで実測する**（`readPngDimensions()`）。9000px のカタログ図があるためファイル全体をメモリへ載せない。PNG 以外・読めない場合は `null`。`is_large_original_candidate` は `long_edge_px >= 1024`（Issue #1 依頼2 の最低要件）。
+- `category` も解像度も **AI 学習の可否とは無関係**。画像単位の可否は従来どおり `manifest.jsonl` の各レコードの `images` と `ai_training` で判断する。
+
+#### AIHints の `source` / `derived`（2026-09-06 追加・Issue #1 依頼1）
+
+`ai_hints` は上流の `data.AIHints`（**source**）を最優先し、それが無い場合に限り **NumberTales の `allowed` レコード**へ参照画像中心の最小 scaffold（**derived**）を補う（`buildDerivedAiHints()`）。原レコード `data` は変更しない。
+
+- **生成物であることは `ai_hints_source`（`"source"` / `"derived"` / `null`）で必ず判別できるようにする。** `has_ai_hints` だけを見ると上流の整備状況と生成物が混ざる。
+- **derived が作ってよいのは「上流データから機械的に導ける事実」だけ** — `Num` のマーキング、`ColorPalette` の配色、実在する画像パス、そして形態そのものの構造制約（コアフォルダに腕・脚を生やさない等）。**キャラクター設定・台詞・性格・関係性といった創作内容は決して生成しない**（禁止事項）。
+- **対象範囲を広げないこと。** 不許可レコードや他作品へ derived が付くと、合成物が上流データと見分けられないまま配布される。`scripts/validate-dataset.js` がこの境界（NumberTales かつ `allowed`）と `build-info.json` の `with_curated_ai_hints` / `with_derived_ai_hints` の一致を検証する。
+- 上流が AIHints を seed すれば derived は自動的に減る（2026-09-06 の上流 seed で 22 件 → 4 件）。**derived はあくまで上流整備までの繋ぎ**であり、恒久的な供給源ではない。
+- `preferred_reference_images` は derived とは独立で、全レコードに付く。`source` の `reference_images` が公開 URL 中心なのに対し、こちらはサブモジュール基点のローカル相対パスなのでオフライン処理・高解像度優先の選択に使える。
 
 ### ロールプレイプロンプト（`RoleplayPrompts/`）の取り込み（2026-07-19 addon-ai-tag 追加）
 

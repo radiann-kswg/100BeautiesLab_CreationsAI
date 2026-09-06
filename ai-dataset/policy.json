@@ -37,11 +37,16 @@
       "reason": "string — allowed の判定理由（整備中/整備済等）"
     },
     "ai_hints_field": {
+      "source": "トップレベル ai_hints は上流の data.AIHints (source) を最優先し、source に無い NumberTales の allowed レコードに限り 参照画像中心の最小 scaffold (derived) を補う。原レコード data は変更しない。 ai_hints_source で \"source\" / \"derived\" / null を判別できる。derived の中身は上流データから機械的に導ける事実 (Num・ColorPalette・実在する画像パス) と形態そのものの構造制約に限り、創作内容は生成しない。",
       "common": "形態を問わない素体特徴 (identity_tags / palette_priority / natural_language_description / immutable_traits 等)",
       "forms": "形態別 (corefolder / humanoid) の outfit_features / silhouette_notes / immutable_constraints / negative_keywords / ai_tags / prompt_export / negative_prompt_export / reference_images / natural_language_description",
       "forms_silhouette_notes": "silhouette_notes は 2026-06-09 以降 { body_description: string[], attached_items: string[] } 形式 (旧 #String[] 形式とも互換)。本体素体と装着付属品を分離して保持する。",
       "work_common": "作品共通の参照画像まとめ (reference_images.corefolder_reference[] / humanoid_reference[]) — 2026-06-08 追加",
       "alt_modes": "将来予約モード格納 (corefolder_dressed.allowed / outfit_source) — 2026-06-08 追加"
+    },
+    "preferred_reference_images_field": {
+      "description": "preferred_reference_images: ローカル利用向けの参照画像パスまとめ。category と解像度の優先順で main を選びつつ、 corefolder / humanoid の直接参照も残す。パスは creations-db サブモジュールルート基点。",
+      "consumer_guidance": "source AIHints の reference_images は公開 URL が中心だが、こちらはローカル相対パスなので オフライン処理・高解像度優先の選択に使える。"
     },
     "appearance_detail_field": {
       "description": "AppearanceDetail: 外見デザイン詳細の構造化データ ($Def_AppearanceDetail[]|#Null)。Formation / BodyPart / Laterality / DesignElement / Attrs / img_PNGName / Note_JP / Note_EN の各フィールドを持つオブジェクト配列。将来的に AIHints.forms.*.silhouette_notes の自然言語記述の源泉データとして統合予定。",
@@ -73,9 +78,11 @@
       "note": "パスは creations-db サブモジュールルートからの相対パス。ファイルが実在しない場合はキー自体が省略される。 解決できなかった宣言の件数は build-info.json の image_ref_stats.unresolved で確認できる。"
     },
     "image_index_field": {
-      "description": "image-index.json の works.<WorkKey>.images / .references と general_images、および works/<Work>.json の image_paths は { path, category } のオブジェクト配列 (2026-09-06 追加。旧形式は文字列配列)。 path は creations-db サブモジュールルートからの相対パス。",
-      "category": "string|null — 画像の種別。値は images_field のキー (concept / concept_alt / corefolder / humanoid / arts / design_alt / design / catalog / card_design / new_year / weakening / keycapper) と同じ語彙で、 data/Works_<Name>/Images/DB_<Db>/<folder>/ の格納フォルダから導出する。 既知フォルダに一致しないもの (charId 直下スキャンの画像、References / GeneralImages 配下等) は推測で埋めず null。",
-      "consumer_guidance": "ファイル名の接頭辞 (emstk_ 等) やパス断片 (/catalog/ 等) から種別を推定せず、この category を参照してください。 category は「どのフォルダに格納されているか」だけを表し、AI 学習の可否とは無関係です。 画像単位の可否は manifest.jsonl の各レコードの images と ai_training で判断してください。"
+      "description": "image-index.json の works.<WorkKey>.images / .references と general_images、および works/<Work>.json の image_paths は { path, category, width, height, long_edge_px, is_large_original_candidate, language_variant, is_language_variant } のオブジェクト配列 (2026-09-06 追加。旧形式は文字列配列)。path は creations-db サブモジュールルートからの相対パス。",
+      "category": "string|null — 画像の種別。値は images_field のキー (concept / concept_alt / corefolder / humanoid / arts / design_alt / design / catalog / card_design / new_year / weakening / keycapper / tails_unit) と同じ語彙で、 data/Works_<Name>/Images/DB_<Db>/<folder>/ の格納フォルダから導出する。 既知フォルダに一致しないもの (attr/* の属性画像、charId 直下スキャンの画像、References / GeneralImages 配下等) は推測で埋めず null。",
+      "resolution": "width / height / long_edge_px — PNG の IHDR 実測値 (PNG 以外・読めない場合は null)。 is_large_original_candidate は long_edge_px >= 1024 (原寸相当とみなす最低要件)。 現状 corefolder (emstk 系) は Web 用縮小版が中心で長辺中央値 480px 前後、concept / arts / catalog は原寸相当。",
+      "language_variant": "language_variant / is_language_variant — _lang_EN のようなディレクトリ規約から抽出した言語変種コード。該当しなければ null / false。",
+      "consumer_guidance": "ファイル名の接頭辞 (emstk_ 等) やパス断片 (/catalog/・/_lang_ 等) から種別・解像度を推定せず、これらのフィールドを参照してください。 高解像度の参照画像が要るときは is_large_original_candidate または long_edge_px で絞り込めます。 category は「どのフォルダに格納されているか」だけを表し、AI 学習の可否とは無関係です。 画像単位の可否は manifest.jsonl の各レコードの images と ai_training で判断してください。"
     }
   }
 }

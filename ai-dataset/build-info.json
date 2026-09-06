@@ -13,10 +13,12 @@
     "disallowed_characters": 441
   },
   "ai_hints_stats": {
-    "with_ai_hints": 110,
+    "with_ai_hints": 114,
+    "with_curated_ai_hints": 110,
+    "with_derived_ai_hints": 4,
     "with_silhouette_notes": 110,
-    "with_immutable_constraints": 110,
-    "with_negative_keywords": 110,
+    "with_immutable_constraints": 114,
+    "with_negative_keywords": 114,
     "with_work_common": 92,
     "with_concept_forms_metadata": 91
   },

@@ -86,11 +86,23 @@
   "image_paths": [
     {
       "path": "data/Works_PastDivers/Images/DB_Primary/concept/cnsp_imgPDV-3G3.png",
-      "category": "concept"
+      "category": "concept",
+      "width": 1180,
+      "height": 820,
+      "long_edge_px": 1180,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_PastDivers/Images/DB_Primary/concept/cnsp_imgPDV-6G3.png",
-      "category": "concept"
+      "category": "concept",
+      "width": 1180,
+      "height": 820,
+      "long_edge_px": 1180,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     }
   ]
 }

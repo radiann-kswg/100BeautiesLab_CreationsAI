@@ -66,47 +66,113 @@
   "image_paths": [
     {
       "path": "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/art_imgSCG-NE,SCG-SW-InfrationAerialSwimming.png",
-      "category": "arts"
+      "category": "arts",
+      "width": 1000,
+      "height": 1400,
+      "long_edge_px": 1400,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/chattingArt/chart_imgSCG-NE-ramen.png",
-      "category": "arts"
+      "category": "arts",
+      "width": 1017,
+      "height": 814,
+      "long_edge_px": 1017,
+      "is_large_original_candidate": false,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/chattingArt/chart_imgSCG-NW.png",
-      "category": "arts"
+      "category": "arts",
+      "width": 1346,
+      "height": 1234,
+      "long_edge_px": 1346,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/chattingArt/chart_imgSCG-SE-checkIntoAlive.png",
-      "category": "arts"
+      "category": "arts",
+      "width": 1026,
+      "height": 824,
+      "long_edge_px": 1026,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/chattingArt/chart_imgSCG-SW-whereBabiesFrom.png",
-      "category": "arts"
+      "category": "arts",
+      "width": 918,
+      "height": 909,
+      "long_edge_px": 918,
+      "is_large_original_candidate": false,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-E.png",
-      "category": "concept"
+      "category": "concept",
+      "width": 1180,
+      "height": 820,
+      "long_edge_px": 1180,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-N.png",
-      "category": "concept"
+      "category": "concept",
+      "width": 1180,
+      "height": 820,
+      "long_edge_px": 1180,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-NE.png",
-      "category": "concept"
+      "category": "concept",
+      "width": 1180,
+      "height": 820,
+      "long_edge_px": 1180,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-NW.png",
-      "category": "concept"
+      "category": "concept",
+      "width": 1180,
+      "height": 820,
+      "long_edge_px": 1180,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-S.png",
-      "category": "concept"
+      "category": "concept",
+      "width": 1180,
+      "height": 820,
+      "long_edge_px": 1180,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-SE.png",
-      "category": "concept"
+      "category": "concept",
+      "width": 1180,
+      "height": 820,
+      "long_edge_px": 1180,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     }
   ]
 }

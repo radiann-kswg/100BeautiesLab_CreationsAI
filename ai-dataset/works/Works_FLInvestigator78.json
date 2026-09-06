@@ -195,59 +195,143 @@
   "image_paths": [
     {
       "path": "data/Works_FLInvestigator78/Images/DB_Primary/arts/arts_imgFLI-D79,FLI-D80.png",
-      "category": "arts"
+      "category": "arts",
+      "width": 1180,
+      "height": 820,
+      "long_edge_px": 1180,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLI-M0.png",
-      "category": "card_design"
+      "category": "card_design",
+      "width": 909,
+      "height": 1653,
+      "long_edge_px": 1653,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLI-M1.png",
-      "category": "card_design"
+      "category": "card_design",
+      "width": 909,
+      "height": 1653,
+      "long_edge_px": 1653,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLI-M13.png",
-      "category": "card_design"
+      "category": "card_design",
+      "width": 909,
+      "height": 1653,
+      "long_edge_px": 1653,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLI-M16.png",
-      "category": "card_design"
+      "category": "card_design",
+      "width": 909,
+      "height": 1653,
+      "long_edge_px": 1653,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLI-M18.png",
-      "category": "card_design"
+      "category": "card_design",
+      "width": 909,
+      "height": 1653,
+      "long_edge_px": 1653,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLI-M3.png",
-      "category": "card_design"
+      "category": "card_design",
+      "width": 909,
+      "height": 1653,
+      "long_edge_px": 1653,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLI-M8.png",
-      "category": "card_design"
+      "category": "card_design",
+      "width": 909,
+      "height": 1653,
+      "long_edge_px": 1653,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLI-M9.png",
-      "category": "card_design"
+      "category": "card_design",
+      "width": 909,
+      "height": 1653,
+      "long_edge_px": 1653,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_FLInvestigator78/Images/DB_Primary/concept/cnsp_imgFLI-M0.png",
-      "category": "concept"
+      "category": "concept",
+      "width": 1180,
+      "height": 820,
+      "long_edge_px": 1180,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_FLInvestigator78/Images/DB_Primary/concept/cnsp_imgFLI-M16.png",
-      "category": "concept"
+      "category": "concept",
+      "width": 1180,
+      "height": 820,
+      "long_edge_px": 1180,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_FLInvestigator78/Images/DB_PrimaryDealer/concept/cnsp_imgFLI-D79,FLI-D80.png",
-      "category": "concept"
+      "category": "concept",
+      "width": 2667,
+      "height": 1667,
+      "long_edge_px": 2667,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_FLInvestigator78/Images/General/pr_officialCard_202504.png",
-      "category": null
+      "category": null,
+      "width": 987,
+      "height": 704,
+      "long_edge_px": 987,
+      "is_large_original_candidate": false,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_FLInvestigator78/Images/General/pr_officialCard_202510.png",
-      "category": null
+      "category": null,
+      "width": 987,
+      "height": 704,
+      "long_edge_px": 987,
+      "is_large_original_candidate": false,
+      "language_variant": null,
+      "is_language_variant": false
     }
   ]
 }

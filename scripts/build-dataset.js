@@ -34,6 +34,11 @@ import {
   getAITrainingPolicy,
   getCharacterAIPolicy,
 } from './lib/policy.js';
+import {
+  buildDerivedAiHints,
+  buildImageEntries,
+  buildPreferredReferenceImages,
+} from './lib/dataset-helpers.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname  = path.dirname(__filename);
@@ -324,6 +329,8 @@ async function main() {
   let totalCharacters = 0;
   let totalAllowedCharacters = 0;
   let totalWithAiHints = 0;
+  let totalWithCuratedAiHints = 0;
+  let totalWithDerivedAiHints = 0;
   let totalWithSilhouetteNotes = 0;
   let totalWithImmutableConstraints = 0;
   let totalWithNegativeKeywords = 0;
@@ -484,13 +491,23 @@ async function main() {
           if (DECLARED_IMAGE_OUT_KEYS.has(imgKey) && Array.isArray(imgVal)) totalResolvedImageRefs += imgVal.length;
         }
 
-        // AIHints を data から取り出してトップレベルにも露出する
-        const aiHints = charData.AIHints ?? null;
-
         // isPrivate / _Secondaries カテゴリ別 AI_Optout / Progress の AI_Unready を考慮して決定
         const charPolicy = getCharacterAIPolicy(dbPolicy, charData, secondaryOptout, progressUnready.values);
         dbTotalRecords++;
         if (charPolicy.allowed) dbAllowedRecords++;
+
+        // AIHints は上流の data.AIHints（source）を最優先し、無い場合に限り NumberTales の
+        // allowed レコードへ参照画像中心の最小 scaffold を補う（derived）。原レコード data は変更しない。
+        // 消費側が「上流が整備したもの」と「こちらの生成物」を取り違えないよう ai_hints_source で必ず区別する。
+        const sourceAiHints = charData.AIHints ?? null;
+        const derivedAiHints = sourceAiHints ? null : buildDerivedAiHints({
+          workKey,
+          charData,
+          images,
+          aiTrainingAllowed: charPolicy.allowed,
+        });
+        const aiHints = sourceAiHints ?? derivedAiHints;
+        const aiHintsSource = sourceAiHints ? 'source' : (derivedAiHints ? 'derived' : null);
 
         // AIHints 新フィールド (2026-06-08 addon-ai-tag) の存在確認
         const aiFormsCorefolder = aiHints?.forms?.corefolder;
@@ -532,6 +549,10 @@ async function main() {
         const roleplayPrompt = resolveRoleplayPrompt(workDir, dbMetaKey, charId);
         if (roleplayPrompt) matchedRoleplayPaths.add(roleplayPrompt.path);
 
+        // source AIHints の reference_images は公開 URL 中心なので、オフライン処理向けに
+        // サブモジュール基点のローカルパスで同じ役割を用意する
+        const preferredReferenceImages = buildPreferredReferenceImages(images);
+
         const charEntry = {
           id: charId,
           work_key: workKey,
@@ -540,6 +561,7 @@ async function main() {
           db_source: dbRelPath,
           ai_training: charPolicy,
           ai_hints: aiHints,
+          ai_hints_source: aiHintsSource,
           has_ai_hints: !!aiHints,
           has_silhouette_notes: hasAnySilhouetteNotes,
           has_immutable_constraints: hasAnyImmutableConstraints,
@@ -548,6 +570,7 @@ async function main() {
           has_concept_forms_metadata: hasConceptFormsMeta,
           has_appearance_detail: hasAppearanceDetail,
           has_tails_unit: hasTailsUnit,
+          preferred_reference_images: preferredReferenceImages,
           has_roleplay_prompt: !!roleplayPrompt,
           roleplay_prompt: roleplayPrompt,
           // 原データを変更せずそのまま参照
@@ -555,10 +578,12 @@ async function main() {
           images,
         };
 
-        workEntry.characters.push({ id: charId, images, has_ai_hints: !!aiHints, has_silhouette_notes: hasAnySilhouetteNotes, has_immutable_constraints: hasAnyImmutableConstraints, has_negative_keywords: hasAnyNegativeKeywords, has_work_common: hasWorkCommonBlock, has_concept_forms_metadata: hasConceptFormsMeta, has_appearance_detail: hasAppearanceDetail, has_tails_unit: hasTailsUnit, has_roleplay_prompt: !!roleplayPrompt, ai_training_allowed: charPolicy.allowed });
+        workEntry.characters.push({ id: charId, images, has_ai_hints: !!aiHints, ai_hints_source: aiHintsSource, has_silhouette_notes: hasAnySilhouetteNotes, has_immutable_constraints: hasAnyImmutableConstraints, has_negative_keywords: hasAnyNegativeKeywords, has_work_common: hasWorkCommonBlock, has_concept_forms_metadata: hasConceptFormsMeta, has_appearance_detail: hasAppearanceDetail, has_tails_unit: hasTailsUnit, has_roleplay_prompt: !!roleplayPrompt, ai_training_allowed: charPolicy.allowed });
         totalCharacters++;
         if (charPolicy.allowed) totalAllowedCharacters++;
         if (aiHints) totalWithAiHints++;
+        if (aiHintsSource === 'source')  totalWithCuratedAiHints++;
+        if (aiHintsSource === 'derived') totalWithDerivedAiHints++;
         if (hasAnySilhouetteNotes)       totalWithSilhouetteNotes++;
         if (hasAnyImmutableConstraints)  totalWithImmutableConstraints++;
         if (hasAnyNegativeKeywords)      totalWithNegativeKeywords++;
@@ -601,7 +626,7 @@ async function main() {
     // 概要のみ提示する。詳細なフィルタリングは manifest-training.jsonl を参照。
     // Works_ImagesDir オーバーライド作品（例: 共通資料 → data/GeneralImages）は画像ルートが workDir/Images でない
     const imagesDir = worksImagesDirOverride ? path.join(DATA_DIR, worksImagesDirOverride) : path.join(workDir, 'Images');
-    const workImages = categorizeImages(collectImages(imagesDir, SUBMODULE));
+    const workImages = toImageEntries(collectImages(imagesDir, SUBMODULE));
     const workHasAllowedDb = allowedDbKeys.length > 0;
     imageIndex.works[workKey] = {
       title_ja: workTopMeta.Title_JP || '',
@@ -626,7 +651,7 @@ async function main() {
 
     // --- References ---
     const refsDir = path.join(workDir, 'References');
-    const refImages = categorizeImages(collectImages(refsDir, SUBMODULE));
+    const refImages = toImageEntries(collectImages(refsDir, SUBMODULE));
     if (refImages.length > 0) {
       imageIndex.works[workKey].references = refImages;
     }
@@ -716,7 +741,7 @@ async function main() {
   // -----------------------------------------------------------------------
 
   const generalImgDir = path.join(DATA_DIR, 'GeneralImages');
-  imageIndex.general_images = categorizeImages(collectImages(generalImgDir, SUBMODULE));
+  imageIndex.general_images = toImageEntries(collectImages(generalImgDir, SUBMODULE));
 
   const dictDir = path.join(DATA_DIR, 'Dictionaries');
   if (fs.existsSync(dictDir)) {
@@ -740,7 +765,7 @@ async function main() {
   }
 
   const topRefsDir = path.join(DATA_DIR, 'References');
-  const topRefImages = categorizeImages(collectImages(topRefsDir, SUBMODULE));
+  const topRefImages = toImageEntries(collectImages(topRefsDir, SUBMODULE));
   if (topRefImages.length > 0) {
     imageIndex.general_images = imageIndex.general_images.concat(topRefImages);
   }
@@ -765,11 +790,21 @@ async function main() {
         reason:  'string — allowed の判定理由（整備中/整備済等）',
       },
       ai_hints_field: {
+        source: 'トップレベル ai_hints は上流の data.AIHints (source) を最優先し、source に無い NumberTales の allowed レコードに限り'
+          + ' 参照画像中心の最小 scaffold (derived) を補う。原レコード data は変更しない。'
+          + ' ai_hints_source で "source" / "derived" / null を判別できる。derived の中身は上流データから機械的に導ける事実'
+          + ' (Num・ColorPalette・実在する画像パス) と形態そのものの構造制約に限り、創作内容は生成しない。',
         common: '形態を問わない素体特徴 (identity_tags / palette_priority / natural_language_description / immutable_traits 等)',
         forms:  '形態別 (corefolder / humanoid) の outfit_features / silhouette_notes / immutable_constraints / negative_keywords / ai_tags / prompt_export / negative_prompt_export / reference_images / natural_language_description',
         forms_silhouette_notes: 'silhouette_notes は 2026-06-09 以降 { body_description: string[], attached_items: string[] } 形式 (旧 #String[] 形式とも互換)。本体素体と装着付属品を分離して保持する。',
         work_common: '作品共通の参照画像まとめ (reference_images.corefolder_reference[] / humanoid_reference[]) — 2026-06-08 追加',
         alt_modes:   '将来予約モード格納 (corefolder_dressed.allowed / outfit_source) — 2026-06-08 追加',
+      },
+      preferred_reference_images_field: {
+        description: 'preferred_reference_images: ローカル利用向けの参照画像パスまとめ。category と解像度の優先順で main を選びつつ、'
+          + ' corefolder / humanoid の直接参照も残す。パスは creations-db サブモジュールルート基点。',
+        consumer_guidance: 'source AIHints の reference_images は公開 URL が中心だが、こちらはローカル相対パスなので'
+          + ' オフライン処理・高解像度優先の選択に使える。',
       },
       appearance_detail_field: {
         description: 'AppearanceDetail: 外見デザイン詳細の構造化データ ($Def_AppearanceDetail[]|#Null)。Formation / BodyPart / Laterality / DesignElement / Attrs / img_PNGName / Note_JP / Note_EN の各フィールドを持つオブジェクト配列。将来的に AIHints.forms.*.silhouette_notes の自然言語記述の源泉データとして統合予定。',
@@ -803,13 +838,18 @@ async function main() {
       },
       image_index_field: {
         description: 'image-index.json の works.<WorkKey>.images / .references と general_images、および works/<Work>.json の image_paths は'
-          + ' { path, category } のオブジェクト配列 (2026-09-06 追加。旧形式は文字列配列)。'
-          + ' path は creations-db サブモジュールルートからの相対パス。',
+          + ' { path, category, width, height, long_edge_px, is_large_original_candidate, language_variant, is_language_variant }'
+          + ' のオブジェクト配列 (2026-09-06 追加。旧形式は文字列配列)。path は creations-db サブモジュールルートからの相対パス。',
         category: 'string|null — 画像の種別。値は images_field のキー (concept / concept_alt / corefolder / humanoid / arts /'
-          + ' design_alt / design / catalog / card_design / new_year / weakening / keycapper) と同じ語彙で、'
+          + ' design_alt / design / catalog / card_design / new_year / weakening / keycapper / tails_unit) と同じ語彙で、'
           + ' data/Works_<Name>/Images/DB_<Db>/<folder>/ の格納フォルダから導出する。'
-          + ' 既知フォルダに一致しないもの (charId 直下スキャンの画像、References / GeneralImages 配下等) は推測で埋めず null。',
-        consumer_guidance: 'ファイル名の接頭辞 (emstk_ 等) やパス断片 (/catalog/ 等) から種別を推定せず、この category を参照してください。'
+          + ' 既知フォルダに一致しないもの (attr/* の属性画像、charId 直下スキャンの画像、References / GeneralImages 配下等) は推測で埋めず null。',
+        resolution: 'width / height / long_edge_px — PNG の IHDR 実測値 (PNG 以外・読めない場合は null)。'
+          + ' is_large_original_candidate は long_edge_px >= 1024 (原寸相当とみなす最低要件)。'
+          + ' 現状 corefolder (emstk 系) は Web 用縮小版が中心で長辺中央値 480px 前後、concept / arts / catalog は原寸相当。',
+        language_variant: 'language_variant / is_language_variant — _lang_EN のようなディレクトリ規約から抽出した言語変種コード。該当しなければ null / false。',
+        consumer_guidance: 'ファイル名の接頭辞 (emstk_ 等) やパス断片 (/catalog/・/_lang_ 等) から種別・解像度を推定せず、これらのフィールドを参照してください。'
+          + ' 高解像度の参照画像が要るときは is_large_original_candidate または long_edge_px で絞り込めます。'
           + ' category は「どのフォルダに格納されているか」だけを表し、AI 学習の可否とは無関係です。'
           + ' 画像単位の可否は manifest.jsonl の各レコードの images と ai_training で判断してください。',
       },
@@ -847,6 +887,8 @@ async function main() {
     ai_training_stats: aiTrainingStats,
     ai_hints_stats: {
       with_ai_hints:              totalWithAiHints,
+      with_curated_ai_hints:      totalWithCuratedAiHints,
+      with_derived_ai_hints:      totalWithDerivedAiHints,
       with_silhouette_notes:      totalWithSilhouetteNotes,
       with_immutable_constraints: totalWithImmutableConstraints,
       with_negative_keywords:     totalWithNegativeKeywords,
@@ -953,26 +995,11 @@ const IMAGE_FOLDER_TO_CATEGORY = {
 };
 
 /**
- * ディレクトリ走査で集めたフラットな画像パス配列を `{ path, category }` 形式へ変換する。
- *
- * category はレコード側 images.* のキー（IMAGE_FIELDS の out）と同じ語彙を使う。消費側が
- * `emstk_` 接頭辞や `/catalog/` のパス名ヒューリスティックで種別を推定しなくて済むようにするのが目的。
- * 既知フォルダに一致しないもの（charId 直下スキャンの画像等）は推測で埋めず null のままにする。
- * @param {string[]} paths サブモジュールルート基点の相対パス（forward-slash 区切り）
+ * ディレクトリ走査で集めたフラットな画像パス配列を image-index 用のエントリ
+ * （`{ path, category, width, height, long_edge_px, ... }`）へ変換する。
+ * category の語彙はレコード側 images.* のキー（IMAGE_FIELDS の out）と同じものを使う。
  */
-function categorizeImages(paths) {
-  return paths.map(p => {
-    const segments = p.split('/');
-    const imagesIdx = segments.indexOf('Images');
-    if (imagesIdx === -1) return { path: p, category: null };
-    // data/Works_<Name>/Images/DB_<Db>/<folder>/... の <folder>。
-    // attr/tailsUnit のように 2 階層で 1 カテゴリを成すものがあるため、深い方から引く。
-    const category = IMAGE_FOLDER_TO_CATEGORY[segments.slice(imagesIdx + 2, imagesIdx + 4).join('/')]
-      ?? IMAGE_FOLDER_TO_CATEGORY[segments[imagesIdx + 2]]
-      ?? null;
-    return { path: p, category };
-  });
-}
+const toImageEntries = (paths) => buildImageEntries(paths, SUBMODULE, IMAGE_FOLDER_TO_CATEGORY);
 
 // 宣言フィールド由来の出力キー（charId ディレクトリスキャン結果と区別して解決数を数えるため）
 const DECLARED_IMAGE_OUT_KEYS = new Set([...IMAGE_FIELDS.map(f => f.out), 'tails_unit']);

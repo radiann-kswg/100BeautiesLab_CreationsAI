@@ -122,23 +122,53 @@
   "image_paths": [
     {
       "path": "data/Works_UnibyteLive/Images/DB_Primary/attr/accessoryUnit/attr_accessoryUnitUBL-Lg1-monocle.png",
-      "category": null
+      "category": null,
+      "width": 224,
+      "height": 321,
+      "long_edge_px": 321,
+      "is_large_original_candidate": false,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_UnibyteLive/Images/DB_Primary/keycapper/I/emstk_keycapperUBL-Ig2-1.png",
-      "category": "keycapper"
+      "category": "keycapper",
+      "width": 382,
+      "height": 490,
+      "long_edge_px": 490,
+      "is_large_original_candidate": false,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_UnibyteLive/Images/DB_Primary/keycapper/L/emstk_keycapperUBL-Lg1-1.png",
-      "category": "keycapper"
+      "category": "keycapper",
+      "width": 567,
+      "height": 406,
+      "long_edge_px": 567,
+      "is_large_original_candidate": false,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_UnibyteLive/Images/DB_Primary/keycapper/S/emstk_keycapperUBL-Sg2-1.png",
-      "category": "keycapper"
+      "category": "keycapper",
+      "width": 452,
+      "height": 430,
+      "long_edge_px": 452,
+      "is_large_original_candidate": false,
+      "language_variant": null,
+      "is_language_variant": false
     },
     {
       "path": "data/Works_UnibyteLive/Images/DB_Primary/keycapper/Z/emstk_keycapperUBL-Zg1-1.png",
-      "category": "keycapper"
+      "category": "keycapper",
+      "width": 443,
+      "height": 462,
+      "long_edge_px": 462,
+      "is_large_original_candidate": false,
+      "language_variant": null,
+      "is_language_variant": false
     }
   ]
 }
