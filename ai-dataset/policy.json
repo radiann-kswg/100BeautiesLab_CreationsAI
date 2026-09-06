@@ -71,6 +71,11 @@
       "weakening": "弱体化・消耗状態のイラスト (weakening_PNGPath[] 由来、<DB>/weakening/{path}) — 2026-08-02 追加",
       "keycapper": "キーキャップ形態のイラスト (keycapper_PNGPath[] 由来、<DB>/keycapper/{path}) — 2026-08-02 追加",
       "note": "パスは creations-db サブモジュールルートからの相対パス。ファイルが実在しない場合はキー自体が省略される。 解決できなかった宣言の件数は build-info.json の image_ref_stats.unresolved で確認できる。"
+    },
+    "image_index_field": {
+      "description": "image-index.json の works.<WorkKey>.images / .references と general_images、および works/<Work>.json の image_paths は { path, category } のオブジェクト配列 (2026-09-06 追加。旧形式は文字列配列)。 path は creations-db サブモジュールルートからの相対パス。",
+      "category": "string|null — 画像の種別。値は images_field のキー (concept / concept_alt / corefolder / humanoid / arts / design_alt / design / catalog / card_design / new_year / weakening / keycapper) と同じ語彙で、 data/Works_<Name>/Images/DB_<Db>/<folder>/ の格納フォルダから導出する。 既知フォルダに一致しないもの (charId 直下スキャンの画像、References / GeneralImages 配下等) は推測で埋めず null。",
+      "consumer_guidance": "ファイル名の接頭辞 (emstk_ 等) やパス断片 (/catalog/ 等) から種別を推定せず、この category を参照してください。 category は「どのフォルダに格納されているか」だけを表し、AI 学習の可否とは無関係です。 画像単位の可否は manifest.jsonl の各レコードの images と ai_training で判断してください。"
     }
   }
 }

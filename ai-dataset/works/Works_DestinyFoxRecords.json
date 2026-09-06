@@ -77,47 +77,173 @@
   "character_ids_with_tails_unit": [],
   "character_ids_with_roleplay_prompt": [],
   "image_paths": [
-    "data/Works_DestinyFoxRecords/Images/DB_Primary/arts/regular/arts_snsicnDFR-RQN.png",
-    "data/Works_DestinyFoxRecords/Images/DB_Primary/concept/cnsp_imgDFR-SIL.png",
-    "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-RN2.png",
-    "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-RQN.png",
-    "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-RTN.png",
-    "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-RVN.png",
-    "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-SII.png",
-    "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-SIJ.png",
-    "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-SIL.png",
-    "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-SIM.png",
-    "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-SIN.png",
-    "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-SIT.png",
-    "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-SITH.png",
-    "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-SRN.png",
-    "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/arts/fullpower/arts_destinyFoxRec-2022-recruit.png",
-    "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/arts/regular/art_imgDFR-SRN-meowsday2022.png",
-    "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/arts/regular/arts_destinyFoxRec-2021-graduateA.png",
-    "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/arts/regular/arts_destinyFoxRec-2021-graduateB.png",
-    "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/arts/regular/arts_destinyFoxRec-2021-valentine.png",
-    "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/arts/regular/arts_destinyFoxRec-2023-graduate.png",
-    "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/arts/weakening/arts_destinyFoxRec-2021-0031.png",
-    "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/chattingArt/chart_imgDFR-SII-regularIllness.png",
-    "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/design_imgDFR-RVN-1.png",
-    "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/dsgn_imgDFR-SRN.png",
-    "data/Works_DestinyFoxRecords/Images/DB_Primary/weakening/emstk_weakeningDFR-RVN-1.png",
-    "data/Works_DestinyFoxRecords/Images/DB_Primary/weakening/emstk_weakeningDFR-RVN-2.png",
-    "data/Works_DestinyFoxRecords/Images/DB_Proxy/arts/birthday/arts_birthday2023.png",
-    "data/Works_DestinyFoxRecords/Images/DB_Proxy/arts/birthday/arts_birthday2024.png",
-    "data/Works_DestinyFoxRecords/Images/DB_Proxy/arts/birthday/arts_birthday2025-1.png",
-    "data/Works_DestinyFoxRecords/Images/DB_Proxy/arts/birthday/arts_birthday2025-2.png",
-    "data/Works_DestinyFoxRecords/Images/DB_Proxy/arts/birthday/arts_birthday2026.png",
-    "data/Works_DestinyFoxRecords/Images/DB_Proxy/arts/chattingArt/chart_imgDFR-G3-orbify.png",
-    "data/Works_DestinyFoxRecords/Images/DB_Proxy/arts/chattingArt/chart_imgDFR-G3-regularTooManyTasks.png",
-    "data/Works_DestinyFoxRecords/Images/DB_Proxy/arts/fullpower/arts_fullpowerDFR-G2-fullpowerEngage.png",
-    "data/Works_DestinyFoxRecords/Images/DB_Proxy/design/dsgn_imgDFR-G2.png",
-    "data/Works_DestinyFoxRecords/Images/DB_Proxy/design/dsgn_imgDFR-G3.png",
-    "data/Works_DestinyFoxRecords/Images/DB_Proxy/designAlt/dsgn_imgDFR-G3-onCostume.png",
-    "data/Works_DestinyFoxRecords/Images/DB_Proxy/weakening/emstk_weakeningDFR-G2-1.png",
-    "data/Works_DestinyFoxRecords/Images/DB_Proxy/weakening/emstk_weakeningDFR-G3-1.png",
-    "data/Works_DestinyFoxRecords/Images/DB_Proxy/weakening/emstk_weakeningDFR-G3-2.png",
-    "data/Works_DestinyFoxRecords/Images/General/ArchFaith.png",
-    "data/Works_DestinyFoxRecords/Images/General/design_imgPh9.png"
+    {
+      "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/arts/regular/arts_snsicnDFR-RQN.png",
+      "category": "arts"
+    },
+    {
+      "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/concept/cnsp_imgDFR-SIL.png",
+      "category": "concept"
+    },
+    {
+      "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-RN2.png",
+      "category": "design"
+    },
+    {
+      "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-RQN.png",
+      "category": "design"
+    },
+    {
+      "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-RTN.png",
+      "category": "design"
+    },
+    {
+      "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-RVN.png",
+      "category": "design"
+    },
+    {
+      "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-SII.png",
+      "category": "design"
+    },
+    {
+      "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-SIJ.png",
+      "category": "design"
+    },
+    {
+      "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-SIL.png",
+      "category": "design"
+    },
+    {
+      "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-SIM.png",
+      "category": "design"
+    },
+    {
+      "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-SIN.png",
+      "category": "design"
+    },
+    {
+      "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-SIT.png",
+      "category": "design"
+    },
+    {
+      "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-SITH.png",
+      "category": "design"
+    },
+    {
+      "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-SRN.png",
+      "category": "design"
+    },
+    {
+      "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/arts/fullpower/arts_destinyFoxRec-2022-recruit.png",
+      "category": "design_alt"
+    },
+    {
+      "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/arts/regular/art_imgDFR-SRN-meowsday2022.png",
+      "category": "design_alt"
+    },
+    {
+      "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/arts/regular/arts_destinyFoxRec-2021-graduateA.png",
+      "category": "design_alt"
+    },
+    {
+      "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/arts/regular/arts_destinyFoxRec-2021-graduateB.png",
+      "category": "design_alt"
+    },
+    {
+      "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/arts/regular/arts_destinyFoxRec-2021-valentine.png",
+      "category": "design_alt"
+    },
+    {
+      "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/arts/regular/arts_destinyFoxRec-2023-graduate.png",
+      "category": "design_alt"
+    },
+    {
+      "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/arts/weakening/arts_destinyFoxRec-2021-0031.png",
+      "category": "design_alt"
+    },
+    {
+      "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/chattingArt/chart_imgDFR-SII-regularIllness.png",
+      "category": "design_alt"
+    },
+    {
+      "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/design_imgDFR-RVN-1.png",
+      "category": "design_alt"
+    },
+    {
+      "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/dsgn_imgDFR-SRN.png",
+      "category": "design_alt"
+    },
+    {
+      "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/weakening/emstk_weakeningDFR-RVN-1.png",
+      "category": "weakening"
+    },
+    {
+      "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/weakening/emstk_weakeningDFR-RVN-2.png",
+      "category": "weakening"
+    },
+    {
+      "path": "data/Works_DestinyFoxRecords/Images/DB_Proxy/arts/birthday/arts_birthday2023.png",
+      "category": "arts"
+    },
+    {
+      "path": "data/Works_DestinyFoxRecords/Images/DB_Proxy/arts/birthday/arts_birthday2024.png",
+      "category": "arts"
+    },
+    {
+      "path": "data/Works_DestinyFoxRecords/Images/DB_Proxy/arts/birthday/arts_birthday2025-1.png",
+      "category": "arts"
+    },
+    {
+      "path": "data/Works_DestinyFoxRecords/Images/DB_Proxy/arts/birthday/arts_birthday2025-2.png",
+      "category": "arts"
+    },
+    {
+      "path": "data/Works_DestinyFoxRecords/Images/DB_Proxy/arts/birthday/arts_birthday2026.png",
+      "category": "arts"
+    },
+    {
+      "path": "data/Works_DestinyFoxRecords/Images/DB_Proxy/arts/chattingArt/chart_imgDFR-G3-orbify.png",
+      "category": "arts"
+    },
+    {
+      "path": "data/Works_DestinyFoxRecords/Images/DB_Proxy/arts/chattingArt/chart_imgDFR-G3-regularTooManyTasks.png",
+      "category": "arts"
+    },
+    {
+      "path": "data/Works_DestinyFoxRecords/Images/DB_Proxy/arts/fullpower/arts_fullpowerDFR-G2-fullpowerEngage.png",
+      "category": "arts"
+    },
+    {
+      "path": "data/Works_DestinyFoxRecords/Images/DB_Proxy/design/dsgn_imgDFR-G2.png",
+      "category": "design"
+    },
+    {
+      "path": "data/Works_DestinyFoxRecords/Images/DB_Proxy/design/dsgn_imgDFR-G3.png",
+      "category": "design"
+    },
+    {
+      "path": "data/Works_DestinyFoxRecords/Images/DB_Proxy/designAlt/dsgn_imgDFR-G3-onCostume.png",
+      "category": "design_alt"
+    },
+    {
+      "path": "data/Works_DestinyFoxRecords/Images/DB_Proxy/weakening/emstk_weakeningDFR-G2-1.png",
+      "category": "weakening"
+    },
+    {
+      "path": "data/Works_DestinyFoxRecords/Images/DB_Proxy/weakening/emstk_weakeningDFR-G3-1.png",
+      "category": "weakening"
+    },
+    {
+      "path": "data/Works_DestinyFoxRecords/Images/DB_Proxy/weakening/emstk_weakeningDFR-G3-2.png",
+      "category": "weakening"
+    },
+    {
+      "path": "data/Works_DestinyFoxRecords/Images/General/ArchFaith.png",
+      "category": null
+    },
+    {
+      "path": "data/Works_DestinyFoxRecords/Images/General/design_imgPh9.png",
+      "category": null
+    }
   ]
 }

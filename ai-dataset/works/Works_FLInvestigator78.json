@@ -193,19 +193,61 @@
   "character_ids_with_tails_unit": [],
   "character_ids_with_roleplay_prompt": [],
   "image_paths": [
-    "data/Works_FLInvestigator78/Images/DB_Primary/arts/arts_imgFLI-D79,FLI-D80.png",
-    "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLI-M0.png",
-    "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLI-M1.png",
-    "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLI-M13.png",
-    "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLI-M16.png",
-    "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLI-M18.png",
-    "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLI-M3.png",
-    "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLI-M8.png",
-    "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLI-M9.png",
-    "data/Works_FLInvestigator78/Images/DB_Primary/concept/cnsp_imgFLI-M0.png",
-    "data/Works_FLInvestigator78/Images/DB_Primary/concept/cnsp_imgFLI-M16.png",
-    "data/Works_FLInvestigator78/Images/DB_PrimaryDealer/concept/cnsp_imgFLI-D79,FLI-D80.png",
-    "data/Works_FLInvestigator78/Images/General/pr_officialCard_202504.png",
-    "data/Works_FLInvestigator78/Images/General/pr_officialCard_202510.png"
+    {
+      "path": "data/Works_FLInvestigator78/Images/DB_Primary/arts/arts_imgFLI-D79,FLI-D80.png",
+      "category": "arts"
+    },
+    {
+      "path": "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLI-M0.png",
+      "category": "card_design"
+    },
+    {
+      "path": "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLI-M1.png",
+      "category": "card_design"
+    },
+    {
+      "path": "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLI-M13.png",
+      "category": "card_design"
+    },
+    {
+      "path": "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLI-M16.png",
+      "category": "card_design"
+    },
+    {
+      "path": "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLI-M18.png",
+      "category": "card_design"
+    },
+    {
+      "path": "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLI-M3.png",
+      "category": "card_design"
+    },
+    {
+      "path": "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLI-M8.png",
+      "category": "card_design"
+    },
+    {
+      "path": "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLI-M9.png",
+      "category": "card_design"
+    },
+    {
+      "path": "data/Works_FLInvestigator78/Images/DB_Primary/concept/cnsp_imgFLI-M0.png",
+      "category": "concept"
+    },
+    {
+      "path": "data/Works_FLInvestigator78/Images/DB_Primary/concept/cnsp_imgFLI-M16.png",
+      "category": "concept"
+    },
+    {
+      "path": "data/Works_FLInvestigator78/Images/DB_PrimaryDealer/concept/cnsp_imgFLI-D79,FLI-D80.png",
+      "category": "concept"
+    },
+    {
+      "path": "data/Works_FLInvestigator78/Images/General/pr_officialCard_202504.png",
+      "category": null
+    },
+    {
+      "path": "data/Works_FLInvestigator78/Images/General/pr_officialCard_202510.png",
+      "category": null
+    }
   ]
 }

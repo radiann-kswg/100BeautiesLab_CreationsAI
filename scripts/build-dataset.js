@@ -601,7 +601,7 @@ async function main() {
     // 概要のみ提示する。詳細なフィルタリングは manifest-training.jsonl を参照。
     // Works_ImagesDir オーバーライド作品（例: 共通資料 → data/GeneralImages）は画像ルートが workDir/Images でない
     const imagesDir = worksImagesDirOverride ? path.join(DATA_DIR, worksImagesDirOverride) : path.join(workDir, 'Images');
-    const workImages = collectImages(imagesDir, SUBMODULE);
+    const workImages = categorizeImages(collectImages(imagesDir, SUBMODULE));
     const workHasAllowedDb = allowedDbKeys.length > 0;
     imageIndex.works[workKey] = {
       title_ja: workTopMeta.Title_JP || '',
@@ -626,7 +626,7 @@ async function main() {
 
     // --- References ---
     const refsDir = path.join(workDir, 'References');
-    const refImages = collectImages(refsDir, SUBMODULE);
+    const refImages = categorizeImages(collectImages(refsDir, SUBMODULE));
     if (refImages.length > 0) {
       imageIndex.works[workKey].references = refImages;
     }
@@ -716,7 +716,7 @@ async function main() {
   // -----------------------------------------------------------------------
 
   const generalImgDir = path.join(DATA_DIR, 'GeneralImages');
-  imageIndex.general_images = collectImages(generalImgDir, SUBMODULE);
+  imageIndex.general_images = categorizeImages(collectImages(generalImgDir, SUBMODULE));
 
   const dictDir = path.join(DATA_DIR, 'Dictionaries');
   if (fs.existsSync(dictDir)) {
@@ -740,7 +740,7 @@ async function main() {
   }
 
   const topRefsDir = path.join(DATA_DIR, 'References');
-  const topRefImages = collectImages(topRefsDir, SUBMODULE);
+  const topRefImages = categorizeImages(collectImages(topRefsDir, SUBMODULE));
   if (topRefImages.length > 0) {
     imageIndex.general_images = imageIndex.general_images.concat(topRefImages);
   }
@@ -800,6 +800,18 @@ async function main() {
         keycapper:    'キーキャップ形態のイラスト (keycapper_PNGPath[] 由来、<DB>/keycapper/{path}) — 2026-08-02 追加',
         note:         'パスは creations-db サブモジュールルートからの相対パス。ファイルが実在しない場合はキー自体が省略される。'
           + ' 解決できなかった宣言の件数は build-info.json の image_ref_stats.unresolved で確認できる。',
+      },
+      image_index_field: {
+        description: 'image-index.json の works.<WorkKey>.images / .references と general_images、および works/<Work>.json の image_paths は'
+          + ' { path, category } のオブジェクト配列 (2026-09-06 追加。旧形式は文字列配列)。'
+          + ' path は creations-db サブモジュールルートからの相対パス。',
+        category: 'string|null — 画像の種別。値は images_field のキー (concept / concept_alt / corefolder / humanoid / arts /'
+          + ' design_alt / design / catalog / card_design / new_year / weakening / keycapper) と同じ語彙で、'
+          + ' data/Works_<Name>/Images/DB_<Db>/<folder>/ の格納フォルダから導出する。'
+          + ' 既知フォルダに一致しないもの (charId 直下スキャンの画像、References / GeneralImages 配下等) は推測で埋めず null。',
+        consumer_guidance: 'ファイル名の接頭辞 (emstk_ 等) やパス断片 (/catalog/ 等) から種別を推定せず、この category を参照してください。'
+          + ' category は「どのフォルダに格納されているか」だけを表し、AI 学習の可否とは無関係です。'
+          + ' 画像単位の可否は manifest.jsonl の各レコードの images と ai_training で判断してください。',
       },
     },
   }, null, 2), 'utf8');
@@ -931,6 +943,36 @@ const IMAGE_FIELDS = [
 // _DBCrossLinkPath 解決時、参照先レコードにスキーマ (imagePathHints) を問い合わせられないため、
 // 上の定義表から導出した対応表で代用する。
 const IMAGE_FIELD_FOLDER_HINTS = Object.fromEntries(IMAGE_FIELDS.map(f => [f.field, f.folder]));
+
+// 格納フォルダ名 → 出力カテゴリ名（レコード側 images.* のキーと同じ語彙）。
+const IMAGE_FOLDER_TO_CATEGORY = {
+  ...Object.fromEntries(IMAGE_FIELDS.map(f => [f.folder, f.out])),
+  // 尻尾ユニットだけは IMAGE_FIELDS ではなく attr/tailsUnit 固定パスで解決するため個別に持つ。
+  // ここが無いと、レコード側で images.tails_unit に載る同じ画像が image-index では null になる。
+  'attr/tailsUnit': 'tails_unit',
+};
+
+/**
+ * ディレクトリ走査で集めたフラットな画像パス配列を `{ path, category }` 形式へ変換する。
+ *
+ * category はレコード側 images.* のキー（IMAGE_FIELDS の out）と同じ語彙を使う。消費側が
+ * `emstk_` 接頭辞や `/catalog/` のパス名ヒューリスティックで種別を推定しなくて済むようにするのが目的。
+ * 既知フォルダに一致しないもの（charId 直下スキャンの画像等）は推測で埋めず null のままにする。
+ * @param {string[]} paths サブモジュールルート基点の相対パス（forward-slash 区切り）
+ */
+function categorizeImages(paths) {
+  return paths.map(p => {
+    const segments = p.split('/');
+    const imagesIdx = segments.indexOf('Images');
+    if (imagesIdx === -1) return { path: p, category: null };
+    // data/Works_<Name>/Images/DB_<Db>/<folder>/... の <folder>。
+    // attr/tailsUnit のように 2 階層で 1 カテゴリを成すものがあるため、深い方から引く。
+    const category = IMAGE_FOLDER_TO_CATEGORY[segments.slice(imagesIdx + 2, imagesIdx + 4).join('/')]
+      ?? IMAGE_FOLDER_TO_CATEGORY[segments[imagesIdx + 2]]
+      ?? null;
+    return { path: p, category };
+  });
+}
 
 // 宣言フィールド由来の出力キー（charId ディレクトリスキャン結果と区別して解決数を数えるため）
 const DECLARED_IMAGE_OUT_KEYS = new Set([...IMAGE_FIELDS.map(f => f.out), 'tails_unit']);

@@ -120,10 +120,25 @@
   "character_ids_with_tails_unit": [],
   "character_ids_with_roleplay_prompt": [],
   "image_paths": [
-    "data/Works_UnibyteLive/Images/DB_Primary/attr/accessoryUnit/attr_accessoryUnitUBL-Lg1-monocle.png",
-    "data/Works_UnibyteLive/Images/DB_Primary/keycapper/I/emstk_keycapperUBL-Ig2-1.png",
-    "data/Works_UnibyteLive/Images/DB_Primary/keycapper/L/emstk_keycapperUBL-Lg1-1.png",
-    "data/Works_UnibyteLive/Images/DB_Primary/keycapper/S/emstk_keycapperUBL-Sg2-1.png",
-    "data/Works_UnibyteLive/Images/DB_Primary/keycapper/Z/emstk_keycapperUBL-Zg1-1.png"
+    {
+      "path": "data/Works_UnibyteLive/Images/DB_Primary/attr/accessoryUnit/attr_accessoryUnitUBL-Lg1-monocle.png",
+      "category": null
+    },
+    {
+      "path": "data/Works_UnibyteLive/Images/DB_Primary/keycapper/I/emstk_keycapperUBL-Ig2-1.png",
+      "category": "keycapper"
+    },
+    {
+      "path": "data/Works_UnibyteLive/Images/DB_Primary/keycapper/L/emstk_keycapperUBL-Lg1-1.png",
+      "category": "keycapper"
+    },
+    {
+      "path": "data/Works_UnibyteLive/Images/DB_Primary/keycapper/S/emstk_keycapperUBL-Sg2-1.png",
+      "category": "keycapper"
+    },
+    {
+      "path": "data/Works_UnibyteLive/Images/DB_Primary/keycapper/Z/emstk_keycapperUBL-Zg1-1.png",
+      "category": "keycapper"
+    }
   ]
 }

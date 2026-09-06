@@ -38,636 +38,2526 @@
         }
       ],
       "images": [
-        "data/Works_NumberTales/Images/DB_Primary/arts/art_imgNTS-0-developper.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/art_imgNTS-00-developper.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-13-humanoid.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-22-humanoid.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-26-humanoid.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-30-corefolder.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-30-humanoid.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-36-corefolderMyNewGear.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-42-corefolder.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-47,NTS-74-humanoid.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-49-humanoid.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-50-humanoidBallingRole.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-56-humanoid.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-58-humanoidNoNipples.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-67A-humanoid.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-67B-humanoid.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-73-humanoidWhereIsEho.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-75-humanoidSaveYourself.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-87-humanoidTooOrdered.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-89-corefolder.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-97-humanoid.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/2023/art_imgNTS-2-corefolderWinter.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/2023/art_imgNTS-25-corefolder.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/2023/art_imgNTS-29-corefolderA.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/2023/art_imgNTS-29-corefolderB.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/2023/art_imgNTS-31-corefolder.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/2023/art_imgNTS-49-corefolder.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/2023/art_imgNTS-52-corefolder.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/2023/art_imgNTS-68-corefolder.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/2023/art_imgNTS-74-corefolderAsObjectA.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/2023/art_imgNTS-74-corefolderAsObjectB.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/2023/art_imgNTS-85-corefolder.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/2023/art_imgNTS-94-corefolder.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/2024/art_imgNTS-16-corefolderA.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/2024/art_imgNTS-16-corefolderB.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/2024/art_imgNTS-37-corefolderA.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/2024/art_imgNTS-37-corefolderB.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/2024/art_imgNTS-56,NTS-65-corefolderA.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/2024/art_imgNTS-56-corefolderB.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/2024/art_imgNTS-65-corefolderB.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/2025-2026/art_imgNTS-78-corefolder.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/arts_imgNTS-24-corefolderMakingSample.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/autumnMoon/art_autumnMoon2023.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/autumnMoon/art_autumnMoon2024.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/_lang_EN/art[EN]_sphericateDay202202.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/_lang_EN/art[EN]_sphericateDay202305-imgNTS-57.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202111.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202112.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202201.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202202.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202209r1A.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202209r1B.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202212r1A.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202212r1B.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202301r2.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202302r1.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202305-imgNTS-57.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202305-imgNTS-75.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202306.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202307.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202309-Overall.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202309-imgNTS-9.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202310.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202403.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-1-humanoid.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-12-humanoid.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-15-humanoid.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-20-humanoid.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-23-humanoid.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-24-humanoid.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-37-humanoid.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-39-humanoidA.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-39-humanoidB.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-42-humanoidA.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-42-humanoidB.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-47-humanoid.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-49-humanoid.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-55-humanoidTroubled.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-57-humanoid.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-60-humanoid.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-61-humanoid.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-66-humanoid.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-69-humanoid.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-69-humanoidOnMask.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-7-humanoid.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-73-humanoid.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-96-humanoid.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-96-humanoidCastOff.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2024/art-wip_imgNTS-44-humanoid.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2024/art_imgNTS-17-humanoidHardStudy.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2024/art_imgNTS-25-humanoidValentineA.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2024/art_imgNTS-25-humanoidValentineB.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2024/art_imgNTS-27-humanoid.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/art_mothersDay2023.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/art_numbertalesAniv2nd.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/art_numbertalesAniv4th.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/art_pmNTS-5game.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/cnsp_chrstNTS-93.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/parody/art_imgNTS-34,NTS-43-parody.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/parody/art_imgNTS-42-homage.png",
-        "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/parody/art_imgNTS-73-parody.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/costumeItem/attr_costumeItemNTS-11-hairpin.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/costumeItem/attr_costumeItemNTS-71-number.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/emblem/attr_emblemNTS-22-brooch.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/emblem/attr_emblemNTS-61-heartkey.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/emblem/attr_emblemNTS-77-facemaking.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/emblem/attr_emblemNTS-97-tophat.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/halo/attr_haloNTS-99.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/motif/attr_motifNTS-88-piano.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-000.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-10.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-10D.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-11.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-12.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-13.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-14.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-15.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-16.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-17.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-18.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-19.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-20.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-21.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-22.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-23.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-24.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-25.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-26.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-27.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-28-earingBack.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-28-earingFront.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-28-leftMath.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-28-rightMath.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-28.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-2B.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-3.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-30.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-31-leftMath.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-31.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-32.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-33.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-34.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-35.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-36.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-37.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-39.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-4.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-40.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-41.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-42.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-43.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-44.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-45.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-47.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-48.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-49.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-5.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-50.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-52.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-53.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-55.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-56.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-57.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-6.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-60.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-61.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-62.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-63.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-64.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-65.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-66.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-68.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-7.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-70.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-71.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-72.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-73.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-74.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-75.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-76-headset.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-76.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-77.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-8.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-81.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-84.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-86.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-88.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-89.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-9.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-93.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-94.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-97-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-97-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-98.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-99.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/tag/attr_tagNTS-10D-調整中.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/tag/attr_tagNTS-27-numberMark.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/tag/attr_tagNTS-2B-試用.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-16.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-23.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-39.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-4.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-49.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-5.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-50.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-57.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-6.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-61.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-73.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-85.png",
-        "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-93.png",
-        "data/Works_NumberTales/Images/DB_Primary/catalog/chr-dsgn_catalogNTS-16.png",
-        "data/Works_NumberTales/Images/DB_Primary/catalog/chr-dsgn_catalogNTS-23.png",
-        "data/Works_NumberTales/Images/DB_Primary/catalog/chr-dsgn_catalogNTS-39.png",
-        "data/Works_NumberTales/Images/DB_Primary/catalog/chr-dsgn_catalogNTS-4.png",
-        "data/Works_NumberTales/Images/DB_Primary/catalog/chr-dsgn_catalogNTS-49.png",
-        "data/Works_NumberTales/Images/DB_Primary/catalog/chr-dsgn_catalogNTS-57.png",
-        "data/Works_NumberTales/Images/DB_Primary/catalog/chr-dsgn_catalogNTS-6.png",
-        "data/Works_NumberTales/Images/DB_Primary/catalog/chr-dsgn_catalogNTS-61.png",
-        "data/Works_NumberTales/Images/DB_Primary/catalog/chr-dsgn_catalogNTS-73.png",
-        "data/Works_NumberTales/Images/DB_Primary/catalog/chr-dsgn_catalogNTS-85.png",
-        "data/Works_NumberTales/Images/DB_Primary/catalog/chr-dsgn_catalogNTS-93.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-0.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-00.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-000.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-10.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-11.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-12.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-13.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-14.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-15.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-16.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-17.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-18.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-19.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-20.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-21.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-22.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-23.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-24.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-25.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-26.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-27.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-28.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-29.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-2B.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-3.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-30.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-31.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-32.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-33.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-34.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-35.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-36.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-37.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-39.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-4.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-40.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-41.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-42.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-43.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-44.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-45.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-46.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-47.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-48.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-49.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-5.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-50.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-51.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-52.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-53.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-55.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-56.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-57.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-58.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-6.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-60.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-61.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-62.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-63.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-64.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-65.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-66.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-67A.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-67B.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-68.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-69.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-7.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-70.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-71.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-72.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-73.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-74.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-75.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-76.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-77.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-78.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-8.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-80.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-81.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-84.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-85.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-86.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-87.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-88.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-89.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-9.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-92.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-93.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-94.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-96.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-97.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-98.png",
-        "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-99.png",
-        "data/Works_NumberTales/Images/DB_Primary/conceptAlt/cnsp_imgNTS-14-A.png",
-        "data/Works_NumberTales/Images/DB_Primary/conceptAlt/cnsp_imgNTS-14-B.png",
-        "data/Works_NumberTales/Images/DB_Primary/conceptAlt/cnsp_imgNTS-28-onBusiness.png",
-        "data/Works_NumberTales/Images/DB_Primary/conceptAlt/cnsp_imgNTS-28-onPrivate.png",
-        "data/Works_NumberTales/Images/DB_Primary/conceptAlt/cnsp_imgNTS-35-Miko.png",
-        "data/Works_NumberTales/Images/DB_Primary/conceptAlt/cnsp_imgNTS-35-Normal.png",
-        "data/Works_NumberTales/Images/DB_Primary/conceptAlt/cnsp_imgNTS-41-A.png",
-        "data/Works_NumberTales/Images/DB_Primary/conceptAlt/cnsp_imgNTS-60-Nerd.png",
-        "data/Works_NumberTales/Images/DB_Primary/conceptAlt/cnsp_imgNTS-60-Normal.png",
-        "data/Works_NumberTales/Images/DB_Primary/conceptAlt/cnsp_imgNTS-61-B.png",
-        "data/Works_NumberTales/Images/DB_Primary/conceptAlt/cnsp_imgNTS-66-B.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/000/emstk_corefolderNTS-000-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/000/emstk_corefolderNTS-000-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/000/emstk_corefolderNTS-000-3.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/1/emstk_corefolderNTS-1-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/1/emstk_corefolderNTS-1-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/10/emstk_corefolderNTS-10-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/10/emstk_corefolderNTS-10-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/10-alt/emstk_corefolderNTS-10D-ondeck1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/11/emstk_corefolderNTS-11-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/12/emstk_corefolderNTS-12-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/12/emstk_corefolderNTS-12-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/13/emstk_corefolderNTS-13-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/14/emstk_corefolderNTS-14-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/14/emstk_corefolderNTS-14-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/14/emstk_corefolderNTS-14-3.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/15/emstk_corefolderNTS-15-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/15/emstk_corefolderNTS-15-nonharness1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/16/emstk_corefolderNTS-16-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/16/emstk_corefolderNTS-16-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/16/emstk_corefolderNTS-16-3.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/17/emstk_corefolderNTS-17-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/18/emstk_corefolderNTS-18-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/18/emstk_corefolderNTS-18-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/19/emstk_corefolderNTS-19-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/2/emstk_corefolderNTS-2-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/2/emstk_corefolderNTS-2-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/2-alt/emstk_corefolderNTS-2B-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/2-alt/emstk_corefolderNTS-2B-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/20/emstk_corefolderNTS-20-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/20/emstk_corefolderNTS-20-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/21/emstk_corefolderNTS-21-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/22/emstk_corefolderNTS-22-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/22/emstk_corefolderNTS-22-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/22/emstk_corefolderNTS-22-3.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/23/emstk_corefolderNTS-23-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/24/emstk_corefolderNTS-24-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/24/emstk_corefolderNTS-24-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/25/emstk_corefolderNTS-25-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/25/emstk_corefolderNTS-25-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/26/emstk_corefolderNTS-26-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/27/emstk_corefolderNTS-27-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/27/emstk_corefolderNTS-27-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/28/emstk_corefolderNTS-28-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/29/emstk_corefolderNTS-29-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/3/emstk_corefolderNTS-3-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/3/emstk_corefolderNTS-3-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/30/emstk_corefolderNTS-30-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/30/emstk_corefolderNTS-30-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/31/emstk_corefolderNTS-31-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/31/emstk_corefolderNTS-31-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/32/emstk_corefolderNTS-32-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/32/emstk_corefolderNTS-32-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/33/emstk_corefolderNTS-33-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/33/emstk_corefolderNTS-33-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/33/emstk_corefolderNTS-33-3.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/34/emstk_corefolderNTS-34-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/34/emstk_corefolderNTS-34-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/35/emstk_corefolderNTS-35-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/35/emstk_corefolderNTS-35-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/35/emstk_corefolderNTS-35-3.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/36/emstk_corefolderNTS-36-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/36/emstk_corefolderNTS-36-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/37/emstk_corefolderNTS-37-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/37/emstk_corefolderNTS-37-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/39/emstk_corefolderNTS-39-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/39/emstk_corefolderNTS-39-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/39/emstk_corefolderNTS-39-3.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/4/emstk_corefolderNTS-4-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/4/emstk_corefolderNTS-4-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/4/emstk_corefolderNTS-4-3.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/40/emstk_corefolderNTS-40-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/40/emstk_corefolderNTS-40-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/41/emstk_corefolderNTS-41-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/42/emstk_corefolderNTS-42-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/42/emstk_corefolderNTS-42-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/43/emstk_corefolderNTS-43-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/43/emstk_corefolderNTS-43-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/44/emstk_corefolderNTS-44-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/45/emstk_corefolderNTS-45-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/46/emstk_corefolderNTS-46-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/47/emstk_corefolderNTS-47-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/47/emstk_corefolderNTS-47-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/48/emstk_corefolderNTS-48-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/49/emstk_corefolderNTS-49-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/49/emstk_corefolderNTS-49-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/5/emstk_corefolderNTS-5-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/5/emstk_corefolderNTS-5-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/5/emstk_corefolderNTS-5-3.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/50/emstk_corefolderNTS-50-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/50/emstk_corefolderNTS-50-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/50/emstk_corefolderNTS-50-3.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/50/emstk_corefolderNTS-50-4.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/52/emstk_corefolderNTS-52-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/52/emstk_corefolderNTS-52-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/53/emstk_corefolderNTS-53-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/55/emstk_corefolderNTS-55-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/56/emstk_corefolderNTS-56-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/57/emstk_corefolderNTS-57-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/57/emstk_corefolderNTS-57-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/58/emstk_corefolderNTS-58-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/58/emstk_corefolderNTS-58-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/6/emstk_corefolderNTS-6-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/6/emstk_corefolderNTS-6-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/6/emstk_corefolderNTS-6-3.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/60/emstk_corefolderNTS-60-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/60/emstk_corefolderNTS-60-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/61/emstk_corefolderNTS-61-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/61/emstk_corefolderNTS-61-idol1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/61/emstk_corefolderNTS-61-idol2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/62/emstk_corefolderNTS-62-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/63/emstk_corefolderNTS-63-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/63/emstk_corefolderNTS-63-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/63/emstk_corefolderNTS-63-3.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/64/emstk_corefolderNTS-64-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/64/emstk_corefolderNTS-64-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/65/emstk_corefolderNTS-65-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/66/emstk_corefolderNTS-66-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/68/emstk_corefolderNTS-68-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/69/emstk_corefolderNTS-69-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/7/emstk_corefolderNTS-7-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/70/emstk_corefolderNTS-70-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/71/emstk_corefolderNTS-71-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/72/emstk_corefolderNTS-72-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/73/emstk_corefolderNTS-73-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/73/emstk_corefolderNTS-73-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/74/emstk_corefolderNTS-74-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/75/emstk_corefolderNTS-75-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/75/emstk_corefolderNTS-75-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/76/emstk_corefolderNTS-76-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/76/emstk_corefolderNTS-76-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/76/emstk_corefolderNTS-76-3.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/76/emstk_corefolderNTS-76-4.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/77/emstk_corefolderNTS-77-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/77/emstk_corefolderNTS-77-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/78/emstk_corefolderNTS-78-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/78/emstk_corefolderNTS-78-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/8/emstk_corefolderNTS-8-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/81/emstk_corefolderNTS-81-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/84/emstk_corefolderNTS-84-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/85/emstk_corefolderNTS-85-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/85/emstk_corefolderNTS-85-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/86/emstk_corefolderNTS-86-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/87/emstk_corefolderNTS-87-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/87/emstk_corefolderNTS-87-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/87/emstk_corefolderNTS-87-3.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/88/emstk_corefolderNTS-88-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/89/emstk_corefolderNTS-89-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/89/emstk_corefolderNTS-89-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/9/emstk_corefolderNTS-9-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/9/emstk_corefolderNTS-9-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/92/emstk_corefolderNTS-92-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/93/emstk_corefolderNTS-93-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/93/emstk_corefolderNTS-93-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/94/emstk_corefolderNTS-94-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/96/emstk_corefolderNTS-96-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/96/emstk_corefolderNTS-96-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/97/emstk_corefolderNTS-97-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/97/emstk_corefolderNTS-97-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/97/emstk_corefolderNTS-97-3.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/98/emstk_corefolderNTS-98-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/99/emstk_corefolderNTS-99-1.png",
-        "data/Works_NumberTales/Images/DB_Primary/corefolder/99/emstk_corefolderNTS-99-2.png",
-        "data/Works_NumberTales/Images/DB_Primary/designAlt/arts/art_imgNTS-68-humanoidOnWorkSuit.png",
-        "data/Works_NumberTales/Images/DB_Primary/designAlt/catalog/chr-dsgn-alt_wipNTS-61-idol.png",
-        "data/Works_NumberTales/Images/DB_Primary/designAlt/chattingArt/chart_imgNTS-25,NTS-5-humanoidCoolerSeason.png",
-        "data/Works_NumberTales/Images/DB_Primary/designAlt/chattingArt/chart_imgNTS-35-humanoidswimwear.png",
-        "data/Works_NumberTales/Images/DB_Primary/designAlt/chattingArt/chart_imgNTS-66-corefolderHalloween.png",
-        "data/Works_NumberTales/Images/DB_Primary/designAlt/chattingArt/chart_imgNTS-69-humanoidLeotard.png",
-        "data/Works_NumberTales/Images/DB_Primary/designAlt/eventArt/art_sphericateDay-halloween2023A.png",
-        "data/Works_NumberTales/Images/DB_Primary/designAlt/eventArt/art_sphericateDay-halloween2023B.png",
-        "data/Works_NumberTales/Images/DB_Secondary/arts/hexademical-corefolders/art_sphericateDay202406-1.png",
-        "data/Works_NumberTales/Images/DB_Secondary/arts/hexademical-corefolders/art_sphericateDay202406-2.png",
-        "data/Works_NumberTales/Images/DB_Secondary/arts/hexademical-corefolders/art_sphericateDay202406-3.png",
-        "data/Works_NumberTales/Images/DB_Secondary/arts/numberize-corefolders/art_imgNTS-294RZ,NTS-295RZ-corefolder.png",
-        "data/Works_NumberTales/Images/DB_Secondary/arts/numberize-corefolders/art_imgNTS-337RZ-corefolder.png",
-        "data/Works_NumberTales/Images/DB_Secondary/arts/numberize-corefolders/art_imgNTS-401RZ-corefolder.png",
-        "data/Works_NumberTales/Images/DB_Secondary/arts/numberize-corefolders/art_imgNTS-96,NTS-241RZ-corefolder.png",
-        "data/Works_NumberTales/Images/DB_Secondary/concept/hexademical/cnsp_imgNTS-0xA.png",
-        "data/Works_NumberTales/Images/DB_Secondary/concept/hexademical/cnsp_imgNTS-0xB.png",
-        "data/Works_NumberTales/Images/DB_Secondary/concept/hexademical/cnsp_imgNTS-0xC.png",
-        "data/Works_NumberTales/Images/DB_Secondary/concept/hexademical/cnsp_imgNTS-0xD.png",
-        "data/Works_NumberTales/Images/DB_Secondary/concept/hexademical/cnsp_imgNTS-0xE.png",
-        "data/Works_NumberTales/Images/DB_Secondary/concept/hexademical/cnsp_imgNTS-0xF.png",
-        "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-1122RZ.png",
-        "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-115RZ.png",
-        "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-148RZ.png",
-        "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-227RZ.png",
-        "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-232RZ.png",
-        "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-238RZ.png",
-        "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-241RZ.png",
-        "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-258RZ.png",
-        "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-263RZ.png",
-        "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-265RZ.png",
-        "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-294RZ.png",
-        "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-295RZ.png",
-        "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-337RZ.png",
-        "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-366RZ.png",
-        "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-376RZ.png",
-        "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-377RZ.png",
-        "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-387RZ.png",
-        "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-401RZ.png",
-        "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-411RZ.png",
-        "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-421RZ.png",
-        "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-467RZ.png",
-        "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-476RZ.png",
-        "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-510RZ.png",
-        "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-558RZ.png",
-        "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-605RZ.png",
-        "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-625RZ.png",
-        "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-638RZ.png",
-        "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-670RZ.png",
-        "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-736RZ.png",
-        "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-773RZ.png",
-        "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-979RZ.png",
-        "data/Works_NumberTales/Images/DB_Secondary/conceptAlt/numberize/cnsp_imgNTS-115RZ-image.png",
-        "data/Works_NumberTales/Images/DB_Secondary/corefolder/hexademical/0xA/emstk_corefolderNTS-0xA-1.png",
-        "data/Works_NumberTales/Images/DB_Secondary/corefolder/hexademical/0xB/emstk_corefolderNTS-0xB-1.png",
-        "data/Works_NumberTales/Images/DB_Secondary/corefolder/hexademical/0xC/emstk_corefolderNTS-0xC-1.png",
-        "data/Works_NumberTales/Images/DB_Secondary/corefolder/hexademical/0xC/emstk_corefolderNTS-0xC-2.png",
-        "data/Works_NumberTales/Images/DB_Secondary/corefolder/hexademical/0xD/emstk_corefolderNTS-0xD-1.png",
-        "data/Works_NumberTales/Images/DB_Secondary/corefolder/hexademical/0xD/emstk_corefolderNTS-0xD-2.png",
-        "data/Works_NumberTales/Images/DB_Secondary/corefolder/hexademical/0xE/emstk_corefolderNTS-0xE-1.png",
-        "data/Works_NumberTales/Images/DB_Secondary/corefolder/hexademical/0xF/emstk_corefolderNTS-0xF-1.png",
-        "data/Works_NumberTales/Images/DB_Secondary/corefolder/hexademical/0xF/emstk_corefolderNTS-0xF-1a.png",
-        "data/Works_NumberTales/Images/DB_Secondary/corefolder/hexademical/0xF/emstk_corefolderNTS-0xF-2.png",
-        "data/Works_NumberTales/Images/DB_Secondary/corefolder/hexademical/0xF/emstk_corefolderNTS-0xF-2a.png",
-        "data/Works_NumberTales/Images/DB_Secondary/corefolder/numberize/emstk_corefolderNTS-241RZ1.png",
-        "data/Works_NumberTales/Images/DB_Secondary/corefolder/numberize/emstk_corefolderNTS-605RZ1.png",
-        "data/Works_NumberTales/Images/DB_SelfSecondary/attr/costumeItem/attr_costumeItemNTS-666MP-brooch.png",
-        "data/Works_NumberTales/Images/DB_SelfSecondary/attr/halo/attr_haloNTS-444MP.png",
-        "data/Works_NumberTales/Images/DB_SelfSecondary/attr/halo/attr_haloNTS-666MP.png",
-        "data/Works_NumberTales/Images/DB_SelfSecondary/attr/numberMark/attr_numberMarkNTS-223-lot.png",
-        "data/Works_NumberTales/Images/DB_SelfSecondary/attr/numberMark/attr_numberMarkNTS-444MP-lot.png",
-        "data/Works_NumberTales/Images/DB_SelfSecondary/attr/numberMark/attr_numberMarkNTS-444MP.png",
-        "data/Works_NumberTales/Images/DB_SelfSecondary/attr/numberMark/attr_numberMarkNTS-666MP-lot.png",
-        "data/Works_NumberTales/Images/DB_SelfSecondary/attr/numberMark/attr_numberMarkNTS-753-lot.png",
-        "data/Works_NumberTales/Images/DB_SelfSecondary/attr/wing/attr_wingNTS-666MP.png",
-        "data/Works_NumberTales/Images/DB_SelfSecondary/concept/cnsp_imgNTS-111MP.png",
-        "data/Works_NumberTales/Images/DB_SelfSecondary/concept/cnsp_imgNTS-444MP.png",
-        "data/Works_NumberTales/Images/DB_SelfSecondary/concept/cnsp_imgNTS-666MP.png",
-        "data/Works_NumberTales/Images/DB_SelfSecondary/concept/cnsp_imgNTS-777JMP-mpB.png",
-        "data/Works_NumberTales/Images/DB_SelfSecondary/concept/cnsp_imgNTS-777MPA.png",
-        "data/Works_NumberTales/Images/DB_SelfSecondary/concept/cr/cnsp_imgNTS-223.png",
-        "data/Works_NumberTales/Images/DB_SelfSecondary/concept/jw/cnsp_imgNTS-753.png",
-        "data/Works_NumberTales/Images/DB_SelfSecondary/conceptAlt/cnsp_imgNTS-777MP,NTS-777JMP.png",
-        "data/Works_NumberTales/Images/DB_SelfSecondary/conceptAlt/cnsp_imgNTS-777MP,NTS-777JMPC.png",
-        "data/Works_NumberTales/Images/DB_SelfSecondary/corefolder/111/emstk_corefolderNTS-111MP-1.png",
-        "data/Works_NumberTales/Images/DB_SelfSecondary/corefolder/216/emstk_corefolderNTS-216-1.png",
-        "data/Works_NumberTales/Images/DB_SelfSecondary/corefolder/223/emstk_corefolderNTS-223-1.png",
-        "data/Works_NumberTales/Images/DB_SelfSecondary/corefolder/444/emstk_corefolderNTS-444MP-1.png",
-        "data/Works_NumberTales/Images/DB_SelfSecondary/corefolder/666/emstk_corefolderNTS-666MP-1.png",
-        "data/Works_NumberTales/Images/DB_SelfSecondary/corefolder/753/emstk_corefolderNTS-753-1.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/arts/corefolders/autumnMoon/art_autumnMoon2025.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/attr/costumeItem/attr_costumeItemNTS-222A-pendant.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/attr/costumeItem/attr_costumeItemNTS-222B-pendant.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/attr/costumeItem/attr_costumeItemNTS-666-brooch.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/attr/emblem/attr_emblemNTS-3x11-doubleBrooch.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/attr/halo/attr_haloNTS-3x11.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/attr/halo/attr_haloNTS-444.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/attr/halo/attr_haloNTS-666.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/attr/numberMark/attr_numberMarkNTS-100.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/attr/numberMark/attr_numberMarkNTS-222A.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/attr/numberMark/attr_numberMarkNTS-222B.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/attr/numberMark/attr_numberMarkNTS-3x11.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/attr/numberMark/attr_numberMarkNTS-444.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/attr/numberMark/attr_numberMarkNTS-64XP-sextpower.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/attr/numberMark/attr_numberMarkNTS-64XP.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/attr/wing/attr_wingNTS-666.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_imgNTS-111.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_imgNTS-222.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_imgNTS-222A.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_imgNTS-222B.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_imgNTS-3x11.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_imgNTS-444.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_imgNTS-64XP.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_imgNTS-666.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_imgNTS-777.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_imgNTS-777JP.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_imgNTS-888.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/conceptAlt/cnsp_imgNTS-777,NTS-777JP-orig.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/conceptAlt/cnsp_imgNTS-777,NTS-777JPC.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/100/emstk_corefolderNTS-100-1.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/111/emstk_corefolderNTS-111-1.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/111/emstk_corefolderNTS-111-2.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/216/emstk_corefolderNTS-216KZ-1.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/222/emstk_corefolderNTS-222A,NTS-222B-1.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/222/emstk_corefolderNTS-222A-2a.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/222/emstk_corefolderNTS-222B-2b.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/3x11/emstk_corefolderNTS-3x11-1.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/3x11/emstk_corefolderNTS-3x11-2.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/444/emstk_corefolderNTS-444-1.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/444/emstk_corefolderNTS-444-2.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/444/emstk_corefolderNTS-444-3.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/64/emstk_corefolderNTS-64XP-1.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/666/emstk_corefolderNTS-666-1.png",
-        "data/Works_NumberTales/Images/DB_SemiPrimary/designAlt/chattingArt/chart_imgNTS-222A,NTS-222B-humanoidWBed.png",
-        "data/Works_NumberTales/Images/General/catalog/chr-dsgn_NTsCatalog-Summary.png",
-        "data/Works_NumberTales/Images/Ref_Reference/concept-figure/cnsp-fg_NTsClass.png",
-        "data/Works_NumberTales/Images/Ref_Vocabulary/concept-figure/cnsp-fg_NTsCoreFolder.png",
-        "data/Works_NumberTales/Images/Ref_Vocabulary/concept-figure/cnsp-fg_NTsHumanoid.png"
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/art_imgNTS-0-developper.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/art_imgNTS-00-developper.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-13-humanoid.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-22-humanoid.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-26-humanoid.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-30-corefolder.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-30-humanoid.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-36-corefolderMyNewGear.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-42-corefolder.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-47,NTS-74-humanoid.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-49-humanoid.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-50-humanoidBallingRole.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-56-humanoid.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-58-humanoidNoNipples.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-67A-humanoid.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-67B-humanoid.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-73-humanoidWhereIsEho.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-75-humanoidSaveYourself.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-87-humanoidTooOrdered.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-89-corefolder.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-97-humanoid.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/2023/art_imgNTS-2-corefolderWinter.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/2023/art_imgNTS-25-corefolder.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/2023/art_imgNTS-29-corefolderA.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/2023/art_imgNTS-29-corefolderB.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/2023/art_imgNTS-31-corefolder.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/2023/art_imgNTS-49-corefolder.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/2023/art_imgNTS-52-corefolder.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/2023/art_imgNTS-68-corefolder.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/2023/art_imgNTS-74-corefolderAsObjectA.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/2023/art_imgNTS-74-corefolderAsObjectB.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/2023/art_imgNTS-85-corefolder.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/2023/art_imgNTS-94-corefolder.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/2024/art_imgNTS-16-corefolderA.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/2024/art_imgNTS-16-corefolderB.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/2024/art_imgNTS-37-corefolderA.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/2024/art_imgNTS-37-corefolderB.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/2024/art_imgNTS-56,NTS-65-corefolderA.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/2024/art_imgNTS-56-corefolderB.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/2024/art_imgNTS-65-corefolderB.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/2025-2026/art_imgNTS-78-corefolder.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/arts_imgNTS-24-corefolderMakingSample.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/autumnMoon/art_autumnMoon2023.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/autumnMoon/art_autumnMoon2024.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/_lang_EN/art[EN]_sphericateDay202202.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/_lang_EN/art[EN]_sphericateDay202305-imgNTS-57.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202111.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202112.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202201.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202202.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202209r1A.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202209r1B.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202212r1A.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202212r1B.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202301r2.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202302r1.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202305-imgNTS-57.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202305-imgNTS-75.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202306.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202307.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202309-Overall.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202309-imgNTS-9.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202310.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/corefolders/sphericateDay/art_sphericateDay202403.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-1-humanoid.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-12-humanoid.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-15-humanoid.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-20-humanoid.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-23-humanoid.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-24-humanoid.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-37-humanoid.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-39-humanoidA.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-39-humanoidB.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-42-humanoidA.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-42-humanoidB.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-47-humanoid.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-49-humanoid.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-55-humanoidTroubled.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-57-humanoid.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-60-humanoid.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-61-humanoid.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-66-humanoid.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-69-humanoid.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-69-humanoidOnMask.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-7-humanoid.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-73-humanoid.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-96-humanoid.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2023/art_imgNTS-96-humanoidCastOff.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2024/art-wip_imgNTS-44-humanoid.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2024/art_imgNTS-17-humanoidHardStudy.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2024/art_imgNTS-25-humanoidValentineA.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2024/art_imgNTS-25-humanoidValentineB.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2024/art_imgNTS-27-humanoid.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/art_mothersDay2023.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/art_numbertalesAniv2nd.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/art_numbertalesAniv4th.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/art_pmNTS-5game.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/cnsp_chrstNTS-93.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/parody/art_imgNTS-34,NTS-43-parody.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/parody/art_imgNTS-42-homage.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/arts/humanoids/parody/art_imgNTS-73-parody.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/costumeItem/attr_costumeItemNTS-11-hairpin.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/costumeItem/attr_costumeItemNTS-71-number.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/emblem/attr_emblemNTS-22-brooch.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/emblem/attr_emblemNTS-61-heartkey.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/emblem/attr_emblemNTS-77-facemaking.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/emblem/attr_emblemNTS-97-tophat.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/halo/attr_haloNTS-99.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/motif/attr_motifNTS-88-piano.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-000.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-1.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-10.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-10D.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-11.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-12.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-13.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-14.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-15.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-16.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-17.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-18.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-19.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-2.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-20.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-21.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-22.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-23.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-24.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-25.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-26.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-27.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-28-earingBack.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-28-earingFront.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-28-leftMath.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-28-rightMath.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-28.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-2B.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-3.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-30.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-31-leftMath.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-31.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-32.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-33.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-34.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-35.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-36.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-37.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-39.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-4.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-40.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-41.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-42.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-43.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-44.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-45.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-47.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-48.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-49.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-5.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-50.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-52.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-53.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-55.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-56.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-57.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-6.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-60.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-61.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-62.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-63.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-64.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-65.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-66.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-68.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-7.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-70.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-71.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-72.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-73.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-74.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-75.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-76-headset.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-76.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-77.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-8.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-81.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-84.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-86.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-88.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-89.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-9.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-93.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-94.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-97-1.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-97-2.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-98.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-99.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/tag/attr_tagNTS-10D-調整中.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/tag/attr_tagNTS-27-numberMark.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/tag/attr_tagNTS-2B-試用.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-16.png",
+          "category": "tails_unit"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-23.png",
+          "category": "tails_unit"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-39.png",
+          "category": "tails_unit"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-4.png",
+          "category": "tails_unit"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-49.png",
+          "category": "tails_unit"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-5.png",
+          "category": "tails_unit"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-50.png",
+          "category": "tails_unit"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-57.png",
+          "category": "tails_unit"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-6.png",
+          "category": "tails_unit"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-61.png",
+          "category": "tails_unit"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-73.png",
+          "category": "tails_unit"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-85.png",
+          "category": "tails_unit"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-93.png",
+          "category": "tails_unit"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/catalog/chr-dsgn_catalogNTS-16.png",
+          "category": "catalog"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/catalog/chr-dsgn_catalogNTS-23.png",
+          "category": "catalog"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/catalog/chr-dsgn_catalogNTS-39.png",
+          "category": "catalog"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/catalog/chr-dsgn_catalogNTS-4.png",
+          "category": "catalog"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/catalog/chr-dsgn_catalogNTS-49.png",
+          "category": "catalog"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/catalog/chr-dsgn_catalogNTS-57.png",
+          "category": "catalog"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/catalog/chr-dsgn_catalogNTS-6.png",
+          "category": "catalog"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/catalog/chr-dsgn_catalogNTS-61.png",
+          "category": "catalog"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/catalog/chr-dsgn_catalogNTS-73.png",
+          "category": "catalog"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/catalog/chr-dsgn_catalogNTS-85.png",
+          "category": "catalog"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/catalog/chr-dsgn_catalogNTS-93.png",
+          "category": "catalog"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-0.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-00.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-000.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-1.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-10.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-11.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-12.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-13.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-14.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-15.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-16.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-17.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-18.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-19.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-2.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-20.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-21.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-22.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-23.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-24.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-25.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-26.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-27.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-28.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-29.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-2B.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-3.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-30.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-31.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-32.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-33.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-34.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-35.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-36.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-37.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-39.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-4.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-40.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-41.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-42.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-43.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-44.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-45.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-46.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-47.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-48.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-49.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-5.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-50.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-51.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-52.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-53.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-55.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-56.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-57.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-58.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-6.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-60.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-61.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-62.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-63.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-64.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-65.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-66.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-67A.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-67B.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-68.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-69.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-7.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-70.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-71.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-72.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-73.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-74.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-75.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-76.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-77.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-78.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-8.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-80.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-81.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-84.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-85.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-86.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-87.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-88.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-89.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-9.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-92.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-93.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-94.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-96.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-97.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-98.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-99.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/conceptAlt/cnsp_imgNTS-14-A.png",
+          "category": "concept_alt"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/conceptAlt/cnsp_imgNTS-14-B.png",
+          "category": "concept_alt"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/conceptAlt/cnsp_imgNTS-28-onBusiness.png",
+          "category": "concept_alt"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/conceptAlt/cnsp_imgNTS-28-onPrivate.png",
+          "category": "concept_alt"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/conceptAlt/cnsp_imgNTS-35-Miko.png",
+          "category": "concept_alt"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/conceptAlt/cnsp_imgNTS-35-Normal.png",
+          "category": "concept_alt"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/conceptAlt/cnsp_imgNTS-41-A.png",
+          "category": "concept_alt"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/conceptAlt/cnsp_imgNTS-60-Nerd.png",
+          "category": "concept_alt"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/conceptAlt/cnsp_imgNTS-60-Normal.png",
+          "category": "concept_alt"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/conceptAlt/cnsp_imgNTS-61-B.png",
+          "category": "concept_alt"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/conceptAlt/cnsp_imgNTS-66-B.png",
+          "category": "concept_alt"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/000/emstk_corefolderNTS-000-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/000/emstk_corefolderNTS-000-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/000/emstk_corefolderNTS-000-3.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/1/emstk_corefolderNTS-1-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/1/emstk_corefolderNTS-1-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/10/emstk_corefolderNTS-10-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/10/emstk_corefolderNTS-10-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/10-alt/emstk_corefolderNTS-10D-ondeck1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/11/emstk_corefolderNTS-11-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/12/emstk_corefolderNTS-12-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/12/emstk_corefolderNTS-12-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/13/emstk_corefolderNTS-13-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/14/emstk_corefolderNTS-14-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/14/emstk_corefolderNTS-14-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/14/emstk_corefolderNTS-14-3.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/15/emstk_corefolderNTS-15-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/15/emstk_corefolderNTS-15-nonharness1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/16/emstk_corefolderNTS-16-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/16/emstk_corefolderNTS-16-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/16/emstk_corefolderNTS-16-3.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/17/emstk_corefolderNTS-17-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/18/emstk_corefolderNTS-18-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/18/emstk_corefolderNTS-18-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/19/emstk_corefolderNTS-19-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/2/emstk_corefolderNTS-2-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/2/emstk_corefolderNTS-2-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/2-alt/emstk_corefolderNTS-2B-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/2-alt/emstk_corefolderNTS-2B-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/20/emstk_corefolderNTS-20-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/20/emstk_corefolderNTS-20-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/21/emstk_corefolderNTS-21-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/22/emstk_corefolderNTS-22-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/22/emstk_corefolderNTS-22-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/22/emstk_corefolderNTS-22-3.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/23/emstk_corefolderNTS-23-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/24/emstk_corefolderNTS-24-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/24/emstk_corefolderNTS-24-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/25/emstk_corefolderNTS-25-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/25/emstk_corefolderNTS-25-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/26/emstk_corefolderNTS-26-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/27/emstk_corefolderNTS-27-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/27/emstk_corefolderNTS-27-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/28/emstk_corefolderNTS-28-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/29/emstk_corefolderNTS-29-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/3/emstk_corefolderNTS-3-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/3/emstk_corefolderNTS-3-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/30/emstk_corefolderNTS-30-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/30/emstk_corefolderNTS-30-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/31/emstk_corefolderNTS-31-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/31/emstk_corefolderNTS-31-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/32/emstk_corefolderNTS-32-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/32/emstk_corefolderNTS-32-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/33/emstk_corefolderNTS-33-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/33/emstk_corefolderNTS-33-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/33/emstk_corefolderNTS-33-3.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/34/emstk_corefolderNTS-34-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/34/emstk_corefolderNTS-34-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/35/emstk_corefolderNTS-35-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/35/emstk_corefolderNTS-35-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/35/emstk_corefolderNTS-35-3.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/36/emstk_corefolderNTS-36-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/36/emstk_corefolderNTS-36-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/37/emstk_corefolderNTS-37-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/37/emstk_corefolderNTS-37-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/39/emstk_corefolderNTS-39-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/39/emstk_corefolderNTS-39-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/39/emstk_corefolderNTS-39-3.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/4/emstk_corefolderNTS-4-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/4/emstk_corefolderNTS-4-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/4/emstk_corefolderNTS-4-3.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/40/emstk_corefolderNTS-40-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/40/emstk_corefolderNTS-40-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/41/emstk_corefolderNTS-41-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/42/emstk_corefolderNTS-42-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/42/emstk_corefolderNTS-42-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/43/emstk_corefolderNTS-43-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/43/emstk_corefolderNTS-43-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/44/emstk_corefolderNTS-44-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/45/emstk_corefolderNTS-45-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/46/emstk_corefolderNTS-46-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/47/emstk_corefolderNTS-47-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/47/emstk_corefolderNTS-47-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/48/emstk_corefolderNTS-48-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/49/emstk_corefolderNTS-49-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/49/emstk_corefolderNTS-49-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/5/emstk_corefolderNTS-5-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/5/emstk_corefolderNTS-5-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/5/emstk_corefolderNTS-5-3.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/50/emstk_corefolderNTS-50-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/50/emstk_corefolderNTS-50-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/50/emstk_corefolderNTS-50-3.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/50/emstk_corefolderNTS-50-4.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/52/emstk_corefolderNTS-52-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/52/emstk_corefolderNTS-52-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/53/emstk_corefolderNTS-53-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/55/emstk_corefolderNTS-55-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/56/emstk_corefolderNTS-56-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/57/emstk_corefolderNTS-57-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/57/emstk_corefolderNTS-57-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/58/emstk_corefolderNTS-58-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/58/emstk_corefolderNTS-58-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/6/emstk_corefolderNTS-6-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/6/emstk_corefolderNTS-6-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/6/emstk_corefolderNTS-6-3.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/60/emstk_corefolderNTS-60-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/60/emstk_corefolderNTS-60-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/61/emstk_corefolderNTS-61-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/61/emstk_corefolderNTS-61-idol1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/61/emstk_corefolderNTS-61-idol2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/62/emstk_corefolderNTS-62-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/63/emstk_corefolderNTS-63-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/63/emstk_corefolderNTS-63-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/63/emstk_corefolderNTS-63-3.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/64/emstk_corefolderNTS-64-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/64/emstk_corefolderNTS-64-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/65/emstk_corefolderNTS-65-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/66/emstk_corefolderNTS-66-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/68/emstk_corefolderNTS-68-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/69/emstk_corefolderNTS-69-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/7/emstk_corefolderNTS-7-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/70/emstk_corefolderNTS-70-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/71/emstk_corefolderNTS-71-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/72/emstk_corefolderNTS-72-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/73/emstk_corefolderNTS-73-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/73/emstk_corefolderNTS-73-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/74/emstk_corefolderNTS-74-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/75/emstk_corefolderNTS-75-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/75/emstk_corefolderNTS-75-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/76/emstk_corefolderNTS-76-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/76/emstk_corefolderNTS-76-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/76/emstk_corefolderNTS-76-3.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/76/emstk_corefolderNTS-76-4.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/77/emstk_corefolderNTS-77-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/77/emstk_corefolderNTS-77-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/78/emstk_corefolderNTS-78-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/78/emstk_corefolderNTS-78-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/8/emstk_corefolderNTS-8-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/81/emstk_corefolderNTS-81-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/84/emstk_corefolderNTS-84-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/85/emstk_corefolderNTS-85-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/85/emstk_corefolderNTS-85-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/86/emstk_corefolderNTS-86-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/87/emstk_corefolderNTS-87-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/87/emstk_corefolderNTS-87-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/87/emstk_corefolderNTS-87-3.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/88/emstk_corefolderNTS-88-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/89/emstk_corefolderNTS-89-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/89/emstk_corefolderNTS-89-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/9/emstk_corefolderNTS-9-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/9/emstk_corefolderNTS-9-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/92/emstk_corefolderNTS-92-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/93/emstk_corefolderNTS-93-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/93/emstk_corefolderNTS-93-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/94/emstk_corefolderNTS-94-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/96/emstk_corefolderNTS-96-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/96/emstk_corefolderNTS-96-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/97/emstk_corefolderNTS-97-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/97/emstk_corefolderNTS-97-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/97/emstk_corefolderNTS-97-3.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/98/emstk_corefolderNTS-98-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/99/emstk_corefolderNTS-99-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/corefolder/99/emstk_corefolderNTS-99-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/designAlt/arts/art_imgNTS-68-humanoidOnWorkSuit.png",
+          "category": "design_alt"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/designAlt/catalog/chr-dsgn-alt_wipNTS-61-idol.png",
+          "category": "design_alt"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/designAlt/chattingArt/chart_imgNTS-25,NTS-5-humanoidCoolerSeason.png",
+          "category": "design_alt"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/designAlt/chattingArt/chart_imgNTS-35-humanoidswimwear.png",
+          "category": "design_alt"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/designAlt/chattingArt/chart_imgNTS-66-corefolderHalloween.png",
+          "category": "design_alt"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/designAlt/chattingArt/chart_imgNTS-69-humanoidLeotard.png",
+          "category": "design_alt"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/designAlt/eventArt/art_sphericateDay-halloween2023A.png",
+          "category": "design_alt"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/designAlt/eventArt/art_sphericateDay-halloween2023B.png",
+          "category": "design_alt"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/arts/hexademical-corefolders/art_sphericateDay202406-1.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/arts/hexademical-corefolders/art_sphericateDay202406-2.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/arts/hexademical-corefolders/art_sphericateDay202406-3.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/arts/numberize-corefolders/art_imgNTS-294RZ,NTS-295RZ-corefolder.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/arts/numberize-corefolders/art_imgNTS-337RZ-corefolder.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/arts/numberize-corefolders/art_imgNTS-401RZ-corefolder.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/arts/numberize-corefolders/art_imgNTS-96,NTS-241RZ-corefolder.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/concept/hexademical/cnsp_imgNTS-0xA.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/concept/hexademical/cnsp_imgNTS-0xB.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/concept/hexademical/cnsp_imgNTS-0xC.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/concept/hexademical/cnsp_imgNTS-0xD.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/concept/hexademical/cnsp_imgNTS-0xE.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/concept/hexademical/cnsp_imgNTS-0xF.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-1122RZ.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-115RZ.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-148RZ.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-227RZ.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-232RZ.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-238RZ.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-241RZ.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-258RZ.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-263RZ.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-265RZ.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-294RZ.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-295RZ.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-337RZ.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-366RZ.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-376RZ.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-377RZ.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-387RZ.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-401RZ.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-411RZ.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-421RZ.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-467RZ.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-476RZ.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-510RZ.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-558RZ.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-605RZ.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-625RZ.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-638RZ.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-670RZ.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-736RZ.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-773RZ.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/concept/numberize/cnsp_imgNTS-979RZ.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/conceptAlt/numberize/cnsp_imgNTS-115RZ-image.png",
+          "category": "concept_alt"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/corefolder/hexademical/0xA/emstk_corefolderNTS-0xA-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/corefolder/hexademical/0xB/emstk_corefolderNTS-0xB-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/corefolder/hexademical/0xC/emstk_corefolderNTS-0xC-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/corefolder/hexademical/0xC/emstk_corefolderNTS-0xC-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/corefolder/hexademical/0xD/emstk_corefolderNTS-0xD-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/corefolder/hexademical/0xD/emstk_corefolderNTS-0xD-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/corefolder/hexademical/0xE/emstk_corefolderNTS-0xE-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/corefolder/hexademical/0xF/emstk_corefolderNTS-0xF-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/corefolder/hexademical/0xF/emstk_corefolderNTS-0xF-1a.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/corefolder/hexademical/0xF/emstk_corefolderNTS-0xF-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/corefolder/hexademical/0xF/emstk_corefolderNTS-0xF-2a.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/corefolder/numberize/emstk_corefolderNTS-241RZ1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Secondary/corefolder/numberize/emstk_corefolderNTS-605RZ1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SelfSecondary/attr/costumeItem/attr_costumeItemNTS-666MP-brooch.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SelfSecondary/attr/halo/attr_haloNTS-444MP.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SelfSecondary/attr/halo/attr_haloNTS-666MP.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SelfSecondary/attr/numberMark/attr_numberMarkNTS-223-lot.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SelfSecondary/attr/numberMark/attr_numberMarkNTS-444MP-lot.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SelfSecondary/attr/numberMark/attr_numberMarkNTS-444MP.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SelfSecondary/attr/numberMark/attr_numberMarkNTS-666MP-lot.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SelfSecondary/attr/numberMark/attr_numberMarkNTS-753-lot.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SelfSecondary/attr/wing/attr_wingNTS-666MP.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SelfSecondary/concept/cnsp_imgNTS-111MP.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SelfSecondary/concept/cnsp_imgNTS-444MP.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SelfSecondary/concept/cnsp_imgNTS-666MP.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SelfSecondary/concept/cnsp_imgNTS-777JMP-mpB.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SelfSecondary/concept/cnsp_imgNTS-777MPA.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SelfSecondary/concept/cr/cnsp_imgNTS-223.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SelfSecondary/concept/jw/cnsp_imgNTS-753.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SelfSecondary/conceptAlt/cnsp_imgNTS-777MP,NTS-777JMP.png",
+          "category": "concept_alt"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SelfSecondary/conceptAlt/cnsp_imgNTS-777MP,NTS-777JMPC.png",
+          "category": "concept_alt"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SelfSecondary/corefolder/111/emstk_corefolderNTS-111MP-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SelfSecondary/corefolder/216/emstk_corefolderNTS-216-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SelfSecondary/corefolder/223/emstk_corefolderNTS-223-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SelfSecondary/corefolder/444/emstk_corefolderNTS-444MP-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SelfSecondary/corefolder/666/emstk_corefolderNTS-666MP-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SelfSecondary/corefolder/753/emstk_corefolderNTS-753-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/arts/corefolders/autumnMoon/art_autumnMoon2025.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/attr/costumeItem/attr_costumeItemNTS-222A-pendant.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/attr/costumeItem/attr_costumeItemNTS-222B-pendant.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/attr/costumeItem/attr_costumeItemNTS-666-brooch.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/attr/emblem/attr_emblemNTS-3x11-doubleBrooch.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/attr/halo/attr_haloNTS-3x11.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/attr/halo/attr_haloNTS-444.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/attr/halo/attr_haloNTS-666.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/attr/numberMark/attr_numberMarkNTS-100.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/attr/numberMark/attr_numberMarkNTS-222A.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/attr/numberMark/attr_numberMarkNTS-222B.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/attr/numberMark/attr_numberMarkNTS-3x11.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/attr/numberMark/attr_numberMarkNTS-444.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/attr/numberMark/attr_numberMarkNTS-64XP-sextpower.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/attr/numberMark/attr_numberMarkNTS-64XP.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/attr/wing/attr_wingNTS-666.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_imgNTS-111.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_imgNTS-222.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_imgNTS-222A.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_imgNTS-222B.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_imgNTS-3x11.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_imgNTS-444.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_imgNTS-64XP.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_imgNTS-666.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_imgNTS-777.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_imgNTS-777JP.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_imgNTS-888.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/conceptAlt/cnsp_imgNTS-777,NTS-777JP-orig.png",
+          "category": "concept_alt"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/conceptAlt/cnsp_imgNTS-777,NTS-777JPC.png",
+          "category": "concept_alt"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/100/emstk_corefolderNTS-100-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/111/emstk_corefolderNTS-111-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/111/emstk_corefolderNTS-111-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/216/emstk_corefolderNTS-216KZ-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/222/emstk_corefolderNTS-222A,NTS-222B-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/222/emstk_corefolderNTS-222A-2a.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/222/emstk_corefolderNTS-222B-2b.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/3x11/emstk_corefolderNTS-3x11-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/3x11/emstk_corefolderNTS-3x11-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/444/emstk_corefolderNTS-444-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/444/emstk_corefolderNTS-444-2.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/444/emstk_corefolderNTS-444-3.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/64/emstk_corefolderNTS-64XP-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/666/emstk_corefolderNTS-666-1.png",
+          "category": "corefolder"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/designAlt/chattingArt/chart_imgNTS-222A,NTS-222B-humanoidWBed.png",
+          "category": "design_alt"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/General/catalog/chr-dsgn_NTsCatalog-Summary.png",
+          "category": "catalog"
+        },
+        {
+          "path": "data/Works_NumberTales/Images/Ref_Reference/concept-figure/cnsp-fg_NTsClass.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/Ref_Vocabulary/concept-figure/cnsp-fg_NTsCoreFolder.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_NumberTales/Images/Ref_Vocabulary/concept-figure/cnsp-fg_NTsHumanoid.png",
+          "category": null
+        }
       ],
       "count": 630
     },
@@ -707,20 +2597,62 @@
         }
       ],
       "images": [
-        "data/Works_FLInvestigator78/Images/DB_Primary/arts/arts_imgFLI-D79,FLI-D80.png",
-        "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLI-M0.png",
-        "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLI-M1.png",
-        "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLI-M13.png",
-        "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLI-M16.png",
-        "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLI-M18.png",
-        "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLI-M3.png",
-        "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLI-M8.png",
-        "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLI-M9.png",
-        "data/Works_FLInvestigator78/Images/DB_Primary/concept/cnsp_imgFLI-M0.png",
-        "data/Works_FLInvestigator78/Images/DB_Primary/concept/cnsp_imgFLI-M16.png",
-        "data/Works_FLInvestigator78/Images/DB_PrimaryDealer/concept/cnsp_imgFLI-D79,FLI-D80.png",
-        "data/Works_FLInvestigator78/Images/General/pr_officialCard_202504.png",
-        "data/Works_FLInvestigator78/Images/General/pr_officialCard_202510.png"
+        {
+          "path": "data/Works_FLInvestigator78/Images/DB_Primary/arts/arts_imgFLI-D79,FLI-D80.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLI-M0.png",
+          "category": "card_design"
+        },
+        {
+          "path": "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLI-M1.png",
+          "category": "card_design"
+        },
+        {
+          "path": "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLI-M13.png",
+          "category": "card_design"
+        },
+        {
+          "path": "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLI-M16.png",
+          "category": "card_design"
+        },
+        {
+          "path": "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLI-M18.png",
+          "category": "card_design"
+        },
+        {
+          "path": "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLI-M3.png",
+          "category": "card_design"
+        },
+        {
+          "path": "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLI-M8.png",
+          "category": "card_design"
+        },
+        {
+          "path": "data/Works_FLInvestigator78/Images/DB_Primary/cardDesign/crddsn_imgFLI-M9.png",
+          "category": "card_design"
+        },
+        {
+          "path": "data/Works_FLInvestigator78/Images/DB_Primary/concept/cnsp_imgFLI-M0.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_FLInvestigator78/Images/DB_Primary/concept/cnsp_imgFLI-M16.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_FLInvestigator78/Images/DB_PrimaryDealer/concept/cnsp_imgFLI-D79,FLI-D80.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_FLInvestigator78/Images/General/pr_officialCard_202504.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_FLInvestigator78/Images/General/pr_officialCard_202510.png",
+          "category": null
+        }
       ],
       "count": 14
     },
@@ -740,28 +2672,94 @@
         }
       ],
       "images": [
-        "data/Works_ShouArRiders/Images/DB_Primary/arts/chattingArt/chart_imgSAR-EZ1.png",
-        "data/Works_ShouArRiders/Images/DB_Primary/arts/chattingArt/chart_imgSAR-EZ4.png",
-        "data/Works_ShouArRiders/Images/DB_Primary/arts/sphericateDay/art_imgSAR-EZ13-sphericateDay202309A.png",
-        "data/Works_ShouArRiders/Images/DB_Primary/arts/sphericateDay/art_imgSAR-EZ13-sphericateDay202309B.png",
-        "data/Works_ShouArRiders/Images/DB_Primary/arts/sphericateDay/art_imgSAR-EZ13-sphericateDay202309C.png",
-        "data/Works_ShouArRiders/Images/DB_Primary/concept/cnsp_imgSAR-EZ1.png",
-        "data/Works_ShouArRiders/Images/DB_Primary/concept/cnsp_imgSAR-EZ13.png",
-        "data/Works_ShouArRiders/Images/DB_Primary/concept/cnsp_imgSAR-EZ4.png",
-        "data/Works_ShouArRiders/Images/DB_Primary/designAlt/chattingArt/chart_imgSAR-EZ4-private.png",
-        "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ13-meowsday2023.png",
-        "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ13.png",
-        "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ4-newyear2023.png",
-        "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ4.png",
-        "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ5-2024.png",
-        "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ5.png",
-        "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ6-A.png",
-        "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ6-B.png",
-        "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ6-newyear2025A.png",
-        "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ6-newyear2025B.png",
-        "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ7-newyear2026.png",
-        "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ7.png",
-        "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ8.png"
+        {
+          "path": "data/Works_ShouArRiders/Images/DB_Primary/arts/chattingArt/chart_imgSAR-EZ1.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_ShouArRiders/Images/DB_Primary/arts/chattingArt/chart_imgSAR-EZ4.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_ShouArRiders/Images/DB_Primary/arts/sphericateDay/art_imgSAR-EZ13-sphericateDay202309A.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_ShouArRiders/Images/DB_Primary/arts/sphericateDay/art_imgSAR-EZ13-sphericateDay202309B.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_ShouArRiders/Images/DB_Primary/arts/sphericateDay/art_imgSAR-EZ13-sphericateDay202309C.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_ShouArRiders/Images/DB_Primary/concept/cnsp_imgSAR-EZ1.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_ShouArRiders/Images/DB_Primary/concept/cnsp_imgSAR-EZ13.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_ShouArRiders/Images/DB_Primary/concept/cnsp_imgSAR-EZ4.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_ShouArRiders/Images/DB_Primary/designAlt/chattingArt/chart_imgSAR-EZ4-private.png",
+          "category": "design_alt"
+        },
+        {
+          "path": "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ13-meowsday2023.png",
+          "category": "new_year"
+        },
+        {
+          "path": "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ13.png",
+          "category": "new_year"
+        },
+        {
+          "path": "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ4-newyear2023.png",
+          "category": "new_year"
+        },
+        {
+          "path": "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ4.png",
+          "category": "new_year"
+        },
+        {
+          "path": "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ5-2024.png",
+          "category": "new_year"
+        },
+        {
+          "path": "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ5.png",
+          "category": "new_year"
+        },
+        {
+          "path": "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ6-A.png",
+          "category": "new_year"
+        },
+        {
+          "path": "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ6-B.png",
+          "category": "new_year"
+        },
+        {
+          "path": "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ6-newyear2025A.png",
+          "category": "new_year"
+        },
+        {
+          "path": "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ6-newyear2025B.png",
+          "category": "new_year"
+        },
+        {
+          "path": "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ7-newyear2026.png",
+          "category": "new_year"
+        },
+        {
+          "path": "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ7.png",
+          "category": "new_year"
+        },
+        {
+          "path": "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ8.png",
+          "category": "new_year"
+        }
       ],
       "count": 22
     },
@@ -786,11 +2784,26 @@
         }
       ],
       "images": [
-        "data/Works_UnibyteLive/Images/DB_Primary/attr/accessoryUnit/attr_accessoryUnitUBL-Lg1-monocle.png",
-        "data/Works_UnibyteLive/Images/DB_Primary/keycapper/I/emstk_keycapperUBL-Ig2-1.png",
-        "data/Works_UnibyteLive/Images/DB_Primary/keycapper/L/emstk_keycapperUBL-Lg1-1.png",
-        "data/Works_UnibyteLive/Images/DB_Primary/keycapper/S/emstk_keycapperUBL-Sg2-1.png",
-        "data/Works_UnibyteLive/Images/DB_Primary/keycapper/Z/emstk_keycapperUBL-Zg1-1.png"
+        {
+          "path": "data/Works_UnibyteLive/Images/DB_Primary/attr/accessoryUnit/attr_accessoryUnitUBL-Lg1-monocle.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_UnibyteLive/Images/DB_Primary/keycapper/I/emstk_keycapperUBL-Ig2-1.png",
+          "category": "keycapper"
+        },
+        {
+          "path": "data/Works_UnibyteLive/Images/DB_Primary/keycapper/L/emstk_keycapperUBL-Lg1-1.png",
+          "category": "keycapper"
+        },
+        {
+          "path": "data/Works_UnibyteLive/Images/DB_Primary/keycapper/S/emstk_keycapperUBL-Sg2-1.png",
+          "category": "keycapper"
+        },
+        {
+          "path": "data/Works_UnibyteLive/Images/DB_Primary/keycapper/Z/emstk_keycapperUBL-Zg1-1.png",
+          "category": "keycapper"
+        }
       ],
       "count": 5
     },
@@ -810,17 +2823,50 @@
         }
       ],
       "images": [
-        "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/art_imgSCG-NE,SCG-SW-InfrationAerialSwimming.png",
-        "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/chattingArt/chart_imgSCG-NE-ramen.png",
-        "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/chattingArt/chart_imgSCG-NW.png",
-        "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/chattingArt/chart_imgSCG-SE-checkIntoAlive.png",
-        "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/chattingArt/chart_imgSCG-SW-whereBabiesFrom.png",
-        "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-E.png",
-        "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-N.png",
-        "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-NE.png",
-        "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-NW.png",
-        "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-S.png",
-        "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-SE.png"
+        {
+          "path": "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/art_imgSCG-NE,SCG-SW-InfrationAerialSwimming.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/chattingArt/chart_imgSCG-NE-ramen.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/chattingArt/chart_imgSCG-NW.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/chattingArt/chart_imgSCG-SE-checkIntoAlive.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/chattingArt/chart_imgSCG-SW-whereBabiesFrom.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-E.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-N.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-NE.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-NW.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-S.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-SE.png",
+          "category": "concept"
+        }
       ],
       "count": 11
     },
@@ -886,8 +2932,14 @@
         }
       ],
       "images": [
-        "data/Works_PastDivers/Images/DB_Primary/concept/cnsp_imgPDV-3G3.png",
-        "data/Works_PastDivers/Images/DB_Primary/concept/cnsp_imgPDV-6G3.png"
+        {
+          "path": "data/Works_PastDivers/Images/DB_Primary/concept/cnsp_imgPDV-3G3.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_PastDivers/Images/DB_Primary/concept/cnsp_imgPDV-6G3.png",
+          "category": "concept"
+        }
       ],
       "count": 2
     },
@@ -912,48 +2964,174 @@
         }
       ],
       "images": [
-        "data/Works_DestinyFoxRecords/Images/DB_Primary/arts/regular/arts_snsicnDFR-RQN.png",
-        "data/Works_DestinyFoxRecords/Images/DB_Primary/concept/cnsp_imgDFR-SIL.png",
-        "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-RN2.png",
-        "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-RQN.png",
-        "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-RTN.png",
-        "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-RVN.png",
-        "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-SII.png",
-        "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-SIJ.png",
-        "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-SIL.png",
-        "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-SIM.png",
-        "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-SIN.png",
-        "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-SIT.png",
-        "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-SITH.png",
-        "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-SRN.png",
-        "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/arts/fullpower/arts_destinyFoxRec-2022-recruit.png",
-        "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/arts/regular/art_imgDFR-SRN-meowsday2022.png",
-        "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/arts/regular/arts_destinyFoxRec-2021-graduateA.png",
-        "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/arts/regular/arts_destinyFoxRec-2021-graduateB.png",
-        "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/arts/regular/arts_destinyFoxRec-2021-valentine.png",
-        "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/arts/regular/arts_destinyFoxRec-2023-graduate.png",
-        "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/arts/weakening/arts_destinyFoxRec-2021-0031.png",
-        "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/chattingArt/chart_imgDFR-SII-regularIllness.png",
-        "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/design_imgDFR-RVN-1.png",
-        "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/dsgn_imgDFR-SRN.png",
-        "data/Works_DestinyFoxRecords/Images/DB_Primary/weakening/emstk_weakeningDFR-RVN-1.png",
-        "data/Works_DestinyFoxRecords/Images/DB_Primary/weakening/emstk_weakeningDFR-RVN-2.png",
-        "data/Works_DestinyFoxRecords/Images/DB_Proxy/arts/birthday/arts_birthday2023.png",
-        "data/Works_DestinyFoxRecords/Images/DB_Proxy/arts/birthday/arts_birthday2024.png",
-        "data/Works_DestinyFoxRecords/Images/DB_Proxy/arts/birthday/arts_birthday2025-1.png",
-        "data/Works_DestinyFoxRecords/Images/DB_Proxy/arts/birthday/arts_birthday2025-2.png",
-        "data/Works_DestinyFoxRecords/Images/DB_Proxy/arts/birthday/arts_birthday2026.png",
-        "data/Works_DestinyFoxRecords/Images/DB_Proxy/arts/chattingArt/chart_imgDFR-G3-orbify.png",
-        "data/Works_DestinyFoxRecords/Images/DB_Proxy/arts/chattingArt/chart_imgDFR-G3-regularTooManyTasks.png",
-        "data/Works_DestinyFoxRecords/Images/DB_Proxy/arts/fullpower/arts_fullpowerDFR-G2-fullpowerEngage.png",
-        "data/Works_DestinyFoxRecords/Images/DB_Proxy/design/dsgn_imgDFR-G2.png",
-        "data/Works_DestinyFoxRecords/Images/DB_Proxy/design/dsgn_imgDFR-G3.png",
-        "data/Works_DestinyFoxRecords/Images/DB_Proxy/designAlt/dsgn_imgDFR-G3-onCostume.png",
-        "data/Works_DestinyFoxRecords/Images/DB_Proxy/weakening/emstk_weakeningDFR-G2-1.png",
-        "data/Works_DestinyFoxRecords/Images/DB_Proxy/weakening/emstk_weakeningDFR-G3-1.png",
-        "data/Works_DestinyFoxRecords/Images/DB_Proxy/weakening/emstk_weakeningDFR-G3-2.png",
-        "data/Works_DestinyFoxRecords/Images/General/ArchFaith.png",
-        "data/Works_DestinyFoxRecords/Images/General/design_imgPh9.png"
+        {
+          "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/arts/regular/arts_snsicnDFR-RQN.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/concept/cnsp_imgDFR-SIL.png",
+          "category": "concept"
+        },
+        {
+          "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-RN2.png",
+          "category": "design"
+        },
+        {
+          "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-RQN.png",
+          "category": "design"
+        },
+        {
+          "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-RTN.png",
+          "category": "design"
+        },
+        {
+          "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-RVN.png",
+          "category": "design"
+        },
+        {
+          "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-SII.png",
+          "category": "design"
+        },
+        {
+          "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-SIJ.png",
+          "category": "design"
+        },
+        {
+          "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-SIL.png",
+          "category": "design"
+        },
+        {
+          "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-SIM.png",
+          "category": "design"
+        },
+        {
+          "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-SIN.png",
+          "category": "design"
+        },
+        {
+          "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-SIT.png",
+          "category": "design"
+        },
+        {
+          "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-SITH.png",
+          "category": "design"
+        },
+        {
+          "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/design/design_imgDFR-SRN.png",
+          "category": "design"
+        },
+        {
+          "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/arts/fullpower/arts_destinyFoxRec-2022-recruit.png",
+          "category": "design_alt"
+        },
+        {
+          "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/arts/regular/art_imgDFR-SRN-meowsday2022.png",
+          "category": "design_alt"
+        },
+        {
+          "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/arts/regular/arts_destinyFoxRec-2021-graduateA.png",
+          "category": "design_alt"
+        },
+        {
+          "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/arts/regular/arts_destinyFoxRec-2021-graduateB.png",
+          "category": "design_alt"
+        },
+        {
+          "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/arts/regular/arts_destinyFoxRec-2021-valentine.png",
+          "category": "design_alt"
+        },
+        {
+          "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/arts/regular/arts_destinyFoxRec-2023-graduate.png",
+          "category": "design_alt"
+        },
+        {
+          "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/arts/weakening/arts_destinyFoxRec-2021-0031.png",
+          "category": "design_alt"
+        },
+        {
+          "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/chattingArt/chart_imgDFR-SII-regularIllness.png",
+          "category": "design_alt"
+        },
+        {
+          "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/design_imgDFR-RVN-1.png",
+          "category": "design_alt"
+        },
+        {
+          "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/designAlt/dsgn_imgDFR-SRN.png",
+          "category": "design_alt"
+        },
+        {
+          "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/weakening/emstk_weakeningDFR-RVN-1.png",
+          "category": "weakening"
+        },
+        {
+          "path": "data/Works_DestinyFoxRecords/Images/DB_Primary/weakening/emstk_weakeningDFR-RVN-2.png",
+          "category": "weakening"
+        },
+        {
+          "path": "data/Works_DestinyFoxRecords/Images/DB_Proxy/arts/birthday/arts_birthday2023.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_DestinyFoxRecords/Images/DB_Proxy/arts/birthday/arts_birthday2024.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_DestinyFoxRecords/Images/DB_Proxy/arts/birthday/arts_birthday2025-1.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_DestinyFoxRecords/Images/DB_Proxy/arts/birthday/arts_birthday2025-2.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_DestinyFoxRecords/Images/DB_Proxy/arts/birthday/arts_birthday2026.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_DestinyFoxRecords/Images/DB_Proxy/arts/chattingArt/chart_imgDFR-G3-orbify.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_DestinyFoxRecords/Images/DB_Proxy/arts/chattingArt/chart_imgDFR-G3-regularTooManyTasks.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_DestinyFoxRecords/Images/DB_Proxy/arts/fullpower/arts_fullpowerDFR-G2-fullpowerEngage.png",
+          "category": "arts"
+        },
+        {
+          "path": "data/Works_DestinyFoxRecords/Images/DB_Proxy/design/dsgn_imgDFR-G2.png",
+          "category": "design"
+        },
+        {
+          "path": "data/Works_DestinyFoxRecords/Images/DB_Proxy/design/dsgn_imgDFR-G3.png",
+          "category": "design"
+        },
+        {
+          "path": "data/Works_DestinyFoxRecords/Images/DB_Proxy/designAlt/dsgn_imgDFR-G3-onCostume.png",
+          "category": "design_alt"
+        },
+        {
+          "path": "data/Works_DestinyFoxRecords/Images/DB_Proxy/weakening/emstk_weakeningDFR-G2-1.png",
+          "category": "weakening"
+        },
+        {
+          "path": "data/Works_DestinyFoxRecords/Images/DB_Proxy/weakening/emstk_weakeningDFR-G3-1.png",
+          "category": "weakening"
+        },
+        {
+          "path": "data/Works_DestinyFoxRecords/Images/DB_Proxy/weakening/emstk_weakeningDFR-G3-2.png",
+          "category": "weakening"
+        },
+        {
+          "path": "data/Works_DestinyFoxRecords/Images/General/ArchFaith.png",
+          "category": null
+        },
+        {
+          "path": "data/Works_DestinyFoxRecords/Images/General/design_imgPh9.png",
+          "category": null
+        }
       ],
       "count": 42
     },
@@ -999,12 +3177,18 @@
         }
       ],
       "images": [
-        "data/GeneralImages/Ref_Region8/cnsp-map_region8.png"
+        {
+          "path": "data/GeneralImages/Ref_Region8/cnsp-map_region8.png",
+          "category": null
+        }
       ],
       "count": 1
     }
   },
   "general_images": [
-    "data/GeneralImages/Ref_Region8/cnsp-map_region8.png"
+    {
+      "path": "data/GeneralImages/Ref_Region8/cnsp-map_region8.png",
+      "category": null
+    }
   ]
 }

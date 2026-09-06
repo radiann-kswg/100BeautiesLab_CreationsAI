@@ -122,7 +122,7 @@ git clone --recurse-submodules https://github.com/<your-account>/100BeautiesLab_
 | `ai-dataset/manifest.jsonl`          | LLM の学習・RAG 用 JSONL（1行1レコード、`ai_training` フラグ付き）           |
 | `ai-dataset/policy.json`             | AI 学習利用ポリシーの機械可読サマリ                                          |
 | `ai-dataset/index.json`              | 全作品・全キャラクターの一覧インデックス（`ai_training` 付き）               |
-| `ai-dataset/image-index.json`        | 全画像の相対パス一覧（`creations-db/` を基点とするパス、`ai_training` 付き） |
+| `ai-dataset/image-index.json`        | 全画像の相対パス一覧（`{ path, category }` 形式、`creations-db/` 基点、`ai_training` 付き） |
 | `ai-dataset/works/<WorkDir>.json`    | 作品別フラットデータ（`ai_training` 付き）                                   |
 
 ### 画像ファイルへのアクセス
@@ -136,9 +136,12 @@ with open("ai-dataset/image-index.json") as f:
     idx = json.load(f)
 
 # 例: ナンバーテールズの全画像パス
-for img_path in idx["works"]["#Works_NumberTales"]["images"]:
-    full_path = os.path.join("creations-db", img_path)
-    # full_path を画像ローダーに渡す
+# 各要素は { "path": ..., "category": ... }。category は格納フォルダ由来の画像種別
+# (concept / corefolder / humanoid / arts / catalog / tails_unit 等) で、判定できない場合は None。
+for entry in idx["works"]["#Works_NumberTales"]["images"]:
+    full_path = os.path.join("creations-db", entry["path"])
+    if entry["category"] == "corefolder":
+        pass  # full_path を画像ローダーに渡す
 ```
 
 ### JSONL の読み込み例

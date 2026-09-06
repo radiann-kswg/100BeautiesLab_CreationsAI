@@ -64,16 +64,49 @@
   "character_ids_with_tails_unit": [],
   "character_ids_with_roleplay_prompt": [],
   "image_paths": [
-    "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/art_imgSCG-NE,SCG-SW-InfrationAerialSwimming.png",
-    "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/chattingArt/chart_imgSCG-NE-ramen.png",
-    "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/chattingArt/chart_imgSCG-NW.png",
-    "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/chattingArt/chart_imgSCG-SE-checkIntoAlive.png",
-    "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/chattingArt/chart_imgSCG-SW-whereBabiesFrom.png",
-    "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-E.png",
-    "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-N.png",
-    "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-NE.png",
-    "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-NW.png",
-    "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-S.png",
-    "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-SE.png"
+    {
+      "path": "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/art_imgSCG-NE,SCG-SW-InfrationAerialSwimming.png",
+      "category": "arts"
+    },
+    {
+      "path": "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/chattingArt/chart_imgSCG-NE-ramen.png",
+      "category": "arts"
+    },
+    {
+      "path": "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/chattingArt/chart_imgSCG-NW.png",
+      "category": "arts"
+    },
+    {
+      "path": "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/chattingArt/chart_imgSCG-SE-checkIntoAlive.png",
+      "category": "arts"
+    },
+    {
+      "path": "data/Works_SinisterChangingGirls/Images/DB_Primary/arts/chattingArt/chart_imgSCG-SW-whereBabiesFrom.png",
+      "category": "arts"
+    },
+    {
+      "path": "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-E.png",
+      "category": "concept"
+    },
+    {
+      "path": "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-N.png",
+      "category": "concept"
+    },
+    {
+      "path": "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-NE.png",
+      "category": "concept"
+    },
+    {
+      "path": "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-NW.png",
+      "category": "concept"
+    },
+    {
+      "path": "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-S.png",
+      "category": "concept"
+    },
+    {
+      "path": "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-SE.png",
+      "category": "concept"
+    }
   ]
 }

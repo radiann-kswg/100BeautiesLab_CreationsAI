@@ -229,6 +229,15 @@ node scripts/build-dataset.js --verbose
 - **未解決は黙って落とさずログに出す**（ロールプレイプロンプトと同じ流儀）。ビルド末尾で「解決 N 件 / 未解決 M 件」をフィールド別内訳付きで報告し、`--verbose` で 1 件ずつ列挙する。件数は `build-info.json` の `image_ref_stats` にも載る。
 - `scripts/validate-dataset.js` は**載せたパスが実在すること**と統計の一致を検証する。「未解決 0 件」は検証しない（上流側のファイル未配置など、こちらで直せない要因が混ざるため）。最新の未解決件数は `build-info.json` の `image_ref_stats.unresolved` を参照すること。
 
+#### `image-index.json` の `category`（2026-09-06 追加）
+
+`image-index.json` の `works.<Key>.images` / `.references` / `general_images`、および `works/<Work>.json` の `image_paths` は `{ path, category }` のオブジェクト配列（旧形式は文字列配列）。
+
+- **`category` は `IMAGE_FIELDS` の `out` 名と同じ語彙**を、`Images/DB_<Db>/<folder>/` の格納フォルダから逆引きして埋める（`categorizeImages()`）。消費側（GeneratorsAI）が `emstk_` 接頭辞や `/catalog/` といったパス名ヒューリスティックで種別を推定しなくて済むようにするのが目的。
+- **既知フォルダに一致しないものは推測で埋めず `null`**（`attr/numberMark` 等の属性画像、`References/` `GeneralImages/` 配下）。ここを「それらしいカテゴリ」で埋めると、パス名ヒューリスティックをこちら側へ移設しただけになる。
+- 尻尾ユニットだけは `IMAGE_FIELDS` ではなく `attr/tailsUnit` 固定パスで解決されるため、`IMAGE_FOLDER_TO_CATEGORY` に個別エントリを持つ。これが無いとレコード側で `images.tails_unit` に載る同じ画像が image-index では `null` になる。
+- `category` は格納フォルダを表すだけで **AI 学習の可否とは無関係**。画像単位の可否は従来どおり `manifest.jsonl` の各レコードの `images` と `ai_training` で判断する。
+
 ### ロールプレイプロンプト（`RoleplayPrompts/`）の取り込み（2026-07-19 addon-ai-tag 追加）
 
 上流 `tools/build-roleplay-prompts.mjs` が、キャラの `ConversationPattern` 等の**充填済みフィールド**からキャラ単位のロールプレイプロンプト Markdown を機械生成し、`data/Works_<Name>/RoleplayPrompts/DB_<Db>/roleplay-prompt-<値>.md`（先頭≠link要素の作品は `DB_<Db>/<先頭値>/roleplay-prompt-<link値>.md`）に出力する。`build-dataset.js` は各レコードにこれを **`roleplay_prompt: { path }` のパス参照のみ**で添付する（本文は埋め込まない。画像と同じ流儀で、生成物は再生成可能なため二重保持しない）。
