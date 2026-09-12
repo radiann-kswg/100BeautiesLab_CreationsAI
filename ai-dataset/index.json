@@ -1,7 +1,7 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-09-07T09:25:06+09:00",
-  "_submodule_commit": "12ae3506cbae49f86617fd6909bd0be2fe30f918",
+  "_generated_at": "2026-09-13T07:41:55+09:00",
+  "_submodule_commit": "1d99735709f436840dc25247ea40b2a75e58a9d1",
   "works": [
     {
       "work_key": "#Works_NumberTales",
@@ -34,10 +34,10 @@
       }
     },
     {
-      "work_key": "#Works_ShouArRiders",
-      "dir_name": "Works_ShouArRiders",
+      "work_key": "#Works_ShauErRiders",
+      "dir_name": "Works_ShauErRiders",
       "title_ja": "獣爾騎兵",
-      "title_en": "Shou'ar Riders\nBeasted Cavalry",
+      "title_en": "Shau'er Riders\nBeasted Cavalry",
       "character_count": 10,
       "image_count": 22,
       "ai_training": {
@@ -65,7 +65,7 @@
       "title_ja": "豹変系女子",
       "title_en": "Sinister Changing Girls",
       "character_count": 8,
-      "image_count": 11,
+      "image_count": 12,
       "ai_training": {
         "allowed": false,
         "allowed_db_keys": [],

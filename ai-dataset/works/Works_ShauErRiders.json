@@ -1,10 +1,10 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-09-07T09:25:06+09:00",
-  "work_key": "#Works_ShouArRiders",
-  "dir_name": "Works_ShouArRiders",
+  "_generated_at": "2026-09-13T07:41:55+09:00",
+  "work_key": "#Works_ShauErRiders",
+  "dir_name": "Works_ShauErRiders",
   "title_ja": "獣爾騎兵",
-  "title_en": "Shou'ar Riders\nBeasted Cavalry",
+  "title_en": "Shau'er Riders\nBeasted Cavalry",
   "summary": "龍天国にある山月病(変化病)対策組織「獣爾騎兵」に所属する獣人型改造人間。\n主に十二支などの動物に基づいた獣人キャラクターが存在する。",
   "layout": {
     "headerPills": [
@@ -39,7 +39,7 @@
   },
   "db_files": [
     {
-      "path": "data/Works_ShouArRiders/DataBases/db_Primary.json",
+      "path": "data/Works_ShauErRiders/DataBases/db_Primary.json",
       "ai_training": {
         "allowed": false,
         "reason": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
@@ -68,7 +68,7 @@
   "character_ids_with_roleplay_prompt": [],
   "image_paths": [
     {
-      "path": "data/Works_ShouArRiders/Images/DB_Primary/arts/chattingArt/chart_imgSAR-EZ1.png",
+      "path": "data/Works_ShauErRiders/Images/DB_Primary/arts/chattingArt/chart_imgSAR-EZ1.png",
       "category": "arts",
       "width": 749,
       "height": 844,
@@ -78,7 +78,7 @@
       "is_language_variant": false
     },
     {
-      "path": "data/Works_ShouArRiders/Images/DB_Primary/arts/chattingArt/chart_imgSAR-EZ4.png",
+      "path": "data/Works_ShauErRiders/Images/DB_Primary/arts/chattingArt/chart_imgSAR-EZ4.png",
       "category": "arts",
       "width": 344,
       "height": 776,
@@ -88,7 +88,7 @@
       "is_language_variant": false
     },
     {
-      "path": "data/Works_ShouArRiders/Images/DB_Primary/arts/sphericateDay/art_imgSAR-EZ13-sphericateDay202309A.png",
+      "path": "data/Works_ShauErRiders/Images/DB_Primary/arts/sphericateDay/art_imgSAR-EZ13-sphericateDay202309A.png",
       "category": "arts",
       "width": 1200,
       "height": 900,
@@ -98,7 +98,7 @@
       "is_language_variant": false
     },
     {
-      "path": "data/Works_ShouArRiders/Images/DB_Primary/arts/sphericateDay/art_imgSAR-EZ13-sphericateDay202309B.png",
+      "path": "data/Works_ShauErRiders/Images/DB_Primary/arts/sphericateDay/art_imgSAR-EZ13-sphericateDay202309B.png",
       "category": "arts",
       "width": 1200,
       "height": 900,
@@ -108,7 +108,7 @@
       "is_language_variant": false
     },
     {
-      "path": "data/Works_ShouArRiders/Images/DB_Primary/arts/sphericateDay/art_imgSAR-EZ13-sphericateDay202309C.png",
+      "path": "data/Works_ShauErRiders/Images/DB_Primary/arts/sphericateDay/art_imgSAR-EZ13-sphericateDay202309C.png",
       "category": "arts",
       "width": 1200,
       "height": 900,
@@ -118,7 +118,7 @@
       "is_language_variant": false
     },
     {
-      "path": "data/Works_ShouArRiders/Images/DB_Primary/concept/cnsp_imgSAR-EZ1.png",
+      "path": "data/Works_ShauErRiders/Images/DB_Primary/concept/cnsp_imgSAR-EZ1.png",
       "category": "concept",
       "width": 1180,
       "height": 820,
@@ -128,7 +128,7 @@
       "is_language_variant": false
     },
     {
-      "path": "data/Works_ShouArRiders/Images/DB_Primary/concept/cnsp_imgSAR-EZ13.png",
+      "path": "data/Works_ShauErRiders/Images/DB_Primary/concept/cnsp_imgSAR-EZ13.png",
       "category": "concept",
       "width": 1180,
       "height": 820,
@@ -138,7 +138,7 @@
       "is_language_variant": false
     },
     {
-      "path": "data/Works_ShouArRiders/Images/DB_Primary/concept/cnsp_imgSAR-EZ4.png",
+      "path": "data/Works_ShauErRiders/Images/DB_Primary/concept/cnsp_imgSAR-EZ4.png",
       "category": "concept",
       "width": 1180,
       "height": 820,
@@ -148,7 +148,7 @@
       "is_language_variant": false
     },
     {
-      "path": "data/Works_ShouArRiders/Images/DB_Primary/designAlt/chattingArt/chart_imgSAR-EZ4-private.png",
+      "path": "data/Works_ShauErRiders/Images/DB_Primary/designAlt/chattingArt/chart_imgSAR-EZ4-private.png",
       "category": "design_alt",
       "width": null,
       "height": null,
@@ -158,7 +158,7 @@
       "is_language_variant": false
     },
     {
-      "path": "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ13-meowsday2023.png",
+      "path": "data/Works_ShauErRiders/Images/DB_Primary/newYear/art_imgSAR-EZ13-meowsday2023.png",
       "category": "new_year",
       "width": 1080,
       "height": 1080,
@@ -168,7 +168,7 @@
       "is_language_variant": false
     },
     {
-      "path": "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ13.png",
+      "path": "data/Works_ShauErRiders/Images/DB_Primary/newYear/art_imgSAR-EZ13.png",
       "category": "new_year",
       "width": 1080,
       "height": 1080,
@@ -178,7 +178,7 @@
       "is_language_variant": false
     },
     {
-      "path": "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ4-newyear2023.png",
+      "path": "data/Works_ShauErRiders/Images/DB_Primary/newYear/art_imgSAR-EZ4-newyear2023.png",
       "category": "new_year",
       "width": 1080,
       "height": 1080,
@@ -188,7 +188,7 @@
       "is_language_variant": false
     },
     {
-      "path": "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ4.png",
+      "path": "data/Works_ShauErRiders/Images/DB_Primary/newYear/art_imgSAR-EZ4.png",
       "category": "new_year",
       "width": 1080,
       "height": 1080,
@@ -198,7 +198,7 @@
       "is_language_variant": false
     },
     {
-      "path": "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ5-2024.png",
+      "path": "data/Works_ShauErRiders/Images/DB_Primary/newYear/art_imgSAR-EZ5-2024.png",
       "category": "new_year",
       "width": 1080,
       "height": 1080,
@@ -208,7 +208,7 @@
       "is_language_variant": false
     },
     {
-      "path": "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ5.png",
+      "path": "data/Works_ShauErRiders/Images/DB_Primary/newYear/art_imgSAR-EZ5.png",
       "category": "new_year",
       "width": 1080,
       "height": 1080,
@@ -218,7 +218,7 @@
       "is_language_variant": false
     },
     {
-      "path": "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ6-A.png",
+      "path": "data/Works_ShauErRiders/Images/DB_Primary/newYear/art_imgSAR-EZ6-A.png",
       "category": "new_year",
       "width": 1080,
       "height": 1080,
@@ -228,7 +228,7 @@
       "is_language_variant": false
     },
     {
-      "path": "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ6-B.png",
+      "path": "data/Works_ShauErRiders/Images/DB_Primary/newYear/art_imgSAR-EZ6-B.png",
       "category": "new_year",
       "width": 1080,
       "height": 1080,
@@ -238,7 +238,7 @@
       "is_language_variant": false
     },
     {
-      "path": "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ6-newyear2025A.png",
+      "path": "data/Works_ShauErRiders/Images/DB_Primary/newYear/art_imgSAR-EZ6-newyear2025A.png",
       "category": "new_year",
       "width": 1080,
       "height": 1080,
@@ -248,7 +248,7 @@
       "is_language_variant": false
     },
     {
-      "path": "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ6-newyear2025B.png",
+      "path": "data/Works_ShauErRiders/Images/DB_Primary/newYear/art_imgSAR-EZ6-newyear2025B.png",
       "category": "new_year",
       "width": 1080,
       "height": 1080,
@@ -258,7 +258,7 @@
       "is_language_variant": false
     },
     {
-      "path": "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ7-newyear2026.png",
+      "path": "data/Works_ShauErRiders/Images/DB_Primary/newYear/art_imgSAR-EZ7-newyear2026.png",
       "category": "new_year",
       "width": 1080,
       "height": 1080,
@@ -268,7 +268,7 @@
       "is_language_variant": false
     },
     {
-      "path": "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ7.png",
+      "path": "data/Works_ShauErRiders/Images/DB_Primary/newYear/art_imgSAR-EZ7.png",
       "category": "new_year",
       "width": 1080,
       "height": 1080,
@@ -278,7 +278,7 @@
       "is_language_variant": false
     },
     {
-      "path": "data/Works_ShouArRiders/Images/DB_Primary/newYear/art_imgSAR-EZ8.png",
+      "path": "data/Works_ShauErRiders/Images/DB_Primary/newYear/art_imgSAR-EZ8.png",
       "category": "new_year",
       "width": 1080,
       "height": 1080,
