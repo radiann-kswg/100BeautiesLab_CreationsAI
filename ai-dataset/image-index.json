@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-09-13T16:03:07+09:00",
+  "_generated_at": "2026-09-14T09:15:17+09:00",
   "_path_base": "creations-db/",
   "works": {
     "#Works_NumberTales": {
@@ -2139,11 +2139,31 @@
           "is_language_variant": false
         },
         {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-63.png",
+          "category": "tails_unit",
+          "width": 548,
+          "height": 473,
+          "long_edge_px": 548,
+          "is_large_original_candidate": false,
+          "language_variant": null,
+          "is_language_variant": false
+        },
+        {
           "path": "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-73.png",
           "category": "tails_unit",
           "width": 559,
           "height": 488,
           "long_edge_px": 559,
+          "is_large_original_candidate": false,
+          "language_variant": null,
+          "is_language_variant": false
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-75.png",
+          "category": "tails_unit",
+          "width": 547,
+          "height": 514,
+          "long_edge_px": 547,
           "is_large_original_candidate": false,
           "language_variant": null,
           "is_language_variant": false
@@ -6349,7 +6369,7 @@
           "is_language_variant": false
         }
       ],
-      "count": 631
+      "count": 633
     },
     "#Works_FLInvestigator78": {
       "title_ja": "運命線探偵78",
