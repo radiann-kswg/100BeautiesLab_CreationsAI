@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-09-14T09:15:17+09:00",
+  "_generated_at": "2026-09-14T16:08:46+09:00",
   "_path_base": "creations-db/",
   "works": {
     "#Works_NumberTales": {
@@ -24,12 +24,12 @@
         {
           "key": "#DB_SemiPrimary",
           "allowed": 11,
-          "total": 56
+          "total": 59
         },
         {
           "key": "#DB_SelfSecondary",
           "allowed": 7,
-          "total": 125
+          "total": 128
         },
         {
           "key": "#DB_Secondary",
