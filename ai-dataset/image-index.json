@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-09-17T10:32:09+09:00",
+  "_generated_at": "2026-09-18T22:31:53+09:00",
   "_path_base": "creations-db/",
   "works": {
     "#Works_NumberTales": {
@@ -2059,6 +2059,16 @@
           "is_language_variant": false
         },
         {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-2B.png",
+          "category": "tails_unit",
+          "width": 688,
+          "height": 410,
+          "long_edge_px": 688,
+          "is_large_original_candidate": false,
+          "language_variant": null,
+          "is_language_variant": false
+        },
+        {
           "path": "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-39.png",
           "category": "tails_unit",
           "width": 548,
@@ -2114,6 +2124,16 @@
           "width": 546,
           "height": 512,
           "long_edge_px": 546,
+          "is_large_original_candidate": false,
+          "language_variant": null,
+          "is_language_variant": false
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-58.png",
+          "category": "tails_unit",
+          "width": 601,
+          "height": 477,
+          "long_edge_px": 601,
           "is_large_original_candidate": false,
           "language_variant": null,
           "is_language_variant": false
@@ -6369,7 +6389,7 @@
           "is_language_variant": false
         }
       ],
-      "count": 633
+      "count": 635
     },
     "#Works_FLInvestigator78": {
       "title_ja": "運命線探偵78",
@@ -6998,9 +7018,19 @@
           "is_large_original_candidate": true,
           "language_variant": null,
           "is_language_variant": false
+        },
+        {
+          "path": "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-W.png",
+          "category": "concept",
+          "width": 1180,
+          "height": 820,
+          "long_edge_px": 1180,
+          "is_large_original_candidate": true,
+          "language_variant": null,
+          "is_language_variant": false
         }
       ],
-      "count": 12
+      "count": 13
     },
     "#Works_VirtuesUs": {
       "title_ja": "我ら美徳の桜花兄弟",

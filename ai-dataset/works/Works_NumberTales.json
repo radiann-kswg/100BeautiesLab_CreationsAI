@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-09-17T10:32:09+09:00",
+  "_generated_at": "2026-09-18T22:31:53+09:00",
   "work_key": "#Works_NumberTales",
   "dir_name": "Works_NumberTales",
   "title_ja": "ナンバーテールズ",
@@ -3372,6 +3372,16 @@
       "is_language_variant": false
     },
     {
+      "path": "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-2B.png",
+      "category": "tails_unit",
+      "width": 688,
+      "height": 410,
+      "long_edge_px": 688,
+      "is_large_original_candidate": false,
+      "language_variant": null,
+      "is_language_variant": false
+    },
+    {
       "path": "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-39.png",
       "category": "tails_unit",
       "width": 548,
@@ -3427,6 +3437,16 @@
       "width": 546,
       "height": 512,
       "long_edge_px": 546,
+      "is_large_original_candidate": false,
+      "language_variant": null,
+      "is_language_variant": false
+    },
+    {
+      "path": "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-58.png",
+      "category": "tails_unit",
+      "width": 601,
+      "height": 477,
+      "long_edge_px": 601,
       "is_large_original_candidate": false,
       "language_variant": null,
       "is_language_variant": false
