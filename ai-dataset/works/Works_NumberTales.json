@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-09-19T07:38:00+09:00",
+  "_generated_at": "2026-09-19T16:19:22+09:00",
   "work_key": "#Works_NumberTales",
   "dir_name": "Works_NumberTales",
   "title_ja": "ナンバーテールズ",
@@ -1323,6 +1323,7 @@
     "37",
     "39",
     "41",
+    "42",
     "44",
     "47",
     "49",
@@ -1334,6 +1335,7 @@
     "60",
     "61",
     "62",
+    "70",
     "76",
     "77",
     "78",
@@ -1348,7 +1350,9 @@
     "00",
     "100",
     "444",
-    "3x11"
+    "3x11",
+    "%",
+    "∞"
   ],
   "image_paths": [
     {
