@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-09-21T09:32:21+09:00",
+  "_generated_at": "2026-09-24T17:35:56+09:00",
   "_path_base": "creations-db/",
   "works": {
     "#Works_NumberTales": {
@@ -7062,16 +7062,27 @@
         {
           "key": "#DB_PrimaryMobs",
           "allowed": 0,
-          "total": 4
+          "total": 14
         },
         {
           "key": "#DB_Primary",
           "allowed": 0,
-          "total": 7
+          "total": 101
         }
       ],
-      "images": [],
-      "count": 0
+      "images": [
+        {
+          "path": "data/Works_UnauthedLogica/Images/DB_Primary/concept/cnsp_imgUAL-Z61.png",
+          "category": "concept",
+          "width": 1180,
+          "height": 820,
+          "long_edge_px": 1180,
+          "is_large_original_candidate": true,
+          "language_variant": null,
+          "is_language_variant": false
+        }
+      ],
+      "count": 1
     },
     "#Works_PastDivers": {
       "title_ja": "パストダイヴァー",
@@ -7593,8 +7604,8 @@
         },
         {
           "key": "#Ref_Society",
-          "allowed": 5,
-          "total": 5
+          "allowed": 6,
+          "total": 6
         },
         {
           "key": "#Ref_Region8",

@@ -1,7 +1,7 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-09-21T09:32:21+09:00",
-  "_submodule_commit": "e513331bc7ef43e30389bc21d255d71338af663a",
+  "_generated_at": "2026-09-24T17:35:56+09:00",
+  "_submodule_commit": "08971a2e17234daad05f7f4f8f0bde9ea3c079ad",
   "works": [
     {
       "work_key": "#Works_NumberTales",
@@ -90,8 +90,8 @@
       "dir_name": "Works_UnauthedLogica",
       "title_ja": "アンオースドロジカ",
       "title_en": "UnauthedLogica",
-      "character_count": 11,
-      "image_count": 0,
+      "character_count": 115,
+      "image_count": 1,
       "ai_training": {
         "allowed": false,
         "allowed_db_keys": [],
@@ -129,7 +129,7 @@
       "dir_name": "Works_CommonReferences",
       "title_ja": "共通資料",
       "title_en": "Common References",
-      "character_count": 47,
+      "character_count": 48,
       "image_count": 1,
       "ai_training": {
         "allowed": true,
@@ -144,6 +144,6 @@
       }
     }
   ],
-  "total_characters": 607,
+  "total_characters": 712,
   "total_works": 10
 }
