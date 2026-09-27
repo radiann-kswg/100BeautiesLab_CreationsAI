@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-09-25T15:47:21+09:00",
+  "_generated_at": "2026-09-27T13:59:15+09:00",
   "_path_base": "creations-db/",
   "works": {
     "#Works_NumberTales": {
@@ -23,12 +23,12 @@
         },
         {
           "key": "#DB_SemiPrimary",
-          "allowed": 11,
+          "allowed": 12,
           "total": 59
         },
         {
           "key": "#DB_SelfSecondary",
-          "allowed": 7,
+          "allowed": 8,
           "total": 128
         },
         {
@@ -5829,6 +5829,16 @@
           "is_language_variant": false
         },
         {
+          "path": "data/Works_NumberTales/Images/DB_SelfSecondary/concept/kz/cnsp_imgNTS-216.png",
+          "category": "concept",
+          "width": 1180,
+          "height": 820,
+          "long_edge_px": 1180,
+          "is_large_original_candidate": true,
+          "language_variant": null,
+          "is_language_variant": false
+        },
+        {
           "path": "data/Works_NumberTales/Images/DB_SelfSecondary/conceptAlt/cnsp_imgNTS-777MP,NTS-777JMP.png",
           "category": "concept_alt",
           "width": 1180,
@@ -6065,6 +6075,16 @@
           "height": 410,
           "long_edge_px": 512,
           "is_large_original_candidate": false,
+          "language_variant": null,
+          "is_language_variant": false
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/concept/Kubiczahl/cnsp_imgNTS-216KZ.png",
+          "category": "concept",
+          "width": 1180,
+          "height": 820,
+          "long_edge_px": 1180,
+          "is_large_original_candidate": true,
           "language_variant": null,
           "is_language_variant": false
         },
@@ -6389,7 +6409,7 @@
           "is_language_variant": false
         }
       ],
-      "count": 635
+      "count": 637
     },
     "#Works_FLInvestigator78": {
       "title_ja": "運命線探偵78",
