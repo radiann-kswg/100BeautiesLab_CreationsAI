@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-10-02T17:25:05+09:00",
+  "_generated_at": "2026-10-07T13:58:10+09:00",
   "_path_base": "creations-db/",
   "works": {
     "#Works_NumberTales": {
@@ -24,12 +24,12 @@
         {
           "key": "#DB_SemiPrimary",
           "allowed": 12,
-          "total": 59
+          "total": 60
         },
         {
           "key": "#DB_SelfSecondary",
           "allowed": 8,
-          "total": 128
+          "total": 127
         },
         {
           "key": "#DB_Secondary",
@@ -6239,6 +6239,16 @@
           "is_language_variant": false
         },
         {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/1000/emstk_corefolderNTS-1000-1.png",
+          "category": "corefolder",
+          "width": 1228,
+          "height": 1307,
+          "long_edge_px": 1307,
+          "is_large_original_candidate": true,
+          "language_variant": null,
+          "is_language_variant": false
+        },
+        {
           "path": "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/111/emstk_corefolderNTS-111-1.png",
           "category": "corefolder",
           "width": 1791,
@@ -6419,7 +6429,7 @@
           "is_language_variant": false
         }
       ],
-      "count": 638
+      "count": 639
     },
     "#Works_FLInvestigator78": {
       "title_ja": "運命線探偵78",
@@ -6917,15 +6927,27 @@
       "title_ja": "豹変系女子",
       "title_en": "Sinister Changing Girls",
       "ai_training": {
-        "allowed": false,
-        "allowed_db_keys": [],
-        "note": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
+        "allowed": true,
+        "allowed_db_keys": [
+          "#DB_Primary"
+        ],
+        "note": "allowed_db_keys は「AI 学習許可レコードを 1 件以上含む DB」の一覧です。同じ DB の中でも許可・不許可はレコード単位で分かれるため、この一覧だけで画像の利用可否を判断しないでください。正典は manifest.jsonl / manifest-training.jsonl の各レコードの ai_training と images です。db_records に DB ごとの許可件数を載せています。"
       },
       "db_records": [
         {
           "key": "#DB_Primary",
-          "allowed": 0,
+          "allowed": 8,
           "total": 8
+        },
+        {
+          "key": "#DB_SemiPrimary",
+          "allowed": 0,
+          "total": 1
+        },
+        {
+          "key": "#DB_Regioministrators",
+          "allowed": 0,
+          "total": 4
         }
       ],
       "images": [
