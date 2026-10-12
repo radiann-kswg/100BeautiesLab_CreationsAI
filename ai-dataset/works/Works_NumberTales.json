@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-10-10T21:32:51+09:00",
+  "_generated_at": "2026-10-12T17:01:50+09:00",
   "work_key": "#Works_NumberTales",
   "dir_name": "Works_NumberTales",
   "title_ja": "ナンバーテールズ",
@@ -311,6 +311,7 @@
     "266",
     "273",
     "289",
+    "290",
     "294",
     "295",
     "314",
@@ -7004,6 +7005,16 @@
       "is_language_variant": false
     },
     {
+      "path": "data/Works_NumberTales/Images/DB_SelfSecondary/arts/gift/gift_imgNTS-148-corefolder,NTS-148ZE-humanoid.png",
+      "category": "arts",
+      "width": 1120,
+      "height": 800,
+      "long_edge_px": 1120,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
+    },
+    {
       "path": "data/Works_NumberTales/Images/DB_SelfSecondary/attr/costumeItem/attr_costumeItemNTS-666MP-brooch.png",
       "category": null,
       "width": 446,
@@ -7145,6 +7156,16 @@
     },
     {
       "path": "data/Works_NumberTales/Images/DB_SelfSecondary/concept/cr/cnsp_imgNTS-223.png",
+      "category": "concept",
+      "width": 1180,
+      "height": 820,
+      "long_edge_px": 1180,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
+    },
+    {
+      "path": "data/Works_NumberTales/Images/DB_SelfSecondary/concept/hc/cnsp_imgNTS-148.png",
       "category": "concept",
       "width": 1180,
       "height": 820,

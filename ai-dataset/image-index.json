@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-10-10T21:32:51+09:00",
+  "_generated_at": "2026-10-12T17:01:50+09:00",
   "_path_base": "creations-db/",
   "works": {
     "#Works_NumberTales": {
@@ -29,7 +29,7 @@
         {
           "key": "#DB_SelfSecondary",
           "allowed": 8,
-          "total": 127
+          "total": 128
         },
         {
           "key": "#DB_Secondary",
@@ -5679,6 +5679,16 @@
           "is_language_variant": false
         },
         {
+          "path": "data/Works_NumberTales/Images/DB_SelfSecondary/arts/gift/gift_imgNTS-148-corefolder,NTS-148ZE-humanoid.png",
+          "category": "arts",
+          "width": 1120,
+          "height": 800,
+          "long_edge_px": 1120,
+          "is_large_original_candidate": true,
+          "language_variant": null,
+          "is_language_variant": false
+        },
+        {
           "path": "data/Works_NumberTales/Images/DB_SelfSecondary/attr/costumeItem/attr_costumeItemNTS-666MP-brooch.png",
           "category": null,
           "width": 446,
@@ -5820,6 +5830,16 @@
         },
         {
           "path": "data/Works_NumberTales/Images/DB_SelfSecondary/concept/cr/cnsp_imgNTS-223.png",
+          "category": "concept",
+          "width": 1180,
+          "height": 820,
+          "long_edge_px": 1180,
+          "is_large_original_candidate": true,
+          "language_variant": null,
+          "is_language_variant": false
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SelfSecondary/concept/hc/cnsp_imgNTS-148.png",
           "category": "concept",
           "width": 1180,
           "height": 820,
@@ -6449,7 +6469,7 @@
           "is_language_variant": false
         }
       ],
-      "count": 641
+      "count": 643
     },
     "#Works_FLInvestigator78": {
       "title_ja": "運命線探偵78",
@@ -6921,6 +6941,16 @@
           "is_language_variant": false
         },
         {
+          "path": "data/Works_UnibyteLive/Images/DB_Primary/keycapper/N/emstk_keycapperUBL-Ng1-1.png",
+          "category": "keycapper",
+          "width": 1378,
+          "height": 1444,
+          "long_edge_px": 1444,
+          "is_large_original_candidate": true,
+          "language_variant": null,
+          "is_language_variant": false
+        },
+        {
           "path": "data/Works_UnibyteLive/Images/DB_Primary/keycapper/S/emstk_keycapperUBL-Sg2-1.png",
           "category": "keycapper",
           "width": 1469,
@@ -6941,7 +6971,7 @@
           "is_language_variant": false
         }
       ],
-      "count": 5
+      "count": 6
     },
     "#Works_SinisterChangingGirls": {
       "title_ja": "豹変系女子",

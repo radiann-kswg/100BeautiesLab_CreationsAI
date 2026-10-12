@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-10-10T21:32:51+09:00",
+  "_generated_at": "2026-10-12T17:01:50+09:00",
   "work_key": "#Works_UnibyteLive",
   "dir_name": "Works_UnibyteLive",
   "title_ja": "ハンカクライブ",
@@ -146,6 +146,16 @@
       "width": 1843,
       "height": 1329,
       "long_edge_px": 1843,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
+    },
+    {
+      "path": "data/Works_UnibyteLive/Images/DB_Primary/keycapper/N/emstk_keycapperUBL-Ng1-1.png",
+      "category": "keycapper",
+      "width": 1378,
+      "height": 1444,
+      "long_edge_px": 1444,
       "is_large_original_candidate": true,
       "language_variant": null,
       "is_language_variant": false
