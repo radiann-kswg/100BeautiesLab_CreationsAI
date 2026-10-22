@@ -1,7 +1,7 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-10-17T14:55:09+09:00",
-  "_submodule_commit": "e396583d8bd9bf9a26ee9957a2a5bde1b13e3bb5",
+  "_generated_at": "2026-10-22T09:10:58+09:00",
+  "_submodule_commit": "8d50a22057cd2898343810bbe96394269cc01fbe",
   "works": [
     {
       "work_key": "#Works_NumberTales",
@@ -52,7 +52,7 @@
       "title_ja": "ハンカクライブ",
       "title_en": "UnibyteLive",
       "character_count": 47,
-      "image_count": 6,
+      "image_count": 8,
       "ai_training": {
         "allowed": false,
         "allowed_db_keys": [],
@@ -65,11 +65,12 @@
       "title_ja": "豹変系女子",
       "title_en": "Sinister Changing Girls",
       "character_count": 28,
-      "image_count": 13,
+      "image_count": 15,
       "ai_training": {
         "allowed": true,
         "allowed_db_keys": [
-          "#DB_Primary"
+          "#DB_Primary",
+          "#DB_PrimaryStabilities"
         ],
         "reason": "AI_Optout / DB_Hidden / Works_Hidden are not set for this DB. This DB is opted in for AI training/generation use."
       }

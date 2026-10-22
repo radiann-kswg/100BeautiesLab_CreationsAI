@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-10-17T14:55:09+09:00",
+  "_generated_at": "2026-10-22T09:10:58+09:00",
   "work_key": "#Works_SinisterChangingGirls",
   "dir_name": "Works_SinisterChangingGirls",
   "title_ja": "豹変系女子",
@@ -36,7 +36,8 @@
   "ai_training": {
     "allowed": true,
     "allowed_db_keys": [
-      "#DB_Primary"
+      "#DB_Primary",
+      "#DB_PrimaryStabilities"
     ],
     "reason": "AI_Optout / DB_Hidden / Works_Hidden are not set for this DB. This DB is opted in for AI training/generation use."
   },
@@ -231,6 +232,26 @@
     },
     {
       "path": "data/Works_SinisterChangingGirls/Images/DB_Primary/concept/cnsp_imgSCG-W.png",
+      "category": "concept",
+      "width": 1180,
+      "height": 820,
+      "long_edge_px": 1180,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
+    },
+    {
+      "path": "data/Works_SinisterChangingGirls/Images/DB_PrimaryStabilities/concept/cnsp_imgSCG-NNE.png",
+      "category": "concept",
+      "width": 1180,
+      "height": 820,
+      "long_edge_px": 1180,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
+    },
+    {
+      "path": "data/Works_SinisterChangingGirls/Images/DB_PrimaryStabilities/concept/cnsp_imgSCG-SSW.png",
       "category": "concept",
       "width": 1180,
       "height": 820,

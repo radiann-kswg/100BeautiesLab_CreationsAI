@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-10-17T14:55:09+09:00",
+  "_generated_at": "2026-10-22T09:10:58+09:00",
   "_path_base": "creations-db/",
   "works": {
     "#Works_NumberTales": {
@@ -6951,6 +6951,26 @@
           "is_language_variant": false
         },
         {
+          "path": "data/Works_UnibyteLive/Images/DB_Primary/keycapper/O/emstk_keycapperUBL-Og2-1.png",
+          "category": "keycapper",
+          "width": 1268,
+          "height": 1651,
+          "long_edge_px": 1651,
+          "is_large_original_candidate": true,
+          "language_variant": null,
+          "is_language_variant": false
+        },
+        {
+          "path": "data/Works_UnibyteLive/Images/DB_Primary/keycapper/O/emstk_keycapperUBL-Og2-2.png",
+          "category": "keycapper",
+          "width": 1268,
+          "height": 1651,
+          "long_edge_px": 1651,
+          "is_large_original_candidate": true,
+          "language_variant": null,
+          "is_language_variant": false
+        },
+        {
           "path": "data/Works_UnibyteLive/Images/DB_Primary/keycapper/S/emstk_keycapperUBL-Sg2-1.png",
           "category": "keycapper",
           "width": 1469,
@@ -6971,7 +6991,7 @@
           "is_language_variant": false
         }
       ],
-      "count": 6
+      "count": 8
     },
     "#Works_SinisterChangingGirls": {
       "title_ja": "豹変系女子",
@@ -6979,7 +6999,8 @@
       "ai_training": {
         "allowed": true,
         "allowed_db_keys": [
-          "#DB_Primary"
+          "#DB_Primary",
+          "#DB_PrimaryStabilities"
         ],
         "note": "allowed_db_keys は「AI 学習許可レコードを 1 件以上含む DB」の一覧です。同じ DB の中でも許可・不許可はレコード単位で分かれるため、この一覧だけで画像の利用可否を判断しないでください。正典は manifest.jsonl / manifest-training.jsonl の各レコードの ai_training と images です。db_records に DB ごとの許可件数を載せています。"
       },
@@ -6991,7 +7012,7 @@
         },
         {
           "key": "#DB_PrimaryStabilities",
-          "allowed": 0,
+          "allowed": 2,
           "total": 8
         },
         {
@@ -7135,9 +7156,29 @@
           "is_large_original_candidate": true,
           "language_variant": null,
           "is_language_variant": false
+        },
+        {
+          "path": "data/Works_SinisterChangingGirls/Images/DB_PrimaryStabilities/concept/cnsp_imgSCG-NNE.png",
+          "category": "concept",
+          "width": 1180,
+          "height": 820,
+          "long_edge_px": 1180,
+          "is_large_original_candidate": true,
+          "language_variant": null,
+          "is_language_variant": false
+        },
+        {
+          "path": "data/Works_SinisterChangingGirls/Images/DB_PrimaryStabilities/concept/cnsp_imgSCG-SSW.png",
+          "category": "concept",
+          "width": 1180,
+          "height": 820,
+          "long_edge_px": 1180,
+          "is_large_original_candidate": true,
+          "language_variant": null,
+          "is_language_variant": false
         }
       ],
-      "count": 13
+      "count": 15
     },
     "#Works_VirtuesUs": {
       "title_ja": "我ら美徳の桜花兄弟",
