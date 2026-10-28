@@ -1,7 +1,7 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-10-22T09:18:55+09:00",
-  "_submodule_commit": "a109f912f6f7a362faa05924fbfb5cc8beb91a92",
+  "_generated_at": "2026-10-28T14:54:12+09:00",
+  "_submodule_commit": "666e55646ef57981ff775e6ca2fd8a1bee0a653d",
   "works": [
     {
       "work_key": "#Works_NumberTales",
@@ -115,6 +115,19 @@
       }
     },
     {
+      "work_key": "#Works_StardustVsKaleidoscope",
+      "dir_name": "Works_StardustVsKaleidoscope",
+      "title_ja": "星屑の万華鏡",
+      "title_en": "Stardust vs. Kaleidoscope",
+      "character_count": 0,
+      "image_count": 0,
+      "ai_training": {
+        "allowed": false,
+        "allowed_db_keys": [],
+        "reason": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
+      }
+    },
+    {
       "work_key": "#Works_DestinyFoxRecords",
       "dir_name": "Works_DestinyFoxRecords",
       "title_ja": "運命線狐の記録\nフィジカル9",
@@ -132,7 +145,7 @@
       "dir_name": "Works_CommonReferences",
       "title_ja": "共通資料",
       "title_en": "Common References",
-      "character_count": 51,
+      "character_count": 53,
       "image_count": 1,
       "ai_training": {
         "allowed": true,
@@ -147,6 +160,6 @@
       }
     }
   ],
-  "total_characters": 736,
-  "total_works": 10
+  "total_characters": 738,
+  "total_works": 11
 }

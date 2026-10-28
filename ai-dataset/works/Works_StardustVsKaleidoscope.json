@@ -1,0 +1,50 @@
+{
+  "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
+  "_generated_at": "2026-10-28T14:54:12+09:00",
+  "work_key": "#Works_StardustVsKaleidoscope",
+  "dir_name": "Works_StardustVsKaleidoscope",
+  "title_ja": "星屑の万華鏡",
+  "title_en": "Stardust vs. Kaleidoscope",
+  "summary": "雄志結国のインフラ技術と国防を担う「スターダスト財団」および同じく謎の軍事教団「カレイドスコウプ教団」に所属する特殊技術者。\n「パストダイヴァー」の後日譚に相当し、主に黄道十二星座や惑星・チェスの駒に基づいたキャラクターが存在する。",
+  "layout": {
+    "headerPills": [
+      "Progress"
+    ],
+    "basicFields": [
+      "FormalName",
+      "CodeName",
+      "RaceType",
+      "GenderType",
+      "Belonging",
+      "FromArea",
+      "Class",
+      "Height_cm",
+      "Weight_kg",
+      "Age",
+      "BirthDay",
+      "FirstPersonCalling",
+      "SecondPersonCalling",
+      "ThirdPersonCalling"
+    ],
+    "subFields": [
+      "AbilityStats",
+      "AnotherRegions_DBLink"
+    ]
+  },
+  "ai_training": {
+    "allowed": false,
+    "allowed_db_keys": [],
+    "reason": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
+  },
+  "db_files": [],
+  "character_ids": [],
+  "character_ids_with_ai_hints": [],
+  "character_ids_with_silhouette_notes": [],
+  "character_ids_with_immutable_constraints": [],
+  "character_ids_with_negative_keywords": [],
+  "character_ids_with_work_common": [],
+  "character_ids_with_appearance_detail": [],
+  "character_ids_with_tails_unit": [],
+  "character_ids_with_roleplay_prompt": [],
+  "image_paths": []
+}

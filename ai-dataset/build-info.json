@@ -1,15 +1,15 @@
 {
-  "generated_at": "2026-10-22T09:18:55+09:00",
-  "submodule_commit": "a109f912f6f7a362faa05924fbfb5cc8beb91a92",
+  "generated_at": "2026-10-28T14:54:12+09:00",
+  "submodule_commit": "666e55646ef57981ff775e6ca2fd8a1bee0a653d",
   "source_repo": "https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
   "licence": "http://creativecommons.org/licenses/by-nc/4.0/",
-  "total_works": 10,
-  "total_characters": 736,
+  "total_works": 11,
+  "total_characters": 738,
   "total_general_images": 1,
   "ai_training_stats": {
     "allowed_works": 3,
-    "disallowed_works": 7,
-    "allowed_characters": 177,
+    "disallowed_works": 8,
+    "allowed_characters": 179,
     "disallowed_characters": 559
   },
   "ai_hints_stats": {
@@ -26,7 +26,7 @@
     "with_appearance_detail": 116
   },
   "tails_unit_stats": {
-    "with_tails_unit": 189
+    "with_tails_unit": 191
   },
   "roleplay_prompt_stats": {
     "with_roleplay_prompt": 62

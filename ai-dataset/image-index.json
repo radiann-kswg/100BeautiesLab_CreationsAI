@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-10-22T09:18:55+09:00",
+  "_generated_at": "2026-10-28T14:54:12+09:00",
   "_path_base": "creations-db/",
   "works": {
     "#Works_NumberTales": {
@@ -7276,6 +7276,18 @@
       ],
       "count": 2
     },
+    "#Works_StardustVsKaleidoscope": {
+      "title_ja": "星屑の万華鏡",
+      "title_en": "Stardust vs. Kaleidoscope",
+      "ai_training": {
+        "allowed": false,
+        "allowed_db_keys": [],
+        "note": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
+      },
+      "db_records": [],
+      "images": [],
+      "count": 0
+    },
     "#Works_DestinyFoxRecords": {
       "title_ja": "運命線狐の記録\nフィジカル9",
       "title_en": "Destiny Fox's Records\nPhysical 9",
@@ -7757,8 +7769,8 @@
         },
         {
           "key": "#Ref_Region8",
-          "allowed": 16,
-          "total": 16
+          "allowed": 18,
+          "total": 18
         }
       ],
       "images": [
