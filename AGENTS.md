@@ -107,7 +107,7 @@
 │   ├── manifest-training.jsonl#   AI 学習許可済みレコードのみの JSONL（推奨入口）
 │   ├── policy.json            #   AI 学習利用ポリシーの機械可読サマリ
 │   ├── build-info.json        #   ビルドメタ情報（生成日時・サブモジュールコミット等）
-│   └── works/                 #   作品別フラットデータ JSON
+│   └── works/                 #   作品別フラットデータ JSON + characters の全件RPカタログ
 ├── docs/
 │   ├── agents/
 │   │   └── roleplay-prompt.md # ロールプレイ仕様の正典（フル記述・ツール中立）
@@ -249,11 +249,22 @@ node scripts/build-dataset.js --verbose
 - 上流が AIHints を seed すれば derived は自動的に減る（2026-09-06 の上流 seed で 22 件 → 4 件）。**derived はあくまで上流整備までの繋ぎ**であり、恒久的な供給源ではない。
 - `preferred_reference_images` は derived とは独立で、全レコードに付く。`source` の `reference_images` が公開 URL 中心なのに対し、こちらはサブモジュール基点のローカル相対パスなのでオフライン処理・高解像度優先の選択に使える。
 
+### テキストRP推論許諾（学習許諾とは独立）
+
+`AI_TextRP_Allowed?: boolean | null` は**画像入力・キャラデザイン模倣・追加学習を一切含まないテキストRP推論だけ**の許諾。テキストのみの追加学習/ファインチューニングも既存 `AI_Optout` / `ai_training` 側に属する。旧判定の値・優先規則や `manifest-training.jsonl` のヘッダー/本文を新フラグで変更しない。
+
+- 上流の置き場はレコード直下・DB `_Commons`・`_Secondaries[*]._Commons`。既存clientの補完後のレコードだけを `getTextRPInferencePolicy()` に渡す。レコードの非空明示値 > 一致secondary Commons > DB Commons、レコードのnullは継承しfalseは維持。選択されたsecondary CommonsのnullはDB既定を覆い、unknownへ戻す。作品一括・DB直下・`_DBLink` 経由の許諾継承はない。直接読み込みで新フラグのCommonsを落とす場合も `assertDirectReadSafe()` で停止する。
+- `true` だけが `allowed`、`false` / 非公開は `denied`、未指定/null/不正型は `unknown` で実行不可。`AI_Optout:false` / `AI_Unready:false` / `isOwner` からRP許可を推定しない。権利者確認後にDB正本の該当レコードへ個別許可を記録し、カタログ再生成→アプリ個別有効化の順で進める。アプリ側の別許諾/別本文でunknownを上書きしない。未知の権利や第三者の許諾を推測しない。
+- `index.json` の `works[].character_catalog_path` → `works/<Work>.json` の `characters[]` が全件カタログ。同じ追加項目は `manifest.jsonl` のcharacterにも出力。`record_identity: { work_key, db_key, index: { "<dot path>": string|number|null } }` は `$IndexDef` / DB別サイドカーの全分類を保持し、欠落/不正/重複時はnull。旧 `id` / `character_ids` は表示用で、アカウント識別に使わない。
+- `text_rp_inference: { status, allowed, reason }` と、許可・識別・本文の条件を満たす場合だけの `text_rp_reference: { source: "record_fields", fields }` を出力する。許可リストの正典は `scripts/lib/text-rp.js` の定数。原本の会話テキストを投影するだけで創作内容を生成しない。画像/デザイン/AIHints/自由要約/任意オブジェクト/旧Markdownを混ぜない。原本テキストは信頼できるアプリ命令ではないので消費側で確認する。
+- 許諾と参照準備は別物。`allowed===true` でも正規識別または本文がnullなら実行しない。古いpinにフラグがなく許可0件でも安全側の正常動作。pin更新による学習側の変化をこの実装へ混ぜない。
+- `build-info.json.text_rp_inference_stats` と `policy.json.text_rp_inference_policy` / `schema` に契約を出力し、`scripts/validate-dataset.js` で原本との一致・本文投影・カタログ整合・旧training集合/内容の不変を検証する。新HTTP APIや専用サービスは追加しない。
+
 ### ロールプレイプロンプト（`RoleplayPrompts/`）の取り込み（2026-07-19 addon-ai-tag 追加）
 
 上流 `tools/build-roleplay-prompts.mjs` が、キャラの `ConversationPattern` 等の**充填済みフィールド**からキャラ単位のロールプレイプロンプト Markdown を機械生成し、`data/Works_<Name>/RoleplayPrompts/DB_<Db>/roleplay-prompt-<値>.md`（先頭≠link要素の作品は `DB_<Db>/<先頭値>/roleplay-prompt-<link値>.md`）に出力する。`build-dataset.js` は各レコードにこれを **`roleplay_prompt: { path }` のパス参照のみ**で添付する（本文は埋め込まない。画像と同じ流儀で、生成物は再生成可能なため二重保持しない）。
 
-- **本文の採否はレコードの `ai_training` ゲートに従う**。`manifest.jsonl` は全件（`allowed=false` でも path 付き）、`manifest-training.jsonl` は許可レコードのみ。同じ `RoleplayPrompts/` 内でも**不許可レコードの生成物は training に含めない**（例: `#DB_SemiPrimary` の Num 100 は生成物があるが不許可なので training から除外される）。「フォルダを丸ごと束ねる」実装は**厳禁**（オプトアウト済み創作本文の漏洩事故になる）。
+- **学習へ供する本文の採否はレコードの `ai_training` ゲートに従う**。テキストRP推論の許諾/限定参照とは別経路で、このMarkdownを新用途へ無条件流用しない。`manifest.jsonl` は全件（`allowed=false` でも path 付き）、`manifest-training.jsonl` は許可レコードのみ。同じ `RoleplayPrompts/` 内でも**不許可レコードの生成物は training に含めない**（例: `#DB_SemiPrimary` の Num 100 は生成物があるが不許可なので training から除外される）。「フォルダを丸ごと束ねる」実装は**厳禁**（オプトアウト済み創作本文の漏洩事故になる）。
 - **パス解決は `resolveRoleplayPrompt()` が `RoleplayPrompts/DB_<Db>/` 以下を再帰スキャンし `roleplay-prompt-<charId>.md` を名前一致で拾う**。上流の出力パス規約（`resolveIndexPathRoles`）をこちらで再実装すると二重管理で必ず食い違うため（policy と同じ設計思想）。NumberTales は `charId == Num == ファイル名の link 値` で完全一致。charId が link 値と異なる作品（`#Works_FLInvestigator78` は top-level `Num`/`ID` を持たず charId が配列 index に落ちる）は「未マッチ＝未添付」で安全側に倒れる（該当作品はいずれも不許可のため実害なし）。
 - **未添付は黙って落とさずログに出す**。ビルド末尾で「ディスク上の全生成物 vs 実添付」の差分を `info`/`log` で報告する（現状 FLInvestigator78 2 件・DestinyFoxRecords 2 件が安全側の未添付）。
 - 消費側の入口: `has_roleplay_prompt` フラグで有無を確認 → `roleplay_prompt.path`（サブモジュールルート基点の相対パス）を読む。`works/<Work>.json` に `character_ids_with_roleplay_prompt`、`build-info.json` に `roleplay_prompt_stats.with_roleplay_prompt`、`policy.json` の `schema.roleplay_prompt_field` / `target_environments.character_roleplay` に仕様を記載。

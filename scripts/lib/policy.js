@@ -53,8 +53,8 @@ export function aiTrainingDisallowedProgressUnready(progress) {
     + 'This is NOT a rights-based opt-out: rights are expressed only by AI_Optout.';
 }
 
-/** ポリシー判定に効く値のうち、_Commons が供給しうるもの */
-const COMMONS_SUPPLIED_POLICY_FIELDS = ['Progress', 'isPrivate'];
+/** 直接読み込みで継承を落とすと許諾判定が変わるフィールド */
+const COMMONS_SUPPLIED_POLICY_FIELDS = ['Progress', 'isPrivate', 'AI_TextRP_Allowed'];
 
 /**
  * _Secondaries の各カテゴリが持つ AI_Optout を集約して返す。
@@ -238,4 +238,29 @@ export function getCharacterAIPolicy(dbPolicy, charData, secondaryOptout = null,
     }
   }
   return dbPolicy;
+}
+
+/**
+ * 画像入力・デザイン模倣・追加学習を含まないテキスト RP 推論の許諾。
+ * charData は既存 client の _Commons / _Secondaries 補完後の値を渡す。
+ * AI_Optout / AI_Unready / isOwner から別用途の許可を推定しない。
+ */
+export function getTextRPInferencePolicy(worksHidden, dbEntry, charData) {
+  const result = (status, reason) => ({ status, allowed: status === 'allowed', reason });
+  if (worksHidden === true || dbEntry?.DB_Hidden === true || charData?.isPrivate === true) {
+    return result('denied', 'Non-public work, DB or record; text RP inference is disabled.');
+  }
+  if (!dbEntry || typeof dbEntry !== 'object' || Array.isArray(dbEntry)) {
+    return result('unknown', 'No DB metadata; text RP inference permission cannot be established.');
+  }
+  const permission = charData?.AI_TextRP_Allowed;
+  if (permission === true) {
+    return result('allowed', 'AI_TextRP_Allowed: true after Commons inheritance; text-only RP inference, not training.');
+  }
+  if (permission === false) {
+    return result('denied', 'AI_TextRP_Allowed: false after Commons inheritance.');
+  }
+  return result('unknown', permission == null
+    ? 'AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required.'
+    : 'AI_TextRP_Allowed has an invalid type; text RP inference is disabled.');
 }

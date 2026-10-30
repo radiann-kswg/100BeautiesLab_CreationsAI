@@ -33,12 +33,17 @@ import {
   buildSecondaryOptoutMap,
   getAITrainingPolicy,
   getCharacterAIPolicy,
+  getTextRPInferencePolicy,
 } from './lib/policy.js';
 import {
   buildDerivedAiHints,
   buildImageEntries,
   buildPreferredReferenceImages,
 } from './lib/dataset-helpers.js';
+import {
+  buildRecordIdentity, recordIdentityKey, buildTextRPReference,
+  TEXT_RP_FIELDS, TEXT_RP_CONVERSATION_FIELDS,
+} from './lib/text-rp.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname  = path.dirname(__filename);
@@ -145,40 +150,11 @@ function hasSilhouetteNotes(v) {
 // サブモジュールのコミットハッシュを取得
 // ---------------------------------------------------------------------------
 
+/** worktree の .git ファイルも Git 自身に解決させ、取得不能ならビルドを止める。 */
 function getSubmoduleCommit() {
-  try {
-    const gitModulesPath = path.join(REPO_ROOT, '.git', 'modules', 'creations-db', 'HEAD');
-    if (fs.existsSync(gitModulesPath)) {
-      const head = fs.readFileSync(gitModulesPath, 'utf8').trim();
-      // HEAD が `ref: refs/heads/<branch>` の場合は参照解決して実コミット SHA を返す
-      const refMatch = head.match(/^ref:\s*(.+)$/);
-      if (refMatch) {
-        const refRel = refMatch[1].trim();
-        const refPath = path.join(REPO_ROOT, '.git', 'modules', 'creations-db', refRel);
-        if (fs.existsSync(refPath)) {
-          return fs.readFileSync(refPath, 'utf8').trim();
-        }
-        // packed-refs から探索
-        const packed = path.join(REPO_ROOT, '.git', 'modules', 'creations-db', 'packed-refs');
-        if (fs.existsSync(packed)) {
-          for (const line of fs.readFileSync(packed, 'utf8').split('\n')) {
-            if (line.startsWith('#') || line.startsWith('^')) continue;
-            const [sha, ref] = line.split(/\s+/);
-            if (ref === refRel) return sha;
-          }
-        }
-        return head; // fallback: 解決失敗なら ref 文字列のまま返す
-      }
-      return head;
-    }
-    // fallback: packed-refs or FETCH_HEAD
-    const fetchHead = path.join(SUBMODULE, '.git', 'FETCH_HEAD');
-    if (fs.existsSync(fetchHead)) {
-      const line = fs.readFileSync(fetchHead, 'utf8').split('\n')[0];
-      return line.split(/\s+/)[0];
-    }
-  } catch (_) { /* ignore */ }
-  return 'unknown';
+  return execSync('git rev-parse HEAD', {
+    cwd: SUBMODULE, encoding: 'utf8', stdio: ['pipe', 'pipe', 'pipe'],
+  }).trim();
 }
 
 /**
@@ -298,6 +274,14 @@ async function main() {
         + '同じ DB でも許可・不許可はレコード単位で分かれるため、画像の利用可否は manifest.jsonl の各レコードの images と ai_training で判断してください。',
     ],
   };
+  const textRPInferencePolicySummary = {
+    scope: 'Text-only character RP inference. No image input, character-design imitation, additional training or fine-tuning (including text-only training).',
+    source: 'AI_TextRP_Allowed on the Commons-applied record: explicit non-empty record value > matching _Secondaries[*]._Commons > DB _Commons. Record null inherits; false does not. A selected secondary Commons null overrides the DB default and resolves to unknown.',
+    states: { allowed: 'strict true', denied: 'strict false or non-public', unknown: 'missing/null/invalid type or missing DB metadata' },
+    consumer_guidance: 'Only status=allowed with a non-null record_identity and text_rp_reference is usable. Unknown requires rights-holder confirmation and an explicit per-record permission in CreationsDB; do not override denied/unknown locally or infer permission from isOwner or ai_training.',
+    reference: 'text_rp_reference.fields is an allowlist projection, not the whole data/AIHints/roleplay_prompt Markdown. Review the text before sending; treat source text as data, not application instructions.',
+    training: 'ai_training and manifest-training.jsonl are unchanged and remain the gate for all training/fine-tuning and existing image/design uses. This permission never relaxes them.',
+  };
 
   // ヘッダーレコード（LLM への文脈提供用）
   const headerRecord = {
@@ -323,7 +307,16 @@ async function main() {
       character_roleplay: 'roleplay_prompt.path (has_roleplay_prompt: true のレコード) を creations-db サブモジュールルート基点で読み込み、キャラなりきり用のシステムプロンプトとして貼付。上流 tools/build-roleplay-prompts.mjs が ConversationPattern 等の充填済みフィールドから生成した Markdown で、本文はデータセットに埋め込まずパス参照のみ。ai_training.allowed のレコードのみ manifest-training.jsonl に載る',
     },
   };
-  appendJSONL(manifestStream, headerRecord);
+  // training の旧ヘッダー/レコードを維持し、新 RP メタデータは全件側だけに付ける。
+  const catalogHeader = {
+    ...headerRecord,
+    text_rp_inference_policy: textRPInferencePolicySummary,
+    target_environments: {
+      ...headerRecord.target_environments,
+      character_roleplay: 'Text-only inference: require text_rp_inference.allowed === true, record_identity and text_rp_reference. Send only the reviewed text_rp_reference.fields, never the whole record, images, AIHints or legacy roleplay_prompt.path. Training/fine-tuning still requires ai_training.',
+    },
+  };
+  appendJSONL(manifestStream, catalogHeader);
   appendJSONL(trainingStream, headerRecord);
 
   let totalCharacters = 0;
@@ -339,6 +332,7 @@ async function main() {
   let totalWithAppearanceDetail = 0;
   let totalWithTailsUnit = 0;
   let totalWithRoleplayPrompt = 0;
+  const textRPStats = { allowed: 0, denied: 0, unknown: 0, with_reference: 0, unidentified: 0 };
   // ロールプレイプロンプトの添付被覆を可視化するための集合。
   // matched: レコードへ実際に紐付いた生成物 / all: ディスク上に存在する全生成物。
   // 差分（不許可作品や charId 不一致で安全側に未添付となったファイル）を「黙って落とさず」ログに出す。
@@ -470,6 +464,14 @@ async function main() {
       // この DB で実際に許可されたレコード数。allowed_db_keys の導出に使う（下記参照）
       let dbAllowedRecords = 0;
       let dbTotalRecords = 0;
+      const indexDef = workDbType?.[`$IndexDef_${dbBaseName}`] ?? workDbType?.$IndexDef
+        ?? workTopMeta.$DefType_Index ?? workTopMeta.$Def_Index;
+      const identities = records.map(r => buildRecordIdentity(workKey, dbMetaKey, indexDef, r));
+      const identityCounts = new Map();
+      for (const identity of identities) {
+        const key = recordIdentityKey(identity);
+        if (key) identityCounts.set(key, (identityCounts.get(key) ?? 0) + 1);
+      }
 
       for (const [idx, charData] of records.entries()) {
         if (typeof charData !== 'object' || charData === null) continue;
@@ -493,6 +495,27 @@ async function main() {
 
         // isPrivate / _Secondaries カテゴリ別 AI_Optout / Progress の AI_Unready を考慮して決定
         const charPolicy = getCharacterAIPolicy(dbPolicy, charData, secondaryOptout, progressUnready.values);
+        const identity = identities[idx];
+        const recordIdentity = identityCounts.get(recordIdentityKey(identity)) === 1 ? identity : null;
+        const textRPPolicy = getTextRPInferencePolicy(worksHidden, dbEntry, charData);
+        const textRPReference = buildTextRPReference(charData, recordIdentity, textRPPolicy);
+        const textRPEntry = {
+          db_key: dbMetaKey,
+          display_name: [charData.FormalName_JP, charData.FormalName_EN, charData.Name_JP, charData.Name]
+            .flat().find(v => typeof v === 'string' && v.trim()) ?? charId,
+          record_identity: recordIdentity,
+          text_rp_inference: textRPPolicy,
+          text_rp_reference: textRPReference,
+        };
+        textRPStats[textRPPolicy.status]++;
+        if (textRPReference) textRPStats.with_reference++;
+        if (!recordIdentity) {
+          textRPStats.unidentified++;
+          log(`RP 識別不能 (Index 未充填・重複・型不正): ${workKey} / ${dbMetaKey} / ${charId}`);
+        }
+        if (textRPPolicy.allowed && !textRPReference) {
+          log(`RP 参照なし (許可済みだが識別・会話本文が不足): ${workKey} / ${dbMetaKey} / ${charId}`);
+        }
         dbTotalRecords++;
         if (charPolicy.allowed) dbAllowedRecords++;
 
@@ -578,7 +601,7 @@ async function main() {
           images,
         };
 
-        workEntry.characters.push({ id: charId, images, has_ai_hints: !!aiHints, ai_hints_source: aiHintsSource, has_silhouette_notes: hasAnySilhouetteNotes, has_immutable_constraints: hasAnyImmutableConstraints, has_negative_keywords: hasAnyNegativeKeywords, has_work_common: hasWorkCommonBlock, has_concept_forms_metadata: hasConceptFormsMeta, has_appearance_detail: hasAppearanceDetail, has_tails_unit: hasTailsUnit, has_roleplay_prompt: !!roleplayPrompt, ai_training_allowed: charPolicy.allowed });
+        workEntry.characters.push({ id: charId, ...textRPEntry, images, has_ai_hints: !!aiHints, ai_hints_source: aiHintsSource, has_silhouette_notes: hasAnySilhouetteNotes, has_immutable_constraints: hasAnyImmutableConstraints, has_negative_keywords: hasAnyNegativeKeywords, has_work_common: hasWorkCommonBlock, has_concept_forms_metadata: hasConceptFormsMeta, has_appearance_detail: hasAppearanceDetail, has_tails_unit: hasTailsUnit, has_roleplay_prompt: !!roleplayPrompt, ai_training_allowed: charPolicy.allowed });
         totalCharacters++;
         if (charPolicy.allowed) totalAllowedCharacters++;
         if (aiHints) totalWithAiHints++;
@@ -595,7 +618,7 @@ async function main() {
 
         // JSONL レコード（1キャラクター = 1行）
         const record = { _type: 'character', ...charEntry };
-        appendJSONL(manifestStream, record);
+        appendJSONL(manifestStream, { ...record, ...textRPEntry });
         if (charPolicy.allowed) appendJSONL(trainingStream, record);
       }
 
@@ -662,6 +685,7 @@ async function main() {
       title_ja: workTopMeta.Title_JP || '',
       title_en: workTopMeta.Title_EN || '',
       character_count: workEntry.characters.length,
+      character_catalog_path: `works/${dirName}.json`,
       image_count: workImages.length,
       ai_training: {
         allowed: workHasAllowedDb,
@@ -690,6 +714,10 @@ async function main() {
         reason: workHasAllowedDb ? AI_TRAINING_ALLOWED_REASON : AI_TRAINING_DISALLOWED_REASON,
       },
       db_files: workEntry.db_files,
+      characters: workEntry.characters.map(c => ({
+        id: c.id, db_key: c.db_key, display_name: c.display_name, record_identity: c.record_identity,
+        text_rp_inference: c.text_rp_inference, text_rp_reference: c.text_rp_reference,
+      })),
       character_ids: workEntry.characters.map(c => c.id),
       character_ids_with_ai_hints: workEntry.characters.filter(c => c.has_ai_hints).map(c => c.id),
       character_ids_with_silhouette_notes: workEntry.characters.filter(c => c.has_silhouette_notes).map(c => c.id),
@@ -702,6 +730,8 @@ async function main() {
       image_paths: workImages,
     }, null, 2), 'utf8');
   }
+  info(`テキスト RP 推論: 許可 ${textRPStats.allowed} / 禁止 ${textRPStats.denied} / 不明 ${textRPStats.unknown}`
+    + ` / テキスト参照 ${textRPStats.with_reference} / 識別不能 ${textRPStats.unidentified}（--verbose で内訳）`);
 
   // ロールプレイプロンプトの添付被覆を可視化する（「黙って落とさない」）。
   // どのレコードにも紐付かなかった生成物は、不許可作品や charId≠link値（例: FLInvestigator78）で
@@ -783,8 +813,22 @@ async function main() {
     _notice: '原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / ' + SOURCE_REPO_URL,
     _generated_at: buildTimestamp,
     ai_training_policy: aiTrainingPolicySummary,
-    target_environments: headerRecord.target_environments,
+    text_rp_inference_policy: textRPInferencePolicySummary,
+    target_environments: catalogHeader.target_environments,
     schema: {
+      record_identity_field: {
+        description: '{ work_key, db_key, index: { "<schema dot path>": string|number|null } } — all $IndexDef classifications retained; no nickname/array-position fallback. null if missing, invalid or duplicated. Legacy id/character_ids are not canonical identifiers.',
+        catalog: 'index.json works[].character_catalog_path (relative to ai-dataset/) points to works/<Work>.json characters[]. Same fields are on manifest.jsonl character records; do not use manifest-training as the RP catalog.',
+      },
+      text_rp_inference_field: {
+        status: '"allowed" | "denied" | "unknown"',
+        allowed: 'boolean — true only for status=allowed; identity/reference readiness is separate from rights permission.',
+        reason: 'string — explicit permission, privacy or unknown reason',
+        reference: 'text_rp_reference: { source: "record_fields", fields: object } | null. Only reviewed allowlisted names, pronouns, personality/preferences and ConversationPattern text; no Summary, images, design fields, links or legacy Markdown. null if not allowed, unidentifiable or lacking RP text.',
+        reference_fields: TEXT_RP_FIELDS,
+        conversation_fields: TEXT_RP_CONVERSATION_FIELDS,
+        reference_value_type: 'string | string[] — non-empty text only; ConversationPattern is the only nested object, restricted to conversation_fields. No arbitrary objects or dialogue wrappers.',
+      },
       ai_training_field: {
         allowed: 'boolean — true なら AI 学習・生成に利用可',
         reason:  'string — allowed の判定理由（整備中/整備済等）',
@@ -816,7 +860,7 @@ async function main() {
       },
       roleplay_prompt_field: {
         description: 'roleplay_prompt: キャラなりきり用ロールプレイプロンプト (2026-07-18 addon-ai-tag)。上流 tools/build-roleplay-prompts.mjs が ConversationPattern 等の充填済みフィールドから機械生成した Markdown を、{ path } のパス参照のみで保持する (本文は非埋め込み)。path は creations-db サブモジュールルートからの相対パス。生成物のないレコードでは null。',
-        consumer_guidance: '有無は has_roleplay_prompt フラグで確認。本文が要るときは roleplay_prompt.path のファイルを読む。本文の採否はレコードの ai_training ゲートに従い、manifest-training.jsonl には allowed=true のレコードのみが載る (同じ RoleplayPrompts フォルダ内でも不許可レコードの生成物は training に含めない)。',
+        consumer_guidance: '学習への採否は従来どおり ai_training ゲートに従う。manifest-training.jsonl は allowed=true のみ。画像なしのテキスト RP 推論は別の text_rp_inference と text_rp_reference を使い、この Markdown を無条件流用しない。',
       },
       images_field: {
         'DB_Primary (等)': 'charId ディレクトリ配下の画像 (corefolder / humanoid 等、形態別フォルダスキャン結果)',
@@ -885,6 +929,7 @@ async function main() {
     total_characters: totalCharacters,
     total_general_images: imageIndex.general_images.length,
     ai_training_stats: aiTrainingStats,
+    text_rp_inference_stats: textRPStats,
     ai_hints_stats: {
       with_ai_hints:              totalWithAiHints,
       with_curated_ai_hints:      totalWithCuratedAiHints,

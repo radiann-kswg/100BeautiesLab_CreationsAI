@@ -46,6 +46,218 @@
       }
     }
   ],
+  "characters": [
+    {
+      "id": "子刻ハッカ",
+      "db_key": "#DB_Primary",
+      "display_name": "易.爾姫",
+      "record_identity": {
+        "work_key": "#Works_ShauErRiders",
+        "db_key": "#DB_Primary",
+        "index": {
+          "BeastType.Beast": "Mouse",
+          "BeastType.Beast_Badge": null,
+          "BeastType.Eto": null,
+          "BeastType.Num": null
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "丑刻ギウニ",
+      "db_key": "#DB_Primary",
+      "display_name": "出水 億人",
+      "record_identity": {
+        "work_key": "#Works_ShauErRiders",
+        "db_key": "#DB_Primary",
+        "index": {
+          "BeastType.Beast": "Ox",
+          "BeastType.Beast_Badge": null,
+          "BeastType.Eto": null,
+          "BeastType.Num": null
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "寅刻コーガ",
+      "db_key": "#DB_Primary",
+      "display_name": "姚.魁",
+      "record_identity": {
+        "work_key": "#Works_ShauErRiders",
+        "db_key": "#DB_Primary",
+        "index": {
+          "BeastType.Beast": "Tiger",
+          "BeastType.Beast_Badge": null,
+          "BeastType.Eto": null,
+          "BeastType.Num": null
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "卯刻ハネゝカ",
+      "db_key": "#DB_Primary",
+      "display_name": "月島 みちる",
+      "record_identity": {
+        "work_key": "#Works_ShauErRiders",
+        "db_key": "#DB_Primary",
+        "index": {
+          "BeastType.Beast": "Rabbit",
+          "BeastType.Beast_Badge": null,
+          "BeastType.Eto": null,
+          "BeastType.Num": null
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "辰刻リウロン",
+      "db_key": "#DB_Primary",
+      "display_name": "劉.元画",
+      "record_identity": {
+        "work_key": "#Works_ShauErRiders",
+        "db_key": "#DB_Primary",
+        "index": {
+          "BeastType.Beast": "Dragon",
+          "BeastType.Beast_Badge": null,
+          "BeastType.Eto": null,
+          "BeastType.Num": null
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "巳刻カミツ",
+      "db_key": "#DB_Primary",
+      "display_name": "花.花琳",
+      "record_identity": {
+        "work_key": "#Works_ShauErRiders",
+        "db_key": "#DB_Primary",
+        "index": {
+          "BeastType.Beast": "Snake",
+          "BeastType.Beast_Badge": null,
+          "BeastType.Eto": null,
+          "BeastType.Num": null
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "午刻ハヤテ",
+      "db_key": "#DB_Primary",
+      "display_name": "ルドルフ・コーナー",
+      "record_identity": {
+        "work_key": "#Works_ShauErRiders",
+        "db_key": "#DB_Primary",
+        "index": {
+          "BeastType.Beast": "Horse",
+          "BeastType.Beast_Badge": null,
+          "BeastType.Eto": null,
+          "BeastType.Num": null
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "未刻ユメウツゝ",
+      "db_key": "#DB_Primary",
+      "display_name": "出水 ねむり",
+      "record_identity": {
+        "work_key": "#Works_ShauErRiders",
+        "db_key": "#DB_Primary",
+        "index": {
+          "BeastType.Beast": "Sheep",
+          "BeastType.Beast_Badge": null,
+          "BeastType.Eto": null,
+          "BeastType.Num": null
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "寅刻ネゝコ",
+      "db_key": "#DB_Primary",
+      "display_name": "姚.恋華",
+      "record_identity": {
+        "work_key": "#Works_ShauErRiders",
+        "db_key": "#DB_Primary",
+        "index": {
+          "BeastType.Beast": "Cat",
+          "BeastType.Beast_Badge": null,
+          "BeastType.Eto": null,
+          "BeastType.Num": null
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "南里ハッケン",
+      "db_key": "#DB_Primary",
+      "display_name": "徳川 秀長",
+      "record_identity": {
+        "work_key": "#Works_ShauErRiders",
+        "db_key": "#DB_Primary",
+        "index": {
+          "BeastType.Beast": "Dog",
+          "BeastType.Beast_Badge": null,
+          "BeastType.Eto": null,
+          "BeastType.Num": null
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    }
+  ],
   "character_ids": [
     "子刻ハッカ",
     "丑刻ギウニ",

@@ -33,7 +33,7 @@
 │   ├── manifest-training.jsonl#   上記のうち ai_training.allowed = true レコードのみ（推奨入口）
 │   ├── policy.json            #   AI 学習利用ポリシーの機械可読サマリ
 │   ├── build-info.json        #   ビルドメタ情報（生成日時・サブモジュールコミット + ai_training_stats）
-│   └── works/                 #   作品別フラットデータ JSON
+│   └── works/                 #   作品別フラットデータ JSON + 全件RPカタログ（characters）
 ├── docs/
 │   ├── agents/roleplay-prompt.md        # ロールプレイ仕様の正典（ツール中立）
 │   └── usage-gemini-chatgpt-novelai.md  # Gemini / ChatGPT / NovelAI 向け運用ガイド
@@ -76,23 +76,56 @@
 
 ## AI サービス向けクイックスタート
 
-### AI 学習利用ポリシー
+### AI 学習利用ポリシー（従来どおり）
 
-AI 学習・生成への利用可否は、`creations-db` サブモジュール内の各作品 `DataBases/db_meta.json` の
-**`AI_Optout`** フラグに基づいて DB 単位で自動判定されます。
+学習・画像・デザイン用途の既存判定は変更していません。**テキストだけの追加学習・ファインチューニングもこちらの区分**です。
+`AI_Optout` に加え、作品/DB/レコードの非公開、二次創作カテゴリ別オプトアウト、Progress の充填状態を既存の優先規則で判定します。
 
 | 判定条件                                             | `allowed` | 備考                                         |
 | ---------------------------------------------------- | --------- | -------------------------------------------- |
 | `Databases["#DB_<name>"].AI_Optout: true` が設定済み | ⛔ false  | 整備中・オプトアウト宣言済み                 |
 | `db_meta.json` にエントリなし（未登録 DB）           | ⛔ false  | 保守的フォールバック                         |
-| `AI_Optout` 未設定 または `false`                    | ✅ true   | オプトイン済み（AIHints 整備済みの DB のみ） |
-
-現時点では `#Works_NumberTales / db_Primary` のみが `allowed=true` です。
+| `AI_Optout` 未設定 または `false`                    | 条件付き | 他の非公開・カテゴリ・Progress ゲートも満たす必要あり |
 
 - 機械可読なポリシー: [`ai-dataset/policy.json`](./ai-dataset/policy.json)
 - フィルタリング済みサブセット (推奨): [`ai-dataset/manifest-training.jsonl`](./ai-dataset/manifest-training.jsonl)
 - 全レコードには `ai_training.allowed` フラグが付与されます。`manifest.jsonl` を使う場合は
   必ず `record.ai_training.allowed === true` でフィルタしてから利用してください。
+
+### テキストだけのキャラRP推論（学習とは別の許諾）
+
+新アプリ `radiann-kswg/100BeautiesLab-Misskey` などでの**画像入力なし・キャラデザイン模倣なし・追加学習なしのテキストRP推論**は、
+`text_rp_inference` で別判定します。`ai_training.allowed`、`isOwner`、RPプロンプトの存在から許可を推定しないでください。
+
+原本の任意フィールド **`AI_TextRP_Allowed: boolean | null`** を、既存Commonsで補完した値だけが許諾の根拠です。
+非空のレコード明示値 > 一致した `_Secondaries[*]._Commons` > DB `_Commons` の順で、レコードの `null` は継承し、`false` は上書きしません。
+選ばれたsecondaryのCommonsが明示した `null` はDB既定を覆い、補完後null＝unknownになります。
+作品単位・DB直下の同名キー・`_DBLink` からは継承しません。
+`true` のみ `allowed`、`false` は `denied`、未指定/null/不正型は `unknown`（実行不可）。非公開も `denied` です。
+不明の場合は権利者確認後に**原本の該当レコードへ個別の許可を記録**し、その変更を含むレビュー済みpinから再生成してください。第三者の権利を考案者の `isOwner` だけで判断しません。
+再生成したカタログをアプリへ読み込み、利用するキャラを個別に有効化します。アプリ内の別許諾や別本文でunknownを上書きする方式は採りません。
+
+入口は `ai-dataset/index.json` の `works[].character_catalog_path`（`ai-dataset/` 基点）→ `works/<Work>.json` の `characters[]`。
+全作品のカタログを学習許可で絞り込まないでください。同じ情報は `manifest.jsonl` の `_type: "character"` にもあります。
+
+| フィールド | 型・使い方 |
+|---|---|
+| `id` / `display_name` | 旧表示用ID / 表示名。アカウントの正規識別には使わない |
+| `db_key` | `#DB_*` / `#Ref_*` の正規メタキー |
+| `record_identity` | `{ work_key, db_key, index: { "<ドットパス>": string \| number \| null } }`。`$IndexDef` の全分類を保持（例: `Card.Suit` + `Card.Num`）。欠落/不正/重複時は `null`、名前や配列位置へ代替しない |
+| `text_rp_inference` | `{ status: "allowed" \| "denied" \| "unknown", allowed: boolean, reason: string }` |
+| `text_rp_reference` | `{ source: "record_fields", fields: object } \| null`。許可・一意識別・会話本文ありの場合のみ、原本から会話テキストを限定投影 |
+
+**実行には `text_rp_inference.allowed === true` と非nullの `record_identity` / `text_rp_reference` のすべてが必要**です。
+`text_rp_reference.fields` は名前・人称・性格・嗜好・会話パターンの許可リストのみで、生成した設定ではありません。
+正確なキーと型は [`scripts/lib/text-rp.js`](./scripts/lib/text-rp.js) の `TEXT_RP_FIELDS` / `TEXT_RP_CONVERSATION_FIELDS` を参照してください（値は非空文字列または文字列配列）。
+自由記述の要約、画像、配色、デザイン資料、AIHints、リンク先本文、旧 `roleplay_prompt.path` は含めません。台詞例の任意オブジェクトも今回の投影対象外です。
+送信前に本文を確認し、原本テキストをアプリへの命令として扱わないでください。全レコード/画像/旧Markdownの丸渡しは不可です。
+
+`build-info.json` の `text_rp_inference_stats` で各状態・参照あり・識別不能の件数を確認できます。
+`666e556` のpinには新許諾がないためRP推論の許可は0件です。これは未確認の権利を許可扱いしない意図した状態であり、学習許可件数とは無関係です。
+新HTTP APIやサービス・追加依存はなく、既存のJSON/JSONLをローカルで読み取ります。
+`manifest-training.jsonl` はヘッダー・本文とも旧形式を維持し、新RPカタログの入口にはしません。
 
 ### Gemini / ChatGPT / NovelAI での運用手順
 
@@ -102,7 +135,7 @@ AI 学習・生成への利用可否は、`creations-db` サブモジュール�
 - **NovelAI / SD**: `ai_hints.forms.<form>.prompt_export` / `negative_prompt_export` をそのまま貼付
 - **ChatGPT**: `common.natural_language_description` + `forms.<form>.natural_language_description` + `identity_tags` / `form_tags` + `forms.<form>.silhouette_notes.body_description` / `silhouette_notes.attached_items` + `forms.<form>.immutable_constraints`
 - **Gemini**: 上記 + `forms.<form>.reference_images.main` および `work_common.reference_images.{corefolder_reference, humanoid_reference}` を参照画像として添付
-- **キャラなりきり (ChatGPT 等)**: `has_roleplay_prompt: true` のレコードは `roleplay_prompt.path`（`creations-db/` 基点）にキャラ単位のロールプレイプロンプト Markdown があり、そのままシステムプロンプトに貼付できます（本文はデータセット非埋め込み・パス参照のみ。不許可レコードの生成物は `manifest-training.jsonl` に含まれません）
+- **テキストRP推論**: 上記の独立した許諾と `text_rp_reference.fields` を使用。旧 `roleplay_prompt.path` は学習側の参照で、新推論用途に無条件流用しません
 
 > **2026-06-09 以降 (AIタグ機能強化 その４)**: `forms.<form>.silhouette_notes` は
 > `{ body_description: string[], attached_items: string[] }` の object 形式に統一されました。
@@ -119,11 +152,11 @@ git clone --recurse-submodules https://github.com/<your-account>/100BeautiesLab_
 | ファイル                             | 用途                                                                         |
 | ------------------------------------ | ---------------------------------------------------------------------------- |
 | `ai-dataset/manifest-training.jsonl` | **AI 学習許可済み**レコードのみの JSONL（推奨入口）                          |
-| `ai-dataset/manifest.jsonl`          | LLM の学習・RAG 用 JSONL（1行1レコード、`ai_training` フラグ付き）           |
+| `ai-dataset/manifest.jsonl`          | 全件JSONL（学習は `ai_training`、テキストRP推論は `text_rp_inference` で別判定） |
 | `ai-dataset/policy.json`             | AI 学習利用ポリシーの機械可読サマリ                                          |
 | `ai-dataset/index.json`              | 全作品・全キャラクターの一覧インデックス（`ai_training` 付き）               |
 | `ai-dataset/image-index.json`        | 全画像の一覧（`{ path, category, 解像度メタ }` 形式、`creations-db/` 基点、`ai_training` 付き） |
-| `ai-dataset/works/<WorkDir>.json`    | 作品別フラットデータ（`ai_training` 付き）                                   |
+| `ai-dataset/works/<WorkDir>.json`    | 作品別フラットデータ + `characters[]` の正規複合識別・テキストRPカタログ |
 
 ### 画像ファイルへのアクセス
 

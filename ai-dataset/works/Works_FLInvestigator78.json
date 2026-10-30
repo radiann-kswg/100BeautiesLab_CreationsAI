@@ -80,6 +80,2048 @@
       }
     }
   ],
+  "characters": [
+    {
+      "id": "フェニクス",
+      "db_key": "#DB_Primary",
+      "display_name": "愚かな旅人\nフェニクス・ゼロウス",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Card.Suit": "Major",
+          "Card.SuitNum": 0,
+          "Card.Num": 22
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "オリジン",
+      "db_key": "#DB_Primary",
+      "display_name": "四元の魔術師\nオリジン・マギカルテット",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Card.Suit": "Major",
+          "Card.SuitNum": 1,
+          "Card.Num": 1
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "ヨハネ",
+      "db_key": "#DB_Primary",
+      "display_name": "四法の女教皇\nヨハネ・ヴィンコスティ",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Card.Suit": "Major",
+          "Card.SuitNum": 2,
+          "Card.Num": 2
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "ウェヌス",
+      "db_key": "#DB_Primary",
+      "display_name": "九星の女帝\nウェヌス・ハピネス",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Card.Suit": "Major",
+          "Card.SuitNum": 3,
+          "Card.Num": 3
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "アクセラ",
+      "db_key": "#DB_Primary",
+      "display_name": "加速する戦車\nアクセラ・チャレンジャー",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Card.Suit": "Major",
+          "Card.SuitNum": 7,
+          "Card.Num": 7
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "リオン",
+      "db_key": "#DB_Primary",
+      "display_name": "力の獅子遣い\nリオン・インフィニティ",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Card.Suit": "Major",
+          "Card.SuitNum": 8,
+          "Card.Num": 8
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "ヴェール",
+      "db_key": "#DB_Primary",
+      "display_name": "秘匿の隠者\nヴェール・コンセントレイト",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Card.Suit": "Major",
+          "Card.SuitNum": 9,
+          "Card.Num": 9
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "ドゥームズ",
+      "db_key": "#DB_Primary",
+      "display_name": "転生の死神\nフェニクス・ドゥームズ",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Card.Suit": "Major",
+          "Card.SuitNum": 13,
+          "Card.Num": 13
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "バベル",
+      "db_key": "#DB_Primary",
+      "display_name": "倒壊する塔\nクライシア・バベル",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Card.Suit": "Major",
+          "Card.SuitNum": 16,
+          "Card.Num": 16
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "ゲイザー",
+      "db_key": "#DB_Primary",
+      "display_name": "希望の星\nブライト・ゲイザー",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Card.Suit": "Major",
+          "Card.SuitNum": 17,
+          "Card.Num": 17
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "ルネ",
+      "db_key": "#DB_Primary",
+      "display_name": "不安の月\nルミナス",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Card.Suit": "Major",
+          "Card.SuitNum": 18,
+          "Card.Num": 18
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "ソラ",
+      "db_key": "#DB_Primary",
+      "display_name": "高揚する太陽\nフェニクス・ソル=パッショーネ",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Card.Suit": "Major",
+          "Card.SuitNum": 19,
+          "Card.Num": 19
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "ワンズ",
+      "db_key": "#DB_Primary",
+      "display_name": "炎の棍棒 一番札",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Card.Suit": "FireWands",
+          "Card.SuitNum": 1,
+          "Card.Num": 23
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "ランスロット・Jr.",
+      "db_key": "#DB_Primary",
+      "display_name": "炎の棍棒 小姓札\nランスロット・ジュニア",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Card.Suit": "FireWands",
+          "Card.SuitNum": 11,
+          "Card.Num": 33
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "ランスロット・キャバリア",
+      "db_key": "#DB_Primary",
+      "display_name": "炎の棍棒 騎士札\nランスロット・キャバリア",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Card.Suit": "FireWands",
+          "Card.SuitNum": 12,
+          "Card.Num": 34
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "アルジーヌ",
+      "db_key": "#DB_Primary",
+      "display_name": "炎の棍棒 女王札\nアルジーヌ",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Card.Suit": "FireWands",
+          "Card.SuitNum": 13,
+          "Card.Num": 35
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "アレキサンダー",
+      "db_key": "#DB_Primary",
+      "display_name": "炎の棍棒 王札\nアレキサンダー",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Card.Suit": "FireWands",
+          "Card.SuitNum": 14,
+          "Card.Num": 36
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "カップス",
+      "db_key": "#DB_Primary",
+      "display_name": "水の聖杯 一番札",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Card.Suit": "WaterCups",
+          "Card.SuitNum": 1,
+          "Card.Num": 37
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "ラ-ハイヤ・Jr.",
+      "db_key": "#DB_Primary",
+      "display_name": "水の聖杯 小姓札\nラ-ハイヤ・ジュニア",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Card.Suit": "WaterCups",
+          "Card.SuitNum": 11,
+          "Card.Num": 47
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "ラ-ハイヤ・キャバリア",
+      "db_key": "#DB_Primary",
+      "display_name": "水の聖杯 騎士札\nラ-ハイヤ・キャバリア",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Card.Suit": "WaterCups",
+          "Card.SuitNum": 12,
+          "Card.Num": 48
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "ジュディス",
+      "db_key": "#DB_Primary",
+      "display_name": "水の聖杯 女王札\nジュディス",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Card.Suit": "WaterCups",
+          "Card.SuitNum": 13,
+          "Card.Num": 49
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "シャルル",
+      "db_key": "#DB_Primary",
+      "display_name": "水の聖杯 王札\nシャルルマーニュ",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Card.Suit": "WaterCups",
+          "Card.SuitNum": 14,
+          "Card.Num": 50
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "ソード",
+      "db_key": "#DB_Primary",
+      "display_name": "風の刀剣 一番札",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Card.Suit": "SlashSwords",
+          "Card.SuitNum": 1,
+          "Card.Num": 51
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "オジエ・ジュニア",
+      "db_key": "#DB_Primary",
+      "display_name": "風の刀剣 小姓札\nオジエ・ジュニア",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Card.Suit": "SlashSwords",
+          "Card.SuitNum": 11,
+          "Card.Num": 61
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "オジエ・キャバリア",
+      "db_key": "#DB_Primary",
+      "display_name": "風の刀剣 騎士札\nオジエ・キャバリア",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Card.Suit": "SlashSwords",
+          "Card.SuitNum": 12,
+          "Card.Num": 62
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "アテナ",
+      "db_key": "#DB_Primary",
+      "display_name": "風の刀剣 女王札\nアテナ",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Card.Suit": "SlashSwords",
+          "Card.SuitNum": 13,
+          "Card.Num": 63
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "ダビデ",
+      "db_key": "#DB_Primary",
+      "display_name": "風の刀剣 王札\nダビデ",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Card.Suit": "SlashSwords",
+          "Card.SuitNum": 14,
+          "Card.Num": 64
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "ペンタクル",
+      "db_key": "#DB_Primary",
+      "display_name": "金の硬貨 一番札",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Card.Suit": "PentacleObjects",
+          "Card.SuitNum": 1,
+          "Card.Num": 65
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "ヘクター",
+      "db_key": "#DB_Primary",
+      "display_name": "金の硬貨 小姓札\nヘクター",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Card.Suit": "PentacleObjects",
+          "Card.SuitNum": 11,
+          "Card.Num": 75
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "ローラン",
+      "db_key": "#DB_Primary",
+      "display_name": "金の硬貨 騎士札\nローラン",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Card.Suit": "PentacleObjects",
+          "Card.SuitNum": 12,
+          "Card.Num": 76
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "レイチェル",
+      "db_key": "#DB_Primary",
+      "display_name": "金の硬貨 女王札\nレイチェル",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Card.Suit": "PentacleObjects",
+          "Card.SuitNum": 13,
+          "Card.Num": 77
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "シーザー",
+      "db_key": "#DB_Primary",
+      "display_name": "金の硬貨 王札\nシーザー",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Card.Suit": "PentacleObjects",
+          "Card.SuitNum": 14,
+          "Card.Num": 78
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "32",
+      "db_key": "#DB_Primary",
+      "display_name": "切り札の展開師\n第79のアルカナ",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Card.Suit": "Dealer",
+          "Card.SuitNum": null,
+          "Card.Num": 79
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "33",
+      "db_key": "#DB_Primary",
+      "display_name": "切り札の憑英師\n第80のアルカナ",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Card.Suit": "Dealer",
+          "Card.SuitNum": null,
+          "Card.Num": 80
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "0",
+      "db_key": "#DB_PrimaryDealer",
+      "display_name": "恐山 ユート",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_PrimaryDealer",
+        "index": {
+          "Card.Suit": "Major",
+          "Card.SuitNum": 0,
+          "Card.Num": null
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "1",
+      "db_key": "#DB_PrimaryDealer",
+      "display_name": "金田一 卓斗",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_PrimaryDealer",
+        "index": {
+          "Card.Suit": "Major",
+          "Card.SuitNum": 1,
+          "Card.Num": null
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "2",
+      "db_key": "#DB_PrimaryDealer",
+      "display_name": "二宮 律",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_PrimaryDealer",
+        "index": {
+          "Card.Suit": "Major",
+          "Card.SuitNum": 2,
+          "Card.Num": null
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "3",
+      "db_key": "#DB_PrimaryDealer",
+      "display_name": "三笠 めぐ",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_PrimaryDealer",
+        "index": {
+          "Card.Suit": "Major",
+          "Card.SuitNum": 3,
+          "Card.Num": null
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "4",
+      "db_key": "#DB_PrimaryDealer",
+      "display_name": "熱海 ふれあ",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_PrimaryDealer",
+        "index": {
+          "Card.Suit": "Major",
+          "Card.SuitNum": 8,
+          "Card.Num": null
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "5",
+      "db_key": "#DB_PrimaryDealer",
+      "display_name": "仙道 歩浪",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_PrimaryDealer",
+        "index": {
+          "Card.Suit": "Major",
+          "Card.SuitNum": 9,
+          "Card.Num": null
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "6",
+      "db_key": "#DB_PrimaryDealer",
+      "display_name": "ヴェンジー.C.テンペスト",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_PrimaryDealer",
+        "index": {
+          "Card.Suit": "Major",
+          "Card.SuitNum": 16,
+          "Card.Num": null
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "7",
+      "db_key": "#DB_PrimaryDealer",
+      "display_name": "ライト・リヴァーブリッジ",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_PrimaryDealer",
+        "index": {
+          "Card.Suit": "Major",
+          "Card.SuitNum": 17,
+          "Card.Num": null
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "8",
+      "db_key": "#DB_PrimaryDealer",
+      "display_name": "センセシア・ムーンライト",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_PrimaryDealer",
+        "index": {
+          "Card.Suit": "Major",
+          "Card.SuitNum": 18,
+          "Card.Num": null
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "9",
+      "db_key": "#DB_PrimaryDealer",
+      "display_name": "日南田 ユーリ",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_PrimaryDealer",
+        "index": {
+          "Card.Suit": "Major",
+          "Card.SuitNum": 19,
+          "Card.Num": null
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "10",
+      "db_key": "#DB_PrimaryDealer",
+      "display_name": "錦野 舞",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_PrimaryDealer",
+        "index": {
+          "Card.Suit": "Dealer",
+          "Card.SuitNum": null,
+          "Card.Num": 79
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "11",
+      "db_key": "#DB_PrimaryDealer",
+      "display_name": "錦野 歌嫁",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_PrimaryDealer",
+        "index": {
+          "Card.Suit": "Dealer",
+          "Card.SuitNum": null,
+          "Card.Num": 80
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "0",
+      "db_key": "#DB_MinorsDealer",
+      "display_name": "馬場 界座",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_MinorsDealer",
+        "index": {
+          "Card.Suit": "FireWands",
+          "Card.SuitNum": 1,
+          "Card.Num": 23
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "1",
+      "db_key": "#DB_MinorsDealer",
+      "display_name": "リード・アンカレッヂ",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_MinorsDealer",
+        "index": {
+          "Card.Suit": "FireWands",
+          "Card.SuitNum": 11,
+          "Card.Num": 33
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "2",
+      "db_key": "#DB_MinorsDealer",
+      "display_name": "マグニム・フォン・シー",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_MinorsDealer",
+        "index": {
+          "Card.Suit": "FireWands",
+          "Card.SuitNum": 12,
+          "Card.Num": 34
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "3",
+      "db_key": "#DB_MinorsDealer",
+      "display_name": "オードリー・カッツェ・ブラックフレア",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_MinorsDealer",
+        "index": {
+          "Card.Suit": "FireWands",
+          "Card.SuitNum": 13,
+          "Card.Num": 35
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "4",
+      "db_key": "#DB_MinorsDealer",
+      "display_name": "4",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_MinorsDealer",
+        "index": {
+          "Card.Suit": "FireWands",
+          "Card.SuitNum": 14,
+          "Card.Num": 36
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "5",
+      "db_key": "#DB_MinorsDealer",
+      "display_name": "蓮宮 遥",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_MinorsDealer",
+        "index": {
+          "Card.Suit": "WaterCups",
+          "Card.SuitNum": 1,
+          "Card.Num": 37
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "6",
+      "db_key": "#DB_MinorsDealer",
+      "display_name": "ディッシュ・ロマネス",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_MinorsDealer",
+        "index": {
+          "Card.Suit": "WaterCups",
+          "Card.SuitNum": 11,
+          "Card.Num": 47
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "7",
+      "db_key": "#DB_MinorsDealer",
+      "display_name": "アングジェリーナ・レイジ・ガスコーニュ",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_MinorsDealer",
+        "index": {
+          "Card.Suit": "WaterCups",
+          "Card.SuitNum": 12,
+          "Card.Num": 48
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "8",
+      "db_key": "#DB_MinorsDealer",
+      "display_name": "ユリィ・ジューン",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_MinorsDealer",
+        "index": {
+          "Card.Suit": "WaterCups",
+          "Card.SuitNum": 13,
+          "Card.Num": 49
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "9",
+      "db_key": "#DB_MinorsDealer",
+      "display_name": "カール・ホワイト・ヴァレンタイン",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_MinorsDealer",
+        "index": {
+          "Card.Suit": "WaterCups",
+          "Card.SuitNum": 14,
+          "Card.Num": 50
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "10",
+      "db_key": "#DB_MinorsDealer",
+      "display_name": "神谷 瑛志",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_MinorsDealer",
+        "index": {
+          "Card.Suit": "SlashSwords",
+          "Card.SuitNum": 1,
+          "Card.Num": 51
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "11",
+      "db_key": "#DB_MinorsDealer",
+      "display_name": "ダウス・ル・インターズ",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_MinorsDealer",
+        "index": {
+          "Card.Suit": "SlashSwords",
+          "Card.SuitNum": 11,
+          "Card.Num": 61
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "12",
+      "db_key": "#DB_MinorsDealer",
+      "display_name": "ダウス・ル・ダノワ",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_MinorsDealer",
+        "index": {
+          "Card.Suit": "SlashSwords",
+          "Card.SuitNum": 12,
+          "Card.Num": 62
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "13",
+      "db_key": "#DB_MinorsDealer",
+      "display_name": "ミネルヴァ・パルテノン",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_MinorsDealer",
+        "index": {
+          "Card.Suit": "SlashSwords",
+          "Card.SuitNum": 13,
+          "Card.Num": 63
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "14",
+      "db_key": "#DB_MinorsDealer",
+      "display_name": "14",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_MinorsDealer",
+        "index": {
+          "Card.Suit": "SlashSwords",
+          "Card.SuitNum": 14,
+          "Card.Num": 64
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "15",
+      "db_key": "#DB_MinorsDealer",
+      "display_name": "鏡花 夢中",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_MinorsDealer",
+        "index": {
+          "Card.Suit": "PentacleObjects",
+          "Card.SuitNum": 1,
+          "Card.Num": 65
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "16",
+      "db_key": "#DB_MinorsDealer",
+      "display_name": "リッチ・インテリス",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_MinorsDealer",
+        "index": {
+          "Card.Suit": "PentacleObjects",
+          "Card.SuitNum": 11,
+          "Card.Num": 75
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "17",
+      "db_key": "#DB_MinorsDealer",
+      "display_name": "ポリーン・オルゴール・デュランビート",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_MinorsDealer",
+        "index": {
+          "Card.Suit": "PentacleObjects",
+          "Card.SuitNum": 12,
+          "Card.Num": 76
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "18",
+      "db_key": "#DB_MinorsDealer",
+      "display_name": "リーチェ・エリザベス",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_MinorsDealer",
+        "index": {
+          "Card.Suit": "PentacleObjects",
+          "Card.SuitNum": 13,
+          "Card.Num": 77
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "19",
+      "db_key": "#DB_MinorsDealer",
+      "display_name": "19",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_MinorsDealer",
+        "index": {
+          "Card.Suit": "PentacleObjects",
+          "Card.SuitNum": 14,
+          "Card.Num": 78
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "0",
+      "db_key": "#DB_UnprocessedDealer",
+      "display_name": "田淵 ひより",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_UnprocessedDealer",
+        "index": {
+          "Card.Suit": "FireWands",
+          "Card.SuitNum": 2,
+          "Card.Num": 24
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "1",
+      "db_key": "#DB_UnprocessedDealer",
+      "display_name": "軽間 ながめ",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_UnprocessedDealer",
+        "index": {
+          "Card.Suit": "FireWands",
+          "Card.SuitNum": 3,
+          "Card.Num": 25
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "2",
+      "db_key": "#DB_UnprocessedDealer",
+      "display_name": "カトレック・アンバトル",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_UnprocessedDealer",
+        "index": {
+          "Card.Suit": "FireWands",
+          "Card.SuitNum": 4,
+          "Card.Num": 26
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "3",
+      "db_key": "#DB_UnprocessedDealer",
+      "display_name": "古沢 沢海",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_UnprocessedDealer",
+        "index": {
+          "Card.Suit": "FireWands",
+          "Card.SuitNum": 5,
+          "Card.Num": 27
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "4",
+      "db_key": "#DB_UnprocessedDealer",
+      "display_name": "凱旋 てるか",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_UnprocessedDealer",
+        "index": {
+          "Card.Suit": "FireWands",
+          "Card.SuitNum": 6,
+          "Card.Num": 28
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "5",
+      "db_key": "#DB_UnprocessedDealer",
+      "display_name": "勝俣 誇挑",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_UnprocessedDealer",
+        "index": {
+          "Card.Suit": "FireWands",
+          "Card.SuitNum": 7,
+          "Card.Num": 29
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "6",
+      "db_key": "#DB_UnprocessedDealer",
+      "display_name": "卜部 早香",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_UnprocessedDealer",
+        "index": {
+          "Card.Suit": "FireWands",
+          "Card.SuitNum": 8,
+          "Card.Num": 30
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "7",
+      "db_key": "#DB_UnprocessedDealer",
+      "display_name": "古山 瑞希理",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_UnprocessedDealer",
+        "index": {
+          "Card.Suit": "FireWands",
+          "Card.SuitNum": 9,
+          "Card.Num": 31
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "8",
+      "db_key": "#DB_UnprocessedDealer",
+      "display_name": "ブランシュ・バーン",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_UnprocessedDealer",
+        "index": {
+          "Card.Suit": "FireWands",
+          "Card.SuitNum": 10,
+          "Card.Num": 32
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "9",
+      "db_key": "#DB_UnprocessedDealer",
+      "display_name": "紫恩 ちあ",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_UnprocessedDealer",
+        "index": {
+          "Card.Suit": "WaterCups",
+          "Card.SuitNum": 2,
+          "Card.Num": 38
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "10",
+      "db_key": "#DB_UnprocessedDealer",
+      "display_name": "トリシャ・オンパラッド",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_UnprocessedDealer",
+        "index": {
+          "Card.Suit": "WaterCups",
+          "Card.SuitNum": 3,
+          "Card.Num": 39
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "11",
+      "db_key": "#DB_UnprocessedDealer",
+      "display_name": "志明 あきの",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_UnprocessedDealer",
+        "index": {
+          "Card.Suit": "WaterCups",
+          "Card.SuitNum": 4,
+          "Card.Num": 40
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "12",
+      "db_key": "#DB_UnprocessedDealer",
+      "display_name": "志明 せつな",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_UnprocessedDealer",
+        "index": {
+          "Card.Suit": "WaterCups",
+          "Card.SuitNum": 5,
+          "Card.Num": 41
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "13",
+      "db_key": "#DB_UnprocessedDealer",
+      "display_name": "亜高 純恋",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_UnprocessedDealer",
+        "index": {
+          "Card.Suit": "WaterCups",
+          "Card.SuitNum": 6,
+          "Card.Num": 42
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "14",
+      "db_key": "#DB_UnprocessedDealer",
+      "display_name": "亜高 蝶嵐",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_UnprocessedDealer",
+        "index": {
+          "Card.Suit": "WaterCups",
+          "Card.SuitNum": 7,
+          "Card.Num": 43
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "15",
+      "db_key": "#DB_UnprocessedDealer",
+      "display_name": "亜高 智離沙",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_UnprocessedDealer",
+        "index": {
+          "Card.Suit": "WaterCups",
+          "Card.SuitNum": 8,
+          "Card.Num": 44
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "16",
+      "db_key": "#DB_UnprocessedDealer",
+      "display_name": "亜高 巨峰",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_UnprocessedDealer",
+        "index": {
+          "Card.Suit": "WaterCups",
+          "Card.SuitNum": 9,
+          "Card.Num": 45
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "17",
+      "db_key": "#DB_UnprocessedDealer",
+      "display_name": "ホーパー・アラン",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_UnprocessedDealer",
+        "index": {
+          "Card.Suit": "WaterCups",
+          "Card.SuitNum": 10,
+          "Card.Num": 46
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "18",
+      "db_key": "#DB_UnprocessedDealer",
+      "display_name": "颯 洋",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_UnprocessedDealer",
+        "index": {
+          "Card.Suit": "SlashSwords",
+          "Card.SuitNum": 2,
+          "Card.Num": 52
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "19",
+      "db_key": "#DB_UnprocessedDealer",
+      "display_name": "颯 天",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_UnprocessedDealer",
+        "index": {
+          "Card.Suit": "SlashSwords",
+          "Card.SuitNum": 3,
+          "Card.Num": 53
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "20",
+      "db_key": "#DB_UnprocessedDealer",
+      "display_name": "千臨 休",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_UnprocessedDealer",
+        "index": {
+          "Card.Suit": "SlashSwords",
+          "Card.SuitNum": 4,
+          "Card.Num": 54
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "五剣",
+      "db_key": "#DB_UnprocessedDealer",
+      "display_name": "スクアッド・ブラン",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_UnprocessedDealer",
+        "index": {
+          "Card.Suit": "SlashSwords",
+          "Card.SuitNum": 5,
+          "Card.Num": 55
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "22",
+      "db_key": "#DB_UnprocessedDealer",
+      "display_name": "船越 のがれ",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_UnprocessedDealer",
+        "index": {
+          "Card.Suit": "SlashSwords",
+          "Card.SuitNum": 6,
+          "Card.Num": 56
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "23",
+      "db_key": "#DB_UnprocessedDealer",
+      "display_name": "豊富 秀喜",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_UnprocessedDealer",
+        "index": {
+          "Card.Suit": "SlashSwords",
+          "Card.SuitNum": 7,
+          "Card.Num": 57
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "24",
+      "db_key": "#DB_UnprocessedDealer",
+      "display_name": "荻原 ハギト",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_UnprocessedDealer",
+        "index": {
+          "Card.Suit": "SlashSwords",
+          "Card.SuitNum": 8,
+          "Card.Num": 58
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "25",
+      "db_key": "#DB_UnprocessedDealer",
+      "display_name": "恵比寿 ことは",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_UnprocessedDealer",
+        "index": {
+          "Card.Suit": "SlashSwords",
+          "Card.SuitNum": 9,
+          "Card.Num": 59
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "26",
+      "db_key": "#DB_UnprocessedDealer",
+      "display_name": "ペディ・ディスト",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_UnprocessedDealer",
+        "index": {
+          "Card.Suit": "SlashSwords",
+          "Card.SuitNum": 10,
+          "Card.Num": 60
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "27",
+      "db_key": "#DB_UnprocessedDealer",
+      "display_name": "江戸川 笑",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_UnprocessedDealer",
+        "index": {
+          "Card.Suit": "PentacleObjects",
+          "Card.SuitNum": 2,
+          "Card.Num": 66
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "28",
+      "db_key": "#DB_UnprocessedDealer",
+      "display_name": "手塚 桃",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_UnprocessedDealer",
+        "index": {
+          "Card.Suit": "PentacleObjects",
+          "Card.SuitNum": 3,
+          "Card.Num": 67
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "29",
+      "db_key": "#DB_UnprocessedDealer",
+      "display_name": "摩天楼ローディ.まもり",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_UnprocessedDealer",
+        "index": {
+          "Card.Suit": "PentacleObjects",
+          "Card.SuitNum": 4,
+          "Card.Num": 68
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "30",
+      "db_key": "#DB_UnprocessedDealer",
+      "display_name": "愛嬌 黒",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_UnprocessedDealer",
+        "index": {
+          "Card.Suit": "PentacleObjects",
+          "Card.SuitNum": 5,
+          "Card.Num": 69
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "31",
+      "db_key": "#DB_UnprocessedDealer",
+      "display_name": "愛嬌 白",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_UnprocessedDealer",
+        "index": {
+          "Card.Suit": "PentacleObjects",
+          "Card.SuitNum": 6,
+          "Card.Num": 70
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "32",
+      "db_key": "#DB_UnprocessedDealer",
+      "display_name": "ダイモン・サルベーズ",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_UnprocessedDealer",
+        "index": {
+          "Card.Suit": "PentacleObjects",
+          "Card.SuitNum": 7,
+          "Card.Num": 71
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "33",
+      "db_key": "#DB_UnprocessedDealer",
+      "display_name": "鈴風 かさね",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_UnprocessedDealer",
+        "index": {
+          "Card.Suit": "PentacleObjects",
+          "Card.SuitNum": 8,
+          "Card.Num": 72
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "34",
+      "db_key": "#DB_UnprocessedDealer",
+      "display_name": "大隈 あいか",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_UnprocessedDealer",
+        "index": {
+          "Card.Suit": "PentacleObjects",
+          "Card.SuitNum": 9,
+          "Card.Num": 73
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "35",
+      "db_key": "#DB_UnprocessedDealer",
+      "display_name": "ディノ・メディック",
+      "record_identity": {
+        "work_key": "#Works_FLInvestigator78",
+        "db_key": "#DB_UnprocessedDealer",
+        "index": {
+          "Card.Suit": "PentacleObjects",
+          "Card.SuitNum": 10,
+          "Card.Num": 74
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    }
+  ],
   "character_ids": [
     "フェニクス",
     "オリジン",

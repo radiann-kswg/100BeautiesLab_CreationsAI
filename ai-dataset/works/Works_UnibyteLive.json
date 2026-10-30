@@ -57,6 +57,901 @@
       }
     }
   ],
+  "characters": [
+    {
+      "id": "A:アロー",
+      "db_key": "#DB_Primary",
+      "display_name": "英文字アロー",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Letter.Alphabet": "A",
+          "Letter.AlphaGen": 1
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "A:エイリ",
+      "db_key": "#DB_Primary",
+      "display_name": "鋭峰エイリ",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Letter.Alphabet": "A",
+          "Letter.AlphaGen": 2
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "B:ブロッキー",
+      "db_key": "#DB_Primary",
+      "display_name": "積木ブロッキー",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Letter.Alphabet": "B",
+          "Letter.AlphaGen": 1
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "C:チャーミ",
+      "db_key": "#DB_Primary",
+      "display_name": "弧月チャーミ",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Letter.Alphabet": "C",
+          "Letter.AlphaGen": 1
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "D:ドアン",
+      "db_key": "#DB_Primary",
+      "display_name": "半円ドアン",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Letter.Alphabet": "D",
+          "Letter.AlphaGen": 1
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "E:エッヂ",
+      "db_key": "#DB_Primary",
+      "display_name": "三枝エッヂ",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Letter.Alphabet": "E",
+          "Letter.AlphaGen": 1
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "F:ハタカ",
+      "db_key": "#DB_Primary",
+      "display_name": "平旗ハタカ",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Letter.Alphabet": "F",
+          "Letter.AlphaGen": 1
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "G:グニー",
+      "db_key": "#DB_Primary",
+      "display_name": "渦田グニー",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Letter.Alphabet": "G",
+          "Letter.AlphaGen": 1
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "H:ハシゴ",
+      "db_key": "#DB_Primary",
+      "display_name": "梯桁ハシゴ",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Letter.Alphabet": "H",
+          "Letter.AlphaGen": 1
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "I:ミィ",
+      "db_key": "#DB_Primary",
+      "display_name": "直井ミィ",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Letter.Alphabet": "I",
+          "Letter.AlphaGen": 1
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "I:カーソル",
+      "db_key": "#DB_Primary",
+      "display_name": "カーソル・インアクト 点指",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Letter.Alphabet": "I",
+          "Letter.AlphaGen": 2
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "J:ジャック",
+      "db_key": "#DB_Primary",
+      "display_name": "蛇尾ジャック",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Letter.Alphabet": "J",
+          "Letter.AlphaGen": 1
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "K:キィ",
+      "db_key": "#DB_Primary",
+      "display_name": "鍵番キィ",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Letter.Alphabet": "K",
+          "Letter.AlphaGen": 1
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "L:コナー",
+      "db_key": "#DB_Primary",
+      "display_name": "列柱コナー",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Letter.Alphabet": "L",
+          "Letter.AlphaGen": 1
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "M:ヤマネ",
+      "db_key": "#DB_Primary",
+      "display_name": "双峰ヤマネ",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Letter.Alphabet": "M",
+          "Letter.AlphaGen": 1
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "N:ギザン",
+      "db_key": "#DB_Primary",
+      "display_name": "北上ギザン",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Letter.Alphabet": "N",
+          "Letter.AlphaGen": 1
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "O:マルア",
+      "db_key": "#DB_Primary",
+      "display_name": "丸城マルア",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Letter.Alphabet": "O",
+          "Letter.AlphaGen": 1
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "O:マリル",
+      "db_key": "#DB_Primary",
+      "display_name": "球 マリルスフィア",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Letter.Alphabet": "O",
+          "Letter.AlphaGen": 2
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "P:プラグ",
+      "db_key": "#DB_Primary",
+      "display_name": "音鍵プラグ",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Letter.Alphabet": "P",
+          "Letter.AlphaGen": 2
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "Q:マトア",
+      "db_key": "#DB_Primary",
+      "display_name": "的尾マトア",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Letter.Alphabet": "Q",
+          "Letter.AlphaGen": 2
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "R:ロゥ",
+      "db_key": "#DB_Primary",
+      "display_name": "行田ロゥ",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Letter.Alphabet": "R",
+          "Letter.AlphaGen": 2
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "S:ナーミィ",
+      "db_key": "#DB_Primary",
+      "display_name": "左伯ナーミィ",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Letter.Alphabet": "S",
+          "Letter.AlphaGen": 2
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "T:ティジー",
+      "db_key": "#DB_Primary",
+      "display_name": "丁字路ティジー",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Letter.Alphabet": "T",
+          "Letter.AlphaGen": 2
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "U:カップ",
+      "db_key": "#DB_Primary",
+      "display_name": "入江カップ",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Letter.Alphabet": "U",
+          "Letter.AlphaGen": 1
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "V:トゲミ",
+      "db_key": "#DB_Primary",
+      "display_name": "楔谷トゲミ",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Letter.Alphabet": "V",
+          "Letter.AlphaGen": 1
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "W:タニネ",
+      "db_key": "#DB_Primary",
+      "display_name": "双谷タニネ",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Letter.Alphabet": "W",
+          "Letter.AlphaGen": 1
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "X:カイ",
+      "db_key": "#DB_Primary",
+      "display_name": "交野カイ",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Letter.Alphabet": "X",
+          "Letter.AlphaGen": 1
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "X:クリス",
+      "db_key": "#DB_Primary",
+      "display_name": "綾織クリス",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Letter.Alphabet": "X",
+          "Letter.AlphaGen": 2
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "Y:ワケメ",
+      "db_key": "#DB_Primary",
+      "display_name": "丫字路ワケメ",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Letter.Alphabet": "Y",
+          "Letter.AlphaGen": 1
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "Z:ジグ",
+      "db_key": "#DB_Primary",
+      "display_name": "右仗ジグ",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Letter.Alphabet": "Z",
+          "Letter.AlphaGen": 1
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "Q:レンズ",
+      "db_key": "#DB_Primary",
+      "display_name": "鏡石レンズ",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Letter.Alphabet": "Q",
+          "Letter.AlphaGen": 1
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "R:リャク",
+      "db_key": "#DB_Primary",
+      "display_name": "略歴リャク",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Letter.Alphabet": "R",
+          "Letter.AlphaGen": 1
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "T:クギィ",
+      "db_key": "#DB_Primary",
+      "display_name": "打金 クギィ",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Letter.Alphabet": "T",
+          "Letter.AlphaGen": 1
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "P:フィッシュ",
+      "db_key": "#DB_Primary",
+      "display_name": "了津 フィッシュ",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Letter.Alphabet": "P",
+          "Letter.AlphaGen": 1
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "S:ツェット",
+      "db_key": "#DB_Primary",
+      "display_name": "双曲 ツェット",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Letter.Alphabet": "S",
+          "Letter.AlphaGen": 1
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "0",
+      "db_key": "#DB_PrimaryPerformer",
+      "display_name": "栄藤 ありか",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_PrimaryPerformer",
+        "index": {
+          "Letter.Alphabet": "A",
+          "Letter.AlphaGen": 1
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "1",
+      "db_key": "#DB_PrimaryPerformer",
+      "display_name": "伊澤 ひとり",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_PrimaryPerformer",
+        "index": {
+          "Letter.Alphabet": "I",
+          "Letter.AlphaGen": 1
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "2",
+      "db_key": "#DB_PrimaryPerformer",
+      "display_name": "桜花 孝\n孝・ヴァーチュングレイス=春洋",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_PrimaryPerformer",
+        "index": {
+          "Letter.Alphabet": "I",
+          "Letter.AlphaGen": 2
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "3",
+      "db_key": "#DB_PrimaryPerformer",
+      "display_name": "角田 佐有里",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_PrimaryPerformer",
+        "index": {
+          "Letter.Alphabet": "L",
+          "Letter.AlphaGen": 1
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "4",
+      "db_key": "#DB_PrimaryPerformer",
+      "display_name": "向居 カミーユ",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_PrimaryPerformer",
+        "index": {
+          "Letter.Alphabet": "N",
+          "Letter.AlphaGen": 1
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "5",
+      "db_key": "#DB_PrimaryPerformer",
+      "display_name": "円里 みるま",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_PrimaryPerformer",
+        "index": {
+          "Letter.Alphabet": "O",
+          "Letter.AlphaGen": 1
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "6",
+      "db_key": "#DB_PrimaryPerformer",
+      "display_name": "扇 零夏・スフィリア",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_PrimaryPerformer",
+        "index": {
+          "Letter.Alphabet": "O",
+          "Letter.AlphaGen": 2
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "7",
+      "db_key": "#DB_PrimaryPerformer",
+      "display_name": "南 まな",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_PrimaryPerformer",
+        "index": {
+          "Letter.Alphabet": "S",
+          "Letter.AlphaGen": 2
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "8",
+      "db_key": "#DB_PrimaryPerformer",
+      "display_name": "北野 ザイヒ",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_PrimaryPerformer",
+        "index": {
+          "Letter.Alphabet": "Z",
+          "Letter.AlphaGen": 1
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "9",
+      "db_key": "#DB_PrimaryPerformer",
+      "display_name": "絡田 巡",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_PrimaryPerformer",
+        "index": {
+          "Letter.Alphabet": "R",
+          "Letter.AlphaGen": 1
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "10",
+      "db_key": "#DB_PrimaryPerformer",
+      "display_name": "鶴佐木 わなみ",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_PrimaryPerformer",
+        "index": {
+          "Letter.Alphabet": "P",
+          "Letter.AlphaGen": 1
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "11",
+      "db_key": "#DB_PrimaryPerformer",
+      "display_name": "氷山 メサイア",
+      "record_identity": {
+        "work_key": "#Works_UnibyteLive",
+        "db_key": "#DB_PrimaryPerformer",
+        "index": {
+          "Letter.Alphabet": "S",
+          "Letter.AlphaGen": 1
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    }
+  ],
   "character_ids": [
     "A:アロー",
     "A:エイリ",

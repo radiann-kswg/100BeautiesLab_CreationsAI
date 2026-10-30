@@ -56,6 +56,348 @@
       }
     }
   ],
+  "characters": [
+    {
+      "id": "旭屋 雄",
+      "db_key": "#DB_Primary",
+      "display_name": "旭屋 雄",
+      "record_identity": {
+        "work_key": "#Works_PastDivers",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Chronos.Lunar": "Mutsuki",
+          "Chronos.Num": null,
+          "Chronos.Generation": null
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "雪乙女しいな",
+      "db_key": "#DB_Primary",
+      "display_name": "雪乙女シーナ・シラユキ",
+      "record_identity": {
+        "work_key": "#Works_PastDivers",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Chronos.Lunar": "Kisaragi",
+          "Chronos.Num": null,
+          "Chronos.Generation": null
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "桜花 信",
+      "db_key": "#DB_Primary",
+      "display_name": "桜花 訫",
+      "record_identity": {
+        "work_key": "#Works_PastDivers",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Chronos.Lunar": "Yayoi",
+          "Chronos.Num": null,
+          "Chronos.Generation": null
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "花舞 流",
+      "db_key": "#DB_Primary",
+      "display_name": "花舞 流",
+      "record_identity": {
+        "work_key": "#Works_PastDivers",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Chronos.Lunar": "Udzuki",
+          "Chronos.Num": null,
+          "Chronos.Generation": null
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "ゼン・エデンズグリーン",
+      "db_key": "#DB_Primary",
+      "display_name": "緑屋 善\nゼン・エデンズグリーン",
+      "record_identity": {
+        "work_key": "#Works_PastDivers",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Chronos.Lunar": "Satsuki",
+          "Chronos.Num": null,
+          "Chronos.Generation": null
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "水無瀬 雫",
+      "db_key": "#DB_Primary",
+      "display_name": "水無瀬 雫",
+      "record_identity": {
+        "work_key": "#Works_PastDivers",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Chronos.Lunar": "Minadzuki",
+          "Chronos.Num": null,
+          "Chronos.Generation": null
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "綾沢 改奈",
+      "db_key": "#DB_Primary",
+      "display_name": "綾沢 改奈",
+      "record_identity": {
+        "work_key": "#Works_PastDivers",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Chronos.Lunar": "Fumdzuki",
+          "Chronos.Num": null,
+          "Chronos.Generation": null
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "八坂 兵汰\nヘクター・キロバスター",
+      "db_key": "#DB_Primary",
+      "display_name": "八坂 兵汰・キロバスター",
+      "record_identity": {
+        "work_key": "#Works_PastDivers",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Chronos.Lunar": "Hadzuki",
+          "Chronos.Num": null,
+          "Chronos.Generation": null
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "名前：中月 ルイス-ノア\n通称：ルイノ",
+      "db_key": "#DB_Primary",
+      "display_name": "中月 ルイス-ノア・ナイターエイド",
+      "record_identity": {
+        "work_key": "#Works_PastDivers",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Chronos.Lunar": "Nagatsuki",
+          "Chronos.Num": null,
+          "Chronos.Generation": null
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "名前：神夜崎 十夜\n通称：ジュウヤ",
+      "db_key": "#DB_Primary",
+      "display_name": "神夜崎 十夜",
+      "record_identity": {
+        "work_key": "#Works_PastDivers",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Chronos.Lunar": "Kannadzuki",
+          "Chronos.Num": null,
+          "Chronos.Generation": null
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "霧島 博",
+      "db_key": "#DB_Primary",
+      "display_name": "霧島 博",
+      "record_identity": {
+        "work_key": "#Works_PastDivers",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Chronos.Lunar": "Shimotsuki",
+          "Chronos.Num": null,
+          "Chronos.Generation": null
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "キャサリン=アインツヴァイス",
+      "db_key": "#DB_Primary",
+      "display_name": "キャサリン=アインツヴァイス",
+      "record_identity": {
+        "work_key": "#Works_PastDivers",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Chronos.Lunar": "Shiwasu",
+          "Chronos.Num": null,
+          "Chronos.Generation": null
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "潤音 ミオ",
+      "db_key": "#DB_Primary",
+      "display_name": "潤音 ミオ",
+      "record_identity": {
+        "work_key": "#Works_PastDivers",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Chronos.Lunar": "Leap",
+          "Chronos.Num": null,
+          "Chronos.Generation": null
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "神夜崎 ユノ",
+      "db_key": "#DB_Primary",
+      "display_name": "神夜崎 ユノ",
+      "record_identity": {
+        "work_key": "#Works_PastDivers",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Chronos.Lunar": "Zeroth",
+          "Chronos.Num": null,
+          "Chronos.Generation": null
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "桜花 礼",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "桜花 禮",
+      "record_identity": {
+        "work_key": "#Works_PastDivers",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Chronos.Lunar": "Martius.II",
+          "Chronos.Num": null,
+          "Chronos.Generation": null
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "六花 ルノ",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ルノ・ヘクスクリス",
+      "record_identity": {
+        "work_key": "#Works_PastDivers",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Chronos.Lunar": "Junius.II",
+          "Chronos.Num": null,
+          "Chronos.Generation": null
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "水無瀬 青雲",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "水無瀬 青雲",
+      "record_identity": {
+        "work_key": "#Works_PastDivers",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Chronos.Lunar": "Junius",
+          "Chronos.Num": null,
+          "Chronos.Generation": null
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    }
+  ],
   "character_ids": [
     "旭屋 雄",
     "雪乙女しいな",

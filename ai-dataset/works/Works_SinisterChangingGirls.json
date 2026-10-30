@@ -71,6 +71,512 @@
       }
     }
   ],
+  "characters": [
+    {
+      "id": "零 零",
+      "db_key": "#DB_Primary",
+      "display_name": "千歳 玲",
+      "record_identity": {
+        "work_key": "#Works_SinisterChangingGirls",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Drc": "N"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "扇 三春",
+      "db_key": "#DB_Primary",
+      "display_name": "扇 三春・ロールプラン",
+      "record_identity": {
+        "work_key": "#Works_SinisterChangingGirls",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Drc": "NE"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "六花 ルノ",
+      "db_key": "#DB_Primary",
+      "display_name": "ルノ・ヘクスクリス",
+      "record_identity": {
+        "work_key": "#Works_SinisterChangingGirls",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Drc": "E"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "九 叶",
+      "db_key": "#DB_Primary",
+      "display_name": "九.蓮縢",
+      "record_identity": {
+        "work_key": "#Works_SinisterChangingGirls",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Drc": "SE"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "六花 雙葉\nクィーン・トゥエルヴ",
+      "db_key": "#DB_Primary",
+      "display_name": "六花 雙葉",
+      "record_identity": {
+        "work_key": "#Works_SinisterChangingGirls",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Drc": "S"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "ミル・ニュクスフ",
+      "db_key": "#DB_Primary",
+      "display_name": "ミル・ニュクスフ",
+      "record_identity": {
+        "work_key": "#Works_SinisterChangingGirls",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Drc": "SW"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "神夜崎 ユノ",
+      "db_key": "#DB_Primary",
+      "display_name": "クロノイズ・ユノ テオレスナイト",
+      "record_identity": {
+        "work_key": "#Works_SinisterChangingGirls",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Drc": "W"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "財前 小里\n終藤 こさと",
+      "db_key": "#DB_Primary",
+      "display_name": "終藤 こさと\n扇 残冬",
+      "record_identity": {
+        "work_key": "#Works_SinisterChangingGirls",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Drc": "NW"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "錦野 舞",
+      "db_key": "#DB_PrimaryStabilities",
+      "display_name": "錦野 舞",
+      "record_identity": {
+        "work_key": "#Works_SinisterChangingGirls",
+        "db_key": "#DB_PrimaryStabilities",
+        "index": {
+          "Drc": "NNE"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "扇 零夏・スフィリア",
+      "db_key": "#DB_PrimaryStabilities",
+      "display_name": "扇 零夏・スフィリア",
+      "record_identity": {
+        "work_key": "#Works_SinisterChangingGirls",
+        "db_key": "#DB_PrimaryStabilities",
+        "index": {
+          "Drc": "ENE"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "2",
+      "db_key": "#DB_PrimaryStabilities",
+      "display_name": "2",
+      "record_identity": {
+        "work_key": "#Works_SinisterChangingGirls",
+        "db_key": "#DB_PrimaryStabilities",
+        "index": {
+          "Drc": "ESE"
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "ヴァーチェル・アンカレッジ",
+      "db_key": "#DB_PrimaryStabilities",
+      "display_name": "ヴァーチェル・アンカレッジ\nアンカール・エンカレージャ=ヴィルゲン",
+      "record_identity": {
+        "work_key": "#Works_SinisterChangingGirls",
+        "db_key": "#DB_PrimaryStabilities",
+        "index": {
+          "Drc": "SSE"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "錦野 歌嫁",
+      "db_key": "#DB_PrimaryStabilities",
+      "display_name": "錦野 歌嫁",
+      "record_identity": {
+        "work_key": "#Works_SinisterChangingGirls",
+        "db_key": "#DB_PrimaryStabilities",
+        "index": {
+          "Drc": "SSW"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "カモミール・エクヴィス",
+      "db_key": "#DB_PrimaryStabilities",
+      "display_name": "カモミール・エクヴィス",
+      "record_identity": {
+        "work_key": "#Works_SinisterChangingGirls",
+        "db_key": "#DB_PrimaryStabilities",
+        "index": {
+          "Drc": "WSW"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "6",
+      "db_key": "#DB_PrimaryStabilities",
+      "display_name": "6",
+      "record_identity": {
+        "work_key": "#Works_SinisterChangingGirls",
+        "db_key": "#DB_PrimaryStabilities",
+        "index": {
+          "Drc": "WNW"
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "財前 小里",
+      "db_key": "#DB_PrimaryStabilities",
+      "display_name": "財前 小里\n扇 爾秋",
+      "record_identity": {
+        "work_key": "#Works_SinisterChangingGirls",
+        "db_key": "#DB_PrimaryStabilities",
+        "index": {
+          "Drc": "NNW"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "0",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "0",
+      "record_identity": {
+        "work_key": "#Works_SinisterChangingGirls",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Drc": "DN"
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "1",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "1",
+      "record_identity": {
+        "work_key": "#Works_SinisterChangingGirls",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Drc": "DNE"
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "2",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "2",
+      "record_identity": {
+        "work_key": "#Works_SinisterChangingGirls",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Drc": "UE"
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "3",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "3",
+      "record_identity": {
+        "work_key": "#Works_SinisterChangingGirls",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Drc": "USE"
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "4",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "4",
+      "record_identity": {
+        "work_key": "#Works_SinisterChangingGirls",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Drc": "DS"
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "5",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "5",
+      "record_identity": {
+        "work_key": "#Works_SinisterChangingGirls",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Drc": "DSW"
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "6",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "6",
+      "record_identity": {
+        "work_key": "#Works_SinisterChangingGirls",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Drc": "UW"
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "7",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "7",
+      "record_identity": {
+        "work_key": "#Works_SinisterChangingGirls",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Drc": "UNW"
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "扇 零夏・スフィリア",
+      "db_key": "#DB_Regioministrators",
+      "display_name": "扇 零夏・スフィリア",
+      "record_identity": {
+        "work_key": "#Works_SinisterChangingGirls",
+        "db_key": "#DB_Regioministrators",
+        "index": {
+          "Regioministration": "W"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "扇 三春",
+      "db_key": "#DB_Regioministrators",
+      "display_name": "扇 三春・ロールプラン",
+      "record_identity": {
+        "work_key": "#Works_SinisterChangingGirls",
+        "db_key": "#DB_Regioministrators",
+        "index": {
+          "Regioministration": "X"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "扇 残冬",
+      "db_key": "#DB_Regioministrators",
+      "display_name": "扇 残冬",
+      "record_identity": {
+        "work_key": "#Works_SinisterChangingGirls",
+        "db_key": "#DB_Regioministrators",
+        "index": {
+          "Regioministration": "Y"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "財前 小里",
+      "db_key": "#DB_Regioministrators",
+      "display_name": "扇 爾秋",
+      "record_identity": {
+        "work_key": "#Works_SinisterChangingGirls",
+        "db_key": "#DB_Regioministrators",
+        "index": {
+          "Regioministration": "Z"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    }
+  ],
   "character_ids": [
     "零 零",
     "扇 三春",
