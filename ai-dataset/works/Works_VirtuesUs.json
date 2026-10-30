@@ -45,6 +45,152 @@
       }
     }
   ],
+  "characters": [
+    {
+      "id": "桜花 仁",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "桜花 仁",
+      "record_identity": {
+        "work_key": "#Works_VirtuesUs",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Virtues": "仁"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "桜花 義",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "桜花 義\n何.義博",
+      "record_identity": {
+        "work_key": "#Works_VirtuesUs",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Virtues": "義"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "桜花 礼",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "桜花 禮",
+      "record_identity": {
+        "work_key": "#Works_VirtuesUs",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Virtues": "礼"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "桜花 智",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "桜花 智\n智・ヴァーチュングレイス=春洋",
+      "record_identity": {
+        "work_key": "#Works_VirtuesUs",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Virtues": "智"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "桜花 忠",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "桜花 忠\nトレース・フォン・キルシュブルーテン=レーゲンス",
+      "record_identity": {
+        "work_key": "#Works_VirtuesUs",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Virtues": "忠"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "桜花 信",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "桜花 訫",
+      "record_identity": {
+        "work_key": "#Works_VirtuesUs",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Virtues": "信"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "桜花 孝",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "桜花 孝\n孝・ヴァーチュングレイス=春洋",
+      "record_identity": {
+        "work_key": "#Works_VirtuesUs",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Virtues": "孝"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "桜花 悌",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "桜花 悌\n何.悌博",
+      "record_identity": {
+        "work_key": "#Works_VirtuesUs",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Virtues": "悌"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    }
+  ],
   "character_ids": [
     "桜花 仁",
     "桜花 義",

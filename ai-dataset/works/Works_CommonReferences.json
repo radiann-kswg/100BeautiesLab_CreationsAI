@@ -55,6 +55,962 @@
       }
     }
   ],
+  "characters": [
+    {
+      "id": "管理主",
+      "db_key": "#Ref_Vocabulary",
+      "display_name": "管理主",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Vocabulary",
+        "index": {
+          "Term_JP": "管理主"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "創造主",
+      "db_key": "#Ref_Vocabulary",
+      "display_name": "創造主",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Vocabulary",
+        "index": {
+          "Term_JP": "創造主"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "破壊主",
+      "db_key": "#Ref_Vocabulary",
+      "display_name": "破壊主",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Vocabulary",
+        "index": {
+          "Term_JP": "破壊主"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "管制主",
+      "db_key": "#Ref_Vocabulary",
+      "display_name": "管制主",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Vocabulary",
+        "index": {
+          "Term_JP": "管制主"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "技巧属性",
+      "db_key": "#Ref_Vocabulary",
+      "display_name": "技巧属性",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Vocabulary",
+        "index": {
+          "Term_JP": "技巧属性"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "特殊パターン",
+      "db_key": "#Ref_Vocabulary",
+      "display_name": "特殊パターン",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Vocabulary",
+        "index": {
+          "Term_JP": "特殊パターン"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "安全レベル",
+      "db_key": "#Ref_Vocabulary",
+      "display_name": "安全レベル",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Vocabulary",
+        "index": {
+          "Term_JP": "安全レベル"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "憤怒を鎮めるイ列",
+      "db_key": "#Ref_Vocabulary",
+      "display_name": "憤怒を鎮めるイ列",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Vocabulary",
+        "index": {
+          "Term_JP": "憤怒を鎮めるイ列"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "超過人間",
+      "db_key": "#Ref_Race",
+      "display_name": "超過人間",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Race",
+        "index": {
+          "Term_JP": "超過人間"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "妖狐",
+      "db_key": "#Ref_Race",
+      "display_name": "妖狐",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Race",
+        "index": {
+          "Term_JP": "妖狐"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "狐惹き",
+      "db_key": "#Ref_Race",
+      "display_name": "狐惹き",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Race",
+        "index": {
+          "Term_JP": "狐惹き"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "猫又",
+      "db_key": "#Ref_Race",
+      "display_name": "猫又",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Race",
+        "index": {
+          "Term_JP": "猫又"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "猫惹き",
+      "db_key": "#Ref_Race",
+      "display_name": "猫惹き",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Race",
+        "index": {
+          "Term_JP": "猫惹き"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "月狼",
+      "db_key": "#Ref_Race",
+      "display_name": "月狼",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Race",
+        "index": {
+          "Term_JP": "月狼"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "人狼惹き",
+      "db_key": "#Ref_Race",
+      "display_name": "人狼惹き",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Race",
+        "index": {
+          "Term_JP": "人狼惹き"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "蛇人",
+      "db_key": "#Ref_Race",
+      "display_name": "蛇人",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Race",
+        "index": {
+          "Term_JP": "蛇人"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "化狸",
+      "db_key": "#Ref_Race",
+      "display_name": "化狸",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Race",
+        "index": {
+          "Term_JP": "化狸"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "狛犬",
+      "db_key": "#Ref_Race",
+      "display_name": "狛犬",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Race",
+        "index": {
+          "Term_JP": "狛犬"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "概念",
+      "db_key": "#Ref_Race",
+      "display_name": "概念",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Race",
+        "index": {
+          "Term_JP": "概念"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "百花繚乱研究所",
+      "db_key": "#Ref_Faction",
+      "display_name": "百花繚乱研究所",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Faction",
+        "index": {
+          "Term_JP": "百花繚乱研究所"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "百花繚乱研究国際大使所",
+      "db_key": "#Ref_Faction",
+      "display_name": "百花繚乱研究国際大使所",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Faction",
+        "index": {
+          "Term_JP": "百花繚乱研究国際大使所"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "百戦錬磨開発所",
+      "db_key": "#Ref_Faction",
+      "display_name": "百戦錬磨開発所",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Faction",
+        "index": {
+          "Term_JP": "百戦錬磨開発所"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "ジャンクガレージ『六花陛下』",
+      "db_key": "#Ref_Faction",
+      "display_name": "ジャンクガレージ『六花陛下』",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Faction",
+        "index": {
+          "Term_JP": "ジャンクガレージ『六花陛下』"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "夜月機関",
+      "db_key": "#Ref_Faction",
+      "display_name": "夜月機関",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Faction",
+        "index": {
+          "Term_JP": "夜月機関"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "龍天国",
+      "db_key": "#Ref_Faction",
+      "display_name": "龍天国",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Faction",
+        "index": {
+          "Term_JP": "龍天国"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "シンフォニー.X",
+      "db_key": "#Ref_Faction",
+      "display_name": "シンフォニー.X",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Faction",
+        "index": {
+          "Term_JP": "シンフォニー.X"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "シンフォニー.XVI",
+      "db_key": "#Ref_Faction",
+      "display_name": "シンフォニー.XVI",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Faction",
+        "index": {
+          "Term_JP": "シンフォニー.XVI"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "レゾンデイトルカンパニー",
+      "db_key": "#Ref_Faction",
+      "display_name": "レゾンデイトルカンパニー",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Faction",
+        "index": {
+          "Term_JP": "レゾンデイトルカンパニー"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "国際情報広報機関『ミハイル』",
+      "db_key": "#Ref_Faction",
+      "display_name": "国際情報広報機関『ミハイル』",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Faction",
+        "index": {
+          "Term_JP": "国際情報広報機関『ミハイル』"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "創世紀",
+      "db_key": "#Ref_Society",
+      "display_name": "創世紀",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Society",
+        "index": {
+          "Term_JP": "創世紀"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "『第7の世界創造』",
+      "db_key": "#Ref_Society",
+      "display_name": "『第7の世界創造』",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Society",
+        "index": {
+          "Term_JP": "『第7の世界創造』"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "『第7の世界破壊』",
+      "db_key": "#Ref_Society",
+      "display_name": "『第7の世界破壊』",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Society",
+        "index": {
+          "Term_JP": "『第7の世界破壊』"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "『第8の世界創造』",
+      "db_key": "#Ref_Society",
+      "display_name": "『第8の世界創造』",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Society",
+        "index": {
+          "Term_JP": "『第8の世界創造』"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "世界第7恐慌大戦",
+      "db_key": "#Ref_Society",
+      "display_name": "世界第7恐慌大戦",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Society",
+        "index": {
+          "Term_JP": "世界第7恐慌大戦"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "『第8の世界破壊』",
+      "db_key": "#Ref_Society",
+      "display_name": "『第8の世界破壊』",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Society",
+        "index": {
+          "Term_JP": "『第8の世界破壊』"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "九蓮国",
+      "db_key": "#Ref_Region8",
+      "display_name": "九蓮国",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Region8",
+        "index": {
+          "Term_JP": "九蓮国"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "龍天国",
+      "db_key": "#Ref_Region8",
+      "display_name": "龍天国",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Region8",
+        "index": {
+          "Term_JP": "龍天国"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "英皇国",
+      "db_key": "#Ref_Region8",
+      "display_name": "英皇国",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Region8",
+        "index": {
+          "Term_JP": "英皇国"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "運命線運河",
+      "db_key": "#Ref_Region8",
+      "display_name": "運命線運河",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Region8",
+        "index": {
+          "Term_JP": "運命線運河"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "海陸国(シーバイランド)諸島",
+      "db_key": "#Ref_Region8",
+      "display_name": "海陸国(シーバイランド)諸島",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Region8",
+        "index": {
+          "Term_JP": "海陸国(シーバイランド)諸島"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "英州諸国",
+      "db_key": "#Ref_Region8",
+      "display_name": "英州諸国",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Region8",
+        "index": {
+          "Term_JP": "英州諸国"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "黒薔薇国",
+      "db_key": "#Ref_Region8",
+      "display_name": "黒薔薇国",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Region8",
+        "index": {
+          "Term_JP": "黒薔薇国"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "神皇国",
+      "db_key": "#Ref_Region8",
+      "display_name": "神皇国",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Region8",
+        "index": {
+          "Term_JP": "神皇国"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "南英州諸国",
+      "db_key": "#Ref_Region8",
+      "display_name": "南英州諸国",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Region8",
+        "index": {
+          "Term_JP": "南英州諸国"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "アローナ港",
+      "db_key": "#Ref_Region8",
+      "display_name": "アローナ港",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Region8",
+        "index": {
+          "Term_JP": "アローナ港"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "雄志結国",
+      "db_key": "#Ref_Region8",
+      "display_name": "雄志結国",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Region8",
+        "index": {
+          "Term_JP": "雄志結国"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "紅雪連邦",
+      "db_key": "#Ref_Region8",
+      "display_name": "紅雪連邦",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Region8",
+        "index": {
+          "Term_JP": "紅雪連邦"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "四蓮島",
+      "db_key": "#Ref_Region8",
+      "display_name": "四蓮島",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Region8",
+        "index": {
+          "Term_JP": "四蓮島"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "暁美諸国",
+      "db_key": "#Ref_Region8",
+      "display_name": "暁美諸国",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Region8",
+        "index": {
+          "Term_JP": "暁美諸国"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "算象諸国",
+      "db_key": "#Ref_Region8",
+      "display_name": "算象諸国",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Region8",
+        "index": {
+          "Term_JP": "算象諸国"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "金源諸国",
+      "db_key": "#Ref_Region8",
+      "display_name": "金源諸国",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Region8",
+        "index": {
+          "Term_JP": "金源諸国"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "南雌大陸",
+      "db_key": "#Ref_Region8",
+      "display_name": "南雌大陸",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Region8",
+        "index": {
+          "Term_JP": "南雌大陸"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "然天大陸",
+      "db_key": "#Ref_Region8",
+      "display_name": "然天大陸",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Region8",
+        "index": {
+          "Term_JP": "然天大陸"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    }
+  ],
   "character_ids": [
     "管理主",
     "創造主",

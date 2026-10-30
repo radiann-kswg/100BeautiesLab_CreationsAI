@@ -89,6 +89,6182 @@
       }
     }
   ],
+  "characters": [
+    {
+      "id": "1",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ1番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 1
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "2",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ2番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 2
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "3",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ3番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 3
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "4",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ4番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 4
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "5",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ5番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 5
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "6",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ6番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 6
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "7",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ7番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 7
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "8",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ8番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 8
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "9",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ9番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 9
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "10",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ10番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 10
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "11",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ11番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 11
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "12",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ12番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 12
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "13",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ13番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 13
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "14",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ14番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 14
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "15",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ15番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 15
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "16",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ16番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 16
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "17",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ17番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 17
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "18",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ18番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 18
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "19",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ19番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 19
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "20",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ20番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 20
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "21",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ21番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 21
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "22",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ22番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 22
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "23",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ23番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 23
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "24",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ24番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 24
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "25",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ25番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 25
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "26",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ26番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 26
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "27",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ27番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 27
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "28",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ28番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 28
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "29",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ29番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 29
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "30",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ30番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 30
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "31",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ31番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 31
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "32",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ32番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 32
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "33",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ33番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 33
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "34",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ34番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 34
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "35",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ35番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 35
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "36",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ36番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 36
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "37",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ37番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 37
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "38",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ38番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 38
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "39",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ39番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 39
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "40",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ40番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 40
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "41",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ41番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 41
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "42",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ42番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 42
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "43",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ43番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 43
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "44",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ44番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 44
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "45",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ45番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 45
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "46",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ46番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 46
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "47",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ47番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 47
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "48",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ48番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 48
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "49",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ49番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 49
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "50",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ50番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 50
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "51",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ51番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 51
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "52",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ52番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 52
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "53",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ53番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 53
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "54",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ54番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 54
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "55",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ55番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 55
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "56",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ56番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 56
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "57",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ57番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 57
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "58",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ58番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 58
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "59",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ59番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 59
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "60",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ60番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 60
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "61",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ61番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 61
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "62",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ62番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 62
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "63",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ63番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 63
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "64",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ64番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 64
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "65",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ65番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 65
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "66",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ66番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 66
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "67-old",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ旧67番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": "67-old"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "67",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ67番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 67
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "68",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ68番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 68
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "69",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ69番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 69
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "70",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ70番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 70
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "71",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ71番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 71
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "72",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ72番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 72
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "73",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ73番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 73
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "74",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ74番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 74
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "75",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ75番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 75
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "76",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ76番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 76
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "77",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ77番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 77
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "78",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ78番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 78
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "79",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ79番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 79
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "80",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ80番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 80
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "81",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ81番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 81
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "82",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ82番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 82
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "83",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ83番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 83
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "84",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ84番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 84
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "85",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ85番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 85
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "86",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ86番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 86
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "87",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ87番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 87
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "88",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ88番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 88
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "89",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ89番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 89
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "90",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ90番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 90
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "91",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ91番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 91
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "92",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ92番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 92
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "93",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ93番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 93
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "94",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ94番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 94
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "95",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ95番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 95
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "96",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ96番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 96
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "97",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ97番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 97
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "98",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ98番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 98
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "99",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ99番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": 99
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "2-alt",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ試作型2号機\nナンバーテールズ開発支援機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": "2-alt"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "10-alt",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ試作型10号機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": "10-alt"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "000",
+      "db_key": "#DB_Primary",
+      "display_name": "ナンバーテールズ0番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": "000"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "0",
+      "db_key": "#DB_Primary",
+      "display_name": "千歳 玲",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": "0"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "00",
+      "db_key": "#DB_Primary",
+      "display_name": "千歳 励",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Num": "00"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "100",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ100番機\nナンバーテールズ キャレ・ディス",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": 100
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "101",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ101番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": 101
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "102",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ102番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": 102
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "103",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ103番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": 103
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "104",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ104番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": 104
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "105",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ105番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": 105
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "106",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ106番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": 106
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "107",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ107番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": 107
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "108",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ108番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": 108
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "109",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ109番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": 109
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "110",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ110番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": 110
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "111",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ111番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": 111
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "112",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ112番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": 112
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "113",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ113番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": 113
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "114",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ114番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": 114
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "115",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ115番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": 115
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "116",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ116番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": 116
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "117",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ117番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": 117
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "118",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ118番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": 118
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "119",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ119番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": 119
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "121-sq",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ キャレ・オンズ(同位異格121番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": "121-sq"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "125-cub",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ キュビクザール・フュンフ(同位異格125番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": "125-cub"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "144-sq",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ キャレ・ドゥーズ(同位異格144番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": "144-sq"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "169-sq",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ キャレ・トレーズ(同位異格169番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": "169-sq"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "196-sq",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ キャレ・カトルズ(同位異格196番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": "196-sq"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "200-dev",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ200番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": "200-dev"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "216-cub",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ キュビクザール・ゼクス(同位異格216番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": "216-cub"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "221",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ仮称13×17号機(同位異格221番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": 221
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "222",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ222番機(開発用オリジナル版)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": 222
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "222A",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ222番機(開発用オリジナル版3倍型2号機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": "222A"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "222B",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ222番機(開発用オリジナル版1+11号2倍機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": "222B"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "225-sq",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ キャレ・クインズ(同位異格225番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": "225-sq"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "247-ma",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ仮称13×19号機(同位異格247番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": "247-ma"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "256-sq",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ キャレ・セイズ(同位異格256番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": "256-sq"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "256-bq",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ バイツ1.0号機(256番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": "256-bq"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "289-sq",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ キャレ・ディセット(同位異格289番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": "289-sq"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "323-ma",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ仮称17×19号機(同位異格323番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": "323-ma"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "324-sq",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ キャレ・ディズュイット(同位異格324番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": "324-sq"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "333",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ333番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": 333
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "343-cub",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ キュビクザール・ズィベン(同位異格343番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": "343-cub"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "361-sq",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ キャレ・ディズネフ(同位異格361番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": "361-sq"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "400-sq",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ キャレ・ヴィント(同位異格400番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": "400-sq"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "400-dev",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ400番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": "400-dev"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "444",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ444番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": 444
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "500-dev",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ500番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": "500-dev"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "512-cub",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ キュビクザール・アハト(同位異格512番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": "512-cub"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "512-bq",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ バイツ1.5号機(512番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": "512-bq"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "555",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ555番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": 555
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "666",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ666番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": 666
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "729-sxp",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ729番想定機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": "729-sxp"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "777",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ777番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": 777
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "777.Jackpot",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ777番機-ジャックポット",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": "777.Jackpot"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "888",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ888番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": 888
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "999",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ999番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": 999
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "3x11",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ3x11番機(仮称)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": "3x11"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "64-sxp",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ仮設新64番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": "64-sxp"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "9x9",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ キャレ・ネフ(仮設9x9番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": "9x9"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "%",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "錦野 舞",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": "%"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "∞",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "錦野 歌嫁",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": "∞"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "1000",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ ツェール(仮設1000番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": 1000
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "101-mp",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ101番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": "101-mp"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "102-mp",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ102番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": "102-mp"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "103-mp",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ103番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": "103-mp"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "104-mp",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ104番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": "104-mp"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "105-mp",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ105番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": "105-mp"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "106-mp",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ106番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": "106-mp"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "107-mp",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ107番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": "107-mp"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "108-mp",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ108番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": "108-mp"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "109-mp",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ109番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": "109-mp"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "110-mp",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ110番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": "110-mp"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "111-mp",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ111番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": "111-mp"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "112-mp",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ112番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": "112-mp"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "113-mp",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ113番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": "113-mp"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "114-mp",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ114番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": "114-mp"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "115-mp",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ115番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": "115-mp"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "116-mp",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ116番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": "116-mp"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "117-mp",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ117番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": "117-mp"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "118-mp",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ118番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": "118-mp"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "119-mp",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ119番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": "119-mp"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "120",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ120番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 120
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "121",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ121番機SQシリーズ(ナンバーテールズ121番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 121
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "123",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ123番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 123
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "125",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ125番機KZシリーズ(ナンバーテールズ125番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 125
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "127",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ127番機AMシリーズ(ナンバーテールズ127番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 127
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "128",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ128番機BQシリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 128
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "144",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ144番機SQシリーズ(ナンバーテールズ144番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 144
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "148",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ148番機HCシリーズ(ナンバーテールズ148番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 148
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "150",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ150番機HCシリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 150
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "153",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ153番機NCシリーズ(ナンバーテールズ153番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 153
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "156",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ156番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 156
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "169",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ169番機SQシリーズ(ナンバーテールズ169番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 169
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "196",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ196番機SQシリーズ(ナンバーテールズ196番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 196
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "200",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ200番機GPシリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 200
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "214",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ214番機DCシリーズ(ナンバーテールズ214番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 214
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "216",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ216番機KZシリーズ(ナンバーテールズ216番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 216
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "221B",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ221番機WNシリーズ(ナンバーテールズ221B番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": "221B"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "222-mp",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ222番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": "222-mp"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "223",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ223番機CRシリーズ(ナンバーテールズ223番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 223
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "223-jw",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ223番機JWシリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": "223-jw"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "225",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ225番機SQシリーズ（ナンバーテールズ225番機）",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 225
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "227",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ227番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 227
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "232",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ232番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 232
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "238",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ238番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 238
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "241",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ241番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 241
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "243",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ243番機QPシリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 243
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "244",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ244番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 244
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "247",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ247番機PAシリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 247
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "255",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ255番機VRシリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 255
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "256",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ256番機BQシリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 256
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "256-alt",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ256番機SQシリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": "256-alt"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "258",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ258番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 258
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "263",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ263番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 263
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "265",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ265番機RMシリーズ（ナンバーテールズ265番機）",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 265
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "266",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "ナンバーテールズ 仮設2^√2号機(ナンバーテールズ266番機, ディ-ヴァインズ8号+母艦3号開発機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 266
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "273",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ273番機PMシリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 273
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "289",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ289番機SQシリーズ(ナンバーテールズ289番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 289
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "290",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ290番機HCシリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 290
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "294",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ294番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 294
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "295",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ295番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 295
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "314",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "ナンバーテールズ仮設π号機(ナンバーテールズ314番機, ディ-ヴァインズ22号+母艦7号開発機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 314
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "323",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ323番機PAシリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 323
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "324",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ324番機SQシリーズ (ナンバーテールズ324番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 324
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "333-mp",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ333番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": "333-mp"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "337",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ337番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 337
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "343",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ343番機KZシリーズ（ナンバーテールズ343番機）",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 343
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "360",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ360番機RMシリーズ(ナンバーテールズ360番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 360
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "361",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ361番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 361
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "365",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ365番機GCシリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 365
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "366",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ366番機GCシリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 366
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "369",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ369番機JWシリーズ\n量産型ナンバーテールズ369番機SMシリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 369
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "370",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ370番機NCシリーズ（ナンバーテールズ370番機）",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 370
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "371",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ371番機NCシリーズ（ナンバーテールズ371番機）",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 371
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "373",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ373番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 373
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "376",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ376番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 376
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "377",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ377番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 377
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "385",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ385番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 385
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "387",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ387番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 387
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "400",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ400番機SQシリーズ(ナンバーテールズ400番機甲)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 400
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "400-gc",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ400番機GCシリーズ(ナンバーテールズ400番機乙)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": "400-gc"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "401",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ401番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 401
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "404",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ404番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 404
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "407",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ407番機NCシリーズ（ナンバーテールズ407番機）",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 407
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "411",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ411番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 411
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "421",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ421番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 421
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "429",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ429番機JWシリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 429
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "441",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ441番機SQシリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 441
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "444-mp",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ444番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": "444-mp"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "451",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ451番機WNシリーズ(ナンバーテールズ451番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 451
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "456",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ456番機JWシリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 456
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "467",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ467番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 467
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "476",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ476番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 476
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "496",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ496番機AMシリーズ(ナンバーテールズ496番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 496
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "500",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ500番機GPシリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 500
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "510",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ510番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 510
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "512",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ512番機BQシリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 512
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "512-alt",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ512番機KZシリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": "512-alt"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "528",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ528番機PMシリーズ (ナンバーテールズ528番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 528
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "555-mp",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ555番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": "555-mp"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "558",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ558番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 558
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "572",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ572番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 572
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "605",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ605番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 605
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "616",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ616番機FTシリーズ(ナンバーテールズ616番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 616
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "625",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ625番機SQシリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 625
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "634",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ634番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 634
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "638",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ638番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 638
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "666-mp",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ666番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": "666-mp"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "670",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ670番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 670
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "696",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ696番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 696
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "729",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ729番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 729
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "736",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ736番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 736
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "753",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ753番機JWシリーズ(ナンバーテールズ753番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 753
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "773",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ773番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 773
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "774",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ774番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 774
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "777-mp",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ777番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": "777-mp"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "777.Jackpot-mp",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ777番機[ジャックポット]シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": "777.Jackpot-mp"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "780",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ780番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 780
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "808",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ808番機JWシリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 808
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "813",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ813番機WNシリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 813
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "833",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ833番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 833
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "888-mp",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ888番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": "888-mp"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "959",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ959番機CRシリーズ(ナンバーテールズ959番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 959
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "966",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ966番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 966
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "969",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ969番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 969
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "979",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ979番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 979
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "999-mp",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ999番機シリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": "999-mp"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "1024",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "ナンバーテールズ仮設1024番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 1024
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "1111",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "ナンバーテールズ仮設1111番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 1111
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "1122",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "ナンバーテールズ仮設1122番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": 1122
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "0xA",
+      "db_key": "#DB_Secondary",
+      "display_name": "ヘキサデミカル-テールズ0xA番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "0xA"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "0xB",
+      "db_key": "#DB_Secondary",
+      "display_name": "ヘキサデミカル-テールズ0xB番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "0xB"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "0xC",
+      "db_key": "#DB_Secondary",
+      "display_name": "ヘキサデミカル-テールズ0xC番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "0xC"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "0xD",
+      "db_key": "#DB_Secondary",
+      "display_name": "ヘキサデミカル-テールズ0xD番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "0xD"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "0xE",
+      "db_key": "#DB_Secondary",
+      "display_name": "ヘキサデミカル-テールズ0xE番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "0xE"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "0xF",
+      "db_key": "#DB_Secondary",
+      "display_name": "ヘキサデミカル-テールズ0xF番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "0xF"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "0xFF",
+      "db_key": "#DB_Secondary",
+      "display_name": "ヘキサデミカル-テールズ 第二最終番機(ナンバーテールズ異元255番機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "0xFF"
+        }
+      },
+      "text_rp_inference": {
+        "status": "denied",
+        "allowed": false,
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "3/3",
+      "db_key": "#DB_Secondary",
+      "display_name": "D-Vines 3号機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "3/3"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "7/7",
+      "db_key": "#DB_Secondary",
+      "display_name": "D-Vines 7号機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "7/7"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "8/8",
+      "db_key": "#DB_Secondary",
+      "display_name": "D-Vines 8号機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "8/8"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "22/22",
+      "db_key": "#DB_Secondary",
+      "display_name": "D-Vines 22号機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "22/22"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "/3",
+      "db_key": "#DB_Secondary",
+      "display_name": "D-Vines 母艦3号機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "/3"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "/7",
+      "db_key": "#DB_Secondary",
+      "display_name": "D-Vines 母艦7号機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "/7"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "/8",
+      "db_key": "#DB_Secondary",
+      "display_name": "D-Vines 母艦8号機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "/8"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "/22",
+      "db_key": "#DB_Secondary",
+      "display_name": "D-Vines 母艦22号機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "/22"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "3/",
+      "db_key": "#DB_Secondary",
+      "display_name": "D-Vines 基幹3号機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "3/"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "7/",
+      "db_key": "#DB_Secondary",
+      "display_name": "D-Vines 基幹7号機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "7/"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "8/",
+      "db_key": "#DB_Secondary",
+      "display_name": "D-Vines 基幹8号機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "8/"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "22/",
+      "db_key": "#DB_Secondary",
+      "display_name": "D-Vines 基幹22号機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "22/"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "115-numberize",
+      "db_key": "#DB_Secondary",
+      "display_name": "(ナンバーテールズ化企画絵)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "115-numberize"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "148-numberize",
+      "db_key": "#DB_Secondary",
+      "display_name": "(ナンバーテールズ化企画絵)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "148-numberize"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "227-numberize",
+      "db_key": "#DB_Secondary",
+      "display_name": "(ナンバーテールズ化企画絵)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "227-numberize"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "232-numberize",
+      "db_key": "#DB_Secondary",
+      "display_name": "(ナンバーテールズ化企画絵)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "232-numberize"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "238-numberize",
+      "db_key": "#DB_Secondary",
+      "display_name": "(ナンバーテールズ化企画絵)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "238-numberize"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "241-numberize",
+      "db_key": "#DB_Secondary",
+      "display_name": "(ナンバーテールズ化企画絵)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "241-numberize"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "258-numberize",
+      "db_key": "#DB_Secondary",
+      "display_name": "(ナンバーテールズ化企画絵)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "258-numberize"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "263-numberize",
+      "db_key": "#DB_Secondary",
+      "display_name": "(ナンバーテールズ化企画絵)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "263-numberize"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "265-numberize",
+      "db_key": "#DB_Secondary",
+      "display_name": "(ナンバーテールズ化企画絵)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "265-numberize"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "294-numberize",
+      "db_key": "#DB_Secondary",
+      "display_name": "(ナンバーテールズ化企画絵)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "294-numberize"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "295-numberize",
+      "db_key": "#DB_Secondary",
+      "display_name": "(ナンバーテールズ化企画絵)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "295-numberize"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "337-numberize",
+      "db_key": "#DB_Secondary",
+      "display_name": "(ナンバーテールズ化企画絵)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "337-numberize"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "366-numberize",
+      "db_key": "#DB_Secondary",
+      "display_name": "(ナンバーテールズ化企画絵)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "366-numberize"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "376-numberize",
+      "db_key": "#DB_Secondary",
+      "display_name": "(ナンバーテールズ化企画絵)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "376-numberize"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "377-numberize",
+      "db_key": "#DB_Secondary",
+      "display_name": "(ナンバーテールズ化企画絵)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "377-numberize"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "387-numberize",
+      "db_key": "#DB_Secondary",
+      "display_name": "(ナンバーテールズ化企画絵)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "387-numberize"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "401-numberize",
+      "db_key": "#DB_Secondary",
+      "display_name": "(ナンバーテールズ化企画絵)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "401-numberize"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "411-numberize",
+      "db_key": "#DB_Secondary",
+      "display_name": "(ナンバーテールズ化企画絵)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "411-numberize"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "421-numberize",
+      "db_key": "#DB_Secondary",
+      "display_name": "(ナンバーテールズ化企画絵)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "421-numberize"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "467-numberize",
+      "db_key": "#DB_Secondary",
+      "display_name": "(ナンバーテールズ化企画絵)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "467-numberize"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "476-numberize",
+      "db_key": "#DB_Secondary",
+      "display_name": "(ナンバーテールズ化企画絵)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "476-numberize"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "510-numberize",
+      "db_key": "#DB_Secondary",
+      "display_name": "(ナンバーテールズ化企画絵)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "510-numberize"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "558-numberize",
+      "db_key": "#DB_Secondary",
+      "display_name": "(ナンバーテールズ化企画絵)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "558-numberize"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "605-numberize",
+      "db_key": "#DB_Secondary",
+      "display_name": "(ナンバーテールズ化企画絵)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "605-numberize"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "625-numberize",
+      "db_key": "#DB_Secondary",
+      "display_name": "(ナンバーテールズ化企画絵)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "625-numberize"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "638-numberize",
+      "db_key": "#DB_Secondary",
+      "display_name": "(ナンバーテールズ化企画絵)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "638-numberize"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "670-numberize",
+      "db_key": "#DB_Secondary",
+      "display_name": "(ナンバーテールズ化企画絵)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "670-numberize"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "736-numberize",
+      "db_key": "#DB_Secondary",
+      "display_name": "(ナンバーテールズ化企画絵)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "736-numberize"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "773-numberize",
+      "db_key": "#DB_Secondary",
+      "display_name": "(ナンバーテールズ化企画絵)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "773-numberize"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "979-numberize",
+      "db_key": "#DB_Secondary",
+      "display_name": "(ナンバーテールズ化企画絵)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "979-numberize"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "1122-numberize",
+      "db_key": "#DB_Secondary",
+      "display_name": "(ナンバーテールズ化企画絵)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_Secondary",
+        "index": {
+          "Num": "1122-numberize"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    }
+  ],
   "character_ids": [
     "1",
     "2",

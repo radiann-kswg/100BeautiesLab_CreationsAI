@@ -9,6 +9,7 @@
       "title_ja": "ナンバーテールズ",
       "title_en": "NumberTales",
       "character_count": 343,
+      "character_catalog_path": "works/Works_NumberTales.json",
       "image_count": 643,
       "ai_training": {
         "allowed": true,
@@ -26,6 +27,7 @@
       "title_ja": "運命線探偵78",
       "title_en": "the Fate-Line Investigator 78",
       "character_count": 102,
+      "character_catalog_path": "works/Works_FLInvestigator78.json",
       "image_count": 14,
       "ai_training": {
         "allowed": false,
@@ -39,6 +41,7 @@
       "title_ja": "獣爾騎兵",
       "title_en": "Shau'er Riders\nBeasted Cavalry",
       "character_count": 10,
+      "character_catalog_path": "works/Works_ShauErRiders.json",
       "image_count": 22,
       "ai_training": {
         "allowed": false,
@@ -52,6 +55,7 @@
       "title_ja": "ハンカクライブ",
       "title_en": "UnibyteLive",
       "character_count": 47,
+      "character_catalog_path": "works/Works_UnibyteLive.json",
       "image_count": 8,
       "ai_training": {
         "allowed": false,
@@ -65,6 +69,7 @@
       "title_ja": "豹変系女子",
       "title_en": "Sinister Changing Girls",
       "character_count": 28,
+      "character_catalog_path": "works/Works_SinisterChangingGirls.json",
       "image_count": 15,
       "ai_training": {
         "allowed": true,
@@ -81,6 +86,7 @@
       "title_ja": "我ら美徳の桜花兄弟",
       "title_en": "Virtues Us - the Cherrybloom Siblings",
       "character_count": 8,
+      "character_catalog_path": "works/Works_VirtuesUs.json",
       "image_count": 0,
       "ai_training": {
         "allowed": false,
@@ -94,6 +100,7 @@
       "title_ja": "アンオースドロジカ",
       "title_en": "UnauthedLogica",
       "character_count": 115,
+      "character_catalog_path": "works/Works_UnauthedLogica.json",
       "image_count": 1,
       "ai_training": {
         "allowed": false,
@@ -107,6 +114,7 @@
       "title_ja": "パストダイヴァー",
       "title_en": "PastDivers",
       "character_count": 17,
+      "character_catalog_path": "works/Works_PastDivers.json",
       "image_count": 2,
       "ai_training": {
         "allowed": false,
@@ -120,6 +128,7 @@
       "title_ja": "星屑の万華鏡",
       "title_en": "Stardust vs. Kaleidoscope",
       "character_count": 0,
+      "character_catalog_path": "works/Works_StardustVsKaleidoscope.json",
       "image_count": 0,
       "ai_training": {
         "allowed": false,
@@ -133,6 +142,7 @@
       "title_ja": "運命線狐の記録\nフィジカル9",
       "title_en": "Destiny Fox's Records\nPhysical 9",
       "character_count": 15,
+      "character_catalog_path": "works/Works_DestinyFoxRecords.json",
       "image_count": 42,
       "ai_training": {
         "allowed": false,
@@ -146,6 +156,7 @@
       "title_ja": "共通資料",
       "title_en": "Common References",
       "character_count": 53,
+      "character_catalog_path": "works/Works_CommonReferences.json",
       "image_count": 1,
       "ai_training": {
         "allowed": true,

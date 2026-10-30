@@ -56,6 +56,2294 @@
       }
     }
   ],
+  "characters": [
+    {
+      "id": "ノアンド",
+      "db_key": "#DB_PrimaryMobs",
+      "display_name": "7274オートマトン00番機：ノアンド",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_PrimaryMobs",
+        "index": {
+          "Logic.LogicSeries": "74x",
+          "Logic.Num": "00"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "インベルト",
+      "db_key": "#DB_PrimaryMobs",
+      "display_name": "7274オートマトン05番機：インベルト",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_PrimaryMobs",
+        "index": {
+          "Logic.LogicSeries": "74x",
+          "Logic.Num": "05"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "インヴァ",
+      "db_key": "#DB_PrimaryMobs",
+      "display_name": "7274オートマトン06番機：インヴァ",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_PrimaryMobs",
+        "index": {
+          "Logic.LogicSeries": "74x",
+          "Logic.Num": "06"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "バッファロ",
+      "db_key": "#DB_PrimaryMobs",
+      "display_name": "7274オートマトン07番機：バッファロ",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_PrimaryMobs",
+        "index": {
+          "Logic.LogicSeries": "74x",
+          "Logic.Num": "07"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "トラインアンド",
+      "db_key": "#DB_PrimaryMobs",
+      "display_name": "7274オートマトン11番機：トラインアンド",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_PrimaryMobs",
+        "index": {
+          "Logic.LogicSeries": "74x",
+          "Logic.Num": 11
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "シュミッツ",
+      "db_key": "#DB_PrimaryMobs",
+      "display_name": "7274オートマトン14番機：シュミッツ",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_PrimaryMobs",
+        "index": {
+          "Logic.LogicSeries": "74x",
+          "Logic.Num": 14
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "クオンタナ",
+      "db_key": "#DB_PrimaryMobs",
+      "display_name": "7274オートマトン20番機：クオンタナ",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_PrimaryMobs",
+        "index": {
+          "Logic.LogicSeries": "74x",
+          "Logic.Num": 20
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "トリーノア",
+      "db_key": "#DB_PrimaryMobs",
+      "display_name": "7274オートマトン27番機：トリーノア",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_PrimaryMobs",
+        "index": {
+          "Logic.LogicSeries": "74x",
+          "Logic.Num": 27
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "オクタナ",
+      "db_key": "#DB_PrimaryMobs",
+      "display_name": "7274オートマトン30番機：オクタナ",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_PrimaryMobs",
+        "index": {
+          "Logic.LogicSeries": "74x",
+          "Logic.Num": 30
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "フリップロ",
+      "db_key": "#DB_PrimaryMobs",
+      "display_name": "7274オートマトン112番機：フリップロ",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_PrimaryMobs",
+        "index": {
+          "Logic.LogicSeries": "74x",
+          "Logic.Num": 112
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "ニッキー",
+      "db_key": "#DB_PrimaryMobs",
+      "display_name": "7IU55[7ИУ55]オートマトンИД型1番機：ニッキー(7274オートマトン141番機互換)",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_PrimaryMobs",
+        "index": {
+          "Logic.LogicSeries": "K1",
+          "Logic.Num": "55ID1"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "アリス",
+      "db_key": "#DB_PrimaryMobs",
+      "display_name": "7274オートマトン181番機：アリス",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_PrimaryMobs",
+        "index": {
+          "Logic.LogicSeries": "74x",
+          "Logic.Num": 181
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "ルッカ",
+      "db_key": "#DB_PrimaryMobs",
+      "display_name": "7274オートマトン182番機：ルッカ",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_PrimaryMobs",
+        "index": {
+          "Logic.LogicSeries": "74x",
+          "Logic.Num": 182
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "オクトフリッパー",
+      "db_key": "#DB_PrimaryMobs",
+      "display_name": "7274オートマトン273番機：オクトフリッパー",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_PrimaryMobs",
+        "index": {
+          "Logic.LogicSeries": "74x",
+          "Logic.Num": 273
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "3(ナオ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド3番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 3,
+          "Model.Num_Badge": "3"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "4(モチ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド4番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 4,
+          "Model.Num_Badge": "4"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "5(イズ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド5番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 5,
+          "Model.Num_Badge": "5"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "6(ムイ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド6番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 6,
+          "Model.Num_Badge": "6"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "7(ナナ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド7番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 7,
+          "Model.Num_Badge": "7"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "8(ワカツ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド8番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 8,
+          "Model.Num_Badge": "8"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "9(チカ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド9番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 9,
+          "Model.Num_Badge": "9"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "7",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド10番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 10,
+          "Model.Num_Badge": "10"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "11(トウイチ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド11番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 11,
+          "Model.Num_Badge": "11"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "12(トウジ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド12番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 12,
+          "Model.Num_Badge": "12"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "13(トミ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド13番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 13,
+          "Model.Num_Badge": "13"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "14(トヨ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド14番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 14,
+          "Model.Num_Badge": "14"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "15(トウゴ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド15番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 15,
+          "Model.Num_Badge": "15"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "16(ソロク)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド16番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 16,
+          "Model.Num_Badge": "16"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "17(トナ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド17番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 17,
+          "Model.Num_Badge": "17"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "18(トウヤ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド18番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 18,
+          "Model.Num_Badge": "18"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "19(トク)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド19番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 19,
+          "Model.Num_Badge": "19"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "20(ハツカ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド20番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 20,
+          "Model.Num_Badge": "20"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "21(ハツヒ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド21番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 21,
+          "Model.Num_Badge": "21"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "22(フジ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド22番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 22,
+          "Model.Num_Badge": "22"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "23(ツグミ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド23番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 23,
+          "Model.Num_Badge": "23"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "24(フトシ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド24番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 24,
+          "Model.Num_Badge": "24"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "25(フィズ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド25番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 25,
+          "Model.Num_Badge": "25"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "26(ニロク)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド26番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 26,
+          "Model.Num_Badge": "26"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "27(ツギナ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド27番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 27,
+          "Model.Num_Badge": "27"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "28(ニハチ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド28番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 28,
+          "Model.Num_Badge": "28"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "29(ニトク)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド29番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 29,
+          "Model.Num_Badge": "29"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "30(ミツト)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド30番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 30,
+          "Model.Num_Badge": "30"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "31(ミツイ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド31番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 31,
+          "Model.Num_Badge": "31"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "32(ミツギ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド32番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 32,
+          "Model.Num_Badge": "32"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "33(ミサ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド33番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 33,
+          "Model.Num_Badge": "33"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "34(サトシ)\nサンジ",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド34番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 34,
+          "Model.Num_Badge": "34"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "35(サトコ)\n35(ミコ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド35番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 35,
+          "Model.Num_Badge": "35"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "36(ミトム)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド36番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 36,
+          "Model.Num_Badge": "36"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "37(サナ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド37番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 37,
+          "Model.Num_Badge": "37"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "38(サタハ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド38番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 38,
+          "Model.Num_Badge": "38"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "39(サク)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド39番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 39,
+          "Model.Num_Badge": "39"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "40(ヨソ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド40番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 40,
+          "Model.Num_Badge": "40"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "41(ヨソイチ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド41番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 41,
+          "Model.Num_Badge": "41"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "42(ヨツグ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド42番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 42,
+          "Model.Num_Badge": "42"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "43(シトミ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド43番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 43,
+          "Model.Num_Badge": "43"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "44(シトシ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド44番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 44,
+          "Model.Num_Badge": "44"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "45(シゴ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド45番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 45,
+          "Model.Num_Badge": "45"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "46(シロー)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド46番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 46,
+          "Model.Num_Badge": "46"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "47(シナ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド47番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 47,
+          "Model.Num_Badge": "47"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "48(シハチ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド48番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 48,
+          "Model.Num_Badge": "48"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "49(ヨチカ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド49番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 49,
+          "Model.Num_Badge": "49"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "50(ナカバ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド50番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 50,
+          "Model.Num_Badge": "50"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "51(イソイチ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド51番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 51,
+          "Model.Num_Badge": "51"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "52(イツギ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド52番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 52,
+          "Model.Num_Badge": "52"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "53(イツゾウ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド53番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 53,
+          "Model.Num_Badge": "53"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "54(イツヨ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド54番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 54,
+          "Model.Num_Badge": "54"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "55(イソゴ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド55番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 55,
+          "Model.Num_Badge": "55"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "56(イソロク)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド56番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 56,
+          "Model.Num_Badge": "56"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "57(イズナ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド57番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 57,
+          "Model.Num_Badge": "57"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "58(イソヤ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド58番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 58,
+          "Model.Num_Badge": "58"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "59(イヅク)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド59番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 59,
+          "Model.Num_Badge": "59"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "60(ムソウ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド60番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 60,
+          "Model.Num_Badge": "60"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "61(ロクイチ)\n61(ロイ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド61番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 61,
+          "Model.Num_Badge": "61"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "59",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド62番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 62,
+          "Model.Num_Badge": "62"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "63(ムツミ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド63番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 63,
+          "Model.Num_Badge": "63"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "64(ムトシ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド64番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 64,
+          "Model.Num_Badge": "64"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "65(ロクゴ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド65番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 65,
+          "Model.Num_Badge": "65"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "66(ムロク)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド66番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 66,
+          "Model.Num_Badge": "66"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "67(ムナ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド67番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 67,
+          "Model.Num_Badge": "67"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "68(ロクヤ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド68番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 68,
+          "Model.Num_Badge": "68"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "69(ロック)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド69番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 69,
+          "Model.Num_Badge": "69"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "70(ナナト)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド70番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 70,
+          "Model.Num_Badge": "70"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "71(ナナヒ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド71番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 71,
+          "Model.Num_Badge": "71"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "72(ナフタ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド72番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 72,
+          "Model.Num_Badge": "72"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "73(ナトミ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド73番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 73,
+          "Model.Num_Badge": "73"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "74(ナナヨ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド74番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 74,
+          "Model.Num_Badge": "74"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "75(シチゴ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド75番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 75,
+          "Model.Num_Badge": "75"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "76(シチロク)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド76番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 76,
+          "Model.Num_Badge": "76"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "77(ナヅナ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド77番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 77,
+          "Model.Num_Badge": "77"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "78(ナナハ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド78番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 78,
+          "Model.Num_Badge": "78"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "79(ナチカ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド79番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 79,
+          "Model.Num_Badge": "79"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "80(ヤソ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド80番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 80,
+          "Model.Num_Badge": "80"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "81(ヤイチ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド81番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 81,
+          "Model.Num_Badge": "81"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "82(ヤソジ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド82番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 82,
+          "Model.Num_Badge": "82"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "83(ハチゾウ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド83番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 83,
+          "Model.Num_Badge": "83"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "84(ヤツヨ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド84番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 84,
+          "Model.Num_Badge": "84"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "85(ハッコ)\n85(パコ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド85番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 85,
+          "Model.Num_Badge": "85"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "86(ハチロ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド86番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 86,
+          "Model.Num_Badge": "86"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "87(ヤシナ)\n87(ハナ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド87番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 87,
+          "Model.Num_Badge": "87"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "88(ヤソハチ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド88番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 88,
+          "Model.Num_Badge": "88"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "89(ヤスモ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド89番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 89,
+          "Model.Num_Badge": "89"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "90(キュウト)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド90番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 90,
+          "Model.Num_Badge": "90"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "91(キュウイチ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド91番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 91,
+          "Model.Num_Badge": "91"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "92(コトジ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド92番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 92,
+          "Model.Num_Badge": "92"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "93(クミ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド93番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 93,
+          "Model.Num_Badge": "93"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "94(ツクシ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド94番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 94,
+          "Model.Num_Badge": "94"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "95(キュウゴ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド95番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 95,
+          "Model.Num_Badge": "95"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "96(クルリ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド96番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 96,
+          "Model.Num_Badge": "96"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "97(ココナ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド97番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 97,
+          "Model.Num_Badge": "97"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "98(キュウヤ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド98番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 98,
+          "Model.Num_Badge": "98"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "99(ツクモ)",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド99番機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": 99,
+          "Model.Num_Badge": "99"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "97",
+      "db_key": "#DB_Primary",
+      "display_name": "人形兵ゼロイド最終1号機",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "AttackerZeroid",
+          "Model.Num": "10-alt",
+          "Model.Num_Badge": "X"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "零 零",
+      "db_key": "#DB_Primary",
+      "display_name": "千歳 玲",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "notModel",
+          "Model.Num": "0",
+          "Model.Num_Badge": "0"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "零 百",
+      "db_key": "#DB_Primary",
+      "display_name": "千歳 励",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "notModel",
+          "Model.Num": "00",
+          "Model.Num_Badge": "00"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "六花 雙葉\nクィーン・トゥエルヴ",
+      "db_key": "#DB_Primary",
+      "display_name": "六花 雙葉\nクィーン・トゥエルヴ",
+      "record_identity": {
+        "work_key": "#Works_UnauthedLogica",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Model.ModelSeries": "notModel",
+          "Model.Num": "Q",
+          "Model.Num_Badge": "Q12"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    }
+  ],
   "character_ids": [
     "ノアンド",
     "インベルト",

@@ -37,6 +37,7 @@
     "reason": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
   },
   "db_files": [],
+  "characters": [],
   "character_ids": [],
   "character_ids_with_ai_hints": [],
   "character_ids_with_silhouette_notes": [],

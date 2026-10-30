@@ -12,6 +12,13 @@
     "allowed_characters": 179,
     "disallowed_characters": 559
   },
+  "text_rp_inference_stats": {
+    "allowed": 0,
+    "denied": 47,
+    "unknown": 691,
+    "with_reference": 0,
+    "unidentified": 0
+  },
   "ai_hints_stats": {
     "with_ai_hints": 117,
     "with_curated_ai_hints": 110,

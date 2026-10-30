@@ -52,6 +52,278 @@
       }
     }
   ],
+  "characters": [
+    {
+      "id": "セコンド",
+      "db_key": "#DB_Primary",
+      "display_name": "銫133:=9192631770刻",
+      "record_identity": {
+        "work_key": "#Works_DestinyFoxRecords",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Unit": "s"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "メトレ",
+      "db_key": "#DB_Primary",
+      "display_name": "リール ∛竏.絶対尺度",
+      "record_identity": {
+        "work_key": "#Works_DestinyFoxRecords",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Unit": "m"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "キログラ",
+      "db_key": "#DB_Primary",
+      "display_name": "瓩=砲丸 リキ吉",
+      "record_identity": {
+        "work_key": "#Works_DestinyFoxRecords",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Unit": "kg"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "カンデラ",
+      "db_key": "#DB_Primary",
+      "display_name": "燈 希灯 ブライトゲイン\n橙 希灯 ブライトゲイン",
+      "record_identity": {
+        "work_key": "#Works_DestinyFoxRecords",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Unit": "cd"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "ケルビン",
+      "db_key": "#DB_Primary",
+      "display_name": "熱 ウルスネムリ",
+      "record_identity": {
+        "work_key": "#Works_DestinyFoxRecords",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Unit": "K"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "アンプ",
+      "db_key": "#DB_Primary",
+      "display_name": "電 カレン=ソー",
+      "record_identity": {
+        "work_key": "#Works_DestinyFoxRecords",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Unit": "A"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "モル",
+      "db_key": "#DB_Primary",
+      "display_name": "掌 大気",
+      "record_identity": {
+        "work_key": "#Works_DestinyFoxRecords",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Unit": "mol"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "ラジアン",
+      "db_key": "#DB_Primary",
+      "display_name": "扇 二春",
+      "record_identity": {
+        "work_key": "#Works_DestinyFoxRecords",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Unit": "rad"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "ステラ",
+      "db_key": "#DB_Primary",
+      "display_name": "環 ひかり・フラッシュレイ",
+      "record_identity": {
+        "work_key": "#Works_DestinyFoxRecords",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Unit": "sr"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "ノーマル\nのるまん",
+      "db_key": "#DB_Primary",
+      "display_name": "法・ベクトラム すい",
+      "record_identity": {
+        "work_key": "#Works_DestinyFoxRecords",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Unit": "-(normal)"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "タンゼント",
+      "db_key": "#DB_Primary",
+      "display_name": "掠風 せつ",
+      "record_identity": {
+        "work_key": "#Works_DestinyFoxRecords",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Unit": "-(tangent)"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "クォータ",
+      "db_key": "#DB_Primary",
+      "display_name": "扇 元秋",
+      "record_identity": {
+        "work_key": "#Works_DestinyFoxRecords",
+        "db_key": "#DB_Primary",
+        "index": {
+          "Unit": "-(quaternion)"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "ラジアン(3代目)",
+      "db_key": "#DB_Proxy",
+      "display_name": "扇 四春・オーバーロール\n扇 四春・オーダーロール",
+      "record_identity": {
+        "work_key": "#Works_DestinyFoxRecords",
+        "db_key": "#DB_Proxy",
+        "index": {
+          "Generation": 3
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "ラジアン(2代目)",
+      "db_key": "#DB_Proxy",
+      "display_name": "扇 二春",
+      "record_identity": {
+        "work_key": "#Works_DestinyFoxRecords",
+        "db_key": "#DB_Proxy",
+        "index": {
+          "Generation": 2
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "ラジアン(初代)\n扇小春",
+      "db_key": "#DB_Proxy",
+      "display_name": "扇 一春",
+      "record_identity": {
+        "work_key": "#Works_DestinyFoxRecords",
+        "db_key": "#DB_Proxy",
+        "index": {
+          "Generation": 1
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    }
+  ],
   "character_ids": [
     "セコンド",
     "メトレ",

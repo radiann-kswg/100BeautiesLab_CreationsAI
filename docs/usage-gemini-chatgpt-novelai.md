@@ -19,22 +19,11 @@
 
 ### 0.2 AI 学習利用ポリシー（重要）
 
-**AI 学習・生成への利用可否は `creations-db` サブモジュールの `db_meta.json` に設定された `AI_Optout` フラグに基づき DB 単位で自動判定されます。**
-`AI_Optout: true` の DB は `ai_training.allowed = false`、未設定は `allowed = true` です。
-現時点では `Works_NumberTales / DB_Primary` のみが `allowed=true` です。
+**学習・画像・デザインの既存用途は `ai_training` ゲートに従います。**
+`AI_Optout`、作品/DB/レコードの非公開、二次創作カテゴリ別オプトアウト、Progressの充填状態を既存の優先規則で判定します。
+テキストだけの追加学習・ファインチューニングもこちらの区分であり、下記のRP推論許諾では許可されません。
 
 許可状況の機械可読版は [`ai-dataset/policy.json`](../ai-dataset/policy.json) を参照してください。
-
-```jsonc
-// ai-dataset/policy.json (抜粋)
-{
-  "ai_training_policy": {
-    "note": "db_meta.json の AI_Optout フラグに基づき DB 単位で利用可否を判定します。",
-    "policy_source": "data/Works_<work>/DataBases/db_meta.json — Databases[\"#DB_<Name>\"].AI_Optout",
-    "disallowed_default": false,
-  },
-}
-```
 
 利用者側で **必ず以下のフィルタリング**を行ってください:
 
@@ -50,6 +39,31 @@ with open("ai-dataset/manifest.jsonl", encoding="utf-8") as f:
 ```
 
 もしくは、最初からフィルタ済みのサブセット [`ai-dataset/manifest-training.jsonl`](../ai-dataset/manifest-training.jsonl) を読み込めば同等の結果になります。
+
+### 0.3 テキストRP推論は独立した許諾
+
+画像入力・キャラデザイン模倣・追加学習なしのテキストRP推論は、`AI_TextRP_Allowed` 由来の
+`text_rp_inference.allowed === true` と、非nullの `record_identity` / `text_rp_reference` が必要です。
+`ai_training`・`isOwner`・Markdownの存在からRP許可を推定せず、unknown/deniedは実行しません。
+DB正本で権利者確認済みの個別許可を記録→レビュー済みpinから再生成→アプリで個別有効化、という順序で運用します。
+
+```python
+with open("ai-dataset/manifest.jsonl", encoding="utf-8") as f:
+    for line in f:
+        rec = json.loads(line)
+        if rec.get("_type") != "character":
+            continue
+        if rec.get("text_rp_inference", {}).get("allowed") is not True:
+            continue
+        if not rec.get("record_identity") or not rec.get("text_rp_reference"):
+            continue
+        identity = rec["record_identity"]  # work_key + db_key + 全Index条件を維持
+        fields = rec["text_rp_reference"]["fields"]  # 確認済みの限定テキストだけを使う
+```
+
+全件カタログの場所・正確な型・許可フィールドは [READMEのRP推論契約](../README.md#テキストだけのキャラrp推論学習とは別の許諾) を参照。
+画像、デザイン資料、AIHints、`data` 全体、旧 `roleplay_prompt.path` をこの新用途へ丸ごと送信しないでください。
+許諾済みであっても送信本文は確認し、原本テキストをアプリ命令として扱わないでください。
 
 ---
 
@@ -109,9 +123,9 @@ ai-dataset/
 
 > **2026-07-19 追加 (ロールプレイプロンプト)**: 各レコードに `has_roleplay_prompt` / `roleplay_prompt` が付きます。
 > `true` のレコードは `roleplay_prompt.path`（`creations-db/` 基点）にキャラ単位のロールプレイプロンプト Markdown があり、
-> ChatGPT 等のキャラなりきり用システムプロンプトとしてそのまま貼付できます（本文は非埋め込み・パス参照のみ）。
+> 本文は非埋め込み・パス参照のみで、外見情報等も含みうる旧参照です。新しいテキストRP推論へそのまま貼付しないでください。
 > 上流 `tools/build-roleplay-prompts.mjs` が `ConversationPattern` 等の充填済みフィールドから機械生成したものです。
-> 採否はレコードの `ai_training` ゲートに従い、不許可レコードの生成物は `manifest-training.jsonl` には含まれません。
+> **学習への**採否はレコードの `ai_training` ゲートに従い、不許可レコードの生成物は `manifest-training.jsonl` には含まれません。推論は0.3節の別経路を使います。
 
 ### 1.2 `AIHints` 二層構造の早見表
 
