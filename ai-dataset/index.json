@@ -1,7 +1,7 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-10-30T15:48:08+09:00",
-  "_submodule_commit": "f74517fb2ffbc74ff3bc77a7a8e0ba9e7aaedae5",
+  "_generated_at": "2026-11-02T10:46:11+09:00",
+  "_submodule_commit": "4f476765597aa8e061cc92bb3d70b8af4f04f024",
   "works": [
     {
       "work_key": "#Works_NumberTales",
@@ -70,7 +70,7 @@
       "title_en": "Sinister Changing Girls",
       "character_count": 28,
       "character_catalog_path": "works/Works_SinisterChangingGirls.json",
-      "image_count": 15,
+      "image_count": 16,
       "ai_training": {
         "allowed": true,
         "allowed_db_keys": [
