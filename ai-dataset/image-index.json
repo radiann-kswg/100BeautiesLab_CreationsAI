@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-11-02T12:28:47+09:00",
+  "_generated_at": "2026-11-03T13:54:16+09:00",
   "_path_base": "creations-db/",
   "works": {
     "#Works_NumberTales": {
@@ -23,7 +23,7 @@
         },
         {
           "key": "#DB_SemiPrimary",
-          "allowed": 12,
+          "allowed": 13,
           "total": 60
         },
         {
@@ -6159,6 +6159,16 @@
           "is_language_variant": false
         },
         {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_imgNTS-333.png",
+          "category": "concept",
+          "width": 1180,
+          "height": 820,
+          "long_edge_px": 1180,
+          "is_large_original_candidate": true,
+          "language_variant": null,
+          "is_language_variant": false
+        },
+        {
           "path": "data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_imgNTS-3x11.png",
           "category": "concept",
           "width": 1180,
@@ -6469,7 +6479,7 @@
           "is_language_variant": false
         }
       ],
-      "count": 643
+      "count": 644
     },
     "#Works_FLInvestigator78": {
       "title_ja": "運命線探偵78",
