@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-11-08T11:41:30+09:00",
+  "_generated_at": "2026-11-08T16:54:44+09:00",
   "work_key": "#Works_NumberTales",
   "dir_name": "Works_NumberTales",
   "title_ja": "ナンバーテールズ",
@@ -13500,11 +13500,31 @@
       "is_language_variant": false
     },
     {
+      "path": "data/Works_NumberTales/Images/DB_SemiPrimary/attr/emblem/attr_emblemNTS-333-brooch.png",
+      "category": null,
+      "width": 512,
+      "height": 512,
+      "long_edge_px": 512,
+      "is_large_original_candidate": false,
+      "language_variant": null,
+      "is_language_variant": false
+    },
+    {
       "path": "data/Works_NumberTales/Images/DB_SemiPrimary/attr/emblem/attr_emblemNTS-3x11-doubleBrooch.png",
       "category": null,
       "width": 297,
       "height": 298,
       "long_edge_px": 298,
+      "is_large_original_candidate": false,
+      "language_variant": null,
+      "is_language_variant": false
+    },
+    {
+      "path": "data/Works_NumberTales/Images/DB_SemiPrimary/attr/halo/attr_haloNTS-333.png",
+      "category": null,
+      "width": 446,
+      "height": 512,
+      "long_edge_px": 512,
       "is_large_original_candidate": false,
       "language_variant": null,
       "is_language_variant": false
@@ -13865,6 +13885,26 @@
       "width": 2002,
       "height": 1681,
       "long_edge_px": 2002,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
+    },
+    {
+      "path": "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/333/emstk_corefolderNTS-333-1.png",
+      "category": "corefolder",
+      "width": 1840,
+      "height": 1641,
+      "long_edge_px": 1840,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
+    },
+    {
+      "path": "data/Works_NumberTales/Images/DB_SemiPrimary/corefolder/333/emstk_corefolderNTS-333-2.png",
+      "category": "corefolder",
+      "width": 1840,
+      "height": 1641,
+      "long_edge_px": 1840,
       "is_large_original_candidate": true,
       "language_variant": null,
       "is_language_variant": false
