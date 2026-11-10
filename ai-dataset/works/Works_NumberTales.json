@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-11-09T18:58:17+09:00",
+  "_generated_at": "2026-11-10T16:45:31+09:00",
   "work_key": "#Works_NumberTales",
   "dir_name": "Works_NumberTales",
   "title_ja": "ナンバーテールズ",
@@ -4033,6 +4033,24 @@
       "text_rp_reference": null
     },
     {
+      "id": "266-am",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ266番機AMシリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": "266-am"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
       "id": "273",
       "db_key": "#DB_SelfSecondary",
       "display_name": "量産型ナンバーテールズ273番機PMシリーズ",
@@ -4131,6 +4149,24 @@
         "db_key": "#DB_SelfSecondary",
         "index": {
           "Num": 314
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "314-am",
+      "db_key": "#DB_SelfSecondary",
+      "display_name": "量産型ナンバーテールズ314番機AMシリーズ",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SelfSecondary",
+        "index": {
+          "Num": "314-am"
         }
       },
       "text_rp_inference": {
@@ -4503,7 +4539,7 @@
     {
       "id": "404",
       "db_key": "#DB_SelfSecondary",
-      "display_name": "量産型ナンバーテールズ404番機シリーズ",
+      "display_name": "量産型ナンバーテールズ404番機STシリーズ(ナンバーテールズ404番機)",
       "record_identity": {
         "work_key": "#Works_NumberTales",
         "db_key": "#DB_SelfSecondary",
@@ -5367,7 +5403,7 @@
     {
       "id": "0xA",
       "db_key": "#DB_Secondary",
-      "display_name": "ヘキサデミカル-テールズ0xA番機",
+      "display_name": "ヘキサデミカル・テールズ0xA番機",
       "record_identity": {
         "work_key": "#Works_NumberTales",
         "db_key": "#DB_Secondary",
@@ -5385,7 +5421,7 @@
     {
       "id": "0xB",
       "db_key": "#DB_Secondary",
-      "display_name": "ヘキサデミカル-テールズ0xB番機",
+      "display_name": "ヘキサデミカル・テールズ0xB番機",
       "record_identity": {
         "work_key": "#Works_NumberTales",
         "db_key": "#DB_Secondary",
@@ -5403,7 +5439,7 @@
     {
       "id": "0xC",
       "db_key": "#DB_Secondary",
-      "display_name": "ヘキサデミカル-テールズ0xC番機",
+      "display_name": "ヘキサデミカル・テールズ0xC番機",
       "record_identity": {
         "work_key": "#Works_NumberTales",
         "db_key": "#DB_Secondary",
@@ -5421,7 +5457,7 @@
     {
       "id": "0xD",
       "db_key": "#DB_Secondary",
-      "display_name": "ヘキサデミカル-テールズ0xD番機",
+      "display_name": "ヘキサデミカル・テールズ0xD番機",
       "record_identity": {
         "work_key": "#Works_NumberTales",
         "db_key": "#DB_Secondary",
@@ -5439,7 +5475,7 @@
     {
       "id": "0xE",
       "db_key": "#DB_Secondary",
-      "display_name": "ヘキサデミカル-テールズ0xE番機",
+      "display_name": "ヘキサデミカル・テールズ0xE番機",
       "record_identity": {
         "work_key": "#Works_NumberTales",
         "db_key": "#DB_Secondary",
@@ -5457,7 +5493,7 @@
     {
       "id": "0xF",
       "db_key": "#DB_Secondary",
-      "display_name": "ヘキサデミカル-テールズ0xF番機",
+      "display_name": "ヘキサデミカル・テールズ0xF番機",
       "record_identity": {
         "work_key": "#Works_NumberTales",
         "db_key": "#DB_Secondary",
@@ -5475,7 +5511,7 @@
     {
       "id": "0xFF",
       "db_key": "#DB_Secondary",
-      "display_name": "ヘキサデミカル-テールズ 第二最終番機(ナンバーテールズ異元255番機)",
+      "display_name": "ヘキサデミカル・テールズ 第二最終番機(ナンバーテールズ異元255番機)",
       "record_identity": {
         "work_key": "#Works_NumberTales",
         "db_key": "#DB_Secondary",
@@ -6485,12 +6521,14 @@
     "263",
     "265",
     "266",
+    "266-am",
     "273",
     "289",
     "290",
     "294",
     "295",
     "314",
+    "314-am",
     "323",
     "324",
     "333-mp",
