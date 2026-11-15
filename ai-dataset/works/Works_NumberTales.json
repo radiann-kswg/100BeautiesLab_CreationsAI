@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-11-15T11:29:43+09:00",
+  "_generated_at": "2026-11-15T13:17:43+09:00",
   "work_key": "#Works_NumberTales",
   "dir_name": "Works_NumberTales",
   "title_ja": "ナンバーテールズ",
@@ -12674,6 +12674,16 @@
       "height": 820,
       "long_edge_px": 1180,
       "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
+    },
+    {
+      "path": "data/Works_NumberTales/Images/DB_Secondary/arts/numberize-corefolders/art_NTS-558ZE-corefolder,DFR-G3-weakening.png",
+      "category": "arts",
+      "width": 997,
+      "height": 500,
+      "long_edge_px": 997,
+      "is_large_original_candidate": false,
       "language_variant": null,
       "is_language_variant": false
     },

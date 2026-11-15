@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-11-15T11:29:43+09:00",
+  "_generated_at": "2026-11-15T13:17:43+09:00",
   "work_key": "#Works_CommonReferences",
   "dir_name": "Works_CommonReferences",
   "title_ja": "共通資料",
@@ -57,14 +57,14 @@
   ],
   "characters": [
     {
-      "id": "管理主",
+      "id": "『管理主』",
       "db_key": "#Ref_Vocabulary",
-      "display_name": "管理主",
+      "display_name": "『管理主』",
       "record_identity": {
         "work_key": "#Works_CommonReferences",
         "db_key": "#Ref_Vocabulary",
         "index": {
-          "Term_JP": "管理主"
+          "Term_JP": "『管理主』"
         }
       },
       "text_rp_inference": {
@@ -1012,7 +1012,7 @@
     }
   ],
   "character_ids": [
-    "管理主",
+    "『管理主』",
     "創造主",
     "破壊主",
     "管制主",
