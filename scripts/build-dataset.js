@@ -118,6 +118,21 @@ function collectImages(dir, base) {
   return results;
 }
 
+/** dir 以下を再帰スキャンして `.json` ファイルの絶対パスを収集する（readdirSorted 順 = git のパス順） */
+function collectJsonFiles(dir) {
+  const results = [];
+  if (!fs.existsSync(dir)) return results;
+  for (const entry of readdirSorted(dir)) {
+    const full = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      results.push(...collectJsonFiles(full));
+    } else if (entry.name.endsWith('.json')) {
+      results.push(full);
+    }
+  }
+  return results;
+}
+
 /** 出力ディレクトリを用意する */
 function ensureDir(dir) {
   fs.mkdirSync(dir, { recursive: true });
@@ -774,23 +789,22 @@ async function main() {
   imageIndex.general_images = toImageEntries(collectImages(generalImgDir, SUBMODULE));
 
   const dictDir = path.join(DATA_DIR, 'Dictionaries');
-  if (fs.existsSync(dictDir)) {
-    for (const entry of readdirSorted(dictDir)) {
-      if (entry.isFile() && entry.name.endsWith('.json')) {
-        const dictData = readJSON(path.join(dictDir, entry.name));
-        if (dictData) {
-          // 辞書はすべての作品から参照される共通情報なので、AI 学習許可済 (=manifest-training)
-          // にも含める。
-          const dictRecord = {
-            _type: 'dictionary',
-            source: path.relative(SUBMODULE, path.join(dictDir, entry.name)).replace(/\\/g, '/'),
-            ai_training: { allowed: true, reason: 'shared dictionary; safe to include for AI consumers.' },
-            data: dictData,
-          };
-          appendJSONL(manifestStream, dictRecord);
-          appendJSONL(trainingStream, dictRecord);
-        }
-      }
+  // 上流は同じフィールド向けの辞書を Dictionaries/<keyField>/（例: Class/）へまとめるため再帰で拾う
+  // （2026-11-15 の移動で Class 辞書 12 本が直下スキャンから落ちた）。db_meta.json の dictFile を
+  // 辿らないのは、そこに宣言の無い直下ファイル（dict_Alphabet / db_type 等）まで落とさないため。
+  for (const dictPath of collectJsonFiles(dictDir)) {
+    const dictData = readJSON(dictPath);
+    if (dictData) {
+      // 辞書はすべての作品から参照される共通情報なので、AI 学習許可済 (=manifest-training)
+      // にも含める。
+      const dictRecord = {
+        _type: 'dictionary',
+        source: path.relative(SUBMODULE, dictPath).replace(/\\/g, '/'),
+        ai_training: { allowed: true, reason: 'shared dictionary; safe to include for AI consumers.' },
+        data: dictData,
+      };
+      appendJSONL(manifestStream, dictRecord);
+      appendJSONL(trainingStream, dictRecord);
     }
   }
 
