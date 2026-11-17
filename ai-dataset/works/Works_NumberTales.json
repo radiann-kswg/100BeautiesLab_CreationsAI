@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-11-16T08:59:52+09:00",
+  "_generated_at": "2026-11-17T12:54:45+09:00",
   "work_key": "#Works_NumberTales",
   "dir_name": "Works_NumberTales",
   "title_ja": "ナンバーテールズ",
@@ -2611,6 +2611,24 @@
       "text_rp_reference": null
     },
     {
+      "id": "266",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ 仮設2^√2号機(ナンバーテールズ266番機, 正規型ディ-ヴァインズ8番+母艦3番開発機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": 266
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
       "id": "289-sq",
       "db_key": "#DB_SemiPrimary",
       "display_name": "ナンバーテールズ キャレ・ディセット(同位異格289番機)",
@@ -2619,6 +2637,24 @@
         "db_key": "#DB_SemiPrimary",
         "index": {
           "Num": "289-sq"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "314",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "ナンバーテールズ仮設π号機(ナンバーテールズ314番機, 正規型ディ-ヴァインズ22番+母艦7番開発機)",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": 314
         }
       },
       "text_rp_inference": {
@@ -2997,6 +3033,78 @@
         "db_key": "#DB_SemiPrimary",
         "index": {
           "Num": "9x9"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "3/3",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "D-Vines 3番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": "3/3"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "7/7",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "D-Vines 7番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": "7/7"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "8/8",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "D-Vines 8番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": "8/8"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "22/22",
+      "db_key": "#DB_SemiPrimary",
+      "display_name": "D-Vines 22番機",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_SemiPrimary",
+        "index": {
+          "Num": "22/22"
         }
       },
       "text_rp_inference": {
@@ -4015,24 +4123,6 @@
       "text_rp_reference": null
     },
     {
-      "id": "266",
-      "db_key": "#DB_SelfSecondary",
-      "display_name": "ナンバーテールズ 仮設2^√2号機(ナンバーテールズ266番機, ディ-ヴァインズ8号+母艦3号開発機)",
-      "record_identity": {
-        "work_key": "#Works_NumberTales",
-        "db_key": "#DB_SelfSecondary",
-        "index": {
-          "Num": 266
-        }
-      },
-      "text_rp_inference": {
-        "status": "unknown",
-        "allowed": false,
-        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
-      },
-      "text_rp_reference": null
-    },
-    {
       "id": "266-am",
       "db_key": "#DB_SelfSecondary",
       "display_name": "量産型ナンバーテールズ266番機AMシリーズ",
@@ -4131,24 +4221,6 @@
         "db_key": "#DB_SelfSecondary",
         "index": {
           "Num": 295
-        }
-      },
-      "text_rp_inference": {
-        "status": "unknown",
-        "allowed": false,
-        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
-      },
-      "text_rp_reference": null
-    },
-    {
-      "id": "314",
-      "db_key": "#DB_SelfSecondary",
-      "display_name": "ナンバーテールズ仮設π号機(ナンバーテールズ314番機, ディ-ヴァインズ22号+母艦7号開発機)",
-      "record_identity": {
-        "work_key": "#Works_NumberTales",
-        "db_key": "#DB_SelfSecondary",
-        "index": {
-          "Num": 314
         }
       },
       "text_rp_inference": {
@@ -5527,222 +5599,6 @@
       "text_rp_reference": null
     },
     {
-      "id": "3/3",
-      "db_key": "#DB_Secondary",
-      "display_name": "D-Vines 3号機",
-      "record_identity": {
-        "work_key": "#Works_NumberTales",
-        "db_key": "#DB_Secondary",
-        "index": {
-          "Num": "3/3"
-        }
-      },
-      "text_rp_inference": {
-        "status": "unknown",
-        "allowed": false,
-        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
-      },
-      "text_rp_reference": null
-    },
-    {
-      "id": "7/7",
-      "db_key": "#DB_Secondary",
-      "display_name": "D-Vines 7号機",
-      "record_identity": {
-        "work_key": "#Works_NumberTales",
-        "db_key": "#DB_Secondary",
-        "index": {
-          "Num": "7/7"
-        }
-      },
-      "text_rp_inference": {
-        "status": "unknown",
-        "allowed": false,
-        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
-      },
-      "text_rp_reference": null
-    },
-    {
-      "id": "8/8",
-      "db_key": "#DB_Secondary",
-      "display_name": "D-Vines 8号機",
-      "record_identity": {
-        "work_key": "#Works_NumberTales",
-        "db_key": "#DB_Secondary",
-        "index": {
-          "Num": "8/8"
-        }
-      },
-      "text_rp_inference": {
-        "status": "unknown",
-        "allowed": false,
-        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
-      },
-      "text_rp_reference": null
-    },
-    {
-      "id": "22/22",
-      "db_key": "#DB_Secondary",
-      "display_name": "D-Vines 22号機",
-      "record_identity": {
-        "work_key": "#Works_NumberTales",
-        "db_key": "#DB_Secondary",
-        "index": {
-          "Num": "22/22"
-        }
-      },
-      "text_rp_inference": {
-        "status": "unknown",
-        "allowed": false,
-        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
-      },
-      "text_rp_reference": null
-    },
-    {
-      "id": "/3",
-      "db_key": "#DB_Secondary",
-      "display_name": "D-Vines 母艦3号機",
-      "record_identity": {
-        "work_key": "#Works_NumberTales",
-        "db_key": "#DB_Secondary",
-        "index": {
-          "Num": "/3"
-        }
-      },
-      "text_rp_inference": {
-        "status": "unknown",
-        "allowed": false,
-        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
-      },
-      "text_rp_reference": null
-    },
-    {
-      "id": "/7",
-      "db_key": "#DB_Secondary",
-      "display_name": "D-Vines 母艦7号機",
-      "record_identity": {
-        "work_key": "#Works_NumberTales",
-        "db_key": "#DB_Secondary",
-        "index": {
-          "Num": "/7"
-        }
-      },
-      "text_rp_inference": {
-        "status": "unknown",
-        "allowed": false,
-        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
-      },
-      "text_rp_reference": null
-    },
-    {
-      "id": "/8",
-      "db_key": "#DB_Secondary",
-      "display_name": "D-Vines 母艦8号機",
-      "record_identity": {
-        "work_key": "#Works_NumberTales",
-        "db_key": "#DB_Secondary",
-        "index": {
-          "Num": "/8"
-        }
-      },
-      "text_rp_inference": {
-        "status": "unknown",
-        "allowed": false,
-        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
-      },
-      "text_rp_reference": null
-    },
-    {
-      "id": "/22",
-      "db_key": "#DB_Secondary",
-      "display_name": "D-Vines 母艦22号機",
-      "record_identity": {
-        "work_key": "#Works_NumberTales",
-        "db_key": "#DB_Secondary",
-        "index": {
-          "Num": "/22"
-        }
-      },
-      "text_rp_inference": {
-        "status": "unknown",
-        "allowed": false,
-        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
-      },
-      "text_rp_reference": null
-    },
-    {
-      "id": "3/",
-      "db_key": "#DB_Secondary",
-      "display_name": "D-Vines 基幹3号機",
-      "record_identity": {
-        "work_key": "#Works_NumberTales",
-        "db_key": "#DB_Secondary",
-        "index": {
-          "Num": "3/"
-        }
-      },
-      "text_rp_inference": {
-        "status": "unknown",
-        "allowed": false,
-        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
-      },
-      "text_rp_reference": null
-    },
-    {
-      "id": "7/",
-      "db_key": "#DB_Secondary",
-      "display_name": "D-Vines 基幹7号機",
-      "record_identity": {
-        "work_key": "#Works_NumberTales",
-        "db_key": "#DB_Secondary",
-        "index": {
-          "Num": "7/"
-        }
-      },
-      "text_rp_inference": {
-        "status": "unknown",
-        "allowed": false,
-        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
-      },
-      "text_rp_reference": null
-    },
-    {
-      "id": "8/",
-      "db_key": "#DB_Secondary",
-      "display_name": "D-Vines 基幹8号機",
-      "record_identity": {
-        "work_key": "#Works_NumberTales",
-        "db_key": "#DB_Secondary",
-        "index": {
-          "Num": "8/"
-        }
-      },
-      "text_rp_inference": {
-        "status": "unknown",
-        "allowed": false,
-        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
-      },
-      "text_rp_reference": null
-    },
-    {
-      "id": "22/",
-      "db_key": "#DB_Secondary",
-      "display_name": "D-Vines 基幹22号機",
-      "record_identity": {
-        "work_key": "#Works_NumberTales",
-        "db_key": "#DB_Secondary",
-        "index": {
-          "Num": "22/"
-        }
-      },
-      "text_rp_inference": {
-        "status": "unknown",
-        "allowed": false,
-        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
-      },
-      "text_rp_reference": null
-    },
-    {
       "id": "115-numberize",
       "db_key": "#DB_Secondary",
       "display_name": "(ナンバーテールズ化企画絵)",
@@ -6442,7 +6298,9 @@
     "247-ma",
     "256-sq",
     "256-bq",
+    "266",
     "289-sq",
+    "314",
     "323-ma",
     "324-sq",
     "333",
@@ -6464,6 +6322,10 @@
     "3x11",
     "64-sxp",
     "9x9",
+    "3/3",
+    "7/7",
+    "8/8",
+    "22/22",
     "1000",
     "%",
     "∞",
@@ -6520,14 +6382,12 @@
     "258",
     "263",
     "265",
-    "266",
     "266-am",
     "273",
     "289",
     "290",
     "294",
     "295",
-    "314",
     "314-am",
     "323",
     "324",
@@ -6604,18 +6464,6 @@
     "0xE",
     "0xF",
     "0xFF",
-    "3/3",
-    "7/7",
-    "8/8",
-    "22/22",
-    "/3",
-    "/7",
-    "/8",
-    "/22",
-    "3/",
-    "7/",
-    "8/",
-    "22/",
     "115-numberize",
     "148-numberize",
     "227-numberize",
@@ -6758,6 +6606,10 @@
     "888",
     "3x11",
     "64-sxp",
+    "3/3",
+    "7/7",
+    "8/8",
+    "22/22",
     "111-mp",
     "148",
     "216",
@@ -6990,6 +6842,8 @@
     "888",
     "3x11",
     "64-sxp",
+    "7/7",
+    "22/22",
     "111-mp",
     "148",
     "216",
@@ -7110,6 +6964,8 @@
     "888",
     "3x11",
     "64-sxp",
+    "7/7",
+    "22/22",
     "111-mp",
     "148",
     "216",
@@ -13688,6 +13544,26 @@
       "is_language_variant": false
     },
     {
+      "path": "data/Works_NumberTales/Images/DB_SemiPrimary/concept/DVines/cnsp_imgNTS-Dv22.png",
+      "category": "concept",
+      "width": 1180,
+      "height": 820,
+      "long_edge_px": 1180,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
+    },
+    {
+      "path": "data/Works_NumberTales/Images/DB_SemiPrimary/concept/DVines/cnsp_imgNTS-Dv7.png",
+      "category": "concept",
+      "width": 1180,
+      "height": 820,
+      "long_edge_px": 1180,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
+    },
+    {
       "path": "data/Works_NumberTales/Images/DB_SemiPrimary/concept/DevelopperAndAgents/cnsp_imgNTS-1000.png",
       "category": "concept",
       "width": 1180,
@@ -13849,6 +13725,26 @@
     },
     {
       "path": "data/Works_NumberTales/Images/DB_SemiPrimary/conceptAlt/cnsp_imgNTS-DIV,NTS-INF.png",
+      "category": "concept_alt",
+      "width": 1180,
+      "height": 820,
+      "long_edge_px": 1180,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
+    },
+    {
+      "path": "data/Works_NumberTales/Images/DB_SemiPrimary/conceptAlt/cnsp_imgNTS-Dv22,NTS-Dv7.png",
+      "category": "concept_alt",
+      "width": 1180,
+      "height": 820,
+      "long_edge_px": 1180,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
+    },
+    {
+      "path": "data/Works_NumberTales/Images/DB_SemiPrimary/conceptAlt/cnsp_imgNTS-Dv7,NTS-Dv22.png",
       "category": "concept_alt",
       "width": 1180,
       "height": 820,

@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-11-16T08:59:52+09:00",
+  "_generated_at": "2026-11-17T12:54:45+09:00",
   "_path_base": "creations-db/",
   "works": {
     "#Works_NumberTales": {
@@ -23,18 +23,18 @@
         },
         {
           "key": "#DB_SemiPrimary",
-          "allowed": 13,
-          "total": 60
+          "allowed": 17,
+          "total": 66
         },
         {
           "key": "#DB_SelfSecondary",
           "allowed": 9,
-          "total": 130
+          "total": 128
         },
         {
           "key": "#DB_Secondary",
           "allowed": 0,
-          "total": 50
+          "total": 38
         }
       ],
       "images": [
@@ -6139,6 +6139,26 @@
           "is_language_variant": false
         },
         {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/concept/DVines/cnsp_imgNTS-Dv22.png",
+          "category": "concept",
+          "width": 1180,
+          "height": 820,
+          "long_edge_px": 1180,
+          "is_large_original_candidate": true,
+          "language_variant": null,
+          "is_language_variant": false
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/concept/DVines/cnsp_imgNTS-Dv7.png",
+          "category": "concept",
+          "width": 1180,
+          "height": 820,
+          "long_edge_px": 1180,
+          "is_large_original_candidate": true,
+          "language_variant": null,
+          "is_language_variant": false
+        },
+        {
           "path": "data/Works_NumberTales/Images/DB_SemiPrimary/concept/DevelopperAndAgents/cnsp_imgNTS-1000.png",
           "category": "concept",
           "width": 1180,
@@ -6300,6 +6320,26 @@
         },
         {
           "path": "data/Works_NumberTales/Images/DB_SemiPrimary/conceptAlt/cnsp_imgNTS-DIV,NTS-INF.png",
+          "category": "concept_alt",
+          "width": 1180,
+          "height": 820,
+          "long_edge_px": 1180,
+          "is_large_original_candidate": true,
+          "language_variant": null,
+          "is_language_variant": false
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/conceptAlt/cnsp_imgNTS-Dv22,NTS-Dv7.png",
+          "category": "concept_alt",
+          "width": 1180,
+          "height": 820,
+          "long_edge_px": 1180,
+          "is_large_original_candidate": true,
+          "language_variant": null,
+          "is_language_variant": false
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_SemiPrimary/conceptAlt/cnsp_imgNTS-Dv7,NTS-Dv22.png",
           "category": "concept_alt",
           "width": 1180,
           "height": 820,
@@ -6549,7 +6589,7 @@
           "is_language_variant": false
         }
       ],
-      "count": 651
+      "count": 655
     },
     "#Works_FLInvestigator78": {
       "title_ja": "運命線探偵78",
