@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-11-17T12:54:45+09:00",
+  "_generated_at": "2026-11-17T15:35:32+09:00",
   "work_key": "#Works_CommonReferences",
   "dir_name": "Works_CommonReferences",
   "title_ja": "共通資料",
@@ -417,6 +417,24 @@
       "text_rp_reference": null
     },
     {
+      "id": "セブンティエイト特殊探偵団",
+      "db_key": "#Ref_Faction",
+      "display_name": "セブンティエイト特殊探偵団",
+      "record_identity": {
+        "work_key": "#Works_CommonReferences",
+        "db_key": "#Ref_Faction",
+        "index": {
+          "Term_JP": "セブンティエイト特殊探偵団"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
       "id": "百花繚乱研究国際大使所",
       "db_key": "#Ref_Faction",
       "display_name": "百花繚乱研究国際大使所",
@@ -479,24 +497,6 @@
         "db_key": "#Ref_Faction",
         "index": {
           "Term_JP": "夜月機関"
-        }
-      },
-      "text_rp_inference": {
-        "status": "unknown",
-        "allowed": false,
-        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
-      },
-      "text_rp_reference": null
-    },
-    {
-      "id": "龍天国",
-      "db_key": "#Ref_Faction",
-      "display_name": "龍天国",
-      "record_identity": {
-        "work_key": "#Works_CommonReferences",
-        "db_key": "#Ref_Faction",
-        "index": {
-          "Term_JP": "龍天国"
         }
       },
       "text_rp_inference": {
@@ -950,9 +950,9 @@
         }
       },
       "text_rp_inference": {
-        "status": "unknown",
+        "status": "denied",
         "allowed": false,
-        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
       },
       "text_rp_reference": null
     },
@@ -968,9 +968,9 @@
         }
       },
       "text_rp_inference": {
-        "status": "unknown",
+        "status": "denied",
         "allowed": false,
-        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
       },
       "text_rp_reference": null
     },
@@ -986,9 +986,9 @@
         }
       },
       "text_rp_inference": {
-        "status": "unknown",
+        "status": "denied",
         "allowed": false,
-        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
       },
       "text_rp_reference": null
     },
@@ -1004,9 +1004,9 @@
         }
       },
       "text_rp_inference": {
-        "status": "unknown",
+        "status": "denied",
         "allowed": false,
-        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+        "reason": "Non-public work, DB or record; text RP inference is disabled."
       },
       "text_rp_reference": null
     }
@@ -1032,11 +1032,11 @@
     "狛犬",
     "概念",
     "百花繚乱研究所",
+    "セブンティエイト特殊探偵団",
     "百花繚乱研究国際大使所",
     "百戦錬磨開発所",
     "ジャンクガレージ『六花陛下』",
     "夜月機関",
-    "龍天国",
     "シンフォニー.X",
     "シンフォニー.XVI",
     "レゾンデイトルカンパニー",
