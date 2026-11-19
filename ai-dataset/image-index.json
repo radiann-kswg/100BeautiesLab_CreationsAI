@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-11-17T15:35:32+09:00",
+  "_generated_at": "2026-11-19T09:27:50+09:00",
   "_path_base": "creations-db/",
   "works": {
     "#Works_NumberTales": {
@@ -6774,14 +6774,16 @@
       "title_ja": "獣爾騎兵",
       "title_en": "Shau'er Riders\nBeasted Cavalry",
       "ai_training": {
-        "allowed": false,
-        "allowed_db_keys": [],
-        "note": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
+        "allowed": true,
+        "allowed_db_keys": [
+          "#DB_Primary"
+        ],
+        "note": "allowed_db_keys は「AI 学習許可レコードを 1 件以上含む DB」の一覧です。同じ DB の中でも許可・不許可はレコード単位で分かれるため、この一覧だけで画像の利用可否を判断しないでください。正典は manifest.jsonl / manifest-training.jsonl の各レコードの ai_training と images です。db_records に DB ごとの許可件数を載せています。"
       },
       "db_records": [
         {
           "key": "#DB_Primary",
-          "allowed": 0,
+          "allowed": 6,
           "total": 10
         }
       ],
