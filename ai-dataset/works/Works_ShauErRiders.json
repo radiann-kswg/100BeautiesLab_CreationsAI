@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-11-19T09:46:29+09:00",
+  "_generated_at": "2026-11-19T11:53:29+09:00",
   "work_key": "#Works_ShauErRiders",
   "dir_name": "Works_ShauErRiders",
   "title_ja": "獣爾騎兵",
@@ -27,6 +27,8 @@
       "BirthDay"
     ],
     "subFields": [
+      "AppearanceDetail",
+      "ColorPalette",
       "BeastspecStats",
       "ConversationPattern",
       "AnotherRegions_DBLink"
@@ -277,7 +279,15 @@
   "character_ids_with_immutable_constraints": [],
   "character_ids_with_negative_keywords": [],
   "character_ids_with_work_common": [],
-  "character_ids_with_appearance_detail": [],
+  "character_ids_with_appearance_detail": [
+    "子刻ハッカ",
+    "卯刻ハネゝカ",
+    "辰刻リウロン",
+    "巳刻カミツ",
+    "午刻ハヤテ",
+    "未刻ユメウツゝ",
+    "寅刻ネゝコ"
+  ],
   "character_ids_with_tails_unit": [],
   "character_ids_with_roleplay_prompt": [],
   "image_paths": [
