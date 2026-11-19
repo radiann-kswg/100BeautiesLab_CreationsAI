@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-11-19T11:53:29+09:00",
+  "_generated_at": "2026-11-19T14:55:02+09:00",
   "_path_base": "creations-db/",
   "works": {
     "#Works_NumberTales": {
@@ -7122,7 +7122,8 @@
         "allowed": true,
         "allowed_db_keys": [
           "#DB_Primary",
-          "#DB_PrimaryStabilities"
+          "#DB_PrimaryStabilities",
+          "#DB_Regioministrators"
         ],
         "note": "allowed_db_keys は「AI 学習許可レコードを 1 件以上含む DB」の一覧です。同じ DB の中でも許可・不許可はレコード単位で分かれるため、この一覧だけで画像の利用可否を判断しないでください。正典は manifest.jsonl / manifest-training.jsonl の各レコードの ai_training と images です。db_records に DB ごとの許可件数を載せています。"
       },
@@ -7144,7 +7145,7 @@
         },
         {
           "key": "#DB_Regioministrators",
-          "allowed": 0,
+          "allowed": 4,
           "total": 4
         }
       ],

@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-11-19T11:53:29+09:00",
+  "_generated_at": "2026-11-19T14:55:02+09:00",
   "work_key": "#Works_SinisterChangingGirls",
   "dir_name": "Works_SinisterChangingGirls",
   "title_ja": "豹変系女子",
@@ -39,7 +39,8 @@
     "allowed": true,
     "allowed_db_keys": [
       "#DB_Primary",
-      "#DB_PrimaryStabilities"
+      "#DB_PrimaryStabilities",
+      "#DB_Regioministrators"
     ],
     "reason": "AI_Optout / DB_Hidden / Works_Hidden are not set for this DB. This DB is opted in for AI training/generation use."
   },
@@ -68,8 +69,8 @@
     {
       "path": "data/Works_SinisterChangingGirls/DataBases/db_Regioministrators.json",
       "ai_training": {
-        "allowed": false,
-        "reason": "AI_Optout: true is set in db_meta.json for this DB. This DB is opted out of AI training/generation use."
+        "allowed": true,
+        "reason": "AI_Optout / DB_Hidden / Works_Hidden are not set for this DB. This DB is opted in for AI training/generation use."
       }
     }
   ],
@@ -609,7 +610,19 @@
     "扇 残冬",
     "財前 小里"
   ],
-  "character_ids_with_ai_hints": [],
+  "character_ids_with_ai_hints": [
+    "零 零",
+    "扇 三春",
+    "六花 ルノ",
+    "九 叶",
+    "六花 雙葉\nクィーン・トゥエルヴ",
+    "ミル・ニュクスフ",
+    "神夜崎 ユノ",
+    "財前 小里\n終藤 こさと",
+    "錦野 舞",
+    "扇 零夏・スフィリア",
+    "錦野 歌嫁"
+  ],
   "character_ids_with_silhouette_notes": [],
   "character_ids_with_immutable_constraints": [],
   "character_ids_with_negative_keywords": [],

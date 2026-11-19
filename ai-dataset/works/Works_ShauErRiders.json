@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-11-19T11:53:29+09:00",
+  "_generated_at": "2026-11-19T14:55:02+09:00",
   "work_key": "#Works_ShauErRiders",
   "dir_name": "Works_ShauErRiders",
   "title_ja": "獣爾騎兵",
@@ -274,7 +274,14 @@
     "寅刻ネゝコ",
     "南里ハッケン"
   ],
-  "character_ids_with_ai_hints": [],
+  "character_ids_with_ai_hints": [
+    "子刻ハッカ",
+    "卯刻ハネゝカ",
+    "辰刻リウロン",
+    "巳刻カミツ",
+    "午刻ハヤテ",
+    "寅刻ネゝコ"
+  ],
   "character_ids_with_silhouette_notes": [],
   "character_ids_with_immutable_constraints": [],
   "character_ids_with_negative_keywords": [],
