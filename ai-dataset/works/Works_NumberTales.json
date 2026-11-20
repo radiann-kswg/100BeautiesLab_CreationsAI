@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-11-20T16:14:07+09:00",
+  "_generated_at": "2026-11-20T17:36:37+09:00",
   "work_key": "#Works_NumberTales",
   "dir_name": "Works_NumberTales",
   "title_ja": "ナンバーテールズ",
@@ -7172,8 +7172,10 @@
     "3x11",
     "64-sxp",
     "111-mp",
+    "223",
     "444-mp",
     "666-mp",
+    "753",
     "777-mp",
     "777.Jackpot-mp"
   ],
@@ -8706,6 +8708,16 @@
       "is_language_variant": false
     },
     {
+      "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-28-earingBack.png",
+      "category": null,
+      "width": 326,
+      "height": 326,
+      "long_edge_px": 326,
+      "is_large_original_candidate": false,
+      "language_variant": null,
+      "is_language_variant": false
+    },
+    {
       "path": "data/Works_NumberTales/Images/DB_Primary/attr/numberMark/attr_numberMarkNTS-28-earingFront.png",
       "category": null,
       "width": 326,
@@ -9396,6 +9408,16 @@
       "is_language_variant": false
     },
     {
+      "path": "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-2B.png",
+      "category": "tails_unit",
+      "width": 688,
+      "height": 410,
+      "long_edge_px": 688,
+      "is_large_original_candidate": false,
+      "language_variant": null,
+      "is_language_variant": false
+    },
+    {
       "path": "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-39.png",
       "category": "tails_unit",
       "width": 548,
@@ -9426,11 +9448,41 @@
       "is_language_variant": false
     },
     {
+      "path": "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-5.png",
+      "category": "tails_unit",
+      "width": 475,
+      "height": 473,
+      "long_edge_px": 475,
+      "is_large_original_candidate": false,
+      "language_variant": null,
+      "is_language_variant": false
+    },
+    {
+      "path": "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-50.png",
+      "category": "tails_unit",
+      "width": 531,
+      "height": 473,
+      "long_edge_px": 531,
+      "is_large_original_candidate": false,
+      "language_variant": null,
+      "is_language_variant": false
+    },
+    {
       "path": "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-57.png",
       "category": "tails_unit",
       "width": 546,
       "height": 512,
       "long_edge_px": 546,
+      "is_large_original_candidate": false,
+      "language_variant": null,
+      "is_language_variant": false
+    },
+    {
+      "path": "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-58.png",
+      "category": "tails_unit",
+      "width": 601,
+      "height": 477,
+      "long_edge_px": 601,
       "is_large_original_candidate": false,
       "language_variant": null,
       "is_language_variant": false
@@ -9456,6 +9508,16 @@
       "is_language_variant": false
     },
     {
+      "path": "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-63.png",
+      "category": "tails_unit",
+      "width": 548,
+      "height": 473,
+      "long_edge_px": 548,
+      "is_large_original_candidate": false,
+      "language_variant": null,
+      "is_language_variant": false
+    },
+    {
       "path": "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-73.png",
       "category": "tails_unit",
       "width": 559,
@@ -9466,10 +9528,30 @@
       "is_language_variant": false
     },
     {
+      "path": "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-75.png",
+      "category": "tails_unit",
+      "width": 547,
+      "height": 514,
+      "long_edge_px": 547,
+      "is_large_original_candidate": false,
+      "language_variant": null,
+      "is_language_variant": false
+    },
+    {
       "path": "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-85.png",
       "category": "tails_unit",
       "width": 528,
       "height": 504,
+      "long_edge_px": 528,
+      "is_large_original_candidate": false,
+      "language_variant": null,
+      "is_language_variant": false
+    },
+    {
+      "path": "data/Works_NumberTales/Images/DB_Primary/attr/tailsUnit/attr_tailsUnitNTS-87.png",
+      "category": "tails_unit",
+      "width": 509,
+      "height": 528,
       "long_edge_px": 528,
       "is_large_original_candidate": false,
       "language_variant": null,
@@ -12346,6 +12428,16 @@
       "is_language_variant": false
     },
     {
+      "path": "data/Works_NumberTales/Images/DB_SelfSecondary/attr/numberMark/attr_numberMarkNTS-223-lot.png",
+      "category": null,
+      "width": 99,
+      "height": 60,
+      "long_edge_px": 99,
+      "is_large_original_candidate": false,
+      "language_variant": null,
+      "is_language_variant": false
+    },
+    {
       "path": "data/Works_NumberTales/Images/DB_SelfSecondary/attr/numberMark/attr_numberMarkNTS-444MP-lot.png",
       "category": null,
       "width": 99,
@@ -12367,6 +12459,16 @@
     },
     {
       "path": "data/Works_NumberTales/Images/DB_SelfSecondary/attr/numberMark/attr_numberMarkNTS-666MP-lot.png",
+      "category": null,
+      "width": 99,
+      "height": 60,
+      "long_edge_px": 99,
+      "is_large_original_candidate": false,
+      "language_variant": null,
+      "is_language_variant": false
+    },
+    {
+      "path": "data/Works_NumberTales/Images/DB_SelfSecondary/attr/numberMark/attr_numberMarkNTS-753-lot.png",
       "category": null,
       "width": 99,
       "height": 60,
