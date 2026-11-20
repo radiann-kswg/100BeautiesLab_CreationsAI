@@ -36,8 +36,11 @@ GeneratorsAIは索引に載った実名だけを部位図として使用する�
 - 旧索引481件を維持し、許可部位図119件を復元。attrは11→130件。NumberTales93の番号図を含む。不許可だけが宣言する4件と未宣言10件は追加しない。
 - 独立leak auditは19項目すべて成功。旧画像の削除0、新規119は独立分類の許可集合と完全一致。全732レコードの分類・権利・識別とmanifest/training本文は不変で、headerの仕様注記だけ追加した。D-Vines4人、61の衣装4項目・説明・対象3画像、代表画像へのdesignAlt混入はすべて0。証跡は `.cache/issue4/leak-audit.json` / `.md`。
 - Ponytail Reviewでsymlinkの迂回を検出し、実ファイル制約とfixtureで修正。最終レビューは追加指摘なし。
+- 修正・テスト・文書・再生成物を `5177c6a35f522bbdc3e349bcd8afeec038adc285` でmasterへpush。`creations-db` のpinは `f2d10b1f` のまま。
+- [Actions run 44701543413](https://github.com/radiann-kswg/100BeautiesLab_CreationsAI/actions/runs/44701543413) は成功。2026-11-20 17:19 JST、Linux CIでも40テスト成功・省略0、validator成功、索引600件・許可187/732件。再生成差分がなく自動commitはスキップされた。
+- 17:21 JST、公開5177c6aのimage-indexとmanifestをimmutable SHAから直接取得し、両方のGit blobが公開commitと一致した。公開版も600件（599固有画像）/attr130件/許可187件を維持し、独立分類の119件を全復元、不許可4件・未宣言10件は全て索引外。93・61の番号図も復元、旧許可画像の喪失0、想定外追加0、既存ポリシー漏れ0。証跡は `.cache/issue4/public-verify.json`。
 
 ## 残作業・対象外
 
-- commit/push後のCI・公開生成物を検証する。
+- 本Issueの修正・再生成・公開・CI・公開ファイル照合は完了。Issueへのコメント投稿やcloseは行っていない。
 - GeneratorsAI / ShapeChangerAIのローカル同期と下流テストは、その作業環境で行う。今回CreationsDBのschemaや原データ、attr単位の新しいオプトアウト指定は追加しない。
