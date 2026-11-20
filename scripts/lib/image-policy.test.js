@@ -39,7 +39,10 @@ test('画像ポリシー: typedef・個別・上位・連名の拒否を全出�
   write('data/db_meta.json', {
     CreationWorks: { '#Works_Test': { Title_JP: '試験', Title_EN: 'Test' },
       '#Works_Hidden': { Title_JP: '非公開試験', Title_EN: 'Hidden Test', Works_Hidden: true } },
-    General: { $VarsDef: { $EnumDef_Progress: { '#Progress_Ready': { Progress: 'ready', AI_Unready: false } } } },
+    General: { $VarsDef: { $EnumDef_Progress: {
+      '#Progress_Ready': { Progress: 'ready', AI_Unready: false },
+      '#Progress_Draft': { Progress: 'draft', AI_Unready: true },
+    } } },
   });
   write('data/db_type.json', { $DefType: [] });
   write('data/Works_Test/Dictionaries/dict_Costume.json', [
@@ -74,21 +77,31 @@ test('画像ポリシー: typedef・個別・上位・連名の拒否を全出�
       concept_PNGName: 'joint', conceptAlt_PNGName: ['typed'], corefolder_PNGPath: ['keep', 'file'],
       arts_PNGPath: [{ _DBCrossLinkPath: { _DB: 'Secondary', _Field: 'concept_PNGName', _IsoPath: 'upper' } }],
     }, Images_AIOptout: { corefolder_PNGPath: ['file'] }, AppearanceDetail: [
-      { Costume: 'usual', Attrs: [{ value_EN: 'regular jacket' }] },
-      { Costume: 'stage', Attrs: [{ value_EN: 'unique golden ribbon (stage outfit)' }] },
+      { Costume: 'usual', img_PNGName: 'detail.PNG', Attrs: [{ value_EN: 'regular jacket' }] },
+      { Costume: 'usual', img_PNGName: 'shared-detail' },
+      { Costume: 'usual', img_PNGName: 'stage-detail' },
+      { Costume: 'usual', img_PNGName: 'linked-denied' },
+      { Costume: 'stage', img_PNGName: 'stage-detail', Attrs: [{ value_EN: 'unique golden ribbon (stage outfit)' }] },
     ], AIHints: { common: {
       identity_tags: ['preserved', 'unique golden ribbon (stage outfit)'], reference_images: Object.fromEntries([
         ['main', image('Primary', 'corefolder', 'keep')], ['joint', image('Primary', 'concept', 'joint')],
         ['typed', image('Primary', 'conceptAlt', 'typed')], ['file', image('Primary', 'corefolder', 'file')],
         ['upper', image('Secondary', 'concept', 'upper')],
+        ['stageDetail', image('Primary', 'attr/numberMark', 'stage-detail')],
       ].map(([key, value]) => [key, `https://database.numbertales-radiann.net/${value}`])),
     }, forms: { humanoid: { prompt_export: 'regular jacket, unique golden ribbon (stage outfit)' } },
     _meta: { structuralEntries: { 'common.identity_tags': ['unique golden ribbon (stage outfit)'] } },
     work_common: { reference_images: { main: `https://database.numbertales-radiann.net/${referenceImage}` } } } },
     { Num: 2, Progress: 'ready', Images: { concept_PNGName: 'joint' }, Images_AIOptout: { concept_PNGName: ['joint'] } },
+    { Num: 3, Progress: 'ready', AI_Optout: true,
+      AppearanceDetail: [{ img_PNGName: 'record-denied' }, { img_PNGName: 'shared-detail.png' }] },
+    { Num: 4, Progress: 'ready', isPrivate: true, AppearanceDetail: [{ img_PNGName: 'private-detail' }] },
+    { Num: 5, Progress: 'draft', AppearanceDetail: [{ img_PNGName: 'draft-detail' }] },
+    { Num: 6, Progress: 'ready', AppearanceDetail: [{ img_PNGName: 'standalone' }, { img_PNGName: 'detail-missing' }] },
   ];
   write('data/Works_Test/DataBases/db_Primary.json', records);
-  write('data/Works_Test/DataBases/db_Secondary.json', [{ Num: 3, Progress: 'ready', Images: { concept_PNGName: 'upper' } }]);
+  write('data/Works_Test/DataBases/db_Secondary.json', [{ Num: 3, Progress: 'ready', Images: { concept_PNGName: 'upper' },
+    AppearanceDetail: [{ img_PNGName: 'db-denied' }, { img_PNGName: 'detail' }] }]);
   write('data/Works_Test/DataBases/.private/db_Primary.json', [{ Num: 5, Images: { corefolder_PNGPath: ['keep'] } }]);
   write('data/Works_Test/References/db_Primary.json', [{ Num: 6, Images: { concept_PNGName: 'unregistered' } }]);
   write('data/Works_Test/DataBases/db_temp.json', {});
@@ -99,7 +112,21 @@ test('画像ポリシー: typedef・個別・上位・連名の拒否を全出�
   write('data/Works_Hidden/DataBases/db_Primary.json', [{ Num: 4 }]);
   for (const [db, folder, name] of [['Primary', 'concept', 'joint'], ['Primary', 'conceptAlt', 'typed'],
     ['Primary', 'corefolder', 'keep'], ['Primary', 'corefolder', 'file'], ['Secondary', 'concept', 'upper'],
-    ['Primary', 'concept', 'orphan']]) makeImage(db, folder, name);
+    ['Primary', 'concept', 'orphan'], ['Primary', 'attr/custom/nested', 'detail'],
+    ['Primary', 'attr/wing', 'standalone'], ['Secondary', 'attr/custom', 'detail'],
+    ['Secondary', 'attr/numberMark', 'detail-missing'],
+    ...['shared-detail', 'record-denied', 'private-detail', 'draft-detail', 'stage-detail', 'orphan-detail']
+      .map(name => ['Primary', 'attr/numberMark', name]),
+    ['Secondary', 'attr/halo', 'db-denied']]) makeImage(db, folder, name);
+  const detailImage = image('Primary', 'attr/custom/nested', 'detail').replace(/\.png$/, '.PNG');
+  fs.renameSync(path.join(source, image('Primary', 'attr/custom/nested', 'detail')), path.join(source, detailImage));
+  try {
+    fs.symlinkSync(path.join(source, image('Secondary', 'concept', 'upper')),
+      path.join(source, image('Primary', 'attr/numberMark', 'linked-denied')), 'file');
+  } catch (error) {
+    if (error.code !== 'EPERM') throw error;
+    t.diagnostic('この環境ではsymlinkを作成できないため、そのfixtureのみ省略。Linux CIで検査する。');
+  }
   for (const relative of [referenceImage, localizationImage, 'data/Works_Test/Images/Loc_Private/custom/private.png']) {
     fs.mkdirSync(path.dirname(path.join(source, relative)), { recursive: true });
     fs.copyFileSync(path.join(source, image('Primary', 'corefolder', 'keep')), path.join(source, relative));
@@ -116,13 +143,22 @@ test('画像ポリシー: typedef・個別・上位・連名の拒否を全出�
   assert.deepEqual(character.images, { corefolder: [image('Primary', 'corefolder', 'keep')] });
   assert.deepEqual(character.data.Images.corefolder_PNGPath, ['keep']);
   assert.deepEqual(character.ai_hints.common.identity_tags, ['preserved']);
-  assert.deepEqual(character.data.AppearanceDetail.map(item => item.Costume), ['usual']);
+  assert.deepEqual(character.data.AppearanceDetail.map(item => item.Costume), ['usual', 'usual', 'usual', 'usual']);
   assert.equal(character.ai_hints.forms.humanoid.prompt_export, null);
   assert.deepEqual(character.ai_hints._meta.structuralEntries['common.identity_tags'], []);
   assert.equal(character.ai_hints.work_common.reference_images.main, `https://database.numbertales-radiann.net/${referenceImage}`);
-  assert.deepEqual(Object.keys(character.ai_hints.common.reference_images), ['main']);
+  assert.deepEqual(Object.keys(character.ai_hints.common.reference_images), ['main', 'stageDetail']);
   const index = JSON.parse(fs.readFileSync(path.join(output, 'image-index.json'), 'utf8'));
-  assert.deepEqual(index.works['#Works_Test'].images.map(entry => entry.path).sort(), [image('Primary', 'corefolder', 'keep'), referenceImage, localizationImage].sort());
+  assert.deepEqual(index.works['#Works_Test'].images.map(entry => entry.path).sort(),
+    [image('Primary', 'corefolder', 'keep'), detailImage, image('Primary', 'attr/wing', 'standalone'),
+      image('Primary', 'attr/numberMark', 'stage-detail'), referenceImage, localizationImage].sort());
+  const detailEntry = index.works['#Works_Test'].images.find(entry => entry.path === detailImage);
+  assert.equal(detailEntry.category, null);
+  index.works['#Works_Test'].images = index.works['#Works_Test'].images.filter(entry => entry.path !== detailImage);
+  fs.writeFileSync(path.join(output, 'image-index.json'), JSON.stringify(index));
+  assert.notEqual(run('validate-dataset.js').status, 0, '許可された部位図の欠落を検出する');
+  index.works['#Works_Test'].images.push(detailEntry);
+  fs.writeFileSync(path.join(output, 'image-index.json'), JSON.stringify(index));
   character.images.concept = [image('Primary', 'concept', 'joint')];
   fs.writeFileSync(path.join(output, 'manifest.jsonl'), manifest.map(record => JSON.stringify(record)).join('\n'));
   assert.notEqual(run('validate-dataset.js').status, 0);
@@ -132,6 +168,14 @@ test('画像ポリシー: typedef・個別・上位・連名の拒否を全出�
   assert.notEqual(invalid.status, 0);
   assert.match(invalid.stderr, /元画像にありません/);
   records[0].Images_AIOptout.corefolder_PNGPath = ['file'];
+  records[0].AppearanceDetail.push({ img_PNGName: 'ambiguous' });
+  makeImage('Primary', 'attr/halo', 'ambiguous');
+  makeImage('Primary', 'attr/motif', 'ambiguous');
+  write('data/Works_Test/DataBases/db_Primary.json', records);
+  const ambiguous = run('build-dataset.js');
+  assert.notEqual(ambiguous.status, 0);
+  assert.match(ambiguous.stderr, /部位図の実ファイル名が曖昧/);
+  records[0].AppearanceDetail.pop();
   write('data/Works_Test/DataBases/db_Primary.json', records);
   write('data/Works_Test/Dictionaries/dict_Costume.json', [{ Costume: 'stage', AI_Optout: 'true' }]);
   const oldManifest = fs.readFileSync(path.join(output, 'manifest.jsonl'), 'utf8');

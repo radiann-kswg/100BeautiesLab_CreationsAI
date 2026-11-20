@@ -12,6 +12,7 @@
       "is_private": "data/Works_<work>/DataBases/db_*.json — <record>.isPrivate（レコード単位の非公開）",
       "progress_unready": "data/db_meta.json — General.$VarsDef.$EnumDef_Progress[*].AI_Unready（進捗段階ごとの「AI 学習へ供する内容が無い」宣言。充填軸。未宣言のエントリは isForSecondary === true をフォールバックとして使う）",
       "image_optout": "Images field typedef AI_Optout / record.Images_AIOptout (exact raw field/value match). Any denied co-reference denies the physical image globally; unknown image permission is denied.",
+      "appearance_detail_images": "AppearanceDetail[].img_PNGName declares body-detail images by actual filename within the same DB attr tree. These follow record permission and shared-image denial, independently of Images field or costume exclusions; undeclared attr images remain excluded.",
       "costume_optout": "Dictionaries/dict_Costume.json rows with AI_Optout: true exclude matching AppearanceDetail and costume-scoped AIHints descriptions, including composite prompt strings."
     },
     "axis_semantics": {
@@ -136,6 +137,7 @@
     "image_index_field": {
       "description": "image-index.json の works.<WorkKey>.images / .references と general_images、および works/<Work>.json の image_paths は { path, category, width, height, long_edge_px, is_large_original_candidate, language_variant, is_language_variant } のオブジェクト配列 (2026-09-06 追加。旧形式は文字列配列)。path は creations-db サブモジュールルートからの相対パス。",
       "category": "string|null — 画像の種別。値は images_field のキー (concept / concept_alt / corefolder / humanoid / arts / design_alt / design / catalog / card_design / new_year / weakening / keycapper / tails_unit) と同じ語彙で、 data/Works_<Name>/Images/DB_<Db>/<folder>/ の格納フォルダから導出する。 既知フォルダに一致しないもの (attr/* の属性画像、charId 直下スキャンの画像、References / GeneralImages 配下等) は推測で埋めず null。",
+      "appearance_detail": "AppearanceDetail[].img_PNGName を同じDBの attr/** の実ファイル名と照合し、レコード単位の利用可否と共有画像の拒否優先に従って索引へ登録する。Images fieldや衣装単位の除外は部位図へ流用しない。未宣言画像は除外する。",
       "resolution": "width / height / long_edge_px — PNG の IHDR 実測値 (PNG 以外・読めない場合は null)。 is_large_original_candidate は long_edge_px >= 1024 (原寸相当とみなす最低要件)。 現状 corefolder (emstk 系) は Web 用縮小版が中心で長辺中央値 480px 前後、concept / arts / catalog は原寸相当。",
       "language_variant": "language_variant / is_language_variant — _lang_EN のようなディレクトリ規約から抽出した言語変種コード。該当しなければ null / false。",
       "consumer_guidance": "ファイル名の接頭辞 (emstk_ 等) やパス断片 (/catalog/・/_lang_ 等) から種別・解像度を推定せず、これらのフィールドを参照してください。 高解像度の参照画像が要るときは is_large_original_candidate または long_edge_px で絞り込めます。 category は「どのフォルダに格納されているか」だけを表し、AI 学習の可否とは無関係です。 画像はtypedef・個別指定・上位拒否・共有画像の拒否を反映済み。画像の無いレコードや未参照のファイルから許可を推定しないでください。"

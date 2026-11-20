@@ -342,6 +342,7 @@ for (const work of index.works) {
 let flatImages = 0;
 let flatImagesMissing = 0;
 let largeOriginals = 0;
+const indexedImages = new Set();
 const checkFlatImages = (label, list) => {
   if (list == null) return;
   for (const e of list) {
@@ -350,6 +351,7 @@ const checkFlatImages = (label, list) => {
       fail(`${label}: { path, category } 形式でない要素がある: ${JSON.stringify(e)}`);
       continue;
     }
+    indexedImages.add(e.path);
     if (!permittedImage(e.path)) fail(`${label}: 不許可画像が混入: ${e.path}`);
     if (e.category != null && !IMAGE_OUT_KEYS.includes(e.category)) {
       fail(`${label}: 未知の category "${e.category}": ${e.path}`);
@@ -376,6 +378,9 @@ for (const [workKey, w] of Object.entries(imageIndex.works ?? {})) {
   checkFlatImages(`image-index.works["${workKey}"].references`, w.references);
 }
 checkFlatImages('image-index.general_images', imageIndex.general_images);
+for (const image of imagePermissions.paths()) {
+  if (image.includes('/attr/') && !indexedImages.has(image)) fail(`image-index に許可された部位図がありません: ${image}`);
+}
 if (flatImagesMissing > 5) {
   fail(`image-index の参照先欠落は他にも ${flatImagesMissing - 5} 件あります`);
 }

@@ -215,6 +215,7 @@ node scripts/build-dataset.js --verbose
 - 画像fieldのtypedef `AI_Optout: true` とレコードの `Images_AIOptout`（field別の元文字列との完全一致）を適用する。検証・canonical path・共有画像の拒否優先・参照フィルタは上流 `pkg/ai-image-policy.mjs` を使用する。`false` は上位や他の参照元の拒否を解除しない。
 - 全作品の補完済みレコードを出力前に走査し、同一実画像のいずれかの参照が拒否なら全参照から外す。`images`、`preferred_reference_images`、`ai_hints` と `data.AIHints` の参照、`data.Images`、画像インデックス・作品JSONの全走査結果へ同じ許可集合を適用する。`Images_AIOptout` 自体も除外パスを持つため出力しない。原本は変更しない。
 - 未登録DBは拒否側で走査し、許可元を立証できない画像・未知の参照URLは出力しない。別DB画像へのwrapperだけで参照先の許可を推定しない。未参照画像もインデックスから外れるため、画像件数の減少は期待される。
+- `AppearanceDetail[].img_PNGName` も画像宣言として扱う。同じDBの `Images/<DB>/attr/**` を走査し、宣言された実ファイル名を照合する（拡張子は省略可・大小文字を無視し、ファイル名本体は完全一致）。種類名・番号・別DBの同名ファイルから推定しない。同じDBで名前が曖昧なら生成を停止する。部位図の可否は既存のレコード判定と共有画像の拒否優先に従う。`Images.*` 用の画像単位指定や衣装除外を部位図へ転用しない（61の通常・idolで共用する番号図も保持する）。未宣言attr画像は許可しない。部位図単位の除外方法は今回追加しない。
 - 画像権利の集計は各layerのcatalog/typedefを読み、DB/Ref/Loc（db_/ref_/trans_）と `Works_ImagesDir` を解決する。直接読込にも既存WorkerのCommons補完を適用する。公開参考資料の宣言済み画像やDB_Imageは維持し、作業用dot-directoryは走査しない。
 - 権利メタの不正型は画像の事前検証で停止する。`AI_Optout` は宣言時boolean必須。既存の `Works_Hidden` / `DB_Hidden` / `isPrivate` のnull・未指定は従来どおり未指定として扱う。カテゴリの追加条件・既定拒否を画像用にも確認し、テキストRP許諾は変更しない。
 - `CREATIONS_DB_ROOT` と `CREATIONS_AI_OUT_DIR` は検証時の入力・出力先変更用。上流helperを持つaddon-ai-tag由来の入力が必要で、developの欠落したAI権利メタを補ったりゲートを弱めたりしない。通常pinは上流反映後に別途追従する。生成物を手動編集しない。
@@ -247,9 +248,10 @@ node scripts/build-dataset.js --verbose
 
 - **`category` は `IMAGE_FIELDS` の `out` 名と同じ語彙**を、`Images/DB_<Db>/<folder>/` の格納フォルダから逆引きして埋める。消費側（GeneratorsAI）が `emstk_` 接頭辞や `/catalog/`・`/_lang_` といったパス名ヒューリスティックで種別を推定しなくて済むようにするのが目的。対応表は `build-dataset.js` の `IMAGE_FOLDER_TO_CATEGORY`（`IMAGE_FIELDS` から導出）で、ヘルパーには引数で渡す。**判定知識を `dataset-helpers.js` 側へ複製しないこと**（`IMAGE_FIELDS` が正典という原則が崩れる）。
 - **既知フォルダに一致しないものは推測で埋めず `null`**（`attr/numberMark` 等の属性画像、`References/` `GeneralImages/` 配下）。ここを「それらしいカテゴリ」で埋めると、パス名ヒューリスティックをこちら側へ移設しただけになる。
+- **部位図は `AppearanceDetail[].img_PNGName` の実名宣言から許可を登録して索引へ残す。** 不許可レコードだけが宣言した画像と共有拒否は載せない。カテゴリは従来どおり `null`（既存の `attr/tailsUnit` は `tails_unit`）を維持する。`Images.*` / `TailsUnit` の `image_ref_stats` に部位図索引の追加件数を混ぜず、validatorで許可された部位図の索引欠落を検出する。
 - 尻尾ユニットだけは `IMAGE_FIELDS` ではなく `attr/tailsUnit` 固定パスで解決されるため、`IMAGE_FOLDER_TO_CATEGORY` に個別エントリを持つ。これが無いとレコード側で `images.tails_unit` に載る同じ画像が image-index では `null` になる。
 - **解像度は PNG の IHDR 24 バイトだけを読んで実測する**（`readPngDimensions()`）。9000px のカタログ図があるためファイル全体をメモリへ載せない。PNG 以外・読めない場合は `null`。`is_large_original_candidate` は `long_edge_px >= 1024`（Issue #1 依頼2 の最低要件）。
-- `category` も解像度も **AI 学習の可否とは無関係**。画像単位の可否は従来どおり `manifest.jsonl` の各レコードの `images` と `ai_training` で判断する。
+- `category` も解像度も **AI 学習の可否とは無関係**。レコードの可否は `manifest.jsonl` の `ai_training`、部位図を含む画像単位の可否は許可表で絞った `image-index.json` の実パスで判断する。`images` だけでは `AppearanceDetail[].img_PNGName` の部位図を網羅しない。
 
 #### AIHints の `source` / `derived`（2026-09-06 追加・Issue #1 依頼1）
 

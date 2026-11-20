@@ -10,7 +10,7 @@
       "title_en": "NumberTales",
       "character_count": 337,
       "character_catalog_path": "works/Works_NumberTales.json",
-      "image_count": 444,
+      "image_count": 563,
       "ai_training": {
         "allowed": true,
         "allowed_db_keys": [

@@ -280,6 +280,7 @@ async function main() {
       is_private:             'data/Works_<work>/DataBases/db_*.json — <record>.isPrivate（レコード単位の非公開）',
       progress_unready:       'data/db_meta.json — General.$VarsDef.$EnumDef_Progress[*].AI_Unready（進捗段階ごとの「AI 学習へ供する内容が無い」宣言。充填軸。未宣言のエントリは isForSecondary === true をフォールバックとして使う）',
       image_optout: 'Images field typedef AI_Optout / record.Images_AIOptout (exact raw field/value match). Any denied co-reference denies the physical image globally; unknown image permission is denied.',
+      appearance_detail_images: 'AppearanceDetail[].img_PNGName declares body-detail images by actual filename within the same DB attr tree. These follow record permission and shared-image denial, independently of Images field or costume exclusions; undeclared attr images remain excluded.',
       costume_optout: 'Dictionaries/dict_Costume.json rows with AI_Optout: true exclude matching AppearanceDetail and costume-scoped AIHints descriptions, including composite prompt strings.',
     },
     // AI_Optout（権利軸）と AI_Unready（充填軸）は意味が異なる。両者を混同しないこと。
@@ -691,7 +692,7 @@ async function main() {
         note: workHasAllowedDb
           ? 'allowed_db_keys は「AI 学習許可レコードを 1 件以上含む DB」の一覧です。'
             + '同じ DB の中でも許可・不許可はレコード単位で分かれるため、この一覧だけで画像の利用可否を判断しないでください。'
-            + '正典は manifest.jsonl / manifest-training.jsonl の各レコードの ai_training と images です。'
+            + 'レコードの可否は manifest.jsonl / manifest-training.jsonl の ai_training、部位図を含む画像の可否はこの索引への掲載で確認してください。'
             + 'db_records に DB ごとの許可件数を載せています。'
           : AI_TRAINING_DISALLOWED_REASON,
       },
@@ -915,6 +916,7 @@ async function main() {
           + ' design_alt / design / catalog / card_design / new_year / weakening / keycapper / tails_unit) と同じ語彙で、'
           + ' data/Works_<Name>/Images/DB_<Db>/<folder>/ の格納フォルダから導出する。'
           + ' 既知フォルダに一致しないもの (attr/* の属性画像、charId 直下スキャンの画像、References / GeneralImages 配下等) は推測で埋めず null。',
+        appearance_detail: 'AppearanceDetail[].img_PNGName を同じDBの attr/** の実ファイル名と照合し、レコード単位の利用可否と共有画像の拒否優先に従って索引へ登録する。Images fieldや衣装単位の除外は部位図へ流用しない。未宣言画像は除外する。',
         resolution: 'width / height / long_edge_px — PNG の IHDR 実測値 (PNG 以外・読めない場合は null)。'
           + ' is_large_original_candidate は long_edge_px >= 1024 (原寸相当とみなす最低要件)。'
           + ' 現状 corefolder (emstk 系) は Web 用縮小版が中心で長辺中央値 480px 前後、concept / arts / catalog は原寸相当。',
@@ -1318,6 +1320,16 @@ export async function collectSourceImagePermissions(client, creationWorks, progr
         .filter(field => field && typeof field === 'object');
       const imageRoot = top.Works_ImagesDir ? path.join(DATA_DIR, top.Works_ImagesDir) : path.join(workDir, 'Images');
       const base = path.join(imageRoot, dbKey.slice(1));
+      // 部位図は種類名や番号を推定せず、同じDBのattr配下の実ファイル名で照合する。
+      const attrDir = path.join(base, 'attr');
+      const attrFiles = new Map();
+      for (const filename of collectImagesRaw(attrDir)) {
+        if (path.relative(attrDir, filename).split(path.sep).some(part => part.startsWith('.'))) continue;
+        const name = stripImageExt(path.basename(filename));
+        const matches = attrFiles.get(name) ?? [];
+        matches.push(path.relative(SUBMODULE, filename).replace(/\\/g, '/'));
+        attrFiles.set(name, matches);
+      }
       if (typeof dbEntry.DB_Image === 'string') {
         const image = resolveImagePath(path.join(base, stripImageExt(dbEntry.DB_Image)));
         if (image) permissions.add(image, getImageRecordPolicy(top, dbEntry, {}, progressUnready).allowed);
@@ -1331,6 +1343,14 @@ export async function collectSourceImagePermissions(client, creationWorks, progr
         for (const [key, values] of Object.entries(images)) {
           if (key !== dbKey.slice(1) && key !== 'tails_unit') continue;
           for (const value of values) permissions.add(typeof value === 'string' ? value : value.path, policy.allowed);
+        }
+        if (Array.isArray(record.AppearanceDetail)) {
+          for (const detail of record.AppearanceDetail) {
+            if (typeof detail?.img_PNGName !== 'string') continue;
+            const matches = attrFiles.get(stripImageExt(detail.img_PNGName)) ?? [];
+            if (matches.length > 1) throw new Error(`部位図の実ファイル名が曖昧です: ${dbPath} / ${detail.img_PNGName}`);
+            for (const image of matches) permissions.add(image, policy.allowed);
+          }
         }
         for (const { field, folder, meta: metadata } of imageFieldSpecs([...imageFields.map(field => field.hashTag), ...Object.keys(record.Images ?? {})])) {
           const raw = record.Images?.[field];
@@ -1459,7 +1479,7 @@ function collectImagesRaw(dir) {
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) {
       results.push(...collectImagesRaw(full));
-    } else if (IMAGE_EXTS.has(path.extname(entry.name).toLowerCase())) {
+    } else if (entry.isFile() && IMAGE_EXTS.has(path.extname(entry.name).toLowerCase())) {
       results.push(full);
     }
   }
