@@ -2469,16 +2469,5 @@
   "character_ids_with_appearance_detail": [],
   "character_ids_with_tails_unit": [],
   "character_ids_with_roleplay_prompt": [],
-  "image_paths": [
-    {
-      "path": "data/Works_UnauthedLogica/Images/DB_Primary/concept/cnsp_imgUAL-Z61.png",
-      "category": "concept",
-      "width": 1180,
-      "height": 820,
-      "long_edge_px": 1180,
-      "is_large_original_candidate": true,
-      "language_variant": null,
-      "is_language_variant": false
-    }
-  ]
+  "image_paths": []
 }

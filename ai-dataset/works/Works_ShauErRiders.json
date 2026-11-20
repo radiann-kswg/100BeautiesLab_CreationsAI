@@ -507,16 +507,6 @@
       "is_large_original_candidate": true,
       "language_variant": null,
       "is_language_variant": false
-    },
-    {
-      "path": "data/Works_ShauErRiders/Images/DB_Primary/newYear/art_imgSAR-EZ8.png",
-      "category": "new_year",
-      "width": 1080,
-      "height": 1080,
-      "long_edge_px": 1080,
-      "is_large_original_candidate": true,
-      "language_variant": null,
-      "is_language_variant": false
     }
   ]
 }

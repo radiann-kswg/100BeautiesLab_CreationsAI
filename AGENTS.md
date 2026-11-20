@@ -209,6 +209,18 @@ node scripts/build-dataset.js --verbose
 
 **`allowed_db_keys` はレコードの実判定から導出する。** DB 層が allowed でも、カテゴリ別 `AI_Optout` や `isPrivate`、Progress で全レコードが弾かれることがある。DB 層のフラグだけを見て載せると、オプトアウト済みの画像を「学習可」と伝えてしまう。
 
+### 画像単位のAI除外（2026-11-20）
+
+- `AI_Optout` のJSON宣言・実値はCreationsDBのdevelopを正典とし、addon-ai-tagへ一方向マージして利用する。AIHints・AI_Unready・AI API実装のaddon管理とは分け、許諾値をこちらで二重管理しない。
+- 画像fieldのtypedef `AI_Optout: true` とレコードの `Images_AIOptout`（field別の元文字列との完全一致）を適用する。検証・canonical path・共有画像の拒否優先・参照フィルタは上流 `pkg/ai-image-policy.mjs` を使用する。`false` は上位や他の参照元の拒否を解除しない。
+- 全作品の補完済みレコードを出力前に走査し、同一実画像のいずれかの参照が拒否なら全参照から外す。`images`、`preferred_reference_images`、`ai_hints` と `data.AIHints` の参照、`data.Images`、画像インデックス・作品JSONの全走査結果へ同じ許可集合を適用する。`Images_AIOptout` 自体も除外パスを持つため出力しない。原本は変更しない。
+- 未登録DBは拒否側で走査し、許可元を立証できない画像・未知の参照URLは出力しない。別DB画像へのwrapperだけで参照先の許可を推定しない。未参照画像もインデックスから外れるため、画像件数の減少は期待される。
+- 画像権利の集計は各layerのcatalog/typedefを読み、DB/Ref/Loc（db_/ref_/trans_）と `Works_ImagesDir` を解決する。直接読込にも既存WorkerのCommons補完を適用する。公開参考資料の宣言済み画像やDB_Imageは維持し、作業用dot-directoryは走査しない。
+- 権利メタの不正型は画像の事前検証で停止する。`AI_Optout` は宣言時boolean必須。既存の `Works_Hidden` / `DB_Hidden` / `isPrivate` のnull・未指定は従来どおり未指定として扱う。カテゴリの追加条件・既定拒否を画像用にも確認し、テキストRP許諾は変更しない。
+- `CREATIONS_DB_ROOT` と `CREATIONS_AI_OUT_DIR` は検証時の入力・出力先変更用。上流helperを持つaddon-ai-tag由来の入力が必要で、developの欠落したAI権利メタを補ったりゲートを弱めたりしない。通常pinは上流反映後に別途追従する。生成物を手動編集しない。
+- `dict_Costume.json` の `AI_Optout: true` は対応する `AppearanceDetail` と、衣装コード・日英ラベル・除外項目の固有属性句で特定できる `AIHints` の文へ適用する。英語のcostume/outfit表記も扱い、混在する複合prompt/NLDは文字列全体をnullにして意匠の残留を防ぐ。通常の性格・会話本文は変更しない。
+- レコードの `AI_Optout: true` は `isPrivate` の次に判定する権利軸で、ProgressやテキストRP許諾とは独立。代表参照の `main` / `design_sheet` には通常衣装と未確認の `design_alt` を選ばない。非公開作品等の直接読込fallbackは既存Workerの `applyCommons` を通し、継承を失わず拒否画像を集計する。
+
 ロジックを変更する場合は `ai-dataset/policy.json` の出力（生成元は `build-dataset.js` の `aiTrainingPolicySummary`）とも整合させ、`scripts/lib/policy.test.js` と `scripts/validate-dataset.js` を更新すること。
 
 ### 疑似作品（`Works_Dir` / `Works_ImagesDir` オーバーライド）への対応（2026-07-11 addon-ai-tag 追加）

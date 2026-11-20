@@ -93,7 +93,7 @@ export function buildPreferredReferenceImages(images) {
   const concept = firstPath(images.concept);
   const conceptAlt = extractImagePaths(images.concept_alt);
   const catalog = firstPath(images.catalog);
-  const designSheet = firstPath(images.design) ?? firstPath(images.design_alt);
+  const designSheet = firstPath(images.design);
   const corefolderDirect = firstPath(images.corefolder);
   const humanoidDirect = firstPath(images.humanoid);
   const corefolderArt = findFirstImagePath(images.arts, { form: 'corefolder', pathIncludes: '/arts/corefolders/' });
@@ -101,7 +101,8 @@ export function buildPreferredReferenceImages(images) {
   const genericArt = firstPath(images.arts);
 
   const common = {};
-  common.main = catalog ?? designSheet ?? concept ?? genericArt ?? corefolderArt ?? humanoidArt ?? corefolderDirect ?? humanoidDirect ?? null;
+  const main = catalog ?? designSheet ?? concept ?? genericArt ?? corefolderArt ?? humanoidArt ?? corefolderDirect ?? humanoidDirect;
+  if (main) common.main = main;
   if (concept) common.concept = concept;
   if (catalog) common.catalog = catalog;
   if (designSheet) common.design_sheet = designSheet;

@@ -9,8 +9,8 @@
   "ai_training_stats": {
     "allowed_works": 4,
     "disallowed_works": 7,
-    "allowed_characters": 191,
-    "disallowed_characters": 541
+    "allowed_characters": 187,
+    "disallowed_characters": 545
   },
   "text_rp_inference_stats": {
     "allowed": 0,
@@ -20,12 +20,12 @@
     "unidentified": 0
   },
   "ai_hints_stats": {
-    "with_ai_hints": 139,
+    "with_ai_hints": 135,
     "with_curated_ai_hints": 127,
-    "with_derived_ai_hints": 12,
+    "with_derived_ai_hints": 8,
     "with_silhouette_notes": 110,
-    "with_immutable_constraints": 120,
-    "with_negative_keywords": 120,
+    "with_immutable_constraints": 118,
+    "with_negative_keywords": 118,
     "with_work_common": 92,
     "with_concept_forms_metadata": 91
   },
@@ -39,7 +39,7 @@
     "with_roleplay_prompt": 62
   },
   "image_ref_stats": {
-    "resolved": 699,
+    "resolved": 520,
     "unresolved": 2
   }
 }

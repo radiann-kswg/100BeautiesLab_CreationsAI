@@ -80,6 +80,14 @@ test('buildDerivedAiHints: NumberTales の allowed レコードにだけ scaffol
   assert.equal(buildDerivedAiHints({ workKey: '#Works_CommonReferences', aiTrainingAllowed: true, charData: { Num: '222' }, images }), null);
 });
 
+test('buildPreferredReferenceImages: 未確認の衣装差分を代表・設定資料に選ばない', () => {
+  const refs = buildPreferredReferenceImages({ concept: ['regular.png'], design_alt: [{ path: 'alternate.png' }] });
+  assert.equal(refs.common.main, 'regular.png');
+  assert.equal(refs.common.design_sheet, undefined);
+  assert.equal(buildPreferredReferenceImages({ design_alt: ['alternate.png'] }), null);
+  assert.equal(buildDerivedAiHints({ workKey: '#Works_NumberTales', aiTrainingAllowed: true, charData: {}, images: {} }), null);
+});
+
 test('detectLanguageVariant: _lang_ ディレクトリ規約から言語コードを抜く', () => {
   assert.equal(detectLanguageVariant('data/Works_NumberTales/Images/DB_Primary/arts/x/_lang_EN/art[EN]_x.png'), 'EN');
   assert.equal(detectLanguageVariant('data/Works_NumberTales/Images/DB_Primary/arts/x/art_x.png'), null);

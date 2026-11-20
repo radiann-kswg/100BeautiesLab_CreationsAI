@@ -24,6 +24,7 @@ import {
   buildSecondaryOptoutMap,
   getAITrainingPolicy,
   getCharacterAIPolicy,
+  getImageRecordPolicy,
 } from './policy.js';
 
 /** $EnumDef_Progress を組み立てるヘルパ */
@@ -218,4 +219,21 @@ test('直接読み込み: _Secondaries[*]._Commons のポリシー値も検出�
     () => assertDirectReadSafe({ _Secondaries: [{ _Commons: { Progress: 'archived' } }] }, 'W / DB'),
     /_Secondaries\[0\]\._Commons\.Progress/,
   );
+});
+
+test('レコードのAI除外と直接読込の画像除外継承を守る', () => {
+  assert.equal(getCharacterAIPolicy({ allowed: true }, { AI_Optout: true }).allowed, false);
+  assert.throws(() => assertDirectReadSafe({ _Commons: { Images_AIOptout: {} } }, 'W/DB'), /Images_AIOptout/);
+});
+
+test('画像: 不正型の上位メタを拒否し、カテゴリ既定と3軸条件を取りこぼさない', () => {
+  for (const [top, db, record] of [[{ Works_Hidden: 'false' }, {}, {}], [{}, { AI_Optout: 'false' }, {}],
+    [{}, {}, { isPrivate: 'false' }], [{}, { _Secondaries: [{ AI_Optout: 'false' }] }, {}]]) {
+    assert.throws(() => getImageRecordPolicy(top, db, record), /boolean/);
+  }
+  assert.equal(getImageRecordPolicy({}, { _Secondaries: [{ AI_Optout: true }] }, { sec_SeriesTitle: 'other' }).allowed, false);
+  assert.equal(getImageRecordPolicy({}, { _Secondaries: [{ sec_SeriesTitle: null, SecondarySeriesTitle: 'legacy', AI_Optout: true }] }, { sec_SeriesTitle: 'other' }).allowed, false);
+  const db = { _Secondaries: [{ sec_Category: 'fan', sec_DesignedBy: 'guest', AI_Optout: true }] };
+  assert.equal(getImageRecordPolicy({}, db, { sec_Category: 'fan', sec_DesignedBy: 'guest', sec_SeriesTitle: 'other' }).allowed, false);
+  assert.doesNotThrow(() => getImageRecordPolicy({ Works_Hidden: null }, { DB_Hidden: null }, { isPrivate: null }));
 });

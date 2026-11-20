@@ -7,15 +7,18 @@
       "works_hidden": "data/db_meta.json — CreationWorks[\"#Works_<Name>\"].Works_Hidden（作品単位の非公開）",
       "db_hidden": "data/Works_<work>/DataBases/db_meta.json — Databases[\"#DB_<Name>\"].DB_Hidden（DB単位の非公開）",
       "ai_optout": "data/Works_<work>/DataBases/db_meta.json — Databases[\"#DB_<Name>\"].AI_Optout（DB単位の AI 学習オプトアウト。権利軸）",
+      "record_ai_optout": "data/Works_<work>/DataBases/db_*.json — <record>.AI_Optout（公開状態・Progressと独立したレコード単位の権利指定）",
       "secondary_category_optout": "data/Works_<work>/DataBases/db_meta.json — Databases[\"#DB_<Name>\"]._Secondaries[*].AI_Optout（二次創作カテゴリ別 AI 学習オプトアウト。権利軸）",
       "is_private": "data/Works_<work>/DataBases/db_*.json — <record>.isPrivate（レコード単位の非公開）",
-      "progress_unready": "data/db_meta.json — General.$VarsDef.$EnumDef_Progress[*].AI_Unready（進捗段階ごとの「AI 学習へ供する内容が無い」宣言。充填軸。未宣言のエントリは isForSecondary === true をフォールバックとして使う）"
+      "progress_unready": "data/db_meta.json — General.$VarsDef.$EnumDef_Progress[*].AI_Unready（進捗段階ごとの「AI 学習へ供する内容が無い」宣言。充填軸。未宣言のエントリは isForSecondary === true をフォールバックとして使う）",
+      "image_optout": "Images field typedef AI_Optout / record.Images_AIOptout (exact raw field/value match). Any denied co-reference denies the physical image globally; unknown image permission is denied.",
+      "costume_optout": "Dictionaries/dict_Costume.json rows with AI_Optout: true exclude matching AppearanceDetail and costume-scoped AIHints descriptions, including composite prompt strings."
     },
     "axis_semantics": {
       "ai_optout": "AI_Optout: true は「権利上 AI 学習・生成へ供してはならない」という原著作者の表明です。",
       "ai_unready": "AI_Unready: true は「制作が進んでおらず AI 学習へ供する内容が無い」という状態を表すだけで、権利上の可否とは無関係です。 AI_Unready: false は AI 学習の許諾を意味しません。権利上の可否を表明するのは AI_Optout のみです。"
     },
-    "disallowed_priority": "Works_Hidden → DB_Hidden → AI_Optout → db_meta エントリなし → _Secondaries カテゴリ別 AI_Optout → isPrivate → Progress の AI_Unready（いずれか該当で allowed=false）",
+    "disallowed_priority": "Works_Hidden → DB_Hidden → AI_Optout → db_meta エントリなし → isPrivate → record AI_Optout → _Secondaries カテゴリ別 AI_Optout → Progress の AI_Unready（いずれか該当で allowed=false）",
     "disallowed_default": false,
     "consumer_guidance": [
       "manifest.jsonl をそのまま使う場合: record.ai_training.allowed === true のレコードのみを採用してください。",
@@ -128,14 +131,14 @@
       "new_year": "年賀イラスト (newYear_PNGPath[] 由来、<DB>/newYear/{path}) — 2026-08-02 追加",
       "weakening": "弱体化・消耗状態のイラスト (weakening_PNGPath[] 由来、<DB>/weakening/{path}) — 2026-08-02 追加",
       "keycapper": "キーキャップ形態のイラスト (keycapper_PNGPath[] 由来、<DB>/keycapper/{path}) — 2026-08-02 追加",
-      "note": "パスは creations-db サブモジュールルートからの相対パス。ファイルが実在しない場合はキー自体が省略される。 解決できなかった宣言の件数は build-info.json の image_ref_stats.unresolved で確認できる。"
+      "note": "パスは creations-db サブモジュールルートからの相対パス。ファイルが実在しない場合や画像のAI許可が立証できない場合は除外される。 解決できなかった宣言の件数は build-info.json の image_ref_stats.unresolved で確認できる。"
     },
     "image_index_field": {
       "description": "image-index.json の works.<WorkKey>.images / .references と general_images、および works/<Work>.json の image_paths は { path, category, width, height, long_edge_px, is_large_original_candidate, language_variant, is_language_variant } のオブジェクト配列 (2026-09-06 追加。旧形式は文字列配列)。path は creations-db サブモジュールルートからの相対パス。",
       "category": "string|null — 画像の種別。値は images_field のキー (concept / concept_alt / corefolder / humanoid / arts / design_alt / design / catalog / card_design / new_year / weakening / keycapper / tails_unit) と同じ語彙で、 data/Works_<Name>/Images/DB_<Db>/<folder>/ の格納フォルダから導出する。 既知フォルダに一致しないもの (attr/* の属性画像、charId 直下スキャンの画像、References / GeneralImages 配下等) は推測で埋めず null。",
       "resolution": "width / height / long_edge_px — PNG の IHDR 実測値 (PNG 以外・読めない場合は null)。 is_large_original_candidate は long_edge_px >= 1024 (原寸相当とみなす最低要件)。 現状 corefolder (emstk 系) は Web 用縮小版が中心で長辺中央値 480px 前後、concept / arts / catalog は原寸相当。",
       "language_variant": "language_variant / is_language_variant — _lang_EN のようなディレクトリ規約から抽出した言語変種コード。該当しなければ null / false。",
-      "consumer_guidance": "ファイル名の接頭辞 (emstk_ 等) やパス断片 (/catalog/・/_lang_ 等) から種別・解像度を推定せず、これらのフィールドを参照してください。 高解像度の参照画像が要るときは is_large_original_candidate または long_edge_px で絞り込めます。 category は「どのフォルダに格納されているか」だけを表し、AI 学習の可否とは無関係です。 画像単位の可否は manifest.jsonl の各レコードの images と ai_training で判断してください。"
+      "consumer_guidance": "ファイル名の接頭辞 (emstk_ 等) やパス断片 (/catalog/・/_lang_ 等) から種別・解像度を推定せず、これらのフィールドを参照してください。 高解像度の参照画像が要るときは is_large_original_candidate または long_edge_px で絞り込めます。 category は「どのフォルダに格納されているか」だけを表し、AI 学習の可否とは無関係です。 画像はtypedef・個別指定・上位拒否・共有画像の拒否を反映済み。画像の無いレコードや未参照のファイルから許可を推定しないでください。"
     }
   }
 }

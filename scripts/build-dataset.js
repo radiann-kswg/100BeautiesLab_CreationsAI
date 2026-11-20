@@ -23,17 +23,18 @@
 import fs             from 'node:fs';
 import path           from 'node:path';
 import { execSync }   from 'node:child_process';
-import { fileURLToPath } from 'node:url';
+import { fileURLToPath, pathToFileURL } from 'node:url';
 import { CreationsDBClient } from '../creations-db/pkg/nodejs/index.mjs';
+import { applyCommons } from '../creations-db/pkg/cloudflare/worker.js';
 import {
   AI_TRAINING_DISALLOWED_REASON,
   AI_TRAINING_ALLOWED_REASON,
-  assertDirectReadSafe,
   buildProgressUnreadySet,
   buildSecondaryOptoutMap,
   getAITrainingPolicy,
   getCharacterAIPolicy,
   getTextRPInferencePolicy,
+  getImageRecordPolicy,
 } from './lib/policy.js';
 import {
   buildDerivedAiHints,
@@ -53,10 +54,12 @@ const __dirname  = path.dirname(__filename);
 // ---------------------------------------------------------------------------
 
 const REPO_ROOT    = path.resolve(__dirname, '..');
-const SUBMODULE    = path.join(REPO_ROOT, 'creations-db');
+const SUBMODULE    = path.resolve(process.env.CREATIONS_DB_ROOT || path.join(REPO_ROOT, 'creations-db'));
 const DATA_DIR     = path.join(SUBMODULE, 'data');
-const OUT_DIR      = path.join(REPO_ROOT, 'ai-dataset');
+const OUT_DIR      = path.resolve(process.env.CREATIONS_AI_OUT_DIR || path.join(REPO_ROOT, 'ai-dataset'));
 const WORKS_OUT    = path.join(OUT_DIR, 'works');
+const imagePolicy = await import(pathToFileURL(path.join(SUBMODULE, 'pkg/ai-image-policy.mjs')).href);
+const { createImagePermissionIndex, filterAIImageReferences, filterCostumeOptouts } = imagePolicy;
 
 const VERBOSE = process.argv.includes('--verbose');
 
@@ -232,6 +235,9 @@ async function main() {
   // AI 学習へ供する内容が無い Progress 値を $EnumDef_Progress から導出する。
   // 語彙はここに持たず上流の宣言だけを読む（判定の正典を creations-db に一本化するため）。
   const progressUnready = buildProgressUnreadySet(globalMeta);
+  // 全作品を先に確認し、後のレコードの拒否が先の連名画像にも必ず効くようにする。
+  const imagePermissions = await collectSourceImagePermissions(client, creationWorks, progressUnready.values, imagePolicy);
+  const permittedImage = value => imagePermissions.has(value);
   log(`Progress ゲート: AI_Unready 明示 ${progressUnready.explicit} 件 / isForSecondary フォールバック ${progressUnready.fallback} 件`);
   log(`Progress ゲート: 除外する値 (${progressUnready.values.size}) = ${[...progressUnready.values].map(v => JSON.stringify(v)).join(', ')}`);
 
@@ -269,9 +275,12 @@ async function main() {
       works_hidden:           'data/db_meta.json — CreationWorks["#Works_<Name>"].Works_Hidden（作品単位の非公開）',
       db_hidden:              'data/Works_<work>/DataBases/db_meta.json — Databases["#DB_<Name>"].DB_Hidden（DB単位の非公開）',
       ai_optout:              'data/Works_<work>/DataBases/db_meta.json — Databases["#DB_<Name>"].AI_Optout（DB単位の AI 学習オプトアウト。権利軸）',
+      record_ai_optout:       'data/Works_<work>/DataBases/db_*.json — <record>.AI_Optout（公開状態・Progressと独立したレコード単位の権利指定）',
       secondary_category_optout: 'data/Works_<work>/DataBases/db_meta.json — Databases["#DB_<Name>"]._Secondaries[*].AI_Optout（二次創作カテゴリ別 AI 学習オプトアウト。権利軸）',
       is_private:             'data/Works_<work>/DataBases/db_*.json — <record>.isPrivate（レコード単位の非公開）',
       progress_unready:       'data/db_meta.json — General.$VarsDef.$EnumDef_Progress[*].AI_Unready（進捗段階ごとの「AI 学習へ供する内容が無い」宣言。充填軸。未宣言のエントリは isForSecondary === true をフォールバックとして使う）',
+      image_optout: 'Images field typedef AI_Optout / record.Images_AIOptout (exact raw field/value match). Any denied co-reference denies the physical image globally; unknown image permission is denied.',
+      costume_optout: 'Dictionaries/dict_Costume.json rows with AI_Optout: true exclude matching AppearanceDetail and costume-scoped AIHints descriptions, including composite prompt strings.',
     },
     // AI_Optout（権利軸）と AI_Unready（充填軸）は意味が異なる。両者を混同しないこと。
     axis_semantics: {
@@ -279,7 +288,7 @@ async function main() {
       ai_unready: 'AI_Unready: true は「制作が進んでおらず AI 学習へ供する内容が無い」という状態を表すだけで、権利上の可否とは無関係です。'
         + ' AI_Unready: false は AI 学習の許諾を意味しません。権利上の可否を表明するのは AI_Optout のみです。',
     },
-    disallowed_priority: 'Works_Hidden → DB_Hidden → AI_Optout → db_meta エントリなし → _Secondaries カテゴリ別 AI_Optout → isPrivate → Progress の AI_Unready（いずれか該当で allowed=false）',
+    disallowed_priority: 'Works_Hidden → DB_Hidden → AI_Optout → db_meta エントリなし → isPrivate → record AI_Optout → _Secondaries カテゴリ別 AI_Optout → Progress の AI_Unready（いずれか該当で allowed=false）',
     disallowed_default: false,
     consumer_guidance: [
       'manifest.jsonl をそのまま使う場合: record.ai_training.allowed === true のレコードのみを採用してください。',
@@ -373,6 +382,8 @@ async function main() {
     const worksImagesDirOverride = (typeof workTopMeta.Works_ImagesDir === 'string' && workTopMeta.Works_ImagesDir.trim()) || null;
     const effectiveDirName = worksDirOverride || dirName;
     const workDir = path.join(DATA_DIR, effectiveDirName);
+    const costumeRows = loadCostumeRows(workDir);
+    const imageRoot = worksImagesDirOverride ? path.join(DATA_DIR, worksImagesDirOverride) : path.join(workDir, 'Images');
 
     if (!fs.existsSync(workDir)) {
       log(`スキップ (ディレクトリなし): ${effectiveDirName}`);
@@ -463,13 +474,11 @@ async function main() {
         // `Ref_` を考慮しないため、#Ref_* かつ DB_Layer が非既定 (例: References) の DB では
         // ファイルが実在しても "DB file not found" になることがある。
         // dbAbsPath は本スクリプト側で独自に解決済み（かつ存在確認済み）なので、直接読み込みで救済する。
-        // ただしこの経路では _Commons 継承が適用されないため、継承前の値でポリシーを判定して
-        // 誤って許可しないよう、_Commons がポリシー値を供給していないことを確かめてから使う。
+        // 非公開作品も拒否画像の照合に必要。既存WorkerのCommons補完を適用してから判定する。
         const fallback = readJSON(dbAbsPath);
         if (Array.isArray(fallback)) {
-          assertDirectReadSafe(dbEntry, `${workKey} / ${dbMetaKey}`);
           log(`WARN: client.getRecords 失敗のため直接読み込みにフォールバック (${workKey} / ${dbMetaKey}): ${e.message}`);
-          records = fallback;
+          records = applyCommons(fallback, fullWorkMeta, dbBaseName);
         } else {
           log(`WARN: getRecords 失敗 (${workKey} / ${dbMetaKey}): ${e.message}`);
           continue;
@@ -488,7 +497,7 @@ async function main() {
         if (key) identityCounts.set(key, (identityCounts.get(key) ?? 0) + 1);
       }
 
-      for (const [idx, charData] of records.entries()) {
+      for (let [idx, charData] of records.entries()) {
         if (typeof charData !== 'object' || charData === null) continue;
 
         // 安定した識別子を導出（Num → ID → id → Name → 配列インデックス の優先順）
@@ -497,10 +506,15 @@ async function main() {
           charData.Num ?? charData.ID ?? charData.Id ?? charData.id ??
           charData.Key ?? charData.Code ?? charData.Name_JP ?? charData.Term_JP ?? charData.Name ?? idx
         );
+        const charPolicy = getCharacterAIPolicy(dbPolicy, charData, secondaryOptout, progressUnready.values);
+        const recordPermittedImage = value => charPolicy.allowed && permittedImage(value);
 
         // 画像パスを解決（未解決の参照は捨てずに記録し、ビルド末尾でまとめて報告する）
         const imageMisses = [];
-        const images = resolveCharacterImages(workDir, charId, charData, dbMetaKey, imageMisses);
+        const images = Object.fromEntries(Object.entries(resolveCharacterImages(workDir, charId, charData, dbMetaKey, imageMisses))
+          .map(([key, values]) => [key, values.filter(value => recordPermittedImage(typeof value === 'string' ? value : value.path))])
+          .filter(([, values]) => values.length > 0));
+        charData = filterRecordImageData(charData, workDir, dbMetaKey, recordPermittedImage, costumeRows, imageRoot);
         for (const miss of imageMisses) {
           unresolvedImageRefs.push({ work_key: workKey, db: dbRelPath, id: charId, ...miss });
         }
@@ -509,7 +523,6 @@ async function main() {
         }
 
         // isPrivate / _Secondaries カテゴリ別 AI_Optout / Progress の AI_Unready を考慮して決定
-        const charPolicy = getCharacterAIPolicy(dbPolicy, charData, secondaryOptout, progressUnready.values);
         const identity = identities[idx];
         const recordIdentity = identityCounts.get(recordIdentityKey(identity)) === 1 ? identity : null;
         const textRPPolicy = getTextRPInferencePolicy(worksHidden, dbEntry, charData);
@@ -611,7 +624,7 @@ async function main() {
           preferred_reference_images: preferredReferenceImages,
           has_roleplay_prompt: !!roleplayPrompt,
           roleplay_prompt: roleplayPrompt,
-          // 原データを変更せずそのまま参照
+          // 原本は変更せず、AI出力用に画像参照だけを除外したコピー。
           data: charData,
           images,
         };
@@ -664,7 +677,7 @@ async function main() {
     // 概要のみ提示する。詳細なフィルタリングは manifest-training.jsonl を参照。
     // Works_ImagesDir オーバーライド作品（例: 共通資料 → data/GeneralImages）は画像ルートが workDir/Images でない
     const imagesDir = worksImagesDirOverride ? path.join(DATA_DIR, worksImagesDirOverride) : path.join(workDir, 'Images');
-    const workImages = toImageEntries(collectImages(imagesDir, SUBMODULE));
+    const workImages = toImageEntries(collectImages(imagesDir, SUBMODULE).filter(permittedImage));
     const workHasAllowedDb = allowedDbKeys.length > 0;
     imageIndex.works[workKey] = {
       title_ja: workTopMeta.Title_JP || '',
@@ -689,7 +702,7 @@ async function main() {
 
     // --- References ---
     const refsDir = path.join(workDir, 'References');
-    const refImages = toImageEntries(collectImages(refsDir, SUBMODULE));
+    const refImages = toImageEntries(collectImages(refsDir, SUBMODULE).filter(permittedImage));
     if (refImages.length > 0) {
       imageIndex.works[workKey].references = refImages;
     }
@@ -786,7 +799,7 @@ async function main() {
   // -----------------------------------------------------------------------
 
   const generalImgDir = path.join(DATA_DIR, 'GeneralImages');
-  imageIndex.general_images = toImageEntries(collectImages(generalImgDir, SUBMODULE));
+  imageIndex.general_images = toImageEntries(collectImages(generalImgDir, SUBMODULE).filter(permittedImage));
 
   const dictDir = path.join(DATA_DIR, 'Dictionaries');
   // 上流は同じフィールド向けの辞書を Dictionaries/<keyField>/（例: Class/）へまとめるため再帰で拾う
@@ -809,7 +822,7 @@ async function main() {
   }
 
   const topRefsDir = path.join(DATA_DIR, 'References');
-  const topRefImages = toImageEntries(collectImages(topRefsDir, SUBMODULE));
+  const topRefImages = toImageEntries(collectImages(topRefsDir, SUBMODULE).filter(permittedImage));
   if (topRefImages.length > 0) {
     imageIndex.general_images = imageIndex.general_images.concat(topRefImages);
   }
@@ -891,7 +904,7 @@ async function main() {
         new_year:     '年賀イラスト (newYear_PNGPath[] 由来、<DB>/newYear/{path}) — 2026-08-02 追加',
         weakening:    '弱体化・消耗状態のイラスト (weakening_PNGPath[] 由来、<DB>/weakening/{path}) — 2026-08-02 追加',
         keycapper:    'キーキャップ形態のイラスト (keycapper_PNGPath[] 由来、<DB>/keycapper/{path}) — 2026-08-02 追加',
-        note:         'パスは creations-db サブモジュールルートからの相対パス。ファイルが実在しない場合はキー自体が省略される。'
+        note:         'パスは creations-db サブモジュールルートからの相対パス。ファイルが実在しない場合や画像のAI許可が立証できない場合は除外される。'
           + ' 解決できなかった宣言の件数は build-info.json の image_ref_stats.unresolved で確認できる。',
       },
       image_index_field: {
@@ -909,7 +922,7 @@ async function main() {
         consumer_guidance: 'ファイル名の接頭辞 (emstk_ 等) やパス断片 (/catalog/・/_lang_ 等) から種別・解像度を推定せず、これらのフィールドを参照してください。'
           + ' 高解像度の参照画像が要るときは is_large_original_candidate または long_edge_px で絞り込めます。'
           + ' category は「どのフォルダに格納されているか」だけを表し、AI 学習の可否とは無関係です。'
-          + ' 画像単位の可否は manifest.jsonl の各レコードの images と ai_training で判断してください。',
+          + ' 画像はtypedef・個別指定・上位拒否・共有画像の拒否を反映済み。画像の無いレコードや未参照のファイルから許可を推定しないでください。',
       },
     },
   }, null, 2), 'utf8');
@@ -1039,6 +1052,16 @@ const IMAGE_FIELDS = [
   { field: 'weakening_PNGPath',  folder: 'weakening',  out: 'weakening' },
   { field: 'keycapper_PNGPath',  folder: 'keycapper',  out: 'keycapper' },
 ];
+
+/** 宣言済みの追加画像フィールドにも、既存のPNG suffixとfolder規約を適用する。 */
+function imageFieldSpecs(names = []) {
+  const fields = new Map(IMAGE_FIELDS.map(field => [field.field, field]));
+  for (const field of names) {
+    const match = /^([A-Za-z0-9_-]+)_PNG(?:Name|Path)$/.exec(field);
+    if (match && !fields.has(field)) fields.set(field, { field, folder: match[1] });
+  }
+  return [...fields.values()];
+}
 
 // フィールド名 → Images/<DB> 配下のフォルダヒント。
 // _DBCrossLinkPath 解決時、参照先レコードにスキーマ (imagePathHints) を問い合わせられないため、
@@ -1244,6 +1267,126 @@ function resolveCharacterImages(workDir, charId, charData, dbMetaKey, unresolved
   return images;
 }
 
+/** 全DBの補完済みレコードから、実画像の許可・拒否を先に集計する。 */
+export async function collectSourceImagePermissions(client, creationWorks, progressUnready, imagePolicy) {
+  const permissions = createImagePermissionIndex();
+  const globalType = readJSON(path.join(DATA_DIR, 'db_type.json'));
+  for (const [workKey, top] of Object.entries(creationWorks)) {
+    const dirName = top.Works_Dir || workKey.replace(/^#/, '');
+    const workDir = path.join(DATA_DIR, dirName);
+    if (!fs.existsSync(workDir)) continue;
+    const dbDir = top.Works_Dir ? workDir : path.join(workDir, 'DataBases');
+    const meta = readJSON(path.join(dbDir, 'db_meta.json'));
+    const workType = readJSON(path.join(dbDir, 'db_type.json'));
+    if (!meta || !workType) throw new Error(`画像権利のメタ・型を読めません: ${workKey}`);
+    filterCostumeOptouts({}, loadCostumeRows(workDir));
+    const catalogDirs = new Set([dbDir, ...readdirSorted(workDir)
+      .filter(entry => entry.isDirectory() && !entry.name.startsWith('.') && fs.existsSync(path.join(workDir, entry.name, 'db_meta.json')))
+      .map(entry => path.join(workDir, entry.name))]);
+    const catalogs = [...catalogDirs].map(directory => ({ directory, meta: readJSON(path.join(directory, 'db_meta.json')),
+      type: readJSON(path.join(directory, 'db_type.json')) }));
+    const entries = catalogs.flatMap(catalog => Object.entries(catalog.meta?.Databases ?? {})
+      .filter(([key, value]) => /^#(DB|Ref|Loc)_/.test(key) && value && typeof value === 'object')
+      .map(([key, value]) => [key, { ...value, DB_Layer: value.DB_Layer || path.basename(catalog.directory) }, catalog]));
+    const sourcePath = (key, entry) => path.join(workDir,
+      ...((entry.DB_Layer || 'DataBases') === dirName ? [] : [entry.DB_Layer || 'DataBases']),
+      entry.DB_File || `${key.startsWith('#Ref_') ? 'ref_' : key.startsWith('#Loc_') ? 'trans_' : 'db_'}${key.replace(/^#(DB|Ref|Loc)_/, '')}.json`);
+    const declaredFiles = new Set(entries.map(([key, entry]) => sourcePath(key, entry)));
+    // メタに未登録のDBも拒否側で読む。同じ絵が別DBから参照されても許可に転ばせない。
+    for (const directory of catalogDirs) {
+      for (const filename of collectJsonFiles(directory)) {
+        if (path.relative(directory, filename).split(path.sep).some(part => part.startsWith('.'))) continue;
+        const match = path.basename(filename).match(/^(db|ref|trans)_(?!meta\.json$|type\.json$)(.+)\.json$/);
+        if (!match || declaredFiles.has(filename)) continue;
+        if (!Array.isArray(readJSON(filename))) continue;
+        entries.push([`#${match[1] === 'ref' ? 'Ref' : match[1] === 'trans' ? 'Loc' : 'DB'}_${match[2]}`, {
+          DB_Layer: path.dirname(filename) === workDir ? dirName : path.relative(workDir, path.dirname(filename)),
+          DB_File: path.basename(filename), AI_Optout: true,
+        }, { meta, type: null }]);
+      }
+    }
+    for (const [dbKey, dbEntry, catalog] of entries) {
+      const layer = dbEntry.DB_Layer || 'DataBases';
+      const dbPath = sourcePath(dbKey, dbEntry);
+      if (!fs.existsSync(dbPath)) continue;
+      const raw = readJSON(dbPath);
+      const records = Array.isArray(raw) ? applyCommons(raw, { ...catalog.meta, Databases: { [dbKey]: dbEntry } }, dbKey.replace(/^#(DB|Ref|Loc)_/, '')) : raw;
+      if (!Array.isArray(records)) throw new Error(`画像権利のレコードを読めません: ${dbPath}`);
+      const sharedType = readJSON(path.join(DATA_DIR, layer, 'db_type.json'));
+      const imageFields = [globalType, workType, sharedType, catalog.type].flatMap(type =>
+        type?.$DefType?.find(field => field.hashTag === 'Images')?.$type ?? [])
+        .filter(field => field && typeof field === 'object');
+      const imageRoot = top.Works_ImagesDir ? path.join(DATA_DIR, top.Works_ImagesDir) : path.join(workDir, 'Images');
+      const base = path.join(imageRoot, dbKey.slice(1));
+      if (typeof dbEntry.DB_Image === 'string') {
+        const image = resolveImagePath(path.join(base, stripImageExt(dbEntry.DB_Image)));
+        if (image) permissions.add(image, getImageRecordPolicy(top, dbEntry, {}, progressUnready).allowed);
+      }
+      for (const [idx, record] of records.entries()) {
+        if (!record || typeof record !== 'object') continue;
+        imagePolicy.validateImageOptouts(record, imageFields);
+        const policy = getImageRecordPolicy(top, dbEntry, record, progressUnready);
+        const id = String(record.Num ?? record.ID ?? record.Id ?? record.id ?? record.Key ?? record.Code ?? record.Name_JP ?? record.Term_JP ?? record.Name ?? idx);
+        const images = resolveCharacterImages(workDir, id, record, dbKey);
+        for (const [key, values] of Object.entries(images)) {
+          if (key !== dbKey.slice(1) && key !== 'tails_unit') continue;
+          for (const value of values) permissions.add(typeof value === 'string' ? value : value.path, policy.allowed);
+        }
+        for (const { field, folder, meta: metadata } of imageFieldSpecs([...imageFields.map(field => field.hashTag), ...Object.keys(record.Images ?? {})])) {
+          const raw = record.Images?.[field];
+          const values = [...(Array.isArray(raw) ? raw : raw == null ? [] : [raw]),
+            ...(Array.isArray(record.Images?.[metadata]) ? record.Images[metadata].map(item => item?.path) : [])];
+          for (const value of values) {
+            const resolved = resolveImageArrayEntry(value, path.join(base, folder), field, path.basename(workDir));
+            const permitted = policy.allowed && !imagePolicy.isImageOptedOut(record, imageFields, field, value);
+            // 別DBへの参照だけでは参照先の許諾を立証しない。参照先自身の宣言を必要とする。
+            const owned = typeof value === 'string' && resolved?.startsWith(path.relative(SUBMODULE, base).replace(/\\/g, '/') + '/');
+            if (resolved && (owned || !permitted)) permissions.add(resolved, permitted);
+          }
+        }
+      }
+    }
+  }
+  return permissions;
+}
+
+/** 原レコード中の画像参照にも同じ許可集合を適用し、除外指定に残るパスを出力しない。 */
+export function filterRecordImageData(record, workDir, dbKey, permitted, costumeRows = [], imageRoot = path.join(workDir, 'Images')) {
+  record = filterCostumeOptouts(record, costumeRows);
+  const { Images_AIOptout, ...result } = record;
+  if (record.Images && typeof record.Images === 'object') {
+    result.Images = {};
+    const base = path.join(imageRoot, dbKey.slice(1));
+    for (const { field, folder, meta } of imageFieldSpecs(Object.keys(record.Images))) {
+      const allowed = value => {
+        const resolved = resolveImageArrayEntry(value, path.join(base, folder), field, path.basename(workDir));
+        return resolved !== null && permitted(resolved);
+      };
+      const raw = record.Images[field];
+      if (raw !== undefined) result.Images[field] = Array.isArray(raw) ? raw.filter(allowed) : allowed(raw) ? raw : null;
+      if (meta && Array.isArray(record.Images[meta])) result.Images[meta] = record.Images[meta].filter(item => allowed(item?.path));
+    }
+  }
+  if (record.AIHints) result.AIHints = filterAIImageReferences(record.AIHints, permitted);
+  return result;
+}
+
+/** Costume辞書の指定ファイルを読み、権利指定を原本の値で渡す。 */
+export function loadCostumeRows(workDir) {
+  const directory = path.join(workDir, 'Dictionaries');
+  const catalog = readJSON(path.join(directory, 'db_meta.json'));
+  const definitions = Object.entries(catalog?.Dictionaries ?? {}).filter(([key, value]) => value?.keyField === 'Costume' || key === '#Dict_Costume');
+  const files = definitions.length ? definitions.map(([key, value]) => value.dictFile || `dict_${key.replace(/^#Dict_/, '')}.json`) : ['dict_Costume.json'];
+  return files.flatMap(filename => {
+    const full = path.resolve(directory, filename);
+    if (!full.startsWith(`${path.resolve(directory)}${path.sep}`)) throw new Error('Costume辞書のパスが不正です');
+    if (!fs.existsSync(full) && !definitions.length) return [];
+    const rows = readJSON(full);
+    if (!Array.isArray(rows)) throw new Error(`Costume辞書を読めません: ${full}`);
+    return rows;
+  });
+}
+
 // ---------------------------------------------------------------------------
 // ロールプレイプロンプトのパス解決ヘルパー
 // ---------------------------------------------------------------------------
@@ -1323,4 +1466,6 @@ function collectImagesRaw(dir) {
   return results;
 }
 
-main().catch(e => { console.error('[build] FATAL:', e); process.exit(1); });
+if (process.argv[1] && path.resolve(process.argv[1]) === __filename) {
+  main().catch(e => { console.error('[build] FATAL:', e); process.exit(1); });
+}

@@ -54,7 +54,7 @@ export function aiTrainingDisallowedProgressUnready(progress) {
 }
 
 /** 直接読み込みで継承を落とすと許諾判定が変わるフィールド */
-const COMMONS_SUPPLIED_POLICY_FIELDS = ['Progress', 'isPrivate', 'AI_TextRP_Allowed'];
+const COMMONS_SUPPLIED_POLICY_FIELDS = ['Progress', 'isPrivate', 'AI_TextRP_Allowed', 'AI_Optout', 'Images_AIOptout'];
 
 /**
  * _Secondaries の各カテゴリが持つ AI_Optout を集約して返す。
@@ -218,6 +218,9 @@ export function getCharacterAIPolicy(dbPolicy, charData, secondaryOptout = null,
   if (charData && charData.isPrivate === true) {
     return { allowed: false, reason: AI_TRAINING_DISALLOWED_IS_PRIVATE };
   }
+  if (charData?.AI_Optout === true) {
+    return { allowed: false, reason: 'AI_Optout: true is set on this character record.' };
+  }
   if (dbPolicy.allowed && secondaryOptout) {
     const { map, defaultOptout } = secondaryOptout;
     if (map.size > 0 || defaultOptout) {
@@ -238,6 +241,39 @@ export function getCharacterAIPolicy(dbPolicy, charData, secondaryOptout = null,
     }
   }
   return dbPolicy;
+}
+
+/** 画像は壊れた権利メタを許可せず、カテゴリの追加条件・既定拒否も確認する。 */
+export function getImageRecordPolicy(top, dbEntry, record, progressUnready) {
+  const secondary = dbEntry?._Secondaries;
+  if (secondary != null && !Array.isArray(secondary)) throw new Error('_Secondaries は配列が必要です');
+  for (const target of [top, dbEntry, record, ...(secondary ?? [])]) {
+    if (!target || typeof target !== 'object' || Array.isArray(target)) throw new Error('画像権利メタが不正です');
+    for (const field of ['Works_Hidden', 'DB_Hidden', 'isPrivate', 'AI_Optout']) {
+      const specified = field === 'AI_Optout' ? Object.hasOwn(target, field) : target[field] != null;
+      if (specified && typeof target[field] !== 'boolean') throw new Error(`${field} は boolean が必要です`);
+    }
+  }
+  const result = getCharacterAIPolicy(getAITrainingPolicy(top.Works_Hidden === true || top.AI_Optout === true, dbEntry),
+    record, buildSecondaryOptoutMap(dbEntry), progressUnready);
+  if (!result.allowed || !secondary?.length) return result;
+  const axes = [['sec_SeriesTitle', 'SecondarySeriesTitle', 'SecondarySeriesTitle_EN'],
+    ['sec_Category', 'SecondaryCategory'], ['sec_DesignedBy', 'SecondaryDesignedBy']];
+  const value = (entry, keys) => keys.map(key => entry[key]).find(v => v != null);
+  const list = v => (Array.isArray(v) ? v : v == null ? [] : [v]).map(String).filter(Boolean);
+  const conditions = def => axes.map(keys => list(def[keys.find(key => Object.hasOwn(def, key))]));
+  const specific = secondary.filter(def => conditions(def).some(values => values.length));
+  const matches = specific.filter(def => {
+    const criteria = conditions(def);
+    return criteria.every((expected, i) => {
+      const actual = list(value(record, axes[i].slice(0, 2)));
+      return !expected.length || (i > 0 && criteria[0].length && !actual.length)
+        || expected.every(item => actual.includes(item));
+    });
+  });
+  const selected = matches.length ? matches : secondary.filter(def => conditions(def).every(values => !values.length));
+  return selected.some(def => def.AI_Optout === true)
+    ? { allowed: false, reason: AI_TRAINING_DISALLOWED_SECONDARY_CATEGORY } : result;
 }
 
 /**

@@ -10,7 +10,7 @@
       "title_en": "NumberTales",
       "character_count": 337,
       "character_catalog_path": "works/Works_NumberTales.json",
-      "image_count": 655,
+      "image_count": 444,
       "ai_training": {
         "allowed": true,
         "allowed_db_keys": [
@@ -28,7 +28,7 @@
       "title_en": "the Fate-Line Investigator 78",
       "character_count": 102,
       "character_catalog_path": "works/Works_FLInvestigator78.json",
-      "image_count": 14,
+      "image_count": 0,
       "ai_training": {
         "allowed": false,
         "allowed_db_keys": [],
@@ -42,7 +42,7 @@
       "title_en": "Shau'er Riders\nBeasted Cavalry",
       "character_count": 10,
       "character_catalog_path": "works/Works_ShauErRiders.json",
-      "image_count": 22,
+      "image_count": 21,
       "ai_training": {
         "allowed": true,
         "allowed_db_keys": [
@@ -58,7 +58,7 @@
       "title_en": "UnibyteLive",
       "character_count": 47,
       "character_catalog_path": "works/Works_UnibyteLive.json",
-      "image_count": 8,
+      "image_count": 0,
       "ai_training": {
         "allowed": false,
         "allowed_db_keys": [],
@@ -72,7 +72,7 @@
       "title_en": "Sinister Changing Girls",
       "character_count": 28,
       "character_catalog_path": "works/Works_SinisterChangingGirls.json",
-      "image_count": 17,
+      "image_count": 14,
       "ai_training": {
         "allowed": true,
         "allowed_db_keys": [
@@ -104,7 +104,7 @@
       "title_en": "UnauthedLogica",
       "character_count": 115,
       "character_catalog_path": "works/Works_UnauthedLogica.json",
-      "image_count": 1,
+      "image_count": 0,
       "ai_training": {
         "allowed": false,
         "allowed_db_keys": [],
@@ -118,7 +118,7 @@
       "title_en": "PastDivers",
       "character_count": 17,
       "character_catalog_path": "works/Works_PastDivers.json",
-      "image_count": 2,
+      "image_count": 0,
       "ai_training": {
         "allowed": false,
         "allowed_db_keys": [],
@@ -146,7 +146,7 @@
       "title_en": "Destiny Fox's Records\nPhysical 9",
       "character_count": 15,
       "character_catalog_path": "works/Works_DestinyFoxRecords.json",
-      "image_count": 42,
+      "image_count": 0,
       "ai_training": {
         "allowed": false,
         "allowed_db_keys": [],
