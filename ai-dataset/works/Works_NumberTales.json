@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-11-21T10:43:54+09:00",
+  "_generated_at": "2026-11-21T13:05:26+09:00",
   "work_key": "#Works_NumberTales",
   "dir_name": "Works_NumberTales",
   "title_ja": "ナンバーテールズ",
@@ -2613,7 +2613,7 @@
     {
       "id": "266",
       "db_key": "#DB_SemiPrimary",
-      "display_name": "ナンバーテールズ 仮設2^√2号機(ナンバーテールズ266番機, 正規型ディ-ヴァインズ8番+母艦3番開発機)",
+      "display_name": "ナンバーテールズ 仮設2^√2号機(ナンバーテールズ266番機, 正規型ディ-ヴァインズ8/3番開発機)",
       "record_identity": {
         "work_key": "#Works_NumberTales",
         "db_key": "#DB_SemiPrimary",
@@ -2649,7 +2649,7 @@
     {
       "id": "314",
       "db_key": "#DB_SemiPrimary",
-      "display_name": "ナンバーテールズ仮設π号機(ナンバーテールズ314番機, 正規型ディ-ヴァインズ22番+母艦7番開発機)",
+      "display_name": "ナンバーテールズ仮設π号機(ナンバーテールズ314番機, 正規型ディ-ヴァインズ22/7番開発機)",
       "record_identity": {
         "work_key": "#Works_NumberTales",
         "db_key": "#DB_SemiPrimary",
@@ -4231,14 +4231,14 @@
       "text_rp_reference": null
     },
     {
-      "id": "314-am",
+      "id": "314-rm",
       "db_key": "#DB_SelfSecondary",
-      "display_name": "量産型ナンバーテールズ314番機AMシリーズ",
+      "display_name": "量産型ナンバーテールズ314番機RMシリーズ",
       "record_identity": {
         "work_key": "#Works_NumberTales",
         "db_key": "#DB_SelfSecondary",
         "index": {
-          "Num": "314-am"
+          "Num": "314-rm"
         }
       },
       "text_rp_inference": {
@@ -6388,7 +6388,7 @@
     "290",
     "294",
     "295",
-    "314-am",
+    "314-rm",
     "323",
     "324",
     "333-mp",
