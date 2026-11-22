@@ -24,6 +24,7 @@ import fs             from 'node:fs';
 import path           from 'node:path';
 import { execSync }   from 'node:child_process';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { isDeepStrictEqual } from 'node:util';
 import { CreationsDBClient } from '../creations-db/pkg/nodejs/index.mjs';
 import { applyCommons } from '../creations-db/pkg/cloudflare/worker.js';
 import {
@@ -236,7 +237,8 @@ async function main() {
   // 語彙はここに持たず上流の宣言だけを読む（判定の正典を creations-db に一本化するため）。
   const progressUnready = buildProgressUnreadySet(globalMeta);
   // 全作品を先に確認し、後のレコードの拒否が先の連名画像にも必ず効くようにする。
-  const imagePermissions = await collectSourceImagePermissions(client, creationWorks, progressUnready.values, imagePolicy);
+  const artAppearances = new Map();
+  const imagePermissions = await collectSourceImagePermissions(client, creationWorks, progressUnready.values, imagePolicy, artAppearances);
   const permittedImage = value => imagePermissions.has(value);
   log(`Progress ゲート: AI_Unready 明示 ${progressUnready.explicit} 件 / isForSecondary フォールバック ${progressUnready.fallback} 件`);
   log(`Progress ゲート: 除外する値 (${progressUnready.values.size}) = ${[...progressUnready.values].map(v => JSON.stringify(v)).join(', ')}`);
@@ -280,6 +282,7 @@ async function main() {
       is_private:             'data/Works_<work>/DataBases/db_*.json — <record>.isPrivate（レコード単位の非公開）',
       progress_unready:       'data/db_meta.json — General.$VarsDef.$EnumDef_Progress[*].AI_Unready（進捗段階ごとの「AI 学習へ供する内容が無い」宣言。充填軸。未宣言のエントリは isForSecondary === true をフォールバックとして使う）',
       image_optout: 'Images field typedef AI_Optout / record.Images_AIOptout (exact raw field/value match). Any denied co-reference denies the physical image globally; unknown image permission is denied.',
+      art_appearances: 'Images_Appearance annotates permitted arts with the current character’s form and confirmed character IDs from the same work. It never grants image permission.',
       appearance_detail_images: 'AppearanceDetail[].img_PNGName declares body-detail images by actual filename within the same DB attr tree. These follow record permission and shared-image denial, independently of Images field or costume exclusions; undeclared attr images remain excluded.',
       costume_optout: 'Dictionaries/dict_Costume.json rows with AI_Optout: true exclude matching AppearanceDetail and costume-scoped AIHints descriptions, including composite prompt strings.',
     },
@@ -515,6 +518,7 @@ async function main() {
         const images = Object.fromEntries(Object.entries(resolveCharacterImages(workDir, charId, charData, dbMetaKey, imageMisses))
           .map(([key, values]) => [key, values.filter(value => recordPermittedImage(typeof value === 'string' ? value : value.path))])
           .filter(([, values]) => values.length > 0));
+        if (images.arts) images.arts = projectArtAppearances(images.arts, artAppearances, workKey, dbMetaKey, charId);
         charData = filterRecordImageData(charData, workDir, dbMetaKey, recordPermittedImage, costumeRows, imageRoot);
         for (const miss of imageMisses) {
           unresolvedImageRefs.push({ work_key: workKey, db: dbRelPath, id: charId, ...miss });
@@ -1166,7 +1170,7 @@ function resolveImageArrayEntry(entry, baseDir, fieldName, currentDirName) {
  * @param {Array}    unresolved  宣言はあるのに実ファイルへ辿り着けなかった参照の記録先
  *                               （{ field, value }。呼び出し側が作品・レコードの情報を付けて集約する）
  */
-function resolveCharacterImages(workDir, charId, charData, dbMetaKey, unresolved = []) {
+export function resolveCharacterImages(workDir, charId, charData, dbMetaKey, unresolved = []) {
   const images = {};
   // _DBCrossLinkPath の _Work 省略時に「自作品」として使う作品ディレクトリ名
   const dirName = path.basename(workDir);
@@ -1270,7 +1274,7 @@ function resolveCharacterImages(workDir, charId, charData, dbMetaKey, unresolved
 }
 
 /** 全DBの補完済みレコードから、実画像の許可・拒否を先に集計する。 */
-export async function collectSourceImagePermissions(client, creationWorks, progressUnready, imagePolicy) {
+export async function collectSourceImagePermissions(client, creationWorks, progressUnready, imagePolicy, artAppearances = new Map()) {
   const permissions = createImagePermissionIndex();
   const globalType = readJSON(path.join(DATA_DIR, 'db_type.json'));
   for (const [workKey, top] of Object.entries(creationWorks)) {
@@ -1281,6 +1285,7 @@ export async function collectSourceImagePermissions(client, creationWorks, progr
     const meta = readJSON(path.join(dbDir, 'db_meta.json'));
     const workType = readJSON(path.join(dbDir, 'db_type.json'));
     if (!meta || !workType) throw new Error(`画像権利のメタ・型を読めません: ${workKey}`);
+    let formationCodes;
     filterCostumeOptouts({}, loadCostumeRows(workDir));
     const catalogDirs = new Set([dbDir, ...readdirSorted(workDir)
       .filter(entry => entry.isDirectory() && !entry.name.startsWith('.') && fs.existsSync(path.join(workDir, entry.name, 'db_meta.json')))
@@ -1339,6 +1344,10 @@ export async function collectSourceImagePermissions(client, creationWorks, progr
         imagePolicy.validateImageOptouts(record, imageFields);
         const policy = getImageRecordPolicy(top, dbEntry, record, progressUnready);
         const id = String(record.Num ?? record.ID ?? record.Id ?? record.id ?? record.Key ?? record.Code ?? record.Name_JP ?? record.Term_JP ?? record.Name ?? idx);
+        if (record.Images_Appearance != null) {
+          formationCodes ??= new Set(loadWorkDictionary(workDir, 'Formation').map(row => row.Formation));
+          collectArtAppearance(record, { workKey, dbKey, id, base, dirName, imageFields, formationCodes, policy }, artAppearances);
+        }
         const images = resolveCharacterImages(workDir, id, record, dbKey);
         for (const [key, values] of Object.entries(images)) {
           if (key !== dbKey.slice(1) && key !== 'tails_unit') continue;
@@ -1373,7 +1382,7 @@ export async function collectSourceImagePermissions(client, creationWorks, progr
 /** 原レコード中の画像参照にも同じ許可集合を適用し、除外指定に残るパスを出力しない。 */
 export function filterRecordImageData(record, workDir, dbKey, permitted, costumeRows = [], imageRoot = path.join(workDir, 'Images')) {
   record = filterCostumeOptouts(record, costumeRows);
-  const { Images_AIOptout, ...result } = record;
+  const { Images_AIOptout, Images_Appearance, ...result } = record;
   if (record.Images && typeof record.Images === 'object') {
     result.Images = {};
     const base = path.join(imageRoot, dbKey.slice(1));
@@ -1391,23 +1400,65 @@ export function filterRecordImageData(record, workDir, dbKey, permitted, costume
   return result;
 }
 
-/** Costume辞書の指定ファイルを読み、権利指定を原本の値で渡す。 */
-export function loadCostumeRows(workDir) {
+/** 作品辞書の宣言から、分割・サブディレクトリを含む実ファイルを読む。 */
+function loadWorkDictionary(workDir, field) {
   const directory = path.join(workDir, 'Dictionaries');
   const catalog = readJSON(path.join(directory, 'db_meta.json'));
-  const definitions = Object.entries(catalog?.Dictionaries ?? {}).filter(([key, value]) => value?.keyField === 'Costume' || key === '#Dict_Costume');
-  const files = definitions.length ? definitions.map(([key, value]) => value.dictFile || `dict_${key.replace(/^#Dict_/, '')}.json`) : ['dict_Costume.json'];
+  const definitions = Object.entries(catalog?.Dictionaries ?? {}).filter(([key, value]) => value?.keyField === field || key === `#Dict_${field}`);
+  const files = definitions.length ? definitions.map(([key, value]) => value.dictFile || `dict_${key.replace(/^#Dict_/, '')}.json`) : [`dict_${field}.json`];
   return files.flatMap(filename => {
     const full = path.resolve(directory, filename);
-    if (!full.startsWith(`${path.resolve(directory)}${path.sep}`)) throw new Error('Costume辞書のパスが不正です');
+    if (!full.startsWith(`${path.resolve(directory)}${path.sep}`)) throw new Error(`${field}辞書のパスが不正です`);
     if (!fs.existsSync(full) && !definitions.length) return [];
     const rows = readJSON(full);
-    if (!Array.isArray(rows)) throw new Error(`Costume辞書を読めません: ${full}`);
+    if (!Array.isArray(rows)) throw new Error(`${field}辞書を読めません: ${full}`);
     return rows;
   });
 }
 
 // ---------------------------------------------------------------------------
+/** 衣装の権利指定を原本の値で返す。 */
+export function loadCostumeRows(workDir) { return loadWorkDictionary(workDir, 'Costume'); }
+
+/** 同じ実画像での登場を本人のレコードから収集する。画像の許可表には書き込まない。 */
+function collectArtAppearance(record, ctx, index) {
+  const table = record.Images_Appearance;
+  const field = 'arts_PNGPath';
+  const invalid = () => new Error(`Images_Appearance の指定が不正です: ${ctx.workKey}/${ctx.dbKey}/${ctx.id}`);
+  if (typeof table !== 'object' || Array.isArray(table) || Object.keys(table).some(key => key !== field)) throw invalid();
+  if (!Object.hasOwn(table, field)) return;
+  if (!ctx.dbKey.startsWith('#DB_') || !ctx.imageFields.some(def => def.hashTag === field)
+      || !Object.hasOwn(record.Images ?? {}, field) || !Array.isArray(table[field])) throw invalid();
+  const originals = [record.Images?.[field]].flat();
+  for (const row of table[field]) {
+    if (!row || typeof row !== 'object' || Object.keys(row).some(key => !['value', 'Formation'].includes(key))
+        || !row.value || (typeof row.value !== 'string' && !row.value._DBCrossLinkPath)
+        || !originals.some(value => isDeepStrictEqual(value, row.value))
+        || (row.Formation != null && (typeof row.Formation !== 'string' || !ctx.formationCodes.has(row.Formation)))) throw invalid();
+    const resolved = resolveImageArrayEntry(row.value, path.join(ctx.base, 'arts'), field, ctx.dirName);
+    if (!resolved) throw invalid();
+    if (!ctx.policy.allowed) continue;
+    if (!index.has(resolved)) index.set(resolved, new Map());
+    const owners = index.get(resolved);
+    const key = JSON.stringify([ctx.workKey, ctx.dbKey, ctx.id]);
+    if (!owners.has(key)) owners.set(key, { workKey: ctx.workKey, id: ctx.id, forms: new Set() });
+    owners.get(key).forms.add(row.Formation ?? null);
+  }
+}
+
+/** 許可済みの arts に本人の形態と同一作品の登場IDを投影する。未確認の行は従来形式を保つ。 */
+export function projectArtAppearances(arts, index, workKey, dbKey, id) {
+  return arts.map(art => {
+    const owners = index.get(art.path);
+    const owner = owners?.get(JSON.stringify([workKey, dbKey, id]));
+    if (!owner) return art;
+    const characters = new Set([...owners.values()].filter(entry => entry.workKey === workKey).map(entry => entry.id));
+    const forms = [...owner.forms].filter(Boolean).sort();
+    return { ...art, form: forms.length === 1 ? forms[0] : null,
+      ...(forms.length > 1 ? { forms } : {}), characters: [...characters].sort() };
+  });
+}
+
 // ロールプレイプロンプトのパス解決ヘルパー
 // ---------------------------------------------------------------------------
 

@@ -21,7 +21,7 @@ import { isDeepStrictEqual } from 'node:util';
 
 import { buildProgressUnreadySet, getTextRPInferencePolicy } from './lib/policy.js';
 import { buildRecordIdentity, recordIdentityKey, buildTextRPReference } from './lib/text-rp.js';
-import { collectSourceImagePermissions, filterRecordImageData, loadCostumeRows } from './build-dataset.js';
+import { collectSourceImagePermissions, filterRecordImageData, loadCostumeRows, projectArtAppearances, resolveCharacterImages } from './build-dataset.js';
 import { CreationsDBClient } from '../creations-db/pkg/nodejs/index.mjs';
 import { applyCommons } from '../creations-db/pkg/cloudflare/worker.js';
 
@@ -50,8 +50,9 @@ const allowedChars = chars.filter(r => r.ai_training?.allowed === true);
 const client = new CreationsDBClient(SOURCE_ROOT, { includePrivate: true });
 const imagePolicy = await import(pathToFileURL(path.join(SOURCE_ROOT, 'pkg/ai-image-policy.mjs')).href);
 const { filterAIImageReferences, filterCostumeOptouts } = imagePolicy;
+const artAppearances = new Map();
 const imagePermissions = await collectSourceImagePermissions(client, globalMeta.CreationWorks,
-  buildProgressUnreadySet(globalMeta).values, imagePolicy);
+  buildProgressUnreadySet(globalMeta).values, imagePolicy, artAppearances);
 const permittedImage = value => imagePermissions.has(value);
 
 // --- RP 推論の許諾・正規複合識別・テキスト限定投影 ---------------------------
@@ -83,7 +84,13 @@ for (const r of chars) {
   const costumeRows = loadCostumeRows(workSources.get(r.work_key).workDir);
   const expected = filterRecordImageData(source, workSources.get(r.work_key).workDir, r.db_key, recordPermittedImage, costumeRows, workSources.get(r.work_key).imageRoot);
   if (!isDeepStrictEqual(r.data.Images, expected.Images) || !isDeepStrictEqual(r.data.AIHints, expected.AIHints)
-    || r.data.Images_AIOptout !== undefined) fail(`${key}/${r.id}: 原データの画像除外が不一致`);
+    || r.data.Images_AIOptout !== undefined || r.data.Images_Appearance !== undefined) fail(`${key}/${r.id}: 原データの画像除外が不一致`);
+  if (source.Images?.arts_PNGPath || source.Images?.arts_metadata || r.images?.arts) {
+    const original = resolveCharacterImages(workSources.get(r.work_key).workDir, r.id, source, r.db_key);
+    const arts = (original.arts ?? []).filter(art => recordPermittedImage(art.path));
+    const projected = projectArtAppearances(arts, artAppearances, r.work_key, r.db_key, r.id);
+    if (!isDeepStrictEqual(r.images?.arts ?? [], projected)) fail(`${key}/${r.id}: arts の形態・登場人物が原本と不一致`);
+  }
   if (!isDeepStrictEqual(r.data.AppearanceDetail, expected.AppearanceDetail)
     || !isDeepStrictEqual(r.ai_hints, filterCostumeOptouts({ AppearanceDetail: source.AppearanceDetail, AIHints: r.ai_hints }, costumeRows).AIHints)) {
     fail(`${key}/${r.id}: AI除外衣装の記述が混入`);

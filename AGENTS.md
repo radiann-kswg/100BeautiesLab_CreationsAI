@@ -211,6 +211,8 @@ node scripts/build-dataset.js --verbose
 
 ### 画像単位のAI除外（2026-11-20）
 
+- 上流の `addon-ai-tag` が生成する `Images_Appearance.arts_PNGPath` を読み、同じ実パスで登場を確認した同一作品のレコード ID を `images.arts[].characters` に出す。本人が単一形態なら `form`、複数形態なら `form: null` と `forms` 配列、未確認なら `form: null`。権利判定後に投影し、入力表は配布用の `data` から取り除く。
+
 - `AI_Optout` のJSON宣言・実値はCreationsDBのdevelopを正典とし、addon-ai-tagへ一方向マージして利用する。AIHints・AI_Unready・AI API実装のaddon管理とは分け、許諾値をこちらで二重管理しない。
 - 画像fieldのtypedef `AI_Optout: true` とレコードの `Images_AIOptout`（field別の元文字列との完全一致）を適用する。検証・canonical path・共有画像の拒否優先・参照フィルタは上流 `pkg/ai-image-policy.mjs` を使用する。`false` は上位や他の参照元の拒否を解除しない。
 - 全作品の補完済みレコードを出力前に走査し、同一実画像のいずれかの参照が拒否なら全参照から外す。`images`、`preferred_reference_images`、`ai_hints` と `data.AIHints` の参照、`data.Images`、画像インデックス・作品JSONの全走査結果へ同じ許可集合を適用する。`Images_AIOptout` 自体も除外パスを持つため出力しない。原本は変更しない。

@@ -99,6 +99,16 @@ test('画像ポリシー: typedef・個別・上位・連名の拒否を全出�
     { Num: 5, Progress: 'draft', AppearanceDetail: [{ img_PNGName: 'draft-detail' }] },
     { Num: 6, Progress: 'ready', AppearanceDetail: [{ img_PNGName: 'standalone' }, { img_PNGName: 'detail-missing' }] },
   ];
+  write('data/Works_Test/Dictionaries/dict_Formation.json', [{ Formation: 'corefolder' }, { Formation: 'humanoid' }]);
+  for (const [i, Formation] of ['corefolder', 'humanoid'].entries()) {
+    const raw = records[i].Images.arts_PNGPath ?? [];
+    records[i].Images.arts_PNGPath = [...raw, 'pair', 'blocked-pair'];
+    records[i].Images_Appearance = { arts_PNGPath: [{ value: 'pair', Formation }, { value: 'blocked-pair' }] };
+  }
+  records[1].Images_AIOptout.arts_PNGPath = ['blocked-pair'];
+  records[1].Images_Appearance.arts_PNGPath.push({ value: 'pair', Formation: 'corefolder' });
+  makeImage('Primary', 'arts', 'pair');
+  makeImage('Primary', 'arts', 'blocked-pair');
   write('data/Works_Test/DataBases/db_Primary.json', records);
   write('data/Works_Test/DataBases/db_Secondary.json', [{ Num: 3, Progress: 'ready', Images: { concept_PNGName: 'upper' },
     AppearanceDetail: [{ img_PNGName: 'db-denied' }, { img_PNGName: 'detail' }] }]);
@@ -140,7 +150,12 @@ test('画像ポリシー: typedef・個別・上位・連名の拒否を全出�
   assert.equal(validation.status, 0, validation.stdout + validation.stderr);
   const manifest = fs.readFileSync(path.join(output, 'manifest.jsonl'), 'utf8').trim().split('\n').map(JSON.parse);
   const character = manifest.find(record => record._type === 'character' && record.id === '1');
-  assert.deepEqual(character.images, { corefolder: [image('Primary', 'corefolder', 'keep')] });
+  const pair = image('Primary', 'arts', 'pair');
+  assert.deepEqual(character.images, { corefolder: [image('Primary', 'corefolder', 'keep')],
+    arts: [{ path: pair, form: 'corefolder', characters: ['1', '2'] }] });
+  const second = manifest.find(record => record._type === 'character' && record.id === '2');
+  assert.deepEqual(second.images.arts, [{ path: pair, form: null, forms: ['corefolder', 'humanoid'], characters: ['1', '2'] }]);
+  assert.equal(character.data.Images_Appearance, undefined);
   assert.deepEqual(character.data.Images.corefolder_PNGPath, ['keep']);
   assert.deepEqual(character.ai_hints.common.identity_tags, ['preserved']);
   assert.deepEqual(character.data.AppearanceDetail.map(item => item.Costume), ['usual', 'usual', 'usual', 'usual']);
@@ -150,7 +165,7 @@ test('画像ポリシー: typedef・個別・上位・連名の拒否を全出�
   assert.deepEqual(Object.keys(character.ai_hints.common.reference_images), ['main', 'stageDetail']);
   const index = JSON.parse(fs.readFileSync(path.join(output, 'image-index.json'), 'utf8'));
   assert.deepEqual(index.works['#Works_Test'].images.map(entry => entry.path).sort(),
-    [image('Primary', 'corefolder', 'keep'), detailImage, image('Primary', 'attr/wing', 'standalone'),
+    [pair, image('Primary', 'corefolder', 'keep'), detailImage, image('Primary', 'attr/wing', 'standalone'),
       image('Primary', 'attr/numberMark', 'stage-detail'), referenceImage, localizationImage].sort());
   const detailEntry = index.works['#Works_Test'].images.find(entry => entry.path === detailImage);
   assert.equal(detailEntry.category, null);
@@ -176,6 +191,16 @@ test('画像ポリシー: typedef・個別・上位・連名の拒否を全出�
   assert.notEqual(ambiguous.status, 0);
   assert.match(ambiguous.stderr, /部位図の実ファイル名が曖昧/);
   records[0].AppearanceDetail.pop();
+  const appearance = records[0].Images_Appearance;
+  for (const invalid of [{ typo: [] }, { arts_PNGPath: [{ value: 'not-in-gallery' }] },
+    { arts_PNGPath: [{ value: 'pair', Formation: 'typo' }] }]) {
+    records[0].Images_Appearance = invalid;
+    write('data/Works_Test/DataBases/db_Primary.json', records);
+    const failure = run('build-dataset.js');
+    assert.notEqual(failure.status, 0);
+    assert.match(failure.stderr, /Images_Appearance/);
+  }
+  records[0].Images_Appearance = appearance;
   write('data/Works_Test/DataBases/db_Primary.json', records);
   write('data/Works_Test/Dictionaries/dict_Costume.json', [{ Costume: 'stage', AI_Optout: 'true' }]);
   const oldManifest = fs.readFileSync(path.join(output, 'manifest.jsonl'), 'utf8');

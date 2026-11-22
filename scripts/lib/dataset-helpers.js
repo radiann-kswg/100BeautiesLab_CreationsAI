@@ -48,6 +48,8 @@ export function findFirstImagePath(entries, { form = null, pathIncludes = null }
     if (typeof entry !== 'object' || entry === null) return false;
     if (typeof entry.path !== 'string') return false;
     if (form && entry.form === form) return true;
+    if (form && Array.isArray(entry.forms) && entry.forms.includes(form)) return true;
+    if (form && (entry.form || Array.isArray(entry.characters))) return false;
     if (pathIncludes && entry.path.includes(pathIncludes)) return true;
     return false;
   });
@@ -99,6 +101,8 @@ export function buildPreferredReferenceImages(images) {
   const corefolderArt = findFirstImagePath(images.arts, { form: 'corefolder', pathIncludes: '/arts/corefolders/' });
   const humanoidArt = findFirstImagePath(images.arts, { form: 'humanoid', pathIncludes: '/arts/humanoids/' });
   const genericArt = firstPath(images.arts);
+  const unclassifiedArt = firstPath(images.arts?.filter(entry =>
+    typeof entry === 'string' || (entry && !entry.form && !Array.isArray(entry.characters))));
 
   const common = {};
   const main = catalog ?? designSheet ?? concept ?? genericArt ?? corefolderArt ?? humanoidArt ?? corefolderDirect ?? humanoidDirect;
@@ -109,7 +113,7 @@ export function buildPreferredReferenceImages(images) {
   if (conceptAlt.length > 0) common.concept_variants = conceptAlt;
 
   const forms = {};
-  const corefolderMain = catalog ?? corefolderArt ?? concept ?? genericArt ?? corefolderDirect ?? designSheet ?? null;
+  const corefolderMain = catalog ?? corefolderArt ?? concept ?? unclassifiedArt ?? corefolderDirect ?? designSheet ?? null;
   if (corefolderMain || corefolderDirect) {
     forms.corefolder = {
       main: corefolderMain ?? corefolderDirect,
@@ -117,7 +121,7 @@ export function buildPreferredReferenceImages(images) {
     };
   }
 
-  const humanoidMain = humanoidArt ?? concept ?? genericArt ?? catalog ?? humanoidDirect ?? designSheet ?? null;
+  const humanoidMain = humanoidArt ?? concept ?? unclassifiedArt ?? catalog ?? humanoidDirect ?? designSheet ?? null;
   if (humanoidMain || humanoidDirect) {
     forms.humanoid = {
       main: humanoidMain ?? humanoidDirect,

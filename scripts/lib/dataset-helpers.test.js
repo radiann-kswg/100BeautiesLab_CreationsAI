@@ -52,6 +52,17 @@ test('buildPreferredReferenceImages: corefolder main は catalog を優先し、
   assert.equal(refs.forms.humanoid.main, 'data/Works_NumberTales/Images/DB_Primary/arts/humanoids/2024/art_imgNTS-222-humanoidA.png');
 });
 
+test('本人の確認済み形態をフォルダ名より優先し、複数形態と未確認を区別する', () => {
+  const path = '/arts/corefolders/event.png';
+  const single = buildPreferredReferenceImages({ arts: [{ path, form: 'humanoid', characters: ['1'] }] });
+  assert.equal(single.forms.corefolder, undefined);
+  assert.equal(single.forms.humanoid.main, path);
+  const mixed = buildPreferredReferenceImages({ arts: [{ path, form: null, forms: ['corefolder','humanoid'], characters: ['1'] }] });
+  assert.equal(mixed.forms.corefolder.main, path);
+  assert.equal(mixed.forms.humanoid.main, path);
+  assert.equal(buildPreferredReferenceImages({ arts: [{ path, form: null, characters: ['1'] }] }).forms, undefined);
+});
+
 test('buildDerivedAiHints: NumberTales の allowed レコードにだけ scaffold を補う', () => {
   const images = {
     concept: ['data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_imgNTS-222.png'],
