@@ -215,7 +215,7 @@ node scripts/build-dataset.js --verbose
 
 - `AI_Optout` のJSON宣言・実値はCreationsDBのdevelopを正典とし、addon-ai-tagへ一方向マージして利用する。AIHints・AI_Unready・AI API実装のaddon管理とは分け、許諾値をこちらで二重管理しない。
 - 画像fieldのtypedef `AI_Optout: true` とレコードの `Images_AIOptout`（field別の元文字列との完全一致）を適用する。検証・canonical path・共有画像の拒否優先・参照フィルタは上流 `pkg/ai-image-policy.mjs` を使用する。`false` は上位や他の参照元の拒否を解除しない。
-- 全作品の補完済みレコードを出力前に走査し、同一実画像のいずれかの参照が拒否なら全参照から外す。`images`、`preferred_reference_images`、`ai_hints` と `data.AIHints` の参照、`data.Images`、画像インデックス・作品JSONの全走査結果へ同じ許可集合を適用する。`Images_AIOptout` 自体も除外パスを持つため出力しない。原本は変更しない。
+- 全作品の補完済みレコードを出力前に走査し、同一実画像のいずれかの参照が拒否なら全参照から外す。ただし `_DBCrossLinkPath` など他DBへの参照元が拒否に数えられるのは**権利軸**（`Works_Hidden` / `DB_Hidden` / `AI_Optout` / `isPrivate` / カテゴリ別 `AI_Optout` / `Images_AIOptout`）で拒否されている場合だけ。**充填軸**（Progress の `AI_Unready`。制作途中など）の参照元は拒否を登録せず、持ち主レコードの判定に任せる（Issue #5: 制作途中の NumberTales レコードが参照する錦野歌嫁・錦野舞の concept 画像が消えていた）。`images`、`preferred_reference_images`、`ai_hints` と `data.AIHints` の参照、`data.Images`、画像インデックス・作品JSONの全走査結果へ同じ許可集合を適用する。`Images_AIOptout` 自体も除外パスを持つため出力しない。原本は変更しない。
 - 未登録DBは拒否側で走査し、許可元を立証できない画像・未知の参照URLは出力しない。別DB画像へのwrapperだけで参照先の許可を推定しない。未参照画像もインデックスから外れるため、画像件数の減少は期待される。
 - `AppearanceDetail[].img_PNGName` も画像宣言として扱う。同じDBの `Images/<DB>/attr/**` を走査し、宣言された実ファイル名を照合する（拡張子は省略可・大小文字を無視し、ファイル名本体は完全一致）。種類名・番号・別DBの同名ファイルから推定しない。同じDBで名前が曖昧なら生成を停止する。部位図の可否は既存のレコード判定と共有画像の拒否優先に従う。`Images.*` 用の画像単位指定や衣装除外を部位図へ転用しない（61の通常・idolで共用する番号図も保持する）。未宣言attr画像は許可しない。部位図単位の除外方法は今回追加しない。
 - 画像権利の集計は各layerのcatalog/typedefを読み、DB/Ref/Loc（db_/ref_/trans_）と `Works_ImagesDir` を解決する。直接読込にも既存WorkerのCommons補完を適用する。公開参考資料の宣言済み画像やDB_Imageは維持し、作業用dot-directoryは走査しない。

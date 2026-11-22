@@ -72,6 +72,8 @@ test('画像ポリシー: typedef・個別・上位・連名の拒否を全出�
   write('data/Works_Test/Localization/db_type.json', { $DefType: [{ hashTag: 'Images', $type: [{ hashTag: 'custom_PNGName', $type: '#PNGFileName' }] }] });
   write('data/Works_Test/Localization/trans_Label.json', [{ Term_JP: '呼称', Images: { custom_PNGName: 'label' } }]);
   write('data/Works_Test/Localization/trans_Private.json', [{ Term_JP: '除外', Images: { custom_PNGName: 'private' } }]);
+  // 参照元の拒否は権利軸だけ伝わり、充填軸（draft = AI_Unready）は持ち主の許可を消さない（Issue #5）
+  const crossLink = name => ({ _DBCrossLinkPath: { _DB: 'Primary', _Field: 'concept_PNGName', _IsoPath: name } });
   const records = [
     { Num: 1, Progress: 'ready', Images: {
       concept_PNGName: 'joint', conceptAlt_PNGName: ['typed'], corefolder_PNGPath: ['keep', 'file'],
@@ -93,11 +95,14 @@ test('画像ポリシー: typedef・個別・上位・連名の拒否を全出�
     _meta: { structuralEntries: { 'common.identity_tags': ['unique golden ribbon (stage outfit)'] } },
     work_common: { reference_images: { main: `https://database.numbertales-radiann.net/${referenceImage}` } } } },
     { Num: 2, Progress: 'ready', Images: { concept_PNGName: 'joint' }, Images_AIOptout: { concept_PNGName: ['joint'] } },
-    { Num: 3, Progress: 'ready', AI_Optout: true,
+    { Num: 3, Progress: 'ready', AI_Optout: true, Images: { corefolder_PNGPath: [crossLink('optout-ref')] },
       AppearanceDetail: [{ img_PNGName: 'record-denied' }, { img_PNGName: 'shared-detail.png' }] },
     { Num: 4, Progress: 'ready', isPrivate: true, AppearanceDetail: [{ img_PNGName: 'private-detail' }] },
-    { Num: 5, Progress: 'draft', AppearanceDetail: [{ img_PNGName: 'draft-detail' }] },
-    { Num: 6, Progress: 'ready', AppearanceDetail: [{ img_PNGName: 'standalone' }, { img_PNGName: 'detail-missing' }] },
+    { Num: 5, Progress: 'draft', Images: { corefolder_PNGPath: [crossLink('unready-ref')] },
+      AppearanceDetail: [{ img_PNGName: 'draft-detail' }] },
+    { Num: 6, Progress: 'ready', Images: { concept_PNGName: 'unready-ref' },
+      AppearanceDetail: [{ img_PNGName: 'standalone' }, { img_PNGName: 'detail-missing' }] },
+    { Num: 7, Progress: 'ready', Images: { concept_PNGName: 'optout-ref' } },
   ];
   write('data/Works_Test/Dictionaries/dict_Formation.json', [{ Formation: 'corefolder' }, { Formation: 'humanoid' }]);
   for (const [i, Formation] of ['corefolder', 'humanoid'].entries()) {
@@ -122,7 +127,8 @@ test('画像ポリシー: typedef・個別・上位・連名の拒否を全出�
   write('data/Works_Hidden/DataBases/db_Primary.json', [{ Num: 4 }]);
   for (const [db, folder, name] of [['Primary', 'concept', 'joint'], ['Primary', 'conceptAlt', 'typed'],
     ['Primary', 'corefolder', 'keep'], ['Primary', 'corefolder', 'file'], ['Secondary', 'concept', 'upper'],
-    ['Primary', 'concept', 'orphan'], ['Primary', 'attr/custom/nested', 'detail'],
+    ['Primary', 'concept', 'orphan'], ['Primary', 'concept', 'unready-ref'], ['Primary', 'concept', 'optout-ref'],
+    ['Primary', 'attr/custom/nested', 'detail'],
     ['Primary', 'attr/wing', 'standalone'], ['Secondary', 'attr/custom', 'detail'],
     ['Secondary', 'attr/numberMark', 'detail-missing'],
     ...['shared-detail', 'record-denied', 'private-detail', 'draft-detail', 'stage-detail', 'orphan-detail']
@@ -163,9 +169,13 @@ test('画像ポリシー: typedef・個別・上位・連名の拒否を全出�
   assert.deepEqual(character.ai_hints._meta.structuralEntries['common.identity_tags'], []);
   assert.equal(character.ai_hints.work_common.reference_images.main, `https://database.numbertales-radiann.net/${referenceImage}`);
   assert.deepEqual(Object.keys(character.ai_hints.common.reference_images), ['main', 'stageDetail']);
+  const primary = id => manifest.find(record => record._type === 'character' && record.id === id && record.db_key === '#DB_Primary');
+  assert.equal(primary('6').data.Images.concept_PNGName, 'unready-ref');
+  assert.equal(primary('7').data.Images.concept_PNGName, null);
   const index = JSON.parse(fs.readFileSync(path.join(output, 'image-index.json'), 'utf8'));
   assert.deepEqual(index.works['#Works_Test'].images.map(entry => entry.path).sort(),
-    [pair, image('Primary', 'corefolder', 'keep'), detailImage, image('Primary', 'attr/wing', 'standalone'),
+    [pair, image('Primary', 'corefolder', 'keep'), image('Primary', 'concept', 'unready-ref'),
+      detailImage, image('Primary', 'attr/wing', 'standalone'),
       image('Primary', 'attr/numberMark', 'stage-detail'), referenceImage, localizationImage].sort());
   const detailEntry = index.works['#Works_Test'].images.find(entry => entry.path === detailImage);
   assert.equal(detailEntry.category, null);

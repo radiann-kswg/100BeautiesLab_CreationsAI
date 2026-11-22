@@ -1367,10 +1367,13 @@ export async function collectSourceImagePermissions(client, creationWorks, progr
             ...(Array.isArray(record.Images?.[metadata]) ? record.Images[metadata].map(item => item?.path) : [])];
           for (const value of values) {
             const resolved = resolveImageArrayEntry(value, path.join(base, folder), field, path.basename(workDir));
-            const permitted = policy.allowed && !imagePolicy.isImageOptedOut(record, imageFields, field, value);
+            if (!resolved) continue;
+            const optedOut = imagePolicy.isImageOptedOut(record, imageFields, field, value);
             // 別DBへの参照だけでは参照先の許諾を立証しない。参照先自身の宣言を必要とする。
-            const owned = typeof value === 'string' && resolved?.startsWith(path.relative(SUBMODULE, base).replace(/\\/g, '/') + '/');
-            if (resolved && (owned || !permitted)) permissions.add(resolved, permitted);
+            const owned = typeof value === 'string' && resolved.startsWith(path.relative(SUBMODULE, base).replace(/\\/g, '/') + '/');
+            if (owned) permissions.add(resolved, policy.allowed && !optedOut);
+            // 参照元からの拒否は権利軸だけ伝える。充填軸（Progress の AI_Unready）は持ち主の判定に任せる。
+            else if (optedOut || !getImageRecordPolicy(top, dbEntry, record, null).allowed) permissions.add(resolved, false);
           }
         }
       }

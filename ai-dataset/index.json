@@ -10,7 +10,7 @@
       "title_en": "NumberTales",
       "character_count": 1117,
       "character_catalog_path": "works/Works_NumberTales.json",
-      "image_count": 576,
+      "image_count": 577,
       "ai_training": {
         "allowed": true,
         "allowed_db_keys": [
@@ -72,7 +72,7 @@
       "title_en": "Sinister Changing Girls",
       "character_count": 28,
       "character_catalog_path": "works/Works_SinisterChangingGirls.json",
-      "image_count": 14,
+      "image_count": 16,
       "ai_training": {
         "allowed": true,
         "allowed_db_keys": [
