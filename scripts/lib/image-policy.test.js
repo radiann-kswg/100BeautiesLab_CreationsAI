@@ -112,6 +112,9 @@ test('画像ポリシー: typedef・個別・上位・連名の拒否を全出�
   }
   records[1].Images_AIOptout.arts_PNGPath = ['blocked-pair'];
   records[1].Images_Appearance.arts_PNGPath.push({ value: 'pair', Formation: 'corefolder' });
+  // #63: null は共通、キー無しは未確認。参考用区分は許諾と独立に投影だけする。
+  records[0].Images_Appearance.arts_PNGPath.push({ value: 'pair', Costume: null, ReferenceOnly: true });
+  records[1].Images_Appearance.arts_PNGPath.push({ value: 'pair', Formation: null });
   makeImage('Primary', 'arts', 'pair');
   makeImage('Primary', 'arts', 'blocked-pair');
   write('data/Works_Test/DataBases/db_Primary.json', records);
@@ -158,9 +161,9 @@ test('画像ポリシー: typedef・個別・上位・連名の拒否を全出�
   const character = manifest.find(record => record._type === 'character' && record.id === '1');
   const pair = image('Primary', 'arts', 'pair');
   assert.deepEqual(character.images, { corefolder: [image('Primary', 'corefolder', 'keep')],
-    arts: [{ path: pair, form: 'corefolder', characters: ['1', '2'] }] });
+    arts: [{ path: pair, form: 'corefolder', costume_common: true, reference_only: true, characters: ['1', '2'] }] });
   const second = manifest.find(record => record._type === 'character' && record.id === '2');
-  assert.deepEqual(second.images.arts, [{ path: pair, form: null, forms: ['corefolder', 'humanoid'], characters: ['1', '2'] }]);
+  assert.deepEqual(second.images.arts, [{ path: pair, form: null, forms: ['corefolder', 'humanoid'], form_common: true, characters: ['1', '2'] }]);
   assert.equal(character.data.Images_Appearance, undefined);
   assert.deepEqual(character.data.Images.corefolder_PNGPath, ['keep']);
   assert.deepEqual(character.ai_hints.common.identity_tags, ['preserved']);
@@ -203,7 +206,8 @@ test('画像ポリシー: typedef・個別・上位・連名の拒否を全出�
   records[0].AppearanceDetail.pop();
   const appearance = records[0].Images_Appearance;
   for (const invalid of [{ typo: [] }, { arts_PNGPath: [{ value: 'not-in-gallery' }] },
-    { arts_PNGPath: [{ value: 'pair', Formation: 'typo' }] }]) {
+    { arts_PNGPath: [{ value: 'pair', Formation: 'typo' }] }, { arts_PNGPath: [{ value: 'pair', Costume: 'typo' }] },
+    { arts_PNGPath: [{ value: 'pair', ReferenceOnly: 'true' }] }, { arts_PNGPath: [{ value: 'pair', AI_Optout: true }] }]) {
     records[0].Images_Appearance = invalid;
     write('data/Works_Test/DataBases/db_Primary.json', records);
     const failure = run('build-dataset.js');

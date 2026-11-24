@@ -63,6 +63,19 @@ test('本人の確認済み形態をフォルダ名より優先し、複数形�
   assert.equal(buildPreferredReferenceImages({ arts: [{ path, form: null, characters: ['1'] }] }).forms, undefined);
 });
 
+test('代表画像には確認済み・共通の画像だけを選び、参考用と未確認の arts を選ばない (#63)', () => {
+  const common = buildPreferredReferenceImages({ arts: [{ path: 'a/common.png', form: null, form_common: true, characters: ['1'] }] });
+  assert.equal(common.forms.corefolder.main, 'a/common.png');
+  assert.equal(common.forms.humanoid.main, 'a/common.png');
+  const reference = buildPreferredReferenceImages({ arts: [
+    { path: '/arts/humanoids/work-suit.png', form: 'humanoid', reference_only: true, characters: ['1'] },
+    { path: '/arts/humanoids/usual.png', form: 'humanoid', characters: ['1'] },
+  ] });
+  assert.equal(reference.forms.humanoid.main, '/arts/humanoids/usual.png');
+  assert.equal(reference.common.main, '/arts/humanoids/usual.png');
+  assert.equal(buildPreferredReferenceImages({ arts: [{ path: '/arts/event.png', form: null, characters: null }] }).forms, undefined);
+});
+
 test('buildDerivedAiHints: NumberTales の allowed レコードにだけ scaffold を補う', () => {
   const images = {
     concept: ['data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_imgNTS-222.png'],
