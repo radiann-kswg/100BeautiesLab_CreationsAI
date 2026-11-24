@@ -12,7 +12,7 @@
       "is_private": "data/Works_<work>/DataBases/db_*.json — <record>.isPrivate（レコード単位の非公開）",
       "progress_unready": "data/db_meta.json — General.$VarsDef.$EnumDef_Progress[*].AI_Unready（進捗段階ごとの「AI 学習へ供する内容が無い」宣言。充填軸。未宣言のエントリは isForSecondary === true をフォールバックとして使う）",
       "image_optout": "Images field typedef AI_Optout / record.Images_AIOptout (exact raw field/value match). Any denied co-reference denies the physical image globally; unknown image permission is denied.",
-      "art_appearances": "Images_Appearance annotates permitted arts with the current character’s form and confirmed character IDs from the same work. It never grants image permission.",
+      "art_appearances": "Images_Appearance annotates permitted arts / design_alt images with the current character’s form, costume, reference-only flag and confirmed character IDs from the same work. A dictionary code means confirmed, null means common to all (form_common / costume_common), and a missing key means unconfirmed. It never grants or revokes image permission.",
       "appearance_detail_images": "AppearanceDetail[].img_PNGName declares body-detail images by actual filename within the same DB attr tree. These follow record permission and shared-image denial, independently of Images field or costume exclusions; undeclared attr images remain excluded.",
       "costume_optout": "Dictionaries/dict_Costume.json rows with AI_Optout: true exclude matching AppearanceDetail and costume-scoped AIHints descriptions, including composite prompt strings."
     },
