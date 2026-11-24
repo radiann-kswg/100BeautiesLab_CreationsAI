@@ -282,7 +282,7 @@ async function main() {
       is_private:             'data/Works_<work>/DataBases/db_*.json — <record>.isPrivate（レコード単位の非公開）',
       progress_unready:       'data/db_meta.json — General.$VarsDef.$EnumDef_Progress[*].AI_Unready（進捗段階ごとの「AI 学習へ供する内容が無い」宣言。充填軸。未宣言のエントリは isForSecondary === true をフォールバックとして使う）',
       image_optout: 'Images field typedef AI_Optout / record.Images_AIOptout (exact raw field/value match). Any denied co-reference denies the physical image globally; unknown image permission is denied.',
-      art_appearances: 'Images_Appearance annotates permitted arts with the current character’s form and confirmed character IDs from the same work. It never grants image permission.',
+      art_appearances: 'Images_Appearance annotates permitted arts / design_alt images with the current character’s form, costume, reference-only flag and confirmed character IDs from the same work. A dictionary code means confirmed, null means common to all (form_common / costume_common), and a missing key means unconfirmed. It never grants or revokes image permission.',
       appearance_detail_images: 'AppearanceDetail[].img_PNGName declares body-detail images by actual filename within the same DB attr tree. These follow record permission and shared-image denial, independently of Images field or costume exclusions; undeclared attr images remain excluded.',
       costume_optout: 'Dictionaries/dict_Costume.json rows with AI_Optout: true exclude matching AppearanceDetail and costume-scoped AIHints descriptions, including composite prompt strings.',
     },
@@ -518,7 +518,9 @@ async function main() {
         const images = Object.fromEntries(Object.entries(resolveCharacterImages(workDir, charId, charData, dbMetaKey, imageMisses))
           .map(([key, values]) => [key, values.filter(value => recordPermittedImage(typeof value === 'string' ? value : value.path))])
           .filter(([, values]) => values.length > 0));
-        if (images.arts) images.arts = projectArtAppearances(images.arts, artAppearances, workKey, dbMetaKey, charId);
+        for (const key of ['arts', 'design_alt']) {
+          if (images[key]) images[key] = projectArtAppearances(images[key], artAppearances, workKey, dbMetaKey, charId);
+        }
         charData = filterRecordImageData(charData, workDir, dbMetaKey, recordPermittedImage, costumeRows, imageRoot);
         for (const miss of imageMisses) {
           unresolvedImageRefs.push({ work_key: workKey, db: dbRelPath, id: charId, ...miss });
@@ -1286,6 +1288,7 @@ export async function collectSourceImagePermissions(client, creationWorks, progr
     const workType = readJSON(path.join(dbDir, 'db_type.json'));
     if (!meta || !workType) throw new Error(`画像権利のメタ・型を読めません: ${workKey}`);
     let formationCodes;
+    let costumeCodes;
     filterCostumeOptouts({}, loadCostumeRows(workDir));
     const catalogDirs = new Set([dbDir, ...readdirSorted(workDir)
       .filter(entry => entry.isDirectory() && !entry.name.startsWith('.') && fs.existsSync(path.join(workDir, entry.name, 'db_meta.json')))
@@ -1346,7 +1349,8 @@ export async function collectSourceImagePermissions(client, creationWorks, progr
         const id = String(record.Num ?? record.ID ?? record.Id ?? record.id ?? record.Key ?? record.Code ?? record.Name_JP ?? record.Term_JP ?? record.Name ?? idx);
         if (record.Images_Appearance != null) {
           formationCodes ??= new Set(loadWorkDictionary(workDir, 'Formation').map(row => row.Formation));
-          collectArtAppearance(record, { workKey, dbKey, id, base, dirName, imageFields, formationCodes, policy }, artAppearances);
+          costumeCodes ??= new Set(loadCostumeRows(workDir).map(row => row.Costume));
+          collectArtAppearance(record, { workKey, dbKey, id, base, dirName, imageFields, formationCodes, costumeCodes, policy }, artAppearances);
         }
         const images = resolveCharacterImages(workDir, id, record, dbKey);
         for (const [key, values] of Object.entries(images)) {
@@ -1423,42 +1427,66 @@ function loadWorkDictionary(workDir, field) {
 /** 衣装の権利指定を原本の値で返す。 */
 export function loadCostumeRows(workDir) { return loadWorkDictionary(workDir, 'Costume'); }
 
-/** 同じ実画像での登場を本人のレコードから収集する。画像の許可表には書き込まない。 */
+const APPEARANCE_ROW_KEYS = ['value', 'Formation', 'Costume', 'ReferenceOnly'];
+
+/** 辞書コードの指定を検証する。キー無し（未確認）と null（共通）は常に妥当。 */
+const isAppearanceCode = (row, name, codes) =>
+  !Object.hasOwn(row, name) || row[name] === null || (typeof row[name] === 'string' && codes.has(row[name]));
+
+/**
+ * 同じ実画像での登場を本人のレコードから収集する。画像の許可表には書き込まない。
+ * Formation / Costume は辞書コード＝確認済み、null＝共通、キー無し＝未確認として区別して持つ（Issue #63）。
+ */
 function collectArtAppearance(record, ctx, index) {
   const table = record.Images_Appearance;
-  const field = 'arts_PNGPath';
   const invalid = () => new Error(`Images_Appearance の指定が不正です: ${ctx.workKey}/${ctx.dbKey}/${ctx.id}`);
-  if (typeof table !== 'object' || Array.isArray(table) || Object.keys(table).some(key => key !== field)) throw invalid();
-  if (!Object.hasOwn(table, field)) return;
-  if (!ctx.dbKey.startsWith('#DB_') || !ctx.imageFields.some(def => def.hashTag === field)
-      || !Object.hasOwn(record.Images ?? {}, field) || !Array.isArray(table[field])) throw invalid();
-  const originals = [record.Images?.[field]].flat();
-  for (const row of table[field]) {
-    if (!row || typeof row !== 'object' || Object.keys(row).some(key => !['value', 'Formation'].includes(key))
-        || !row.value || (typeof row.value !== 'string' && !row.value._DBCrossLinkPath)
-        || !originals.some(value => isDeepStrictEqual(value, row.value))
-        || (row.Formation != null && (typeof row.Formation !== 'string' || !ctx.formationCodes.has(row.Formation)))) throw invalid();
-    const resolved = resolveImageArrayEntry(row.value, path.join(ctx.base, 'arts'), field, ctx.dirName);
-    if (!resolved) throw invalid();
-    if (!ctx.policy.allowed) continue;
-    if (!index.has(resolved)) index.set(resolved, new Map());
-    const owners = index.get(resolved);
-    const key = JSON.stringify([ctx.workKey, ctx.dbKey, ctx.id]);
-    if (!owners.has(key)) owners.set(key, { workKey: ctx.workKey, id: ctx.id, forms: new Set() });
-    owners.get(key).forms.add(row.Formation ?? null);
+  if (typeof table !== 'object' || Array.isArray(table)) throw invalid();
+  for (const [field, rows] of Object.entries(table)) {
+    const spec = imageFieldSpecs([field]).find(entry => entry.field === field);
+    if (!spec || !ctx.dbKey.startsWith('#DB_') || !ctx.imageFields.some(def => def.hashTag === field)
+        || !Object.hasOwn(record.Images ?? {}, field) || !Array.isArray(rows)) throw invalid();
+    const originals = [record.Images?.[field]].flat();
+    for (const row of rows) {
+      if (!row || typeof row !== 'object' || Object.keys(row).some(key => !APPEARANCE_ROW_KEYS.includes(key))
+          || !row.value || (typeof row.value !== 'string' && !row.value._DBCrossLinkPath)
+          || !originals.some(value => isDeepStrictEqual(value, row.value))
+          || !isAppearanceCode(row, 'Formation', ctx.formationCodes) || !isAppearanceCode(row, 'Costume', ctx.costumeCodes)
+          || (Object.hasOwn(row, 'ReferenceOnly') && typeof row.ReferenceOnly !== 'boolean')) throw invalid();
+      const resolved = resolveImageArrayEntry(row.value, path.join(ctx.base, spec.folder), field, ctx.dirName);
+      if (!resolved) throw invalid();
+      if (!ctx.policy.allowed) continue;
+      if (!index.has(resolved)) index.set(resolved, new Map());
+      const owners = index.get(resolved);
+      const key = JSON.stringify([ctx.workKey, ctx.dbKey, ctx.id]);
+      if (!owners.has(key)) owners.set(key, { workKey: ctx.workKey, id: ctx.id, forms: new Set(), costumes: new Set(), referenceOnly: false });
+      const owner = owners.get(key);
+      // undefined は未確認、null は共通。両者を同じ値へ潰さない。
+      owner.forms.add(Object.hasOwn(row, 'Formation') ? row.Formation : undefined);
+      owner.costumes.add(Object.hasOwn(row, 'Costume') ? row.Costume : undefined);
+      if (row.ReferenceOnly === true) owner.referenceOnly = true;
+    }
   }
 }
 
-/** 許可済みの arts に本人の形態と同一作品の登場IDを投影する。未確認の行は従来形式を保つ。 */
+/**
+ * 許可済みの arts / design_alt に本人の形態・衣装・参考用区分と同一作品の登場IDを投影する。
+ * 対応表に無い行は従来形式を保つ。共通指定は form_common / costume_common で示す。
+ */
 export function projectArtAppearances(arts, index, workKey, dbKey, id) {
   return arts.map(art => {
     const owners = index.get(art.path);
     const owner = owners?.get(JSON.stringify([workKey, dbKey, id]));
     if (!owner) return art;
     const characters = new Set([...owners.values()].filter(entry => entry.workKey === workKey).map(entry => entry.id));
-    const forms = [...owner.forms].filter(Boolean).sort();
+    const forms = [...owner.forms].filter(form => typeof form === 'string').sort();
+    const costumes = [...owner.costumes].filter(costume => typeof costume === 'string').sort();
     return { ...art, form: forms.length === 1 ? forms[0] : null,
-      ...(forms.length > 1 ? { forms } : {}), characters: [...characters].sort() };
+      ...(forms.length > 1 ? { forms } : {}),
+      ...(owner.forms.has(null) ? { form_common: true } : {}),
+      ...(costumes.length === 1 ? { costume: costumes[0] } : costumes.length > 1 ? { costumes } : {}),
+      ...(owner.costumes.has(null) ? { costume_common: true } : {}),
+      ...(owner.referenceOnly ? { reference_only: true } : {}),
+      characters: [...characters].sort() };
   });
 }
 

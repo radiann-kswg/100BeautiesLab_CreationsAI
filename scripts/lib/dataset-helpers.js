@@ -39,7 +39,10 @@ export function extractImagePaths(entries) {
   }).filter(Boolean);
 }
 
-/** arts / design_alt のような { path, form, characters } 配列から form を優先して 1 件選ぶ */
+/**
+ * arts / design_alt のような { path, form, characters } 配列から form を優先して 1 件選ぶ。
+ * 参考用（reference_only）は選ばず、共通指定（form_common）はどの形態にも一致させる。
+ */
 export function findFirstImagePath(entries, { form = null, pathIncludes = null } = {}) {
   if (!Array.isArray(entries) || entries.length === 0) return null;
   const hasMatcher = !!(form || pathIncludes);
@@ -47,6 +50,8 @@ export function findFirstImagePath(entries, { form = null, pathIncludes = null }
   const fromObjects = entries.find((entry) => {
     if (typeof entry !== 'object' || entry === null) return false;
     if (typeof entry.path !== 'string') return false;
+    if (entry.reference_only) return false;
+    if (form && entry.form_common) return true;
     if (form && entry.form === form) return true;
     if (form && Array.isArray(entry.forms) && entry.forms.includes(form)) return true;
     if (form && (entry.form || Array.isArray(entry.characters))) return false;
@@ -100,9 +105,8 @@ export function buildPreferredReferenceImages(images) {
   const humanoidDirect = firstPath(images.humanoid);
   const corefolderArt = findFirstImagePath(images.arts, { form: 'corefolder', pathIncludes: '/arts/corefolders/' });
   const humanoidArt = findFirstImagePath(images.arts, { form: 'humanoid', pathIncludes: '/arts/humanoids/' });
-  const genericArt = firstPath(images.arts);
-  const unclassifiedArt = firstPath(images.arts?.filter(entry =>
-    typeof entry === 'string' || (entry && !entry.form && !Array.isArray(entry.characters))));
+  // 参考用の画像は代表に選ばない。形態の手がかりが無い arts（未確認）も形態別の代表には使わない（#63）。
+  const genericArt = firstPath(images.arts?.filter(entry => !entry?.reference_only));
 
   const common = {};
   const main = catalog ?? designSheet ?? concept ?? genericArt ?? corefolderArt ?? humanoidArt ?? corefolderDirect ?? humanoidDirect;
@@ -113,7 +117,7 @@ export function buildPreferredReferenceImages(images) {
   if (conceptAlt.length > 0) common.concept_variants = conceptAlt;
 
   const forms = {};
-  const corefolderMain = catalog ?? corefolderArt ?? concept ?? unclassifiedArt ?? corefolderDirect ?? designSheet ?? null;
+  const corefolderMain = catalog ?? corefolderArt ?? concept ?? corefolderDirect ?? designSheet ?? null;
   if (corefolderMain || corefolderDirect) {
     forms.corefolder = {
       main: corefolderMain ?? corefolderDirect,
@@ -121,7 +125,7 @@ export function buildPreferredReferenceImages(images) {
     };
   }
 
-  const humanoidMain = humanoidArt ?? concept ?? unclassifiedArt ?? catalog ?? humanoidDirect ?? designSheet ?? null;
+  const humanoidMain = humanoidArt ?? concept ?? catalog ?? humanoidDirect ?? designSheet ?? null;
   if (humanoidMain || humanoidDirect) {
     forms.humanoid = {
       main: humanoidMain ?? humanoidDirect,

@@ -211,7 +211,8 @@ node scripts/build-dataset.js --verbose
 
 ### 画像単位のAI除外（2026-11-20）
 
-- 上流の `addon-ai-tag` が生成する `Images_Appearance.arts_PNGPath` を読み、同じ実パスで登場を確認した同一作品のレコード ID を `images.arts[].characters` に出す。本人が単一形態なら `form`、複数形態なら `form: null` と `forms` 配列、未確認なら `form: null`。権利判定後に投影し、入力表は配布用の `data` から取り除く。
+- 上流の `addon-ai-tag` の `Images_Appearance`（`arts_PNGPath` は生成、ほかの画像フィールドと `Costume` / `ReferenceOnly` は作者の手入力）を読み、同じ実パスで登場を確認した同一作品のレコード ID を `images.arts[]` / `images.design_alt[]` の `characters` に出す。本人が単一形態なら `form`、複数形態なら `form: null` と `forms` 配列、未確認なら `form: null`。`Formation` / `Costume` は辞書コード＝確認済み、`null`＝共通（`form_common` / `costume_common: true`）、キー無し＝未確認として区別し、衣装は `costume` / `costumes`、参考用区分は `reference_only: true` で出す。権利判定後に投影し、入力表は配布用の `data` から取り除く。`reference_only` は許諾を変えない。
+- `preferred_reference_images` の形態別の代表には、その形態に確認済み・共通の画像（または作者のフォルダ分け `arts/corefolders/` / `arts/humanoids/`）だけを選ぶ。`reference_only` の画像と、形態の手がかりが無い未確認の arts は代表に選ばない（CreationsDB #63）。
 
 - `AI_Optout` のJSON宣言・実値はCreationsDBのdevelopを正典とし、addon-ai-tagへ一方向マージして利用する。AIHints・AI_Unready・AI API実装のaddon管理とは分け、許諾値をこちらで二重管理しない。
 - 画像fieldのtypedef `AI_Optout: true` とレコードの `Images_AIOptout`（field別の元文字列との完全一致）を適用する。検証・canonical path・共有画像の拒否優先・参照フィルタは上流 `pkg/ai-image-policy.mjs` を使用する。`false` は上位や他の参照元の拒否を解除しない。
