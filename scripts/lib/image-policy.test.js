@@ -59,6 +59,7 @@ test('画像ポリシー: typedef・個別・上位・連名の拒否を全出�
       { hashTag: 'conceptAlt_PNGName', $type: '#PNGFileName[]', AI_Optout: true },
       { hashTag: 'corefolder_PNGPath', $type: '#PNGFilePath[]' },
       { hashTag: 'arts_PNGPath', $type: '#PNGFilePath[]' },
+      { hashTag: 'newYear_PNGPath', $type: '#PNGFilePath[]' },
     ] },
   ] });
   const referenceImage = 'data/Works_Test/Images/Ref_Vocabulary/concept-figure/body.png';
@@ -104,7 +105,13 @@ test('画像ポリシー: typedef・個別・上位・連名の拒否を全出�
       AppearanceDetail: [{ img_PNGName: 'standalone' }, { img_PNGName: 'detail-missing' }] },
     { Num: 7, Progress: 'ready', Images: { concept_PNGName: 'optout-ref' } },
   ];
-  write('data/Works_Test/Dictionaries/dict_Formation.json', [{ Formation: 'corefolder' }, { Formation: 'humanoid' }]);
+  write('data/Works_Test/Dictionaries/dict_Formation.json', [{ Formation: 'corefolder' }, { Formation: 'humanoid' },
+    { Formation: 'normal' }, { Formation: 'beasted' }]);
+  // 年賀絵だけを持つ子（巳刻カミツ SAR-EZ6 の形）。形態は Images_Appearance の確認済みコードだけを使う。
+  const newYearNames = ['art_imgSAR-EZ6-plain', 'art_imgSAR-EZ6-A', 'art_imgSAR-EZ6-newyear2025A', 'art_imgSAR-EZ6-B', 'art_imgSAR-EZ6-newyear2025B'];
+  records.push({ Num: 8, Progress: 'ready', Images: { newYear_PNGPath: newYearNames },
+    Images_Appearance: { newYear_PNGPath: newYearNames.slice(1).map((value, i) => ({ value, Formation: i < 2 ? 'normal' : 'beasted' })) } });
+  for (const name of newYearNames) makeImage('Primary', 'newYear', name);
   for (const [i, Formation] of ['corefolder', 'humanoid'].entries()) {
     const raw = records[i].Images.arts_PNGPath ?? [];
     records[i].Images.arts_PNGPath = [...raw, 'pair', 'blocked-pair'];
@@ -175,9 +182,14 @@ test('画像ポリシー: typedef・個別・上位・連名の拒否を全出�
   const primary = id => manifest.find(record => record._type === 'character' && record.id === id && record.db_key === '#DB_Primary');
   assert.equal(primary('6').data.Images.concept_PNGName, 'unready-ref');
   assert.equal(primary('7').data.Images.concept_PNGName, null);
+  const newYear = newYearNames.map(name => image('Primary', 'newYear', name));
+  assert.deepEqual(primary('8').images.new_year, [newYear[0],
+    ...newYear.slice(1).map((value, i) => ({ path: value, form: i < 2 ? 'normal' : 'beasted', characters: ['8'] }))]);
+  assert.deepEqual(primary('8').preferred_reference_images, {
+    common: { main: newYear[1] }, forms: { normal: { main: newYear[1] }, beasted: { main: newYear[3] } } });
   const index = JSON.parse(fs.readFileSync(path.join(output, 'image-index.json'), 'utf8'));
   assert.deepEqual(index.works['#Works_Test'].images.map(entry => entry.path).sort(),
-    [pair, image('Primary', 'corefolder', 'keep'), image('Primary', 'concept', 'unready-ref'),
+    [pair, image('Primary', 'corefolder', 'keep'), image('Primary', 'concept', 'unready-ref'), ...newYear,
       detailImage, image('Primary', 'attr/wing', 'standalone'),
       image('Primary', 'attr/numberMark', 'stage-detail'), referenceImage, localizationImage].sort());
   const detailEntry = index.works['#Works_Test'].images.find(entry => entry.path === detailImage);

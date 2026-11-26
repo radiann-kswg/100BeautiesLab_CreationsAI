@@ -282,7 +282,7 @@ async function main() {
       is_private:             'data/Works_<work>/DataBases/db_*.json — <record>.isPrivate（レコード単位の非公開）',
       progress_unready:       'data/db_meta.json — General.$VarsDef.$EnumDef_Progress[*].AI_Unready（進捗段階ごとの「AI 学習へ供する内容が無い」宣言。充填軸。未宣言のエントリは isForSecondary === true をフォールバックとして使う）',
       image_optout: 'Images field typedef AI_Optout / record.Images_AIOptout (exact raw field/value match). Any denied co-reference denies the physical image globally; unknown image permission is denied.',
-      art_appearances: 'Images_Appearance annotates permitted arts / design_alt images with the current character’s form, costume, reference-only flag and confirmed character IDs from the same work. A dictionary code means confirmed, null means common to all (form_common / costume_common), and a missing key means unconfirmed. It never grants or revokes image permission.',
+      art_appearances: 'Images_Appearance annotates permitted images of any images.* category (arts / design_alt / new_year …) with the current character’s form, costume, reference-only flag and confirmed character IDs from the same work. A dictionary code means confirmed, null means common to all (form_common / costume_common), and a missing key means unconfirmed. It never grants or revokes image permission.',
       appearance_detail_images: 'AppearanceDetail[].img_PNGName declares body-detail images by actual filename within the same DB attr tree. These follow record permission and shared-image denial, independently of Images field or costume exclusions; undeclared attr images remain excluded.',
       costume_optout: 'Dictionaries/dict_Costume.json rows with AI_Optout: true exclude matching AppearanceDetail and costume-scoped AIHints descriptions, including composite prompt strings.',
     },
@@ -518,8 +518,10 @@ async function main() {
         const images = Object.fromEntries(Object.entries(resolveCharacterImages(workDir, charId, charData, dbMetaKey, imageMisses))
           .map(([key, values]) => [key, values.filter(value => recordPermittedImage(typeof value === 'string' ? value : value.path))])
           .filter(([, values]) => values.length > 0));
-        for (const key of ['arts', 'design_alt']) {
-          if (images[key]) images[key] = projectArtAppearances(images[key], artAppearances, workKey, dbMetaKey, charId);
+        // Images_Appearance は任意の Images.* フィールドに書けるため、カテゴリを固定せず全件へ投影する
+        //（new_year の年賀絵も arts と同じ規則。対応表に無い画像は従来形式のまま）。
+        for (const key of Object.keys(images)) {
+          images[key] = projectArtAppearances(images[key], artAppearances, workKey, dbMetaKey, charId);
         }
         charData = filterRecordImageData(charData, workDir, dbMetaKey, recordPermittedImage, costumeRows, imageRoot);
         for (const miss of imageMisses) {
@@ -880,7 +882,7 @@ async function main() {
       },
       preferred_reference_images_field: {
         description: 'preferred_reference_images: ローカル利用向けの参照画像パスまとめ。category と解像度の優先順で main を選びつつ、'
-          + ' corefolder / humanoid の直接参照も残す。パスは creations-db サブモジュールルート基点。',
+          + ' corefolder / humanoid の直接参照も残す。forms には作品の形態辞書にある任意の形態キー（例: normal / beasted）が、本人の確認済み・共通の画像から入る。new_year（年賀絵）は設定原画・カタログ・デザイン表・arts が無いときだけ使う。パスは creations-db サブモジュールルート基点。',
         consumer_guidance: 'source AIHints の reference_images は公開 URL が中心だが、こちらはローカル相対パスなので'
           + ' オフライン処理・高解像度優先の選択に使える。',
       },
@@ -1469,14 +1471,16 @@ function collectArtAppearance(record, ctx, index) {
 }
 
 /**
- * 許可済みの arts / design_alt に本人の形態・衣装・参考用区分と同一作品の登場IDを投影する。
- * 対応表に無い行は従来形式を保つ。共通指定は form_common / costume_common で示す。
+ * 許可済みの画像（arts / design_alt / new_year 等）に本人の形態・衣装・参考用区分と同一作品の登場IDを投影する。
+ * 対応表に無い画像は従来形式（文字列 or { path, ... }）を保ち、対応表にある文字列は { path, ... } へ広げる。
+ * 共通指定は form_common / costume_common で示す。
  */
 export function projectArtAppearances(arts, index, workKey, dbKey, id) {
   return arts.map(art => {
-    const owners = index.get(art.path);
+    const owners = index.get(typeof art === 'string' ? art : art.path);
     const owner = owners?.get(JSON.stringify([workKey, dbKey, id]));
     if (!owner) return art;
+    if (typeof art === 'string') art = { path: art };
     const characters = new Set([...owners.values()].filter(entry => entry.workKey === workKey).map(entry => entry.id));
     const forms = [...owner.forms].filter(form => typeof form === 'string').sort();
     const costumes = [...owner.costumes].filter(costume => typeof costume === 'string').sort();

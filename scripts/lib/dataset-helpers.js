@@ -107,9 +107,14 @@ export function buildPreferredReferenceImages(images) {
   const humanoidArt = findFirstImagePath(images.arts, { form: 'humanoid', pathIncludes: '/arts/humanoids/' });
   // 参考用の画像は代表に選ばない。形態の手がかりが無い arts（未確認）も形態別の代表には使わない（#63）。
   const genericArt = firstPath(images.arts?.filter(entry => !entry?.reference_only));
+  // 年賀絵は設定原画・カタログ・デザイン表・arts が無い子の補欠。形態が確認済み・共通の画像だけを使う。
+  const newYear = images.new_year?.filter(entry => entry && typeof entry === 'object' && !entry.reference_only
+    && (entry.form || entry.forms || entry.form_common));
+  const newYearFor = form => findFirstImagePath(newYear, { form });
 
   const common = {};
-  const main = catalog ?? designSheet ?? concept ?? genericArt ?? corefolderArt ?? humanoidArt ?? corefolderDirect ?? humanoidDirect;
+  const main = catalog ?? designSheet ?? concept ?? genericArt ?? corefolderArt ?? humanoidArt ?? corefolderDirect ?? humanoidDirect
+    ?? firstPath(newYear);
   if (main) common.main = main;
   if (concept) common.concept = concept;
   if (catalog) common.catalog = catalog;
@@ -117,7 +122,7 @@ export function buildPreferredReferenceImages(images) {
   if (conceptAlt.length > 0) common.concept_variants = conceptAlt;
 
   const forms = {};
-  const corefolderMain = catalog ?? corefolderArt ?? concept ?? corefolderDirect ?? designSheet ?? null;
+  const corefolderMain = catalog ?? corefolderArt ?? concept ?? corefolderDirect ?? designSheet ?? newYearFor('corefolder');
   if (corefolderMain || corefolderDirect) {
     forms.corefolder = {
       main: corefolderMain ?? corefolderDirect,
@@ -125,12 +130,23 @@ export function buildPreferredReferenceImages(images) {
     };
   }
 
-  const humanoidMain = humanoidArt ?? concept ?? catalog ?? humanoidDirect ?? designSheet ?? null;
+  const humanoidMain = humanoidArt ?? concept ?? catalog ?? humanoidDirect ?? designSheet ?? newYearFor('humanoid');
   if (humanoidMain || humanoidDirect) {
     forms.humanoid = {
       main: humanoidMain ?? humanoidDirect,
       ...(humanoidDirect ? { humanoid: humanoidDirect } : {}),
     };
+  }
+
+  // 作品の形態辞書にある任意の形態（例: 獣爾騎兵の normal / beasted）は、本人の確認済みコードだけから拾う。
+  const confirmedForms = [...(images.arts ?? []), ...(newYear ?? [])]
+    .filter(entry => entry && typeof entry === 'object' && !entry.reference_only)
+    .flatMap(entry => [entry.form, ...(entry.forms ?? [])])
+    .filter(form => typeof form === 'string');
+  for (const form of new Set(confirmedForms)) {
+    if (Object.hasOwn(forms, form)) continue;
+    const formMain = findFirstImagePath(images.arts, { form }) ?? concept ?? catalog ?? designSheet ?? newYearFor(form);
+    if (formMain) forms[form] = { main: formMain };
   }
 
   if (Object.keys(common).length === 0 && Object.keys(forms).length === 0) return null;

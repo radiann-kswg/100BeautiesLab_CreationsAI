@@ -211,8 +211,9 @@ node scripts/build-dataset.js --verbose
 
 ### 画像単位のAI除外（2026-11-20）
 
-- 上流の `addon-ai-tag` の `Images_Appearance`（`arts_PNGPath` は生成、ほかの画像フィールドと `Costume` / `ReferenceOnly` は作者の手入力）を読み、同じ実パスで登場を確認した同一作品のレコード ID を `images.arts[]` / `images.design_alt[]` の `characters` に出す。本人が単一形態なら `form`、複数形態なら `form: null` と `forms` 配列、未確認なら `form: null`。`Formation` / `Costume` は辞書コード＝確認済み、`null`＝共通（`form_common` / `costume_common: true`）、キー無し＝未確認として区別し、衣装は `costume` / `costumes`、参考用区分は `reference_only: true` で出す。権利判定後に投影し、入力表は配布用の `data` から取り除く。`reference_only` は許諾を変えない。
+- 上流の `addon-ai-tag` の `Images_Appearance`（`arts_PNGPath` は生成、ほかの画像フィールドと `Costume` / `ReferenceOnly` は作者の手入力）を読み、同じ実パスで登場を確認した同一作品のレコード ID を `images.*` の該当画像（`arts[]` / `design_alt[]` / `new_year[]` 等。カテゴリは固定しない）の `characters` に出す。対応表にある文字列の画像は `{ path, ... }` へ広げ、対応表に無い画像は従来形式のまま残す。本人が単一形態なら `form`、複数形態なら `form: null` と `forms` 配列、未確認なら `form: null`。`Formation` / `Costume` は辞書コード＝確認済み、`null`＝共通（`form_common` / `costume_common: true`）、キー無し＝未確認として区別し、衣装は `costume` / `costumes`、参考用区分は `reference_only: true` で出す。権利判定後に投影し、入力表は配布用の `data` から取り除く。`reference_only` は許諾を変えない。
 - `preferred_reference_images` の形態別の代表には、その形態に確認済み・共通の画像（または作者のフォルダ分け `arts/corefolders/` / `arts/humanoids/`）だけを選ぶ。`reference_only` の画像と、形態の手がかりが無い未確認の arts は代表に選ばない（CreationsDB #63）。
+- `preferred_reference_images.forms` のキーは `corefolder` / `humanoid` に限らず、本人の arts / new_year に投影された確認済みの形態コード（作品の `Formation` 辞書。例: 獣爾騎兵の `normal` / `beasted`）から作る。代表は「その形態の arts → concept → catalog → design → その形態の年賀絵」の順。年賀絵（`new_year`）は確認済み・共通の画像だけを、設定原画・カタログ・デザイン表・arts 等が無い子の補欠として `common.main` / `forms.<form>.main` に使い、それらより優先しない。同じ形態の年賀絵が複数あれば配列の先頭を選ぶ（CreationsDB #75: 巳刻カミツ SAR-EZ6）。
 
 - `AI_Optout` のJSON宣言・実値はCreationsDBのdevelopを正典とし、addon-ai-tagへ一方向マージして利用する。AIHints・AI_Unready・AI API実装のaddon管理とは分け、許諾値をこちらで二重管理しない。
 - 画像fieldのtypedef `AI_Optout: true` とレコードの `Images_AIOptout`（field別の元文字列との完全一致）を適用する。検証・canonical path・共有画像の拒否優先・参照フィルタは上流 `pkg/ai-image-policy.mjs` を使用する。`false` は上位や他の参照元の拒否を解除しない。

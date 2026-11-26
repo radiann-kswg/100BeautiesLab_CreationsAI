@@ -85,11 +85,11 @@ for (const r of chars) {
   const expected = filterRecordImageData(source, workSources.get(r.work_key).workDir, r.db_key, recordPermittedImage, costumeRows, workSources.get(r.work_key).imageRoot);
   if (!isDeepStrictEqual(r.data.Images, expected.Images) || !isDeepStrictEqual(r.data.AIHints, expected.AIHints)
     || r.data.Images_AIOptout !== undefined || r.data.Images_Appearance !== undefined) fail(`${key}/${r.id}: 原データの画像除外が不一致`);
-  if (source.Images?.arts_PNGPath || source.Images?.arts_metadata || r.images?.arts) {
-    const original = resolveCharacterImages(workSources.get(r.work_key).workDir, r.id, source, r.db_key);
-    const arts = (original.arts ?? []).filter(art => recordPermittedImage(art.path));
-    const projected = projectArtAppearances(arts, artAppearances, r.work_key, r.db_key, r.id);
-    if (!isDeepStrictEqual(r.images?.arts ?? [], projected)) fail(`${key}/${r.id}: arts の形態・登場人物が原本と不一致`);
+  const original = resolveCharacterImages(workSources.get(r.work_key).workDir, r.id, source, r.db_key);
+  for (const [category, values] of Object.entries(original)) {
+    const permitted = values.filter(value => recordPermittedImage(typeof value === 'string' ? value : value.path));
+    const projected = projectArtAppearances(permitted, artAppearances, r.work_key, r.db_key, r.id);
+    if (!isDeepStrictEqual(r.images?.[category] ?? [], projected)) fail(`${key}/${r.id}: ${category} の形態・登場人物が原本と不一致`);
   }
   if (!isDeepStrictEqual(r.data.AppearanceDetail, expected.AppearanceDetail)
     || !isDeepStrictEqual(r.ai_hints, filterCostumeOptouts({ AppearanceDetail: source.AppearanceDetail, AIHints: r.ai_hints }, costumeRows).AIHints)) {
