@@ -97,19 +97,33 @@ function buildPalettePriority(colorPalette) {
 export function buildPreferredReferenceImages(images) {
   if (!images || typeof images !== 'object') return null;
 
-  const concept = firstPath(images.concept);
+  // Images_Appearance は全カテゴリへ投影されるため、設定資料にも形態・参考用区分が付きうる。
+  // 参考用は選ばず、形態別の代表では別形態に確認済みの資料を除く（形態の記録が無い資料は従来どおり全形態に使う）。
+  const usable = entries => entries?.filter(entry => !(entry && typeof entry === 'object' && entry.reference_only));
+  const docFor = (entries, form) => firstPath(usable(entries)?.filter(entry => typeof entry === 'string'
+    || entry.form_common || (!entry.form && !entry.forms) || entry.form === form || entry.forms?.includes(form)));
+  const docsFor = form => ({
+    concept: docFor(images.concept, form), catalog: docFor(images.catalog, form), designSheet: docFor(images.design, form),
+  });
+
+  const concept = firstPath(usable(images.concept));
   const conceptAlt = extractImagePaths(images.concept_alt);
-  const catalog = firstPath(images.catalog);
-  const designSheet = firstPath(images.design);
+  const catalog = firstPath(usable(images.catalog));
+  const designSheet = firstPath(usable(images.design));
   const corefolderDirect = firstPath(images.corefolder);
   const humanoidDirect = firstPath(images.humanoid);
   const corefolderArt = findFirstImagePath(images.arts, { form: 'corefolder', pathIncludes: '/arts/corefolders/' });
   const humanoidArt = findFirstImagePath(images.arts, { form: 'humanoid', pathIncludes: '/arts/humanoids/' });
   // 参考用の画像は代表に選ばない。形態の手がかりが無い arts（未確認）も形態別の代表には使わない（#63）。
   const genericArt = firstPath(images.arts?.filter(entry => !entry?.reference_only));
+  // 年賀絵は設定原画・カタログ・デザイン表・arts が無い子の補欠。形態が確認済み・共通の画像だけを使う。
+  const newYear = images.new_year?.filter(entry => entry && typeof entry === 'object' && !entry.reference_only
+    && (entry.form || entry.forms || entry.form_common));
+  const newYearFor = form => findFirstImagePath(newYear, { form });
 
   const common = {};
-  const main = catalog ?? designSheet ?? concept ?? genericArt ?? corefolderArt ?? humanoidArt ?? corefolderDirect ?? humanoidDirect;
+  const main = catalog ?? designSheet ?? concept ?? genericArt ?? corefolderArt ?? humanoidArt ?? corefolderDirect ?? humanoidDirect
+    ?? firstPath(newYear);
   if (main) common.main = main;
   if (concept) common.concept = concept;
   if (catalog) common.catalog = catalog;
@@ -117,7 +131,8 @@ export function buildPreferredReferenceImages(images) {
   if (conceptAlt.length > 0) common.concept_variants = conceptAlt;
 
   const forms = {};
-  const corefolderMain = catalog ?? corefolderArt ?? concept ?? corefolderDirect ?? designSheet ?? null;
+  const core = docsFor('corefolder');
+  const corefolderMain = core.catalog ?? corefolderArt ?? core.concept ?? corefolderDirect ?? core.designSheet ?? newYearFor('corefolder');
   if (corefolderMain || corefolderDirect) {
     forms.corefolder = {
       main: corefolderMain ?? corefolderDirect,
@@ -125,12 +140,25 @@ export function buildPreferredReferenceImages(images) {
     };
   }
 
-  const humanoidMain = humanoidArt ?? concept ?? catalog ?? humanoidDirect ?? designSheet ?? null;
+  const human = docsFor('humanoid');
+  const humanoidMain = humanoidArt ?? human.concept ?? human.catalog ?? humanoidDirect ?? human.designSheet ?? newYearFor('humanoid');
   if (humanoidMain || humanoidDirect) {
     forms.humanoid = {
       main: humanoidMain ?? humanoidDirect,
       ...(humanoidDirect ? { humanoid: humanoidDirect } : {}),
     };
+  }
+
+  // 作品の形態辞書にある任意の形態（例: 獣爾騎兵の normal / beasted）は、本人の確認済みコードだけから拾う。
+  const confirmedForms = [...(images.arts ?? []), ...(newYear ?? [])]
+    .filter(entry => entry && typeof entry === 'object' && !entry.reference_only)
+    .flatMap(entry => [entry.form, ...(entry.forms ?? [])])
+    .filter(form => typeof form === 'string');
+  for (const form of new Set(confirmedForms)) {
+    if (Object.hasOwn(forms, form)) continue;
+    const docs = docsFor(form);
+    const formMain = findFirstImagePath(images.arts, { form }) ?? docs.concept ?? docs.catalog ?? docs.designSheet ?? newYearFor(form);
+    if (formMain) forms[form] = { main: formMain };
   }
 
   if (Object.keys(common).length === 0 && Object.keys(forms).length === 0) return null;

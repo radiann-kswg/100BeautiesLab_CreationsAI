@@ -76,6 +76,38 @@ test('代表画像には確認済み・共通の画像だけを選び、参考�
   assert.equal(buildPreferredReferenceImages({ arts: [{ path: '/arts/event.png', form: null, characters: null }] }).forms, undefined);
 });
 
+test('年賀絵の確認済み形態で任意の形態キーの代表を選び、設定資料より優先しない（巳刻カミツ SAR-EZ6）', () => {
+  const dir = 'data/Works_ShauErRiders/Images/DB_Primary/newYear/';
+  const newYear = [
+    `${dir}art_imgSAR-EZ6-plain.png`,
+    { path: `${dir}art_imgSAR-EZ6-A.png`, form: 'normal', characters: ['EZ6'] },
+    { path: `${dir}art_imgSAR-EZ6-newyear2025A.png`, form: 'normal', characters: ['EZ6'] },
+    { path: `${dir}art_imgSAR-EZ6-B.png`, form: 'beasted', characters: ['EZ6'] },
+    { path: `${dir}art_imgSAR-EZ6-newyear2025B.png`, form: 'beasted', characters: ['EZ6'] },
+  ];
+  const refs = buildPreferredReferenceImages({ new_year: newYear });
+  assert.equal(refs.common.main, `${dir}art_imgSAR-EZ6-A.png`);
+  assert.equal(refs.forms.normal.main, `${dir}art_imgSAR-EZ6-A.png`);
+  assert.equal(refs.forms.beasted.main, `${dir}art_imgSAR-EZ6-B.png`);
+  assert.equal(refs.forms.corefolder, undefined);
+
+  // 設定原画・カタログ・デザイン表があれば、年賀絵はそれらより優先しない
+  const withConcept = buildPreferredReferenceImages({ concept: ['c.png'], new_year: newYear });
+  assert.equal(withConcept.common.main, 'c.png');
+  assert.equal(withConcept.forms.normal.main, 'c.png');
+  // 別形態に確認済みの設定資料は飛ばして年賀絵へ進み、参考用の設定資料はどこにも選ばない
+  const beastedConcept = buildPreferredReferenceImages({ concept: [{ path: 'beasted.png', form: 'beasted' }], new_year: newYear });
+  assert.equal(beastedConcept.forms.normal.main, `${dir}art_imgSAR-EZ6-A.png`);
+  assert.equal(beastedConcept.forms.beasted.main, 'beasted.png');
+  const referenceConcept = buildPreferredReferenceImages({ concept: [{ path: 'ref.png', form: null, reference_only: true }], new_year: newYear });
+  assert.equal(referenceConcept.common.main, `${dir}art_imgSAR-EZ6-A.png`);
+  assert.equal(referenceConcept.common.concept, undefined);
+  assert.equal(referenceConcept.forms.normal.main, `${dir}art_imgSAR-EZ6-A.png`);
+  // 未確認・参考用の年賀絵は選ばない
+  assert.equal(buildPreferredReferenceImages({ new_year: [newYear[0]] }), null);
+  assert.equal(buildPreferredReferenceImages({ new_year: [{ ...newYear[1], reference_only: true }] }), null);
+});
+
 test('buildDerivedAiHints: NumberTales の allowed レコードにだけ scaffold を補う', () => {
   const images = {
     concept: ['data/Works_NumberTales/Images/DB_SemiPrimary/concept/cnsp_imgNTS-222.png'],

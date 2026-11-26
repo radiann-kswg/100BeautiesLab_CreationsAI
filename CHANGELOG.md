@@ -1,5 +1,12 @@
 # 変更履歴
 
+## 2026-11-26 — 年賀絵の形態を代表画像へ（CreationsDB #75）
+
+- `Images_Appearance` の形態・衣装・参考用区分を、`arts` / `design_alt` だけでなく `images.*` のすべてのカテゴリへ投影する。`new_year` のように文字列で出していた画像は、対応表にあるものだけ `{ path, form, ..., characters }` へ広がる。対応表に無い画像の形式は変わらない。
+- `preferred_reference_images.forms` は `corefolder` / `humanoid` 以外の形態キー（例: 獣爾騎兵の `normal` / `beasted`）も、本人の確認済みの形態コードから作る。
+- 年賀絵は、設定原画・カタログ・デザイン表・arts 等が無い子に限って `common.main` / `forms.<form>.main` の補欠に使う。確認済み・共通の画像だけを選び、未確認と `reference_only` は選ばない。
+- `validate-dataset.js` の投影検証を arts 以外のカテゴリへ広げた。現行のサブモジュール pin では、生成物（policy.json の説明文を除く）は変わらない。
+
 ## 2026-11-24 — 画像ごとの形態・衣装・参考用区分（CreationsDB #63）
 
 - `Images_Appearance` の `arts_PNGPath` 以外の画像フィールドと、`Costume` / `ReferenceOnly` を受け付ける。辞書コード＝確認済み、`null`＝共通、キー無し＝未確認を区別し、未定義コード・不明な項目・真偽値でない `ReferenceOnly` は生成を停止する。
