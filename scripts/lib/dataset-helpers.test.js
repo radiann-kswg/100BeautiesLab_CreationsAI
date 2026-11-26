@@ -95,6 +95,14 @@ test('年賀絵の確認済み形態で任意の形態キーの代表を選び�
   const withConcept = buildPreferredReferenceImages({ concept: ['c.png'], new_year: newYear });
   assert.equal(withConcept.common.main, 'c.png');
   assert.equal(withConcept.forms.normal.main, 'c.png');
+  // 別形態に確認済みの設定資料は飛ばして年賀絵へ進み、参考用の設定資料はどこにも選ばない
+  const beastedConcept = buildPreferredReferenceImages({ concept: [{ path: 'beasted.png', form: 'beasted' }], new_year: newYear });
+  assert.equal(beastedConcept.forms.normal.main, `${dir}art_imgSAR-EZ6-A.png`);
+  assert.equal(beastedConcept.forms.beasted.main, 'beasted.png');
+  const referenceConcept = buildPreferredReferenceImages({ concept: [{ path: 'ref.png', form: null, reference_only: true }], new_year: newYear });
+  assert.equal(referenceConcept.common.main, `${dir}art_imgSAR-EZ6-A.png`);
+  assert.equal(referenceConcept.common.concept, undefined);
+  assert.equal(referenceConcept.forms.normal.main, `${dir}art_imgSAR-EZ6-A.png`);
   // 未確認・参考用の年賀絵は選ばない
   assert.equal(buildPreferredReferenceImages({ new_year: [newYear[0]] }), null);
   assert.equal(buildPreferredReferenceImages({ new_year: [{ ...newYear[1], reference_only: true }] }), null);

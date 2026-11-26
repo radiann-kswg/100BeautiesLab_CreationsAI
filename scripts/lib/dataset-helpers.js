@@ -97,10 +97,19 @@ function buildPalettePriority(colorPalette) {
 export function buildPreferredReferenceImages(images) {
   if (!images || typeof images !== 'object') return null;
 
-  const concept = firstPath(images.concept);
+  // Images_Appearance は全カテゴリへ投影されるため、設定資料にも形態・参考用区分が付きうる。
+  // 参考用は選ばず、形態別の代表では別形態に確認済みの資料を除く（形態の記録が無い資料は従来どおり全形態に使う）。
+  const usable = entries => entries?.filter(entry => !(entry && typeof entry === 'object' && entry.reference_only));
+  const docFor = (entries, form) => firstPath(usable(entries)?.filter(entry => typeof entry === 'string'
+    || entry.form_common || (!entry.form && !entry.forms) || entry.form === form || entry.forms?.includes(form)));
+  const docsFor = form => ({
+    concept: docFor(images.concept, form), catalog: docFor(images.catalog, form), designSheet: docFor(images.design, form),
+  });
+
+  const concept = firstPath(usable(images.concept));
   const conceptAlt = extractImagePaths(images.concept_alt);
-  const catalog = firstPath(images.catalog);
-  const designSheet = firstPath(images.design);
+  const catalog = firstPath(usable(images.catalog));
+  const designSheet = firstPath(usable(images.design));
   const corefolderDirect = firstPath(images.corefolder);
   const humanoidDirect = firstPath(images.humanoid);
   const corefolderArt = findFirstImagePath(images.arts, { form: 'corefolder', pathIncludes: '/arts/corefolders/' });
@@ -122,7 +131,8 @@ export function buildPreferredReferenceImages(images) {
   if (conceptAlt.length > 0) common.concept_variants = conceptAlt;
 
   const forms = {};
-  const corefolderMain = catalog ?? corefolderArt ?? concept ?? corefolderDirect ?? designSheet ?? newYearFor('corefolder');
+  const core = docsFor('corefolder');
+  const corefolderMain = core.catalog ?? corefolderArt ?? core.concept ?? corefolderDirect ?? core.designSheet ?? newYearFor('corefolder');
   if (corefolderMain || corefolderDirect) {
     forms.corefolder = {
       main: corefolderMain ?? corefolderDirect,
@@ -130,7 +140,8 @@ export function buildPreferredReferenceImages(images) {
     };
   }
 
-  const humanoidMain = humanoidArt ?? concept ?? catalog ?? humanoidDirect ?? designSheet ?? newYearFor('humanoid');
+  const human = docsFor('humanoid');
+  const humanoidMain = humanoidArt ?? human.concept ?? human.catalog ?? humanoidDirect ?? human.designSheet ?? newYearFor('humanoid');
   if (humanoidMain || humanoidDirect) {
     forms.humanoid = {
       main: humanoidMain ?? humanoidDirect,
@@ -145,7 +156,8 @@ export function buildPreferredReferenceImages(images) {
     .filter(form => typeof form === 'string');
   for (const form of new Set(confirmedForms)) {
     if (Object.hasOwn(forms, form)) continue;
-    const formMain = findFirstImagePath(images.arts, { form }) ?? concept ?? catalog ?? designSheet ?? newYearFor(form);
+    const docs = docsFor(form);
+    const formMain = findFirstImagePath(images.arts, { form }) ?? docs.concept ?? docs.catalog ?? docs.designSheet ?? newYearFor(form);
     if (formMain) forms[form] = { main: formMain };
   }
 
