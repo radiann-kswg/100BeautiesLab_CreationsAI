@@ -12,7 +12,7 @@
       "is_private": "data/Works_<work>/DataBases/db_*.json — <record>.isPrivate（レコード単位の非公開）",
       "progress_unready": "data/db_meta.json — General.$VarsDef.$EnumDef_Progress[*].AI_Unready（進捗段階ごとの「AI 学習へ供する内容が無い」宣言。充填軸。未宣言のエントリは isForSecondary === true をフォールバックとして使う）",
       "image_optout": "Images field typedef AI_Optout / record.Images_AIOptout (exact raw field/value match). Any denied co-reference denies the physical image globally; unknown image permission is denied.",
-      "art_appearances": "Images_Appearance annotates permitted arts / design_alt images with the current character’s form, costume, reference-only flag and confirmed character IDs from the same work. A dictionary code means confirmed, null means common to all (form_common / costume_common), and a missing key means unconfirmed. It never grants or revokes image permission.",
+      "art_appearances": "Images_Appearance annotates permitted images of any images.* category (arts / design_alt / new_year …) with the current character’s form, costume, reference-only flag and confirmed character IDs from the same work. A dictionary code means confirmed, null means common to all (form_common / costume_common), and a missing key means unconfirmed. It never grants or revokes image permission.",
       "appearance_detail_images": "AppearanceDetail[].img_PNGName declares body-detail images by actual filename within the same DB attr tree. These follow record permission and shared-image denial, independently of Images field or costume exclusions; undeclared attr images remain excluded.",
       "costume_optout": "Dictionaries/dict_Costume.json rows with AI_Optout: true exclude matching AppearanceDetail and costume-scoped AIHints descriptions, including composite prompt strings."
     },
@@ -103,7 +103,7 @@
       "alt_modes": "将来予約モード格納 (corefolder_dressed.allowed / outfit_source) — 2026-06-08 追加"
     },
     "preferred_reference_images_field": {
-      "description": "preferred_reference_images: ローカル利用向けの参照画像パスまとめ。category と解像度の優先順で main を選びつつ、 corefolder / humanoid の直接参照も残す。パスは creations-db サブモジュールルート基点。",
+      "description": "preferred_reference_images: ローカル利用向けの参照画像パスまとめ。category と解像度の優先順で main を選びつつ、 corefolder / humanoid の直接参照も残す。forms には作品の形態辞書にある任意の形態キー（例: normal / beasted）が、本人の確認済み・共通の画像から入る。new_year（年賀絵）は設定原画・カタログ・デザイン表・arts が無いときだけ使う。パスは creations-db サブモジュールルート基点。",
       "consumer_guidance": "source AIHints の reference_images は公開 URL が中心だが、こちらはローカル相対パスなので オフライン処理・高解像度優先の選択に使える。"
     },
     "appearance_detail_field": {
