@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-11-27T10:17:15+09:00",
+  "_generated_at": "2026-11-27T17:02:23+09:00",
   "work_key": "#Works_SinisterChangingGirls",
   "dir_name": "Works_SinisterChangingGirls",
   "title_ja": "豹変系女子",
@@ -400,9 +400,9 @@
       "text_rp_reference": null
     },
     {
-      "id": "2",
+      "id": "ヒュース・ナイチンゲール",
       "db_key": "#DB_SemiPrimary",
-      "display_name": "2",
+      "display_name": "ヒュース=ヴァイセットル・ナイチンゲール",
       "record_identity": {
         "work_key": "#Works_SinisterChangingGirls",
         "db_key": "#DB_SemiPrimary",
@@ -490,9 +490,9 @@
       "text_rp_reference": null
     },
     {
-      "id": "7",
+      "id": "ヴェクトル\nセレナ.V.A",
       "db_key": "#DB_SemiPrimary",
-      "display_name": "7",
+      "display_name": "セレナ・フォン・アンデルセン",
       "record_identity": {
         "work_key": "#Works_SinisterChangingGirls",
         "db_key": "#DB_SemiPrimary",
@@ -599,12 +599,12 @@
     "財前 小里",
     "0",
     "1",
-    "2",
+    "ヒュース・ナイチンゲール",
     "零 百",
     "4",
     "5",
     "6",
-    "7",
+    "ヴェクトル\nセレナ.V.A",
     "扇 零夏・スフィリア",
     "扇 三春",
     "扇 残冬",
