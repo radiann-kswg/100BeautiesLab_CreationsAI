@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-11-28T14:06:00+09:00",
+  "_generated_at": "2026-11-28T17:56:02+09:00",
   "_path_base": "creations-db/",
   "works": {
     "#Works_NumberTales": {
@@ -10,6 +10,7 @@
         "allowed": true,
         "allowed_db_keys": [
           "#DB_Primary",
+          "#DB_PrimaryHuman",
           "#DB_SemiPrimary",
           "#DB_SelfSecondary"
         ],
@@ -18,13 +19,23 @@
       "db_records": [
         {
           "key": "#DB_Primary",
-          "allowed": 95,
-          "total": 105
+          "allowed": 93,
+          "total": 103
+        },
+        {
+          "key": "#DB_PrimaryHuman",
+          "allowed": 2,
+          "total": 3
         },
         {
           "key": "#DB_SemiPrimary",
           "allowed": 13,
-          "total": 67
+          "total": 65
+        },
+        {
+          "key": "#DB_SemiPrimaryHuman",
+          "allowed": 0,
+          "total": 2
         },
         {
           "key": "#DB_SelfSecondary",
@@ -43,26 +54,6 @@
         }
       ],
       "images": [
-        {
-          "path": "data/Works_NumberTales/Images/DB_Primary/arts/art_imgNTS-0-developper.png",
-          "category": "arts",
-          "width": 1200,
-          "height": 833,
-          "long_edge_px": 1200,
-          "is_large_original_candidate": true,
-          "language_variant": null,
-          "is_language_variant": false
-        },
-        {
-          "path": "data/Works_NumberTales/Images/DB_Primary/arts/art_imgNTS-00-developper.png",
-          "category": "arts",
-          "width": 1200,
-          "height": 833,
-          "long_edge_px": 1200,
-          "is_large_original_candidate": true,
-          "language_variant": null,
-          "is_language_variant": false
-        },
         {
           "path": "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-13-humanoid.png",
           "category": "arts",
@@ -2289,26 +2280,6 @@
           "width": 9000,
           "height": 6000,
           "long_edge_px": 9000,
-          "is_large_original_candidate": true,
-          "language_variant": null,
-          "is_language_variant": false
-        },
-        {
-          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-0.png",
-          "category": "concept",
-          "width": 1180,
-          "height": 820,
-          "long_edge_px": 1180,
-          "is_large_original_candidate": true,
-          "language_variant": null,
-          "is_language_variant": false
-        },
-        {
-          "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-00.png",
-          "category": "concept",
-          "width": 1180,
-          "height": 820,
-          "long_edge_px": 1180,
           "is_large_original_candidate": true,
           "language_variant": null,
           "is_language_variant": false
@@ -5019,6 +4990,46 @@
           "width": 1366,
           "height": 1024,
           "long_edge_px": 1366,
+          "is_large_original_candidate": true,
+          "language_variant": null,
+          "is_language_variant": false
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_PrimaryHuman/arts/art_imgNTS-0-developper.png",
+          "category": "arts",
+          "width": 1200,
+          "height": 833,
+          "long_edge_px": 1200,
+          "is_large_original_candidate": true,
+          "language_variant": null,
+          "is_language_variant": false
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_PrimaryHuman/arts/art_imgNTS-00-developper.png",
+          "category": "arts",
+          "width": 1200,
+          "height": 833,
+          "long_edge_px": 1200,
+          "is_large_original_candidate": true,
+          "language_variant": null,
+          "is_language_variant": false
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_PrimaryHuman/concept/cnsp_imgNTS-0.png",
+          "category": "concept",
+          "width": 1180,
+          "height": 820,
+          "long_edge_px": 1180,
+          "is_large_original_candidate": true,
+          "language_variant": null,
+          "is_language_variant": false
+        },
+        {
+          "path": "data/Works_NumberTales/Images/DB_PrimaryHuman/concept/cnsp_imgNTS-00.png",
+          "category": "concept",
+          "width": 1180,
+          "height": 820,
+          "long_edge_px": 1180,
           "is_large_original_candidate": true,
           "language_variant": null,
           "is_language_variant": false

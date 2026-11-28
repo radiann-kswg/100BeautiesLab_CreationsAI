@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-11-28T14:06:00+09:00",
+  "_generated_at": "2026-11-28T17:56:02+09:00",
   "work_key": "#Works_SinisterChangingGirls",
   "dir_name": "Works_SinisterChangingGirls",
   "title_ja": "豹変系女子",
@@ -382,9 +382,9 @@
       "text_rp_reference": null
     },
     {
-      "id": "1",
+      "id": "メルランディア・シラユキ",
       "db_key": "#DB_SemiPrimary",
-      "display_name": "1",
+      "display_name": "メルランディア=フェブルーアス シラユキ\nティーレ フェブルーア",
       "record_identity": {
         "work_key": "#Works_SinisterChangingGirls",
         "db_key": "#DB_SemiPrimary",
@@ -393,9 +393,9 @@
         }
       },
       "text_rp_inference": {
-        "status": "denied",
+        "status": "unknown",
         "allowed": false,
-        "reason": "Non-public work, DB or record; text RP inference is disabled."
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
       },
       "text_rp_reference": null
     },
@@ -411,9 +411,9 @@
         }
       },
       "text_rp_inference": {
-        "status": "denied",
+        "status": "unknown",
         "allowed": false,
-        "reason": "Non-public work, DB or record; text RP inference is disabled."
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
       },
       "text_rp_reference": null
     },
@@ -598,7 +598,7 @@
     "6",
     "財前 小里",
     "0",
-    "1",
+    "メルランディア・シラユキ",
     "ヒュース・ナイチンゲール",
     "零 百",
     "4",

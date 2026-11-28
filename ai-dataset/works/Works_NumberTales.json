@@ -1,6 +1,6 @@
 {
   "_notice": "原著作物: 百花繚乱研究所 一次創作作品 / CC BY-NC 4.0 / https://github.com/radiann-kswg/100BeautiesLab_CreationsDB",
-  "_generated_at": "2026-11-28T14:06:00+09:00",
+  "_generated_at": "2026-11-28T17:56:02+09:00",
   "work_key": "#Works_NumberTales",
   "dir_name": "Works_NumberTales",
   "title_ja": "ナンバーテールズ",
@@ -54,6 +54,7 @@
     "allowed": true,
     "allowed_db_keys": [
       "#DB_Primary",
+      "#DB_PrimaryHuman",
       "#DB_SemiPrimary",
       "#DB_SelfSecondary"
     ],
@@ -68,7 +69,21 @@
       }
     },
     {
+      "path": "data/Works_NumberTales/DataBases/db_PrimaryHuman.json",
+      "ai_training": {
+        "allowed": true,
+        "reason": "AI_Optout / DB_Hidden / Works_Hidden are not set for this DB. This DB is opted in for AI training/generation use."
+      }
+    },
+    {
       "path": "data/Works_NumberTales/DataBases/db_SemiPrimary.json",
+      "ai_training": {
+        "allowed": true,
+        "reason": "AI_Optout / DB_Hidden / Works_Hidden are not set for this DB. This DB is opted in for AI training/generation use."
+      }
+    },
+    {
+      "path": "data/Works_NumberTales/DataBases/db_SemiPrimaryHuman.json",
       "ai_training": {
         "allowed": true,
         "reason": "AI_Optout / DB_Hidden / Works_Hidden are not set for this DB. This DB is opted in for AI training/generation use."
@@ -1953,11 +1968,11 @@
     },
     {
       "id": "0",
-      "db_key": "#DB_Primary",
+      "db_key": "#DB_PrimaryHuman",
       "display_name": "千歳 玲",
       "record_identity": {
         "work_key": "#Works_NumberTales",
-        "db_key": "#DB_Primary",
+        "db_key": "#DB_PrimaryHuman",
         "index": {
           "Num": "0"
         }
@@ -1971,13 +1986,31 @@
     },
     {
       "id": "00",
-      "db_key": "#DB_Primary",
+      "db_key": "#DB_PrimaryHuman",
       "display_name": "千歳 励",
       "record_identity": {
         "work_key": "#Works_NumberTales",
-        "db_key": "#DB_Primary",
+        "db_key": "#DB_PrimaryHuman",
         "index": {
           "Num": "00"
+        }
+      },
+      "text_rp_inference": {
+        "status": "unknown",
+        "allowed": false,
+        "reason": "AI_TextRP_Allowed is unspecified; confirmation and an explicit per-record permission are required."
+      },
+      "text_rp_reference": null
+    },
+    {
+      "id": "any",
+      "db_key": "#DB_PrimaryHuman",
+      "display_name": "乃木 希",
+      "record_identity": {
+        "work_key": "#Works_NumberTales",
+        "db_key": "#DB_PrimaryHuman",
+        "index": {
+          "Num": "any"
         }
       },
       "text_rp_inference": {
@@ -3159,11 +3192,11 @@
     },
     {
       "id": "%",
-      "db_key": "#DB_SemiPrimary",
+      "db_key": "#DB_SemiPrimaryHuman",
       "display_name": "錦野 舞",
       "record_identity": {
         "work_key": "#Works_NumberTales",
-        "db_key": "#DB_SemiPrimary",
+        "db_key": "#DB_SemiPrimaryHuman",
         "index": {
           "Num": "%"
         }
@@ -3177,11 +3210,11 @@
     },
     {
       "id": "∞",
-      "db_key": "#DB_SemiPrimary",
+      "db_key": "#DB_SemiPrimaryHuman",
       "display_name": "錦野 歌嫁",
       "record_identity": {
         "work_key": "#Works_NumberTales",
-        "db_key": "#DB_SemiPrimary",
+        "db_key": "#DB_SemiPrimaryHuman",
         "index": {
           "Num": "∞"
         }
@@ -20310,6 +20343,7 @@
     "000",
     "0",
     "00",
+    "any",
     "100",
     "101",
     "102",
@@ -21991,6 +22025,7 @@
     "000",
     "0",
     "00",
+    "any",
     "100",
     "111",
     "222A",
@@ -22257,6 +22292,7 @@
     "85",
     "87",
     "93",
+    "95",
     "96",
     "97",
     "000",
@@ -22271,26 +22307,6 @@
     "∞"
   ],
   "image_paths": [
-    {
-      "path": "data/Works_NumberTales/Images/DB_Primary/arts/art_imgNTS-0-developper.png",
-      "category": "arts",
-      "width": 1200,
-      "height": 833,
-      "long_edge_px": 1200,
-      "is_large_original_candidate": true,
-      "language_variant": null,
-      "is_language_variant": false
-    },
-    {
-      "path": "data/Works_NumberTales/Images/DB_Primary/arts/art_imgNTS-00-developper.png",
-      "category": "arts",
-      "width": 1200,
-      "height": 833,
-      "long_edge_px": 1200,
-      "is_large_original_candidate": true,
-      "language_variant": null,
-      "is_language_variant": false
-    },
     {
       "path": "data/Works_NumberTales/Images/DB_Primary/arts/chattingArt/chart_imgNTS-13-humanoid.png",
       "category": "arts",
@@ -24517,26 +24533,6 @@
       "width": 9000,
       "height": 6000,
       "long_edge_px": 9000,
-      "is_large_original_candidate": true,
-      "language_variant": null,
-      "is_language_variant": false
-    },
-    {
-      "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-0.png",
-      "category": "concept",
-      "width": 1180,
-      "height": 820,
-      "long_edge_px": 1180,
-      "is_large_original_candidate": true,
-      "language_variant": null,
-      "is_language_variant": false
-    },
-    {
-      "path": "data/Works_NumberTales/Images/DB_Primary/concept/cnsp_imgNTS-00.png",
-      "category": "concept",
-      "width": 1180,
-      "height": 820,
-      "long_edge_px": 1180,
       "is_large_original_candidate": true,
       "language_variant": null,
       "is_language_variant": false
@@ -27247,6 +27243,46 @@
       "width": 1366,
       "height": 1024,
       "long_edge_px": 1366,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
+    },
+    {
+      "path": "data/Works_NumberTales/Images/DB_PrimaryHuman/arts/art_imgNTS-0-developper.png",
+      "category": "arts",
+      "width": 1200,
+      "height": 833,
+      "long_edge_px": 1200,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
+    },
+    {
+      "path": "data/Works_NumberTales/Images/DB_PrimaryHuman/arts/art_imgNTS-00-developper.png",
+      "category": "arts",
+      "width": 1200,
+      "height": 833,
+      "long_edge_px": 1200,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
+    },
+    {
+      "path": "data/Works_NumberTales/Images/DB_PrimaryHuman/concept/cnsp_imgNTS-0.png",
+      "category": "concept",
+      "width": 1180,
+      "height": 820,
+      "long_edge_px": 1180,
+      "is_large_original_candidate": true,
+      "language_variant": null,
+      "is_language_variant": false
+    },
+    {
+      "path": "data/Works_NumberTales/Images/DB_PrimaryHuman/concept/cnsp_imgNTS-00.png",
+      "category": "concept",
+      "width": 1180,
+      "height": 820,
+      "long_edge_px": 1180,
       "is_large_original_candidate": true,
       "language_variant": null,
       "is_language_variant": false
